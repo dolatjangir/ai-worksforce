@@ -68,7 +68,7 @@ export default function Footer() {
           {/* Branding */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <img src="/ibigdata-logo.png" alt="ibigdata-logo" className="w-50"/>
+              <img src="/aiworksforce-logo.png" alt="aiworksforce-logo" className="w-70"/>
             </div>
             <p className="mt-4 text-gray-600 text-base leading-relaxed max-w-md">
               Unified CRM platform for industry-specific solutions. Empowering businesses with scalable, secure, and intelligent customer relationship management.

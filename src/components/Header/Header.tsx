@@ -175,7 +175,7 @@ export default function Header() {
             href="/"
             className="text-2xl font-bold tracking-tight bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent hover:from-cyan-700 hover:to-blue-700 transition"
           >
-           <img src="/ibigdata-logo.png" alt="ibigdata-logo" className="w-50"/>
+           <img src="/aiworksforce-logo.png" alt="aiworksforce-logo" className="w-50"/>
           </Link>
 
           {/* Desktop Navigation */}

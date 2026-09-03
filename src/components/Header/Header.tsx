@@ -1,498 +1,703 @@
-"use client";
+"use client"
+import React, { useState, useRef, useEffect } from 'react'
+import {
+  ChevronDown,
+  Sparkles,
+  Play,
+  Image,
+  HelpCircle,
+  HelpCircleIcon,
+  MessageSquareCode,
+  GraduationCapIcon,
+  PlayCircle,
+  BookA,
+  Cloud,
+  Database,
+  PieChart,
+  Target,
+  Layers,
+  Workflow,
+  LineChart,
+  Users,
+  Clock,
+  Zap,
+  BarChart3,
+  Shield,
+  Star,
+  HeadphonesIcon,
+  ArrowRight,
+  Menu,
+  X
+} from 'lucide-react';
 
-import Link from "next/link";
-import { useState } from "react";
-import { FiMenu, FiX, FiChevronDown } from "react-icons/fi";
+import Link from 'next/link'
 
-export default function Header() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
-  const [mobileSubmenuOpen, setMobileSubmenuOpen] = useState<string | null>(null);
+interface NavItem {
+  label: string;
+  href: string;
+  hasDropdown: boolean;
+  dropdownContent?: {
+    title: string;
+    description: string;
+    sections: {
+      title: string;
+      items: {
+        icon: React.ReactNode;
+        title: string;
+        description: string;
+        href: string;
+        badge?: string;
+      }[];
+    }[];
+    footer?: {
+      text: string;
+      link: string;
+      href: string;
+    };
+  };
+}
 
-  const navLinks = [
-    // { name: "Home", href: "/" },
-    {
-      name: "Ai Agents",
-      href: "#ai-agents",
-      hasDropdown: true,
-      dropdownContent: {
-        title: "Platform Ai Agents",
-        description: "Everything you need to manage Ai Agents at scale",
-        sections: [
-          {
-            title: "Automation",
-            items: [
-              {
-                icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335520/img-1_nz99v7.png" className="max-w-16 max-h-16" />,
-                title: "Ai Lead Qualification Agent",
-                description: "Organize and segment your customer Qualification",
-                href: "/ai-agents/lead-qualifiction-agent"
-              },
-              {
-                icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335520/img-2_l1xdll.png" className="max-w-16 max-h-16" />,
-                title: "Ai Property Matching Agent",
-                description: "AI-powered lead qualification",
-                href: "/ai-agents/property-maching-agent",
-                badge: "AI"
-              },
-              {
-                icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335520/img-3_scja92.png" className="max-w-16 max-h-16" />,
-                title: "Lead Capture Agent",
-                description: "Ai Lead Capture tracking and forecasting",
-                href: "/ai-agents/lead-capture-agent"
-              },
-              {
-                icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335521/img-4_damgxf.png" className="max-w-16 max-h-16" />,
-                title: "Ai Content Creation Agent",
-                description: "Content Creation  tracking and forecasting",
-                href: "/ai-agents/content-creation-agent"
-              },
-              {
-                icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335553/img-555_kabvyd.png" className="max-w-16 max-h-16" />,
-                title: "Ai  Follow-Up Agent",
-                description: "AI-powered lead qualification",
-                href: "/ai-agents/follow-up-agent",
-                badge: "AI"
-              },
-            ]
-          },
-          {
-            title: "Automation",
-            items: [
-              {
-                icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335521/img-6_mky5rb.png" className="max-w-16 max-h-16" />,
-                title: "Ai Calling Agent",
-                description: "Automate Calling tasks",
-                href: "/ai-agents/calling-agent"
-              },
-              {
-                icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335523/img-7_xjwzbl.png" className="max-w-16 max-h-16" />,
-                title: "Ai Campaign Automation Agent",
-                description: "AI meeting scheduler",
-                href: "/ai-agents/campaign-automation"
-              },
-              {
-                icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335552/img-8_twulvb.png" className="max-w-16 max-h-16" />,
-                title: "Data Mining Agent",
-                description: "Data Mining  automation",
-                href: "/ai-agents/data-mining-agent"
-              },
-              {
-                icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335553/img-9_i1wlut.png" className="max-w-16 max-h-16" />,
-                title: "Social Media Agent",
-                description: "Social Media automation",
-                href: "/ai-agents/social-media-agent"
-              },
-              {
-                icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335553/img-10_ajsusz.png" className="max-w-16 max-h-16 rounded-xl" />,
-                title: "Ai SEO Content Agent",
-                description: "SEO Content scheduler",
-                href: "/ai-agents/seo-content-agent"
-              },
-            ]
-          }
-        ],
-        footer: {
-          text: "See all features",
-          link: "Explore →",
-          href: "/explore-ai-agent"
+const navItems: NavItem[] = [
+  {
+    label: "Ai Agents",
+    href: "#ai-agents",
+    hasDropdown: true,
+    dropdownContent: {
+      title: "Platform Ai Agents",
+      description: "Everything you need to manage Ai Agents at scale",
+      sections: [
+        {
+          title: "Automation",
+          items: [
+            {
+              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335520/img-1_nz99v7.png" className="max-w-20 max-h-20" />,
+              title: "Ai Lead Qualification Agent",
+              description: "Organize and segment your customer Qualification",
+              href: "/ai-agents/lead-qualifiction-agent"
+            },
+            {
+              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335520/img-2_l1xdll.png" className="max-w-20 max-h-20" />,
+              title: "Ai Property Matching Agent",
+              description: "AI-powered lead qualification",
+              href: "/ai-agents/property-maching-agent",
+              badge: "AI"
+            },
+            {
+              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335520/img-3_scja92.png" className="max-w-20 max-h-20" />,
+              title: "Lead Capture Agent",
+              description: "Ai Lead Capture tracking and forecasting",
+              href: "/ai-agents/lead-capture-agent"
+            },
+            {
+              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335521/img-4_damgxf.png" className="max-w-20 max-h-20" />,
+              title: "Ai Content Creation Agent",
+              description: "Content Creation  tracking and forecasting",
+              href: "/ai-agents/content-creation-agent"
+            },
+            {
+              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335553/img-555_kabvyd.png" className="max-w-20 max-h-20" />,
+              title: "Ai  Follow-Up Agent",
+              description: "AI-powered lead qualification",
+              href: "/ai-agents/follow-up-agent",
+              badge: "AI"
+            },
+          ]
+        },
+        {
+          title: "Automation",
+          items: [
+            {
+              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335521/img-6_mky5rb.png" className="max-w-20 max-h-20" />,
+              title: "Ai Calling Agent",
+              description: "Automate Calling tasks",
+              href: "/ai-agents/calling-agent"
+            },
+            {
+              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335523/img-7_xjwzbl.png" className="max-w-20 max-h-20" />,
+              title: "Ai Campaign Automation Agent",
+              description: "AI meeting scheduler",
+              href: "/ai-agents/campaign-automation"
+            },
+            {
+              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335552/img-8_twulvb.png" className="max-w-20 max-h-20" />,
+              title: "Data Mining Agent",
+              description: "Data Mining  automation",
+              href: "/ai-agents/data-mining-agent"
+            },
+            {
+              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335553/img-9_i1wlut.png" className="max-w-20 max-h-20" />,
+              title: "Social Media Agent",
+              description: "Social Media automation",
+              href: "/ai-agents/social-media-agent"
+            },
+            {
+              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335553/img-10_ajsusz.png" className="max-w-20 max-h-20 rounded-xl" />,
+              title: "Ai SEO Content Agent",
+              description: "SEO Content scheduler",
+              href: "/ai-agents/seo-content-agent"
+            },
+          ]
         }
+      ],
+      footer: {
+        text: "See all features",
+        link: "Explore →",
+        href: "/explore-ai-agent"
       }
-    },
-    {
-      name: "Company",
-      href: "/company",
-      submenu: [
-        { name: "Ecosystem", href: "/company/ecosystem" },
-        { name: "About us", href: "/company/about-us" },
-        { name: "Why choose us", href: "/company/why-choose-us" },
-      ]
-    },
-    {
-      name: "Features",
-      href: "/feature",
-      submenu: [
-        { name: "Workflow Automation", href: "/features/workflowautomation" },
-        { name: "customize workflow", href: "/features/customize-workflow" },
-        { name: "scalability", href: "/features/scalability" },
-        { name: "integration", href: "/features/integrations" },
-        { name: "Advanced Analytics", href: "/features/advanced-analytics" },
-        { name: "Security & Compliance", href: "/features/security-compilance" },
-        { name: "ROI Calculator", href: "/features/roicalculator" },
-        { name: "Product Price Compare", href: "/features/price-compare" },
-      ]
-    },
-    {
-      name: "Industries",
-      href: "industries",
-      submenu: [
-        { name: "Healthcare", href: "/industries/health-care" },
-        { name: "Real Estate", href: "/industries/real-estate" },
-        { name: "Finance", href: "/industries/finance" },
-        { name: "E-commerce", href: "/industries/e-commerce" },
-        { name: "Education", href: "/industries/education" },
-        { name: "Manufacturing", href: "/industries/manufacturing" },
-      ]
-    },
-    {
-      name: "CRM Products",
-      href: "#",
-      submenu: [
-        { name: "Property", href: "https://property.ibigdata.in/", target: "_blank", rel: "noopener noreferrer" },
-        { name: "Consult", href: "https://consult.ibigdata.in/", target: "_blank", rel: "noopener noreferrer" },
-        { name: "Travel", href: "https://travel.ibigdata.in/", target: "_blank", rel: "noopener noreferrer" },
-        { name: "Education", href: "https://edu.ibigdata.in/", target: "_blank", rel: "noopener noreferrer" },
-        { name: "WBH", href: "https://wbh.ibigdata.in/", target: "_blank", rel: "noopener noreferrer" },
-        { name: "airbnb", href: "https://airbnb.ibigdata.in/", target: "_blank", rel: "noopener noreferrer" },
-      ]
-    },
-    { name: "contact us", href: "/contact-us" },
-  ];
+    }
+  },
+  {
+    label: "Features",
+    href: "#features",
+    hasDropdown: true,
+    dropdownContent: {
+      title: "Platform Features",
+      description: "Everything you need to manage customer relationships at scale",
+      sections: [
+        {
+          title: "Automation feature",
+          items: [
+            {
+              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335511/feature-ai-auto-robo_ze335e.png" className="max-w-14 max-h-14" />,
+              title: "AI Automation",
+              description: "your core (agents power)",
+              href: "/features/ai-automation"
+            },
+            {
+              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335566/lead-management-icon_v2yheh.png" className="max-w-14 max-h-14" />,
+              title: "Lead Management",
+              description: "AI-powered real estate main value",
+              href: "/features/smart-lead",
+              badge: "AI"
+            },
+            {
+              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335575/property-icon_cyrnaf.png" className="max-w-14 max-h-14" />,
+              title: "Property Intelligence",
+              description: "Visual deal Property Intelligence",
+              href: "/features/property-ai"
+            }
+          ]
+        },
+        {
+          title: "   .",
+          items: [
+            {
+              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335571/marketing-icon_hsbqzs.png" className="max-w-14 max-h-14" />,
+              title: "Marketing Automation",
+              description: "Automate growth",
+              href: "/features/growth-automation"
+            },
+            {
+              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335598/smart-icon_s79g76.png" className="max-w-14 max-h-14" />,
+              title: "Smart Communication",
+              description: "AI calls, chats, follow-ups",
+              href: "/features/Conversational-ai"
+            },
+            {
+              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335510/analtics-icon_pbc1mb.png" className="max-w-14 max-h-14" />,
+              title: "Analytics & Insights",
+              description: "data + decisions automation",
+              href: "/features/Performance-analytics"
+            }
+          ]
+        }
+      ],
+      footer: {
+        text: "See all features",
+        link: "Explore →",
+        href: "/explore-feature"
+      }
+    }
+  },
+  {
+    label: "Services",
+    href: "#services",
+    hasDropdown: true,
+    dropdownContent: {
+      title: "AI-Powered Services",
+      description: "End-to-end automation systems built with intelligent AI agents",
+      sections: [
+        {
+          title: "Core Services",
+          items: [
+            {
+              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335511/data-mining-icon_duckos.png" className="max-w-12 max-h-12" />,
+              title: "Ai Agents Development",
+              description: "Extract and organize high-quality leads automatically",
+              href: "/services/ai-agents-development"
+            },
+            {
+              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335515/funnal-icon_arbhbv.png" className="max-w-12 max-h-12" />,
+              title: "workforce Automation",
+              description: "Capture, qualify, and convert leads on autopilot",
+              href: "/services/workforce-automation"
+            },
+            {
+              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335513/campaign-auto-solution-icon_ke7mcm.png" className="max-w-12 max-h-12" />,
+              title: "Ai Intigration",
+              description: "Launch and optimize marketing campaigns with AI",
+              href: "/services/ai-integration"
+            }
+          ]
+        },
+        {
+          title: "Growth & Engagement",
+          items: [
+            {
+              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335509/customer-engage-icon_vafyry.png" className="max-w-12 max-h-12" />,
+              title: "Business Process Automation",
+              description: "Automate conversations across chat, calls, and social",
+              href: "/services/business-process-automation"
+            },
+            {
+              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335514/follow-up-icon_gyzki7.png" className="max-w-12 max-h-12" />,
+              title: "Custom Ai Solutions",
+              description: "Never miss a lead with smart follow-up automation",
+              href: "/services/custom-ai-solutions"
+            }
+          ]
+        }
+      ],
+      footer: {
+        text: "Not sure which services fits your business?",
+        link: "Talk to Sales →",
+        href: "/talk-to-sales"
+      }
+    }
+  },
+  {
+    label: "industry",
+    href: "#industry",
+    hasDropdown: true,
+    dropdownContent: {
+      title: "Grow with Ai",
+      description: "industry to help you succeed",
+      sections: [
+        {
+          title: "Support",
+          items: [
+            {
+              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335521/how-it-works-icon_ymaoex.png" className="max-w-12 max-h-12" />,
+              title: "Agencies",
+              description: "Guides and API references",
+              href: "/industry/agencies"
+            },
+            {
+              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335509/about-us-icon_rkp7wa.png" className="max-w-12 max-h-12" />,
+              title: "Customer Success",
+              description: "Step-by-step walkthroughs",
+              href: "/industry/customer-sucess"
+            },
+            {
+              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335509/customer-engage-icon_vafyry.png" className="max-w-12 max-h-12" />,
+              title: "Enterprise",
+              description: "FAQs and troubleshooting",
+              href: "/industry/enterprise"
+            },
+          ]
+        },
+        {
+          title: ".",
+          items: [
+            {
+              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335513/community-icon_r7i3kj.png" className="max-w-12 max-h-12" />,
+              title: "Marketing",
+              description: "Join the conversation",
+              href: "/industry/marketing"
+            },
+            {
+              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335509/customer-engage-icon_vafyry.png" className="max-w-12 max-h-12" />,
+              title: "Sales Team",
+              description: "make a best position",
+              href: "/industry/sales-team"
+            },
+            {
+              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335509/customer-engage-icon_vafyry.png" className="max-w-12 max-h-12" />,
+              title: "StartUp",
+              description: "FAQs and troubleshooting",
+              href: "/industry/startup"
+            },
+          ]
+        }
+      ],
+      footer: {
+        text: "Need personalized help?",
+        link: "Book a Demo →",
+        href: "/book-demo"
+      }
+    }
+  },
+  {
+    label: "Resources",
+    href: "#resources",
+    hasDropdown: true,
+    dropdownContent: {
+      title: "Grow with Ai",
+      description: "Resources to help you succeed",
+      sections: [
+        {
+          title: "Support",
+          items: [
+            {
+              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335521/how-it-works-icon_ymaoex.png" className="max-w-12 max-h-12" />,
+              title: "How-It-Works",
+              description: "Guides and API references",
+              href: "/resources/howitworks"
+            },
+            {
+              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335509/about-us-icon_rkp7wa.png" className="max-w-12 max-h-12" />,
+              title: "About Us",
+              description: "Step-by-step walkthroughs",
+              href: "/resources/about-us"
+            },
+            {
+              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335509/customer-engage-icon_vafyry.png" className="max-w-12 max-h-12" />,
+              title: "Help Center",
+              description: "FAQs and troubleshooting",
+              href: "/resources/help-center"
+            },
+          ]
+        },
+        {
+          title: ".",
+          items: [
+            {
+              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335513/community-icon_r7i3kj.png" className="max-w-12 max-h-12" />,
+              title: "Community",
+              description: "Join the conversation",
+              href: "/resources/community"
+            },
+            {
+              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335509/customer-engage-icon_vafyry.png" className="max-w-12 max-h-12" />,
+              title: "Pricing",
+              description: "make a best position",
+              href: "/resources/pricing"
+            },
+          ]
+        }
+      ],
+      footer: {
+        text: "Need personalized help?",
+        link: "Book a Demo →",
+        href: "/book-demo"
+      }
+    }
+  },
+  {
+    label: "Contact-us",
+    href: "/contact-us",
+    hasDropdown: false,
+  }
+];
 
-  const handleScroll = (id: string) => {
-    const el = document.getElementById(id);
-    if (!el) return;
+function Header() {
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const [openMobileItem, setOpenMobileItem] = useState<string | null>(null);
 
-    const headerOffset = 80;
-    const elementPosition = el.getBoundingClientRect().top;
-    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-    window.scrollTo({ top: offsetPosition, behavior: "smooth" });
-    setMenuOpen(false);
-    setMobileSubmenuOpen(null);
+  const toggleMobileItem = (label: string) => {
+    setOpenMobileItem(prev => (prev === label ? null : label));
   };
 
-  const toggleMobileSubmenu = (name: string) => {
-    setMobileSubmenuOpen(mobileSubmenuOpen === name ? null : name);
+  const handleMouseEnter = (label: string) => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    setActiveDropdown(label);
+    setIsVisible(true);
   };
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setIsVisible(false);
+      setTimeout(() => setActiveDropdown(null), 200);
+    }, 150);
+  };
+
+  const activeItem = navItems.find(item => item.label === activeDropdown);
 
   return (
-    <header className="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm" style={{ zIndex: 999 }}>
-      <div className="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
-          {/* Logo */}
-          <Link
-            href="/"
-            className="text-2xl font-bold tracking-tight bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent hover:from-cyan-700 hover:to-blue-700 transition"
-          >
-           <img src="/aiworksforce-logo.png" alt="aiworksforce-logo" className="w-50"/>
-          </Link>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8 text-sm font-medium text-gray-700">
-            {navLinks.map((link) => (
+    <div className=''>
+      {/* Navigation */}
+      <nav
+        className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white shadow-sm"
+      >
+        <div className="mx-auto px-4 sm:px-2 lg:px-4">
+          <div className="flex justify-between items-center h-16">
+            <div className="flex items-center gap-2">
               <div
-                key={link.name}
-                className="relative group"
-                onMouseEnter={() => (link.submenu || link.hasDropdown) && setActiveSubmenu(link.name)}
-                onMouseLeave={() => setActiveSubmenu(null)}
+                className=" flex items-center justify-center shadow-lg"
+                
               >
-                <button
-                  onClick={() => !link.submenu && !link.hasDropdown && handleScroll(link.href)}
-                  className="flex items-center gap-1 px-1 py-2 text-gray-700 hover:text-cyan-600 transition"
+                <Link href="/">  <img width={230} height={180} src="/aiworksforce-logo.png" /></Link>
+              </div>
+            </div>
+
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex items-center gap-1">
+              {navItems.map((item) => (
+                <div
+                  key={item.label}
+                  className="relative"
+                  onMouseEnter={() => item.hasDropdown && handleMouseEnter(item.label)}
+                  onMouseLeave={() => item.hasDropdown && handleMouseLeave()}
                 >
-                  {!link.submenu && !link.hasDropdown ? (
-                    <Link href={`${link.href}`}>
-                      {link.name}
-                    </Link>
+                  {item.hasDropdown ? (
+                    <button
+                      className={`flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${activeDropdown === item.label
+                        ? "text-brand-purple bg-violet-50"
+                        : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
+                        }`}
+                    >
+                      {item.label}
+                      <ChevronDown
+                        className={`w-4 h-4 transition-transform duration-200 ${activeDropdown === item.label ? "rotate-180" : ""
+                          }`}
+                      />
+                    </button>
                   ) : (
-                    link.name
+                    <Link
+                      href={item.href}
+                      className="px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition"
+                    >
+                      {item.label}
+                    </Link>
                   )}
-                  {(link.submenu || link.hasDropdown) && (
-                    <FiChevronDown className={`w-4 h-4 transition-transform ${activeSubmenu === link.name ? 'rotate-180' : ''}`} />
-                  )}
-                  <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-cyan-600 transition-all group-hover:w-full"></span>
-                </button>
 
-                {/* Simple Dropdown Submenu */}
-                {link.submenu && (
-                  <div
-                    className={`absolute top-full left-0 mt-3 w-56 overflow-hidden bg-white rounded-xl shadow-xl border border-gray-100 transition-all duration-300 ${activeSubmenu === link.name
-                        ? 'opacity-100 translate-y-0 visible'
-                        : 'opacity-0 translate-y-4 invisible'
-                      }`}
-                    style={{ zIndex: 999 }}
-                  >
-                    {link.submenu.map((item) => {
-                      const crm = link.name === "CRM Products";
-                      return (<Link
-                        key={item.name}
-                        href={`${item.href}`}
-                        target={crm ? "_blank" : undefined}
-                        rel={crm ? "noopener noreferrer" : undefined}
-                        onClick={() => setActiveSubmenu(null)}
-                        className="block px-4 py-3 text-gray-700 hover:bg-cyan-50 hover:text-cyan-600 transition-colors"
-                      >
-                        <div className="flex items-center gap-2">
-                          <span>{item.name}</span>
+                  {/* Mega Menu Dropdown */}
+
+                  {activeDropdown === item.label && item.dropdownContent && (
+                    <div className={`absolute top-full left-1/2 -translate-x-1/2 pt-2 w-[720px] transition-all duration-200 ease-out 
+               ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none"}`}>
+
+                      <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
+                        {/* Header */}
+                        <div className="bg-gray-50 px-6 py-4 border-b border-gray-200">
+                          <h3 className="text-lg font-semibold text-gray-900">
+                            {item.dropdownContent.title}
+                          </h3>
+                          <p className="text-sm text-gray-600 mt-1">
+                            {item.dropdownContent.description}
+                          </p>
                         </div>
-                      </Link>)
-                    })}
-                  </div>
-                )}
+                        {/* Content Grid */}
+                        <div className="p-6 grid grid-cols-2 gap-8">
+                          {item.dropdownContent.sections.map((section, idx) => (
+                            <div key={idx} className="space-y-3">
+                              <h4 className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
+                                {section.title}
+                              </h4>
 
-                {/* AI Agents Mega Menu Dropdown */}
-                {link.hasDropdown && link.dropdownContent && (
-                  <div
-                    className={`absolute top-full left-0 mt-3 w-[640px] overflow-hidden bg-white rounded-xl shadow-xl border border-gray-100 transition-all duration-300 ${activeSubmenu === link.name
-                        ? 'opacity-100 translate-y-0 visible'
-                        : 'opacity-0 translate-y-4 invisible'
-                      }`}
-                    style={{ zIndex: 999 }}
-                  >
-                    {/* Header */}
-                    <div className="px-6 py-4 border-b border-gray-100">
-                      <h3 className="text-lg font-semibold text-gray-900">{link.dropdownContent.title}</h3>
-                      <p className="text-sm text-gray-500 mt-1">{link.dropdownContent.description}</p>
+                              <div className="space-y-1">
+                                {section.items.map((subItem, subIdx) => (
+                                  <Link
+                                    key={subIdx}
+                                    href={subItem.href}
+                                    className="group flex items-center gap-2 p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
+                                  >
+                                    <div className="flex-shrink-0 text-brand-purple flex items-center justify-center group-hover:bg-violet-100 transition-colors">
+                                      {subItem.icon}
+                                    </div>
+
+                                    <div className="flex-1 min-w-0">
+                                      <div className="flex items-center gap-2">
+                                        <span className="text-sm font-medium text-gray-900 group-hover:text-brand-purple transition-colors">
+                                          {subItem.title}
+                                        </span>
+
+                                        {subItem.badge && (
+                                          <span className="px-1.5 py-0.5 text-[10px] font-semibold bg-violet-100 text-violet-700 rounded-full">
+                                            {subItem.badge}
+                                          </span>
+                                        )}
+                                      </div>
+
+                                      <p className="text-xs text-gray-400 mt-0.5 line-clamp-1">
+                                        {subItem.description}
+                                      </p>
+                                    </div>
+                                  </Link>
+                                ))}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+
+                        {/* Footer */}
+                        {item.dropdownContent.footer && (
+                          <div className="bg-gray-50 px-6 py-3 border-t border-gray-200 flex items-center justify-between">
+                            <span className="text-sm text-gray-600">
+                              {item.dropdownContent.footer.text}
+                            </span>
+
+                            <Link
+                              href={item.dropdownContent.footer.href}
+                              className="text-sm font-medium text-brand-purple hover:text-violet-700 flex items-center gap-1 group"
+                            >
+                              {item.dropdownContent.footer.link}
+                              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                            </Link>
+                          </div>
+                        )}
+                      </div>
                     </div>
-                    {/* Content */}
-                    <div className="p-6 grid grid-cols-2 gap-6">
-                      {link.dropdownContent.sections.map((section, idx) => (
-                        <div key={idx}>
-                          <h4 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">{section.title}</h4>
-                          <div className="space-y-3">
-                            {section.items.map((item, itemIdx) => (
+                  )}
+                </div>
+              ))}
+            </nav>
+
+            <div className="hidden md:flex items-center gap-4">
+              <Link href="/login">
+                <button className="text-gray-600 hover:text-brand-purple font-medium transition-colors duration-200">
+                  Log in
+                </button></Link>
+              <Link href="/book-demo">
+                <button
+                  className="px-6 py-2 bg-brand-purple hover:bg-violet-700 text-white font-semibold rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl"
+                  style={{
+                    boxShadow: "0 10px 15px -3px rgba(124, 58, 237, 0.25)",
+                  }}
+                >
+                  Demo Request
+                </button></Link>
+            </div>
+
+            <button
+              className="md:hidden p-2 text-gray-600"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
+            </button>
+          </div>
+        </div>
+        {/* humburger */}
+        {/* Overlay */}
+        <div
+          onClick={() => setIsMenuOpen(false)}
+          className={`
+    fixed inset-0 bg-black/50 backdrop-blur-sm z-10
+    transition-opacity duration-300
+    ${isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}
+  `}
+        />
+
+        <div
+          className={`
+    md:hidden
+    bg-white
+    border-t border-gray-200
+    absolute top-0 right-0 w-full max-h-[100vh] overflow-y-auto
+    transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]
+    transform z-20
+    ${isMenuOpen
+              ? "opacity-100 translate-x-0 pointer-events-auto"
+              : "opacity-0 translate-x-full pointer-events-none"}
+  `}
+        >
+          <div className='flex justify-between items-center'>
+            <Link href="/">  <img width={200} height={200} className='p-2' src="/assets/makemylead-logo.png" /></Link>
+            <div onClick={() => {
+              setIsMenuOpen(!isMenuOpen)
+              setOpenMobileItem(null)
+            }
+            } className={`w-fit absolute p-1 right-2 shadow-xl rounded-md bg-violet-100 ${isMenuOpen ? 'block' : 'hidden'}`}> <X className="w-6 h-6 text-violet-800" /></div></div>
+          {/* Mobile Navigation */}
+          <div className="px-4 py-6 space-y-6">
+            {navItems.map((item) => (
+              <div key={item.label} className="space-y-3">
+
+                {/* Check if item has dropdown */}
+                {item.hasDropdown ? (
+                  <>
+                    {/* Dropdown Item - Toggle on click */}
+                    <button
+                      onClick={() => toggleMobileItem(item.label)}
+                      className="w-full flex justify-between items-center text-sm font-semibold text-gray-900 py-2"
+                    >
+                      {item.label}
+                      <ChevronDown
+                        className={`w-4 h-4 transition-transform ${openMobileItem === item.label ? "rotate-180" : ""
+                          }`}
+                      />
+                    </button>
+
+                    {/* Dropdown Content */}
+                    {openMobileItem === item.label && (
+                      <>
+                        {item.dropdownContent?.sections.map((section, idx) => (
+                          <div key={idx} className="space-y-2">
+                            <div className="text-xs uppercase tracking-wide text-gray-400">
+                              {section.title}
+                            </div>
+                            {section.items.map((subItem, subIdx) => (
                               <Link
-                                key={itemIdx}
-                                href={item.href}
-                                onClick={() => setActiveSubmenu(null)}
-                                className="flex items-start gap-3 group/item rounded-lg hover:bg-cyan-50 p-2 -mx-2 transition-colors"
+                                key={subIdx}
+                                href={subItem.href}
+                                onClick={() => setIsMenuOpen(false)}
+                                className="flex items-center gap-2 p-2 rounded-lg hover:bg-gray-100 transition"
                               >
-                                <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center">
-                                  {item.icon}
+                                <div className="text-brand-purple flex items-center justify-center">
+                                  {subItem.icon}
                                 </div>
-                                <div className="flex-1 min-w-0 pl-2">
+                                <div className="flex-1">
                                   <div className="flex items-center gap-2">
-                                    <span className="text-sm font-medium text-gray-700 group-hover/item:text-cyan-600 transition-colors">{item.title}</span>
-                                    {item.badge && (
-                                      <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-cyan-100 text-cyan-700">{item.badge}</span>
+                                    <span className="text-sm font-medium text-gray-900">
+                                      {subItem.title}
+                                    </span>
+                                    {subItem.badge && (
+                                      <span className="px-1.5 py-0.5 text-[10px] font-semibold bg-violet-100 text-violet-700 rounded-full">
+                                        {subItem.badge}
+                                      </span>
                                     )}
                                   </div>
-                                  <p className="text-xs text-gray-500 mt-0.5">{item.description}</p>
+                                  <p className="text-xs text-gray-400">
+                                    {subItem.description}
+                                  </p>
                                 </div>
                               </Link>
                             ))}
                           </div>
-                        </div>
-                      ))}
-                    </div>
-                    {/* Footer */}
-                    <div className="px-6 py-3 bg-gray-50 border-t border-gray-100">
-                      <Link
-                        href={link.dropdownContent.footer.href}
-                        onClick={() => setActiveSubmenu(null)}
-                        className="flex items-center justify-between text-sm font-medium text-cyan-600 hover:text-cyan-700 transition-colors"
-                      >
-                        <span>{link.dropdownContent.footer.text}</span>
-                        <span>{link.dropdownContent.footer.link}</span>
-                      </Link>
-                    </div>
-                  </div>
+                        ))}
+                      </>
+                    )}
+                  </>
+                ) : (
+                  /* No Dropdown - Direct Link */
+                  <Link
+                    href={item.href}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="block w-full text-sm font-semibold text-gray-900 py-2 hover:text-brand-purple transition-colors"
+                  >
+                    {item.label}
+                  </Link>
                 )}
               </div>
             ))}
-          </nav>
 
-          {/* Desktop CTA */}
-          <div className="hidden lg:flex gap-3">
-            <a href="https://property.ibigdata.in/admin">
-              <button
-                onClick={() => handleScroll("contact")}
-                className="inline-flex items-center rounded-lg border-2 border-cyan-600 px-5 py-2 text-sm font-semibold text-cyan-600 hover:bg-cyan-50 transition"
-              >
-                Login
-              </button></a>
-            <Link
-              href="/get-started">
-              <button
-                onClick={() => handleScroll("contact")}
-                className="inline-flex items-center rounded-lg bg-gradient-to-r from-cyan-600 to-blue-600 px-6 py-2 text-sm font-semibold text-white shadow-lg hover:shadow-cyan-500/50 hover:scale-105 transition-all"
-              >
-                Get Started
-              </button>
-            </Link>
-          </div>
-
-          {/* Mobile Menu Toggle */}
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="lg:hidden flex items-center justify-center rounded-lg p-2 text-cyan-600 hover:bg-cyan-50 transition"
-            aria-label="Toggle menu"
-          >
-            {menuOpen ? <FiX className="h-6 w-6" /> : <FiMenu className="h-6 w-6" />}
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Menu Overlay */}
-      {menuOpen && (
-        <div
-          className="lg:hidden fixed inset-0 bg-black/50  z-40 h-screen"
-          style={{ zIndex: 999 }}
-          onClick={() => setMenuOpen(false)}
-        />
-      )}
-
-      {/* Mobile Menu - Slides from Right */}
-      <div
-        className={`lg:hidden fixed  top-0 right-0 h-screen w-80 max-w-[85vw] bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out ${menuOpen ? 'translate-x-0' : 'translate-x-full'
-          }`}
-        style={{ zIndex: 999 }}
-      >
-        {/* Mobile Menu Header */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200">
-          <Link
-            href="/"
-            className="text-xl font-bold bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent"
-            onClick={() => setMenuOpen(false)}
-          >
-            ibigdata
-          </Link>
-          <button
-            onClick={() => setMenuOpen(false)}
-            className="p-2 rounded-lg hover:bg-gray-100 transition"
-          >
-            <FiX className="h-5 w-5 text-gray-600" />
-          </button>
-        </div>
-
-        {/* Mobile Menu Content */}
-        <nav className="flex flex-col px-4 py-6 gap-2 overflow-y-auto h-[calc(100%-180px)]">
-          {navLinks.map((link) => (
-            <div key={link.name}>
-              {/* Menu Item */}
-              <button
-                onClick={() => {
-                  if (link.submenu || link.hasDropdown) {
-                    toggleMobileSubmenu(link.name);
-                  } else {
-                    handleScroll(link.href);
-                  }
-                }}
-                className="w-full flex items-center justify-between px-4 py-3 rounded-lg text-gray-700 hover:bg-cyan-50 hover:text-cyan-600 transition font-medium"
-              >
-                <span>
-                  {!link.submenu && !link.hasDropdown ? (
-                    <Link
-                      onClick={() => setMenuOpen(false)}
-                      href={`${link.href}`}>
-                      {link.name}
-                    </Link>
-                  ) : (
-                    link.name
-                  )}
-                </span>
-                {(link.submenu || link.hasDropdown) && (
-                  <FiChevronDown
-                    className={`w-4 h-4 transition-transform ${mobileSubmenuOpen === link.name ? 'rotate-180' : ''
-                      }`}
-                  />
-                )}
-              </button>
-
-              {/* Simple Submenu Items */}
-              {link.submenu && (
-                <div
-                  className={`overflow-hidden transition-all duration-300 ${mobileSubmenuOpen === link.name
-                      ? 'max-h-96 opacity-100'
-                      : 'max-h-0 opacity-0'
-                    }`}
-                >
-                  <div
-                    onClick={() => setMenuOpen(false)}
-                    className="pl-3">
-                    {link.submenu.map((item) => (
-                      <Link
-                        key={item.name}
-                        href={`${item.href}`}
-                        className="block px-4 py-2.5 text-sm text-gray-600 hover:bg-cyan-50 hover:text-cyan-600 rounded-lg transition"
-                        onClick={() => setMenuOpen(false)}
-                      >
-                        <div className="flex items-center gap-2">
-                          <span>{item.name}</span>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* AI Agents Mega Menu - Mobile */}
-              {link.hasDropdown && link.dropdownContent && (
-                <div
-                  className={`overflow-hidden transition-all duration-300 ${mobileSubmenuOpen === link.name
-                      ? 'max-h-[800px] opacity-100'
-                      : 'max-h-0 opacity-0'
-                    }`}
-                >
-                  <div className="pl-3 py-2 space-y-4">
-                    {link.dropdownContent.sections.map((section, idx) => (
-                      <div key={idx}>
-                        <h4 className="text-xs font-semibold text-gray-400 uppercase tracking-wider px-4 mb-2">{section.title}</h4>
-                        <div className="space-y-1">
-                          {section.items.map((item, itemIdx) => (
-                            <Link
-                              key={itemIdx}
-                              href={item.href}
-                              onClick={() => setMenuOpen(false)}
-                              className="flex items-start gap-3 px-4 py-2.5 rounded-lg hover:bg-cyan-50 transition"
-                            >
-                              <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center">
-                                {item.icon}
-                              </div>
-                              <div className="flex-1 min-w-0 pl-2">
-                                <div className="flex items-center gap-2">
-                                  <span className="text-sm font-medium leading-4 text-gray-700">{item.title}</span>
-                                  {/* {item.badge && (
-                                    <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-cyan-100 text-cyan-700">{item.badge}</span>
-                                  )} */}
-                                </div>
-                                {/* <p className="text-xs text-gray-500">{item.description}</p> */}
-                              </div>
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    ))}
-                    <Link
-                      href={link.dropdownContent.footer.href}
-                      onClick={() => setMenuOpen(false)}
-                      className="flex items-center justify-between px-4 py-2.5 text-sm font-medium text-cyan-600 hover:text-cyan-700"
-                    >
-                      <span>{link.dropdownContent.footer.text}</span>
-                      <span>{link.dropdownContent.footer.link}</span>
-                    </Link>
-                  </div>
-                </div>
-              )}
+            {/* Sticky Bottom Auth Buttons */}
+            <div className='sticky bottom-0 bg-white border-t border-gray-100 pt-4'>
+              <Link href="/login">
+                <button className="w-full py-3 text-gray-600 font-medium">
+                  Log in
+                </button>
+              </Link>
+              <Link href="/book-demo">
+                <button className="w-full py-3 bg-brand-purple text-white font-semibold rounded-xl mt-2">
+                  Demo Request
+                </button>
+              </Link>
             </div>
-          ))}
-        </nav>
-
-        {/* Mobile Menu Footer - CTA Buttons */}
-        <div className="absolute bottom-0 left-0 right-0 px-6 py-4 bg-gradient-to-b from-white via-white to-transparent border-t border-gray-100">
-          <div className="space-y-3">
-            <a onClick={() => setMenuOpen(false)} className="w-full inline-flex items-center justify-center rounded-lg border-2 border-cyan-600 px-4 py-3 text-sm font-semibold text-cyan-600 hover:bg-cyan-50 transition" href="https://property.ibigdata.in/">
-              <button
-                onClick={() => handleScroll("contact")}
-              >
-                Login
-              </button>
-            </a>
-            <Link
-              href="/get-started"
-              onClick={() => setMenuOpen(false)}
-              className="w-full inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-cyan-600 to-blue-600 px-4 py-3 text-sm font-semibold text-white shadow-lg hover:shadow-cyan-500/50 transition"
-            >
-              <button
-                onClick={() => handleScroll("contact")}
-              >
-                Get Started
-              </button>
-            </Link>
           </div>
         </div>
-      </div>
-    </header>
-  );
+      </nav>
+    </div>
+  )
 }
+
+export default Header

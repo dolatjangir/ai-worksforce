@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import AOSProvider from "@/providers/AOSProvider";
-import Header from "@/components/Header/Header";
+
 import Footer from "@/components/Footer/Footer";
 import ScrollProgressBar from "@/components/common/indicators/ScrollProgressBar";
 import ScrollUpButton from "@/components/common/scrollUpButton/ScrollUpButton";
 import WhatsAppChatbot from "@/components/whatsapp-button/whatsapp";
+import Header from "@/components/header/header";
 
 export const metadata = {
   title: "ibigdata CRM",

@@ -295,30 +295,8 @@ const navItems: NavItem[] = [
               href: "/industry/enterprise"
             },
           ]
-        },
-        {
-          title: ".",
-          items: [
-            {
-              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335513/community-icon_r7i3kj.png" className="max-w-12 max-h-12" />,
-              title: "AI Content Creation",
-              description: "Join the conversation",
-              href: "/industry/marketing"
-            },
-            {
-              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335509/customer-engage-icon_vafyry.png" className="max-w-12 max-h-12" />,
-              title: "Sales Team",
-              description: "make a best position",
-              href: "/industry/sales-team"
-            },
-            {
-              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335509/customer-engage-icon_vafyry.png" className="max-w-12 max-h-12" />,
-              title: "StartUp",
-              description: "FAQs and troubleshooting",
-              href: "/industry/startup"
-            },
-          ]
         }
+        
       ],
       footer: {
         text: "Need personalized help?",

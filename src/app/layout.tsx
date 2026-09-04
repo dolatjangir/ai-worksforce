@@ -6,11 +6,12 @@ import Footer from "@/components/Footer/Footer";
 import ScrollProgressBar from "@/components/common/indicators/ScrollProgressBar";
 import ScrollUpButton from "@/components/common/scrollUpButton/ScrollUpButton";
 import WhatsAppChatbot from "@/components/whatsapp-button/whatsapp";
-import Header from "@/components/header/header";
+import Header from "@/components/Header/header";
+
 
 export const metadata = {
-  title: "ibigdata CRM",
-  description: "AI-powered CRM platform",
+  title: "Ai WorksForce",
+  description: "AI-powered worksForce platform",
   manifest: "/manifest.json",
 };
 export function generateViewport() {
@@ -41,7 +42,7 @@ export default function RootLayout({
 
 
           {/* Header / Navigation */}
-          <Header />
+          <Header/>
           <ScrollProgressBar position="sticky" top="top-[64px]" className=" max-md:hidden" zIndex="99" />
           {children}
           {/* Footer */}

@@ -7,8 +7,11 @@ import {
   GraduationCap, Landmark, ShoppingCart, Scale, Briefcase, 
   Truck, Plane, Megaphone, MapPin, ArrowRight
 } from 'lucide-react';
+import CyclingText from '@/components/cyclingtext';
+
 
 export default function Home() {
+  
   return (
     <div className="min-h-screen flex flex-col font-sans">
       
@@ -57,111 +60,117 @@ export default function Home() {
       </header> */}
 
       {/* Hero Section */}
-      <section className="relative w-full overflow-hidden bg-brand-dark">
-        {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-overlay"
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2850&q=80')" }}
-        />
-        
-        <div className="relative z-10 px-4 md:px-12 pt-20 pb-40 md:pt-32 md:pb-48 max-w-7xl mx-auto flex flex-col md:flex-row justify-between">
-          <div className="w-full md:w-[60%] lg:w-[50%]">
-            <span className="inline-block bg-brand-purple/20 text-brand-purple-light border border-brand-purple/30 px-3 py-1 rounded-full text-xs font-bold tracking-wider mb-6">
-              AI-POWERED. HUMAN-DRIVEN. RESULT-FOCUSED.
+     <section className="relative w-full overflow-hidden bg-blue-50">
+  {/* Desktop: Background Image - Right Side */}
+  <div className="hidden md:block absolute top-0 right-0 w-[58%] lg:w-[55%] h-full">
+    <div 
+      className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-90"
+      style={{ backgroundImage: "url('/workforce.png')" }}
+    />
+    {/* Blue-200 shadow on left 18% of image for sharp-corner blend */}
+    <div className="absolute inset-y-0 left-0 w-[18%] bg-gradient-to-r from-blue-50 via-blue-5/40 to-transparent" />
+  </div>
+
+  {/* Mobile: Background image with blue overlay so text stays readable */}
+  <div className="md:hidden absolute inset-0">
+    <div 
+      className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: "url('/workforce.png')" }}
+    />
+    <div className="absolute inset-0 bg-blue-200/85" />
+  </div>
+  
+  <div className="relative z-10 px-5 sm:px-8 md:px-8 pt-20 pb-24 md:pb-32 md:pt-28 lg:pt-32 max-w-7xl mx-auto flex flex-col md:flex-row justify-between">
+    <div className="w-full md:w-[55%] lg:w-[50%] ">
+       <p className="text-xs md:text-sm font-semibold tracking-[0.2em] text-slate-500 uppercase mb-4">
+          Your 24/7 AI Workforce
+        </p>
+       <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-[3.5rem] xl:text-6xl font-bold text-brand-dark leading-[1.1] mb-6">
+          Your AI Workforce & <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Automation Partner</span>
+        </h1>
+       <p className="text-slate-600 text-base md:text-lg mb-8 md:mb-10 max-w-lg leading-relaxed">
+        We help global businesses scale with AI-powered operations, data intelligence, and automation services delivered by our trained teams.
+        </p>
+      
+       <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-12 md:mb-16">
+          <button className="group bg-blue-600 hover:bg-blue-700 text-white px-7 py-3.5 rounded-full font-semibold text-sm md:text-base transition-all duration-300 shadow-lg shadow-blue-600/25 hover:shadow-xl hover:shadow-blue-600/30 hover:-translate-y-0.5 flex items-center justify-center gap-2">
+            Build Your AI Workforce
+            <svg className="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </button>
+          <button className="group border-2 border-slate-300 text-slate-700 hover:border-blue-600 hover:text-blue-600 px-7 py-3.5 rounded-full font-semibold text-sm md:text-base transition-all duration-300 hover:-translate-y-0.5 flex items-center justify-center gap-2 bg-white/60 backdrop-blur-sm">
+            <span className="w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center">
+              <svg className="w-3 h-3 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg>
             </span>
-            <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight mb-6">
-              Your AI Workforce & <br/>Automation Partner <br/>
-              <span className="text-brand-purple-light">from India</span>
-            </h1>
-            <p className="text-slate-300 text-lg mb-10 max-w-xl">
-              We help global businesses scale with AI-powered operations, data intelligence, and automation services delivered by our trained teams from Jaipur.
-            </p>
-            
-            {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10 border-t border-slate-700/50 pt-8">
-              <div>
-                <Users className="text-brand-purple-light mb-2" size={24}/>
-                <div className="text-white font-bold text-lg">100+</div>
-                <div className="text-slate-400 text-xs">Dedicated Seats</div>
-              </div>
-              <div>
-                <Zap className="text-brand-purple-light mb-2" size={24}/>
-                <div className="text-white font-bold text-lg">AI-Powered</div>
-                <div className="text-slate-400 text-xs">Delivery</div>
-              </div>
-              <div>
-                <ShieldCheck className="text-brand-purple-light mb-2" size={24}/>
-                <div className="text-white font-bold text-lg">Secure &</div>
-                <div className="text-slate-400 text-xs">Compliant</div>
-              </div>
-              <div>
-                <Tag className="text-brand-purple-light mb-2" size={24}/>
-                <div className="text-white font-bold text-lg">Cost Effective</div>
-                <div className="text-slate-400 text-xs">High Quality</div>
-              </div>
-            </div> */}
-
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-brand-purple hover:bg-brand-purple-light text-white px-8 py-3 rounded font-semibold transition">
-                Explore Services
-              </button>
-              <button className="border border-white text-white hover:bg-white hover:text-brand-dark px-8 py-3 rounded font-semibold transition">
-                Book a Free Consultation
-              </button>
-            </div>
-          </div>
-          
-          <div className="hidden md:flex flex-col justify-end items-end w-[40%] text-right pt-20">
-             <h2 className="text-slate-300/40 font-black text-6xl uppercase leading-none text-right">
-                AI <br/>DELIVERED. <br/>IMPACT <br/>MULTIPLIED.
-             </h2>
-          </div>
+            See How It Works
+          </button>
         </div>
+          {/* Three Feature Pills */}
+        {/* <div className="flex flex-wrap gap-6 md:gap-8">
+          <div className="flex items-center gap-2.5">
+            <div className="w-9 h-9 rounded-lg bg-blue-100 flex items-center justify-center">
+              <svg className="w-4.5 h-4.5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <div>
+              <p className="text-sm font-bold text-slate-800">Automate</p>
+              <p className="text-xs text-slate-500">Repetitive Work</p>
+            </div>
+          </div>
 
-        {/* Floating Stats Bar */}
-        {/* <div className="absolute bottom-0 left-0 w-full px-4 md:px-12 flex justify-end transform translate-y-1/2 hidden md:flex z-20">
-          <div className="bg-white rounded-xl shadow-xl flex items-center justify-between p-6 gap-12 w-full max-w-4xl mr-12">
-            <div className="flex items-center gap-4">
-              <div className="bg-brand-purple/10 p-3 rounded-full"><Users className="text-brand-purple" size={24}/></div>
-              <div>
-                <div className="font-bold text-brand-dark text-xl">100+</div>
-                <div className="text-slate-500 text-sm">Team Size</div>
-              </div>
+          <div className="flex items-center gap-2.5">
+            <div className="w-9 h-9 rounded-lg bg-indigo-100 flex items-center justify-center">
+              <svg className="w-4.5 h-4.5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
             </div>
-            <div className="w-px h-12 bg-slate-200"></div>
-            <div className="flex items-center gap-4">
-              <div className="bg-brand-purple/10 p-3 rounded-full"><Clock className="text-brand-purple" size={24}/></div>
-              <div>
-                <div className="font-bold text-brand-dark text-xl">24/7</div>
-                <div className="text-slate-500 text-sm">Operations</div>
-              </div>
+            <div>
+              <p className="text-sm font-bold text-slate-800">Boost</p>
+              <p className="text-xs text-slate-500">Productivity</p>
             </div>
-            <div className="w-px h-12 bg-slate-200"></div>
-            <div className="flex items-center gap-4">
-              <div className="bg-brand-purple/10 p-3 rounded-full"><Shield className="text-brand-purple" size={24}/></div>
-              <div>
-                <div className="font-bold text-brand-dark text-xl">99.9%</div>
-                <div className="text-slate-500 text-sm">Data Security</div>
-              </div>
+          </div>
+
+          <div className="flex items-center gap-2.5">
+            <div className="w-9 h-9 rounded-lg bg-purple-100 flex items-center justify-center">
+              <svg className="w-4.5 h-4.5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg>
             </div>
-            <div className="w-px h-12 bg-slate-200"></div>
-            <div className="flex items-center gap-4">
-              <div className="bg-brand-purple/10 p-3 rounded-full"><Globe className="text-brand-purple" size={24}/></div>
-              <div>
-                <div className="font-bold text-brand-dark text-xl">Global</div>
-                <div className="text-slate-500 text-sm">Clientele</div>
-              </div>
+            <div>
+              <p className="text-sm font-bold text-slate-800">Focus on</p>
+              <p className="text-xs text-slate-500">What Matters</p>
             </div>
           </div>
         </div> */}
-      </section>
+         {/* Bottom Tagline */}
+         <div className="mt-10 ">
+          <p className="text-[10px] md:text-xs tracking-[0.3em] text-slate-400 font-medium uppercase">
+            Real Intelligence. Real Impact.
+          </p>
+          <div className="w-12 h-0.5 bg-blue-400/50 mt-2 rounded-full" />
+        </div>
+    </div>
+    
+    {/* Desktop decorative watermark text */}
+    <div className="hidden md:flex flex-col justify-end items-end w-[40%] text-right pt-20 pointer-events-none">
+       <h2 className="text-brand-dark/[0.06] font-black text-5xl lg:text-6xl uppercase leading-none text-right select-none">
+          AI <br/>DELIVERED. <br/>IMPACT <br/>MULTIPLIED.
+       </h2>
+    </div>
+  </div>
+</section>
 
       {/* Trusted By Section */}
-      <section className="bg-slate-50 pt-32 pb-8 px-4 md:px-12 border-b border-slate-200">
+      {/* <section className="bg-slate-50 pt-32 pb-8 px-4 md:px-12 border-b border-slate-200">
         <div className="text-center mb-8">
           <h3 className="text-sm font-bold text-slate-500 uppercase tracking-widest">Trusted by Businesses & Agencies Worldwide</h3>
         </div>
         <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-300">
-           {/* Mock Logos since we can't use images */}
+        
            {['AIVIO', 'LeadGenius', 'PropertyMax', 'medixpro', 'ScaleSphere', 'DigitalPeak', 'CRMBoost'].map((logo, i) => (
              <div key={i} className="flex items-center gap-2 text-slate-800 font-bold text-xl">
                <div className="w-6 h-6 bg-slate-300 rounded-sm"></div>
@@ -169,7 +178,7 @@ export default function Home() {
              </div>
            ))}
         </div>
-      </section>
+      </section> */}
 
       {/* Services Section */}
       <section className="py-24 px-4 md:px-12 bg-white">

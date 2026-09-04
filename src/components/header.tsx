@@ -147,11 +147,11 @@ const navItems: NavItem[] = [
     }
   },
   {
-    label: "Features",
-    href: "#features",
+    label: "Ai WorksForce",
+    href: "#ai-worksForce",
     hasDropdown: true,
     dropdownContent: {
-      title: "Platform Features",
+      title: "Platform Ai WorksForce",
       description: "Everything you need to manage customer relationships at scale",
       sections: [
         {
@@ -222,19 +222,19 @@ const navItems: NavItem[] = [
           items: [
             {
               icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335511/data-mining-icon_duckos.png" className="max-w-12 max-h-12" />,
-              title: "Ai Agents Development",
+              title: "Ai Services",
               description: "Extract and organize high-quality leads automatically",
               href: "/services/ai-agents-development"
             },
             {
               icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335515/funnal-icon_arbhbv.png" className="max-w-12 max-h-12" />,
-              title: "workforce Automation",
+              title: "Ai Development",
               description: "Capture, qualify, and convert leads on autopilot",
               href: "/services/workforce-automation"
             },
             {
               icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335513/campaign-auto-solution-icon_ke7mcm.png" className="max-w-12 max-h-12" />,
-              title: "Ai Intigration",
+              title: "Data & Intelligence",
               description: "Launch and optimize marketing campaigns with AI",
               href: "/services/ai-integration"
             }
@@ -245,13 +245,13 @@ const navItems: NavItem[] = [
           items: [
             {
               icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335509/customer-engage-icon_vafyry.png" className="max-w-12 max-h-12" />,
-              title: "Business Process Automation",
+              title: "Ai Content & Creative",
               description: "Automate conversations across chat, calls, and social",
               href: "/services/business-process-automation"
             },
             {
               icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335514/follow-up-icon_gyzki7.png" className="max-w-12 max-h-12" />,
-              title: "Custom Ai Solutions",
+              title: "Ai consulting",
               description: "Never miss a lead with smart follow-up automation",
               href: "/services/custom-ai-solutions"
             }
@@ -266,8 +266,8 @@ const navItems: NavItem[] = [
     }
   },
   {
-    label: "industry",
-    href: "#industry",
+    label: "Products",
+    href: "#products",
     hasDropdown: true,
     dropdownContent: {
       title: "Grow with Ai",
@@ -278,19 +278,19 @@ const navItems: NavItem[] = [
           items: [
             {
               icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335521/how-it-works-icon_ymaoex.png" className="max-w-12 max-h-12" />,
-              title: "Agencies",
+              title: "CRM Agencies",
               description: "Guides and API references",
               href: "/industry/agencies"
             },
             {
               icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335509/about-us-icon_rkp7wa.png" className="max-w-12 max-h-12" />,
-              title: "Customer Success",
+              title: "AI Agents",
               description: "Step-by-step walkthroughs",
               href: "/industry/customer-sucess"
             },
             {
               icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335509/customer-engage-icon_vafyry.png" className="max-w-12 max-h-12" />,
-              title: "Enterprise",
+              title: "Ai Tools",
               description: "FAQs and troubleshooting",
               href: "/industry/enterprise"
             },
@@ -301,7 +301,7 @@ const navItems: NavItem[] = [
           items: [
             {
               icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335513/community-icon_r7i3kj.png" className="max-w-12 max-h-12" />,
-              title: "Marketing",
+              title: "AI Content Creation",
               description: "Join the conversation",
               href: "/industry/marketing"
             },
@@ -328,12 +328,12 @@ const navItems: NavItem[] = [
     }
   },
   {
-    label: "Resources",
-    href: "#resources",
+    label: "Company",
+    href: "#company",
     hasDropdown: true,
     dropdownContent: {
       title: "Grow with Ai",
-      description: "Resources to help you succeed",
+      description: "company to help you succeed",
       sections: [
         {
           title: "Support",
@@ -363,13 +363,13 @@ const navItems: NavItem[] = [
           items: [
             {
               icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335513/community-icon_r7i3kj.png" className="max-w-12 max-h-12" />,
-              title: "Community",
+              title: "our Team",
               description: "Join the conversation",
               href: "/resources/community"
             },
             {
               icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335509/customer-engage-icon_vafyry.png" className="max-w-12 max-h-12" />,
-              title: "Pricing",
+              title: "Careers & Apply",
               description: "make a best position",
               href: "/resources/pricing"
             },
@@ -422,7 +422,7 @@ function Header() {
     <div className=''>
       {/* Navigation */}
       <nav
-        className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white shadow-sm"
+        className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white "
       >
         <div className="mx-auto px-4 sm:px-2 lg:px-4">
           <div className="flex justify-between items-center h-16">

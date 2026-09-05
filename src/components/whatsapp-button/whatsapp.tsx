@@ -41,7 +41,7 @@ const QUICK_REPLIES = [
 const WELCOME_MESSAGE: Message = {
   id: 'welcome',
   type: 'bot',
-  text: "👋 Welcome to iBigData!\n\nI'm your AI assistant, here to help you discover how our intelligent agents can transform your real estate business.\n\nWhat brings you here today?",
+  text: "👋 Welcome to AI WorkForce!\n\nI'm your AI assistant, here to help you discover how our intelligent agents can transform your real estate business.\n\nWhat brings you here today?",
   time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
   quickReplies: true,
   showForm: false
@@ -238,7 +238,7 @@ export default function WhatsAppChatbot() {
         {
           id: Date.now().toString(),
           type: "bot",
-          text: "❌ Something went wrong. Please try again or contact us directly at sale@ibigdata.com",
+          text: "❌ Something went wrong. Please try again or contact us directly at sale@aiworkForce.com",
           time: new Date().toLocaleTimeString([], {
             hour: "2-digit",
             minute: "2-digit",
@@ -258,33 +258,42 @@ export default function WhatsAppChatbot() {
 
   // Floating Button
    // Button visible state
-   if (showButton && !isOpen) {
-    return (
-      <div className={`fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 transition-all duration-500 `}>
-        {/* Main Pill Button */}
-        <button
-          onClick={handleOpen}
-          className="relative group flex items-center pl-10 pr-5 py-2.5 sm:pl-14 sm:pr-8 sm:py-3.5 bg-[#3B82F6] hover:bg-[#2563EB] rounded-full shadow-2xl shadow-blue-500/30 hover:shadow-blue-500/50 transition-all duration-300 hover:scale-105 active:scale-95"
-        >
-          {/* Robot Image - Peeking from left side */}
-          <img 
-            src="/assets/half-robo.png" 
-            alt="AI Assistant" 
-            className="absolute -left-5 sm:-left-7 top-[32%] -translate-y-1/2 w-16 h-16 sm:w-24 sm:h-24 object-contain drop-shadow-xl pointer-events-none select-none"
-          />
+  {/* Floating Button */}
+if (showButton && !isOpen) {
+  return (
+    <div className="fixed bottom-0 right-0 sm:bottom-0 sm:right-0 z-50">
+      <button
+        onClick={handleOpen}
+        className="
+          relative
+          flex items-center
+          w-[110px] sm:w-[240px]
+          h-20 sm:h-32
+          cursor-pointer
+          active:scale-95
+          transition-transform
+        "
+      >
+        <img
+          src="/chatbot-img.png"
+          alt="AI Assistant"
+          className="
+            absolute
           
-          <span className="text-white font-bold text-sm sm:text-lg tracking-wide ml-2">
-            Connect Now
-          </span>
-        </button>
+            w-24 
+            sm:w-54 
+            object-contain
+            drop-shadow-xl
+            pointer-events-none
+            select-none
+          "
+        />
 
-        {/* Gold Notification Badge */}
-        <div className="absolute -top-1 -right-1 w-5 h-5 sm:w-7 sm:h-7 bg-gradient-to-b from-[#FDE68A] via-[#F59E0B] to-[#B45309] rounded-full flex items-center justify-center shadow-lg border-2 border-white z-10">
-          <span className="text-white font-bold text-xs sm:text-base drop-shadow-sm">1</span>
-        </div>
-      </div>
-    )
-  }
+      
+      </button>
+    </div>
+  )
+}
   // Compact Chat Widget Panel
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-4">
@@ -304,7 +313,7 @@ export default function WhatsAppChatbot() {
               <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-400 rounded-full border-2 border-[#0066cc]" />
             </div>
             <div>
-              <h3 className="font-bold text-white text-sm">iBigData Assistant</h3>
+              <h3 className="font-bold text-white text-sm">AI WorkForce Assistant</h3>
               <p className="text-blue-100 text-xs flex items-center gap-1">
                 <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
                 Online now

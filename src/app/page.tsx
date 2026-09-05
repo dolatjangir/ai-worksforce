@@ -5,7 +5,17 @@ import {
   Database, Search, Bot, Headset, Rocket, UserCheck, 
   Cpu, Maximize, DollarSign, Activity, Building2, Heart, 
   GraduationCap, Landmark, ShoppingCart, Scale, Briefcase, 
-  Truck, Plane, Megaphone, MapPin, ArrowRight
+  Truck, Plane, Megaphone, MapPin, ArrowRight,
+  Sparkles,
+  Cog,
+  MessageSquare,
+  BarChart3,
+  Pencil,
+  Brain,
+  LayoutGrid,
+  Factory,
+  Leaf,
+  HomeIcon
 } from 'lucide-react';
 import CyclingText from '@/components/cyclingtext';
 
@@ -181,42 +191,89 @@ export default function Home() {
       </section> */}
 
       {/* Services Section */}
-      <section className="py-24 px-4 md:px-12 bg-white">
-        <div className="text-center mb-16">
-          <span className="text-brand-purple font-bold text-sm tracking-wider uppercase flex items-center justify-center gap-2">
-            <span className="w-4 h-px bg-brand-purple"></span> What We Do <span className="w-4 h-px bg-brand-purple"></span>
-          </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-brand-dark mt-4">Our AI-Powered Services</h2>
-        </div>
+  <section className="py-12 px-4 md:px-12 bg-white">
+  <div className="text-center mb-8">
+    <span className="text-brand-purple font-bold text-sm tracking-wider uppercase flex items-center justify-center gap-2">
+      <span className="w-4 h-px bg-brand-purple"></span> AI Capabilities <span className="w-4 h-px bg-brand-purple"></span>
+    </span>
+    <h2 className="text-3xl md:text-4xl font-extrabold text-brand-dark mt-4">What Can Your AI Workforce Do?</h2>
+    <p className="text-slate-500 mt-4 max-w-2xl mx-auto text-base">
+      From thinking and creating to analyzing and automating, bring the right intelligence to every task.
+    </p>
+  </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-3 max-w-7xl mx-auto">
-          {[
-            { icon: <Database/>, title: "AI Data Operations", desc: "Data annotation, AI evaluation, labeling, validation, enrichment and transcription at scale.", color: "bg-purple-100 text-purple-600" },
-            { icon: <Search/>, title: "AI KPO & Research", desc: "Market research, lead intelligence, data analytics, company profiling and business insights.", color: "bg-green-100 text-green-600" },
-            { icon: <Bot/>, title: "AI Automation", desc: "AI agents, workflow automation, CRM automation, WhatsApp, email & calling automation.", color: "bg-blue-100 text-blue-600" },
-            { icon: <Headset/>, title: "AI-BPO Services", desc: "Lead qualification, customer support, verification, data entry, back-office and more.", color: "bg-orange-100 text-orange-600" },
-            { icon: <Rocket/>, title: "White-label AI Agency", desc: "You sell, we build. White-label AI solutions for agencies worldwide.", color: "bg-pink-100 text-pink-600" },
-            { icon: <Users/>, title: "Dedicated AI Teams", desc: "10/25/50/100 seat managed teams with TL, QA, tools and reporting.", color: "bg-teal-100 text-teal-600" }
-          ].map((srv, i) => (
-            <div key={i} className="border border-slate-100 rounded-2xl p-2 hover:shadow-xl transition-shadow bg-white text-center flex flex-col items-center">
-              <div className={`w-16 h-16 rounded-full flex items-center justify-center mb-6 ${srv.color}`}>
-                {srv.icon}
-              </div>
-              <h3 className="text-xl font-bold text-brand-dark mb-4">{srv.title}</h3>
-              <p className="text-slate-600 text-sm mb-6 leading-relaxed flex-grow">{srv.desc}</p>
-              <a href="#" className="text-brand-purple font-semibold text-sm flex items-center gap-1 hover:gap-2 transition-all">
-                Learn More <ArrowRight size={16}/>
-              </a>
-            </div>
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4 max-w-7xl mx-auto">
+    {[
+      { 
+        icon: <Brain size={24}/>, 
+        title: "Think", 
+        desc: "Research, reason and make better decisions.", 
+        features: ["Research Agent", "Decision Support", "Problem Solving"],
+        gradient: "from-purple-400 to-purple-600" 
+      },
+      { 
+        icon: <Pencil size={24}/>, 
+        title: "Create", 
+        desc: "Turn ideas into content in seconds.", 
+        features: ["AI Content", "Images & Video", "Copywriting"],
+        gradient: "from-pink-400 to-rose-500" 
+      },
+      { 
+        icon: <BarChart3 size={24}/>, 
+        title: "Analyze", 
+        desc: "Turn data into meaningful insights and reports.", 
+        features: ["Data Analysis", "Document Analysis", "Predictive Insights"],
+        gradient: "from-blue-400 to-blue-600" 
+      },
+      { 
+        icon: <MessageSquare size={24}/>, 
+        title: "Talk", 
+        desc: "Communicate naturally with text or voice.", 
+        features: ["AI Chatbots", "Voice AI", "Calling Agents"],
+        gradient: "from-teal-400 to-cyan-500" 
+      },
+      { 
+        icon: <Cog size={24}/>, 
+        title: "Automate", 
+        desc: "Let AI handle repetitive work and workflows.", 
+        features: ["Workflow Automation", "RPA", "Process Automation"],
+        gradient: "from-orange-400 to-amber-500" 
+      },
+      { 
+        icon: <Sparkles size={24}/>, 
+        title: "Assist", 
+        desc: "Get AI support for everyday personal and business tasks.", 
+        features: ["AI Assistant", "Personal Assistant", "Task Scheduler"],
+        gradient: "from-violet-400 to-purple-500" 
+      }
+    ].map((item, i) => (
+      <div key={i} className="border border-slate-100 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 bg-white flex flex-col items-start group">
+        <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${item.gradient} flex items-center justify-center mb-5 text-white shadow-lg`}>
+          {item.icon}
+        </div>
+        <h3 className="text-lg font-bold text-brand-dark mb-2">{item.title}</h3>
+        <p className="text-slate-500 text-sm mb-4 leading-relaxed">{item.desc}</p>
+        <ul className="text-slate-500 text-sm space-y-1 mb-6 flex-grow">
+          {item.features.map((feat, j) => (
+            <li key={j} className="flex items-center gap-2">
+              <span className="w-1 h-1 rounded-full bg-slate-300"></span>
+              {feat}
+            </li>
           ))}
-        </div>
-        
-        <div className="text-center mt-12">
-          <button className="bg-brand-dark text-white px-8 py-3 rounded font-semibold hover:bg-slate-800 transition shadow-lg">
-            View All Services
-          </button>
-        </div>
-      </section>
+        </ul>
+        <a href="#" className="text-brand-purple font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all duration-300 mt-auto">
+          Learn More <ArrowRight size={16}/>
+        </a>
+      </div>
+    ))}
+  </div>
+  
+  <div className="text-center mt-12">
+    <button className="bg-white border border-slate-200 text-brand-dark px-8 py-3 rounded-full font-semibold hover:bg-slate-50 hover:border-brand-purple hover:text-brand-purple transition shadow-sm flex items-center gap-2 mx-auto">
+      Explore All AI Services <ArrowRight size={18}/>
+    </button>
+  </div>
+</section>
 
       {/* Why Choose Us */}
       <section className="py-24 px-4 md:px-12 bg-slate-50 border-t border-slate-100">
@@ -248,34 +305,47 @@ export default function Home() {
       </section>
 
       {/* Industries Section */}
-      <section className="py-24 px-4 md:px-12 bg-white border-t border-slate-100">
-         <div className="text-center mb-16">
-          <span className="text-brand-purple font-bold text-sm tracking-wider uppercase flex items-center justify-center gap-2">
-            <span className="w-4 h-px bg-brand-purple"></span> Industries We Serve <span className="w-4 h-px bg-brand-purple"></span>
-          </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-brand-dark mt-4">Industry-Focused AI Solutions</h2>
-        </div>
+     <section className="py-12 px-4 md:px-12 bg-slate-50">
+  <div className="text-center mb-8">
+    <span className="text-brand-purple font-bold text-sm tracking-wider uppercase flex items-center justify-center gap-2">
+      <span className="w-4 h-px bg-brand-purple"></span> Industries <span className="w-4 h-px bg-brand-purple"></span>
+    </span>
+    <h2 className="text-3xl md:text-4xl font-extrabold text-brand-dark mt-4">AI Built for Every Industry</h2>
+    <p className="text-slate-500 mt-4 max-w-2xl mx-auto text-base">
+      From startups to enterprises, AIWorkforce adapts to the way you work.
+    </p>
+  </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-10 gap-4 max-w-7xl mx-auto">
-          {[
-            { icon: <Building2 size={32}/>, name: "Real Estate" },
-            { icon: <Heart size={32}/>, name: "Healthcare" },
-            { icon: <GraduationCap size={32}/>, name: "Education" },
-            { icon: <Landmark size={32}/>, name: "Finance &\nInsurance" },
-            { icon: <ShoppingCart size={32}/>, name: "E-commerce" },
-            { icon: <Scale size={32}/>, name: "Legal" },
-            { icon: <Briefcase size={32}/>, name: "Recruitment" },
-            { icon: <Truck size={32}/>, name: "Logistics" },
-            { icon: <Plane size={32}/>, name: "Travel &\nHospitality" },
-            { icon: <Megaphone size={32}/>, name: "Marketing\nAgencies" }
-          ].map((ind, i) => (
-            <div key={i} className="flex flex-col items-center justify-center text-center p-4 rounded-xl hover:bg-slate-50 transition cursor-pointer border border-transparent hover:border-slate-100">
-              <div className="text-brand-purple/70 mb-4">{ind.icon}</div>
-              <span className="text-xs font-bold text-brand-dark whitespace-pre-line">{ind.name}</span>
-            </div>
-          ))}
+  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-7xl mx-auto">
+    {[
+      { icon: <GraduationCap  className="w-5 h-5 text-gray-800" />, title: "Education" },
+      { icon: <Heart className="w-5 h-5 text-blue-700" />, title: "Healthcare" },
+      { icon: <Landmark className="w-5 h-5 text-blue-900" />, title: "Finance" },
+      { icon: <HomeIcon className="w-5 h-5 text-pink-800" />, title: "Real Estate" },
+      { icon: <ShoppingCart className="w-5 h-5 text-purple-600" />, title: "E-commerce" },
+      { icon: <Leaf className="w-5 h-5 text-green-500" />, title: "Agriculture" },
+      { icon: <Factory className="w-5 h-5 text-fuchsia-500" />, title: "Manufacturing" },
+      { icon: <Users className="w-5 h-5 text-blue-500" />, title: "Recruitment" },
+      { icon: <Truck className="w-5 h-5 text-yellow-500" />, title: "Logistics" },
+      { icon: <Plane className="w-5 h-5 text-indigo-500" />, title: "Travel & Hospitality" },
+      { icon: <Megaphone className="w-5 h-5 text-blue-950" />, title: "Marketing Agencies" },
+      { icon: <LayoutGrid className="w-5 h-5 text-teal-600 " />, title: "More Industries" }
+    ].map((ind, i) => (
+      <div key={i} className="border border-slate-200 rounded-xl p-4 bg-white hover:shadow-md transition-all duration-300 flex items-center gap-3 cursor-pointer">
+        <div className="text-slate-700">
+          {ind.icon}
         </div>
-      </section>
+        <span className="text-slate-700 font-medium text-sm">{ind.title}</span>
+      </div>
+    ))}
+  </div>
+
+  <div className="text-center mt-12">
+    <button className="bg-white border border-brand-purple text-brand-purple px-8 py-3 rounded-full font-semibold hover:border-brand-purple-light hover:text-brand-purple-light transition shadow-sm flex items-center gap-2 mx-auto">
+      Explore All Industries <ArrowRight size={18}/>
+    </button>
+  </div>
+</section>
 
       {/* Bottom CTA */}
       <section className="bg-white py-8 px-4 md:px-6">

@@ -83,7 +83,7 @@ export default function Home() {
   <div className="relative z-10 px-5 sm:px-8 md:px-8 pt-20 pb-24 md:pb-32 md:pt-28 lg:pt-32 max-w-7xl mx-auto flex flex-col md:flex-row justify-between">
     <div className="w-full md:w-[55%] lg:w-[50%] ">
        <p className="text-xs md:text-sm font-semibold tracking-[0.2em] text-slate-500 uppercase mb-4">
-          Your 24/7 AI Workforce
+          Your 24/7 AI <CyclingText/>
         </p>
        <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-[3.5rem] xl:text-6xl font-bold text-brand-dark leading-[1.1] mb-6">
           Your AI Workforce & <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Automation Partner</span>

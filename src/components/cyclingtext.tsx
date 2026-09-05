@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from 'react';
 
 const words = ["Workforce", "Assistant", "Partner", "Team", "Solution", "Engine"];
-const LINE_HEIGHT_EM = 1.2;
+const LINE_HEIGHT_EM = 1.5;
 
 export default function CyclingText() {
   const [index, setIndex] = useState(0);

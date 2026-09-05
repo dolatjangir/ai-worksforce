@@ -68,76 +68,63 @@ const navItems: NavItem[] = [
     href: "#ai-agents",
     hasDropdown: true,
     dropdownContent: {
-    
       sections: [
         {
-          
           items: [
             {
               icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335520/img-1_nz99v7.png" className="max-w-20 max-h-20" />,
               title: "Ai Lead Qualification Agent",
-              
               href: "/ai-agents/lead-qualifiction-agent"
             },
             {
               icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335520/img-2_l1xdll.png" className="max-w-20 max-h-20" />,
               title: "Ai Property Matching Agent",
-              
               href: "/ai-agents/property-maching-agent",
               badge: "AI"
             },
             {
               icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335520/img-3_scja92.png" className="max-w-20 max-h-20" />,
               title: "Lead Capture Agent",
-              
               href: "/ai-agents/lead-capture-agent"
             },
             {
               icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335521/img-4_damgxf.png" className="max-w-20 max-h-20" />,
               title: "Ai Content Creation Agent",
-              
               href: "/ai-agents/content-creation-agent"
             },
             {
               icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335553/img-555_kabvyd.png" className="max-w-20 max-h-20" />,
               title: "Ai  Follow-Up Agent",
-             
               href: "/ai-agents/follow-up-agent",
               badge: "AI"
             },
           ]
         },
         {
-         
           items: [
             {
               icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335521/img-6_mky5rb.png" className="max-w-20 max-h-20" />,
               title: "Ai Calling Agent",
-             
               href: "/ai-agents/calling-agent"
             },
             {
               icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335523/img-7_xjwzbl.png" className="max-w-20 max-h-20" />,
               title: "Ai Campaign Automation Agent",
-              
               href: "/ai-agents/campaign-automation"
             },
             {
               icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335552/img-8_twulvb.png" className="max-w-20 max-h-20" />,
               title: "Data Mining Agent",
-             
               href: "/ai-agents/data-mining-agent"
             },
             {
               icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335553/img-9_i1wlut.png" className="max-w-20 max-h-20" />,
               title: "Social Media Agent",
-              
               href: "/ai-agents/social-media-agent"
             },
             {
               icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335553/img-10_ajsusz.png" className="max-w-20 max-h-20 rounded-xl" />,
               title: "Ai SEO Content Agent",
-              
               href: "/ai-agents/seo-content-agent"
             },
           ]
@@ -155,40 +142,32 @@ const navItems: NavItem[] = [
     href: "#ai-workForce",
     hasDropdown: true,
     dropdownContent: {
-    
       sections: [
         {
-          
           items: [
             {
               title: "AI Automation",
-             
               href: "/features/ai-automation"
             },
             {
               title: "Lead Management",
-              
               href: "/features/smart-lead",
               badge: "AI"
             },
             {
               title: "Property Intelligence",
-              
               href: "/features/property-ai"
             }
           ]
         },
         {
-         
           items: [
             {
               title: "Marketing Automation",
-             
               href: "/features/growth-automation"
             },
             {
               title: "Smart Communication",
-              
               href: "/features/Conversational-ai"
             },
             {
@@ -210,10 +189,8 @@ const navItems: NavItem[] = [
     href: "#services",
     hasDropdown: true,
     dropdownContent: {
-      
       sections: [
         {
-         
           items: [
             {
               title: "Ai Services",
@@ -230,7 +207,6 @@ const navItems: NavItem[] = [
           ]
         },
         {
-         
           items: [
             {
               title: "Ai Content & Creative",
@@ -255,10 +231,8 @@ const navItems: NavItem[] = [
     href: "#products",
     hasDropdown: true,
     dropdownContent: {
-    
       sections: [
         {
-        
           items: [
             {
               title: "CRM",
@@ -296,7 +270,6 @@ const navItems: NavItem[] = [
             },
           ]
         }
-        
       ],
       footer: {
         text: "",
@@ -310,10 +283,8 @@ const navItems: NavItem[] = [
     href: "#company",
     hasDropdown: true,
     dropdownContent: {
-     
       sections: [
         {
-         
           items: [
             {
               title: "How-It-Works",
@@ -330,7 +301,6 @@ const navItems: NavItem[] = [
           ]
         },
         {
-       
           items: [
             {
               title: "our Team",
@@ -349,6 +319,11 @@ const navItems: NavItem[] = [
         href: "/book-demo"
       }
     }
+  },
+  {
+    label: "Pricing",
+    href: "/pricing",
+    hasDropdown: false,
   },
   {
     label: "Contact-us",
@@ -405,7 +380,6 @@ function Header() {
             <div className="flex items-center gap-2">
               <div
                 className=" flex items-center justify-center "
-                
               >
                 <Link href="/">  <img width={220} height={150} src="/aiworksforce-logo.png" /></Link>
               </div>
@@ -443,22 +417,17 @@ function Header() {
                   )}
 
                   {/* Mega Menu Dropdown */}
-
                   {activeDropdown === item.label && item.dropdownContent && (
                     <div className={`absolute top-full left-1/2 -translate-x-1/2 pt-2 transition-all duration-200 ease-out 
-               ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none"}
-               ${item.label === "Products" ? (activeSubmenu ? "w-[480px]" : "w-64") : "w-[620px]"}`}>
+                      ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none"}
+                      ${item.label === "Products" 
+                        ? (activeSubmenu ? "w-[480px]" : "w-64") 
+                        : item.label === "Ai Agents" 
+                          ? "w-[620px]" 
+                          : "w-[480px]"
+                      }`}>
 
                       <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
-                        {/* Header */}
-                        {/* <div className="bg-gray-50 px-6 py-4 border-b border-gray-200">
-                          <h3 className="text-lg font-semibold text-gray-900">
-                            {item.dropdownContent.title}
-                          </h3>
-                          <p className="text-sm text-gray-600 mt-1">
-                            {item.dropdownContent.description}
-                          </p>
-                        </div> */}
                         {/* Content Grid */}
                         {item.label === "Products" ? (
                           <div className="flex">
@@ -520,10 +489,6 @@ function Header() {
                           <div className="p-6 grid grid-cols-2 gap-8">
                             {item.dropdownContent.sections.map((section, idx) => (
                               <div key={idx} className="space-y-3">
-                                {/* <h4 className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
-                                  {section.title}
-                                </h4> */}
-
                                 <div className="space-y-1">
                                   {section.items.map((subItem, subIdx) => (
                                     <Link
@@ -547,10 +512,6 @@ function Header() {
                                             </span>
                                           )}
                                         </div>
-
-                                        {/* <p className="text-xs text-gray-400 mt-0.5 line-clamp-1">
-                                          {subItem.description}
-                                        </p> */}
                                       </div>
                                     </Link>
                                   ))}
@@ -616,24 +577,24 @@ function Header() {
         <div
           onClick={() => setIsMenuOpen(false)}
           className={`
-    fixed inset-0 bg-black/50 backdrop-blur-sm z-10
-    transition-opacity duration-300
-    ${isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}
-  `}
+            fixed inset-0 bg-black/50 backdrop-blur-sm z-10
+            transition-opacity duration-300
+            ${isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}
+          `}
         />
 
         <div
           className={`
-    md:hidden
-    bg-white
-    border-t border-gray-200
-    absolute top-0 right-0 w-full max-h-[100vh] overflow-y-auto
-    transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]
-    transform z-20
-    ${isMenuOpen
+            md:hidden
+            bg-white
+            border-t border-gray-200
+            absolute top-0 right-0 w-full max-h-[100vh] overflow-y-auto
+            transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]
+            transform z-20
+            ${isMenuOpen
               ? "opacity-100 translate-x-0 pointer-events-auto"
               : "opacity-0 translate-x-full pointer-events-none"}
-  `}
+          `}
         >
           <div className='flex justify-between items-center'>
             <Link href="/">  <img width={200} height={200} className='p-2' src="/assets/makemylead-logo.png" /></Link>
@@ -668,9 +629,6 @@ function Header() {
                       <>
                         {item.dropdownContent?.sections.map((section, idx) => (
                           <div key={idx} className="space-y-2">
-                            {/* <h4 className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
-                              {section.title}
-                            </h4> */}
                             {section.items.map((subItem, subIdx) => (
                               <div key={subIdx}>
                                 {subItem.children ? (
@@ -727,9 +685,6 @@ function Header() {
                                           </span>
                                         )}
                                       </div>
-                                      {/* <p className="text-xs text-gray-400">
-                                        {subItem.description}
-                                      </p> */}
                                     </div>
                                   </Link>
                                 )}

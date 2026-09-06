@@ -1,774 +1,1261 @@
 "use client";
 
-import React from "react";
+import { useState } from "react";
+import {
+  ArrowDown,
+  ArrowRight,
+  Bot,
+  Building2,
+  Check,
+  ChevronDown,
+  ChevronRight,
+  Clock3,
+  Cpu,
+  Database,
+  Facebook,
+  Globe2,
+  Headphones,
+  Instagram,
+  Linkedin,
+  Mail,
+  MapPin,
+  Menu,
+  MessageCircle,
+  Network,
+  Phone,
+  Play,
+  Search,
+  Settings,
+  ShieldCheck,
+  Sparkles,
+  Target,
+  Users,
+  Workflow,
+  X,
+  Youtube,
+  Zap,
+} from "lucide-react";
 
-const heroImage =
-  "/aiworkforce-hero-img.png";
+export default function Home() {
+  const [mobileMenu, setMobileMenu] = useState(false);
 
-const deliveryImage =
-  "/home-cta-right-img.png";
+  const services = [
+    {
+      icon: Database,
+      title: "AI Data Operations",
+      text: "Data mining, annotation, validation, enrichment and processing.",
+      tone: "blue",
+    },
+    {
+      icon: Search,
+      title: "AI Research & KPO",
+      text: "Market research, web research, competitor research and business intelligence.",
+      tone: "blue",
+    },
+    {
+      icon: Settings,
+      title: "AI Automation",
+      text: "AI agents, CRM automation, WhatsApp automation, workflow automation and API integration.",
+      tone: "blue",
+    },
+    {
+      icon: Headphones,
+      title: "AI Customer Operations",
+      text: "Lead qualification, customer support, appointment setting and back-office operations.",
+      tone: "blue",
+    },
+    {
+      icon: Target,
+      title: "AI Lead Operations",
+      text: "Data mining, lead enrichment, AI research, lead qualification and outreach.",
+      tone: "pink",
+      new: true,
+    },
+    {
+      icon: Users,
+      title: "White-Label Delivery",
+      text: "For AI agencies, digital agencies, BPO/KPO companies and consultants.",
+      tone: "blue",
+      partner: true,
+    },
+  ];
 
-const industries = [
-  ["◈", "AI & Technology Companies"],
-  ["⌘", "Digital & AI Agencies"],
-  ["▥", "Real Estate"],
-  ["♙", "Recruitment"],
-  ["▣", "Ecommerce"],
-  ["◇", "Education"],
-  ["♙", "Professional Services"],
-  ["✣", "BPO & KPO Companies"],
-];
+  const process = [
+    {
+      number: "1",
+      title: "DISCOVER",
+      text: "Understand your work and business goals.",
+    },
+    {
+      number: "2",
+      title: "DESIGN",
+      text: "Build the AI workflow and delivery plan.",
+    },
+    {
+      number: "3",
+      title: "ENABLE",
+      text: "Configure tools, train operators and set up teams.",
+    },
+    {
+      number: "4",
+      title: "OPERATE",
+      text: "We manage delivery, QA and reporting.",
+    },
+    {
+      number: "5",
+      title: "SCALE",
+      text: "Improve and expand your business growth.",
+    },
+  ];
 
-const services = [
-  {
-    icon: "◉",
-    color: "blue",
-    title: "AI Data Operations",
-    items: [
-      "Data annotation",
-      "Data validation",
-      "Data enrichment",
-      "Content classification",
-      "Document processing",
-    ],
-    link: "Learn More",
-  },
-  {
-    icon: "⌕",
-    color: "green",
-    title: "AI Research & KPO",
-    items: [
-      "Market research",
-      "Web research",
-      "Competitive Intelligence",
-      "Lead intelligence",
-      "Business research",
-    ],
-    link: "Learn More",
-  },
-  {
-    icon: "⚙",
-    color: "purple",
-    title: "AI Automation",
-    items: [
-      "AI agents",
-      "CRM automation",
-      "WhatsApp automation",
-      "Voice AI",
-      "Workflow automation",
-    ],
-    link: "Learn More",
-  },
-  {
-    icon: "◖",
-    color: "orange",
-    title: "AI Customer Operations",
-    items: [
-      "Lead qualification",
-      "Customer support",
-      "Appointment setting",
-      "CRM operations",
-      "Back-office operations",
-    ],
-    link: "Learn More",
-  },
-  {
-    icon: "↗",
-    color: "pink",
-    title: "AI Evaluation",
-    items: [
-      "LLM response evaluation",
-      "Factuality checking",
-      "Prompt testing",
-      "AI testing & QA",
-      "Multilingual evaluation",
-    ],
-    link: "Learn More",
-  },
-  {
-    icon: "●",
-    color: "cyan",
-    title: "White-Label AI Delivery",
-    items: [
-      "For AI agencies",
-      "For digital agencies",
-      "For BPO/KPO companies",
-      "You sell, we deliver",
-      "Dedicated teams",
-    ],
-    link: "Become a Partner",
-  },
-];
+  const engines = [
+    {
+      icon: Building2,
+      title: "B2B Lead Engine",
+      image:
+        "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=500&q=80",
+    },
+    {
+      icon: Building2,
+      title: "Real Estate Lead Engine",
+      image:
+        "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=500&q=80",
+    },
+    {
+      icon: Users,
+      title: "Agency Lead Engine",
+      image:
+        "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=500&q=80",
+    },
+    {
+      icon: Users,
+      title: "Education Lead Engine",
+      image:
+        "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=500&q=80",
+    },
+    {
+      icon: Building2,
+      title: "Healthcare Lead Engine",
+      image:
+        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=500&q=80",
+    },
+  ];
 
-const teamPackages = [
-  {
-    icon: "▤",
-    title: "5 People",
-    subtitle: "Pilot Team",
-    description: "Best for testing and specific tasks.",
-    action: "Start a Pilot →",
-  },
-  {
-    icon: "♟",
-    title: "10 People",
-    subtitle: "AI Pod",
-    description: "For new operations and small projects.",
-    action: "Build Your Pod →",
-    popular: true,
-  },
-  {
-    icon: "♟",
-    title: "25 People",
-    subtitle: "Growing Team",
-    description: "For established operations.",
-    action: "Talk to Us →",
-  },
-  {
-    icon: "♟",
-    title: "50 People",
-    subtitle: "Delivery Team",
-    description: "For large projects and multiple workflows.",
-    action: "Build Your Team →",
-  },
-  {
-    icon: "▣",
-    title: "100+ People",
-    subtitle: "Dedicated Center",
-    description: "Your own AI delivery center in India.",
-    action: "Discuss Enterprise →",
-  },
-];
+  const deliveryTeams = [
+    {
+      icon: Sparkles,
+      title: "Managed AI Delivery",
+      badge: "Most Popular",
+      image:
+        "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=700&q=80",
+      description:
+        "We build, train and manage your AI-enabled operation.",
+      bullets: [
+        "AI experts + AI tools + operators",
+        "End-to-end management",
+        "Quality assurance",
+        "Flexible scaling",
+      ],
+      button: "Explore Managed Delivery",
+      featured: true,
+    },
+    {
+      icon: Users,
+      title: "AI Workforce",
+      image:
+        "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=700&q=80",
+      description: "Get trained operators for your AI-enabled workflows.",
+      bullets: [
+        "Data operators",
+        "Research operators",
+        "CRM operators",
+        "Lead generation operators",
+        "Customer operations teams",
+      ],
+      button: "Build Your Team",
+    },
+    {
+      icon: Settings,
+      title: "Hire AI Experts",
+      image:
+        "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=700&q=80",
+      description:
+        "Access specialist AI and technology talent when you need it.",
+      bullets: [
+        "AI & ML engineers",
+        "AI automation experts",
+        "AI agent developers",
+        "Data analysts",
+        "CRM developers",
+      ],
+      button: "Hire an Expert",
+    },
+  ];
 
-const ecosystem = [
-  {
-    logo: "C",
-    title: "Creatikai",
-    subtitle: "AI Agents & Automation",
-    description: "AI agents, automation and integrations.",
-    link: "Visit Creatikai →",
-    color: "purple",
-  },
-  {
-    logo: "iB",
-    title: "IBigData",
-    subtitle: "Data & CRM Intelligence",
-    description: "Data platforms, analytics and CRMs.",
-    link: "Visit IBigData →",
-    color: "blue",
-  },
-  {
-    logo: "M",
-    title: "MakeMyLeads",
-    subtitle: "Lead Intelligence",
-    description: "AI-powered lead generation and enrichment.",
-    link: "Visit MakeMyLeads →",
-    color: "pink",
-  },
-];
+  const industries = [
+    { icon: Cpu, label: "AI & Technology" },
+    { icon: Network, label: "Agencies" },
+    { icon: Building2, label: "Real Estate" },
+    { icon: Workflow, label: "Recruitment" },
+    { icon: Users, label: "Education" },
+    { icon: ShieldCheck, label: "Professional Services" },
+    { icon: Database, label: "BPO / KPO" },
+    { icon: Sparkles, label: "And More" },
+  ];
 
-function Arrow() {
-  return <span className="ml-1">→</span>;
-}
-
-function Check() {
   return (
-    <span className="mr-2 inline-flex h-3.5 w-3.5 items-center justify-center rounded-full bg-blue-500 text-xs font-bold text-white">
-      ✓
-    </span>
-  );
-}
+    <main className="min-h-screen overflow-x-hidden bg-white text-[#071744]">
+      {/* =========================================================
+          TOP BAR
+      ========================================================== */}
+      <div className="hidden bg-[#061a38] text-white md:block">
+        <div className="mx-auto flex h-[26px] max-w-[1500px] items-center justify-between px-5 text-[9px] font-medium tracking-[0.01em] lg:px-8">
+          <div className="flex items-center gap-2">
+            <MapPin size={11} />
+            <span>AI Delivery Center – Jaipur, India</span>
+          </div>
 
-function SectionTitle({
-  eyebrow,
-  title,
-  description,
-}: {
-  eyebrow?: string;
-  title: string;
-  description?: string;
-}) {
-  return (
-    <div>
-      {eyebrow && (
-        <p className="mb-1 text-xs font-bold uppercase tracking-[0.12em] text-blue-500">
-          {eyebrow}
-        </p>
-      )}
+          <div className="flex items-center gap-2">
+            <Users size={11} />
+            <span>People + AI • Technology + Real Business Results</span>
+          </div>
 
-      <h2 className="text-2xl font-extrabold leading-tight tracking-[-0.5px] text-[#0b2344] md:text-[28px]">
-        {title}
-      </h2>
+          <div className="flex items-center gap-4">
+            <a
+              href="tel:+911411234567"
+              className="flex items-center gap-1.5 transition hover:text-blue-300"
+            >
+              <Phone size={10} />
+              +91 141 123 4567
+            </a>
 
-      {description && (
-        <p className="mt-1.5 max-w-3xl text-sm leading-5 text-slate-600 md:text-[15px]">
-          {description}
-        </p>
-      )}
-    </div>
-  );
-}
+            <a
+              href="mailto:hello@aiworkforce.com"
+              className="flex items-center gap-1.5 transition hover:text-blue-300"
+            >
+              <Mail size={10} />
+              hello@aiworkforce.com
+            </a>
 
-export default function AIWorkforcePage() {
-  return (
-    <main className="min-h-screen overflow-hidden bg-white text-[#10294c] " >
-
+            <div className="flex items-center gap-2">
+              <Linkedin size={11} />
+              <Youtube size={11} />
+              <X size={10} />
+              <Facebook size={10} />
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* =========================================================
           NAVBAR
-      ========================================================= */}
-    
+      ========================================================== */}
+      {/* <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur-md">
+        <div className="mx-auto flex h-[66px] max-w-[1500px] items-center justify-between px-5 lg:px-8">
+          <a href="#" className="flex items-center gap-2.5">
+            <div className="relative flex h-10 w-10 items-center justify-center">
+              <span className="absolute left-0 top-2 h-6 w-[4px] rotate-[35deg] rounded-full bg-[#0876ed]" />
+              <span className="absolute left-[9px] top-1 h-8 w-[4px] -rotate-[35deg] rounded-full bg-[#09a4ed]" />
+              <span className="absolute left-[18px] top-2 h-6 w-[4px] rotate-[35deg] rounded-full bg-[#5c2bea]" />
+            </div>
+
+            <div className="leading-none">
+              <div className="text-[19px] font-extrabold tracking-[-0.04em] text-[#071744]">
+                AI<span className="text-[#1377e8]">Workforce</span>
+              </div>
+              <div className="mt-1 text-[6px] font-medium tracking-[0.05em] text-slate-500">
+                AI Agents. Expert Teams. Managed Results.
+              </div>
+            </div>
+          </a>
+
+      
+          <nav className="hidden items-center gap-5 lg:flex">
+            {[
+              "Solutions",
+              "AI Delivery Teams",
+              "AI Agents",
+              "Products",
+              "Partners",
+              "Resources",
+              "Company",
+            ].map((item) => (
+              <a
+                key={item}
+                href="#"
+                className="flex items-center gap-1 text-[11px] font-bold text-[#071744] transition hover:text-[#0876ed]"
+              >
+                {item}
+                <ChevronDown size={11} />
+              </a>
+            ))}
+          </nav>
+
+          <a
+            href="#contact"
+            className="hidden items-center gap-2 rounded-md bg-[#0876ed] px-5 py-2.5 text-[11px] font-bold text-white shadow-[0_7px_18px_rgba(8,118,237,.2)] transition hover:bg-[#0668d5] sm:flex"
+          >
+            Start a Pilot
+            <ArrowRight size={14} />
+          </a>
+
+          <button
+            onClick={() => setMobileMenu(!mobileMenu)}
+            className="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 text-[#071744] lg:hidden"
+            aria-label="Toggle menu"
+          >
+            {mobileMenu ? <X size={21} /> : <Menu size={21} />}
+          </button>
+        </div>
+
+      
+        {mobileMenu && (
+          <div className="border-t border-slate-200 bg-white px-5 py-5 lg:hidden">
+            <nav className="flex flex-col">
+              {[
+                "Solutions",
+                "AI Delivery Teams",
+                "AI Agents",
+                "Products",
+                "Partners",
+                "Resources",
+                "Company",
+              ].map((item) => (
+                <a
+                  key={item}
+                  href="#"
+                  onClick={() => setMobileMenu(false)}
+                  className="flex items-center justify-between border-b border-slate-100 py-4 text-sm font-bold"
+                >
+                  {item}
+                  <ChevronRight size={16} />
+                </a>
+              ))}
+
+              <a
+                href="#contact"
+                onClick={() => setMobileMenu(false)}
+                className="mt-5 flex items-center justify-center gap-2 rounded-lg bg-[#0876ed] py-3.5 text-sm font-bold text-white"
+              >
+                Start a Pilot
+                <ArrowRight size={16} />
+              </a>
+            </nav>
+          </div>
+        )}
+      </header> */}
 
       {/* =========================================================
           HERO
-      ========================================================= */}
-      <section className="relative overflow-hidden bg-gradient-to-r from-[#f5f9ff] via-[#f4f8ff] to-[#e9f1fc]">
-        <div className="mx-auto grid min-h-[460px] max-w-[1280px] grid-cols-1 lg:grid-cols-[49%_51%]">
-          <div className="relative z-10 px-5 py-10 md:px-10 lg:py-12">
-            <div className="mb-3 inline-flex rounded-full bg-[#dcd7ff] px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-[#6755d8]">
-              AI + HUMAN DELIVERY · JAIPUR, INDIA
-            </div>
+      ========================================================== */}
+      <section className="relative overflow-hidden bg-[#f4faff]">
+        <div className="mx-auto grid min-h-[470px] max-w-[1500px] lg:grid-cols-[48%_52%]">
+          {/* Hero Copy */}
+          <div className="relative z-20 flex items-center px-5 py-12 sm:px-8 lg:px-12 xl:px-16">
+            <div className="max-w-[650px]">
+              <div className="mb-4 inline-flex rounded-full bg-[#eaf5ff] px-3 py-1 text-[9px] font-extrabold uppercase tracking-[0.05em] text-[#1476e5]">
+                Expert AI M Owners • AI Tools • Lead Engines
+              </div>
 
-            <h1 className="max-w-[570px] text-[40px] font-extrabold leading-[1.05] tracking-[-1.7px] text-[#092348] md:text-[52px]">
-              Build Your AI Workforce
-              <br />
-              <span className="text-[#126fe7]">
-                Without Building an AI Team.
-              </span>
-            </h1>
+              <h1 className="max-w-[650px] text-[42px] font-extrabold leading-[0.99] tracking-[-0.045em] text-[#071744] sm:text-[50px] lg:text-[47px] xl:text-[56px]">
+                Build Your AI Workforce
+                <br />
+                <span className="text-[#0876ed]">
+                  Without Building an AI Team.
+                </span>
+              </h1>
 
-            <p className="mt-4 max-w-[570px] text-base leading-[1.6] text-[#455972]">
-              We help businesses and agencies scale AI-powered operations with
-              <br className="hidden md:block" />
-              <strong className="text-[#213b5e]">
-                trained teams, AI agents, automation and managed delivery from
-                India.
-              </strong>
-            </p>
+              <p className="mt-5 max-w-[570px] text-[14px] leading-[1.5] text-[#26395f] sm:text-[16px]">
+                Give us the work. We combine AI experts, tools, agents and
+                trained operators to manage and deliver your business
+                operations.
+              </p>
 
-            <div className="mt-4 flex flex-wrap gap-5 text-sm font-semibold text-[#23466e]">
-              <span>♙ AI Data</span>
-              <span>⌕ AI Research</span>
-              <span>⚙ AI Automation</span>
-              <span>◉ Customer Operations</span>
-            </div>
+              <div className="mt-6 grid grid-cols-2 gap-x-5 gap-y-3 sm:flex sm:flex-wrap">
+                {[
+                  { icon: Users, text: "Expert-Led Teams" },
+                  { icon: Bot, text: "AI Agents" },
+                  { icon: Settings, text: "AI Tools" },
+                  { icon: Target, text: "Lead Engines" },
+                ].map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <div
+                      key={item.text}
+                      className="flex items-center gap-2 text-[11px] font-bold text-[#142652]"
+                    >
+                      <Icon size={17} className="text-[#0876ed]" />
+                      {item.text}
+                    </div>
+                  );
+                })}
+              </div>
 
-            <div className="mt-6 flex flex-wrap gap-4">
-              <button className="rounded-md bg-[#1475ec] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-blue-200">
-                Start a Pilot <Arrow />
-              </button>
+              <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+                <a
+                  href="#contact"
+                  className="inline-flex items-center justify-center gap-2 rounded-md bg-[#0876ed] px-7 py-3.5 text-[12px] font-bold text-white shadow-[0_8px_20px_rgba(8,118,237,.18)] transition hover:-translate-y-0.5 hover:bg-[#0668d5]"
+                >
+                  Start a Pilot
+                  <ArrowRight size={15} />
+                </a>
 
-              <button className="rounded-md border border-blue-400 bg-white px-7 py-3 text-sm font-bold text-[#1475ec]">
-                Talk to Our Team
-              </button>
-            </div>
-
-            <div className="mt-7 flex flex-wrap gap-x-5 gap-y-2 text-xs font-semibold text-[#365375]">
-              <span>● Flexible Team Scaling</span>
-              <span>● Secure & Reliable</span>
-              <span>● High Quality Delivery</span>
-              <span>● Cost Efficient</span>
+                <a
+                  href="#contact"
+                  className="inline-flex items-center justify-center gap-2 rounded-md border border-[#0876ed] bg-white px-7 py-3.5 text-[12px] font-bold text-[#0876ed] transition hover:bg-[#eff7ff]"
+                >
+                  Talk to Our Team
+                </a>
+              </div>
             </div>
           </div>
 
-          <div className="relative min-h-[460px] lg:min-h-full">
+          {/* Hero Image */}
+          <div className="relative min-h-[350px] overflow-hidden lg:min-h-0">
             <img
-              src={heroImage}
-              alt="AI workforce delivery center"
+              src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1400&q=90"
+              alt="AI workforce team working together"
               className="absolute inset-0 h-full w-full object-cover"
             />
 
-            <div className="absolute inset-0 bg-gradient-to-r from-[#eef5ff] via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#f4faff] via-[#f4faff]/20 to-transparent lg:w-[35%]" />
 
-            <div className="absolute right-6 top-8 rounded-xl bg-white/95 px-5 py-4 shadow-xl backdrop-blur">
-              <div className="flex items-center gap-3">
-                <div className="text-2xl text-blue-500">♙</div>
-                <div>
-                  <div className="text-base font-extrabold text-[#193557]">
-                    100-Seat
-                  </div>
-                  <div className="text-xs text-slate-500">
-                    Delivery Capacity
-                  </div>
-                  <div className="text-xs text-slate-500">
+            <div className="absolute bottom-8 left-8 rounded-lg bg-white/90 px-4 py-3 shadow-xl backdrop-blur">
+              <div className="font-serif text-[16px] italic text-[#142652]">
+                Your extended
+              </div>
+              <div className="font-serif text-[16px] italic text-[#142652]">
+                team in India.
+              </div>
+            </div>
+
+            <div className="absolute bottom-8 right-5 rounded-xl border border-white/60 bg-white px-4 py-3 shadow-2xl sm:right-8">
+              <div className="flex items-center gap-2">
+                <span className="text-[30px] font-extrabold tracking-tight text-[#071744]">
+                  100+
+                </span>
+                <span className="text-[11px] font-bold text-[#142652]">
+                  Delivery Seats
+                  <br />
+                  <span className="font-medium text-slate-500">
                     Jaipur, India
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="absolute bottom-6 left-5 rounded-lg bg-[#0b2344]/75 px-5 py-3 text-white backdrop-blur-sm">
-              <div className="font-serif text-lg italic">
-                Real People
-              </div>
-              <div className="font-serif text-lg italic">
-                Real Impact
-              </div>
-            </div>
-
-            <div className="absolute -bottom-1 left-1/2 hidden w-[90%] -translate-x-1/2 translate-y-1/2 grid-cols-4 rounded-lg bg-white px-3 py-4 shadow-xl md:grid">
-              <div className="text-center">
-                <div className="text-lg text-blue-500">♙</div>
-                <div className="text-xs font-bold">100-Seat</div>
-                <div className="text-[11px] text-slate-500">Capacity</div>
-              </div>
-              <div className="text-center">
-                <div className="text-lg text-purple-500">♙</div>
-                <div className="text-xs font-bold">AI + Human</div>
-                <div className="text-[11px] text-slate-500">Operations</div>
-              </div>
-              <div className="text-center">
-                <div className="text-lg text-blue-500">◷</div>
-                <div className="text-xs font-bold">24/7</div>
-                <div className="text-[11px] text-slate-500">Scalable Delivery</div>
-              </div>
-              <div className="text-center">
-                <div className="text-lg text-blue-500">◎</div>
-                <div className="text-xs font-bold">Global</div>
-                <div className="text-[11px] text-slate-500">Partnerships</div>
+                  </span>
+                </span>
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* =========================================================
+          STATS STRIP
+      ========================================================== */}
+      <section className="border-y border-slate-200 bg-white">
+        <div className="mx-auto grid max-w-[1500px] grid-cols-2 lg:grid-cols-5">
+          {[
+            {
+              icon: Users,
+              number: "100+",
+              text: "Delivery Capacity",
+            },
+            {
+              icon: Settings,
+              number: "AI + Human",
+              text: "Operations Model",
+            },
+            {
+              icon: Clock3,
+              number: "24/7",
+              text: "Scalable Operations",
+            },
+            {
+              icon: Cpu,
+              number: "AI Tools + Agents",
+              text: "Technology Enabled",
+            },
+            {
+              icon: Globe2,
+              number: "Global",
+              text: "Clients & Partners",
+            },
+          ].map((item) => {
+            const Icon = item.icon;
+
+            return (
+              <div
+                key={item.number}
+                className="flex items-center gap-3 border-b border-r border-slate-100 px-5 py-4 last:border-r-0 lg:border-b-0 lg:px-6"
+              >
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#edf7ff] text-[#0876ed]">
+                  <Icon size={20} />
+                </div>
+
+                <div>
+                  <div className="text-[15px] font-extrabold text-[#071744]">
+                    {item.number}
+                  </div>
+                  <div className="text-[9px] font-medium text-slate-500">
+                    {item.text}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </section>
 
       {/* =========================================================
           SERVICES
-      ========================================================= */}
-      <section id="solutions" className="bg-white px-5 py-10 md:px-8">
-        <div className="mx-auto max-w-[1280px]">
-          <div className="flex items-end justify-between">
-            <SectionTitle
-              eyebrow="WHAT WE DO"
-              title="What Can We Operate for You?"
-              description="From data to automation, our teams combine human expertise with AI technology to deliver scalable business outcomes."
-            />
+      ========================================================== */}
+      <section className="bg-white py-9 sm:py-12">
+        <div className="mx-auto max-w-[1500px] px-5 lg:px-12">
+          <div className="mb-5 flex items-end justify-between gap-4">
+            <div>
+              <div className="mb-1 text-[10px] font-extrabold uppercase text-[#0876ed]">
+                Our Services
+              </div>
+
+              <h2 className="text-[25px] font-extrabold tracking-[-0.03em] text-[#071744] sm:text-[31px]">
+                What Can We Operate for You?
+              </h2>
+            </div>
 
             <a
-              href="#services"
-              className="hidden text-sm font-bold text-[#1475ec] md:block"
+              href="#"
+              className="hidden items-center gap-1 text-[10px] font-bold text-[#0876ed] sm:flex"
             >
-              Explore All Services <Arrow />
+              Explore All Services
+              <ArrowRight size={13} />
             </a>
           </div>
 
-          <div className="mt-7 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
-            {services.map((service) => (
-              <div
-                key={service.title}
-                className="min-h-[240px] rounded-lg border border-[#dfe7f1] bg-white p-4 shadow-[0_2px_8px_rgba(20,50,90,0.03)]"
-              >
-                <div
-                  className={`mb-3 flex h-9 w-9 items-center justify-center rounded-full text-lg
-                    ${
-                      service.color === "blue"
-                        ? "bg-blue-100 text-blue-600"
-                        : service.color === "green"
-                          ? "bg-green-100 text-green-600"
-                          : service.color === "purple"
-                            ? "bg-purple-100 text-purple-600"
-                            : service.color === "orange"
-                              ? "bg-orange-100 text-orange-600"
-                              : service.color === "pink"
-                                ? "bg-pink-100 text-pink-600"
-                                : "bg-cyan-100 text-cyan-600"
+          <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+            {services.map((service) => {
+              const Icon = service.icon;
+
+              return (
+                <article
+                  key={service.title}
+                  className={`relative flex min-h-[155px] flex-col rounded-lg border p-4 transition hover:-translate-y-1 hover:shadow-lg ${
+                    service.tone === "pink"
+                      ? "border-pink-100 bg-gradient-to-b from-pink-50 to-white"
+                      : "border-slate-200 bg-white"
+                  }`}
+                >
+                  {service.new && (
+                    <span className="absolute right-3 top-0 -translate-y-1/2 rounded-full bg-[#0876ed] px-2 py-1 text-[8px] font-bold text-white">
+                      New
+                    </span>
+                  )}
+
+                  <div
+                    className={`mb-3 flex h-8 w-8 items-center justify-center rounded-lg ${
+                      service.tone === "pink"
+                        ? "bg-pink-100 text-pink-500"
+                        : "bg-[#eaf5ff] text-[#0876ed]"
                     }`}
-                >
-                  {service.icon}
-                </div>
-
-                <h3 className="min-h-[32px] text-sm font-extrabold text-[#18375d]">
-                  {service.title}
-                </h3>
-
-                <ul className="mt-3 space-y-1.5">
-                  {service.items.map((item) => (
-                    <li
-                      key={item}
-                      className="flex items-start text-xs leading-[1.35] text-slate-600"
-                    >
-                      <span className="mr-1 text-blue-500">✓</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-
-                <a
-                  href="#"
-                  className="mt-4 block text-xs font-bold text-blue-600"
-                >
-                  {service.link} <Arrow />
-                </a>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* =========================================================
-          HUMAN + AI
-      ========================================================= */}
-      <section id="agents" className="bg-[#eef6ff] min-h-[360px]">
-        <div className="mx-auto grid max-w-[1280px] lg:grid-cols-[57%_43%]">
-          <div className="px-5 py-10 md:px-10">
-            <SectionTitle
-              title="One Workforce. Two Powerful Capabilities."
-              description="AI handles speed and automation. Our trained teams handle judgment, verification and execution. Together, they create scalable operations."
-            />
-
-            <div className="mt-7 grid grid-cols-[1fr_auto_1fr_auto_1fr] items-center gap-2">
-              <div className="rounded-lg border border-[#dce6f3] bg-white p-5 text-center shadow-sm">
-                <div className="text-3xl text-blue-600">♟</div>
-                <div className="mt-2 text-sm font-extrabold">
-                  AI Agents
-                </div>
-                <div className="mt-1 text-xs text-slate-500">
-                  Speed & Automation
-                </div>
-              </div>
-
-              <div className="text-2xl font-bold text-blue-600">+</div>
-
-              <div className="rounded-lg border border-[#dce6f3] bg-white p-5 text-center shadow-sm">
-                <div className="text-3xl text-purple-600">♟</div>
-                <div className="mt-2 text-sm font-extrabold">
-                  Human Experts
-                </div>
-                <div className="mt-1 text-xs text-slate-500">
-                  Judgment & Execution
-                </div>
-              </div>
-
-              <div className="text-2xl font-bold text-blue-600">=</div>
-
-              <div className="rounded-lg border border-[#dce6f3] bg-white p-5 text-center shadow-sm">
-                <div className="text-3xl text-green-500">↗</div>
-                <div className="mt-2 text-sm font-extrabold">
-                  Managed Results
-                </div>
-                <div className="mt-1 text-xs text-slate-500">
-                  Scale Your Business
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="relative min-h-[360px] overflow-hidden lg:min-h-full">
-            <img
-              src={deliveryImage}
-              alt="AI workforce delivery center"
-              className="absolute inset-0 h-full w-full object-cover"
-            />
-
-            <div className="absolute inset-0 bg-[#071c3b]/65" />
-
-            <div className="relative z-10 p-10 text-white">
-              <div className="text-xl font-extrabold leading-tight">
-                Technology
-                <br />
-                Meets People.
-                <br />
-                That’s the Difference.
-              </div>
-
-              <button className="mt-6 rounded-md bg-[#1475ec] px-5 py-3 text-xs font-bold">
-                See Our Delivery Center <Arrow />
-              </button>
-
-              <div className="mt-7 text-sm font-semibold opacity-90">
-                From
-                <br />
-                Jaipur
-                <br />
-                to the
-                <br />
-                World
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* =========================================================
-          PILOT PROCESS
-      ========================================================= */}
-      <section className="bg-[#06204a] px-5 py-10 text-white md:px-8">
-        <div className="mx-auto flex max-w-[1280px] flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
-          <div className="flex-1">
-            <h2 className="text-2xl font-extrabold">From Pilot to Scale</h2>
-            <p className="mt-1 text-sm text-blue-100">
-              A simple, proven process to get your AI team working.
-            </p>
-
-            <div className="mt-7 grid grid-cols-2 gap-6 md:grid-cols-5">
-              {[
-                ["▤", "1. DISCOVER", "Understand your workflow and goals."],
-                ["♟", "2. TRAIN", "Train the team and set up AI workflows."],
-                ["▶", "3. DEPLOY", "Launch a pilot team with defined processes."],
-                ["⚙", "4. OPERATE", "We manage delivery, QA and reporting."],
-                ["▥", "5. SCALE", "Expand from 5 to 100+ seats."],
-              ].map(([icon, title, desc], index) => (
-                <div key={title} className="relative text-center">
-                  <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full border-2 border-blue-500 bg-[#0c3977] text-lg shadow-[0_0_20px_rgba(0,110,255,0.25)]">
-                    {icon}
+                  >
+                    <Icon size={18} />
                   </div>
 
-                  <div className="mt-3 text-xs font-extrabold">{title}</div>
+                  <h3 className="text-[12px] font-extrabold text-[#071744]">
+                    {service.title}
+                  </h3>
 
-                  <p className="mx-auto mt-1 max-w-[130px] text-[11px] leading-4 text-blue-100">
-                    {desc}
+                  <p className="mt-2 flex-1 text-[10px] leading-[1.5] text-slate-600">
+                    {service.text}
                   </p>
 
-                  {index < 4 && (
-                    <span className="absolute right-[-18px] top-5 hidden text-lg text-blue-500 md:block">
-                      →
-                    </span>
+                  <a
+                    href="#"
+                    className="mt-3 flex items-center gap-1 text-[10px] font-extrabold text-[#0876ed]"
+                  >
+                    {service.partner ? "Become a Partner" : "Learn More"}
+                    <ArrowRight size={12} />
+                  </a>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================
+          DELIVERY MODEL + PROCESS
+      ========================================================== */}
+      <section className="bg-gradient-to-b from-[#eaf6ff] to-[#e7f4ff] py-10 sm:py-12">
+        <div className="mx-auto max-w-[1500px] px-5 lg:px-12">
+          <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+            <div>
+              <div className="text-[10px] font-extrabold uppercase text-[#0876ed]">
+                How AIWorkforce Delivers Results
+              </div>
+
+              <h2 className="mt-1 text-[25px] font-extrabold tracking-[-0.035em] text-[#071744] sm:text-[30px]">
+                Experts + AI + Operators. Managed for You.
+              </h2>
+
+              <p className="mt-1 text-[11px] text-[#304466] sm:text-[13px]">
+                A proven model and process to turn your requirements into real
+                business results.
+              </p>
+            </div>
+
+            <div className="hidden font-serif text-[17px] italic leading-tight text-[#071744] sm:block">
+              Simple Process.
+              <br />
+              Powerful Results.
+            </div>
+          </div>
+
+          {/* Delivery model */}
+          <div className="mt-6 overflow-hidden rounded-lg border border-[#d5e6f5] bg-white shadow-sm">
+            <div className="flex min-w-[950px] items-stretch">
+              <div className="flex w-[150px] shrink-0 items-center border-r border-slate-200 px-4">
+                <div>
+                  <div className="text-[10px] font-extrabold text-[#0876ed]">
+                    OUR DELIVERY MODEL
+                  </div>
+                </div>
+              </div>
+
+              {[
+                {
+                  icon: Users,
+                  title: "AI Experts",
+                  text: "Design & Supervise",
+                  color: "blue",
+                },
+                {
+                  icon: Bot,
+                  title: "AI Tools & Agents",
+                  text: "Automate & Accelerate",
+                  color: "blue",
+                },
+                {
+                  icon: Users,
+                  title: "Trained Operators",
+                  text: "Execute & Deliver",
+                  color: "purple",
+                },
+                {
+                  icon: ShieldCheck,
+                  title: "QA & Management",
+                  text: "Monitor & Improve",
+                  color: "blue",
+                },
+              ].map((item, index) => {
+                const Icon = item.icon;
+
+                return (
+                  <div
+                    key={item.title}
+                    className="flex min-w-[180px] flex-1 items-center justify-center gap-4 border-r border-slate-200 px-3 py-4"
+                  >
+                    <div className="text-center">
+                      <Icon
+                        size={25}
+                        className={
+                          item.color === "purple"
+                            ? "mx-auto text-purple-600"
+                            : "mx-auto text-[#0876ed]"
+                        }
+                      />
+                      <div className="mt-2 text-[10px] font-extrabold">
+                        {item.title}
+                      </div>
+                      <div className="mt-1 text-[8px] text-slate-500">
+                        {item.text}
+                      </div>
+                    </div>
+
+                    {index < 3 && (
+                      <span className="text-[23px] font-bold text-[#0876ed]">
+                        +
+                      </span>
+                    )}
+                  </div>
+                );
+              })}
+
+              <div className="flex min-w-[150px] items-center justify-center gap-4 px-4">
+                <span className="text-[23px] font-bold text-[#0876ed]">
+                  =
+                </span>
+
+                <div className="text-center">
+                  <div className="mx-auto flex h-8 w-8 items-center justify-center rounded-lg bg-green-50 text-green-600">
+                    <Zap size={20} />
+                  </div>
+                  <div className="mt-1 text-[10px] font-extrabold">
+                    Managed Results
+                  </div>
+                  <div className="text-[8px] text-slate-500">
+                    Scale Your Business
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Process */}
+          <div className="mt-1 overflow-hidden rounded-lg border border-[#d5e6f5] bg-white">
+            <div className="flex min-w-[900px] items-center">
+              <div className="flex w-[150px] shrink-0 px-4 py-4">
+                <div>
+                  <div className="text-[10px] font-extrabold text-[#0876ed]">
+                    OUR PROCESS
+                  </div>
+                  <div className="mt-1 text-[8px] text-slate-500">
+                    From Requirement to Scale
+                  </div>
+                </div>
+              </div>
+
+              {process.map((step, index) => (
+                <div
+                  key={step.number}
+                  className="relative flex min-w-[160px] flex-1 items-start gap-3 border-l border-slate-200 px-3 py-4"
+                >
+                  <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#0876ed] text-[11px] font-bold text-white">
+                    {step.number}
+                  </div>
+
+                  <div>
+                    <div className="text-[10px] font-extrabold">
+                      {step.title}
+                    </div>
+                    <div className="mt-1 text-[8px] leading-[1.4] text-slate-500">
+                      {step.text}
+                    </div>
+                  </div>
+
+                  {index < process.length - 1 && (
+                    <ArrowRight
+                      size={14}
+                      className="absolute right-[-8px] top-6 z-10 bg-white text-[#0876ed]"
+                    />
                   )}
                 </div>
               ))}
             </div>
           </div>
+        </div>
+      </section>
 
-          <div className="w-full rounded-lg bg-white p-5 text-[#10294c] shadow-xl lg:w-[260px]">
-            <div className="text-lg font-extrabold">
-              Start With a 30-Day Pilot
+      {/* =========================================================
+          DELIVERY TEAMS
+      ========================================================== */}
+      <section className="bg-white py-10 sm:py-12">
+        <div className="mx-auto max-w-[1500px] px-5 lg:px-12">
+          <div className="flex flex-col justify-between gap-3 lg:flex-row lg:items-end">
+            <div>
+              <div className="text-[10px] font-extrabold uppercase text-[#0876ed]">
+                AI Delivery Teams
+              </div>
+
+              <h2 className="mt-1 text-[25px] font-extrabold tracking-[-0.03em] text-[#071744] sm:text-[29px]">
+                Choose How You Want to Work With Us.
+              </h2>
+
+              <p className="mt-1 text-[11px] text-slate-500">
+                Expert-led teams, trained operators and AI tools — fully
+                managed or flexibly built for your needs.
+              </p>
             </div>
 
-            <p className="mt-2 text-xs leading-4 text-slate-500">
-              Test our team, process and delivery model before scaling.
-            </p>
+            <div className="flex flex-wrap gap-x-4 gap-y-2 text-[9px] font-semibold text-slate-600">
+              <span className="flex items-center gap-1">
+                <Check size={12} className="text-[#0876ed]" />
+                Flexible engagement
+              </span>
+              <span className="flex items-center gap-1">
+                <Check size={12} className="text-[#0876ed]" />
+                Scalable teams
+              </span>
+              <span className="flex items-center gap-1">
+                <Check size={12} className="text-[#0876ed]" />
+                Quality-assured delivery
+              </span>
+              <span className="flex items-center gap-1">
+                <Check size={12} className="text-[#0876ed]" />
+                Cost-effective
+              </span>
+            </div>
+          </div>
 
-            <button className="mt-4 w-full rounded-md bg-[#1475ec] py-3 text-xs font-bold text-white">
-              Request a Pilot <Arrow />
-            </button>
+          <div className="mt-5 grid gap-3 lg:grid-cols-3">
+            {deliveryTeams.map((team) => {
+              const Icon = team.icon;
+
+              return (
+                <article
+                  key={team.title}
+                  className={`relative overflow-hidden rounded-lg border bg-white p-4 ${
+                    team.featured
+                      ? "border-[#0876ed] shadow-[0_8px_30px_rgba(8,118,237,.09)]"
+                      : "border-slate-200"
+                  }`}
+                >
+                  {team.badge && (
+                    <span className="absolute right-3 top-0 rounded-b-md bg-[#0876ed] px-3 py-1.5 text-[8px] font-bold text-white">
+                      {team.badge}
+                    </span>
+                  )}
+
+                  <div className="grid grid-cols-[1fr_120px] gap-3 sm:grid-cols-[1fr_135px]">
+                    <div>
+                      <div className="flex items-center gap-2">
+                        <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#f0e9ff] text-purple-600">
+                          <Icon size={20} />
+                        </div>
+
+                        <h3 className="text-[14px] font-extrabold text-[#071744]">
+                          {team.title}
+                        </h3>
+                      </div>
+
+                      <p className="mt-3 text-[10px] leading-[1.5] text-slate-600">
+                        {team.description}
+                      </p>
+
+                      <ul className="mt-3 space-y-1.5">
+                        {team.bullets.map((bullet) => (
+                          <li
+                            key={bullet}
+                            className="flex items-start gap-1.5 text-[9px] font-medium text-slate-600"
+                          >
+                            <Check
+                              size={12}
+                              className="mt-[1px] shrink-0 text-[#0876ed]"
+                            />
+                            {bullet}
+                          </li>
+                        ))}
+                      </ul>
+
+                      <a
+                        href="#contact"
+                        className="mt-4 inline-flex items-center gap-1.5 rounded-md bg-[#0876ed] px-4 py-2.5 text-[9px] font-bold text-white transition hover:bg-[#0668d5]"
+                      >
+                        {team.button}
+                        <ArrowRight size={12} />
+                      </a>
+                    </div>
+
+                    <div className="relative mt-7 h-[150px] overflow-hidden rounded-lg sm:h-[170px]">
+                      <img
+                        src={team.image}
+                        alt={team.title}
+                        className="h-full w-full object-cover"
+                      />
+                    </div>
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
 
       {/* =========================================================
-          MANAGED TEAMS
-      ========================================================= */}
-      <section id="teams" className="bg-white px-5 py-10 md:px-8">
-        <div className="mx-auto max-w-[1280px]">
-          <div className="flex flex-col justify-between gap-4 md:flex-row">
+          AI LEAD ENGINES
+      ========================================================== */}
+      <section className="border-y border-slate-100 bg-[#fbfdff] py-8">
+        <div className="mx-auto max-w-[1500px] px-5 lg:px-12">
+          <div className="grid items-center gap-6 lg:grid-cols-[290px_1fr]">
             <div>
-              <h2 className="text-2xl font-extrabold text-[#10294c]">
-                Managed AI Teams
+              <div className="text-[10px] font-extrabold uppercase text-[#0876ed]">
+                AI Lead Engines
+              </div>
+
+              <h2 className="mt-1 text-[23px] font-extrabold tracking-[-0.03em] text-[#071744]">
+                Turn Data Into Business Opportunities.
               </h2>
 
-              <p className="mt-1 text-sm text-slate-500">
-                Start small. Scale fast. Dedicated teams for your AI and
-                business operations.
+              <p className="mt-2 max-w-[350px] text-[10px] leading-[1.5] text-slate-600">
+                We combine data, AI tools, AI agents, industry CRM and trained
+                operators to build and operate complete lead generation
+                engines.
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-5 text-xs font-semibold text-slate-600">
-              <span>✓ Trained professionals</span>
-              <span>✓ Team management</span>
-              <span>✓ Flexible scaling</span>
-              <span>✓ AI tools & infrastructure</span>
-              <span>✓ QA & reporting</span>
-              <span>✓ Cost-effective delivery</span>
+            <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 xl:grid-cols-6">
+              {engines.map((engine) => {
+                const Icon = engine.icon;
+
+                return (
+                  <a
+                    href="#"
+                    key={engine.title}
+                    className="group overflow-hidden rounded-lg border border-slate-200 bg-white transition hover:-translate-y-1 hover:shadow-md"
+                  >
+                    <div className="relative h-[55px] overflow-hidden">
+                      <img
+                        src={engine.image}
+                        alt={engine.title}
+                        className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                      />
+
+                      <div className="absolute inset-0 bg-[#071744]/25" />
+                    </div>
+
+                    <div className="flex items-center gap-2 px-2.5 py-2.5">
+                      <Icon size={15} className="shrink-0 text-[#0876ed]" />
+
+                      <span className="text-[8px] font-extrabold leading-tight text-[#071744]">
+                        {engine.title}
+                      </span>
+                    </div>
+                  </a>
+                );
+              })}
+
+              <a
+                href="#"
+                className="flex min-h-[85px] items-center justify-center rounded-lg border border-dashed border-[#9cc8ef] bg-[#f5faff] p-3 text-center"
+              >
+                <div>
+                  <div className="mx-auto mb-1 flex h-7 w-7 items-center justify-center rounded-full bg-white text-[#0876ed] shadow-sm">
+                    <Sparkles size={15} />
+                  </div>
+                  <div className="text-[8px] font-extrabold text-[#0876ed]">
+                    Custom Lead Engine
+                  </div>
+                </div>
+              </a>
             </div>
           </div>
+        </div>
+      </section>
 
-          <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-5">
-            {teamPackages.map((team) => (
-              <div
-                key={team.title}
-                className={`relative rounded-lg border bg-white p-4 ${
-                  team.popular
-                    ? "border-blue-400 shadow-[0_4px_15px_rgba(37,99,235,0.12)]"
-                    : "border-slate-200"
-                }`}
-              >
-                {team.popular && (
-                  <div className="absolute -top-2 left-1/2 -translate-x-1/2 rounded-full bg-blue-600 px-3 py-1 text-[10px] font-bold text-white">
-                    Most Popular
-                  </div>
-                )}
+      {/* =========================================================
+          TECHNOLOGY ECOSYSTEM
+      ========================================================== */}
+      <section className="bg-white py-7">
+        <div className="mx-auto max-w-[1500px] px-5 lg:px-12">
+          <div className="grid items-center gap-5 lg:grid-cols-[230px_1fr]">
+            <div>
+              <div className="text-[10px] font-extrabold uppercase text-[#0876ed]">
+                Powered by Our Technology Ecosystem
+              </div>
 
-                <div className="flex gap-3">
-                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-blue-50 text-blue-600">
-                    {team.icon}
+              <h2 className="mt-1 text-[20px] font-extrabold tracking-[-0.025em] text-[#071744]">
+                Stronger Together.
+              </h2>
+
+              <p className="mt-1 text-[9px] text-slate-500">
+                People + Products + Possibilities.
+              </p>
+            </div>
+
+            <div className="grid gap-2 sm:grid-cols-3">
+              {[
+                {
+                  name: "CreatikAI",
+                  logo: "/creatikai-logo.png",
+                  title: "AI Agents & Automation",
+                  text: "AI agents, automation and integrations.",
+                },
+                {
+                  name: "iBigData",
+                  logo: "/ibigdata-logo.png",
+                  title: "Data & CRM Intelligence",
+                  text: "Data platforms, analytics and CRMs.",
+                },
+                {
+                  name: "MakeMyLeads",
+                  logo: "/makemylead-logo.png",
+                  title: "Lead Intelligence",
+                  text: "AI-powered lead generation and enrichment.",
+                },
+              ].map((item) => (
+                <div
+                  key={item.name}
+                  className="flex items-center gap-3 rounded-lg border border-slate-200 bg-white px-3 py-3 shadow-sm"
+                >
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center text-xl font-black text-[#0876ed]">
+                   <img src={item.logo} alt={item.name}/> 
                   </div>
 
                   <div>
-                    <div className="text-sm font-extrabold text-[#19375b]">
-                      {team.title}
+                    <div className="text-[11px] font-extrabold text-[#071744]">
+                      {item.name}
                     </div>
-                    <div className="text-xs font-bold text-slate-500">
-                      {team.subtitle}
+                    <div className="text-[9px] font-bold text-[#0876ed]">
+                      {item.title}
+                    </div>
+                    <div className="mt-0.5 text-[8px] text-slate-500">
+                      {item.text}
                     </div>
                   </div>
                 </div>
-
-                <p className="mt-4 min-h-[32px] text-xs leading-4 text-slate-500">
-                  {team.description}
-                </p>
-
-                <a
-                  href="#"
-                  className="mt-3 block text-xs font-bold text-blue-600"
-                >
-                  {team.action}
-                </a>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* =========================================================
-          ECOSYSTEM
-      ========================================================= */}
-      <section className="bg-[#f0f7ff] px-5 py-9 md:px-8">
-        <div className="mx-auto max-w-[1280px]">
-          <div className="flex items-end justify-between">
-            <div>
-              <h2 className="text-2xl font-extrabold text-[#10294c]">
-                Powered by Our Technology Ecosystem
-              </h2>
-              <p className="mt-1 text-xs text-slate-500">
-                Our teams operate and deploy solutions from our in-house
-                technology brands.
-              </p>
+              ))}
             </div>
-
-            <div className="hidden text-right text-xs text-slate-500 md:block">
-              <strong className="text-blue-600">Stronger Together</strong>
-              <br />
-              People + Products + Possibilities
-            </div>
-          </div>
-
-          <div className="mt-5 grid gap-3 md:grid-cols-3">
-            {ecosystem.map((item) => (
-              <div
-                key={item.title}
-                className="flex items-center gap-4 rounded-lg border border-slate-200 bg-white px-5 py-4"
-              >
-                <div
-                  className={`flex h-12 w-12 items-center justify-center text-3xl font-black ${
-                    item.color === "purple"
-                      ? "text-purple-600"
-                      : item.color === "blue"
-                        ? "text-blue-600"
-                        : "text-pink-600"
-                  }`}
-                >
-                  {item.logo}
-                </div>
-
-                <div>
-                  <div className="text-sm font-extrabold text-[#16365a]">
-                    {item.title}
-                  </div>
-
-                  <div className="text-xs font-semibold text-blue-600">
-                    {item.subtitle}
-                  </div>
-
-                  <div className="mt-1 text-xs text-slate-500">
-                    {item.description}
-                  </div>
-
-                  <a
-                    href="#"
-                    className="mt-2 inline-block text-xs font-bold text-blue-600"
-                  >
-                    {item.link}
-                  </a>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
 
       {/* =========================================================
           INDUSTRIES
-      ========================================================= */}
-      <section className="bg-white px-5 py-8 md:px-8">
-        <div className="mx-auto max-w-[1280px]">
-          <div className="flex items-center gap-3">
-            <h2 className="text-xl font-extrabold text-[#10294c]">
-              Industries We Help
-            </h2>
-
-            <p className="text-xs text-slate-500">
-              We work with fast-growing businesses and agencies across
-              multiple industries.
-            </p>
-          </div>
-
-          <div className="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-8">
-            {industries.map(([icon, title]) => (
-              <div
-                key={title}
-                className="flex items-center gap-2 text-xs font-semibold text-slate-600"
-              >
-                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-purple-50 text-purple-600">
-                  {icon}
-                </span>
-
-                <span className="whitespace-pre-line">{title}</span>
+      ========================================================== */}
+      <section className="border-t border-slate-100 bg-white py-7">
+        <div className="mx-auto max-w-[1500px] px-5 lg:px-12">
+          <div className="flex flex-col gap-4 lg:flex-row lg:items-center">
+            <div className="shrink-0 lg:w-[245px]">
+              <div className="text-[10px] font-extrabold uppercase text-[#0876ed]">
+                Industries We Serve
               </div>
-            ))}
+
+              <h2 className="mt-1 text-[20px] font-extrabold tracking-[-0.03em] text-[#071744]">
+                Built for Growing Businesses
+              </h2>
+            </div>
+
+            <div className="grid flex-1 grid-cols-2 gap-2 sm:grid-cols-4 xl:grid-cols-8">
+              {industries.map((industry) => {
+                const Icon = industry.icon;
+
+                return (
+                  <div
+                    key={industry.label}
+                    className="flex min-h-[45px] items-center gap-2 rounded-md border border-slate-100 bg-white px-2.5 py-2 shadow-sm"
+                  >
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-[#edf7ff] text-[#0876ed]">
+                      <Icon size={18} />
+                    </div>
+
+                    <span className="text-[10px] font-bold leading-tight text-[#26395f]">
+                      {industry.label}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
 
       {/* =========================================================
-          FINAL CTA
-      ========================================================= */}
-      <section className="relative overflow-hidden bg-[#061d42]">
-        <div className="mx-auto grid min-h-[190px] max-w-[1280px] md:grid-cols-[42%_58%]">
-          <div className="relative min-h-[190px] overflow-hidden">
-            <img
-              src="https://images.unsplash.com/photo-1590055531615-f16d36d7d7c7?auto=format&fit=crop&w=1000&q=80"
-              alt="Jaipur architecture"
-              className="absolute inset-0 h-full w-full object-cover opacity-55"
-            />
+          CTA
+      ========================================================== */}
+      <section
+        id="contact"
+        className="relative overflow-hidden bg-[#061d40] text-white"
+      >
+        <div className="absolute inset-0 opacity-40">
+          <img
+            src="https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=1600&q=80"
+            alt=""
+            className="h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-[#061d40]/80" />
+        </div>
 
-            <div className="absolute inset-0 bg-gradient-to-r from-[#061d42]/60 to-[#061d42]" />
-
-            <div className="relative z-10 flex h-full items-center justify-center p-8">
-              <div className="font-serif text-xl italic leading-tight text-white">
-                From Jaipur
-                <br />
-                to a Smarter World
-              </div>
-            </div>
+        <div className="relative mx-auto grid min-h-[145px] max-w-[1500px] items-center gap-8 px-5 py-7 sm:px-8 lg:grid-cols-[42%_58%] lg:px-12">
+          <div className="font-serif text-[19px] italic leading-[1.15] sm:text-[23px]">
+            From Jaipur
+            <br />
+            to a Smarter World.
           </div>
 
-          <div className="flex flex-col justify-center px-6 py-8 md:px-12">
-            <h2 className="text-2xl font-extrabold text-white">
+          <div>
+            <h2 className="text-[22px] font-extrabold tracking-[-0.03em] sm:text-[26px]">
               Ready to Build Your AI Workforce?
             </h2>
 
-            <p className="mt-1 text-xs text-blue-100">
-              Start with a pilot, build a dedicated team or explore a
-              partnership.
+            <p className="mt-1 text-[9px] text-slate-300 sm:text-[11px]">
+              Start with a pilot, deploy a dedicated team, use our AI agents or
+              explore our lead engines.
             </p>
 
-            <div className="mt-5 flex flex-wrap gap-3">
-              <button className="rounded-md bg-[#1475ec] px-5 py-3 text-xs font-bold text-white">
-                Start a Pilot <Arrow />
-              </button>
+            <div className="mt-4 flex flex-col gap-2 sm:flex-row">
+              <a
+                href="#"
+                className="inline-flex items-center justify-center gap-2 rounded-md bg-[#0876ed] px-5 py-2.5 text-[10px] font-bold text-white"
+              >
+                Start a Pilot
+                <ArrowRight size={13} />
+              </a>
 
-              <button className="rounded-md border border-white/60 px-5 py-3 text-xs font-bold text-white">
+              <a
+                href="#"
+                className="inline-flex items-center justify-center gap-2 rounded-md border border-white/50 px-5 py-2.5 text-[10px] font-bold text-white"
+              >
                 Talk to Our Team
-              </button>
+              </a>
 
-              <button className="rounded-md border border-white/60 px-5 py-3 text-xs font-bold text-white">
-                ◉ WhatsApp Us
-              </button>
+              <a
+                href="https://wa.me/911411234567"
+                className="inline-flex items-center justify-center gap-2 rounded-md border border-white/50 px-5 py-2.5 text-[10px] font-bold text-white"
+              >
+                <MessageCircle size={13} />
+                WhatsApp Us
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-    
+      {/* =========================================================
+          FOOTER
+      ========================================================== */}
+      <footer className="bg-[#041a36] text-white">
+        <div className="mx-auto max-w-[1500px] px-5 py-9 lg:px-12">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-[1.5fr_repeat(5,1fr)]">
+            {/* Brand */}
+            <div>
+              <div className="flex items-center gap-2.5">
+                <div className="relative flex h-9 w-9 items-center justify-center">
+                  <span className="absolute left-0 top-2 h-5 w-[4px] rotate-[35deg] rounded-full bg-[#0876ed]" />
+                  <span className="absolute left-[8px] top-1 h-7 w-[4px] -rotate-[35deg] rounded-full bg-[#09a4ed]" />
+                  <span className="absolute left-[16px] top-2 h-5 w-[4px] rotate-[35deg] rounded-full bg-[#5c2bea]" />
+                </div>
+
+                <div>
+                  <div className="text-[16px] font-extrabold">
+                    AI<span className="text-[#3c94f2]">Workforce</span>
+                  </div>
+                  <div className="text-[6px] tracking-wide text-slate-400">
+                    AI Agents. Expert Teams. Managed Results.
+                  </div>
+                </div>
+              </div>
+
+              <p className="mt-4 max-w-[240px] text-[9px] leading-[1.6] text-slate-400">
+                Build and scale AI-powered operations with trained teams, AI
+                agents and automation.
+              </p>
+
+              <div className="mt-4 flex items-center gap-3 text-slate-300">
+                <Linkedin size={15} />
+                <Youtube size={15} />
+                <X size={14} />
+                <Instagram size={15} />
+              </div>
+            </div>
+
+            {/* Footer columns */}
+            <div>
+              <h3 className="text-[10px] font-extrabold">Solutions</h3>
+              <div className="mt-3 space-y-1.5 text-[8px] text-slate-400">
+                <a href="#" className="block hover:text-white">
+                  AI Data Operations
+                </a>
+                <a href="#" className="block hover:text-white">
+                  AI Research & KPO
+                </a>
+                <a href="#" className="block hover:text-white">
+                  AI Automation
+                </a>
+                <a href="#" className="block hover:text-white">
+                  AI Customer Operations
+                </a>
+                <a href="#" className="block hover:text-white">
+                  AI Lead Operations
+                </a>
+                <a href="#" className="block hover:text-white">
+                  White-Label Delivery
+                </a>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-[10px] font-extrabold">AI Delivery Teams</h3>
+              <div className="mt-3 space-y-1.5 text-[8px] text-slate-400">
+                <a href="#" className="block hover:text-white">
+                  Managed AI Delivery
+                </a>
+                <a href="#" className="block hover:text-white">
+                  AI Workforce
+                </a>
+                <a href="#" className="block hover:text-white">
+                  Hire AI Experts
+                </a>
+                <a href="#" className="block hover:text-white">
+                  Training & Enablement
+                </a>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-[10px] font-extrabold">AI Agents</h3>
+              <div className="mt-3 space-y-1.5 text-[8px] text-slate-400">
+                <a href="#" className="block hover:text-white">
+                  Research Agents
+                </a>
+                <a href="#" className="block hover:text-white">
+                  Lead Generation Agents
+                </a>
+                <a href="#" className="block hover:text-white">
+                  Lead Research Agents
+                </a>
+                <a href="#" className="block hover:text-white">
+                  Customer Support Agents
+                </a>
+                <a href="#" className="block hover:text-white">
+                  CRM Agents
+                </a>
+                <a href="#" className="block hover:text-white">
+                  Custom AI Agents
+                </a>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-[10px] font-extrabold">Products</h3>
+              <div className="mt-3 space-y-1.5 text-[8px] text-slate-400">
+                <a href="#" className="block hover:text-white">
+                  AI Lead Engines
+                </a>
+                <a href="#" className="block hover:text-white">
+                  CRM Solutions
+                </a>
+                <a href="#" className="block hover:text-white">
+                  AI Tools + Operators
+                </a>
+                <a href="#" className="block hover:text-white">
+                  Lead Intelligence
+                </a>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-[10px] font-extrabold">Company</h3>
+              <div className="mt-3 space-y-1.5 text-[8px] text-slate-400">
+                <a href="#" className="block hover:text-white">
+                  About Us
+                </a>
+                <a href="#" className="block hover:text-white">
+                  Our Team
+                </a>
+                <a href="#" className="block hover:text-white">
+                  Careers
+                </a>
+                <a href="#" className="block hover:text-white">
+                  Contact
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-7 flex flex-col justify-between gap-4 border-t border-white/10 pt-5 text-[8px] text-slate-400 sm:flex-row">
+            <div>© 2026 AIWorkforce. All rights reserved.</div>
+
+            <div className="flex flex-wrap gap-4">
+              <a href="#" className="hover:text-white">
+                Privacy Policy
+              </a>
+              <a href="#" className="hover:text-white">
+                Terms of Service
+              </a>
+              <a href="#" className="hover:text-white">
+                Sitemap
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }

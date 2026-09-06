@@ -63,6 +63,53 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
+   {
+    label: "Solutions",
+    href: "#solutions",
+    hasDropdown: true,
+    dropdownContent: {
+      sections: [
+        {
+          items: [
+            {
+              title: "Ai Services",
+              href: "/services/ai-agents-development"
+            },
+            {
+              title: "Ai Development",
+              href: "/services/workforce-automation"
+            },
+            {
+              title: "Data & Intelligence",
+              href: "/services/ai-integration"
+            }
+          ]
+        },
+        {
+          items: [
+            {
+              title: "Ai Content & Creative",
+              href: "/services/business-process-automation"
+            },
+            {
+              title: "Ai consulting",
+              href: "/services/custom-ai-solutions"
+            }
+          ]
+        }
+      ],
+      footer: {
+        text: "Not sure which services fits your business?",
+        link: "Talk to Sales →",
+        href: "/talk-to-sales"
+      }
+    }
+  },
+   {
+    label: "Managed Teams",
+    href: "/managed-teams",
+    hasDropdown: false,
+  },
   {
     label: "Ai Agents",
     href: "#ai-agents",
@@ -137,98 +184,9 @@ const navItems: NavItem[] = [
       }
     }
   },
-  {
-    label: "Ai WorkForce",
-    href: "#ai-workForce",
-    hasDropdown: true,
-    dropdownContent: {
-      sections: [
-        {
-          items: [
-            {
-              title: "AI WorkForce",
-              href: "/features/ai-automation"
-            },
-            {
-              title: "Ai Employees",
-              href: "/features/smart-lead",
-              badge: "AI"
-            },
-            {
-              title: "AI Teams",
-              href: "/features/property-ai"
-            }
-          ]
-        },
-        {
-          items: [
-            {
-              title: "Ai WorkFlows",
-              href: "/features/growth-automation"
-            },
-            {
-              title: "WorkForce Builder",
-              href: "/features/Conversational-ai"
-            },
-            {
-              title: "Workforce Management",
-              href: "/features/Performance-analytics"
-            }
-          ]
-        }
-      ],
-      footer: {
-        text: "See all features",
-        link: "Explore →",
-        href: "/explore-feature"
-      }
-    }
-  },
-  {
-    label: "Services",
-    href: "#services",
-    hasDropdown: true,
-    dropdownContent: {
-      sections: [
-        {
-          items: [
-            {
-              title: "Ai Services",
-              href: "/services/ai-agents-development"
-            },
-            {
-              title: "Ai Development",
-              href: "/services/workforce-automation"
-            },
-            {
-              title: "Data & Intelligence",
-              href: "/services/ai-integration"
-            }
-          ]
-        },
-        {
-          items: [
-            {
-              title: "Ai Content & Creative",
-              href: "/services/business-process-automation"
-            },
-            {
-              title: "Ai consulting",
-              href: "/services/custom-ai-solutions"
-            }
-          ]
-        }
-      ],
-      footer: {
-        text: "Not sure which services fits your business?",
-        link: "Talk to Sales →",
-        href: "/talk-to-sales"
-      }
-    }
-  },
-  {
-    label: "Products",
-    href: "#products",
+   {
+    label: "Partners",
+    href: "#partners",
     hasDropdown: true,
     dropdownContent: {
       sections: [
@@ -279,6 +237,55 @@ const navItems: NavItem[] = [
     }
   },
   {
+    label: "Resources",
+    href: "#resources",
+    hasDropdown: true,
+    dropdownContent: {
+      sections: [
+        {
+          items: [
+            {
+              title: "AI WorkForce",
+              href: "/features/ai-automation"
+            },
+            {
+              title: "Ai Employees",
+              href: "/features/smart-lead",
+              badge: "AI"
+            },
+            {
+              title: "AI Teams",
+              href: "/features/property-ai"
+            }
+          ]
+        },
+        {
+          items: [
+            {
+              title: "Ai WorkFlows",
+              href: "/features/growth-automation"
+            },
+            {
+              title: "WorkForce Builder",
+              href: "/features/Conversational-ai"
+            },
+            {
+              title: "Workforce Management",
+              href: "/features/Performance-analytics"
+            }
+          ]
+        }
+      ],
+      footer: {
+        text: "See all features",
+        link: "Explore →",
+        href: "/explore-feature"
+      }
+    }
+  },
+ 
+ 
+  {
     label: "Company",
     href: "#company",
     hasDropdown: true,
@@ -324,16 +331,12 @@ const navItems: NavItem[] = [
       }
     }
   },
-  {
-    label: "Pricing",
-    href: "/pricing",
-    hasDropdown: false,
-  },
-  {
-    label: "Contact-us",
-    href: "/contact-us",
-    hasDropdown: false,
-  }
+ 
+  // {
+  //   label: "Contact-us",
+  //   href: "/contact-us",
+  //   hasDropdown: false,
+  // }
 ];
 
 function Header() {
@@ -375,6 +378,27 @@ function Header() {
 
   return (
     <div className=''>
+            {/* =========================================================
+                TOP UTILITY BAR
+            ========================================================= */}
+            <div className="bg-[#071c3b] px-5 py-2 text-xs text-white">
+              <div className="mx-auto flex max-w-[1280px] items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <span>●</span>
+                  <span>AI Delivery Center · Jaipur, India</span>
+                </div>
+      
+                <div className="hidden items-center gap-5 md:flex">
+                  <span>✉ hello@aiworkforce.com</span>
+                  <span>⌕ +91 72300 12345</span>
+                  <span>in</span>
+                  <span>◎</span>
+                  <span>♥</span>
+                  <span>f</span>
+                </div>
+              </div>
+            </div>
+
       {/* Navigation */}
       <nav
         className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-md border-b border-gray-100/80"

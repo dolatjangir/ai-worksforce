@@ -210,7 +210,7 @@ function SectionTitle({
 
 export default function AIWorkforcePage() {
   return (
-    <main className="min-h-screen overflow-hidden bg-white text-[#10294c]">
+    <main className="min-h-screen overflow-hidden bg-white text-[#10294c] " >
 
 
       {/* =========================================================
@@ -222,7 +222,7 @@ export default function AIWorkforcePage() {
           HERO
       ========================================================= */}
       <section className="relative overflow-hidden bg-gradient-to-r from-[#f5f9ff] via-[#f4f8ff] to-[#e9f1fc]">
-        <div className="mx-auto grid min-h-[390px] max-w-[1280px] grid-cols-1 lg:grid-cols-[49%_51%]">
+        <div className="mx-auto grid min-h-[460px] max-w-[1280px] grid-cols-1 lg:grid-cols-[49%_51%]">
           <div className="relative z-10 px-5 py-10 md:px-10 lg:py-12">
             <div className="mb-3 inline-flex rounded-full bg-[#dcd7ff] px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-[#6755d8]">
               AI + HUMAN DELIVERY · JAIPUR, INDIA
@@ -270,7 +270,7 @@ export default function AIWorkforcePage() {
             </div>
           </div>
 
-          <div className="relative min-h-[330px] lg:min-h-full">
+          <div className="relative min-h-[460px] lg:min-h-full">
             <img
               src={heroImage}
               alt="AI workforce delivery center"
@@ -355,7 +355,7 @@ export default function AIWorkforcePage() {
             {services.map((service) => (
               <div
                 key={service.title}
-                className="min-h-[225px] rounded-lg border border-[#dfe7f1] bg-white p-4 shadow-[0_2px_8px_rgba(20,50,90,0.03)]"
+                className="min-h-[240px] rounded-lg border border-[#dfe7f1] bg-white p-4 shadow-[0_2px_8px_rgba(20,50,90,0.03)]"
               >
                 <div
                   className={`mb-3 flex h-9 w-9 items-center justify-center rounded-full text-lg
@@ -407,7 +407,7 @@ export default function AIWorkforcePage() {
       {/* =========================================================
           HUMAN + AI
       ========================================================= */}
-      <section id="agents" className="bg-[#eef6ff]">
+      <section id="agents" className="bg-[#eef6ff] min-h-[360px]">
         <div className="mx-auto grid max-w-[1280px] lg:grid-cols-[57%_43%]">
           <div className="px-5 py-10 md:px-10">
             <SectionTitle
@@ -452,7 +452,7 @@ export default function AIWorkforcePage() {
             </div>
           </div>
 
-          <div className="relative min-h-[310px] overflow-hidden">
+          <div className="relative min-h-[360px] overflow-hidden lg:min-h-full">
             <img
               src={deliveryImage}
               alt="AI workforce delivery center"
@@ -491,7 +491,7 @@ export default function AIWorkforcePage() {
       {/* =========================================================
           PILOT PROCESS
       ========================================================= */}
-      <section className="bg-[#06204a] px-5 py-9 text-white md:px-8">
+      <section className="bg-[#06204a] px-5 py-10 text-white md:px-8">
         <div className="mx-auto flex max-w-[1280px] flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
           <div className="flex-1">
             <h2 className="text-2xl font-extrabold">From Pilot to Scale</h2>
@@ -547,7 +547,7 @@ export default function AIWorkforcePage() {
       {/* =========================================================
           MANAGED TEAMS
       ========================================================= */}
-      <section id="teams" className="bg-white px-5 py-9 md:px-8">
+      <section id="teams" className="bg-white px-5 py-10 md:px-8">
         <div className="mx-auto max-w-[1280px]">
           <div className="flex flex-col justify-between gap-4 md:flex-row">
             <div>
@@ -621,7 +621,7 @@ export default function AIWorkforcePage() {
       {/* =========================================================
           ECOSYSTEM
       ========================================================= */}
-      <section className="bg-[#f0f7ff] px-5 py-8 md:px-8">
+      <section className="bg-[#f0f7ff] px-5 py-9 md:px-8">
         <div className="mx-auto max-w-[1280px]">
           <div className="flex items-end justify-between">
             <div>
@@ -688,7 +688,7 @@ export default function AIWorkforcePage() {
       {/* =========================================================
           INDUSTRIES
       ========================================================= */}
-      <section className="bg-white px-5 py-6 md:px-8">
+      <section className="bg-white px-5 py-8 md:px-8">
         <div className="mx-auto max-w-[1280px]">
           <div className="flex items-center gap-3">
             <h2 className="text-xl font-extrabold text-[#10294c]">
@@ -722,8 +722,8 @@ export default function AIWorkforcePage() {
           FINAL CTA
       ========================================================= */}
       <section className="relative overflow-hidden bg-[#061d42]">
-        <div className="mx-auto grid min-h-[150px] max-w-[1280px] md:grid-cols-[42%_58%]">
-          <div className="relative min-h-[170px] overflow-hidden">
+        <div className="mx-auto grid min-h-[190px] max-w-[1280px] md:grid-cols-[42%_58%]">
+          <div className="relative min-h-[190px] overflow-hidden">
             <img
               src="https://images.unsplash.com/photo-1590055531615-f16d36d7d7c7?auto=format&fit=crop&w=1000&q=80"
               alt="Jaipur architecture"

@@ -1,6 +1,127 @@
 
 @import "tailwindcss";
 
+@theme {
+  --color-brand-blue: #0876ed;
+  --color-brand-dark: #071744;
+  --color-brand-navy: #061a38;
+  --color-brand-purple: #5c2bea;
+
+  --font-sans: "Inter", "Segoe UI", Arial, Helvetica, sans-serif;
+}
+
+:root {
+  --brand-blue: #0876ed;
+  --brand-dark: #071744;
+  --brand-navy: #061a38;
+  --brand-purple: #5c2bea;
+  --border: #dfe8f1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #ffffff;
+  color: var(--brand-dark);
+  font-family: "Inter", "Segoe UI", Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: rgba(8, 118, 237, 0.18);
+  color: #071744;
+}
+
+/* =========================================================
+   CUSTOM SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f4f7fb;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #bfd0e3;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0876ed;
+}
+
+/* =========================================================
+   RESPONSIVE TYPOGRAPHY
+========================================================= */
+
+@media (max-width: 640px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+/* =========================================================
+   HORIZONTAL MOBILE TABLES / PROCESS AREAS
+========================================================= */
+
+@media (max-width: 767px) {
+  .overflow-hidden {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* 
+@import "tailwindcss";
+
 :root {
   --ai-navy: #071c3b;
   --ai-dark: #061a39;
@@ -34,7 +155,7 @@ a {
 
 button {
   cursor: pointer;
-}
+} */
 
 
 

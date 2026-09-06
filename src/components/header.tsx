@@ -106,9 +106,51 @@ const navItems: NavItem[] = [
     }
   },
    {
-    label: "Managed Teams",
-    href: "/managed-teams",
-    hasDropdown: false,
+    label: "Ai Delivery Teams",
+    href: "#ai-delivery-teams",
+    hasDropdown: true,
+    dropdownContent: {
+      sections: [
+        {
+          items: [
+            {
+              title: "AI WorkForce",
+              href: "/features/ai-automation"
+            },
+            {
+              title: "Ai Employees",
+              href: "/features/smart-lead",
+              badge: "AI"
+            },
+            {
+              title: "AI Teams",
+              href: "/features/property-ai"
+            }
+          ]
+        },
+        {
+          items: [
+            {
+              title: "Ai WorkFlows",
+              href: "/features/growth-automation"
+            },
+            {
+              title: "WorkForce Builder",
+              href: "/features/Conversational-ai"
+            },
+            {
+              title: "Workforce Management",
+              href: "/features/Performance-analytics"
+            }
+          ]
+        }
+      ],
+      footer: {
+        text: "See all features",
+        link: "Explore →",
+        href: "/explore-feature"
+      }
+    }
   },
   {
     label: "Ai Agents",
@@ -185,8 +227,8 @@ const navItems: NavItem[] = [
     }
   },
    {
-    label: "Partners",
-    href: "#partners",
+    label: "Products",
+    href: "#products",
     hasDropdown: true,
     dropdownContent: {
       sections: [
@@ -233,6 +275,53 @@ const navItems: NavItem[] = [
         text: "",
         link: "Book a Demo →",
         href: "/book-demo"
+      }
+    }
+  },
+   {
+    label: "Partners",
+    href: "#partners",
+    hasDropdown: true,
+    dropdownContent: {
+      sections: [
+        {
+          items: [
+            {
+              title: "AI WorkForce",
+              href: "/features/ai-automation"
+            },
+            {
+              title: "Ai Employees",
+              href: "/features/smart-lead",
+              badge: "AI"
+            },
+            {
+              title: "AI Teams",
+              href: "/features/property-ai"
+            }
+          ]
+        },
+        {
+          items: [
+            {
+              title: "Ai WorkFlows",
+              href: "/features/growth-automation"
+            },
+            {
+              title: "WorkForce Builder",
+              href: "/features/Conversational-ai"
+            },
+            {
+              title: "Workforce Management",
+              href: "/features/Performance-analytics"
+            }
+          ]
+        }
+      ],
+      footer: {
+        text: "See all features",
+        link: "Explore →",
+        href: "/explore-feature"
       }
     }
   },
@@ -424,9 +513,9 @@ function Header() {
                 >
                   {item.hasDropdown ? (
                     <button
-                      className={`flex items-center gap-1.5 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${activeDropdown === item.label
+                      className={`flex items-center gap-0.5 px-3 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${activeDropdown === item.label
                         ? "text-violet-700 bg-violet-50/80"
-                        : "text-gray-600 hover:text-gray-900 hover:bg-gray-50/80"
+                        : "text-gray-950 hover:text-gray-900 hover:bg-gray-50/80"
                         }`}
                     >
                       {item.label}
@@ -437,7 +526,7 @@ function Header() {
                   ) : (
                     <Link
                       href={item.href}
-                      className="px-4 py-2 rounded-xl text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50/80 transition-all duration-300"
+                      className="px-4 py-2 rounded-xl  text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50/80 transition-all duration-300"
                     >
                       {item.label}
                     </Link>
@@ -572,15 +661,15 @@ function Header() {
             </nav>
 
             <div className="hidden md:flex items-center gap-3">
-              <Link href="/login">
+              {/* <Link href="/login">
                 <button className="px-4 py-2 text-gray-600 hover:text-violet-700 font-semibold text-sm transition-all duration-200 rounded-xl hover:bg-gray-50">
                   Log in
-                </button></Link>
+                </button></Link> */}
               <Link href="/book-demo">
                 <button
-                  className="px-5 py-2.5 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white font-semibold text-sm rounded-xl transition-all duration-300 shadow-lg shadow-violet-500/25 hover:shadow-violet-500/40 hover:-translate-y-0.5"
+                  className="hidden items-center gap-2 rounded-md bg-[#0876ed] px-5 py-2.5 text-[11px] font-bold text-white shadow-[0_7px_18px_rgba(8,118,237,.2)] transition hover:bg-[#0668d5] sm:flex"
                 >
-                  Demo Request
+                  start a pilot <ArrowRight/>
                 </button></Link>
             </div>
 
@@ -732,14 +821,14 @@ function Header() {
 
             {/* Sticky Bottom Auth Buttons */}
             <div className='sticky bottom-0 bg-white border-t border-gray-100 pt-5 pb-3 px-1 mt-4'>
-              <Link href="/login">
+              {/* <Link href="/login">
                 <button className="w-full py-3 text-gray-700 font-semibold rounded-xl hover:bg-gray-50 transition-colors">
                   Log in
                 </button>
-              </Link>
+              </Link> */}
               <Link href="/book-demo">
-                <button className="w-full py-3.5 bg-gradient-to-r from-violet-600 to-purple-600 text-white font-semibold rounded-xl mt-2 shadow-lg shadow-violet-500/20">
-                  Demo Request
+                <button className="whidden items-center gap-2 rounded-md bg-[#0876ed] px-5 py-2.5 text-[11px] font-bold text-white shadow-[0_7px_18px_rgba(8,118,237,.2)] transition hover:bg-[#0668d5] sm:flex">
+                Start a  Pilot
                 </button>
               </Link>
             </div>

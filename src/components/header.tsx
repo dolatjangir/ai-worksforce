@@ -146,16 +146,16 @@ const navItems: NavItem[] = [
         {
           items: [
             {
-              title: "AI Automation",
+              title: "AI WorkForce",
               href: "/features/ai-automation"
             },
             {
-              title: "Lead Management",
+              title: "Ai Employees",
               href: "/features/smart-lead",
               badge: "AI"
             },
             {
-              title: "Property Intelligence",
+              title: "AI Teams",
               href: "/features/property-ai"
             }
           ]
@@ -163,15 +163,15 @@ const navItems: NavItem[] = [
         {
           items: [
             {
-              title: "Marketing Automation",
+              title: "Ai WorkFlows",
               href: "/features/growth-automation"
             },
             {
-              title: "Smart Communication",
+              title: "WorkForce Builder",
               href: "/features/Conversational-ai"
             },
             {
-              title: "Analytics & Insights",
+              title: "Workforce Management",
               href: "/features/Performance-analytics"
             }
           ]
@@ -288,15 +288,15 @@ const navItems: NavItem[] = [
           items: [
             {
               title: "How-It-Works",
-              href: "/resources/howitworks"
+              href: "/company/howitworks"
             },
             {
               title: "About Us",
-              href: "/resources/about-us"
+              href: "/company/about-us"
             },
             {
               title: "Help Center",
-              href: "/resources/help-center"
+              href: "/company/help-center"
             },
           ]
         },
@@ -304,11 +304,15 @@ const navItems: NavItem[] = [
           items: [
             {
               title: "our Team",
-              href: "/resources/community"
+              href: "/company/community"
             },
             {
               title: "Careers & Apply",
-              href: "/resources/pricing"
+              href: "/company/careers"
+            },
+            {
+              title: "Why Choose Us",
+              href: "/company/why-choose-us"
             },
           ]
         }

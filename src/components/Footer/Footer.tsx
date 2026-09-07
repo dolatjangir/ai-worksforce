@@ -14,7 +14,7 @@ export default function Footer() {
               AI Agents. Human Experts. Managed Results.
             </p>
             <p className="mt-6 text-sm text-blue-200">
-              © {currentYear} AIWorkforce. All rights reserved.
+              © {currentYear} AIWorksforce. All rights reserved.
             </p>
           </div>
 
@@ -73,7 +73,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-10 flex flex-col justify-between gap-3 border-t border-white/10 pt-5 text-md text-blue-200 md:flex-row">
-          <span>© {currentYear} AIWorkforce. All rights reserved.</span>
+          <span>© {currentYear} AIWorksforce. All rights reserved.</span>
 
           <div className="flex gap-5">
             <a href="#privacy" className="transition hover:text-white">
@@ -103,7 +103,7 @@ export default function Footer() {
 //               <img src="/aiworksforce-logo.png" alt="AIWorksForce Logo" className="h-20 w-auto" />
 //             </div>
 //             <p className="text-gray-500 text-sm leading-relaxed max-w-xs">
-//               AI-powered workforce platform. Automate leads, manage properties, and scale your business with intelligent agents.
+//               AI-powered Worksforce platform. Automate leads, manage properties, and scale your business with intelligent agents.
 //             </p>
 
 //             {/* Social Links */}
@@ -161,13 +161,13 @@ export default function Footer() {
 //             </ul>
 //           </div>
 
-//           {/* AI WorkForce */}
+//           {/* AI Worksforce */}
 //           <div>
 //             <h4 className="text-gray-900 font-bold text-xs uppercase tracking-widest mb-4">
-//               AI WorkForce
+//               AI Worksforce
 //             </h4>
 //             <ul className="space-y-2.5">
-//               {aiWorkForce.map((item) => (
+//               {aiWorksforce.map((item) => (
 //                 <li key={item.name}>
 //                   <a
 //                     href={item.href}
@@ -207,7 +207,7 @@ export default function Footer() {
 //         {/* CTA Banner */}
 //         <div className="mt-8 p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-violet-50 via-purple-50 to-fuchsia-50 border border-violet-100 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
 //           <div>
-//             <h4 className="text-gray-900 font-bold text-base">Ready to transform your workflow?</h4>
+//             <h4 className="text-gray-900 font-bold text-base">Ready to transform your Worksflow?</h4>
 //             <p className="text-gray-500 text-sm mt-1">Book a demo and see our AI agents in action.</p>
 //           </div>
 //           <a

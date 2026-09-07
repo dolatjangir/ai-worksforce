@@ -10,12 +10,96 @@
   --font-sans: "Inter", "Segoe UI", Arial, Helvetica, sans-serif;
 }
 
+@import "tailwindcss";
+
 :root {
-  --brand-blue: #0876ed;
-  --brand-dark: #071744;
-  --brand-navy: #061a38;
-  --brand-purple: #5c2bea;
-  --border: #dfe8f1;
+  /* =========================================
+     BRAND COLORS
+     ========================================= */
+
+  --color-primary: #2563eb;
+  --color-primary-dark: #1d4ed8;
+
+  --color-cyan: #00c6ff;
+  --color-cyan-light: #22d3ee;
+  --color-cyan-500: #06b6d4;
+
+  --color-violet: #9333ea;
+  --color-violet-600: #7c3aed;
+
+  /* =========================================
+     TEXT COLORS
+     ========================================= */
+
+  --color-heading: #10204f;
+  --color-heading-dark: #101f4e;
+  --color-heading-alt: #14234f;
+  --color-heading-secondary: #152451;
+
+  --color-text: #475569;
+  --color-text-muted: #64748b;
+  --color-text-light: #94a3b8;
+
+  --color-white: #ffffff;
+
+  /* =========================================
+     BLUE TINTS / BACKGROUNDS
+     ========================================= */
+
+  --color-blue-50: #eff6ff;
+  --color-blue-100: #dbeafe;
+  --color-blue-200: #bfdbfe;
+
+  --color-cyan-50: #ecfeff;
+
+  --color-indigo-50: #eef2ff;
+
+  /* =========================================
+     BORDERS
+     ========================================= */
+
+  --color-border: #dbeafe;
+  --color-border-hover: #bfdbfe;
+
+  /* =========================================
+     GRADIENTS
+     ========================================= */
+
+  --gradient-brand: linear-gradient(
+    to right,
+    #06b6d4,
+    #2563eb,
+    #7c3aed
+  );
+
+  --gradient-brand-soft: linear-gradient(
+    to right,
+    #22d3ee,
+    #2563eb
+  );
+
+  --gradient-heading: linear-gradient(
+    to right,
+    #06b6d4,
+    #2563eb,
+    #7c3aed
+  );
+
+  --gradient-section: linear-gradient(
+    to bottom right,
+    #eff6ff,
+    #ffffff,
+    #eef2ff
+  );
+
+  /* =========================================
+     SHADOW COLORS
+     ========================================= */
+
+  --shadow-blue: rgba(24, 74, 140, 0.06);
+  --shadow-blue-medium: rgba(24, 74, 140, 0.12);
+  --shadow-blue-strong: rgba(32, 83, 150, 0.10);
+  --shadow-blue-soft: rgba(25, 80, 160, 0.06);
 }
 
 * {

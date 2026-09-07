@@ -353,11 +353,11 @@ export default function Home() {
           {/* Hero Copy */}
           <div className="relative z-20 flex items-center px-5 py-12 sm:px-8 lg:px-12 xl:px-16">
             <div className="max-w-[650px]">
-              <div className="mb-4 inline-flex rounded-full bg-[#eaf5ff] px-3 py-1 text-[9px] font-extrabold uppercase tracking-[0.05em] text-[#1476e5]">
+              <div className="mb-4 inline-flex rounded-full bg-[#eaf5ff] px-3 py-1 text-xs font-extrabold uppercase tracking-[0.05em] text-[#1476e5]">
                 Expert AI M Owners • AI Tools • Lead Engines
               </div>
 
-              <h1 className="max-w-[650px] text-[42px] font-extrabold leading-[0.99] tracking-[-0.045em] text-[#071744] sm:text-[50px] lg:text-[47px] xl:text-[46px]">
+              <h1 className="max-w-[650px] text-5xl font-extrabold leading-[0.99] tracking-[-0.045em] text-[#071744] sm:text-[50px] lg:text-[47px] xl:text-[46px]">
                 Build Your AI Workforce
                 <br />
                 <span className="text-[#0876ed]">
@@ -394,7 +394,7 @@ export default function Home() {
               <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                 <a
                   href="#contact"
-                  className="inline-flex items-center justify-center gap-2 rounded-md bg-[#0876ed] px-7 py-3.5 text-[12px] font-bold text-white shadow-[0_8px_20px_rgba(8,118,237,.18)] transition hover:-translate-y-0.5 hover:bg-[#0668d5]"
+                  className="inline-flex items-center justify-center gap-2 rounded-md bg-[#0876ed] px-7 py-3.5 text-md font-bold text-white shadow-[0_8px_20px_rgba(8,118,237,.18)] transition hover:-translate-y-0.5 hover:bg-[#0668d5]"
                 >
                   Start a Pilot
                   <ArrowRight size={15} />
@@ -402,7 +402,7 @@ export default function Home() {
 
                 <a
                   href="#contact"
-                  className="inline-flex items-center justify-center gap-2 rounded-md border border-[#0876ed] bg-white px-7 py-3.5 text-[12px] font-bold text-[#0876ed] transition hover:bg-[#eff7ff]"
+                  className="inline-flex items-center justify-center gap-2 rounded-md border border-[#0876ed] bg-white px-7 py-3.5 text-md font-bold text-[#0876ed] transition hover:bg-[#eff7ff]"
                 >
                   Talk to Our Team
                 </a>

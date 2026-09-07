@@ -665,7 +665,7 @@ function Header() {
                 <button className="px-4 py-2 text-gray-600 hover:text-violet-700 font-semibold text-sm transition-all duration-200 rounded-xl hover:bg-gray-50">
                   Log in
                 </button></Link> */}
-              <Link href="/book-demo">
+              <Link href="/start-a-pilot">
                 <button
                   className="hidden items-center gap-2 rounded-md bg-[#0876ed] px-5 py-2.5 text-[11px] font-bold text-white shadow-[0_7px_18px_rgba(8,118,237,.2)] transition hover:bg-[#0668d5] sm:flex"
                 >

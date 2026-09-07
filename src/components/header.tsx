@@ -161,18 +161,18 @@ const navItems: NavItem[] = [
         {
           items: [
             {
-              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335520/img-1_nz99v7.png" className="max-w-20 max-h-20" />,
+              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335520/img-1_nz99v7.png" className="max-w-12 max-h-12" />,
               title: "Ai Lead Qualification Agent",
               href: "/ai-agents/lead-qualifiction-agent"
             },
             {
-              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335520/img-2_l1xdll.png" className="max-w-20 max-h-20" />,
+              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335520/img-2_l1xdll.png" className="max-w-12 max-h-12" />,
               title: "Ai Property Matching Agent",
               href: "/ai-agents/property-maching-agent",
               badge: "AI"
             },
             {
-              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335520/img-3_scja92.png" className="max-w-20 max-h-20" />,
+              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335520/img-3_scja92.png" className="max-w-12 max-h-12" />,
               title: "Lead Capture Agent",
               href: "/ai-agents/lead-capture-agent"
             },
@@ -182,7 +182,7 @@ const navItems: NavItem[] = [
               href: "/ai-agents/content-creation-agent"
             },
             {
-              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335553/img-555_kabvyd.png" className="max-w-20 max-h-20" />,
+              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335553/img-555_kabvyd.png" className="max-w-12 max-h-12" />,
               title: "Ai  Follow-Up Agent",
               href: "/ai-agents/follow-up-agent",
               badge: "AI"
@@ -192,27 +192,27 @@ const navItems: NavItem[] = [
         {
           items: [
             {
-              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335521/img-6_mky5rb.png" className="max-w-20 max-h-20" />,
+              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335521/img-6_mky5rb.png" className="max-w-12 max-h-12" />,
               title: "Ai Calling Agent",
               href: "/ai-agents/calling-agent"
             },
             {
-              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335523/img-7_xjwzbl.png" className="max-w-20 max-h-20" />,
+              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335523/img-7_xjwzbl.png" className="max-w-12 max-h-12" />,
               title: "Ai Campaign Automation Agent",
               href: "/ai-agents/campaign-automation"
             },
             {
-              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335552/img-8_twulvb.png" className="max-w-20 max-h-20" />,
+              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335552/img-8_twulvb.png" className="max-w-12 max-h-12" />,
               title: "Data Mining Agent",
               href: "/ai-agents/data-mining-agent"
             },
             {
-              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335553/img-9_i1wlut.png" className="max-w-20 max-h-20" />,
+              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335553/img-9_i1wlut.png" className="max-w-12 max-h-12" />,
               title: "Social Media Agent",
               href: "/ai-agents/social-media-agent"
             },
             {
-              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335553/img-10_ajsusz.png" className="max-w-20 max-h-20 rounded-xl" />,
+              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335553/img-10_ajsusz.png" className="max-w-12 max-h-12 rounded-xl" />,
               title: "Ai SEO Content Agent",
               href: "/ai-agents/seo-content-agent"
             },
@@ -612,7 +612,7 @@ function Header() {
                                       href={subItem.href}
                                       className="group flex items-center gap-3 p-2.5 rounded-xl hover:bg-gray-50/80 transition-all duration-200"
                                     >
-                                      <div className="flex-shrink-0 text-violet-600 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                                      <div className="flex-shrink-0  text-violet-600 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
                                         {subItem.icon}
                                       </div>
 

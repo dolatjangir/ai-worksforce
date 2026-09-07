@@ -357,7 +357,7 @@ export default function Home() {
                 Expert AI M Owners • AI Tools • Lead Engines
               </div>
 
-              <h1 className="max-w-[650px] text-[42px] font-extrabold leading-[0.99] tracking-[-0.045em] text-[#071744] sm:text-[50px] lg:text-[47px] xl:text-[56px]">
+              <h1 className="max-w-[650px] text-[42px] font-extrabold leading-[0.99] tracking-[-0.045em] text-[#071744] sm:text-[50px] lg:text-[47px] xl:text-[46px]">
                 Build Your AI Workforce
                 <br />
                 <span className="text-[#0876ed]">
@@ -627,7 +627,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="hidden font-serif text-lg italic leading-tight text-[#071744] sm:block">
+            <div className="hidden font-serif text-lg italic -rotate-[10deg] leading-tight text-[#071744] sm:block">
               Simple Process.
               <br />
               Powerful Results.

@@ -413,7 +413,7 @@ export default function Home() {
           {/* Hero Image */}
           <div className="relative min-h-[350px] overflow-hidden lg:min-h-0">
             <img
-              src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1400&q=90"
+              src="/aiworkforce-hero-img.png"
               alt="AI workforce team working together"
               className="absolute inset-0 h-full w-full object-cover"
             />
@@ -432,7 +432,7 @@ export default function Home() {
             <div className="absolute bottom-8 right-5 rounded-xl border border-white/60 bg-white px-4 py-3 shadow-2xl sm:right-8">
               <div className="flex items-center gap-2">
                 <span className="text-[30px] font-extrabold tracking-tight text-[#071744]">
-                  100+
+                  150+
                 </span>
                 <span className="text-[11px] font-bold text-[#142652]">
                   Delivery Seats
@@ -507,78 +507,104 @@ export default function Home() {
       {/* =========================================================
           SERVICES
       ========================================================== */}
-      <section className="bg-white py-9 sm:py-12">
-        <div className="mx-auto max-w-[1500px] px-5 lg:px-12">
-          <div className="mb-5 flex items-end justify-between gap-4">
-            <div>
-              <div className="mb-1 text-[10px] font-extrabold uppercase text-[#0876ed]">
-                Our Services
-              </div>
+    <section className="bg-white py-9 sm:py-12">
+  <div className="mx-auto max-w-[1500px] px-5 lg:px-12">
+    {/* Section Header */}
+    <div className="mb-6 flex items-end justify-between gap-4">
+      <div>
+        <div className="mb-1.5 text-[10px] font-extrabold uppercase tracking-wide text-[#0876ed]">
+          Our Services
+        </div>
 
-              <h2 className="text-[25px] font-extrabold tracking-[-0.03em] text-[#071744] sm:text-[31px]">
-                What Can We Operate for You?
-              </h2>
+        <h2 className="text-[25px] font-extrabold leading-[1.15] tracking-[-0.03em] text-[#071744] sm:text-[31px]">
+          What Can We Operate for You?
+        </h2>
+      </div>
+
+      <a
+        href="#"
+        className="hidden shrink-0 items-center gap-1.5 pb-1 text-[10px] font-bold text-[#0876ed] transition-colors hover:text-[#0668d5] sm:flex"
+      >
+        Explore All Services
+        <ArrowRight size={13} strokeWidth={2.5} />
+      </a>
+    </div>
+
+    {/* Services Grid */}
+    <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+      {services.map((service) => {
+        const Icon = service.icon;
+
+        return (
+          <article
+            key={service.title}
+            className={`group relative flex h-full min-h-[205px] flex-col overflow-visible rounded-xl border p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_30px_rgba(7,23,68,0.08)] ${
+              service.tone === "pink"
+                ? "border-pink-100 bg-gradient-to-b from-[#fff4f6] via-white to-white"
+                : "border-[#dfe8f1] bg-white"
+            }`}
+          >
+            {/* New Badge */}
+            {service.new && (
+              <span className="absolute right-3 top-0 z-10 -translate-y-1/2 rounded-full bg-[#0876ed] px-2.5 py-1 text-[8px] font-bold leading-none text-white shadow-sm">
+                New
+              </span>
+            )}
+
+            {/* Icon */}
+            <div
+              className={`mb-4 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${
+                service.tone === "pink"
+                  ? "bg-[#ffe7ec] text-[#f0446f]"
+                  : "bg-[#eaf5ff] text-[#0876ed]"
+              }`}
+            >
+              <Icon
+                size={21}
+                strokeWidth={2.2}
+                className="transition-transform duration-300 group-hover:scale-105"
+              />
             </div>
 
+            {/* Title */}
+            <h3 className="min-h-[32px] text-[12px] font-extrabold leading-[1.3] text-[#071744] sm:text-[12px]">
+              {service.title}
+            </h3>
+
+            {/* Description */}
+            <p className="mt-2 flex-1 text-[10px] font-medium leading-[1.55] text-[#53627a]">
+              {service.text}
+            </p>
+
+            {/* Bottom CTA */}
             <a
               href="#"
-              className="hidden items-center gap-1 text-[10px] font-bold text-[#0876ed] sm:flex"
+              className="mt-5 inline-flex w-fit items-center gap-1.5 text-[10px] font-extrabold text-[#0876ed] transition-all duration-200 hover:gap-2"
             >
-              Explore All Services
-              <ArrowRight size={13} />
+              {service.partner ? "Become a Partner" : "Learn More"}
+              <ArrowRight
+                size={12}
+                strokeWidth={2.5}
+                className="shrink-0"
+              />
             </a>
-          </div>
+          </article>
+        );
+      })}
+    </div>
 
-          <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
-            {services.map((service) => {
-              const Icon = service.icon;
-
-              return (
-                <article
-                  key={service.title}
-                  className={`relative flex min-h-[155px] flex-col rounded-lg border p-4 transition hover:-translate-y-1 hover:shadow-lg ${
-                    service.tone === "pink"
-                      ? "border-pink-100 bg-gradient-to-b from-pink-50 to-white"
-                      : "border-slate-200 bg-white"
-                  }`}
-                >
-                  {service.new && (
-                    <span className="absolute right-3 top-0 -translate-y-1/2 rounded-full bg-[#0876ed] px-2 py-1 text-[8px] font-bold text-white">
-                      New
-                    </span>
-                  )}
-
-                  <div
-                    className={`mb-3 flex h-8 w-8 items-center justify-center rounded-lg ${
-                      service.tone === "pink"
-                        ? "bg-pink-100 text-pink-500"
-                        : "bg-[#eaf5ff] text-[#0876ed]"
-                    }`}
-                  >
-                    <Icon size={18} />
-                  </div>
-
-                  <h3 className="text-[12px] font-extrabold text-[#071744]">
-                    {service.title}
-                  </h3>
-
-                  <p className="mt-2 flex-1 text-[10px] leading-[1.5] text-slate-600">
-                    {service.text}
-                  </p>
-
-                  <a
-                    href="#"
-                    className="mt-3 flex items-center gap-1 text-[10px] font-extrabold text-[#0876ed]"
-                  >
-                    {service.partner ? "Become a Partner" : "Learn More"}
-                    <ArrowRight size={12} />
-                  </a>
-                </article>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+    {/* Mobile Explore Link */}
+    <div className="mt-5 flex justify-end sm:hidden">
+      <a
+        href="#"
+        className="flex items-center gap-1.5 text-[10px] font-bold text-[#0876ed]"
+      >
+        Explore All Services
+        <ArrowRight size={13} strokeWidth={2.5} />
+      </a>
+    </div>
+  </div>
+</section>
 
       {/* =========================================================
           DELIVERY MODEL + PROCESS
@@ -1012,7 +1038,7 @@ export default function Home() {
               </h2>
             </div>
 
-            <div className="grid flex-1 grid-cols-2 gap-2 sm:grid-cols-4 xl:grid-cols-8">
+            <div className="grid flex-1 grid-cols-2 gap-2 sm:grid-cols-4 lg:grid-cols-5 xl:grid-cols-8">
               {industries.map((industry) => {
                 const Icon = industry.icon;
 

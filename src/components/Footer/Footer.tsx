@@ -2,26 +2,18 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#061a39] px-5 py-9 text-white md:px-8">
-      <div className="mx-auto max-w-[1280px]">
+    <footer className="bg-[#061a39] px-5 py-16 text-white md:px-8">
+      <div className="mx-auto max-w-[1380px]">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-6">
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2">
-              <div className="relative h-8 w-9">
-                <span className="absolute text-3xl font-black text-blue-500">
-                  M
-                </span>
-                <span className="absolute left-1 text-3xl font-black text-purple-500">
-                  N
-                </span>
-              </div>
-              <span className="text-base font-extrabold">AIWorkforce</span>
+            <img src="/aiworksforce-white-logo.png" alt="aiworksforce-logo" className="w-60 "/>
             </div>
-            <p className="mt-1 text-xs text-blue-100">
+            <p className="mt-1 text-sm text-blue-100">
               AI Agents. Human Experts. Managed Results.
             </p>
-            <p className="mt-6 text-xs text-blue-200">
+            <p className="mt-6 text-sm text-blue-200">
               © {currentYear} AIWorkforce. All rights reserved.
             </p>
           </div>
@@ -80,7 +72,7 @@ export default function Footer() {
           />
         </div>
 
-        <div className="mt-8 flex flex-col justify-between gap-3 border-t border-white/10 pt-5 text-xs text-blue-200 md:flex-row">
+        <div className="mt-10 flex flex-col justify-between gap-3 border-t border-white/10 pt-5 text-md text-blue-200 md:flex-row">
           <span>© {currentYear} AIWorkforce. All rights reserved.</span>
 
           <div className="flex gap-5">
@@ -251,14 +243,14 @@ function FooterColumn({
 }) {
   return (
     <div>
-      <h3 className="text-xs font-extrabold text-white">{title}</h3>
+      <h3 className="text-md font-extrabold text-white">{title}</h3>
 
-      <ul className="mt-3 space-y-2">
+      <ul className="mt-4 space-y-4">
         {items.map((item) => (
           <li key={item.name}>
             <a
               href={item.href}
-              className="text-xs text-blue-100 transition hover:text-white"
+              className="text-md text-blue-100 transition hover:text-white"
             >
               {item.name}
             </a>

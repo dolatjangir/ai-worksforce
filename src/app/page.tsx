@@ -283,7 +283,7 @@ export default function Home() {
               <a
                 key={item}
                 href="#"
-                className="flex items-center gap-1 text-[11px] font-bold text-[#071744] transition hover:text-[#0876ed]"
+                className="flex items-center gap-1 text-sm font-bold text-[#071744] transition hover:text-[#0876ed]"
               >
                 {item}
                 <ChevronDown size={11} />
@@ -293,7 +293,7 @@ export default function Home() {
 
           <a
             href="#contact"
-            className="hidden items-center gap-2 rounded-md bg-[#0876ed] px-5 py-2.5 text-[11px] font-bold text-white shadow-[0_7px_18px_rgba(8,118,237,.2)] transition hover:bg-[#0668d5] sm:flex"
+            className="hidden items-center gap-2 rounded-md bg-[#0876ed] px-5 py-2.5 text-sm font-bold text-white shadow-[0_7px_18px_rgba(8,118,237,.2)] transition hover:bg-[#0668d5] sm:flex"
           >
             Start a Pilot
             <ArrowRight size={14} />
@@ -382,7 +382,7 @@ export default function Home() {
                   return (
                     <div
                       key={item.text}
-                      className="flex items-center gap-2 text-[11px] font-bold text-[#142652]"
+                      className="flex items-center gap-2 text-sm font-bold text-[#142652]"
                     >
                       <Icon size={17} className="text-[#0876ed]" />
                       {item.text}
@@ -434,7 +434,7 @@ export default function Home() {
                 <span className="text-[30px] font-extrabold tracking-tight text-[#071744]">
                   150+
                 </span>
-                <span className="text-[11px] font-bold text-[#142652]">
+                <span className="text-sm font-bold text-[#142652]">
                   Delivery Seats
                   <br />
                   <span className="font-medium text-slate-500">
@@ -484,17 +484,17 @@ export default function Home() {
             return (
               <div
                 key={item.number}
-                className="flex items-center gap-3 border-b border-r border-slate-100 px-5 py-4 last:border-r-0 lg:border-b-0 lg:px-6"
+                className="flex items-center gap-3 border-b border-r border-slate-100 px-6 py-7 last:border-r-0 lg:border-b-0 lg:px-6"
               >
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#edf7ff] text-[#0876ed]">
-                  <Icon size={20} />
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#edf7ff] text-[#0876ed]">
+                  <Icon size={24} />
                 </div>
 
                 <div>
-                  <div className="text-[15px] font-extrabold text-[#071744]">
+                  <div className="text-lg font-extrabold text-[#071744]">
                     {item.number}
                   </div>
-                  <div className="text-[9px] font-medium text-slate-500">
+                  <div className="text-xs font-medium text-slate-500">
                     {item.text}
                   </div>
                 </div>
@@ -553,33 +553,33 @@ export default function Home() {
 
             {/* Icon */}
             <div
-              className={`mb-4 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${
+              className={`mb-4 flex h-14 w-14 shrink-0 items-center justify-center rounded-xl ${
                 service.tone === "pink"
                   ? "bg-[#ffe7ec] text-[#f0446f]"
                   : "bg-[#eaf5ff] text-[#0876ed]"
               }`}
             >
               <Icon
-                size={21}
+                size={28}
                 strokeWidth={2.2}
                 className="transition-transform duration-300 group-hover:scale-105"
               />
             </div>
 
             {/* Title */}
-            <h3 className="min-h-[32px] text-[12px] font-extrabold leading-[1.3] text-[#071744] sm:text-[12px]">
+            <h3 className=" text-[12px] font-semibold leading-[1] text-[#071744] sm:text-lg">
               {service.title}
             </h3>
 
             {/* Description */}
-            <p className="mt-2 flex-1 text-[10px] font-medium leading-[1.55] text-[#53627a]">
+            <p className="mt-2 flex-1 text-sm font-medium leading-[1.55] text-[#53627a]">
               {service.text}
             </p>
 
             {/* Bottom CTA */}
             <a
               href="#"
-              className="mt-5 inline-flex w-fit items-center gap-1.5 text-[10px] font-extrabold text-[#0876ed] transition-all duration-200 hover:gap-2"
+              className="mt-5 inline-flex w-fit items-center gap-1.5 text-sm font-extrabold text-[#0876ed] transition-all duration-200 hover:gap-2"
             >
               {service.partner ? "Become a Partner" : "Learn More"}
               <ArrowRight
@@ -597,7 +597,7 @@ export default function Home() {
     <div className="mt-5 flex justify-end sm:hidden">
       <a
         href="#"
-        className="flex items-center gap-1.5 text-[10px] font-bold text-[#0876ed]"
+        className="flex items-center gap-1.5 text-sm font-bold text-[#0876ed]"
       >
         Explore All Services
         <ArrowRight size={13} strokeWidth={2.5} />
@@ -613,21 +613,21 @@ export default function Home() {
         <div className="mx-auto max-w-[1500px] px-5 lg:px-12">
           <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
             <div>
-              <div className="text-[10px] font-extrabold uppercase text-[#0876ed]">
+              <div className="text-sm font-extrabold uppercase text-[#0876ed]">
                 How AIWorkforce Delivers Results
               </div>
 
-              <h2 className="mt-1 text-[25px] font-extrabold tracking-[-0.035em] text-[#071744] sm:text-[30px]">
+              <h2 className="mt-1 text-xl font-extrabold tracking-[-0.035em] text-[#071744] sm:text-[30px]">
                 Experts + AI + Operators. Managed for You.
               </h2>
 
-              <p className="mt-1 text-[11px] text-[#304466] sm:text-[13px]">
+              <p className="my-2 text-sm text-[#304466] ">
                 A proven model and process to turn your requirements into real
                 business results.
               </p>
             </div>
 
-            <div className="hidden font-serif text-[17px] italic leading-tight text-[#071744] sm:block">
+            <div className="hidden font-serif text-lg italic leading-tight text-[#071744] sm:block">
               Simple Process.
               <br />
               Powerful Results.
@@ -639,7 +639,7 @@ export default function Home() {
             <div className="flex min-w-[950px] items-stretch">
               <div className="flex w-[150px] shrink-0 items-center border-r border-slate-200 px-4">
                 <div>
-                  <div className="text-[10px] font-extrabold text-[#0876ed]">
+                  <div className="text-sm font-extrabold text-[#0876ed]">
                     OUR DELIVERY MODEL
                   </div>
                 </div>
@@ -687,16 +687,16 @@ export default function Home() {
                             : "mx-auto text-[#0876ed]"
                         }
                       />
-                      <div className="mt-2 text-[10px] font-extrabold">
+                      <div className="mt-2 text-lg font-extrabold">
                         {item.title}
                       </div>
-                      <div className="mt-1 text-[8px] text-slate-500">
+                      <div className="mt-1 text-xs text-slate-500">
                         {item.text}
                       </div>
                     </div>
 
                     {index < 3 && (
-                      <span className="text-[23px] font-bold text-[#0876ed]">
+                      <span className="text-[23px] font-bold text-[#0876ed] ">
                         +
                       </span>
                     )}
@@ -713,10 +713,10 @@ export default function Home() {
                   <div className="mx-auto flex h-8 w-8 items-center justify-center rounded-lg bg-green-50 text-green-600">
                     <Zap size={20} />
                   </div>
-                  <div className="mt-1 text-[10px] font-extrabold">
+                  <div className="mt-1 text-sm font-extrabold">
                     Managed Results
                   </div>
-                  <div className="text-[8px] text-slate-500">
+                  <div className="text-xs text-slate-500">
                     Scale Your Business
                   </div>
                 </div>
@@ -725,14 +725,14 @@ export default function Home() {
           </div>
 
           {/* Process */}
-          <div className="mt-1 overflow-hidden rounded-lg border border-[#d5e6f5] bg-white">
+          <div className="my-4 overflow-hidden rounded-lg border border-[#d5e6f5]  bg-white">
             <div className="flex min-w-[900px] items-center">
               <div className="flex w-[150px] shrink-0 px-4 py-4">
                 <div>
-                  <div className="text-[10px] font-extrabold text-[#0876ed]">
+                  <div className="text-sm font-extrabold text-[#0876ed]">
                     OUR PROCESS
                   </div>
-                  <div className="mt-1 text-[8px] text-slate-500">
+                  <div className="mt-1 text-xs text-slate-500">
                     From Requirement to Scale
                   </div>
                 </div>
@@ -743,15 +743,15 @@ export default function Home() {
                   key={step.number}
                   className="relative flex min-w-[160px] flex-1 items-start gap-3 border-l border-slate-200 px-3 py-4"
                 >
-                  <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#0876ed] text-[11px] font-bold text-white">
+                  <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#0876ed] text-sm font-bold text-white">
                     {step.number}
                   </div>
 
                   <div>
-                    <div className="text-[10px] font-extrabold">
+                    <div className="text-[13px] font-extrabold">
                       {step.title}
                     </div>
-                    <div className="mt-1 text-[8px] leading-[1.4] text-slate-500">
+                    <div className="mt-1 text-[10px] leading-[1.4] text-slate-500">
                       {step.text}
                     </div>
                   </div>
@@ -772,39 +772,39 @@ export default function Home() {
       {/* =========================================================
           DELIVERY TEAMS
       ========================================================== */}
-      <section className="bg-white py-10 sm:py-12">
+      <section className="bg-white py-10 sm:py-14">
         <div className="mx-auto max-w-[1500px] px-5 lg:px-12">
           <div className="flex flex-col justify-between gap-3 lg:flex-row lg:items-end">
             <div>
-              <div className="text-[10px] font-extrabold uppercase text-[#0876ed]">
+              <div className="text-sm font-extrabold uppercase text-[#0876ed]">
                 AI Delivery Teams
               </div>
 
-              <h2 className="mt-1 text-[25px] font-extrabold tracking-[-0.03em] text-[#071744] sm:text-[29px]">
+              <h2 className="my-2 text-xl font-extrabold tracking-[-0.03em] text-[#071744] sm:text-[29px]">
                 Choose How You Want to Work With Us.
               </h2>
 
-              <p className="mt-1 text-[11px] text-slate-500">
+              <p className="mb-2 text-md text-slate-500">
                 Expert-led teams, trained operators and AI tools — fully
                 managed or flexibly built for your needs.
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-x-4 gap-y-2 text-[9px] font-semibold text-slate-600">
+            <div className="flex flex-wrap gap-x-4 gap-y-2 text-[13px] font-semibold text-slate-600">
               <span className="flex items-center gap-1">
-                <Check size={12} className="text-[#0876ed]" />
+                <Check size={14} className="text-[#0876ed]" />
                 Flexible engagement
               </span>
               <span className="flex items-center gap-1">
-                <Check size={12} className="text-[#0876ed]" />
+                <Check size={14} className="text-[#0876ed]" />
                 Scalable teams
               </span>
               <span className="flex items-center gap-1">
-                <Check size={12} className="text-[#0876ed]" />
+                <Check size={14} className="text-[#0876ed]" />
                 Quality-assured delivery
               </span>
               <span className="flex items-center gap-1">
-                <Check size={12} className="text-[#0876ed]" />
+                <Check size={14} className="text-[#0876ed]" />
                 Cost-effective
               </span>
             </div>
@@ -824,7 +824,7 @@ export default function Home() {
                   }`}
                 >
                   {team.badge && (
-                    <span className="absolute right-3 top-0 rounded-b-md bg-[#0876ed] px-3 py-1.5 text-[8px] font-bold text-white">
+                    <span className="absolute right-3 top-0 rounded-b-md bg-[#0876ed] px-3 py-1.5 text-xs font-bold text-white">
                       {team.badge}
                     </span>
                   )}
@@ -832,28 +832,28 @@ export default function Home() {
                   <div className="grid grid-cols-[1fr_120px] gap-3 sm:grid-cols-[1fr_135px]">
                     <div>
                       <div className="flex items-center gap-2">
-                        <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#f0e9ff] text-purple-600">
-                          <Icon size={20} />
+                        <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-[#f0e9ff] text-purple-600">
+                          <Icon size={24} />
                         </div>
 
-                        <h3 className="text-[14px] font-extrabold text-[#071744]">
+                        <h3 className="text-lg font-extrabold text-[#071744]">
                           {team.title}
                         </h3>
                       </div>
 
-                      <p className="mt-3 text-[10px] leading-[1.5] text-slate-600">
+                      <p className="mt-3 text-md leading-[1.5] text-slate-600">
                         {team.description}
                       </p>
 
-                      <ul className="mt-3 space-y-1.5">
+                      <ul className="mt-3 space-y-4">
                         {team.bullets.map((bullet) => (
                           <li
                             key={bullet}
-                            className="flex items-start gap-1.5 text-[9px] font-medium text-slate-600"
+                            className="flex items-start gap-3 text-sm font-medium text-slate-600"
                           >
                             <Check
                               size={12}
-                              className="mt-[1px] shrink-0 text-[#0876ed]"
+                              className="mt-[2px] shrink-0 text-[#0876ed]"
                             />
                             {bullet}
                           </li>
@@ -862,7 +862,7 @@ export default function Home() {
 
                       <a
                         href="#contact"
-                        className="mt-4 inline-flex items-center gap-1.5 rounded-md bg-[#0876ed] px-4 py-2.5 text-[9px] font-bold text-white transition hover:bg-[#0668d5]"
+                        className="mt-6 inline-flex items-center gap-1.5 rounded-md bg-[#0876ed] px-4 py-2.5 text-sm font-bold text-white transition hover:bg-[#0668d5]"
                       >
                         {team.button}
                         <ArrowRight size={12} />
@@ -887,19 +887,19 @@ export default function Home() {
       {/* =========================================================
           AI LEAD ENGINES
       ========================================================== */}
-      <section className="border-y border-slate-100 bg-[#fbfdff] py-8">
+      <section className="border-y border-slate-100 bg-[#fbfdff] py-14">
         <div className="mx-auto max-w-[1500px] px-5 lg:px-12">
           <div className="grid items-center gap-6 lg:grid-cols-[290px_1fr]">
             <div>
-              <div className="text-[10px] font-extrabold uppercase text-[#0876ed]">
+              <div className="text-sm py-2 font-extrabold uppercase text-[#0876ed]">
                 AI Lead Engines
               </div>
 
-              <h2 className="mt-1 text-[23px] font-extrabold tracking-[-0.03em] text-[#071744]">
+              <h2 className="mb-1 text-2xl font-extrabold tracking-[-0.03em] text-[#071744]">
                 Turn Data Into Business Opportunities.
               </h2>
 
-              <p className="mt-2 max-w-[350px] text-[10px] leading-[1.5] text-slate-600">
+              <p className="my-2 max-w-[350px] text-sm leading-[1.5] text-slate-600">
                 We combine data, AI tools, AI agents, industry CRM and trained
                 operators to build and operate complete lead generation
                 engines.
@@ -916,7 +916,7 @@ export default function Home() {
                     key={engine.title}
                     className="group overflow-hidden rounded-lg border border-slate-200 bg-white transition hover:-translate-y-1 hover:shadow-md"
                   >
-                    <div className="relative h-[55px] overflow-hidden">
+                    <div className="relative h-3/4 overflow-hidden">
                       <img
                         src={engine.image}
                         alt={engine.title}
@@ -926,10 +926,10 @@ export default function Home() {
                       <div className="absolute inset-0 bg-[#071744]/25" />
                     </div>
 
-                    <div className="flex items-center gap-2 px-2.5 py-2.5">
-                      <Icon size={15} className="shrink-0 text-[#0876ed]" />
+                    <div className="flex items-center justify-start gap-2 px-2.5 py-2.5">
+                      <Icon size={20} className="shrink-0 text-[#0876ed]" />
 
-                      <span className="text-[8px] font-extrabold leading-tight text-[#071744]">
+                      <span className="text-xs font-extrabold leading-tight text-[#071744]">
                         {engine.title}
                       </span>
                     </div>
@@ -958,19 +958,19 @@ export default function Home() {
       {/* =========================================================
           TECHNOLOGY ECOSYSTEM
       ========================================================== */}
-      <section className="bg-white py-7">
+      <section className="bg-white py-10">
         <div className="mx-auto max-w-[1500px] px-5 lg:px-12">
           <div className="grid items-center gap-5 lg:grid-cols-[230px_1fr]">
-            <div>
-              <div className="text-[10px] font-extrabold uppercase text-[#0876ed]">
+            <div className="">
+              <div className="text-sm font-extrabold uppercase text-[#0876ed]">
                 Powered by Our Technology Ecosystem
               </div>
 
-              <h2 className="mt-1 text-[20px] font-extrabold tracking-[-0.025em] text-[#071744]">
+              <h2 className="mt-1 text-2xl font-extrabold tracking-[-0.025em] text-[#071744]">
                 Stronger Together.
               </h2>
 
-              <p className="mt-1 text-[9px] text-slate-500">
+              <p className="mt-1 text-sm text-slate-500">
                 People + Products + Possibilities.
               </p>
             </div>
@@ -998,20 +998,20 @@ export default function Home() {
               ].map((item) => (
                 <div
                   key={item.name}
-                  className="flex items-center gap-3 rounded-lg border border-slate-200 bg-white px-3 py-3 shadow-sm"
+                  className="flex items-center gap-3 rounded-lg border border-slate-200 bg-white px-3 py-6 shadow-sm"
                 >
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center text-xl font-black text-[#0876ed]">
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center  text-xl font-black text-[#0876ed]">
                    <img src={item.logo} alt={item.name}/> 
                   </div>
 
                   <div>
-                    <div className="text-[11px] font-extrabold text-[#071744]">
+                    <div className="text-2xl font-extrabold text-[#071744]">
                       {item.name}
                     </div>
-                    <div className="text-[9px] font-bold text-[#0876ed]">
+                    <div className="text-sm font-bold text-[#0876ed]">
                       {item.title}
                     </div>
-                    <div className="mt-0.5 text-[8px] text-slate-500">
+                    <div className="mt-0.5 text-xs text-slate-500">
                       {item.text}
                     </div>
                   </div>
@@ -1025,20 +1025,20 @@ export default function Home() {
       {/* =========================================================
           INDUSTRIES
       ========================================================== */}
-      <section className="border-t border-slate-100 bg-white py-7">
+      <section className="border-t border-slate-100 bg-white py-10">
         <div className="mx-auto max-w-[1500px] px-5 lg:px-12">
           <div className="flex flex-col gap-4 lg:flex-row lg:items-center">
             <div className="shrink-0 lg:w-[245px]">
-              <div className="text-[10px] font-extrabold uppercase text-[#0876ed]">
+              <div className="text-sm font-extrabold uppercase text-[#0876ed]">
                 Industries We Serve
               </div>
 
-              <h2 className="mt-1 text-[20px] font-extrabold tracking-[-0.03em] text-[#071744]">
+              <h2 className="mt-1 text-2xl font-extrabold tracking-[-0.03em] text-[#071744]">
                 Built for Growing Businesses
               </h2>
             </div>
 
-            <div className="grid flex-1 grid-cols-2 gap-2 sm:grid-cols-4 lg:grid-cols-5 xl:grid-cols-8">
+            <div className="grid flex-1 grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
               {industries.map((industry) => {
                 const Icon = industry.icon;
 
@@ -1047,11 +1047,11 @@ export default function Home() {
                     key={industry.label}
                     className="flex min-h-[45px] items-center gap-2 rounded-md border border-slate-100 bg-white px-2.5 py-2 shadow-sm"
                   >
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-[#edf7ff] text-[#0876ed]">
-                      <Icon size={18} />
+                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-md bg-[#edf7ff] text-[#0876ed]">
+                      <Icon size={24} />
                     </div>
 
-                    <span className="text-[10px] font-bold leading-tight text-[#26395f]">
+                    <span className="text-sm font-bold leading-tight text-[#26395f]">
                       {industry.label}
                     </span>
                   </div>
@@ -1065,63 +1065,76 @@ export default function Home() {
       {/* =========================================================
           CTA
       ========================================================== */}
-      <section
-        id="contact"
-        className="relative overflow-hidden bg-[#061d40] text-white"
-      >
-        <div className="absolute inset-0 opacity-40">
-          <img
-            src="https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=1600&q=80"
-            alt=""
-            className="h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-[#061d40]/80" />
-        </div>
+   <section
+  id="contact"
+  className="relative overflow-hidden bg-[#061d40] my-6 text-white"
+>
+  <div className="mx-auto grid min-h-[145px] max-w-[1500px] items-stretch lg:grid-cols-[42%_58%]">
+    
+    {/* LEFT: Image + 5% Shadow + Text */}
+    <div className="relative min-h-[220px] overflow-hidden sm:min-h-[260px] lg:min-h-[145px]">
+      {/* Full-cover image */}
+      <img
+        src="https://img.magnific.com/premium-photo/office-workers-smiling-working_658385-1366.jpg?semt=ais_hybrid&w=740&q=80"
+        alt="Jaipur"
+        className="absolute inset-0 h-full w-full object-cover object-center"
+      />
 
-        <div className="relative mx-auto grid min-h-[145px] max-w-[1500px] items-center gap-8 px-5 py-7 sm:px-8 lg:grid-cols-[42%_58%] lg:px-12">
-          <div className="font-serif text-[19px] italic leading-[1.15] sm:text-[23px]">
+      {/* 5% shadow gradient on right edge — merges image into #061d40 */}
+      <div className="absolute inset-y-0 right-0 z-10 w-[5%] bg-gradient-to-r from-transparent to-[#061d40]" />
+
+      {/* Text positioned after the shadow, right-aligned */}
+      <div className="absolute inset-0 z-20 flex items-center">
+        <div className="flex w-full justify-start px-5 sm:px-8 lg:px-10">
+          <div className="font-serif text-xl italic leading-[1.15] text-[#061d40] drop-shadow-md sm:text-2xl lg:text-[23px]">
             From Jaipur
             <br />
             to a Smarter World.
           </div>
-
-          <div>
-            <h2 className="text-[22px] font-extrabold tracking-[-0.03em] sm:text-[26px]">
-              Ready to Build Your AI Workforce?
-            </h2>
-
-            <p className="mt-1 text-[9px] text-slate-300 sm:text-[11px]">
-              Start with a pilot, deploy a dedicated team, use our AI agents or
-              explore our lead engines.
-            </p>
-
-            <div className="mt-4 flex flex-col gap-2 sm:flex-row">
-              <a
-                href="#"
-                className="inline-flex items-center justify-center gap-2 rounded-md bg-[#0876ed] px-5 py-2.5 text-[10px] font-bold text-white"
-              >
-                Start a Pilot
-                <ArrowRight size={13} />
-              </a>
-
-              <a
-                href="#"
-                className="inline-flex items-center justify-center gap-2 rounded-md border border-white/50 px-5 py-2.5 text-[10px] font-bold text-white"
-              >
-                Talk to Our Team
-              </a>
-
-              <a
-                href="https://wa.me/911411234567"
-                className="inline-flex items-center justify-center gap-2 rounded-md border border-white/50 px-5 py-2.5 text-[10px] font-bold text-white"
-              >
-                <MessageCircle size={13} />
-                WhatsApp Us
-              </a>
-            </div>
-          </div>
         </div>
-      </section>
+      </div>
+    </div>
+
+    {/* RIGHT: Content */}
+    <div className="flex items-center bg-[#061d40] px-5 py-8 sm:px-8 lg:px-12">
+      <div className="w-full">
+        <h2 className="text-2xl font-extrabold tracking-[-0.03em] text-white sm:text-3xl">
+          Ready to Build Your AI Workforce?
+        </h2>
+
+        <p className="my-4 text-sm leading-[1.5] text-slate-300 sm:text-lg">
+          Start with a pilot, deploy a dedicated team, use our AI agents or
+          explore our lead engines.
+        </p>
+
+        <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:flex-wrap">
+          <a
+            href="#"
+            className="inline-flex items-center justify-center gap-2 rounded-md bg-[#0876ed] px-5 py-2.5 text-base font-bold text-white transition hover:bg-[#0668d5] sm:text-lg"
+          >
+            Start a Pilot
+            <ArrowRight size={13} />
+          </a>
+
+          <a
+            href="#"
+            className="inline-flex items-center justify-center gap-2 rounded-md border border-white/50 px-5 py-2.5 text-base font-bold text-white transition hover:bg-white/10 sm:text-lg"
+          >
+            Talk to Our Team
+          </a>
+
+          <a
+            href="https://wa.me/911411234567"
+            className="inline-flex items-center justify-center gap-2 rounded-md border border-white/50 px-5 py-2.5 text-base font-bold text-white transition hover:bg-white/10 sm:text-lg"
+          >
+            <MessageCircle size={18} />
+            WhatsApp Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
     
     </main>

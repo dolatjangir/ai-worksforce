@@ -72,15 +72,15 @@ const navItems: NavItem[] = [
         {
           items: [
             {
-              title: "Ai Services",
+              title: "Ai Data Oprations",
               href: "/services/ai-agents-development"
             },
             {
-              title: "Ai Development",
+              title: "Ai Research & KPO",
               href: "/services/workforce-automation"
             },
             {
-              title: "Data & Intelligence",
+              title: "AI Automation",
               href: "/services/ai-integration"
             }
           ]
@@ -88,11 +88,15 @@ const navItems: NavItem[] = [
         {
           items: [
             {
-              title: "Ai Content & Creative",
+              title: "AI Customer Oprations",
               href: "/services/business-process-automation"
             },
             {
-              title: "Ai consulting",
+              title: "Ai Lead Oprations",
+              href: "/services/custom-ai-solutions"
+            },
+             {
+              title: "White Label Delivery",
               href: "/services/custom-ai-solutions"
             }
           ]
@@ -177,7 +181,7 @@ const navItems: NavItem[] = [
               href: "/ai-agents/lead-capture-agent"
             },
             {
-              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335521/img-4_damgxf.png" className="max-w-20 max-h-20" />,
+              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335521/img-4_damgxf.png" className="max-w-12 max-h-12" />,
               title: "Ai Content Creation Agent",
               href: "/ai-agents/content-creation-agent"
             },
@@ -235,15 +239,15 @@ const navItems: NavItem[] = [
         {
           items: [
             {
-              title: "CRM",
+              title: "Lead Engine",
               href: "/industry/agencies",
               children: [
-                { title: "Property CRM", href: "/products/crm/property" },
-                { title: "Consult CRM", href: "/products/crm/consult" },
-                { title: "Airbnb CRM", href: "/products/crm/airbnb" },
-                { title: "Bulk CRM", href: "/products/crm/bulk" },
-                { title: "AU CRM", href: "/products/crm/au" },
-                { title: "WBH CRM", href: "/products/crm/wbh" },
+                { title: "Property Lead Engine", href: "/products/crm/property" },
+                { title: "Consult Lead Engine", href: "/products/crm/consult" },
+                { title: "Airbnb Lead Engine", href: "/products/crm/airbnb" },
+                { title: "Bulk Lead Engine", href: "/products/crm/bulk" },
+                { title: "AU Lead Engine", href: "/products/crm/au" },
+                { title: "WBH Lead Engine", href: "/products/crm/wbh" },
               ]
             },
             {

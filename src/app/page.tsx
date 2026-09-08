@@ -37,6 +37,7 @@ import {
   Zap,
 } from "lucide-react";
 import BusinessApproach from "@/components/BusinessApproach";
+import { BiRightArrow } from "react-icons/bi";
 
 export default function Home() {
   const [mobileMenu, setMobileMenu] = useState(false);
@@ -232,11 +233,11 @@ export default function Home() {
             </a>
 
             <a
-              href="mailto:hello@aiworkforce.com"
+              href="mailto:info@aiworkforce.com"
               className="flex items-center gap-1.5 transition hover:text-blue-300"
             >
               <Mail size={10} />
-              hello@aiworkforce.com
+              info@aiworkforce.com
             </a>
 
             <div className="flex items-center gap-2">
@@ -356,7 +357,7 @@ export default function Home() {
           <div className="relative z-20 flex items-center px-5 py-12 sm:px-8 lg:px-12 xl:px-16">
             <div className="max-w-[650px] ">
               <div className="mb-4 inline-flex rounded-full bg-[#eaf5ff] px-3 py-1 text-xs font-extrabold uppercase tracking-[0.05em] text-[#1476e5]">
-                Your Outsource AI Department
+               YOUR MANAGED AI WORKFORCE
               </div>
 
               <h1 className="max-w-[650px] text-5xl font-extrabold leading-[0.99] tracking-[-0.045em] text-[#071744] sm:text-[50px] lg:text-[47px] xl:text-[46px]">
@@ -372,11 +373,11 @@ We analyze your business and processes, identify the right data, AI tools, and A
 
               <div className="mt-6 grid grid-cols-2 gap-x-5 gap-y-3 sm:flex sm:flex-wrap">
                 {[
-                  { icon: Users, text: "Ai Strategy" },
-                  { icon: Bot, text: "Ai Tools" },
+                  { icon: Users, text: "AI Strategy" },
+                  { icon: Bot, text: "AI Tools" },
                   { icon: Settings, text: "AI Agents" },
                   { icon: Target, text: "Expert Workforce" },
-                    { icon: Bot, text: "Managed Oprations" },
+                    { icon: Bot, text: "Managed Operations" },
                 ].map((item) => {
                   const Icon = item.icon;
                   return (
@@ -404,10 +405,10 @@ We analyze your business and processes, identify the right data, AI tools, and A
                   href="#contact"
                   className="inline-flex items-center justify-center gap-2 rounded-md border border-[#0876ed] bg-white px-7 py-3.5 text-md font-bold text-[#0876ed] transition hover:bg-[#eff7ff]"
                 >
-                  Talk to A Ai expert
+                  Talk to  Ai expert
                 </a>
               </div>  
-              <h3 className="pt-8 flex gap-2"><LocateFixedIcon/>From business analysis to daily oprations- aiworksForce manages it for you.</h3>
+              <h3 className="pt-8 flex gap-2"><LocateFixedIcon/>From business analysis to daily operations- aiworksForce manages it for you.</h3>
             </div>
             
           </div>
@@ -519,11 +520,11 @@ We analyze your business and processes, identify the right data, AI tools, and A
           <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
             <div>
               <div className="text-sm font-extrabold uppercase text-[#0876ed]">
-                How AIWorkforce Delivers Results
+                How AI Worksforce Delivers Results
               </div>
 
               <h2 className="mt-1 text-xl font-extrabold tracking-[-0.035em] text-[#071744] sm:text-[30px]">
-                Experts + AI + Operators. Managed for You.
+                AI Agents + Human Experts + Managed Operations.
               </h2>
 
               <p className="my-2 text-sm text-[#304466] ">
@@ -805,9 +806,9 @@ We analyze your business and processes, identify the right data, AI tools, and A
               </h2>
 
               <p className="my-2 max-w-[350px] text-sm leading-[1.5] text-slate-600">
-                We combine data, AI tools, AI agents, industry CRM and trained
-                operators to build and operate complete lead generation
-                engines.
+                We combine data, AI tools, AI agents,
+                 industry-specific CRM systems and trained 
+                 operators to build and manage complete lead generation engines.
               </p>
             </div>
 
@@ -850,8 +851,8 @@ We analyze your business and processes, identify the right data, AI tools, and A
                   <div className="mx-auto mb-1 flex h-7 w-7 items-center justify-center rounded-full bg-white text-[#0876ed] shadow-sm">
                     <Sparkles size={15} />
                   </div>
-                  <div className="text-[8px] font-extrabold text-[#0876ed]">
-                    Custom Lead Engine<br/> according your business
+                  <div className="text-[10px] font-extrabold text-[#0876ed]">
+                  Build a Custom Lead Engine
                   </div>
                 </div>
               </a>
@@ -871,8 +872,8 @@ We analyze your business and processes, identify the right data, AI tools, and A
                 Powered by Our Technology Ecosystem
               </div>
 
-              <h2 className="mt-1 text-2xl font-extrabold tracking-[-0.025em] text-[#071744]">
-                Stronger Together.
+              <h2 className="mt-1 text-xl font-extrabold tracking-[-0.025em] text-[#071744]">
+                AI, Data and Automation. Working Together.
               </h2>
 
               <p className="mt-1 text-sm text-slate-500">

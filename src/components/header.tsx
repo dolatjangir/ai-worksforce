@@ -77,11 +77,11 @@ const navItems: NavItem[] = [
         {
           items: [
             {
-              title: "Ai Data Oprations",
+              title: "AI Business Assessment",
               href: "/services/ai-agents-development"
             },
             {
-              title: "Ai Research & KPO",
+              title: "AI Workforce",
               href: "/services/workforce-automation"
             },
             {
@@ -93,15 +93,15 @@ const navItems: NavItem[] = [
         {
           items: [
             {
-              title: "AI Customer Oprations",
+              title: "AI Data & Research",
               href: "/services/business-process-automation"
             },
             {
-              title: "Ai Lead Oprations",
+              title: "AI Customer Operations",
               href: "/services/custom-ai-solutions"
             },
              {
-              title: "White Label Delivery",
+              title: "AI Sales & Outreach",
               href: "/services/custom-ai-solutions"
             }
           ]
@@ -125,12 +125,12 @@ const navItems: NavItem[] = [
             {
               icon: <Sparkles className="w-5 h-5" />,
               title: "What is an AI WorkForce",
-              tagline: "AI + Tools + Experts + Manged Oprations",
+              tagline: "AI + Tools + Experts + Managed Operations",
               href: "/features/ai-automation"
             },
             {
               icon: <Bot className="w-5 h-5" />,
-              title: "Wht AIWorksForce?",
+              title: "What AIWorksForce?",
               tagline: "Why businesses choose our model",
               href: "/features/smart-lead",
               badge: "AI"
@@ -138,13 +138,13 @@ const navItems: NavItem[] = [
             {
               icon: <UsersRound className="w-5 h-5" />,
               title: "How it Works",
-              tagline: "From business problem to Ai oprations",
+              tagline: "From business problem to AI operations",
               href: "/features/property-ai"
             },
             {
               icon: <Workflow className="w-5 h-5" />,
-              title: "Our Ai WorkFlow",
-              tagline: "Ai agents, experts and oprators",
+              title: "Our AI WorkFlow",
+              tagline: "AI agents, experts and operators",
               href: "/features/growth-automation"
             },
             {

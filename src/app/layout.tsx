@@ -10,7 +10,7 @@ import Header from "@/components/header";
 
 
 export const metadata = {
-  title: "Ai WorksForce",
+  title: "AI WorksForce",
   description: "AI-powered worksForce platform",
   manifest: "/manifest.json",
 };

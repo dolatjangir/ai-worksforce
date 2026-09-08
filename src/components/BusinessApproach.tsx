@@ -722,7 +722,7 @@ export default function BusinessApproach() {
                   leading-[1.18]
                   tracking-[-0.025em]
                   text-[#14234f]
-                  sm:text-3xl
+                  sm:text-2xl
                 "
               >
                 You Don&apos;t Need More AI Tools.
@@ -834,7 +834,7 @@ export default function BusinessApproach() {
                   leading-[1.15]
                   tracking-[-0.025em]
                   text-[#14234f]
-                  sm:text-3xl
+                  sm:text-2xl
                 "
               >
                 From Business Problem to Managed AI Operation
@@ -961,7 +961,7 @@ export default function BusinessApproach() {
                 leading-tight
                 tracking-[-0.025em]
                 text-[#14234f]
-                sm:text-3xl
+                sm:text-2xl
               "
             >
               Everything Your Business Needs to Become AI-Powered

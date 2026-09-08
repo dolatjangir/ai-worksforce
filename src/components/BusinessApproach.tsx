@@ -419,11 +419,11 @@ function ChallengeCard({
         {icon}
       </div>
 
-      <h3 className="text-[11px] my-3 font-bold leading-4 text-[#152451] sm:text-lg">
+      <h3 className="text-sm my-3 font-bold leading-4 text-[#152451] sm:text-lg">
         {title}
       </h3>
 
-      <p className=" text-[9px] leading-[1.45] text-[#607093] sm:text-sm">
+      <p className=" text-xs leading-[1.45] text-[#607093] sm:text-sm">
         {description}
       </p>
     </article>
@@ -486,11 +486,11 @@ function ApproachStep({
         >
           {number}
         </span>
-        <h3 className="text-[10px] py-2 font-bold text-[#14234f] sm:text-xl">
+        <h3 className="text-sm py-2 font-bold text-[#14234f] sm:text-xl">
           {title}
         </h3>
 
-        <p className="mt-1 max-w-[115px] text-[8px] leading-[1.5] text-[#627294] sm:text-sm">
+        <p className="mt-1 max-w-[115px] text-xs leading-[1.5] text-[#627294] sm:text-sm">
           {description}
         </p>
       </div>
@@ -610,7 +610,7 @@ function SolutionCard({
         <p
           className="
             mt-2
-            text-[11px]
+            text-xs
             leading-[1.55]
             text-[#607093]
             sm:text-sm
@@ -868,7 +868,7 @@ export default function BusinessApproach() {
                   to-[#7c3aed]
                   px-4
                   py-2
-                  text-[8px]
+                  text-sm
                   font-semibold
                   text-white
                   shadow-[0_5px_15px_rgba(70,100,220,0.2)]

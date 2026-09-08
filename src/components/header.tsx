@@ -552,7 +552,7 @@ function Header() {
                   <span>AI Delivery Center · Jaipur, India</span>
                 </div>
       
-                <div className="hidden items-center gap-5 xl:flex">
+                <div className="hidden items-center gap-5 md:flex">
                   <span>✉ hello@aiworkforce.com</span>
                   <span>⌕ +91 72300 12345</span>
                   <span>in</span>
@@ -567,7 +567,7 @@ function Header() {
       <nav
         className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-md border-b border-gray-100/80"
       >
-        <div className="mx-auto px-4 sm:px-2 lg:px-4">
+        <div className="mx-auto px-4 sm:px-3 lg:px-2">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center gap-2">
               <div
@@ -578,7 +578,7 @@ function Header() {
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden xl:flex items-center gap-1">
+            <nav className="hidden md:flex items-center gap-0">
               {navItems.map((item) => (
                 <div
                   key={item.label}
@@ -588,7 +588,7 @@ function Header() {
                 >
                   {item.hasDropdown ? (
                     <button
-                      className={`flex items-center gap-0.5 px-3 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${activeDropdown === item.label
+                      className={`flex items-center gap-0.5 px-2 py-1.5 desktop-lg:px-3 desktop-lg:py-2 rounded-xl text-xs  font-medium transition-all duration-300 ${activeDropdown === item.label
                         ? "text-violet-700 bg-violet-50/80"
                         : "text-gray-950 hover:text-gray-900 hover:bg-gray-50/80"
                         }`}
@@ -772,7 +772,7 @@ function Header() {
               ))}
             </nav>
 
-            <div className="hidden xl:flex items-center gap-3">
+            <div className="hidden md:flex items-center gap-3">
               {/* <Link href="/login">
                 <button className="px-4 py-2 text-gray-600 hover:text-violet-700 font-semibold text-sm transition-all duration-200 rounded-xl hover:bg-gray-50">
                   Log in
@@ -786,13 +786,13 @@ function Header() {
             </div>
 
             <button
-              className="xl:hidden p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
+              className="md:hidden p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? (
                 <X className="w-5 h-5" />
               ) : (
-                <Menu className="w-5 h-5 sm:w-8 sm:h-8" />
+                <Menu className="w-5 h-5" />
               )}
             </button>
           </div>
@@ -810,7 +810,7 @@ function Header() {
 
         <div
           className={`
-            xl:hidden
+            md:hidden
             bg-white
             border-t border-gray-100
             absolute top-0 right-0 w-full max-h-[100vh] overflow-y-auto

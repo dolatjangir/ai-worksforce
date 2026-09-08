@@ -8,9 +8,10 @@
   --color-brand-purple: #5c2bea;
 
   --font-sans: "Inter", "Segoe UI", Arial, Helvetica, sans-serif;
+  --breakpoint-desktop-lg: 85.625rem; 
 }
 
-@import "tailwindcss";
+
 
 :root {
   /* =========================================

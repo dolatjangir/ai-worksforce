@@ -393,7 +393,7 @@ function ChallengeCard({
         border
         border-[#e5edfa]
         bg-white
-        p-8
+        p-4
         shadow-[0_4px_16px_rgba(40,80,140,0.035)]
         transition-all
         duration-300
@@ -685,7 +685,7 @@ export default function BusinessApproach() {
             sm:px-8
             sm:py-6
             lg:px-10
-            lg:py-12
+            lg:py-10
             xl:px-12
           "
         >

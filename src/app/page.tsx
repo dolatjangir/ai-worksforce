@@ -351,7 +351,7 @@ export default function Home() {
           HERO
       ========================================================== */}
       <section className="relative overflow-hidden bg-[#f4faff]">
-        <div className="mx-auto grid min-h-[470px] max-w-[1500px] lg:grid-cols-[48%_52%]">
+        <div className="mx-auto grid min-h-[470px] max-w-full lg:grid-cols-[48%_52%]">
           {/* Hero Copy */}
           <div className="relative z-20 flex items-center px-5 py-12 sm:px-8 lg:px-12 xl:px-16">
             <div className="max-w-[650px]">
@@ -368,8 +368,7 @@ export default function Home() {
               </h1>
 
               <p className="mt-5 max-w-[570px] text-[14px] leading-[1.5] text-[#26395f] sm:text-[16px]">
-              we analize your business and processes, identift the right data. AI tools and ai agents, then build and manage the complete ai-powered workforce for you from our india delivery center 
-              </p>
+We analyze your business and processes, identify the right data, AI tools, and AI agents, and then build and manage a complete AI-powered workforce for you from our India delivery center.              </p>
 
               <div className="mt-6 grid grid-cols-2 gap-x-5 gap-y-3 sm:flex sm:flex-wrap">
                 {[
@@ -852,7 +851,7 @@ export default function Home() {
                     <Sparkles size={15} />
                   </div>
                   <div className="text-[8px] font-extrabold text-[#0876ed]">
-                    Custom Lead Engine
+                    Custom Lead Engine<br/> according your business
                   </div>
                 </div>
               </a>

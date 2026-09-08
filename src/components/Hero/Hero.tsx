@@ -1,125 +1,184 @@
+// app/components/sections/HeroSection.tsx
 "use client";
 
-import Link from "next/link";
+import { motion , Variants } from "framer-motion";
+import Image from "next/image";
+import {
+  Users,
+  Bot,
+  Settings,
+  Target,
+  ArrowRight,
+  LocateFixed,
+} from "lucide-react";
 
-export default function Hero() {
+const tags = [
+  { icon: Users, text: "AI Strategy" },
+  { icon: Bot, text: "AI Tools" },
+  { icon: Settings, text: "AI Agents" },
+  { icon: Target, text: "Expert Workforce" },
+  { icon: Bot, text: "Managed Operations" },
+];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.08, delayChildren: 0.1 },
+  },
+};
+
+const itemVariants:Variants = {
+  hidden: { opacity: 0, y: 16 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: "easeOut" },
+  },
+};
+
+export default function HeroSection() {
   return (
-    <section id="home" className="relative overflow-hidden">
-
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-cyan-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob" />
-        <div className="absolute bottom-0 -left-40 w-80 h-80 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-2000" />
-        <div className="absolute top-40 left-1/2 w-80 h-80 bg-cyan-600 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000" />
-      </div>
-
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
-        <div className="py-14 flex flex-col-reverse lg:flex-row items-center gap-12">
-
-          {/* Left Content */}
-          <div
-            className="max-w-3xl lg:max-w-2xl text-center lg:text-left"
-            data-aos="fade-up"
-            data-aos-once="true"
-          >
+    <section className="relative overflow-visible bg-[#f4faff]">
+      <div className="mx-auto grid min-h-[80vh] max-w-full grid-cols-1 grid-rows-[auto_1fr] lg:grid-cols-[48%_52%] lg:grid-rows-1">
+        {/* ── Hero Copy ── */}
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={containerVariants}
+          className="relative z-20 flex items-center px-5 py-12 sm:px-8 lg:px-12 xl:px-16"
+        >
+          <div className="w-full">
             {/* Badge */}
-            <div
-              className="inline-flex items-center rounded-full bg-gradient-to-r from-cyan-600 to-blue-600 px-4 py-1.5 mb-6"
-              data-aos="zoom-in"
-              data-aos-delay="100"
-              data-aos-once="true"
-            >
-              <span className="text-xs font-semibold text-white tracking-wide">
-                🤖 10+ AI AGENTS WORKING 24/7 FOR YOU
+            <motion.div variants={itemVariants}>
+              <span className="mb-4 inline-flex rounded-full bg-[#eaf5ff] px-3 py-1 text-xs font-extrabold uppercase tracking-[0.05em] text-[#1476e5]">
+                Your Outsource AI Department
               </span>
+            </motion.div>
+
+            {/* Headline */}
+            <motion.h1
+              variants={itemVariants}
+              className="max-w-[650px] text-5xl font-extrabold leading-[0.99] tracking-[-0.045em] text-[#071744] sm:text-[50px] lg:text-[47px] xl:text-[46px]"
+            >
+              Build Your AI Workforce
+              <br />
+              <span className="text-[#0876ed]">
+                Without Building an AI Team.
+              </span>
+            </motion.h1>
+
+            {/* Description */}
+            <motion.p
+              variants={itemVariants}
+              className="mt-5 max-w-[570px] text-sm leading-[1.5] text-[#26395f] sm:text-base"
+            >
+              We analyze your business and processes, identify the right data,
+              AI tools, and AI agents, and then build and manage a complete
+              AI-powered workforce for you from our India delivery center.
+            </motion.p>
+
+            {/* Tags — NO WRAP, overflows freely onto image */}
+            <motion.div
+              variants={itemVariants}
+              className="mt-6 flex flex-nowrap items-center gap-x-5 gap-y-3 overflow-visible"
+            >
+              {tags.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <div
+                    key={item.text}
+                    className="flex shrink-0 items-center gap-2 whitespace-nowrap text-sm font-bold text-[#142652]"
+                  >
+                    <Icon
+                      size={17}
+                      strokeWidth={2.2}
+                      className="shrink-0 text-[#0876ed]"
+                    />
+                    {item.text}
+                  </div>
+                );
+              })}
+            </motion.div>
+
+            {/* CTAs */}
+            <motion.div
+              variants={itemVariants}
+              className="mt-7 flex flex-col gap-3 sm:flex-row"
+            >
+              <a
+                href="#contact"
+                className="inline-flex items-center justify-center gap-2 rounded-md bg-[#0876ed] px-7 py-3.5 text-base font-bold text-white shadow-[0_8px_20px_rgba(8,118,237,.18)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#0668d5] hover:shadow-[0_12px_28px_rgba(8,118,237,.25)] active:translate-y-0"
+              >
+                Get Your AI Assessment
+                <ArrowRight size={15} strokeWidth={2.5} />
+              </a>
+
+              <a
+                href="#contact"
+                className="inline-flex items-center justify-center gap-2 rounded-md border border-[#0876ed] bg-white px-7 py-3.5 text-base font-bold text-[#0876ed] transition-colors duration-200 hover:bg-[#eff7ff]"
+              >
+                Talk to an AI Expert
+              </a>
+            </motion.div>
+
+            {/* Bottom tagline */}
+            <motion.h3
+              variants={itemVariants}
+              className="flex items-start gap-2 pt-8 text-base font-semibold text-[#142652]"
+            >
+              <LocateFixed
+                size={20}
+                strokeWidth={2.2}
+                className="mt-0.5 shrink-0 text-[#0876ed]"
+              />
+              <span>
+                From business analysis to daily operations — AIWorkForce
+                manages it for you.
+              </span>
+            </motion.h3>
+          </div>
+        </motion.div>
+
+        {/* ── Hero Image ── */}
+        <div className="relative h-full min-h-[350px] overflow-hidden lg:min-h-0">
+          <Image
+            src="/aiworkforce-hero-img.png"
+            alt="AI workforce team working together"
+            fill
+            className="object-cover"
+            priority
+            sizes="(max-width: 1024px) 100vw, 52vw"
+          />
+
+          {/* Gradient fade to blend with left column */}
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#f4faff] via-[#f4faff]/40 to-transparent lg:w-[40%]" />
+
+          {/* Floating Card — Quote (top-left on mobile, bottom-left on desktop) */}
+          <div className="absolute top-4 left-4 rounded-lg bg-white/90 px-4 py-3 shadow-xl backdrop-blur-sm sm:px-5 sm:py-4 lg:bottom-8 lg:top-auto lg:left-8">
+            <div className="font-serif text-sm italic text-[#142652] sm:text-base">
+              Your extended
             </div>
-
-            <h1
-              className="text-3xl font-bold leading-tight tracking-tight text-gray-900 sm:text-4xl lg:text-5xl"
-              data-aos="fade-up"
-              data-aos-delay="200"
-              data-aos-once="true"
-            >
-              Your AI Agent Army
-              <br className="hidden sm:block" />
-              <span className="bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
-                Automate. Qualify. Grow.
-              </span>
-            </h1>
-
-            <p
-              className="mt-6 text-lg leading-relaxed text-gray-600 lg:text-xl"
-              data-aos="fade-up"
-              data-aos-delay="350"
-              data-aos-once="true"
-            >
-              Deploy intelligent AI agents that handle lead qualification, property matching, 
-              content creation, calling, follow-ups, data mining, SEO, social media, and campaign 
-              with ai agents — all on autopilot. ibigdata puts a full team of AI agents to work 
-              for your business, so you scale faster with less manual effort.
-            </p>
-
-            {/* CTA */}
-            <div
-              className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
-              data-aos="fade-up"
-              data-aos-delay="500"
-              data-aos-once="true"
-            >
-              <Link
-                href="/get-started"
-                className="group inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-cyan-600 to-blue-600 px-8 py-4 font-semibold text-white shadow-lg shadow-cyan-600/30 transition-all hover:scale-105"
-              >
-                Get Started With AI Agents
-                <svg
-                  className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </Link>
-
-              <Link
-                href="/explore-ai-agent"
-                className="inline-flex items-center justify-center rounded-xl border-2 border-cyan-600 px-8 py-4 font-semibold text-cyan-700 hover:bg-cyan-50 transition-all"
-              >
-                Explore All Agents
-              </Link>
+            <div className="font-serif text-sm italic text-[#142652] sm:text-base">
+              team in India.
             </div>
           </div>
 
-          {/* Right Image */}
-          <div
-            className="w-full lg:w-1/2 flex justify-center lg:justify-end"
-            data-aos="fade-left"
-            data-aos-delay="300"
-            data-aos-once="true"
-          >
-            <img
-              src="/robot-with-crm.png"
-              alt="AI Agents Illustration"
-              className="w-full max-w-md lg:max-w-full"
-            />
+          {/* Floating Card — Stats (always bottom-right) */}
+          <div className="absolute bottom-4 right-4 rounded-xl border border-white/60 bg-white px-4 py-3 shadow-2xl backdrop-blur-sm sm:bottom-8 sm:right-8 sm:px-5 sm:py-4">
+            <div className="flex items-center gap-2 sm:gap-3">
+              <span className="text-2xl font-extrabold tracking-tight text-[#071744] sm:text-[30px]">
+                150+
+              </span>
+              <span className="text-xs font-bold leading-tight text-[#142652] sm:text-sm">
+                Delivery Seats
+                <br />
+                <span className="font-medium text-slate-500">Jaipur, India</span>
+              </span>
+            </div>
           </div>
-
         </div>
       </div>
-
-      {/* Blob Animation */}
-      <style jsx>{`
-        @keyframes blob {
-          0% { transform: translate(0px, 0px) scale(1); }
-          33% { transform: translate(30px, -50px) scale(1.1); }
-          66% { transform: translate(-20px, 20px) scale(0.9); }
-          100% { transform: translate(0px, 0px) scale(1); }
-        }
-        .animate-blob { animation: blob 7s infinite; }
-        .animation-delay-2000 { animation-delay: 2s; }
-        .animation-delay-4000 { animation-delay: 4s; }
-      `}</style>
     </section>
   );
 }

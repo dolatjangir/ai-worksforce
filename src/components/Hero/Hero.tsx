@@ -17,7 +17,7 @@ const tags = [
   { icon: Bot, text: "AI Tools" },
   { icon: Settings, text: "AI Agents" },
   { icon: Target, text: "Expert Workforce" },
-  { icon: Bot, text: "Managed Operations" },
+ 
 ];
 
 const containerVariants = {

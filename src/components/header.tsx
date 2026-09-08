@@ -779,7 +779,7 @@ function Header() {
                 </button></Link> */}
               <Link href="/start-a-pilot">
                 <button
-                  className="hidden items-center gap-2 rounded-md bg-[#0876ed] px-5 py-2.5 text-[11px] font-bold text-white shadow-[0_7px_18px_rgba(8,118,237,.2)] transition hover:bg-[#0668d5] sm:flex"
+                  className="hidden items-center gap-0 desktop-lg:gap-2 rounded-md bg-[#0876ed] px-2.5 py-1.5 desktop-lg:px-5 desktop-lg:py-2.5 text-[11px] font-bold text-white shadow-[0_7px_18px_rgba(8,118,237,.2)] transition hover:bg-[#0668d5] sm:flex"
                 >
                   start a pilot <ArrowRight/>
                 </button></Link>
@@ -943,7 +943,7 @@ function Header() {
                   Log in
                 </button>
               </Link> */}
-              <Link href="/book-demo">
+              <Link href="/start-a-pilot">
                 <button className="whidden items-center gap-2 rounded-md bg-[#0876ed] px-5 py-2.5 text-[11px] font-bold text-white shadow-[0_7px_18px_rgba(8,118,237,.2)] transition hover:bg-[#0668d5] sm:flex">
                 Start a  Pilot
                 </button>

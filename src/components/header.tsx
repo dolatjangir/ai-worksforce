@@ -115,7 +115,7 @@ const navItems: NavItem[] = [
     }
   },
    {
-    label: "Ai WorkForce",
+    label: "AI WorkForce",
     href: "#ai-workforce",
     hasDropdown: true,
     dropdownContent: {
@@ -157,14 +157,14 @@ const navItems: NavItem[] = [
         }
       ],
       footer: {
-        text: "Get your Ai workforce Assessment",
+        text: "Get your AI workforce Assessment",
         link: "",
         href: "/explore-feature"
       }
     }
   },
   {
-    label: "Ai Agents",
+    label: "AI Agents",
     href: "#ai-agents",
     hasDropdown: true,
     dropdownContent: {
@@ -173,12 +173,12 @@ const navItems: NavItem[] = [
           items: [
             {
               icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335520/img-1_nz99v7.png" className="max-w-12 max-h-12" />,
-              title: "Ai Lead Qualification Agent",
+              title: "AI Lead Qualification Agent",
               href: "/ai-agents/lead-qualifiction-agent"
             },
             {
               icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335520/img-2_l1xdll.png" className="max-w-12 max-h-12" />,
-              title: "Ai Property Matching Agent",
+              title: "AI Property Matching Agent",
               href: "/ai-agents/property-maching-agent",
               badge: "AI"
             },
@@ -189,12 +189,12 @@ const navItems: NavItem[] = [
             },
             {
               icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335521/img-4_damgxf.png" className="max-w-12 max-h-12" />,
-              title: "Ai Content Creation Agent",
+              title: "AI Content Creation Agent",
               href: "/ai-agents/content-creation-agent"
             },
             {
               icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335553/img-555_kabvyd.png" className="max-w-12 max-h-12" />,
-              title: "Ai  Follow-Up Agent",
+              title: "AI  Follow-Up Agent",
               href: "/ai-agents/follow-up-agent",
               badge: "AI"
             },
@@ -204,12 +204,12 @@ const navItems: NavItem[] = [
           items: [
             {
               icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335521/img-6_mky5rb.png" className="max-w-12 max-h-12" />,
-              title: "Ai Calling Agent",
+              title: "AI Calling Agent",
               href: "/ai-agents/calling-agent"
             },
             {
               icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335523/img-7_xjwzbl.png" className="max-w-12 max-h-12" />,
-              title: "Ai Campaign Automation Agent",
+              title: "AI Campaign Automation Agent",
               href: "/ai-agents/campaign-automation"
             },
             {
@@ -224,7 +224,7 @@ const navItems: NavItem[] = [
             },
             {
               icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335553/img-10_ajsusz.png" className="max-w-12 max-h-12 rounded-xl" />,
-              title: "Ai SEO Content Agent",
+              title: "AI SEO Content Agent",
               href: "/ai-agents/seo-content-agent"
             },
           ]
@@ -246,15 +246,16 @@ const navItems: NavItem[] = [
         {
           items: [
             {
-              title: "Ai Lead Engine",
+              title: "AI Lead Engine",
               href: "/industry/agencies",
               children: [
+                { title: "B2B Lead Engine", href: "/products/crm/b2b" },
+                { title: "B2C Lead Engine", href: "/products/crm/b2c" },
                 { title: "Property Lead Engine", href: "/products/crm/property" },
-                { title: "Consult Lead Engine", href: "/products/crm/consult" },
+                { title: "Consultancy Lead Engine", href: "/products/crm/consult" },
                 { title: "Airbnb Lead Engine", href: "/products/crm/airbnb" },
-                { title: "Bulk Lead Engine", href: "/products/crm/bulk" },
-                { title: "AU Lead Engine", href: "/products/crm/au" },
-                { title: "WBH Lead Engine", href: "/products/crm/wbh" },
+                { title: "Custom Lead Engine", href: "/products/crm/bulk" },
+                
               ]
             },
             {
@@ -290,7 +291,7 @@ const navItems: NavItem[] = [
     }
   },
    {
-    label: "Ai Digital Marketing",
+    label: "AI Digital Marketing",
     href: "#partners",
     hasDropdown: true,
     dropdownContent: {
@@ -298,16 +299,20 @@ const navItems: NavItem[] = [
         {
           items: [
             {
-              title: "AI WorkForce",
+              title: "AI SEO",
               href: "/features/ai-automation"
             },
             {
-              title: "Ai Employees",
+              title: "AI Content Marketing",
               href: "/features/smart-lead",
               badge: "AI"
             },
             {
-              title: "AI Teams",
+              title: "AI Social Media",
+              href: "/features/property-ai"
+            },
+             {
+              title: "AI Backlink & Outreach",
               href: "/features/property-ai"
             }
           ]
@@ -315,15 +320,74 @@ const navItems: NavItem[] = [
         {
           items: [
             {
-              title: "Ai WorkFlows",
+              title: "AI Advertising & Promotion",
               href: "/features/growth-automation"
             },
             {
-              title: "WorkForce Builder",
+              title: "AI Creative & Video",
               href: "/features/Conversational-ai"
             },
             {
-              title: "Workforce Management",
+              title: "AI Marketing Automation",
+              href: "/features/Performance-analytics"
+            },
+            {
+              title: "AI Marketing Analytics",
+              href: "/features/Performance-analytics"
+            }
+          ]
+        }
+      ],
+      footer: {
+        text: "See all features",
+        link: "Explore →",
+        href: "/explore-feature"
+      }
+    }
+  },
+  {
+    label: "Technology",
+    href: "#technology",
+    hasDropdown: true,
+    dropdownContent: {
+      sections: [
+        {
+          items: [
+            {
+              title: "AI Tools",
+              href: "/features/ai-automation"
+            },
+            {
+              title: "LLM & AI",
+              href: "/features/smart-lead",
+              badge: "AI"
+            },
+            {
+              title: "AI Automation",
+              href: "/features/property-ai"
+            },
+            {
+              title: "Technology Stack",
+              href: "/features/property-ai"
+            }
+          ]
+        },
+        {
+          items: [
+            {
+              title: "Data Intelligence",
+              href: "/features/growth-automation"
+            },
+            {
+              title: "Lead Engine",
+              href: "/features/Conversational-ai"
+            },
+            {
+              title: "AI Infrastructure",
+              href: "/features/Performance-analytics"
+            },
+            {
+              title: "Integrations",
               href: "/features/Performance-analytics"
             }
           ]
@@ -345,16 +409,16 @@ const navItems: NavItem[] = [
         {
           items: [
             {
-              title: "AI WorkForce",
+              title: "AI Use Cases",
               href: "/features/ai-automation"
             },
             {
-              title: "Ai Employees",
+              title: "Case Studies",
               href: "/features/smart-lead",
               badge: "AI"
             },
             {
-              title: "AI Teams",
+              title: "AI Workforce Guides",
               href: "/features/property-ai"
             }
           ]
@@ -362,15 +426,15 @@ const navItems: NavItem[] = [
         {
           items: [
             {
-              title: "Ai WorkFlows",
+              title: "AI Digital Marketing Guides",
               href: "/features/growth-automation"
             },
             {
-              title: "WorkForce Builder",
+              title: "Blog",
               href: "/features/Conversational-ai"
             },
             {
-              title: "Workforce Management",
+              title: "FAQs",
               href: "/features/Performance-analytics"
             }
           ]
@@ -394,15 +458,15 @@ const navItems: NavItem[] = [
         {
           items: [
             {
-              title: "How-It-Works",
+              title: "About AIWorksForce",
               href: "/company/howitworks"
             },
             {
-              title: "About Us",
+              title: "AI Delivery Centre",
               href: "/company/about-us"
             },
             {
-              title: "Help Center",
+              title: "How We Work",
               href: "/company/help-center"
             },
           ]
@@ -414,11 +478,11 @@ const navItems: NavItem[] = [
               href: "/company/community"
             },
             {
-              title: "Careers & Apply",
+              title: "Careers",
               href: "/company/careers"
             },
             {
-              title: "Why Choose Us",
+              title: "Contact",
               href: "/company/why-choose-us"
             },
           ]
@@ -549,9 +613,9 @@ function Header() {
                       ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-3 pointer-events-none"}
                       ${item.label === "Products" 
                         ? (activeSubmenu ? "w-[500px]" : "w-64") 
-                        : item.label === "Ai Agents" 
+                        : item.label === "AI Agents" 
                           ? "w-[640px]" 
-                          : item.label === "Ai WorkForce"
+                          : item.label === "AI WorkForce"
                             ? "w-[340px]"
                             : "w-[500px]"
                       }`}>
@@ -614,7 +678,7 @@ function Header() {
                               </div>
                             )}
                           </div>
-                        ) : item.label === "Ai WorkForce" ? (
+                        ) : item.label === "AI WorkForce" ? (
                           <div className="p-3">
                             {item.dropdownContent.sections.map((section, idx) => (
                               <div key={idx} className="space-y-0.5">

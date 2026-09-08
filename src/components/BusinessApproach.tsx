@@ -419,7 +419,7 @@ function ChallengeCard({
         {icon}
       </div>
 
-      <h3 className="text-[11px] my-3 font-bold leading-4 text-[#152451] sm:text-xl">
+      <h3 className="text-[11px] my-3 font-bold leading-4 text-[#152451] sm:text-lg">
         {title}
       </h3>
 

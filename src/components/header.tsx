@@ -231,7 +231,7 @@ const navItems: NavItem[] = [
     }
   },
    {
-    label: "",
+    label: "products",
     href: "#products",
     hasDropdown: true,
     dropdownContent: {

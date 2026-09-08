@@ -109,7 +109,7 @@ const PeopleManageIcon = ({ className }: IconProps) => (
 
 const AnalyzeIcon = ({ className }: IconProps) => (
   <GradientIcon className={className}>
-    <rect x="4" y="4" width="16" height="16" rx="3" />
+    <rect x="4" y="4" width="20" height="20" rx="3" />
     <circle cx="12" cy="12" r="3" />
     <path d="M12 7v2" />
     <path d="M12 15v2" />
@@ -260,19 +260,19 @@ const challengeCards: ChallengeCard[] = [
     title: "Too Many Tools",
     description:
       "Hundreds of AI tools exist. Choosing the right ones is difficult.",
-    icon: <ToolboxIcon />,
+    icon: <ToolboxIcon className="w-8 h-8"/>,
   },
   {
     title: "Too Much Manual Work",
     description:
       "Research, data entry, lead generation, follow-up, reporting and repetitive operations consume valuable time.",
-    icon: <ManualWorkIcon />,
+    icon: <ManualWorkIcon className="w-8 h-8"/>,
   },
   {
     title: "Too Many People to Manage",
     description:
       "Businesses need data experts, marketers, researchers, developers, AI specialists and operations teams.",
-    icon: <PeopleManageIcon />,
+    icon: <PeopleManageIcon className="w-8 h-8"/>,
   },
 ];
 
@@ -334,44 +334,44 @@ const solutions: SolutionCard[] = [
     title: "AI Workforce",
     description:
       "A managed team of AI operators, specialists and experts.",
-    icon: <WorkforceIcon />,
+    icon: <WorkforceIcon className="w-8 h-8"/>,
   },
   {
     title: "AI Agents",
     description:
       "AI agents that research, generate leads, communicate, follow up and automate workflows.",
-    icon: <AgentsIcon />,
+    icon: <AgentsIcon className="w-8 h-8"/>,
   },
   {
     title: "AI Automation",
     description:
       "Automate repetitive processes using AI, APIs and workflow automation.",
-    icon: <AutomationIcon />,
+    icon: <AutomationIcon className="w-8 h-8"/>,
   },
   {
     title: "AI Data & Research",
     description:
       "Turn data into insights with AI-powered research and analysis.",
-    icon: <DataIcon />,
+    icon: <DataIcon className="w-8 h-8"/>,
   },
   {
     title: "AI Lead Engines",
     description:
       "Find, enrich, qualify and nurture prospects with AI-driven lead engines.",
-    icon: <LeadIcon />,
+    icon: <LeadIcon className="w-8 h-8"/>,
   },
   {
     title: "AI Digital Marketing",
     description:
       "SEO, content, social, ads, backlinks and more — powered by AI tools and operators.",
-    icon: <MarketingIcon />,
+    icon: <MarketingIcon className="w-8 h-8"/>,
     featured: true,
   },
   {
     title: "AI Customer Operations",
     description:
       "Customer support, CRM, follow-up and calling with AI and trained operators.",
-    icon: <CustomerIcon />,
+    icon: <CustomerIcon className="w-8 h-8"/>,
   },
 ];
 
@@ -569,8 +569,8 @@ function SolutionCard({
       <div
         className={`
           flex
-          h-11
-          w-11
+          h-14
+          w-14
           shrink-0
           items-center
           justify-center
@@ -596,12 +596,12 @@ function SolutionCard({
       <div className="mt-3">
         <h3
           className="
-            text-[13px]
+            text-sm
             font-bold
             leading-[1.3]
             tracking-[-0.01em]
             text-[#152451]
-            sm:text-[14px]
+            sm:text-lg
           "
         >
           {title}
@@ -613,7 +613,7 @@ function SolutionCard({
             text-[11px]
             leading-[1.55]
             text-[#607093]
-            sm:text-[12px]
+            sm:text-sm
             sm:leading-[1.5]
           "
         >
@@ -635,14 +635,14 @@ function SolutionCard({
           items-center
           gap-1.5
           pt-4
-          text-[10px]
+          text-sm
           font-semibold
           text-[#3972e8]
           transition-all
           duration-200
           hover:gap-2
           hover:text-[#7437df]
-          sm:text-[11px]
+          sm:text-lg
         "
       >
         <span>Explore</span>

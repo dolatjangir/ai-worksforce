@@ -28,7 +28,11 @@ import {
   ArrowRight,
   Menu,
   X,
-  ChevronRight
+  ChevronRight,
+  Bot,
+  UsersRound,
+  Wrench,
+  Settings
 } from 'lucide-react';
 
 import Link from 'next/link'
@@ -43,6 +47,7 @@ interface DropdownItem {
   title: string;
   href: string;
   badge?: string;
+  tagline?: string;
   children?: SubMenuItem[];
 }
 
@@ -118,40 +123,42 @@ const navItems: NavItem[] = [
         {
           items: [
             {
-              title: "AI WorkForce",
+              icon: <Sparkles className="w-5 h-5" />,
+              title: "What is an AI WorkForce",
+              tagline: "AI + Tools + Experts + Manged Oprations",
               href: "/features/ai-automation"
             },
             {
-              title: "Ai Employees",
+              icon: <Bot className="w-5 h-5" />,
+              title: "Wht AIWorksForce?",
+              tagline: "Why businesses choose our model",
               href: "/features/smart-lead",
               badge: "AI"
             },
             {
-              title: "AI Teams",
+              icon: <UsersRound className="w-5 h-5" />,
+              title: "How it Works",
+              tagline: "From business problem to Ai oprations",
               href: "/features/property-ai"
-            }
-          ]
-        },
-        {
-          items: [
+            },
             {
-              title: "Ai WorkFlows",
+              icon: <Workflow className="w-5 h-5" />,
+              title: "Our Ai WorkFlow",
+              tagline: "Ai agents, experts and oprators",
               href: "/features/growth-automation"
             },
             {
-              title: "WorkForce Builder",
+              icon: <Wrench className="w-5 h-5" />,
+              title: "Case Studies",
+              tagline: "Real business results",
               href: "/features/Conversational-ai"
-            },
-            {
-              title: "Workforce Management",
-              href: "/features/Performance-analytics"
             }
           ]
         }
       ],
       footer: {
-        text: "See all features",
-        link: "Explore →",
+        text: "Get your Ai workforce Assessment",
+        link: "",
         href: "/explore-feature"
       }
     }
@@ -231,7 +238,7 @@ const navItems: NavItem[] = [
     }
   },
    {
-    label: "products",
+    label: "Products",
     href: "#products",
     hasDropdown: true,
     dropdownContent: {
@@ -544,7 +551,9 @@ function Header() {
                         ? (activeSubmenu ? "w-[500px]" : "w-64") 
                         : item.label === "Ai Agents" 
                           ? "w-[640px]" 
-                          : "w-[500px]"
+                          : item.label === "Ai WorkForce"
+                            ? "w-[340px]"
+                            : "w-[500px]"
                       }`}>
 
                       <div className="bg-white rounded-2xl shadow-[0_24px_48px_-12px_rgba(0,0,0,0.18)] border border-gray-100/90 overflow-hidden ring-1 ring-gray-100/50">
@@ -604,6 +613,41 @@ function Header() {
                                 })}
                               </div>
                             )}
+                          </div>
+                        ) : item.label === "Ai WorkForce" ? (
+                          <div className="p-3">
+                            {item.dropdownContent.sections.map((section, idx) => (
+                              <div key={idx} className="space-y-0.5">
+                                {section.items.map((subItem, subIdx) => (
+                                  <Link
+                                    key={subIdx}
+                                    href={subItem.href}
+                                    className="group flex items-start gap-3 p-3 rounded-xl hover:bg-gray-50/80 transition-all duration-200"
+                                  >
+                                    <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-violet-50 text-violet-600 flex items-center justify-center group-hover:bg-violet-100 transition-colors duration-200">
+                                      {subItem.icon}
+                                    </div>
+                                    <div className="flex-1 min-w-0 pt-0.5">
+                                      <div className="flex items-center gap-2">
+                                        <span className="text-sm font-semibold text-gray-800 group-hover:text-violet-700 transition-colors duration-200">
+                                          {subItem.title}
+                                        </span>
+                                        {subItem.badge && (
+                                          <span className="px-2 py-0.5 text-[10px] font-bold bg-gradient-to-r from-violet-100 to-purple-100 text-violet-700 rounded-full border border-violet-200/50">
+                                            {subItem.badge}
+                                          </span>
+                                        )}
+                                      </div>
+                                      {subItem.tagline && (
+                                        <p className="text-xs text-gray-500 mt-0.5 leading-relaxed">
+                                          {subItem.tagline}
+                                        </p>
+                                      )}
+                                    </div>
+                                  </Link>
+                                ))}
+                              </div>
+                            ))}
                           </div>
                         ) : (
                           <div className="p-5 grid grid-cols-2 gap-6">
@@ -800,6 +844,11 @@ function Header() {
                                           </span>
                                         )}
                                       </div>
+                                      {subItem.tagline && (
+                                        <p className="text-xs text-gray-500 mt-0.5">
+                                          {subItem.tagline}
+                                        </p>
+                                      )}
                                     </div>
                                   </Link>
                                 )}

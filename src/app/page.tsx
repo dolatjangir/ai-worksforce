@@ -354,7 +354,7 @@ export default function Home() {
         <div className="mx-auto grid min-h-[470px] max-w-full lg:grid-cols-[48%_52%]">
           {/* Hero Copy */}
           <div className="relative z-20 flex items-center px-5 py-12 sm:px-8 lg:px-12 xl:px-16">
-            <div className="max-w-[650px]">
+            <div className="max-w-[650px] ">
               <div className="mb-4 inline-flex rounded-full bg-[#eaf5ff] px-3 py-1 text-xs font-extrabold uppercase tracking-[0.05em] text-[#1476e5]">
                 Your Outsource AI Department
               </div>
@@ -407,7 +407,7 @@ We analyze your business and processes, identify the right data, AI tools, and A
                   Talk to A Ai expert
                 </a>
               </div>  
-              <h3 className="mt-2"><LocateFixedIcon/>From business analysis to daily oprations- aiworksForce manages it for you.</h3>
+              <h3 className="pt-8 flex gap-2"><LocateFixedIcon/>From business analysis to daily oprations- aiworksForce manages it for you.</h3>
             </div>
             
           </div>

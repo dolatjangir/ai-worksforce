@@ -46,7 +46,7 @@ export default function HeroSection() {
           initial="hidden"
           animate="visible"
           variants={containerVariants}
-          className="relative z-20 flex items-center px-5 py-12 sm:px-8 lg:px-12 xl:px-16"
+          className="relative z-20 flex items-center px-5 pt-12 pb-40 sm:px-8 lg:px-12 lg:py-12 xl:px-16"
         >
           <div className="w-full">
             {/* Badge */}
@@ -78,10 +78,10 @@ export default function HeroSection() {
               AI-powered workforce for you from our India delivery center.
             </motion.p>
 
-            {/* Tags — NO WRAP, overflows freely onto image */}
+            {/* Tags — wrap on small screens, NO WRAP on desktop (overflows onto image) */}
             <motion.div
               variants={itemVariants}
-              className="mt-6 flex flex-nowrap items-center gap-x-5 gap-y-3 overflow-visible"
+              className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3 overflow-visible lg:flex-nowrap"
             >
               {tags.map((item) => {
                 const Icon = item.icon;
@@ -140,8 +140,11 @@ export default function HeroSection() {
           </div>
         </motion.div>
 
-        {/* ── Hero Image ── */}
-        <div className="relative h-full min-h-[350px] overflow-hidden lg:min-h-0">
+        {/* ── Hero Image ──
+            Below lg (where it would stack under the text): absolute inset-0
+            → becomes the BACKGROUND of the whole section with a smooth shade.
+            lg and up: normal right-column image, exactly as before. */}
+        <div className="absolute inset-0 overflow-hidden lg:relative lg:h-full lg:min-h-0">
           <Image
             src="/aiworkforce-hero-img.png"
             alt="AI workforce team working together"
@@ -151,11 +154,14 @@ export default function HeroSection() {
             sizes="(max-width: 1024px) 100vw, 52vw"
           />
 
-          {/* Gradient fade to blend with left column */}
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#f4faff] via-[#f4faff]/40 to-transparent lg:w-[40%]" />
+          {/* Smooth shade for stacked/breakpoint state — strong at top (behind text), fades down */}
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#f4faff] via-[#f4faff]/90 to-[#f4faff]/25 lg:hidden" />
 
-          {/* Floating Card — Quote (top-left on mobile, bottom-left on desktop) */}
-          <div className="absolute top-4 left-4 rounded-lg bg-white/90 px-4 py-3 shadow-xl backdrop-blur-sm sm:px-5 sm:py-4 lg:bottom-8 lg:top-auto lg:left-8">
+          {/* Gradient fade to blend with left column (desktop only, unchanged) */}
+          <div className="pointer-events-none absolute inset-0 hidden bg-gradient-to-r from-[#f4faff] via-[#f4faff]/40 to-transparent lg:block lg:w-[40%]" />
+
+          {/* Floating Card — Quote (sits above the stats card over the shade on small screens, unchanged on desktop) */}
+          <div className="absolute bottom-24 left-4 rounded-lg bg-white/90 px-4 py-3 shadow-xl backdrop-blur-sm sm:px-5 sm:py-4 lg:bottom-8 lg:left-8">
             <div className="font-serif text-sm italic text-[#142652] sm:text-base">
               Your extended
             </div>
@@ -164,7 +170,7 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Floating Card — Stats (always bottom-right) */}
+          {/* Floating Card — Stats (always bottom-right, unchanged) */}
           <div className="absolute bottom-4 right-4 rounded-xl border border-white/60 bg-white px-4 py-3 shadow-2xl backdrop-blur-sm sm:bottom-8 sm:right-8 sm:px-5 sm:py-4">
             <div className="flex items-center gap-2 sm:gap-3">
               <span className="text-2xl font-extrabold tracking-tight text-[#071744] sm:text-[30px]">

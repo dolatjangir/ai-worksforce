@@ -133,38 +133,6 @@ const footerColumns: FooterColumn[] = [
   },
 ];
 
-function BrandLogo() {
-  return (
-    <div className="flex items-center gap-3">
-      <div className="relative flex h-[54px] w-[54px] shrink-0 items-center justify-center overflow-hidden rounded-full bg-[radial-gradient(circle_at_72%_28%,#13D8FF_0%,#087EF5_42%,#10236E_100%)] shadow-[0_0_30px_rgba(20,140,255,0.2)]">
-        <div className="absolute left-[9px] top-[8px] h-[37px] w-[33px] rounded-full border-[6px] border-white/95 border-r-transparent" />
-
-        <div className="absolute right-[5px] top-[14px] h-[2px] w-[26px] bg-white" />
-        <div className="absolute right-[5px] top-[28px] h-[2px] w-[28px] bg-white" />
-        <div className="absolute bottom-[13px] right-[6px] h-[2px] w-[25px] bg-white" />
-
-        <span className="absolute right-[4px] top-[10px] h-[11px] w-[11px] rounded-full border-[3px] border-white bg-[#173E97]" />
-        <span className="absolute right-[4px] top-[24px] h-[11px] w-[11px] rounded-full border-[3px] border-white bg-[#173E97]" />
-        <span className="absolute bottom-[9px] right-[5px] h-[11px] w-[11px] rounded-full border-[3px] border-white bg-[#173E97]" />
-      </div>
-
-      <div>
-        <div className="whitespace-nowrap text-[27px] font-extrabold leading-none tracking-[-0.055em]">
-          <span className="text-[#16A5FF]">AI</span>{" "}
-          <span className="text-white">WorksForce</span>
-          <sup className="ml-1 align-top text-[8px] font-medium text-white/70">
-            TM
-          </sup>
-        </div>
-
-        <p className="mt-1.5 whitespace-nowrap text-[13px] font-medium leading-5 text-white/80">
-          AI Agents. Human Experts. Managed Results.
-        </p>
-      </div>
-    </div>
-  );
-}
-
 function Benefit({
   children,
 }: {
@@ -192,7 +160,24 @@ function FooterColumn({
   footerLink,
 }: FooterColumn) {
   return (
-    <div className="min-w-0 border-l border-white/[0.10] pl-5 first:border-l-0 first:pl-0">
+    <div
+      className="
+        min-w-0
+        border-l
+        border-white/[0.10]
+        pl-5
+
+        max-xl:[&:nth-child(5)]:border-l-0
+        max-xl:[&:nth-child(5)]:pl-0
+
+        max-lg:[&:nth-child(3)]:border-l-0
+        max-lg:[&:nth-child(3)]:pl-0
+
+        max-md:border-l-0
+        max-md:pl-0
+      "
+    >
+      {/* Column heading */}
       <div className="mb-5 flex min-h-[54px] items-start gap-3">
         <Icon
           className={`mt-0.5 h-[30px] w-[30px] shrink-0 ${color}`}
@@ -206,6 +191,7 @@ function FooterColumn({
         </h3>
       </div>
 
+      {/* Links */}
       <ul className="space-y-[13px]">
         {links.map((link) => (
           <li key={link}>
@@ -219,6 +205,7 @@ function FooterColumn({
         ))}
       </ul>
 
+      {/* View all */}
       {footerLink && (
         <a
           href="#"
@@ -238,19 +225,34 @@ function FooterColumn({
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-[#071426] text-white">
+    <footer className="relative w-full overflow-hidden bg-[#071426] text-white">
 
       {/* =========================================================
           UPPER CTA SECTION
       ========================================================= */}
 
       <section className="border-b border-[#1D4779]">
-        <div className="mx-auto max-w-[1450px] px-5 pb-10 pt-12 sm:px-8 lg:px-12 xl:px-14">
-          <div className="grid gap-10 xl:grid-cols-[0.95fr_1.1fr_0.72fr] xl:items-center">
+        <div className="mx-auto max-w-[1450px] px-5 pb-10 pt-10 sm:px-8 sm:pb-10 sm:pt-12 lg:px-12 xl:px-14">
+          <div
+            className="
+              grid
+              min-w-0
+              gap-10
 
-            {/* LEFT BRAND SECTION */}
-            <div>
-             <img src="/aiworksforce-white-logo.png" className="w-70"/>
+              xl:grid-cols-[0.95fr_1.1fr_0.72fr]
+              xl:items-center
+            "
+          >
+            {/* =====================================================
+                LEFT BRAND
+            ====================================================== */}
+
+            <div className="min-w-0">
+              <img
+                src="/aiworksforce-white-logo.png"
+                alt="AIWorksForce"
+                className="h-auto w-[250px] max-w-full object-contain object-left sm:w-[280px]"
+              />
 
               <p className="mt-6 max-w-[500px] text-[16px] font-normal leading-[1.55] text-white/90">
                 We design, deploy and manage AI workforce solutions
@@ -258,10 +260,23 @@ export default function Footer() {
                 achieve real results.
               </p>
 
-              <div className="mt-8 grid max-w-[560px] grid-cols-3 divide-x divide-white/[0.15]">
+              {/* Feature items */}
+              <div
+                className="
+                  mt-8
+                  grid
+                  max-w-[560px]
+                  grid-cols-1
+                  gap-5
 
+                  sm:grid-cols-3
+                  sm:gap-0
+                  sm:divide-x
+                  sm:divide-white/[0.15]
+                "
+              >
                 {/* AUTOMATE */}
-                <div className="flex items-center gap-3 pr-4">
+                <div className="flex items-center gap-3 sm:pr-4">
                   <Zap
                     className="h-[31px] w-[31px] shrink-0 text-[#71B8FF]"
                     strokeWidth={2.2}
@@ -275,7 +290,7 @@ export default function Footer() {
                 </div>
 
                 {/* SCALE */}
-                <div className="flex items-center gap-3 px-4">
+                <div className="flex items-center gap-3 sm:px-4">
                   <BarChart3
                     className="h-[31px] w-[31px] shrink-0 text-[#71B8FF]"
                     strokeWidth={2}
@@ -289,7 +304,7 @@ export default function Footer() {
                 </div>
 
                 {/* HUMAN + AI */}
-                <div className="flex items-center gap-3 pl-4">
+                <div className="flex items-center gap-3 sm:pl-4">
                   <Users
                     className="h-[31px] w-[31px] shrink-0 text-[#71B8FF]"
                     strokeWidth={2}
@@ -304,13 +319,40 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* CENTER CTA SECTION */}
-            <div className="border-l border-[#2D5D93] pl-7 xl:pl-12">
+            {/* =====================================================
+                CENTER CTA
+            ====================================================== */}
+
+            <div
+              className="
+                min-w-0
+                border-l-0
+                border-[#2D5D93]
+                pl-0
+
+                sm:border-l
+                sm:pl-7
+
+                xl:pl-12
+              "
+            >
               <p className="mb-3 text-[12px] font-medium uppercase tracking-[0.25em] text-[#8FB8EF]">
                 Ready to transform your business?
               </p>
 
-              <h2 className="max-w-[700px] text-[36px] font-bold leading-[1.1] tracking-[-0.035em] sm:text-xl lg:text-3xl">
+              <h2
+                className="
+                  max-w-[700px]
+                  text-[30px]
+                  font-bold
+                  leading-[1.1]
+                  tracking-[-0.035em]
+
+                  sm:text-[36px]
+                  lg:text-[40px]
+                  xl:text-[42px]
+                "
+              >
                 Build Your{" "}
                 <span className="text-[#24A8FF]">
                   AI Workforce
@@ -326,20 +368,56 @@ export default function Footer() {
 
               <a
                 href="#"
-                className="mt-6 inline-flex min-h-[54px] items-center justify-center gap-3 rounded-[14px] bg-gradient-to-r from-[#119BEA] to-[#4A38FF] px-7 text-[17px] font-semibold text-white shadow-[0_12px_35px_rgba(39,104,255,0.24)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_16px_40px_rgba(39,104,255,0.34)]"
+                className="
+                  mt-6
+                  inline-flex
+                  min-h-[54px]
+                  w-auto
+                  max-w-full
+                  items-center
+                  justify-center
+                  gap-3
+                  rounded-[14px]
+                  bg-gradient-to-r
+                  from-[#119BEA]
+                  to-[#4A38FF]
+                  px-7
+                  text-[17px]
+                  font-semibold
+                  text-white
+                  shadow-[0_12px_35px_rgba(39,104,255,0.24)]
+                  transition-all
+                  duration-200
+                  hover:-translate-y-0.5
+                  hover:shadow-[0_16px_40px_rgba(39,104,255,0.34)]
+                "
               >
                 <span>Get AI Assessment</span>
 
                 <ArrowRight
-                  className="h-[21px] w-[21px]"
+                  className="h-[21px] w-[21px] shrink-0"
                   strokeWidth={2}
                 />
               </a>
             </div>
 
-            {/* RIGHT BENEFITS CARD */}
-            <div className="rounded-[16px] border border-[#2D62A2] bg-[linear-gradient(145deg,rgba(11,36,68,0.62),rgba(12,29,55,0.45))] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_15px_45px_rgba(0,0,0,0.18)]">
+            {/* =====================================================
+                RIGHT BENEFIT CARD
+            ====================================================== */}
 
+            <div
+              className="
+                min-w-0
+                rounded-[16px]
+                border
+                border-[#2D62A2]
+                bg-[linear-gradient(145deg,rgba(11,36,68,0.62),rgba(12,29,55,0.45))]
+                p-5
+                shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_15px_45px_rgba(0,0,0,0.18)]
+
+                sm:p-6
+              "
+            >
               <div className="flex items-start gap-4">
                 <Sparkles
                   className="mt-0.5 h-[28px] w-[28px] shrink-0 text-[#A8C6FF]"
@@ -375,12 +453,25 @@ export default function Footer() {
       </section>
 
       {/* =========================================================
-          NAVIGATION SECTION
+          NAVIGATION
       ========================================================= */}
 
       <section>
         <div className="mx-auto max-w-[1450px] px-5 py-8 sm:px-8 lg:px-12 xl:px-14">
-          <div className="grid gap-y-10 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-7">
+          <div
+            className="
+              grid
+              min-w-0
+              grid-cols-1
+              gap-x-6
+              gap-y-10
+
+              sm:grid-cols-2
+              md:grid-cols-3
+              lg:grid-cols-4
+              xl:grid-cols-7
+            "
+          >
             {footerColumns.map((column) => (
               <FooterColumn
                 key={column.title}
@@ -397,10 +488,32 @@ export default function Footer() {
 
       <section className="border-t border-[#1D4779]">
         <div className="mx-auto max-w-[1450px] px-5 sm:px-8 lg:px-12 xl:px-14">
-          <div className="flex flex-col gap-6 py-6 lg:flex-row lg:items-center lg:justify-between">
+          <div
+            className="
+              flex
+              flex-col
+              gap-5
+              py-6
 
-            {/* LEFT */}
-            <div className="flex flex-wrap items-center gap-x-5 gap-y-3 text-[14px] leading-5 text-white/70">
+              lg:flex-row
+              lg:items-center
+              lg:justify-between
+              lg:gap-6
+            "
+          >
+            {/* COPYRIGHT */}
+            <div
+              className="
+                flex
+                flex-wrap
+                items-center
+                gap-x-5
+                gap-y-3
+                text-[14px]
+                leading-5
+                text-white/70
+              "
+            >
               <span>
                 © 2026 AIWorksForce. All rights reserved.
               </span>
@@ -433,9 +546,18 @@ export default function Footer() {
               </a>
             </div>
 
-            {/* RIGHT */}
-            <div className="flex flex-wrap items-center gap-5 text-white/75">
+            {/* SOCIAL */}
+            <div
+              className="
+                flex
+                flex-wrap
+                items-center
+                gap-5
+                text-white/75
 
+                lg:justify-end
+              "
+            >
               <a
                 href="#"
                 aria-label="LinkedIn"
@@ -480,7 +602,7 @@ export default function Footer() {
                 />
               </a>
 
-              <span className="ml-1 text-[14px] text-white/65">
+              <span className="text-[14px] text-white/65">
                 Made with AI + Human Expertise{" "}
                 <span className="ml-1 text-[21px] text-[#8FB8FF]">
                   ♡
@@ -495,20 +617,100 @@ export default function Footer() {
           DECORATIVE BOTTOM AREA
       ========================================================= */}
 
-      <div className="relative mx-auto h-[175px] max-w-[1450px] overflow-hidden px-5 sm:px-8 lg:px-12 xl:px-14">
+      <div
+        className="
+          relative
+          mx-auto
+          h-[145px]
+          max-w-[1450px]
+          overflow-hidden
+          px-5
 
+          sm:h-[160px]
+          sm:px-8
+
+          lg:h-[175px]
+          lg:px-12
+
+          xl:px-14
+        "
+      >
         {/* LEFT WAVE 1 */}
-        <div className="absolute -bottom-[125px] -left-[5%] h-[200px] w-[78%] rotate-[7deg] rounded-[50%] border border-[#1D5795]/70" />
+        <div
+          className="
+            absolute
+            -bottom-[125px]
+            -left-[15%]
+            h-[200px]
+            w-[100%]
+            rotate-[7deg]
+            rounded-[50%]
+            border
+            border-[#1D5795]/70
+
+            sm:-left-[5%]
+            sm:w-[78%]
+          "
+        />
 
         {/* LEFT WAVE 2 */}
-        <div className="absolute -bottom-[145px] -left-[7%] h-[220px] w-[82%] rotate-[7deg] rounded-[50%] border border-[#17477D]/60" />
+        <div
+          className="
+            absolute
+            -bottom-[145px]
+            -left-[18%]
+            h-[220px]
+            w-[105%]
+            rotate-[7deg]
+            rounded-[50%]
+            border
+            border-[#17477D]/60
+
+            sm:-left-[7%]
+            sm:w-[82%]
+          "
+        />
 
         {/* LEFT WAVE 3 */}
-        <div className="absolute -bottom-[165px] -left-[10%] h-[245px] w-[86%] rotate-[7deg] rounded-[50%] border border-[#123B6D]/50" />
+        <div
+          className="
+            absolute
+            -bottom-[165px]
+            -left-[20%]
+            h-[245px]
+            w-[110%]
+            rotate-[7deg]
+            rounded-[50%]
+            border
+            border-[#123B6D]/50
 
-        {/* DIGITAL GLOBE */}
-        <div className="absolute -bottom-[270px] right-[-55px] h-[440px] w-[440px] rounded-full border border-[#1A61A8]/75 shadow-[0_0_70px_rgba(17,106,215,0.12)]">
+            sm:-left-[10%]
+            sm:w-[86%]
+          "
+        />
 
+        {/* =====================================================
+            DIGITAL GLOBE
+        ====================================================== */}
+
+        <div
+          className="
+            absolute
+            -bottom-[265px]
+            -right-[170px]
+            h-[390px]
+            w-[390px]
+            rounded-full
+            border
+            border-[#1A61A8]/75
+            shadow-[0_0_70px_rgba(17,106,215,0.12)]
+
+            sm:-bottom-[270px]
+            sm:-right-[55px]
+            sm:h-[440px]
+            sm:w-[440px]
+          "
+        >
           <div className="absolute inset-7 rounded-full border border-[#174E89]/70" />
 
           <div className="absolute inset-16 rounded-full border border-[#174E89]/50" />
@@ -520,13 +722,58 @@ export default function Footer() {
           <div className="absolute left-1/2 top-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#318EFF] shadow-[0_0_30px_10px_rgba(49,142,255,0.25)]" />
         </div>
 
-        {/* LEFT BOTTOM TEXT */}
-        <div className="absolute bottom-4 left-5 text-[11px] font-medium uppercase tracking-[0.30em] text-[#91B5E8] sm:left-8 lg:left-12 xl:left-14">
+        {/* =====================================================
+            LEFT BOTTOM TEXT
+        ====================================================== */}
+
+        <div
+          className="
+            absolute
+            bottom-4
+            left-5
+            max-w-[280px]
+            text-[10px]
+            font-medium
+            uppercase
+            leading-5
+            tracking-[0.22em]
+            text-[#91B5E8]
+
+            sm:left-8
+            sm:max-w-none
+            sm:text-[11px]
+            sm:tracking-[0.30em]
+
+            lg:left-12
+
+            xl:left-14
+          "
+        >
           A more productive, intelligent tomorrow.
         </div>
 
-        {/* RIGHT BOTTOM TEXT */}
-        <div className="absolute bottom-5 right-5 hidden text-[11px] font-medium uppercase leading-5 tracking-[0.25em] text-[#91B5E8] sm:block lg:right-12 xl:right-14">
+        {/* =====================================================
+            RIGHT BOTTOM TEXT
+        ====================================================== */}
+
+        <div
+          className="
+            absolute
+            bottom-5
+            right-5
+            hidden
+            text-[11px]
+            font-medium
+            uppercase
+            leading-5
+            tracking-[0.25em]
+            text-[#91B5E8]
+
+            sm:block
+            lg:right-12
+            xl:right-14
+          "
+        >
           <div>PEOPLE</div>
           <div>AI</div>
           <div>POSSIBILITIES</div>

@@ -17,6 +17,7 @@ import {
   Headphones,
   Instagram,
   Linkedin,
+  LocateFixedIcon,
   Mail,
   MapPin,
   Menu,
@@ -35,6 +36,7 @@ import {
   Youtube,
   Zap,
 } from "lucide-react";
+import BusinessApproach from "@/components/BusinessApproach";
 
 export default function Home() {
   const [mobileMenu, setMobileMenu] = useState(false);
@@ -354,7 +356,7 @@ export default function Home() {
           <div className="relative z-20 flex items-center px-5 py-12 sm:px-8 lg:px-12 xl:px-16">
             <div className="max-w-[650px]">
               <div className="mb-4 inline-flex rounded-full bg-[#eaf5ff] px-3 py-1 text-xs font-extrabold uppercase tracking-[0.05em] text-[#1476e5]">
-                Expert AI M Owners • AI Tools • Lead Engines
+                Your Outsource AI Department
               </div>
 
               <h1 className="max-w-[650px] text-5xl font-extrabold leading-[0.99] tracking-[-0.045em] text-[#071744] sm:text-[50px] lg:text-[47px] xl:text-[46px]">
@@ -366,17 +368,16 @@ export default function Home() {
               </h1>
 
               <p className="mt-5 max-w-[570px] text-[14px] leading-[1.5] text-[#26395f] sm:text-[16px]">
-                Give us the work. We combine AI experts, tools, agents and
-                trained operators to manage and deliver your business
-                operations.
+              we analize your business and processes, identift the right data. AI tools and ai agents, then build and manage the complete ai-powered workforce for you from our india delivery center 
               </p>
 
               <div className="mt-6 grid grid-cols-2 gap-x-5 gap-y-3 sm:flex sm:flex-wrap">
                 {[
-                  { icon: Users, text: "Expert-Led Teams" },
-                  { icon: Bot, text: "AI Agents" },
-                  { icon: Settings, text: "AI Tools" },
-                  { icon: Target, text: "Lead Engines" },
+                  { icon: Users, text: "Ai Strategy" },
+                  { icon: Bot, text: "Ai Tools" },
+                  { icon: Settings, text: "AI Agents" },
+                  { icon: Target, text: "Expert Workforce" },
+                    { icon: Bot, text: "Managed Oprations" },
                 ].map((item) => {
                   const Icon = item.icon;
                   return (
@@ -396,7 +397,7 @@ export default function Home() {
                   href="#contact"
                   className="inline-flex items-center justify-center gap-2 rounded-md bg-[#0876ed] px-7 py-3.5 text-md font-bold text-white shadow-[0_8px_20px_rgba(8,118,237,.18)] transition hover:-translate-y-0.5 hover:bg-[#0668d5]"
                 >
-                  Start a Pilot
+                  Get your AI assesement
                   <ArrowRight size={15} />
                 </a>
 
@@ -404,10 +405,12 @@ export default function Home() {
                   href="#contact"
                   className="inline-flex items-center justify-center gap-2 rounded-md border border-[#0876ed] bg-white px-7 py-3.5 text-md font-bold text-[#0876ed] transition hover:bg-[#eff7ff]"
                 >
-                  Talk to Our Team
+                  Talk to A Ai expert
                 </a>
-              </div>
+              </div>  
+              <h3 className="mt-2"><LocateFixedIcon/>From business analysis to daily oprations- aiworksForce manages it for you.</h3>
             </div>
+            
           </div>
 
           {/* Hero Image */}
@@ -507,104 +510,7 @@ export default function Home() {
       {/* =========================================================
           SERVICES
       ========================================================== */}
-    <section className="bg-white py-9 sm:py-12">
-  <div className="mx-auto max-w-[1500px] px-5 lg:px-12">
-    {/* Section Header */}
-    <div className="mb-6 flex items-end justify-between gap-4">
-      <div>
-        <div className="mb-1.5 text-[10px] font-extrabold uppercase tracking-wide text-[#0876ed]">
-          Our Services
-        </div>
-
-        <h2 className="text-[25px] font-extrabold leading-[1.15] tracking-[-0.03em] text-[#071744] sm:text-[31px]">
-          What Can We Operate for You?
-        </h2>
-      </div>
-
-      <a
-        href="#"
-        className="hidden shrink-0 items-center gap-1.5 pb-1 text-[10px] font-bold text-[#0876ed] transition-colors hover:text-[#0668d5] sm:flex"
-      >
-        Explore All Services
-        <ArrowRight size={13} strokeWidth={2.5} />
-      </a>
-    </div>
-
-    {/* Services Grid */}
-    <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
-      {services.map((service) => {
-        const Icon = service.icon;
-
-        return (
-          <article
-            key={service.title}
-            className={`group relative flex h-full min-h-[205px] flex-col overflow-visible rounded-xl border p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_30px_rgba(7,23,68,0.08)] ${
-              service.tone === "pink"
-                ? "border-pink-100 bg-gradient-to-b from-[#fff4f6] via-white to-white"
-                : "border-[#dfe8f1] bg-white"
-            }`}
-          >
-            {/* New Badge */}
-            {service.new && (
-              <span className="absolute right-3 top-0 z-10 -translate-y-1/2 rounded-full bg-[#0876ed] px-2.5 py-1 text-[8px] font-bold leading-none text-white shadow-sm">
-                New
-              </span>
-            )}
-
-            {/* Icon */}
-            <div
-              className={`mb-4 flex h-14 w-14 shrink-0 items-center justify-center rounded-xl ${
-                service.tone === "pink"
-                  ? "bg-[#ffe7ec] text-[#f0446f]"
-                  : "bg-[#eaf5ff] text-[#0876ed]"
-              }`}
-            >
-              <Icon
-                size={28}
-                strokeWidth={2.2}
-                className="transition-transform duration-300 group-hover:scale-105"
-              />
-            </div>
-
-            {/* Title */}
-            <h3 className=" text-[12px] font-semibold leading-[1] text-[#071744] sm:text-lg">
-              {service.title}
-            </h3>
-
-            {/* Description */}
-            <p className="mt-2 flex-1 text-sm font-medium leading-[1.55] text-[#53627a]">
-              {service.text}
-            </p>
-
-            {/* Bottom CTA */}
-            <a
-              href="#"
-              className="mt-5 inline-flex w-fit items-center gap-1.5 text-sm font-extrabold text-[#0876ed] transition-all duration-200 hover:gap-2"
-            >
-              {service.partner ? "Become a Partner" : "Learn More"}
-              <ArrowRight
-                size={12}
-                strokeWidth={2.5}
-                className="shrink-0"
-              />
-            </a>
-          </article>
-        );
-      })}
-    </div>
-
-    {/* Mobile Explore Link */}
-    <div className="mt-5 flex justify-end sm:hidden">
-      <a
-        href="#"
-        className="flex items-center gap-1.5 text-sm font-bold text-[#0876ed]"
-      >
-        Explore All Services
-        <ArrowRight size={13} strokeWidth={2.5} />
-      </a>
-    </div>
-  </div>
-</section>
+  <BusinessApproach/>
 
       {/* =========================================================
           DELIVERY MODEL + PROCESS

@@ -110,8 +110,8 @@ const navItems: NavItem[] = [
     }
   },
    {
-    label: "Ai Delivery Teams",
-    href: "#ai-delivery-teams",
+    label: "Ai WorkForce",
+    href: "#ai-workforce",
     hasDropdown: true,
     dropdownContent: {
       sections: [
@@ -231,7 +231,7 @@ const navItems: NavItem[] = [
     }
   },
    {
-    label: "Products",
+    label: "",
     href: "#products",
     hasDropdown: true,
     dropdownContent: {
@@ -239,7 +239,7 @@ const navItems: NavItem[] = [
         {
           items: [
             {
-              title: "Lead Engine",
+              title: "Ai Lead Engine",
               href: "/industry/agencies",
               children: [
                 { title: "Property Lead Engine", href: "/products/crm/property" },
@@ -283,7 +283,7 @@ const navItems: NavItem[] = [
     }
   },
    {
-    label: "Partners",
+    label: "Ai Digital Marketing",
     href: "#partners",
     hasDropdown: true,
     dropdownContent: {

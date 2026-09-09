@@ -86,7 +86,7 @@ const navItems: NavItem[] = [
             },
             {
               title: "AI Automation",
-              href: "/services/ai-integration"
+              href: "/solutions/ai-automation"
             }
           ]
         },
@@ -94,15 +94,15 @@ const navItems: NavItem[] = [
           items: [
             {
               title: "AI Data & Research",
-              href: "/services/business-process-automation"
+              href: "/solutions/ai-data-&-research"
             },
             {
               title: "AI Customer Operations",
-              href: "/services/custom-ai-solutions"
+              href: "/solutions/ai-customer-operations"
             },
              {
               title: "AI Sales & Outreach",
-              href: "/services/custom-ai-solutions"
+              href: "/solutions/ai-sales-&-outreach"
             }
           ]
         }
@@ -251,9 +251,9 @@ const navItems: NavItem[] = [
               children: [
                 { title: "B2B Lead Engine", href: "/products/crm/b2b" },
                 { title: "B2C Lead Engine", href: "/products/crm/b2c" },
-                { title: "Property Lead Engine", href: "/products/crm/property" },
-                { title: "Consultancy Lead Engine", href: "/products/crm/consult" },
-                { title: "Airbnb Lead Engine", href: "/products/crm/airbnb" },
+                { title: "Property Lead Engine", href: "https://property.ibigdata.in/" },
+                { title: "Consultancy Lead Engine", href: "https://consult.ibigdata.in/admin" },
+                { title: "Travel Lead Engine", href: "https://travel.ibigdata.in/admin" },
                 { title: "Custom Lead Engine", href: "/products/crm/bulk" },
                 
               ]
@@ -552,7 +552,7 @@ function Header() {
                   <span>AI Delivery Center · Jaipur, India</span>
                 </div>
       
-                <div className="hidden items-center gap-5 md:flex">
+                <div className="hidden items-center gap-5 lg:flex">
                   <span>✉ hello@aiworkforce.com</span>
                   <span>⌕ +91 72300 12345</span>
                   <span>in</span>
@@ -578,7 +578,7 @@ function Header() {
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center gap-0">
+            <nav className="hidden lg:flex items-center gap-0">
               {navItems.map((item) => (
                 <div
                   key={item.label}
@@ -588,7 +588,7 @@ function Header() {
                 >
                   {item.hasDropdown ? (
                     <button
-                      className={`flex items-center gap-0.5 px-2 py-1.5 desktop-lg:px-3 desktop-lg:py-2 rounded-xl !text-[14px] font-semibold transition-all duration-300 ${activeDropdown === item.label
+                      className={`flex items-center gap-0.5 px-2 py-1.5 desktop-lg:px-3 desktop-lg:py-2 rounded-xl !text-[14px] whitespace-nowrap font-semibold transition-all duration-300 ${activeDropdown === item.label
                         ? "text-violet-700 bg-violet-50/80"
                         : "text-gray-950 hover:text-gray-900 hover:bg-gray-50/80"
                         }`}
@@ -772,21 +772,21 @@ function Header() {
               ))}
             </nav>
 
-            <div className="hidden md:flex items-center gap-3">
+            <div className="hidden lg:flex items-center gap-3">
               {/* <Link href="/login">
                 <button className="px-4 py-2 text-gray-600 hover:text-violet-700 font-semibold text-sm transition-all duration-200 rounded-xl hover:bg-gray-50">
                   Log in
                 </button></Link> */}
               <Link href="/start-a-pilot">
                 <button
-                  className="hidden items-center gap-0 desktop-lg:gap-2 rounded-md bg-[#0876ed] px-2.5 py-1.5 desktop-lg:px-5 desktop-lg:py-2.5 text-[11px] font-bold text-white shadow-[0_7px_18px_rgba(8,118,237,.2)] transition hover:bg-[#0668d5] sm:flex"
+                  className="hidden items-center gap-0 desktop-lg:gap-2 rounded-md bg-[#0876ed] px-2.5 py-1.5 desktop-lg:px-5 desktop-lg:py-2.5 text-[11px] font-bold text-white shadow-[0_7px_18px_rgba(8,118,237,.2)] transition hover:bg-[#0668d5] xl:flex"
                 >
                   start a pilot <ArrowRight/>
                 </button></Link>
             </div>
 
             <button
-              className="md:hidden p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
+              className="lg:hidden p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? (
@@ -810,7 +810,7 @@ function Header() {
 
         <div
           className={`
-            md:hidden
+            lg:hidden
             bg-white
             border-t border-gray-100
             absolute top-0 right-0 w-full max-h-[100vh] overflow-y-auto

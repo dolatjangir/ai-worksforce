@@ -38,7 +38,10 @@ import {
 } from "lucide-react";
 import BusinessApproach from "@/components/BusinessApproach";
 import { BiRightArrow } from "react-icons/bi";
-import HeroSection from "@/components/Hero/Hero";
+import HeroSection, {
+  defaultHeroCTAs,
+  defaultHeroTags,
+} from "@/components/Hero/Hero";
 
 export default function Home() {
   const [mobileMenu, setMobileMenu] = useState(false);
@@ -353,7 +356,30 @@ We analyze your business and processes, identify the right data, AI tools, and A
           </div>
         </div>
       </section> */}
-                <HeroSection/>
+            <HeroSection
+        badge="Your Outsource AI Department"
+        title="Build Your AI Workforce"
+        highlightedTitle="Without Building an AI Team."
+        description={`We analyze your business and processes, identify the right data,
+AI tools, and AI agents, and then build and manage a complete
+AI-powered workforce for you from our India delivery center.`}
+        tags={defaultHeroTags}
+        ctas={defaultHeroCTAs}
+        bottomTagline="From business analysis to daily operations — AIWorkForce manages it for you."
+        image={{
+          src: "/aiworkforce-hero-img.png",
+          alt: "AI workforce team working together",
+          priority: true,
+        }}
+        quote={{
+          lines: ["Your extended", "team in India."],
+        }}
+        stats={{
+          value: "150+",
+          label: "Delivery Seats",
+          location: "Jaipur, India",
+        }}
+      />
       {/* =========================================================
           STATS STRIP
       ========================================================== */}

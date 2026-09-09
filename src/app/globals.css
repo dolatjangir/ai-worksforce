@@ -1,17 +1,39 @@
-
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&display=swap");
 @import "tailwindcss";
 
 @theme {
   --color-brand-blue: #0876ed;
+  --color-brand-blue-dark: #0663c9;
+  --color-brand-blue-soft: #e9f3fe;
   --color-brand-dark: #071744;
   --color-brand-navy: #061a38;
   --color-brand-purple: #5c2bea;
+  --color-brand-purple-light: #8b5cf6;
+  --color-brand-purple-soft: #f3e8ff;
+  --color-brand-green: #16a34a;
+  --color-brand-green-light: #22c55e;
+  --color-brand-green-soft: #dcfce7;
+  --color-brand-orange: #f97316;
+  --color-brand-orange-soft: #ffedd5;
+  --color-brand-sky: #0ea5e9;
 
   --font-sans: "Inter", "Segoe UI", Arial, Helvetica, sans-serif;
-  --breakpoint-desktop-lg: 85.625rem; 
+  --font-hand: "Caveat", "Segoe Script", cursive;
+  --breakpoint-desktop-lg: 85.625rem;
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-float-slow: float 9s ease-in-out infinite;
 }
 
-
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
 
 :root {
   /* =========================================
@@ -66,32 +88,13 @@
      GRADIENTS
      ========================================= */
 
-  --gradient-brand: linear-gradient(
-    to right,
-    #06b6d4,
-    #2563eb,
-    #7c3aed
-  );
+  --gradient-brand: linear-gradient(to right, #06b6d4, #2563eb, #7c3aed);
 
-  --gradient-brand-soft: linear-gradient(
-    to right,
-    #22d3ee,
-    #2563eb
-  );
+  --gradient-brand-soft: linear-gradient(to right, #22d3ee, #2563eb);
 
-  --gradient-heading: linear-gradient(
-    to right,
-    #06b6d4,
-    #2563eb,
-    #7c3aed
-  );
+  --gradient-heading: linear-gradient(to right, #06b6d4, #2563eb, #7c3aed);
 
-  --gradient-section: linear-gradient(
-    to bottom right,
-    #eff6ff,
-    #ffffff,
-    #eef2ff
-  );
+  --gradient-section: linear-gradient(to bottom right, #eff6ff, #ffffff, #eef2ff);
 
   /* =========================================
      SHADOW COLORS
@@ -99,7 +102,7 @@
 
   --shadow-blue: rgba(24, 74, 140, 0.06);
   --shadow-blue-medium: rgba(24, 74, 140, 0.12);
-  --shadow-blue-strong: rgba(32, 83, 150, 0.10);
+  --shadow-blue-strong: rgba(32, 83, 150, 0.1);
   --shadow-blue-soft: rgba(25, 80, 160, 0.06);
 }
 
@@ -132,6 +135,7 @@ a {
 
 button {
   font: inherit;
+  cursor: pointer;
 }
 
 img {
@@ -204,64 +208,3 @@ img {
     scroll-behavior: auto !important;
   }
 }
-/* 
-@import "tailwindcss";
-
-:root {
-  --ai-navy: #071c3b;
-  --ai-dark: #061a39;
-  --ai-blue: #1475ec;
-  --ai-purple: #6848e8;
-  --ai-text: #10294c;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  background: #ffffff;
-  color: var(--ai-text);
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
-}
-
-button,
-a {
-  -webkit-tap-highlight-color: transparent;
-}
-
-button {
-  cursor: pointer;
-} */
-
-
-
-
-
-
-
-/* @import "tailwindcss";
-
-@theme {
-  --color-brand-purple: #7C3AED; 
-  --color-brand-purple-light: #8B5CF6;
-  --color-brand-dark: #0B1120; 
-  --color-brand-darker: #05080F;
-  --color-brand-gray: #F8FAFC;
-  
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-}
-
-@layer base {
-  body {
-    @apply text-slate-800 antialiased bg-white;
-  }
-}  */

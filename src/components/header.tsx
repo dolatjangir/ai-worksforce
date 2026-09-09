@@ -78,11 +78,11 @@ const navItems: NavItem[] = [
           items: [
             {
               title: "AI Business Assessment",
-              href: "/services/ai-agents-development"
+              href: "/solutions/ai-business-assessment"
             },
             {
               title: "AI Workforce",
-              href: "/services/workforce-automation"
+              href: "/solutions/ai-workforce"
             },
             {
               title: "AI Automation",
@@ -109,8 +109,8 @@ const navItems: NavItem[] = [
       ],
       footer: {
         text: "Not sure which services fits your business?",
-        link: "Talk to Sales →",
-        href: "/talk-to-sales"
+        link: "show all solutions→",
+        href: "/solutions"
       }
     }
   },

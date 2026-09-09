@@ -588,7 +588,7 @@ function Header() {
                 >
                   {item.hasDropdown ? (
                     <button
-                      className={`flex items-center gap-0.5 px-2 py-1.5 desktop-lg:px-3 desktop-lg:py-2 rounded-xl text-xs  font-medium transition-all duration-300 ${activeDropdown === item.label
+                      className={`flex items-center gap-0.5 px-2 py-1.5 desktop-lg:px-3 desktop-lg:py-2 rounded-xl !text-[14px] font-semibold transition-all duration-300 ${activeDropdown === item.label
                         ? "text-violet-700 bg-violet-50/80"
                         : "text-gray-950 hover:text-gray-900 hover:bg-gray-50/80"
                         }`}
@@ -822,7 +822,7 @@ function Header() {
           `}
         >
           <div className='flex justify-between items-center border-b border-gray-100 px-4 py-3'>
-            <Link href="/">  <img width={200} height={200} src="/assets/makemylead-logo.png" /></Link>
+            <Link href="/">  <img width={200} height={200} src="/aiworksforce-logo.png" /></Link>
             <div onClick={() => {
               setIsMenuOpen(!isMenuOpen)
               setOpenMobileItem(null)

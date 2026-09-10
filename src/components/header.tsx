@@ -126,40 +126,40 @@ const navItems: NavItem[] = [
               icon: <Sparkles className="w-5 h-5" />,
               title: "What is an AI WorkForce",
               tagline: "AI + Tools + Experts + Managed Operations",
-              href: "/features/ai-automation"
+              href: "/ai-workforce/what-is-an-ai-workforce"
             },
             {
               icon: <Bot className="w-5 h-5" />,
               title: "What AIWorksForce?",
               tagline: "Why businesses choose our model",
-              href: "/features/smart-lead",
+              href: "/ai-workforce/what-aiworksforce",
               badge: "AI"
             },
             {
               icon: <UsersRound className="w-5 h-5" />,
               title: "How it Works",
               tagline: "From business problem to AI operations",
-              href: "/features/property-ai"
+              href: "/ai-workforce/how-it-works"
             },
             {
               icon: <Workflow className="w-5 h-5" />,
               title: "Our AI WorkFlow",
               tagline: "AI agents, experts and operators",
-              href: "/features/growth-automation"
+              href: "/ai-workforce/our-ai-workFlow"
             },
             {
               icon: <Wrench className="w-5 h-5" />,
               title: "Case Studies",
               tagline: "Real business results",
-              href: "/features/Conversational-ai"
+              href: "/ai-workforce/case-studies"
             }
           ]
         }
       ],
       footer: {
-        text: "Get your AI workforce Assessment",
-        link: "",
-        href: "/explore-feature"
+        text: "Get your AI workforce ",
+        link: "ai workforce",
+        href: "/ai-workforce"
       }
     }
   },
@@ -292,7 +292,7 @@ const navItems: NavItem[] = [
   },
    {
     label: "AI Digital Marketing",
-    href: "#partners",
+    href: "#ai-digital-marketing",
     hasDropdown: true,
     dropdownContent: {
       sections: [
@@ -300,20 +300,20 @@ const navItems: NavItem[] = [
           items: [
             {
               title: "AI SEO",
-              href: "/features/ai-automation"
+              href: "/ai-digital-marketing/ai-seo"
             },
             {
               title: "AI Content Marketing",
-              href: "/features/smart-lead",
+              href: "/ai-digital-marketing/ai-content-marketing",
               badge: "AI"
             },
             {
               title: "AI Social Media",
-              href: "/features/property-ai"
+              href: "/ai-digital-marketing/ai-social-media"
             },
              {
               title: "AI Backlink & Outreach",
-              href: "/features/property-ai"
+              href: "/ai-digital-marketing/ai-backlink-&-outreach"
             }
           ]
         },
@@ -321,27 +321,27 @@ const navItems: NavItem[] = [
           items: [
             {
               title: "AI Advertising & Promotion",
-              href: "/features/growth-automation"
+              href: "/ai-digital-marketing/ai-advertising-&-promotion"
             },
             {
               title: "AI Creative & Video",
-              href: "/features/Conversational-ai"
+              href: "/ai-digital-marketing/ai-creative-&-video"
             },
             {
               title: "AI Marketing Automation",
-              href: "/features/Performance-analytics"
+              href: "/ai-digital-marketing/ai-marketing-automation"
             },
             {
               title: "AI Marketing Analytics",
-              href: "/features/Performance-analytics"
+              href: "/ai-digital-marketing/ai-marketing-analytics"
             }
           ]
         }
       ],
       footer: {
-        text: "See all features",
+        text: "See all ai digital marketing",
         link: "Explore →",
-        href: "/explore-feature"
+        href: "/ai-digital-marketing"
       }
     }
   },
@@ -355,20 +355,20 @@ const navItems: NavItem[] = [
           items: [
             {
               title: "AI Tools",
-              href: "/features/ai-automation"
+              href: "/technology/ai-tools"
             },
             {
               title: "LLM & AI",
-              href: "/features/smart-lead",
+              href: "/technology/llm-&-ai",
               badge: "AI"
             },
             {
               title: "AI Automation",
-              href: "/features/property-ai"
+              href: "/technology/ai-automation"
             },
             {
               title: "Technology Stack",
-              href: "/features/property-ai"
+              href: "/technology/technology-stack"
             }
           ]
         },
@@ -376,19 +376,19 @@ const navItems: NavItem[] = [
           items: [
             {
               title: "Data Intelligence",
-              href: "/features/growth-automation"
+              href: "/technology/data-intelligence"
             },
             {
               title: "Lead Engine",
-              href: "/features/Conversational-ai"
+              href: "/technology/lead-engine"
             },
             {
               title: "AI Infrastructure",
-              href: "/features/Performance-analytics"
+              href: "/technology/ai-infrastructure"
             },
             {
               title: "Integrations",
-              href: "/features/Performance-analytics"
+              href: "/technology/Integrations"
             }
           ]
         }

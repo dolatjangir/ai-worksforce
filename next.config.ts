@@ -7,6 +7,15 @@ const withPWA = require("next-pwa")({
 })
 
 const nextConfig = withPWA({
+    images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        pathname: '/**', // Matches any image folder path coming from Unsplash
+      },
+    ],
+  },
   reactStrictMode: true,
  turbopack: {},
 })

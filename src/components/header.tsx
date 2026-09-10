@@ -394,9 +394,9 @@ const navItems: NavItem[] = [
         }
       ],
       footer: {
-        text: "See all features",
+        text: "See all technology",
         link: "Explore →",
-        href: "/explore-feature"
+        href: "/technology"
       }
     }
   },

@@ -1,7 +1,7 @@
 // app/components/sections/HeroSection.tsx
 "use client";
 
-import { motion, type Variants } from "framer-motion";
+import { motion, useReducedMotion, type Variants } from "framer-motion";
 import Image from "next/image";
 import type { LucideIcon } from "lucide-react";
 import {
@@ -32,11 +32,11 @@ export type HeroCTA = {
 export type HeroSectionProps = {
   badge?: string;
 
-  title: string;
+  title?: string;
 
   highlightedTitle?: string;
 
-  description: string;
+  description?: string;
 
   tags?: HeroTag[];
 
@@ -165,27 +165,29 @@ manages it for you.`,
 
   className = "",
 }: HeroSectionProps) {
+  const reduceMotion = useReducedMotion();
+
   return (
     <section
-      className={`relative overflow-visible bg-[#f4faff] ${className}`}
+      className={`relative isolate  overflow-x-clip bg-[#f4faff] ${className}`}
     >
-      <div className="mx-auto grid min-h-[80vh] max-w-full grid-cols-1 grid-rows-[auto_1fr] lg:grid-cols-[48%_52%] lg:grid-rows-1">
+      <div className="mx-auto grid w-full grid-cols-1 min-h-[80dvh] lg:grid-cols-[48%_52%]">
         {/* ---------------------------------------------------------------- */}
         {/* Hero Copy                                                        */}
         {/* ---------------------------------------------------------------- */}
 
         <motion.div
-          initial="hidden"
+          initial={false}
           animate="visible"
-          variants={containerVariants}
-          className="relative z-20 flex items-center px-5 pb-40 pt-12 sm:px-8 lg:px-12 lg:py-12 xl:px-16"
+          variants={reduceMotion ? undefined : containerVariants}
+          className="relative z-20 flex min-w-0 items-center px-5 pb-32 pt-12 sm:px-8 sm:pb-40 sm:pt-14 lg:px-8 lg:py-4 xl:px-12 xl:py-1 2xl:pl-[max(4rem,calc((100vw-1600px)/2))] 2xl:pr-16"
         >
-          <div className="w-full">
+          <div className="w-full min-w-0">
             {/* Badge */}
 
             {badge && (
-              <motion.div variants={itemVariants}>
-                <span className="mb-4 inline-flex rounded-full bg-[#eaf5ff] px-3 py-1 text-xs font-extrabold uppercase tracking-[0.05em] text-[#1476e5]">
+              <motion.div variants={reduceMotion ? undefined : itemVariants}>
+                <span className="mb-4 inline-flex max-w-full rounded-full bg-[#eaf5ff] px-3 py-1 text-xs font-extrabold uppercase tracking-[0.05em] text-[#1476e5]">
                   {badge}
                 </span>
               </motion.div>
@@ -194,8 +196,8 @@ manages it for you.`,
             {/* Headline */}
 
             <motion.h1
-              variants={itemVariants}
-              className="max-w-[650px] text-5xl font-extrabold leading-[0.99] tracking-[-0.045em] text-[#071744] sm:text-[50px] lg:text-[47px] xl:text-[46px]"
+              variants={reduceMotion ? undefined : itemVariants}
+              className="max-w-[650px] text-[clamp(2.125rem,6.5vw,3.125rem)] font-extrabold leading-[1.08] tracking-[-0.045em] text-[#071744] [overflow-wrap:anywhere] lg:text-[clamp(2.375rem,3.5vw,3.5rem)]"
             >
               {title}
 
@@ -214,8 +216,8 @@ manages it for you.`,
 
             {description && (
               <motion.p
-                variants={itemVariants}
-                className="mt-5 max-w-[570px] whitespace-pre-line text-sm leading-[1.5] text-[#26395f] sm:text-base"
+                variants={reduceMotion ? undefined : itemVariants}
+                className="mt-5 max-w-[570px] text-sm leading-[1.75] text-[#26395f] [overflow-wrap:anywhere] sm:text-base"
               >
                 {description}
               </motion.p>
@@ -225,8 +227,8 @@ manages it for you.`,
 
             {tags.length > 0 && (
               <motion.div
-                variants={itemVariants}
-                className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3 overflow-visible lg:flex-nowrap"
+                variants={reduceMotion ? undefined : itemVariants}
+                className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3"
               >
                 {tags.map((item) => {
                   const Icon = item.icon;
@@ -234,9 +236,10 @@ manages it for you.`,
                   return (
                     <div
                       key={item.text}
-                      className="flex shrink-0 items-center gap-2 whitespace-nowrap text-sm font-bold text-[#142652]"
+                      className="flex max-w-full items-center gap-2 text-sm font-bold [overflow-wrap:anywhere] text-[#142652]"
                     >
                       <Icon
+                        aria-hidden="true"
                         size={17}
                         strokeWidth={2.2}
                         className="shrink-0 text-[#0876ed]"
@@ -253,8 +256,8 @@ manages it for you.`,
 
             {ctas.length > 0 && (
               <motion.div
-                variants={itemVariants}
-                className="mt-7 flex flex-col gap-3 sm:flex-row"
+                variants={reduceMotion ? undefined : itemVariants}
+                className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap"
               >
                 {ctas.map((cta) => {
                   const Icon = cta.icon;
@@ -267,14 +270,15 @@ manages it for you.`,
                       href={cta.href}
                       className={
                         isPrimary
-                          ? "inline-flex items-center justify-center gap-2 rounded-md bg-[#0876ed] px-7 py-3.5 text-base font-bold text-white shadow-[0_8px_20px_rgba(8,118,237,.18)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#0668d5] hover:shadow-[0_12px_28px_rgba(8,118,237,.25)] active:translate-y-0"
-                          : "inline-flex items-center justify-center gap-2 rounded-md border border-[#0876ed] bg-white px-7 py-3.5 text-base font-bold text-[#0876ed] transition-colors duration-200 hover:bg-[#eff7ff]"
+                          ? "inline-flex min-h-12 max-w-full items-center justify-center gap-2 rounded-md text-center [overflow-wrap:anywhere] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#071744] motion-reduce:transform-none motion-reduce:transition-none bg-[#0876ed] px-5 py-3.5 xl:px-7 text-base font-bold text-white shadow-[0_8px_20px_rgba(8,118,237,.18)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#0668d5] hover:shadow-[0_12px_28px_rgba(8,118,237,.25)] active:translate-y-0"
+                          : "inline-flex min-h-12 max-w-full items-center justify-center gap-2 rounded-md text-center [overflow-wrap:anywhere] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#071744] motion-reduce:transform-none motion-reduce:transition-none border border-[#0876ed] bg-white px-5 py-3.5 xl:px-7 text-base font-bold text-[#0876ed] transition-colors duration-200 hover:bg-[#eff7ff]"
                       }
                     >
                       {cta.label}
 
                       {Icon && (
                         <Icon
+                        aria-hidden="true"
                           size={15}
                           strokeWidth={2.5}
                         />
@@ -288,18 +292,19 @@ manages it for you.`,
             {/* Bottom Tagline */}
 
             {bottomTagline && (
-              <motion.h3
-                variants={itemVariants}
-                className="flex items-start gap-2 pt-8 text-sm font-semibold text-[#142652]"
+              <motion.p
+                variants={reduceMotion ? undefined : itemVariants}
+                className="flex items-start gap-2 pt-2 text-sm font-semibold text-[#142652]"
               >
                 <BottomTaglineIcon
+                  aria-hidden="true"
                   size={20}
                   strokeWidth={2.2}
                   className="mt-0.5 shrink-0 text-[#0876ed]"
                 />
 
                 <span>{bottomTagline}</span>
-              </motion.h3>
+              </motion.p>
             )}
           </div>
         </motion.div>
@@ -308,14 +313,14 @@ manages it for you.`,
         {/* Hero Image                                                       */}
         {/* ---------------------------------------------------------------- */}
 
-        <div className="absolute inset-0 overflow-hidden lg:relative lg:h-full lg:min-h-0">
+        <div className="absolute inset-0 z-0 overflow-hidden lg:relative lg:h-full lg:min-h-0 lg:min-w-0">
           <Image
             src={image.src}
             alt={image.alt}
             fill
             priority={image.priority ?? true}
-            sizes={image.sizes ?? "(max-width: 1024px) 100vw, 52vw"}
-            className="object-cover"
+            sizes={image.sizes ?? "(min-width: 1024px) 52vw, 100vw"}
+            className="object-cover object-center"
           />
 
           {/* Mobile Overlay */}

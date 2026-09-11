@@ -367,7 +367,7 @@ AI-powered workforce for you from our India delivery center.`}
         ctas={defaultHeroCTAs}
         bottomTagline="From business analysis to daily operations — AIWorkForce manages it for you."
         image={{
-          src: "/aiworkforce-hero-img.png",
+          src: "/aiworkforce-hero-img1.png",
           alt: "AI workforce team working together",
           priority: true,
         }}

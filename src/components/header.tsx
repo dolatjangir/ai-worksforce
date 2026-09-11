@@ -491,7 +491,7 @@ const navItems: NavItem[] = [
       footer: {
         text: "Need personalized help?",
         link: "Book a Demo →",
-        href: "/book-demo"
+        href: "/get-demo"
       }
     }
   },

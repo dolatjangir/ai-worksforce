@@ -40,8 +40,9 @@ const footerColumns: FooterColumn[] = [
       "AI Automation",
       "AI Data & Research",
       "AI Customer Operations",
-      "AI Sales & Outreach",
+      
     ],
+     footerLink: "View All ",
   },
   {
     title: "AI WORKFORCE",
@@ -53,26 +54,24 @@ const footerColumns: FooterColumn[] = [
       "AI Operators",
       "AI Specialists",
       "AI Experts",
-      "Dedicated AI Department",
-      "For Startups",
-      "For Enterprises",
+     
     ],
+     footerLink: "View All",
   },
   {
     title: "AI AGENTS",
     icon: Workflow,
     color: "text-[#A66FFF]",
     links: [
-      "Lead Generation Agent",
+      "Lead Generation ",
       "Data Mining Agent",
       "AI Research Agent",
-      "Outreach Agent",
+     "social mdia Agent",
       "AI Calling Agent",
-      "CRM Agent",
-      "Marketing Agent",
-      "Custom AI Agents",
+      "Lead Capture",
+      
     ],
-    footerLink: "View All AI Agents",
+    footerLink: "View All ",
   },
   {
     title: "PRODUCTS",
@@ -83,12 +82,10 @@ const footerColumns: FooterColumn[] = [
       "B2B Lead Engine",
       "Real Estate Lead Engine",
       "Agency Lead Engine",
-      "Education Lead Engine",
-      "Recruitment Lead Engine",
-      "E-commerce Lead Engine",
-      "Custom Lead Engine",
+      
       "AI Tools",
     ],
+     footerLink: "View All ",
   },
   {
     title: "AI DIGITAL\nMARKETING",
@@ -100,10 +97,9 @@ const footerColumns: FooterColumn[] = [
       "AI Social Media",
       "AI Backlink & Outreach",
       "AI Advertising",
-      "AI Creative & Video",
-      "AI Marketing Automation",
-      "AI Marketing Analytics",
+     
     ],
+     footerLink: "View All ",
   },
   {
     title: "RESOURCES",
@@ -113,10 +109,11 @@ const footerColumns: FooterColumn[] = [
       "AI Use Cases",
       "Case Studies",
       "AI Workforce Guides",
-      "AI Digital Marketing Guides",
+     "digfital marketing",
       "Blog",
       "FAQs",
     ],
+     footerLink: "View All ",
   },
   {
     title: "COMPANY",
@@ -128,8 +125,9 @@ const footerColumns: FooterColumn[] = [
       "How We Work",
       "Partners",
       "Careers",
-      "Contact",
+     
     ],
+     footerLink: "View All ",
   },
 ];
 
@@ -232,7 +230,7 @@ export default function Footer() {
       ========================================================= */}
 
       <section className="border-b border-[#1D4779]">
-        <div className="mx-auto max-w-[1450px] px-5 pb-10 pt-10 sm:px-8 sm:pb-10 sm:pt-12 lg:px-12 xl:px-14">
+        <div className="mx-auto max-w-[1450px] px-5 py-7 sm:px-8  lg:px-12">
           <div
             className="
               grid
@@ -254,7 +252,7 @@ export default function Footer() {
                 className="h-auto w-[250px] max-w-full object-contain object-left sm:w-[280px]"
               />
 
-              <p className="mt-6 max-w-[500px] text-[16px] font-normal leading-[1.55] text-white/90">
+              <p className="mt-4 max-w-[500px] text-[14px] font-normal leading-[1.55] text-white/90">
                 We design, deploy and manage AI workforce solutions
                 that help businesses grow faster, work smarter and
                 achieve real results.
@@ -263,7 +261,7 @@ export default function Footer() {
               {/* Feature items */}
               <div
                 className="
-                  mt-8
+                  mt-4
                   grid
                   max-w-[560px]
                   grid-cols-1
@@ -336,7 +334,7 @@ export default function Footer() {
                 xl:pl-12
               "
             >
-              <p className="mb-3 text-[12px] font-medium uppercase tracking-[0.25em] text-[#8FB8EF]">
+              <p className="mb-2 text-[12px] font-medium uppercase tracking-[0.25em] text-[#8FB8EF]">
                 Ready to transform your business?
               </p>
 
@@ -348,9 +346,9 @@ export default function Footer() {
                   leading-[1.1]
                   tracking-[-0.035em]
 
-                  sm:text-[36px]
-                  lg:text-[40px]
-                  xl:text-[42px]
+                 
+                 
+                  
                 "
               >
                 Build Your{" "}
@@ -361,7 +359,7 @@ export default function Footer() {
                 Without Building an AI Team.
               </h2>
 
-              <p className="mt-4 max-w-[640px] text-[16px] font-normal leading-7 text-white/75">
+              <p className="mt-1 max-w-[640px] text-[14px] font-normal leading-5 text-white/75">
                 Get expert guidance, a tailored roadmap and see how AI
                 can work for your business.
               </p>
@@ -369,7 +367,7 @@ export default function Footer() {
               <a
                 href="#"
                 className="
-                  mt-6
+                  mt-3
                   inline-flex
                   min-h-[54px]
                   w-auto
@@ -412,10 +410,10 @@ export default function Footer() {
                 border
                 border-[#2D62A2]
                 bg-[linear-gradient(145deg,rgba(11,36,68,0.62),rgba(12,29,55,0.45))]
-                p-5
+                p-4
                 shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_15px_45px_rgba(0,0,0,0.18)]
 
-                sm:p-6
+               
               "
             >
               <div className="flex items-start gap-4">
@@ -434,7 +432,7 @@ export default function Footer() {
 
               <div className="my-5 h-px bg-[#31517B]" />
 
-              <ul className="space-y-4">
+              <ul className="space-y-3">
                 <Benefit>
                   Personalized consultation
                 </Benefit>
@@ -493,7 +491,7 @@ export default function Footer() {
               flex
               flex-col
               gap-5
-              py-6
+              py-4
 
               lg:flex-row
               lg:items-center
@@ -629,7 +627,7 @@ export default function Footer() {
           sm:h-[160px]
           sm:px-8
 
-          lg:h-[175px]
+          lg:h-[125px]
           lg:px-12
 
           xl:px-14

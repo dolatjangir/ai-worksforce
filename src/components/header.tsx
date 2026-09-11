@@ -410,16 +410,16 @@ const navItems: NavItem[] = [
           items: [
             {
               title: "AI Use Cases",
-              href: "/features/ai-automation"
+              href: "/resources/ai-use-cases"
             },
             {
               title: "Case Studies",
-              href: "/features/smart-lead",
+              href: "/resources/case-studies",
               badge: "AI"
             },
             {
               title: "AI Workforce Guides",
-              href: "/features/property-ai"
+              href: "/resources/ai-workforce-guides"
             }
           ]
         },
@@ -427,23 +427,23 @@ const navItems: NavItem[] = [
           items: [
             {
               title: "AI Digital Marketing Guides",
-              href: "/features/growth-automation"
+              href: "/resources/ai-digital-marketing-guides"
             },
             {
               title: "Blog",
-              href: "/features/Conversational-ai"
+              href: "/resources/blog"
             },
             {
               title: "FAQs",
-              href: "/features/Performance-analytics"
+              href: "/resources/faqs"
             }
           ]
         }
       ],
       footer: {
-        text: "See all features",
+        text: "See all resources",
         link: "Explore →",
-        href: "/explore-feature"
+        href: "/resources"
       }
     }
   },
@@ -459,15 +459,15 @@ const navItems: NavItem[] = [
           items: [
             {
               title: "About AIWorksForce",
-              href: "/company/howitworks"
+              href: "/company/about-aiworksforce"
             },
             {
               title: "AI Delivery Centre",
-              href: "/company/about-us"
+              href: "/company/ai-delivery-centre"
             },
             {
               title: "How We Work",
-              href: "/company/help-center"
+              href: "/company/how-we-work"
             },
           ]
         },
@@ -475,7 +475,7 @@ const navItems: NavItem[] = [
           items: [
             {
               title: "our Team",
-              href: "/company/community"
+              href: "/company/our-team"
             },
             {
               title: "Careers",
@@ -483,7 +483,7 @@ const navItems: NavItem[] = [
             },
             {
               title: "Contact",
-              href: "/company/why-choose-us"
+              href: "/company/contact"
             },
           ]
         }

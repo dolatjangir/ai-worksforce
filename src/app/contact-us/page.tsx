@@ -9,7 +9,7 @@ import { HiOutlineHomeModern } from "react-icons/hi2";
 import { IoChatboxEllipsesOutline, IoStatsChartSharp } from "react-icons/io5";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { IoMdCall } from "react-icons/io";
-import {contactUsapi} from "@/api/contact.api"
+import {contactUsapi} from "@/app/api/contact.api"
  
 export default function ContactUsPage() {
   const [selectedPath, setSelectedPath] = useState<"sales" | "support" | "partnerships" | "general">("general");

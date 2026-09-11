@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
-import {subscribeNewsLetter} from '@/api/newsletter.api';
+import {subscribeNewsLetter} from '@/app/api/newsletter.api';
 interface NewsletterPopupProps {
   delay?: number; // Delay in milliseconds before showing popup (default: 2000)
 }

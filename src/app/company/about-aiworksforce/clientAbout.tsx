@@ -317,185 +317,175 @@ export default function AboutPage() {
         {/* =====================================================
             HERO
         ====================================================== */}
+<section
+  aria-labelledby="about-hero-title"
+  className="relative isolate min-h-[85dvh] overflow-hidden rounded-2xl bg-white"
+>
+  {/* Right-side office image */}
+  <div className="pointer-events-none absolute inset-y-0 right-0 -z-20 w-full lg:w-[65%]">
+    <img
+      src="/company-images/about-aiworkforce-company-hero-img.png"
+      alt=""
+      loading="eager"
+      fetchPriority="high"
+      decoding="async"
+      className="h-full w-full object-cover object-right"
+    />
 
-        <section className="relative isolate overflow-hidden rounded-b-2xl bg-[linear-gradient(110deg,#ffffff_0%,#f8faff_45%,#eef1ff_100%)]">
-          {/* Background glow */}
+    {/* Blend the office image into the white content area */}
+    <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-white/40 lg:bg-[linear-gradient(90deg,#fff_0%,rgba(255,255,255,0.95)_10%,rgba(255,255,255,0.45)_28%,transparent_48%)]" />
 
-          <div className="pointer-events-none absolute -right-32 -top-32 -z-10 size-128 rounded-full bg-indigo-200/50 blur-3xl" />
+    <div className="absolute inset-x-0 bottom-0 h-[24%] bg-gradient-to-t from-white/95 to-transparent" />
+  </div>
 
-          <div className="mx-auto grid max-w-7xl lg:grid-cols-[1.05fr_0.95fr]">
-            {/* Hero copy */}
+  <div className="mx-auto flex min-h-[85dvh] w-full max-w-[1440px] flex-col px-5 py-7 sm:px-8 lg:px-[5.3%] lg:py-8">
+    {/* Hero copy */}
+    <div className="relative w-full pt-14 lg:max-w-[49%] lg:pt-[12vh]">
+      <p className="text-[9px] font-bold uppercase leading-relaxed tracking-[0.16em] text-[#1600ff] sm:text-xs">
+        Our Story. Our Purpose. A Smarter Tomorrow.
+      </p>
 
-            <div className="relative z-20 px-5 py-10 sm:px-8 sm:py-12 lg:px-8 lg:py-14 xl:pl-10">
-              <p className="text-xs font-bold uppercase tracking-[0.28em] text-brand-purple sm:text-sm">
-                Our Story. Our Purpose. A Smarter Tomorrow.
-              </p>
+      <h1
+        id="about-hero-title"
+        className="mt-4 text-[clamp(2rem,5.8vw,5.25rem)] font-bold leading-[0.99] tracking-[-0.045em] text-[#080044]"
+      >
+        About
+        <span className="block text-[#1600ff]">
+          AIWorksForce
+        </span>
+      </h1>
 
-              <h1 className="mt-4 max-w-3xl text-5xl font-bold leading-[0.95] tracking-tight text-brand-dark sm:text-6xl lg:text-7xl">
-                About{" "}
-                <span className="bg-gradient-to-r from-brand-blue via-brand-purple to-brand-blue bg-clip-text text-transparent">
-                  AIWorksForce
-                </span>
-              </h1>
+      <p className="mt-3 max-w-[470px] text-base leading-[1.25] tracking-[-0.012em] text-[#37308b] sm:text-lg">
+        We help businesses unlock growth through the power
+        of AI automation, intelligent agents, and modern
+        workflows.
+      </p>
 
-              <p className="mt-5 max-w-2xl text-base leading-relaxed text-brand-text sm:text-lg lg:text-xl">
-                We help businesses unlock growth through the power
-                of AI automation, intelligent agents, and modern
-                workflows.
-              </p>
+      <div className="mt-4 flex flex-wrap items-center gap-3 sm:gap-5">
+        <a
+          href="#mission"
+          className="inline-flex min-h-11 min-w-[158px] items-center justify-center gap-2 rounded-md border border-[#4936ff] bg-[#1600ff] px-5 py-2.5 text-sm font-semibold text-white shadow-[0_3px_0_rgba(22,0,255,0.12)] transition-colors hover:bg-[#1000d9] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1600ff]"
+        >
+          Our Mission
+          <span aria-hidden="true">
+            <Icon name="arrow" className="size-4" />
+          </span>
+        </a>
 
-              {/* Buttons */}
+        <a
+          href="#our-story"
+          className="inline-flex min-h-11 min-w-[176px] items-center justify-center gap-3 rounded-md border border-[#a395ff] bg-white/80 px-4 py-2.5 text-sm font-bold text-[#080044] transition-colors hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1600ff]"
+        >
+          <span
+            aria-hidden="true"
+            className="grid size-[20px] shrink-0 place-items-center rounded-full bg-[#eae7ff] text-[#1600ff]"
+          >
+            <Icon name="play" className="size-4" />
+          </span>
+          Watch Our Story
+        </a>
+      </div>
+    </div>
 
-              <div className="mt-7 flex flex-wrap gap-3 sm:gap-4">
-                <a
-                  href="#mission"
-                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-brand-blue to-brand-purple px-5 text-sm font-bold text-white shadow-[0_8px_24px_rgba(37,99,235,0.2)] transition-all hover:-translate-y-0.5 sm:px-6"
-                >
-                  Our Mission
+    {/* Bottom statistics and result card */}
+    <div className="relative mt-auto flex flex-col gap-6 pt-8 lg:flex-row lg:items-end lg:justify-between lg:gap-5">
+      <div className="grid w-full grid-cols-2 gap-x-4 gap-y-5 sm:grid-cols-4 sm:gap-x-0 lg:w-[74%]">
+        <div className="flex min-w-0 items-center gap-2.5 sm:pr-3">
+          <span aria-hidden="true" className="shrink-0">
+            <IconCircle
+              icon="users"
+              className="bg-[#eeebff] text-[#1600ff]"
+            />
+          </span>
 
-                  <Icon
-                    name="arrow"
-                    className="size-4"
-                  />
-                </a>
-
-                <a
-                  href="#"
-                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-brand-purple/50 bg-white/80 px-5 text-sm font-bold text-brand-dark transition-colors hover:bg-white sm:px-6"
-                >
-                  <span className="grid size-5 place-items-center rounded-full bg-violet-100 text-brand-purple">
-                    <Icon
-                      name="play"
-                      className="size-2.5"
-                    />
-                  </span>
-
-                  Watch Our Story
-                </a>
-              </div>
-
-              {/* Hero stats */}
-
-              <div className="mt-8 grid grid-cols-2 gap-x-5 gap-y-6 sm:grid-cols-4 sm:gap-0">
-                <div className="flex items-center gap-3">
-                  <IconCircle
-                    icon="users"
-                    className="bg-indigo-100 text-brand-blue"
-                  />
-
-                  <div>
-                    <p className="text-2xl font-bold leading-none tracking-tight text-brand-blue sm:text-3xl">
-                      500+
-                    </p>
-
-                    <p className="mt-1 text-xs leading-tight text-brand-text-muted sm:text-sm">
-                      Businesses Empowered
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 sm:border-l sm:border-indigo-100 sm:pl-4">
-                  <IconCircle
-                    icon="settings"
-                    className="bg-indigo-100 text-brand-blue"
-                  />
-
-                  <div>
-                    <p className="text-2xl font-bold leading-none tracking-tight text-brand-blue sm:text-3xl">
-                      250+
-                    </p>
-
-                    <p className="mt-1 text-xs leading-tight text-brand-text-muted sm:text-sm">
-                      AI Automations Deployed
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 sm:border-l sm:border-indigo-100 sm:pl-4">
-                  <IconCircle
-                    icon="chart"
-                    className="bg-indigo-100 text-brand-blue"
-                  />
-
-                  <div>
-                    <p className="text-2xl font-bold leading-none tracking-tight text-brand-blue sm:text-3xl">
-                      99%
-                    </p>
-
-                    <p className="mt-1 text-xs leading-tight text-brand-text-muted sm:text-sm">
-                      Client Satisfaction
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 sm:border-l sm:border-indigo-100 sm:pl-4">
-                  <IconCircle
-                    icon="globe"
-                    className="bg-indigo-100 text-brand-blue"
-                  />
-
-                  <div>
-                    <p className="text-2xl font-bold leading-none tracking-tight text-brand-blue sm:text-3xl">
-                      10+
-                    </p>
-
-                    <p className="mt-1 text-xs leading-tight text-brand-text-muted sm:text-sm">
-                      Industries Served
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Hero visual */}
-
-            <div className="relative min-h-[23rem] sm:min-h-[29rem] lg:min-h-0">
-              <div className="absolute left-1/2 top-0 size-96 -translate-x-1/2 rounded-full bg-indigo-100/70 blur-3xl sm:size-[34rem]" />
-
-              {/* Hero image */}
-
-              <div className="absolute bottom-0 left-1/2 z-10 w-[24rem] -translate-x-1/2 sm:w-[31rem] lg:w-[34rem] xl:w-[36rem]">
-                <img
-                  src="/images/about/about-hero.webp"
-                  alt="AI WorksForce office"
-                  className="h-auto w-full object-contain"
-                />
-              </div>
-
-              {/* Handwritten note */}
-
-              <div className="absolute right-0 top-20 z-30 hidden rotate-[-7deg] font-hand text-2xl leading-[0.95] text-brand-blue lg:block">
-                People
-                <br />
-                + AI
-                <br />
-                for a Brighter
-                <br />
-                Tomorrow
-              </div>
-
-              {/* Floating result card */}
-
-              <div className="absolute bottom-5 right-0 z-30 hidden w-48 rounded-xl bg-white/95 p-4 shadow-[0_12px_32px_rgba(24,74,140,0.12)] sm:block lg:w-52">
-                <div className="flex items-start gap-3">
-                  <IconCircle
-                    icon="chart"
-                    className="bg-indigo-100 text-brand-purple"
-                  />
-
-                  <p className="text-sm font-medium leading-relaxed text-brand-dark">
-                    More Automation
-                    <br />
-                    More Growth
-                    <br />
-                    A Smarter Tomorrow
-                  </p>
-                </div>
-              </div>
-            </div>
+          <div className="min-w-0">
+            <p className="text-xl font-bold leading-none tracking-tight text-[#1600ff] xl:text-2xl">
+              500+
+            </p>
+            <p className="mt-1 text-[10px] leading-tight tracking-tight text-[#59529c] xl:text-xs">
+              Businesses Empowered
+            </p>
           </div>
-        </section>
+        </div>
 
+        <div className="flex min-w-0 items-center gap-2.5 sm:border-l sm:border-[#e7e4ff] sm:px-3">
+          <span aria-hidden="true" className="shrink-0">
+            <IconCircle
+              icon="settings"
+              className="bg-[#eeebff] text-[#1600ff]"
+            />
+          </span>
+
+          <div className="min-w-0">
+            <p className="text-xl font-bold leading-none tracking-tight text-[#1600ff] xl:text-2xl">
+              250+
+            </p>
+            <p className="mt-1 text-[10px] leading-tight tracking-tight text-[#59529c] xl:text-xs">
+              AI Automations Deployed
+            </p>
+          </div>
+        </div>
+
+        <div className="flex min-w-0 items-center gap-2.5 sm:px-3">
+          <span aria-hidden="true" className="shrink-0">
+            <IconCircle
+              icon="chart"
+              className="bg-[#eeebff] text-[#1600ff]"
+            />
+          </span>
+
+          <div className="min-w-0">
+            <p className="text-xl font-bold leading-none tracking-tight text-[#1600ff] xl:text-2xl">
+              99%
+            </p>
+            <p className="mt-1 text-[10px] leading-tight tracking-tight text-[#59529c] xl:text-xs">
+              Client Satisfaction
+            </p>
+          </div>
+        </div>
+
+        <div className="flex min-w-0 items-center gap-2.5 sm:pl-3">
+          <span aria-hidden="true" className="shrink-0">
+            <IconCircle
+              icon="globe"
+              className="bg-[#eeebff] text-[#1600ff]"
+            />
+          </span>
+
+          <div className="min-w-0">
+            <p className="text-xl font-bold leading-none tracking-tight text-[#1600ff] xl:text-2xl">
+              10+
+            </p>
+            <p className="mt-1 text-[10px] leading-tight tracking-tight text-[#59529c] xl:text-xs">
+              Industries Served
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="w-full rounded-xl border border-white/40 bg-[#eeedff]/85 px-3 py-3 shadow-[0_10px_30px_rgba(43,38,119,0.14)] backdrop-blur-md sm:w-[194px] sm:self-end lg:shrink-0">
+        <div className="flex items-center gap-3">
+          <span
+            aria-hidden="true"
+            className="grid size-[52px] shrink-0 place-items-center rounded-full bg-[#d9d8ff] text-[#1600ff]"
+          >
+            <Icon name="chart" className="size-8" />
+          </span>
+
+          <p className="text-xs font-medium leading-[1.4] tracking-tight text-[#080044]">
+            More
+            <br />
+            Automation
+            <br />
+            More Growth
+            <br />
+            A Smarter Tomorrow
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
         {/* =====================================================
             MISSION / VISION / VALUES
         ====================================================== */}
@@ -640,7 +630,7 @@ export default function AboutPage() {
 
             <div className="relative overflow-hidden rounded-xl">
               <img
-                src="/images/about/about-journey.webp"
+                src="/company-images/about-aiworkforce-company-bottom.png"
                 alt="AI WorksForce team collaborating"
                 className="aspect-[4/3] h-full w-full object-cover"
               />

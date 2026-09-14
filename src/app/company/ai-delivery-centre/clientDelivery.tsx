@@ -1,5 +1,6 @@
 "use client";
 
+import PageHero from "@/components/company-hero/reusable-hero";
 import { useState, type ReactNode } from "react";
 
 /* =========================================================
@@ -380,168 +381,6 @@ const advantages = [
   },
 ];
 
-/* =========================================================
-   FOOTER
-========================================================= */
-
-function Footer() {
-  return (
-    <footer className="bg-white">
-      <div className="mx-auto max-w-7xl px-5 py-9 sm:px-7 lg:px-8 lg:py-10">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-[1.35fr_1fr_1fr_0.95fr]">
-          {/* Brand */}
-
-          <div>
-            <a
-              href="/"
-              className="text-2xl font-bold tracking-tight text-brand-dark sm:text-3xl"
-            >
-              <span className="text-brand-blue">
-                AI
-              </span>{" "}
-              WorksForce
-            </a>
-
-            <p className="mt-1 text-xs text-brand-text-muted sm:text-sm">
-              Automate. Accelerate. Grow.
-            </p>
-
-            <p className="mt-5 max-w-sm text-sm leading-relaxed text-brand-text sm:text-base lg:text-lg">
-              Empowering businesses with AI automation,
-              intelligent agents, and modern workflows for a
-              smarter tomorrow.
-            </p>
-          </div>
-
-          {/* Quick Links */}
-
-          <div>
-            <h3 className="text-base font-bold text-brand-dark sm:text-lg">
-              Quick Links
-            </h3>
-
-            <ul className="mt-4 space-y-2.5">
-              {[
-                "Home",
-                "About AIWorksForce",
-                "Our Team",
-                "Careers",
-                "News & Updates",
-              ].map((item) => (
-                <li key={item}>
-                  <a
-                    href="#"
-                    className="text-sm text-brand-text transition-colors hover:text-brand-blue sm:text-base"
-                  >
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Solutions */}
-
-          <div>
-            <h3 className="text-base font-bold text-brand-dark sm:text-lg">
-              Our Solutions
-            </h3>
-
-            <ul className="mt-4 space-y-2.5">
-              {[
-                "AI Automation",
-                "AI Agents",
-                "AI Customer Operations",
-                "AI Sales & Outreach",
-                "AI Digital Marketing",
-              ].map((item) => (
-                <li key={item}>
-                  <a
-                    href="#"
-                    className="text-sm text-brand-text transition-colors hover:text-brand-blue sm:text-base"
-                  >
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Social */}
-
-          <div>
-            <h3 className="text-base font-bold text-brand-dark sm:text-lg">
-              Connect With Us
-            </h3>
-
-            <div className="mt-4 flex items-center gap-3">
-              {[
-                ["linkedin", "LinkedIn"],
-                ["twitter", "Twitter"],
-                ["youtube", "YouTube"],
-                ["instagram", "Instagram"],
-              ].map(([icon, label]) => (
-                <a
-                  key={label}
-                  href="#"
-                  aria-label={label}
-                  className="grid size-9 place-items-center text-brand-dark transition-colors hover:text-brand-blue"
-                >
-                  <Icon
-                    name={icon as IconName}
-                    className="size-5"
-                  />
-                </a>
-              ))}
-            </div>
-
-            <p className="mt-4 text-sm leading-relaxed text-brand-text sm:text-base">
-              Let&apos;s build a smarter future together.
-            </p>
-
-            <a
-              href="/company/contact"
-              className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-brand-blue sm:text-base"
-            >
-              Get in Touch
-              <Icon
-                name="arrow"
-                className="size-4"
-              />
-            </a>
-          </div>
-        </div>
-
-        <div className="mt-8 flex flex-col gap-4 border-t border-slate-100 pt-5 text-xs text-brand-text-muted sm:flex-row sm:items-center sm:justify-between sm:text-sm">
-          <p>© 2024 AIWorksForce. All rights reserved.</p>
-
-          <div className="flex flex-wrap gap-5">
-            <a
-              href="/privacy-policy"
-              className="hover:text-brand-blue"
-            >
-              Privacy Policy
-            </a>
-
-            <a
-              href="/terms"
-              className="hover:text-brand-blue"
-            >
-              Terms of Service
-            </a>
-
-            <a
-              href="/company/contact"
-              className="hover:text-brand-blue"
-            >
-              Contact
-            </a>
-          </div>
-        </div>
-      </div>
-    </footer>
-  );
-}
 
 /* =========================================================
    PAGE
@@ -559,183 +398,55 @@ export default function AIDeliveryCentrePage() {
         {/* =====================================================
             HERO
         ====================================================== */}
-
-        <section className="relative isolate overflow-hidden rounded-b-2xl bg-[linear-gradient(110deg,#ffffff_0%,#f8faff_46%,#edf1ff_100%)]">
-          <div className="pointer-events-none absolute -right-32 -top-32 -z-10 size-[30rem] rounded-full bg-indigo-200/40 blur-3xl" />
-
-          <div className="mx-auto grid max-w-7xl lg:grid-cols-[1.02fr_0.98fr]">
-            {/* Copy */}
-
-            <div className="relative z-20 px-5 py-10 sm:px-8 sm:py-12 lg:px-8 lg:py-14 xl:pl-10">
-              <p className="text-xs font-bold uppercase tracking-[0.28em] text-brand-purple sm:text-sm">
-                Global Talent. Real Impact.
-              </p>
-
-              <h1 className="mt-4 max-w-2xl text-5xl font-bold leading-[0.94] tracking-tight text-brand-dark sm:text-6xl lg:text-7xl">
-                AI Delivery{" "}
-                <span className="bg-gradient-to-r from-brand-blue via-brand-purple to-brand-blue bg-clip-text text-transparent">
-                  Centre
-                </span>
-              </h1>
-
-              <p className="mt-5 max-w-2xl text-base leading-relaxed text-brand-text sm:text-lg lg:text-xl">
-                Our AI Delivery Centre is the engine behind your
-                success. A dedicated team, advanced infrastructure,
-                and proven processes to deliver high-quality AI
-                solutions at scale.
-              </p>
-
-              <div className="mt-7 flex flex-wrap gap-3 sm:gap-4">
-                <a
-                  href="#delivery"
-                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-brand-blue to-brand-purple px-5 text-sm font-bold text-white shadow-[0_8px_24px_rgba(37,99,235,0.2)] transition hover:-translate-y-0.5 sm:px-6 sm:text-base"
-                >
-                  Take a Virtual Tour
-
-                  <Icon
-                    name="arrow"
-                    className="size-4"
-                  />
-                </a>
-
-                <a
-                  href="#"
-                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-brand-purple/50 bg-white/80 px-5 text-sm font-bold text-brand-dark transition hover:bg-white sm:px-6 sm:text-base"
-                >
-                  <span className="grid size-5 place-items-center rounded-full bg-violet-100 text-brand-purple">
-                    <Icon
-                      name="play"
-                      className="size-2.5"
-                    />
-                  </span>
-
-                  Watch Video
-                </a>
-              </div>
-
-              {/* Stats */}
-
-              <div className="mt-8 grid grid-cols-2 gap-y-6 sm:grid-cols-4 sm:gap-0">
-                <div className="flex items-center gap-3">
-                  <IconCircle
-                    icon="users"
-                    className="bg-indigo-100 text-brand-blue"
-                  />
-
-                  <div>
-                    <p className="text-2xl font-bold leading-none text-brand-blue sm:text-3xl">
-                      200+
-                    </p>
-
-                    <p className="mt-1 text-xs leading-tight text-brand-text-muted sm:text-sm">
-                      AI Specialists
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 sm:border-l sm:border-indigo-100 sm:pl-4">
-                  <IconCircle
-                    icon="clock"
-                    className="bg-indigo-100 text-brand-blue"
-                  />
-
-                  <div>
-                    <p className="text-2xl font-bold leading-none text-brand-blue sm:text-3xl">
-                      24/7
-                    </p>
-
-                    <p className="mt-1 text-xs leading-tight text-brand-text-muted sm:text-sm">
-                      Delivery Operations
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 sm:border-l sm:border-indigo-100 sm:pl-4">
-                  <IconCircle
-                    icon="shield"
-                    className="bg-indigo-100 text-brand-blue"
-                  />
-
-                  <div>
-                    <p className="text-2xl font-bold leading-none text-brand-blue sm:text-3xl">
-                      99%
-                    </p>
-
-                    <p className="mt-1 text-xs leading-tight text-brand-text-muted sm:text-sm">
-                      Quality Assurance
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 sm:border-l sm:border-indigo-100 sm:pl-4">
-                  <IconCircle
-                    icon="globe"
-                    className="bg-indigo-100 text-brand-blue"
-                  />
-
-                  <div>
-                    <p className="text-2xl font-bold leading-none text-brand-blue sm:text-3xl">
-                      Global
-                    </p>
-
-                    <p className="mt-1 text-xs leading-tight text-brand-text-muted sm:text-sm">
-                      Client Support
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Hero Image */}
-
-            <div className="relative min-h-[23rem] sm:min-h-[30rem] lg:min-h-0">
-              <div className="absolute left-1/2 top-1/2 -z-10 size-[28rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-100/70 blur-3xl sm:size-[35rem]" />
-
-              <div className="absolute inset-x-0 bottom-0 z-10 flex justify-center">
-                <img
-                  src="/images/delivery-centre/delivery-centre-hero.webp"
-                  alt="AI WorksForce delivery centre"
-                  className="w-full max-w-[38rem] object-contain"
-                />
-              </div>
-
-              {/* handwritten note */}
-
-              <div className="absolute right-0 top-16 z-30 hidden font-hand text-2xl leading-tight text-brand-dark lg:block">
-                People
-                <br />
-                Process
-                <br />
-                Technology
-                <br />
-                Real Impact
-              </div>
-
-              {/* Result card */}
-
-              <div className="absolute bottom-5 right-0 z-30 hidden w-52 rounded-xl bg-white/95 p-4 shadow-[0_12px_32px_rgba(24,74,140,0.12)] sm:block">
-                <div className="flex items-start gap-3">
-                  <IconCircle
-                    icon="chart"
-                    className="bg-indigo-100 text-brand-purple"
-                  />
-
-                  <div>
-                    <h3 className="text-sm font-bold text-brand-dark sm:text-base">
-                      Delivering
-                      <br />
-                      Smarter Solutions
-                    </h3>
-
-                    <p className="mt-1 text-xs leading-relaxed text-brand-text sm:text-sm">
-                      From Our Delivery Centre to Your Business
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+<PageHero
+  titleId="delivery-centre-hero-title"
+  eyebrow="Global Talent. Real Impact."
+  title="AI Delivery"
+  highlightedTitle="Centre"
+  description="Our AI Delivery Centre is the engine behind your success. A dedicated team, advanced infrastructure, and proven processes to deliver high-quality AI solutions at scale."
+  image="/company-images/ai-delivery-center-compan-hero.png"
+  imageAlt="AI WorksForce delivery centre"
+  primaryAction={{
+    label: "Take a Virtual Tour",
+    href: "#delivery",
+    icon: "arrow",
+  }}
+  secondaryAction={{
+    label: "Watch Video",
+    href: "#",
+    icon: "play",
+  }}
+  stats={[
+    {
+      icon: "users",
+      value: "200+",
+      label: "AI Specialists",
+    },
+    {
+      icon: "clock",
+      value: "24/7",
+      label: "Delivery Operations",
+    },
+    {
+      icon: "shield",
+      value: "99%",
+      label: "Quality Assurance",
+    },
+    {
+      icon: "globe",
+      value: "Global",
+      label: "Client Support",
+    },
+  ]}
+  resultCard={{
+    icon: "chart",
+    lines: [
+      "Delivering",
+      "Smarter Solutions",
+      "From Our Delivery Centre to Your Business",
+    ],
+  }}
+/>
 
         {/* =====================================================
             CENTRE OF EXCELLENCE
@@ -821,7 +532,7 @@ export default function AIDeliveryCentrePage() {
 
             <div className="relative overflow-hidden rounded-xl">
               <img
-                src="/images/delivery-centre/delivery-centre-team.webp"
+                src="/company-images/ai-delivery-center-company-middle.png"
                 alt="AI WorksForce delivery centre team"
                 className="aspect-[4/3] w-full object-cover"
               />
@@ -976,15 +687,15 @@ export default function AIDeliveryCentrePage() {
 
             {[
               {
-                src: "/images/delivery-centre/delivery-centre-1.webp",
+                src: "/company-images/ai-delivery-center-company-bottom-1.png",
                 alt: "AI WorksForce office entrance",
               },
               {
-                src: "/images/delivery-centre/delivery-centre-2.webp",
+                src: "/company-images/ai-delivery-center-company-bottom-2.png",
                 alt: "AI WorksForce delivery team",
               },
               {
-                src: "/images/delivery-centre/delivery-centre-3.webp",
+                src: "/company-images/ai-delivery-center-company-bottom-3.png",
                 alt: "AI WorksForce workspace",
               },
             ].map((image) => (
@@ -1006,7 +717,7 @@ export default function AIDeliveryCentrePage() {
             CTA
         ====================================================== */}
 
-        <section className="relative isolate mx-1 overflow-hidden rounded-2xl bg-[linear-gradient(110deg,#07154d,#0b176f_55%,#2637e8)] px-6 py-8 text-white sm:mx-3 sm:px-10 sm:py-9">
+        <section className="relative isolate mx-1 my-4 overflow-hidden rounded-2xl bg-[linear-gradient(110deg,#07154d,#0b176f_55%,#2637e8)] px-6 py-8 text-white sm:mx-3 sm:px-10 sm:py-9">
           <div className="pointer-events-none absolute inset-0 -z-10 opacity-20 [background-image:repeating-radial-gradient(ellipse_at_0%_120%,transparent_0_0.75rem,#7180ff_0.8rem_0.875rem)]" />
 
           <div className="mx-auto grid max-w-6xl items-center gap-6 md:grid-cols-[1fr_auto]">

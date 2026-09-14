@@ -1,5 +1,6 @@
 "use client";
 
+import PageHero from "@/components/company-hero/reusable-hero";
 import {
   ArrowRight,
   BarChart3,
@@ -46,184 +47,55 @@ export default function HowWeWorkPage() {
       {/* =====================================================
           HERO
       ====================================================== */}
-
-      <section className="relative isolate overflow-hidden rounded-b-2xl bg-[linear-gradient(105deg,#ffffff_0%,#f9fbff_48%,#edf2ff_100%)]">
-        {/* Background glow */}
-
-        <div className="pointer-events-none absolute -right-40 -top-32 -z-10 size-[32rem] rounded-full bg-indigo-200/40 blur-3xl" />
-
-        <div className="mx-auto grid max-w-7xl lg:min-h-[34rem] lg:grid-cols-[0.98fr_1.02fr]">
-          {/* Hero Copy */}
-
-          <div className="relative z-20 px-5 pb-10 pt-10 sm:px-8 sm:pb-12 sm:pt-14 lg:px-8 lg:py-14 xl:pl-10">
-            <p className="text-xs font-bold uppercase tracking-[0.3em] text-[var(--color-primary)] sm:text-sm">
-              Our Process. Your Progress.
-            </p>
-
-            <h1 className="mt-4 max-w-2xl text-5xl font-bold leading-[0.94] tracking-tight text-[var(--color-heading)] sm:text-6xl lg:text-7xl">
-              How We{" "}
-              <span className="bg-gradient-to-r from-[var(--color-primary)] via-[var(--color-violet-600)] to-[var(--color-primary)] bg-clip-text text-transparent">
-                Work
-              </span>
-            </h1>
-
-            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[var(--color-text)] sm:text-xl lg:text-2xl">
-              A clear, collaborative, and results-driven
-              process to help you unlock the full potential
-              of AI for your business.
-            </p>
-
-            {/* Buttons */}
-
-            <div className="mt-7 flex flex-wrap gap-3 sm:gap-4">
-              <a
-                href="/book-demo"
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-violet-600)] px-5 text-sm font-bold text-white shadow-[0_10px_25px_rgba(37,99,235,0.2)] transition hover:-translate-y-0.5 sm:px-6 sm:text-base"
-              >
-                Book a Free Consultation
-                <ArrowRight className="size-4" />
-              </a>
-
-              <a
-                href="#process"
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg border border-[var(--color-violet-600)]/50 bg-white/80 px-5 text-sm font-bold text-[var(--color-heading)] transition hover:bg-white sm:px-6 sm:text-base"
-              >
-                <span className="grid size-6 place-items-center rounded-full bg-indigo-50 text-[var(--color-primary)]">
-                  <Play className="size-3 fill-current" />
-                </span>
-                Watch How It Works
-              </a>
-            </div>
-
-            {/* Hero Statistics */}
-
-            <div className="mt-9 grid grid-cols-2 gap-y-6 sm:grid-cols-4 sm:gap-0">
-              {/* Stat 1 */}
-
-              <div className="flex items-center gap-3 sm:pr-4">
-                <span className="grid size-11 shrink-0 place-items-center rounded-full bg-indigo-100 text-[var(--color-primary)] sm:size-12">
-                  <Handshake className="size-6 sm:size-7" />
-                </span>
-
-                <div>
-                  <div className="text-2xl font-bold leading-none text-[var(--color-primary)] sm:text-3xl">
-                    500+
-                  </div>
-
-                  <div className="mt-1 text-xs leading-tight text-[var(--color-text-muted)] sm:text-sm">
-                    Projects Delivered
-                  </div>
-                </div>
-              </div>
-
-              {/* Stat 2 */}
-
-              <div className="flex items-center gap-3 border-l border-indigo-100 pl-4 sm:pr-4">
-                <span className="grid size-11 shrink-0 place-items-center rounded-full bg-indigo-100 text-[var(--color-primary)] sm:size-12">
-                  <Users className="size-6 sm:size-7" />
-                </span>
-
-                <div>
-                  <div className="text-2xl font-bold leading-none text-[var(--color-primary)] sm:text-3xl">
-                    98%
-                  </div>
-
-                  <div className="mt-1 text-xs leading-tight text-[var(--color-text-muted)] sm:text-sm">
-                    Client Satisfaction
-                  </div>
-                </div>
-              </div>
-
-              {/* Stat 3 */}
-
-              <div className="flex items-center gap-3 sm:border-l sm:border-indigo-100 sm:pl-4 sm:pr-4">
-                <span className="grid size-11 shrink-0 place-items-center rounded-full bg-indigo-100 text-[var(--color-primary)] sm:size-12">
-                  <Clock3 className="size-6 sm:size-7" />
-                </span>
-
-                <div>
-                  <div className="text-2xl font-bold leading-none text-[var(--color-primary)] sm:text-3xl">
-                    2–6
-                  </div>
-
-                  <div className="mt-1 text-xs leading-tight text-[var(--color-text-muted)] sm:text-sm">
-                    Weeks
-                    <br className="sm:hidden" />
-                    <span className="hidden sm:inline">
-                      {" "}
-                    </span>
-                    Average Time to Deploy
-                  </div>
-                </div>
-              </div>
-
-              {/* Stat 4 */}
-
-              <div className="flex items-center gap-3 sm:border-l sm:border-indigo-100 sm:pl-4">
-                <span className="grid size-11 shrink-0 place-items-center rounded-full bg-indigo-100 text-[var(--color-primary)] sm:size-12">
-                  <BarChart3 className="size-6 sm:size-7" />
-                </span>
-
-                <div>
-                  <div className="text-2xl font-bold leading-none text-[var(--color-primary)] sm:text-3xl">
-                    Real
-                  </div>
-
-                  <div className="mt-1 text-xs leading-tight text-[var(--color-text-muted)] sm:text-sm">
-                    Measurable Results
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Hero Visual */}
-
-          <div className="relative min-h-[22rem] sm:min-h-[29rem] lg:min-h-0">
-            <div className="absolute left-1/2 top-1/2 -z-10 size-[30rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-100/70 blur-3xl" />
-
-            <img
-              src="/images/how-it-works/how-it-works-hero.webp"
-              alt="AI WorksForce team collaborating"
-              className="absolute inset-x-0 bottom-0 mx-auto w-full max-w-[40rem] object-contain"
-            />
-
-            {/* Handwritten annotation */}
-
-            <div className="absolute right-5 top-16 z-20 hidden rotate-[-4deg] font-hand text-2xl leading-tight text-[var(--color-primary)] lg:block">
-              Plan
-              <br />
-              Build
-              <br />
-              Automate
-              <br />
-              Grow
-              <br />
-              Together
-            </div>
-
-            {/* Hero result card */}
-
-            <div className="absolute bottom-5 right-0 z-30 hidden w-52 rounded-xl bg-white/95 p-4 shadow-[0_12px_35px_rgba(24,74,140,0.12)] sm:block">
-              <div className="flex gap-3">
-                <span className="grid size-11 shrink-0 place-items-center rounded-full bg-indigo-100 text-[var(--color-primary)]">
-                  <Lightbulb className="size-6" />
-                </span>
-
-                <div>
-                  <h3 className="text-sm font-bold leading-tight text-[var(--color-heading)] sm:text-base">
-                    From Ideas
-                    <br />
-                    to Impact
-                    <br />
-                    Together
-                  </h3>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+<PageHero
+  titleId="how-we-work-hero-title"
+  eyebrow="Our Process. Your Progress."
+  title="How We"
+  highlightedTitle="Work"
+  description="A clear, collaborative, and results-driven process to help you unlock the full potential of AI for your business."
+  image="/company-images/how-we-work-company-hero.png"
+  imageAlt="AI WorksForce team collaborating"
+  primaryAction={{
+    label: "Book a Free Consultation",
+    href: "/book-demo",
+    icon: "arrow",
+  }}
+  secondaryAction={{
+    label: "Watch How It Works",
+    href: "#process",
+    icon: "play",
+  }}
+  stats={[
+    {
+      icon: "users",
+      value: "500+",
+      label: "Projects Delivered",
+    },
+    {
+      icon: "users",
+      value: "98%",
+      label: "Client Satisfaction",
+    },
+    {
+      icon: "clock",
+      value: "2–6",
+      label: "Weeks Average Time to Deploy",
+    },
+    {
+      icon: "chart",
+      value: "Real",
+      label: "Measurable Results",
+    },
+  ]}
+  resultCard={{
+    icon: "lightbulb",
+    lines: [
+      "From Ideas",
+      "to Impact",
+      "Together",
+    ],
+  }}
+/>
 
       {/* =====================================================
           PROCESS
@@ -331,112 +203,154 @@ export default function HowWeWorkPage() {
           DIFFERENT APPROACH
       ====================================================== */}
 
-      <section className="mx-auto max-w-7xl px-5 pb-11 sm:px-7 lg:px-8 lg:pb-14">
-        <div className="grid overflow-hidden rounded-2xl bg-[var(--color-blue-50)] lg:grid-cols-[1.05fr_0.95fr]">
-          {/* Left */}
+     <section className="bg-white px-4 py-8 sm:px-6 lg:px-8">
+  <div className="mx-auto grid max-w-7xl items-stretch gap-4 lg:grid-cols-[1.03fr_1fr]">
+    <div className="rounded-xl bg-linear-to-br from-[#f4faff] to-[#f0f8ff] p-5 sm:p-6">
+      <p className="text-xs leading-5 font-bold tracking-[0.2em] text-[#2100ed]">
+        WHAT MAKES OUR APPROACH DIFFERENT
+      </p>
 
-          <div className="p-6 sm:p-8 lg:p-10">
-            <p className="text-xs font-bold uppercase tracking-[0.3em] text-[var(--color-primary)] sm:text-sm">
-              What Makes Our Approach Different
-            </p>
+      <h2 className="mt-2 text-3xl leading-tight font-bold tracking-[-0.04em] text-[#09065b] sm:text-4xl">
+        Built Around Your Business
+      </h2>
 
-            <h2 className="mt-3 text-3xl font-bold leading-tight tracking-tight text-[var(--color-heading)] sm:text-4xl lg:text-5xl">
-              Built Around Your Business
-            </h2>
+      <p className="mt-3 text-base leading-relaxed text-[#5143a0] sm:text-lg">
+        We don’t believe in one-size-fits-all. Our process is designed to be
+        flexible, transparent, and focused on real business outcomes.
+      </p>
 
-            <p className="mt-3 max-w-2xl text-base leading-relaxed text-[var(--color-text)] sm:text-lg">
-              We don&apos;t believe in one-size-fits-all. Our
-              process is designed to be flexible, transparent,
-              and focused on real business outcomes.
-            </p>
-
-            {/* Feature cards */}
-
-            <div className="mt-7 grid gap-3 sm:grid-cols-2">
-              {[
-                {
-                  icon: Users,
-                  title: "Collaborative Approach",
-                  text: "We work with your team at every step.",
-                },
-                {
-                  icon: Target,
-                  title: "Tailored Solutions",
-                  text: "Custom strategies for your unique needs.",
-                },
-                {
-                  icon: FileText,
-                  title: "Transparent Process",
-                  text: "Clear communication and regular updates.",
-                },
-                {
-                  icon: Handshake,
-                  title: "Long-Term Partnership",
-                  text: "We grow with you beyond the initial implementation.",
-                },
-              ].map((item) => {
-                const ItemIcon = item.icon;
-
-                return (
-                  <div
-                    key={item.title}
-                    className="rounded-xl bg-white p-4 sm:p-5"
-                  >
-                    <div className="flex items-start gap-3">
-                      <span className="grid size-11 shrink-0 place-items-center rounded-full bg-indigo-100 text-[var(--color-primary)] sm:size-12">
-                        <ItemIcon className="size-6" />
-                      </span>
-
-                      <div>
-                        <h3 className="text-sm font-bold text-[var(--color-heading)] sm:text-base">
-                          {item.title}
-                        </h3>
-
-                        <p className="mt-1 text-sm leading-relaxed text-[var(--color-text)] sm:text-base">
-                          {item.text}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Right */}
-
-          <div className="relative min-h-[25rem] lg:min-h-full">
-            <img
-              src="/images/how-it-works/how-it-works-office.webp"
-              alt="AI WorksForce workspace"
-              className="absolute inset-0 size-full object-cover"
-            />
-
-            {/* Dark blue panel */}
-
-            <div className="absolute bottom-0 right-0 m-0 w-full bg-gradient-to-r from-[var(--color-heading)] to-[var(--color-primary)] p-7 text-white sm:m-5 sm:w-64 sm:rounded-xl sm:p-7 lg:m-0 lg:w-56 lg:rounded-none lg:rounded-tl-xl lg:p-8 xl:w-64">
-              <h3 className="text-2xl font-bold leading-tight sm:text-3xl">
-                Our Goal
-                <br />
-                Your Growth
-              </h3>
-
-              <p className="mt-4 text-sm leading-relaxed text-blue-50 sm:text-base">
-                We combine people, processes, and AI to create
-                solutions that deliver real, measurable impact.
-              </p>
-
-              <a
-                href="/company/about"
-                className="mt-6 inline-flex min-h-10 items-center gap-2 rounded-lg bg-white px-5 text-sm font-bold text-[var(--color-heading)]"
+      <div className="mt-5 grid gap-3 sm:grid-cols-2">
+        {[
+          {
+            title: "Collaborative Approach",
+            description: "We work with your team at every step.",
+            icon: (
+              <>
+                <circle cx="9" cy="7" r="4" />
+                <path d="M1 21v-3a8 8 0 0 1 16 0v3H1Z" />
+                <path d="M16 3a4 4 0 0 1 0 8V3Zm3 10a7 7 0 0 1 4 6v2h-4v-3a10 10 0 0 0-1-4.4l1-.6Z" />
+              </>
+            ),
+          },
+          {
+            title: "Tailored Solutions",
+            description: "Custom strategies for your unique needs.",
+            icon: (
+              <g
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               >
-                Our Story
-                <ArrowRight className="size-4" />
-              </a>
+                <path d="M21 12a9 9 0 1 1-9-9" />
+                <path d="M16.5 12a4.5 4.5 0 1 1-4.5-4.5" />
+                <path d="m12 12 8-8M16 4h4v4" />
+              </g>
+            ),
+          },
+          {
+            title: "Transparent Process",
+            description: "Clear communication and regular updates.",
+            icon: (
+              <>
+                <path d="M5 2h9l5 5v15H5V2Z" />
+                <path
+                  d="M14 2v6h5M8 12h8M8 16h8"
+                  fill="none"
+                  stroke="white"
+                  strokeWidth="1.6"
+                  strokeLinejoin="round"
+                />
+              </>
+            ),
+          },
+          {
+            title: "Long-Term Partnership",
+            description: "We grow with you beyond the initial implementation.",
+            icon: (
+              <>
+                <path d="m2 5 5-2 4 2-5 5 4 4a3 3 0 0 0 4 0l3-3 5 5-7 6-9-7-4-1V5Z" />
+                <path d="m13 4 4-1 5 3v8l-5-5-5 4a1.5 1.5 0 0 1-2-2l5-5-2-2Z" />
+              </>
+            ),
+          },
+        ].map((feature) => (
+          <div
+            key={feature.title}
+            className="flex items-start gap-3 rounded-xl bg-white p-4"
+          >
+            <div className="flex size-14 shrink-0 items-center justify-center rounded-full bg-[#eeebff] text-[#2300ed]">
+              <svg
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+                className="size-8"
+              >
+                {feature.icon}
+              </svg>
+            </div>
+
+            <div className="min-w-0 pt-0.5">
+              <h3 className="text-base leading-snug font-semibold tracking-tight text-[#09065b]">
+                {feature.title}
+              </h3>
+              <p className="mt-1.5 text-base leading-relaxed text-[#5a4ba3]">
+                {feature.description}
+              </p>
             </div>
           </div>
-        </div>
-      </section>
+        ))}
+      </div>
+    </div>
+
+   <div className="grid min-h-100 grid-cols-[58%_42%] overflow-hidden rounded-xl">
+  {/* Separate image */}
+  <div className="relative min-h-100 overflow-hidden bg-[#e5e9ed]">
+    <img
+      src="/company-images/how-we-work-company-bottom.png"
+      alt="Modern office workspace"
+      loading="lazy"
+      decoding="async"
+      className="absolute inset-0 h-full w-full object-cover object-center"
+    />
+  </div>
+
+  {/* Separate blue box */}
+  <div className="flex flex-col justify-center bg-linear-to-br from-[#0739b8] via-[#031a76] to-[#020b47] px-4 py-8 text-white sm:px-7">
+    <h3 className="text-3xl leading-[1.1] font-semibold tracking-[-0.04em] sm:text-[2rem]">
+      Our Goal
+      <br />
+      Your Growth
+    </h3>
+
+    <p className="mt-5 text-base leading-relaxed text-white/95">
+      We combine people, processes, and AI to create solutions that deliver real,
+      measurable impact.
+    </p>
+
+    <a
+      href="/our-story"
+      className="mt-6 inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-white px-3 py-3 text-base font-semibold text-[#09065b] transition-colors hover:bg-[#f0eeff] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+    >
+      Our Story
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+        className="size-5 shrink-0 text-[#2300ed]"
+      >
+        <path d="M5 12h14m-6-6 6 6-6 6" />
+      </svg>
+    </a>
+  </div>
+</div>
+  </div>
+</section>
 
       {/* =====================================================
           PROVEN RESULTS
@@ -523,7 +437,7 @@ export default function HowWeWorkPage() {
 
           <div className="flex items-center gap-4">
             <img
-              src="/images/testimonials/rahul-mehta.webp"
+              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="Rahul Mehta"
               className="size-20 rounded-full border-4 border-white object-cover shadow-md sm:size-24"
             />
@@ -570,7 +484,7 @@ export default function HowWeWorkPage() {
           FINAL CTA
       ====================================================== */}
 
-      <section className="relative isolate mx-1 overflow-hidden rounded-2xl bg-gradient-to-r from-[#07154d] via-[#0b176f] to-[#2437e9] px-6 py-8 text-white sm:mx-3 sm:px-10 sm:py-9">
+      <section className="relative isolate mx-1 my-4 overflow-hidden rounded-2xl bg-gradient-to-r from-[#07154d] via-[#0b176f] to-[#2437e9] px-6 py-8 text-white sm:mx-3 sm:px-10 sm:py-9">
         {/* Background pattern */}
 
         <div className="pointer-events-none absolute inset-0 -z-10 opacity-20 [background-image:repeating-radial-gradient(ellipse_at_0%_120%,transparent_0_0.75rem,#7180ff_0.8rem_0.875rem)]" />

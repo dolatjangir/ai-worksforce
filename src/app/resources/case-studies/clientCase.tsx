@@ -1,5 +1,6 @@
 "use client";
 
+import PageHero from "@/components/resources-hero/reusable-hero";
 import { useMemo, useState, type ReactNode } from "react";
 
 /* ============================================================
@@ -620,256 +621,74 @@ export default function CaseStudiesPage() {
         {/* ======================================================
             HERO
         ======================================================= */}
-
-        <section className="relative isolate overflow-hidden rounded-b-[1.25rem] bg-[linear-gradient(112deg,#fafbff_0%,#f5f7ff_48%,#f0efff_100%)]">
-          {/* Background glow */}
-          <div className="pointer-events-none absolute -right-32 -top-48 -z-10 size-[38rem] rounded-full bg-[radial-gradient(circle,#b5acff90_0%,#d9dcff45_42%,transparent_70%)] sm:size-[45rem]" />
-
-          <div className="pointer-events-none absolute -bottom-40 -left-40 -z-10 size-[28rem] rounded-full bg-[radial-gradient(circle,#dbeafe80_0%,transparent_70%)]" />
-
-          <div className="mx-auto grid max-w-7xl lg:grid-cols-[1.03fr_0.97fr]">
-            {/* Hero content */}
-            <div className="relative z-20 px-5 py-10 sm:px-8 sm:py-12 lg:px-8 lg:py-14 xl:pl-10">
-              <p className="text-xs font-bold uppercase tracking-[0.28em] text-brand-purple sm:text-sm">
-                Real Businesses. Real Results.
-              </p>
-
-              <h1 className="mt-3 max-w-2xl text-5xl font-bold leading-[0.95] tracking-tight text-brand-dark sm:text-6xl lg:text-7xl">
-                Case{" "}
-                <span className="bg-gradient-to-r from-brand-blue via-brand-purple to-brand-blue bg-clip-text text-transparent">
-                  Studies
-                </span>
-              </h1>
-
-              <h2 className="mt-5 max-w-2xl text-lg font-bold leading-tight tracking-tight text-brand-dark sm:text-xl lg:text-2xl">
-                See how businesses like yours are using AI to solve real
-                challenges and achieve measurable growth.
-              </h2>
-
-              <p className="mt-3 max-w-xl text-base leading-relaxed text-brand-text sm:text-lg">
-                Explore real-world examples of how AI WorksForce helps
-                companies automate operations, improve efficiency, and
-                unlock new opportunities with AI.
-              </p>
-
-              {/* Buttons */}
-              <div className="mt-6 flex flex-wrap gap-3 sm:gap-4">
-                <a
-                  href="#contact"
-                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-brand-blue to-brand-purple px-5 text-sm font-bold text-white shadow-[0_8px_22px_rgba(37,99,235,0.2)] transition-all hover:-translate-y-0.5 sm:px-6"
-                >
-                  Book a Free Consultation
-
-                  <Icon
-                    name="arrow-right"
-                    className="size-4"
-                  />
-                </a>
-
-                <a
-                  href="#case-studies"
-                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-brand-purple/50 bg-white/60 px-5 text-sm font-bold text-brand-dark transition-colors hover:bg-white sm:px-6"
-                >
-                  <span className="grid size-5 place-items-center rounded-full bg-violet-100 text-brand-purple">
-                    <Icon
-                      name="play"
-                      className="size-2.5"
-                    />
-                  </span>
-
-                  Watch Success Stories
-                </a>
-              </div>
-
-              {/* Hero statistics */}
-              <div className="mt-8 grid max-w-2xl grid-cols-3">
-                {[
-                  {
-                    icon: "chart" as IconName,
-                    value: "50+",
-                    label: "Successful Projects",
-                    tone: "bg-emerald-100 text-emerald-500",
-                  },
-                  {
-                    icon: "users" as IconName,
-                    value: "25+",
-                    label: "Industries Served",
-                    tone: "bg-indigo-100 text-brand-purple",
-                  },
-                  {
-                    icon: "trophy" as IconName,
-                    value: "95%",
-                    label: "Client Satisfaction",
-                    tone: "bg-violet-100 text-brand-purple",
-                  },
-                ].map((stat, index) => (
-                  <div
-                    key={stat.label}
-                    className={`flex items-center gap-2 sm:gap-3 ${
-                      index > 0
-                        ? "border-l border-indigo-100 pl-3 sm:pl-5"
-                        : ""
-                    }`}
-                  >
-                    <IconBubble
-                      icon={stat.icon}
-                      className={stat.tone}
-                    />
-
-                    <div className="min-w-0">
-                      <p className="text-2xl font-bold leading-none tracking-tight text-brand-blue sm:text-3xl">
-                        {stat.value}
-                      </p>
-
-                      <p className="mt-1 text-xs leading-tight text-brand-text-muted sm:text-sm">
-                        {stat.label}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Hero visual */}
-            <div className="relative min-h-[25rem] sm:min-h-[30rem] lg:min-h-0">
-              {/* Decorative circles */}
-              <div className="absolute left-1/2 top-20 size-72 -translate-x-1/2 rounded-full border-[1rem] border-white/60 bg-indigo-100/20 sm:size-96" />
-
-              <div className="absolute left-1/2 top-28 size-56 -translate-x-1/2 rounded-full border-[1rem] border-white/70 sm:size-72" />
-
-              {/* Main team image */}
-              <img
-                src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&q=90"
-                alt="Business team collaborating"
-                className="absolute bottom-0 left-1/2 z-10 h-[82%] w-[72%] -translate-x-1/2 rounded-t-[5rem] object-cover object-center shadow-[0_18px_45px_rgba(48,42,185,0.14)] sm:w-[66%]"
-              />
-
-              {/* Left floating cards */}
-              <div className="absolute left-0 top-8 z-20 hidden gap-3 sm:grid">
-                <div className="flex w-36 items-center gap-3 rounded-xl bg-white/95 px-3 py-3 shadow-[0_6px_22px_rgba(51,42,157,0.1)]">
-                  <span className="grid size-10 shrink-0 place-items-center rounded-full bg-emerald-50 text-emerald-500">
-                    <Icon
-                      name="arrow-up"
-                      className="size-5"
-                    />
-                  </span>
-
-                  <div>
-                    <p className="text-lg font-bold leading-none text-brand-dark">
-                      3x
-                    </p>
-
-                    <p className="mt-1 text-xs leading-tight text-brand-text">
-                      Faster Growth
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex w-36 items-center gap-3 rounded-xl bg-white/95 px-3 py-3 shadow-[0_6px_22px_rgba(51,42,157,0.1)]">
-                  <span className="grid size-10 shrink-0 place-items-center rounded-full bg-violet-50 text-brand-purple">
-                    <Icon
-                      name="settings"
-                      className="size-5"
-                    />
-                  </span>
-
-                  <div>
-                    <p className="text-lg font-bold leading-none text-brand-dark">
-                      70%
-                    </p>
-
-                    <p className="mt-1 text-xs leading-tight text-brand-text">
-                      Cost Reduction
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex w-40 items-center gap-3 rounded-xl bg-white/95 px-3 py-3 shadow-[0_6px_22px_rgba(51,42,157,0.1)]">
-                  <span className="grid size-10 shrink-0 place-items-center rounded-full bg-indigo-50 text-brand-purple">
-                    <Icon
-                      name="users"
-                      className="size-5"
-                    />
-                  </span>
-
-                  <div>
-                    <p className="text-lg font-bold leading-none text-brand-dark">
-                      5x
-                    </p>
-
-                    <p className="mt-1 text-xs leading-tight text-brand-text">
-                      Higher Productivity
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Growth card */}
-              <div className="absolute bottom-10 right-0 z-20 hidden w-48 rounded-xl bg-white/95 p-4 shadow-[0_8px_25px_rgba(51,42,157,0.1)] sm:block">
-                <div className="flex items-start justify-between gap-3">
-                  <p className="text-sm font-bold leading-tight text-brand-dark">
-                    Turning Challenges
-                    <br />
-                    Into Growth
-                  </p>
-
-                  <Icon
-                    name="arrow-up"
-                    className="size-6 text-emerald-500"
-                  />
-                </div>
-
-                <div className="mt-4">
-                  <svg
-                    viewBox="0 0 180 50"
-                    className="h-12 w-full text-emerald-500"
-                    fill="none"
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="M2 39 22 30l20 6 22-15 20 9 21-7 19 10 20-28 18 7"
-                      stroke="currentColor"
-                      strokeWidth="3"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </div>
-              </div>
-
-              {/* Handwritten note */}
-              <div className="absolute right-2 top-8 z-20 hidden rotate-[-8deg] font-hand text-2xl leading-[0.9] text-brand-blue md:block">
-                Real
-                <br />
-                Companies
-                <br />
-                Real Impact
-              </div>
-
-              <svg
-                className="absolute right-20 top-14 z-20 hidden h-20 w-20 text-brand-blue md:block"
-                viewBox="0 0 80 80"
-                fill="none"
-                aria-hidden="true"
-              >
-                <path
-                  d="M67 5C48 13 44 28 35 40 27 51 18 55 7 57"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                />
-
-                <path
-                  d="m12 50-7 8 10 2"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </div>
-          </div>
-        </section>
+<PageHero
+  titleId="case-studies-hero-title"
+  eyebrow="Real Businesses. Real Results."
+  title="Case"
+  highlightedTitle="Studies"
+  description="See how businesses like yours are using AI to solve real challenges and achieve measurable growth. Explore real-world examples of how AI WorksForce helps companies automate operations, improve efficiency, and unlock new opportunities with AI."
+  image="/resources-images/case-studies-resources-hero.png"
+  imageAlt="Business team collaborating"
+  primaryAction={{
+    label: "Book a Free Consultation",
+    href: "#contact",
+    icon: "arrow",
+  }}
+  secondaryAction={{
+    label: "Watch Success Stories",
+    href: "#case-studies",
+    icon: "play",
+  }}
+  stats={[
+    {
+      icon: "chart",
+      value: "50+",
+      label: "Successful Projects",
+    },
+    {
+      icon: "users",
+      value: "25+",
+      label: "Industries Served",
+    },
+    {
+      icon: "trophy",
+      value: "95%",
+      label: "Client Satisfaction",
+    },
+  ]}
+  benefitCards={[
+    {
+      title: "3x",
+      description: "Faster Growth",
+      icon: "arrow-up",
+      position: "left-0 top-8",
+      variant: "green",
+    },
+    {
+      title: "70%",
+      description: "Cost Reduction",
+      icon: "settings",
+      position: "left-0 top-[30%]",
+    },
+    {
+      title: "5x",
+      description: "Higher Productivity",
+      icon: "users",
+      position: "left-0 top-[52%]",
+    },
+  ]}
+ 
+  handwrittenNote={{
+    lines: [
+      "Real", 
+      "Companies",
+      "Real Impact",
+    ],
+      position: "right-[2%] top-[10%]",
+  rotate: "-rotate-12",
+   
+  }}
+/>
 
         {/* ======================================================
             TRUSTED BRANDS

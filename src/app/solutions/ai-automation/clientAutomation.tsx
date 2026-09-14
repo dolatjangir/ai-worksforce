@@ -11,7 +11,7 @@ type IconProps = React.SVGProps<SVGSVGElement> & { size?: number };
 type NavItem = {
   label: string;
   links: string[];
-};
+}; 
 
 /* ============================================================
    INLINE SVG ICON SET (single-file, no external deps)

@@ -1,5 +1,6 @@
 "use client";
 
+import PageHero from "@/components/company-hero/reusable-hero";
 import {
   ArrowRight,
   BarChart3,
@@ -436,177 +437,56 @@ export default function CareersPage() {
           HERO
       ====================================================== */}
 
-      <section className="relative isolate overflow-hidden rounded-b-2xl bg-[linear-gradient(105deg,#ffffff_0%,#f9fbff_48%,#edf2ff_100%)]">
-        <div className="pointer-events-none absolute -right-40 -top-32 -z-10 size-[32rem] rounded-full bg-indigo-200/40 blur-3xl" />
-
-        <div className="mx-auto grid max-w-7xl lg:min-h-[34rem] lg:grid-cols-[1fr_1fr]">
-          {/* Content */}
-
-          <div className="relative z-20 px-5 pb-10 pt-10 sm:px-8 sm:pb-12 sm:pt-14 lg:px-8 lg:py-14 xl:pl-10">
-            <p className="text-xs font-bold uppercase tracking-[0.3em] text-[var(--color-primary)] sm:text-sm">
-              Build Your Future With AI..
-            </p>
-
-            <h1 className="mt-4 max-w-2xl text-5xl font-bold leading-[0.94] tracking-tight text-[var(--color-heading)] sm:text-6xl lg:text-7xl">
-              Careers at{" "}
-              <span className="bg-gradient-to-r from-[var(--color-primary)] via-[var(--color-violet-600)] to-[var(--color-primary)] bg-clip-text text-transparent">
-                AIWorksForce
-              </span>
-            </h1>
-
-            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[var(--color-text)] sm:text-xl lg:text-2xl">
-              Join a team of innovators, builders, and problem-solvers
-              who are using AI to create a smarter, more efficient
-              tomorrow.
-            </p>
-
-            {/* Hero Buttons */}
-
-            <div className="mt-7 flex flex-wrap gap-3 sm:gap-4">
-              <a
-                href="#open-positions"
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-violet-600)] px-5 text-sm font-bold text-white shadow-lg transition hover:-translate-y-0.5 sm:px-6 sm:text-base"
-              >
-                See Open Positions
-                <ArrowRight className="size-4" />
-              </a>
-
-              <a
-                href="#culture"
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg border border-[var(--color-violet-600)]/50 bg-white/80 px-5 text-sm font-bold text-[var(--color-heading)] transition hover:bg-white sm:px-6 sm:text-base"
-              >
-                <span className="grid size-6 place-items-center rounded-full bg-indigo-50 text-[var(--color-primary)]">
-                  <Play className="size-3 fill-current" />
-                </span>
-
-                Watch Our Culture Video
-              </a>
-            </div>
-
-            {/* Stats */}
-
-            <div className="mt-9 grid grid-cols-2 gap-y-6 sm:grid-cols-4 sm:gap-0">
-              {/* Team */}
-
-              <div className="flex items-center gap-3 sm:pr-4">
-                <span className="grid size-11 shrink-0 place-items-center rounded-full bg-indigo-100 text-[var(--color-primary)] sm:size-12">
-                  <Users className="size-6 sm:size-7" />
-                </span>
-
-                <div>
-                  <p className="text-2xl font-bold leading-none text-[var(--color-primary)] sm:text-3xl">
-                    50+
-                  </p>
-
-                  <p className="mt-1 text-xs leading-tight text-[var(--color-text-muted)] sm:text-sm">
-                    Team Members
-                  </p>
-                </div>
-              </div>
-
-              {/* Locations */}
-
-              <div className="flex items-center gap-3 border-l border-indigo-100 pl-4 sm:pr-4">
-                <span className="grid size-11 shrink-0 place-items-center rounded-full bg-indigo-100 text-[var(--color-primary)] sm:size-12">
-                  <Globe2 className="size-6 sm:size-7" />
-                </span>
-
-                <div>
-                  <p className="text-2xl font-bold leading-none text-[var(--color-primary)] sm:text-3xl">
-                    5+
-                  </p>
-
-                  <p className="mt-1 text-xs leading-tight text-[var(--color-text-muted)] sm:text-sm">
-                    Locations
-                  </p>
-                </div>
-              </div>
-
-              {/* Projects */}
-
-              <div className="flex items-center gap-3 sm:border-l sm:border-indigo-100 sm:pl-4 sm:pr-4">
-                <span className="grid size-11 shrink-0 place-items-center rounded-full bg-indigo-100 text-[var(--color-primary)] sm:size-12">
-                  <Lightbulb className="size-6 sm:size-7" />
-                </span>
-
-                <div>
-                  <p className="text-2xl font-bold leading-none text-[var(--color-primary)] sm:text-3xl">
-                    100+
-                  </p>
-
-                  <p className="mt-1 text-xs leading-tight text-[var(--color-text-muted)] sm:text-sm">
-                    Projects Delivered
-                  </p>
-                </div>
-              </div>
-
-              {/* Great Place */}
-
-              <div className="flex items-center gap-3 sm:border-l sm:border-indigo-100 sm:pl-4">
-                <span className="grid size-11 shrink-0 place-items-center rounded-full bg-indigo-100 text-[var(--color-primary)] sm:size-12">
-                  <Heart className="size-6 fill-current sm:size-7" />
-                </span>
-
-                <div>
-                  <p className="text-2xl font-bold leading-none text-[var(--color-primary)] sm:text-3xl">
-                    Great
-                  </p>
-
-                  <p className="mt-1 text-xs leading-tight text-[var(--color-text-muted)] sm:text-sm">
-                    Place to Work
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Hero Image */}
-
-          <div className="relative min-h-[22rem] sm:min-h-[30rem] lg:min-h-0">
-            <div className="absolute left-1/2 top-1/2 -z-10 size-[30rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-100/70 blur-3xl" />
-
-            <img
-              src="/images/careers/careers-hero.webp"
-              alt="AIWorksForce team working together"
-              className="absolute inset-x-0 bottom-0 mx-auto w-full max-w-[42rem] object-contain"
-            />
-
-            {/* Handwritten note */}
-
-            <div className="absolute right-3 top-12 z-20 hidden rotate-[-5deg] font-hand text-2xl leading-tight text-[var(--color-primary)] lg:block">
-              Ideas
-              <br />
-              People
-              <br />
-              Opportunities
-              <br />
-              A Brighter
-              <br />
-              Tomorrow
-            </div>
-
-            {/* Floating Card */}
-
-            <div className="absolute bottom-5 right-0 z-30 hidden w-52 rounded-xl bg-white/95 p-4 shadow-xl sm:block">
-              <div className="flex items-center gap-3">
-                <span className="grid size-11 shrink-0 place-items-center rounded-full bg-indigo-100 text-[var(--color-primary)]">
-                  <Users className="size-6" />
-                </span>
-
-                <h3 className="text-sm font-bold leading-tight text-[var(--color-heading)] sm:text-base">
-                  Grow
-                  <br />
-                  Learn
-                  <br />
-                  Make an Impact
-                  <br />
-                  Together
-                </h3>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+    <PageHero
+  titleId="careers-hero-title"
+  eyebrow="Build Your Future With AI.."
+  title="Careers at"
+  highlightedTitle="AIWorksForce"
+  description="Join a team of innovators, builders, and problem-solvers who are using AI to create a smarter, more efficient tomorrow."
+  image="/company-images/careers-company-hero.png"
+  imageAlt="AIWorksForce team working together"
+  primaryAction={{
+    label: "See Open Positions",
+    href: "#open-positions",
+    icon: "arrow",
+  }}
+  secondaryAction={{
+    label: "Watch Our Culture Video",
+    href: "#culture",
+    icon: "play",
+  }}
+  stats={[
+    {
+      icon: "users",
+      value: "50+",
+      label: "Team Members",
+    },
+    {
+      icon: "globe",
+      value: "5+",
+      label: "Locations",
+    },
+    {
+      icon: "lightbulb",
+      value: "100+",
+      label: "Projects Delivered",
+    },
+    {
+      icon: "heart",
+      value: "Great",
+      label: "Place to Work",
+    },
+  ]}
+  resultCard={{
+    icon: "users",
+    lines: [
+      "Grow",
+      "Learn",
+      "Make an Impact",
+      "Together",
+    ],
+  }}
+/>
 
       {/* =====================================================
           WHY WORK WITH US
@@ -858,14 +738,14 @@ export default function CareersPage() {
 
       <section
         id="culture"
-        className="mx-auto max-w-7xl px-5 pb-5 sm:px-7 lg:px-8 lg:pb-7"
+        className="mx-auto max-w-8xl px-5 pb-5 sm:px-7 lg:px-8 lg:pb-7"
       >
         <div className="grid overflow-hidden rounded-xl bg-[var(--color-blue-50)] lg:grid-cols-[1.05fr_0.95fr]">
           {/* Testimonial */}
 
           <div className="flex items-center gap-5 p-6 sm:p-8 lg:p-10">
             <img
-              src="/images/team/ritika-soni.webp"
+            src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="Ritika Soni"
               className="size-20 shrink-0 rounded-full border-4 border-white object-cover shadow-md sm:size-24"
             />
@@ -896,9 +776,9 @@ export default function CareersPage() {
 
           <div className="relative min-h-52 overflow-hidden sm:min-h-64">
             <img
-              src="/images/careers/careers-office.webp"
+              src="/company-images/careers-company-bottom-cta.png"
               alt="AIWorksForce office"
-              className="absolute inset-0 size-full object-cover"
+              className="absolute inset-0 size-full object-cover rounded-l-2xl"
             />
 
             <div className="absolute right-0 top-0 flex h-full w-28 items-center justify-center bg-[var(--color-primary)]/90 px-4 text-center text-lg font-medium text-white sm:w-36 sm:text-xl">
@@ -920,7 +800,7 @@ export default function CareersPage() {
           CTA
       ====================================================== */}
 
-      <section className="relative isolate mx-1 overflow-hidden rounded-2xl bg-gradient-to-r from-[#07154d] via-[#0b176f] to-[#2437e9] px-6 py-8 text-white sm:mx-3 sm:px-10 sm:py-9">
+      <section className="relative isolate mx-1 my-4 overflow-hidden rounded-2xl bg-gradient-to-r from-[#07154d] via-[#0b176f] to-[#2437e9] px-6 py-8 text-white sm:mx-3 sm:px-10 sm:py-9">
         <div className="pointer-events-none absolute inset-0 -z-10 opacity-20 [background-image:repeating-radial-gradient(ellipse_at_0%_120%,transparent_0_0.75rem,#7180ff_0.8rem_0.875rem)]" />
 
         <div className="mx-auto grid max-w-6xl items-center gap-7 md:grid-cols-[1fr_auto]">

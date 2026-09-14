@@ -1,5 +1,7 @@
 "use client";
 
+import PageHero from "@/components/resources-hero/reusable-hero";
+import Image from "next/image";
 import { useState, type ReactNode } from "react";
 
 /* =========================================================
@@ -301,8 +303,8 @@ function SectionHeading({
   description: string;
 }) {
   return (
-    <div className="mx-auto max-w-[850px] text-center">
-      <p className="text-[9px] font-bold uppercase tracking-[0.28em] text-brand-purple sm:text-[10px]">
+    <div className="mx-auto max-w-[850px] text-center pt-4">
+      <p className="text-xs font-bold uppercase tracking-[0.18em] text-brand-purple sm:text-sm">
         {eyebrow}
       </p>
 
@@ -438,186 +440,86 @@ export default function AIUseCasesPage() {
             HERO
         ====================================================== */}
 
-        <section className="relative isolate overflow-hidden rounded-b-[20px] bg-[linear-gradient(112deg,#fafbff_0%,#f5f7ff_48%,#f0efff_100%)]">
-          <div className="absolute -top-[160px] -right-[100px] -z-10 size-[700px] rounded-full bg-[radial-gradient(circle,#b5acff85_0%,#d9dcff45_42%,transparent_70%)]" />
-
-          <div className="mx-auto grid max-w-[1280px] lg:grid-cols-[1.03fr_0.97fr]">
-            {/* Hero content */}
-            <div className="relative z-20 px-6 pt-10 pb-7 sm:px-9 sm:pt-12 lg:px-8 lg:pt-14 xl:pl-10">
-              <p className="text-[9px] font-bold uppercase tracking-[0.28em] text-brand-purple sm:text-[10px]">
-                Real Problems. Real Solutions.
-              </p>
-
-              <h1 className="mt-2 text-[49px] font-bold leading-[0.93] tracking-[-2.5px] text-brand-dark sm:text-[60px] lg:text-[63px] xl:text-[66px]">
-                <span className="bg-gradient-to-r from-brand-blue via-brand-purple to-[#3020d8] bg-clip-text text-transparent">
-                  AI Use Cases
-                </span>
-              </h1>
-
-              <h2 className="mt-4 max-w-[590px] text-[18px] font-bold leading-[1.14] tracking-[-0.45px] text-brand-dark sm:text-[20px]">
-                Discover how businesses are using AI to solve real challenges
-                and drive measurable results.
-              </h2>
-
-              <p className="mt-3 max-w-[555px] text-[14px] leading-[1.52] text-brand-text sm:text-[15px]">
-                Explore practical AI use cases across industries. See how AI
-                automation, data intelligence, and AI agents help businesses
-                save time, reduce costs, and grow faster.
-              </p>
-
-              <div className="mt-5 flex flex-wrap gap-4">
-                <a
-                  href="#contact"
-                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-brand-blue to-brand-purple px-6 text-[11px] font-bold text-white shadow-[0_8px_22px_rgba(37,99,235,0.2)] transition hover:-translate-y-0.5 sm:text-[12px]"
-                >
-                  Book a Free Consultation
-                  <Icon name="arrow-right" className="size-4" />
-                </a>
-
-                <a
-                  href="#how-it-works"
-                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-[#7774af] bg-white/60 px-6 text-[11px] font-bold text-brand-dark transition hover:bg-white sm:text-[12px]"
-                >
-                  <span className="grid size-5 place-items-center rounded-full bg-violet-100 text-brand-purple">
-                    <Icon name="play" className="size-2.5" />
-                  </span>
-                  See How It Works
-                </a>
-              </div>
-
-              {/* Stats */}
-              <div className="mt-7 grid max-w-[600px] grid-cols-3">
-                {[
-                  [
-                    "chart",
-                    "100+",
-                    "Real Use Cases",
-                    "bg-emerald-100 text-emerald-500",
-                  ],
-                  [
-                    "users",
-                    "25+",
-                    "Industries Covered",
-                    "bg-indigo-100 text-brand-purple",
-                  ],
-                  [
-                    "lightning",
-                    "3x",
-                    "Average Productivity Gain",
-                    "bg-violet-100 text-brand-purple",
-                  ],
-                ].map(([icon, value, label, tone], index) => (
-                  <div
-                    key={label}
-                    className={`flex items-center gap-2.5 sm:gap-3 ${
-                      index > 0
-                        ? "border-l border-indigo-100 pl-3 sm:pl-4"
-                        : ""
-                    }`}
-                  >
-                    <IconBubble
-                      icon={icon as IconName}
-                      tone={tone}
-                      size="small"
-                    />
-
-                    <div>
-                      <p className="text-[23px] font-bold leading-none tracking-[-0.8px] text-brand-blue sm:text-[25px]">
-                        {value}
-                      </p>
-
-                      <p className="mt-1 text-[9px] leading-[1.2] text-brand-text-muted sm:text-[10px]">
-                        {label}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Hero visual */}
-            <div className="relative min-h-[400px] sm:min-h-[440px] lg:min-h-[430px]">
-              <div className="absolute top-[48px] left-1/2 size-[340px] -translate-x-1/2 rounded-full border-[20px] border-white/50 bg-[#b7afff]/15 sm:size-[370px]" />
-
-              <div className="absolute top-[90px] left-1/2 size-[275px] -translate-x-1/2 rounded-full border-[18px] border-white/60" />
-
-              <img
-                src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=900&q=90"
-                alt="Business professional using AI solutions"
-                className="absolute bottom-0 left-1/2 z-10 h-[80%] w-[46%] -translate-x-1/2 rounded-t-[100px] object-cover object-top shadow-[0_18px_45px_rgba(48,42,185,0.15)]"
-              />
-
-              {/* Left cards */}
-              <div className="absolute top-8 left-0 z-20 hidden gap-3 sm:grid">
-                {[
-                  ["settings", "Automate", "Repetitive Work"],
-                  ["users", "Improve", "Customer Experience"],
-                  ["chart", "Make", "Smarter Decisions"],
-                ].map(([icon, title, text]) => (
-                  <div
-                    key={title}
-                    className="flex w-[172px] items-center gap-3 rounded-xl bg-white/95 px-3 py-3 shadow-[0_6px_22px_rgba(51,42,157,0.1)]"
-                  >
-                    <span className="grid size-10 shrink-0 place-items-center rounded-full bg-indigo-50 text-brand-purple">
-                      <Icon name={icon as IconName} className="size-5" />
-                    </span>
-
-                    <div>
-                      <p className="text-[11px] font-bold text-brand-dark">
-                        {title}
-                      </p>
-
-                      <p className="text-[10px] leading-[1.25] text-brand-text">
-                        {text}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Right cards */}
-              <div className="absolute top-8 right-0 z-20 hidden gap-3 sm:grid">
-                {[
-                  ["dollar", "Reduce", "Operational Costs"],
-                  ["arrow-up", "Drive", "Business Growth"],
-                ].map(([icon, title, text]) => (
-                  <div
-                    key={title}
-                    className="flex w-[178px] items-center gap-3 rounded-xl bg-white/95 px-3 py-3 shadow-[0_6px_22px_rgba(51,42,157,0.1)]"
-                  >
-                    <span className="grid size-10 shrink-0 place-items-center rounded-full bg-emerald-50 text-emerald-500">
-                      <Icon name={icon as IconName} className="size-5" />
-                    </span>
-
-                    <div>
-                      <p className="text-[11px] font-bold text-brand-dark">
-                        {title}
-                      </p>
-
-                      <p className="text-[10px] leading-[1.25] text-brand-text">
-                        {text}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="absolute right-3 bottom-10 z-20 rotate-[-8deg] font-hand text-[21px] leading-[0.95] text-brand-blue">
-                Real
-                <br />
-                Use Cases
-                <br />
-                Real Impact
-              </div>
-            </div>
-          </div>
-        </section>
+ <PageHero
+  titleId="ai-use-cases-title"
+  eyebrow="REAL PROBLEMS. REAL SOLUTIONS."
+  title="AI"
+  highlightedTitle="Use Cases"
+  description="Discover how businesses are using AI to solve real challenges and drive measurable results. Explore practical AI use cases across industries. See how AI automation, data intelligence, and AI agents help businesses save time, reduce costs, and grow faster."
+  image="/resources-images/ai-usecases-resources-hero.png"
+  imageAlt="Business professional smiling behind a laptop"
+  primaryAction={{
+    label: "Book a Free Consultation",
+    href: "/contact",
+    icon: "arrow",
+  }}
+  secondaryAction={{
+    label: "See How It Works",
+    href: "/how-it-works",
+    icon: "play",
+  }}
+  stats={[
+    {
+      icon: "chart",
+      value: "100+",
+      label: "Real Use Cases",
+    },
+    {
+      icon: "users",
+      value: "25+",
+      label: "Industries Covered",
+    },
+    {
+      icon: "rocket",
+      value: "3x",
+      label: "Average Productivity Gain",
+    },
+  ]}
+  benefitCards={[
+    {
+      title: "Automate",
+      description: "Repetitive Work",
+      icon: "settings",
+    },
+    {
+      title: "Improve",
+      description: "Customer Experience",
+      icon: "users",
+    },
+    {
+      title: "Make",
+      description: "Smarter Decisions",
+      icon: "chart",
+    },
+    {
+      title: "Reduce",
+      description: "Operational Costs",
+      icon: "chart",
+      variant: "green",
+    },
+    {
+      title: "Drive",
+      description: "Business Growth",
+      icon: "rocket",
+      variant: "green",
+    },
+  ]}
+  handwrittenNote={{
+    lines: [
+      "Real",
+      "Use Cases",
+      "Real Impact",
+    ],
+   position: "right-[1%] bottom-[15%]",
+  rotate: "-rotate-12",
+  }}
+/>
 
         {/* =====================================================
             INDUSTRIES
         ====================================================== */}
 
-        <section className="mx-auto max-w-[1280px] px-5 pt-8 sm:px-7 lg:px-8">
+        <section className="mx-auto max-w-7xl px-5 pt-8 sm:px-7 lg:px-8">
           <SectionHeading
             eyebrow="Explore Use Cases by Industry"
             title="AI Use Cases Across Every Industry"
@@ -633,14 +535,14 @@ export default function AIUseCasesPage() {
                 <IconBubble
                   icon={item.icon}
                   tone={item.tone}
-                  size="small"
+                  size="normal"
                 />
 
-                <h3 className="mt-3 pr-10 text-[13px] font-bold leading-[1.25] tracking-[-0.2px] text-brand-dark sm:text-[14px]">
+                <h3 className="mt-3 pr-10 text-lg font-bold leading-[1.25] tracking-[-0.2px] text-brand-dark sm:text-xl">
                   {item.title}
                 </h3>
 
-                <p className="mt-1.5 max-w-[235px] pr-8 text-[12px] leading-[1.45] text-brand-text sm:text-[13px]">
+                <p className="mt-1.5 max-w-[235px] pr-8 text-xs leading-[1.45] text-brand-text sm:text-sm">
                   {item.text}
                 </p>
 
@@ -672,10 +574,10 @@ export default function AIUseCasesPage() {
                 <IconBubble
                   icon={icon as IconName}
                   tone={tone}
-                  size="small"
+                  size="normal"
                 />
 
-                <h3 className="mt-2.5 text-[10px] font-bold leading-[1.3] text-brand-dark sm:text-[11px]">
+                <h3 className="mt-2.5 text-sm font-bold leading-[1.3] text-brand-dark sm:text-md">
                   {title}
                 </h3>
               </article>
@@ -707,18 +609,18 @@ export default function AIUseCasesPage() {
                   <IconBubble
                     icon={item.icon}
                     tone={item.tone}
-                    size="small"
+                    size="normal"
                   />
 
-                  <p className="mt-2 text-[11px] font-bold text-brand-blue">
+                  <p className="mt-2 text-xs font-bold text-brand-blue">
                     {item.number}
                   </p>
 
-                  <h3 className="mt-0.5 text-[13px] font-bold leading-[1.25] text-brand-dark sm:text-[14px]">
+                  <h3 className="mt-0.5 text-sm font-bold leading-[1.25] text-brand-dark sm:text-lg">
                     {item.title}
                   </h3>
 
-                  <p className="mx-auto mt-1.5 max-w-[215px] text-[12px] leading-[1.45] text-brand-text sm:text-[13px]">
+                  <p className="mx-auto mt-1.5 max-w-[215px] text-xs leading-[1.45] text-brand-text sm:text-sm">
                     {item.text}
                   </p>
 
@@ -739,7 +641,7 @@ export default function AIUseCasesPage() {
 
         <section className="mx-auto grid max-w-[1280px] gap-5 px-5 pt-8 sm:px-7 lg:grid-cols-[1fr_1.12fr] lg:px-8">
           <div>
-            <p className="text-[9px] font-bold uppercase tracking-[0.28em] text-brand-purple sm:text-[10px]">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-brand-purple sm:text-sm">
               Real Use Cases. Real Results.
             </p>
 
@@ -747,7 +649,7 @@ export default function AIUseCasesPage() {
               Businesses Are Achieving More with AI
             </h2>
 
-            <p className="mt-2 max-w-[550px] text-[13px] leading-[1.5] text-brand-text sm:text-[14px]">
+            <p className="mt-2 max-w-[550px] text-[13px] leading-[1.5] text-brand-text sm:text-[16px]">
               See how our AI solutions are solving real-world challenges across
               industries.
             </p>
@@ -793,7 +695,7 @@ export default function AIUseCasesPage() {
                     {value}
                   </p>
 
-                  <p className="mx-auto mt-1.5 max-w-[125px] text-[10px] leading-[1.3] text-brand-text">
+                  <p className="mx-auto mt-1.5 max-w-[125px] text-[10px] font-semibold leading-[1.3] text-brand-text">
                     {label}
                   </p>
                 </div>
@@ -850,7 +752,7 @@ export default function AIUseCasesPage() {
                         {value}
                       </p>
 
-                      <p className="mt-1 text-[9px] leading-[1.25] text-brand-text sm:text-[10px]">
+                      <p className="mt-1 text-[9px] leading-[1.25] font-semibold text-brand-text sm:text-[10px]">
                         {label}
                       </p>
                     </div>
@@ -867,7 +769,7 @@ export default function AIUseCasesPage() {
 
         <section
           id="contact"
-          className="relative isolate mx-1 mt-8 overflow-hidden rounded-[14px] bg-[linear-gradient(110deg,#07154d,#0c1772_55%,#2836e4)] px-5 py-7 text-center text-white sm:mx-3 sm:py-8"
+          className="relative isolate mx-1 my-6 overflow-hidden rounded-[14px] bg-[linear-gradient(110deg,#07154d,#0c1772_55%,#2836e4)] px-5 py-7 text-center text-white sm:mx-3 sm:py-8"
         >
           <div className="absolute inset-0 -z-10 opacity-30 [background-image:repeating-radial-gradient(ellipse_at_0%_120%,transparent_0_12px,#7180ff_13px_14px)]" />
 

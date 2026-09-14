@@ -474,7 +474,7 @@ const navItems: NavItem[] = [
         {
           items: [
             {
-              title: "our Team",
+              title: "Our Team",
               href: "/company/our-team"
             },
             {

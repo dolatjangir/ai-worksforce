@@ -1,5 +1,6 @@
 "use client";
 
+import PageHero from "@/components/company-hero/reusable-hero";
 import {
   ArrowRight,
   BarChart3,
@@ -72,22 +73,22 @@ const leadership = [
   {
     name: "Rahul Mehta",
     role: "CEO & Founder",
-    image: "/images/team/rahul-mehta.webp",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     name: "Priya Sharma",
     role: "Chief Technology Officer",
-    image: "/images/team/priya-sharma.webp",
+    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     name: "Amit Kumar",
     role: "Chief Operating Officer",
-    image: "/images/team/amit-kumar.webp",
+    image: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     name: "Sneha Verma",
     role: "Head of People & Culture",
-    image: "/images/team/sneha-verma.webp",
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
 
@@ -95,32 +96,32 @@ const teamMembers = [
   {
     name: "Vikram Singh",
     role: "AI Solutions Architect",
-    image: "/images/team/vikram-singh.webp",
+    image: "https://plus.unsplash.com/premium_photo-1766341848872-bbf0bf698038?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     name: "Neha Patel",
     role: "Data Scientist",
-    image: "/images/team/neha-patel.webp",
+    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=761&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     name: "Arjun Rao",
     role: "Automation Engineer",
-    image: "/images/team/arjun-rao.webp",
+    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     name: "Meera Iyer",
     role: "AI Product Manager",
-    image: "/images/team/meera-iyer.webp",
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     name: "Karan Malhotra",
     role: "Customer Success Lead",
-    image: "/images/team/karan-malhotra.webp",
+    image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     name: "Ritika Soni",
     role: "Marketing Manager",
-    image: "/images/team/ritika-soni.webp",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
 
@@ -229,185 +230,7 @@ function TeamCard({
   );
 }
 
-/* =========================================================
-   FOOTER
-========================================================= */
 
-function Footer() {
-  return (
-    <footer className="bg-white">
-      <div className="mx-auto max-w-7xl px-5 py-9 sm:px-7 lg:px-8 lg:py-11">
-        <div className="grid gap-9 md:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_0.9fr]">
-          {/* Brand */}
-
-          <div>
-            <a
-              href="/"
-              className="text-2xl font-bold tracking-tight text-[var(--color-heading)] sm:text-3xl"
-            >
-              <span className="text-[var(--color-primary)]">
-                AI
-              </span>{" "}
-              WorksForce
-            </a>
-
-            <p className="mt-1 text-xs text-[var(--color-text-muted)] sm:text-sm">
-              Automate. Accelerate. Grow.
-            </p>
-
-            <p className="mt-5 max-w-sm text-sm leading-relaxed text-[var(--color-text)] sm:text-base lg:text-lg">
-              Empowering businesses with AI automation,
-              intelligent agents, and modern workflows for a
-              smarter tomorrow.
-            </p>
-          </div>
-
-          {/* Quick Links */}
-
-          <div>
-            <h3 className="text-base font-bold text-[var(--color-heading)] sm:text-lg">
-              Quick Links
-            </h3>
-
-            <ul className="mt-4 space-y-2.5">
-              {[
-                ["Home", "/"],
-                [
-                  "About AIWorksForce",
-                  "/company/about",
-                ],
-                ["Our Team", "/company/our-team"],
-                ["Careers", "/company/careers"],
-                ["News & Updates", "/resources"],
-              ].map(([label, href]) => (
-                <li key={label}>
-                  <a
-                    href={href}
-                    className="text-sm text-[var(--color-text)] transition-colors hover:text-[var(--color-primary)] sm:text-base"
-                  >
-                    {label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Solutions */}
-
-          <div>
-            <h3 className="text-base font-bold text-[var(--color-heading)] sm:text-lg">
-              Our Solutions
-            </h3>
-
-            <ul className="mt-4 space-y-2.5">
-              {[
-                "AI Automation",
-                "AI Agents",
-                "AI Customer Operations",
-                "AI Sales & Outreach",
-                "AI Digital Marketing",
-              ].map((item) => (
-                <li key={item}>
-                  <a
-                    href="#"
-                    className="text-sm text-[var(--color-text)] transition-colors hover:text-[var(--color-primary)] sm:text-base"
-                  >
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Social */}
-
-          <div>
-            <h3 className="text-base font-bold text-[var(--color-heading)] sm:text-lg">
-              Connect With Us
-            </h3>
-
-            <div className="mt-4 flex items-center gap-2">
-              {[
-                {
-                  icon: Linkedin,
-                  label: "LinkedIn",
-                },
-                {
-                  icon: Twitter,
-                  label: "Twitter",
-                },
-                {
-                  icon: Youtube,
-                  label: "YouTube",
-                },
-                {
-                  icon: Instagram,
-                  label: "Instagram",
-                },
-              ].map((social) => {
-                const SocialIcon = social.icon;
-
-                return (
-                  <a
-                    key={social.label}
-                    href="#"
-                    aria-label={social.label}
-                    className="grid size-9 place-items-center text-[var(--color-heading)] transition-colors hover:text-[var(--color-primary)]"
-                  >
-                    <SocialIcon className="size-5" />
-                  </a>
-                );
-              })}
-            </div>
-
-            <p className="mt-4 text-sm leading-relaxed text-[var(--color-text)] sm:text-base">
-              Let&apos;s build a smarter future together.
-            </p>
-
-            <a
-              href="/company/contact"
-              className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-[var(--color-primary)] sm:text-base"
-            >
-              Get in Touch
-              <ArrowRight className="size-4" />
-            </a>
-          </div>
-        </div>
-
-        {/* Bottom */}
-
-        <div className="mt-9 flex flex-col gap-4 border-t border-slate-100 pt-5 text-xs text-[var(--color-text-muted)] sm:flex-row sm:items-center sm:justify-between sm:text-sm">
-          <p>
-            © 2024 AIWorksForce. All rights reserved.
-          </p>
-
-          <div className="flex flex-wrap gap-5">
-            <a
-              href="/privacy-policy"
-              className="transition hover:text-[var(--color-primary)]"
-            >
-              Privacy Policy
-            </a>
-
-            <a
-              href="/terms"
-              className="transition hover:text-[var(--color-primary)]"
-            >
-              Terms of Service
-            </a>
-
-            <a
-              href="/company/contact"
-              className="transition hover:text-[var(--color-primary)]"
-            >
-              Contact
-            </a>
-          </div>
-        </div>
-      </div>
-    </footer>
-  );
-}
 
 /* =========================================================
    PAGE
@@ -425,173 +248,55 @@ export default function OurTeamPage() {
           HERO
       ====================================================== */}
 
-      <section className="relative isolate overflow-hidden rounded-b-2xl bg-[linear-gradient(105deg,#ffffff_0%,#f9fbff_48%,#edf2ff_100%)]">
-        <div className="pointer-events-none absolute -right-40 -top-32 -z-10 size-[32rem] rounded-full bg-indigo-200/40 blur-3xl" />
-
-        <div className="mx-auto grid max-w-7xl lg:min-h-[34rem] lg:grid-cols-[1fr_1fr]">
-          {/* Hero Content */}
-
-          <div className="relative z-20 px-5 pb-10 pt-10 sm:px-8 sm:pb-12 sm:pt-14 lg:px-8 lg:py-14 xl:pl-10">
-            <p className="text-xs font-bold uppercase tracking-[0.3em] text-[var(--color-primary)] sm:text-sm">
-              People. Ideas. Impact.
-            </p>
-
-            <h1 className="mt-4 max-w-2xl text-5xl font-bold leading-[0.94] tracking-tight text-[var(--color-heading)] sm:text-6xl lg:text-7xl">
-              Meet{" "}
-              <span className="bg-gradient-to-r from-[var(--color-primary)] via-[var(--color-violet-600)] to-[var(--color-primary)] bg-clip-text text-transparent">
-                Our Team
-              </span>
-            </h1>
-
-            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[var(--color-text)] sm:text-xl lg:text-2xl">
-              A passionate team of AI experts, innovators, and
-              problem-solvers working together to help businesses
-              build a smarter, more efficient tomorrow.
-            </p>
-
-            {/* Buttons */}
-
-            <div className="mt-7 flex flex-wrap gap-3 sm:gap-4">
-              <a
-                href="/company/careers"
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-violet-600)] px-5 text-sm font-bold text-white shadow-[0_10px_25px_rgba(37,99,235,0.2)] transition hover:-translate-y-0.5 sm:px-6 sm:text-base"
-              >
-                Join Our Journey
-                <ArrowRight className="size-4" />
-              </a>
-
-              <a
-                href="#culture"
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg border border-[var(--color-violet-600)]/50 bg-white/80 px-5 text-sm font-bold text-[var(--color-heading)] transition hover:bg-white sm:px-6 sm:text-base"
-              >
-                <span className="grid size-6 place-items-center rounded-full bg-indigo-50 text-[var(--color-primary)]">
-                  <Play className="size-3 fill-current" />
-                </span>
-
-                Watch Our Team Video
-              </a>
-            </div>
-
-            {/* Stats */}
-
-            <div className="mt-9 grid grid-cols-2 gap-y-6 sm:grid-cols-4 sm:gap-0">
-              {/* 50+ */}
-
-              <div className="flex items-center gap-3 sm:pr-4">
-                <IconCircle className="bg-indigo-100 text-[var(--color-primary)]">
-                  <Users className="size-6 sm:size-7" />
-                </IconCircle>
-
-                <div>
-                  <p className="text-2xl font-bold leading-none text-[var(--color-primary)] sm:text-3xl">
-                    50+
-                  </p>
-
-                  <p className="mt-1 text-xs leading-tight text-[var(--color-text-muted)] sm:text-sm">
-                    Team Members
-                  </p>
-                </div>
-              </div>
-
-              {/* Locations */}
-
-              <div className="flex items-center gap-3 border-l border-indigo-100 pl-4 sm:pr-4">
-                <IconCircle className="bg-indigo-100 text-[var(--color-primary)]">
-                  <Globe2 className="size-6 sm:size-7" />
-                </IconCircle>
-
-                <div>
-                  <p className="text-2xl font-bold leading-none text-[var(--color-primary)] sm:text-3xl">
-                    5+
-                  </p>
-
-                  <p className="mt-1 text-xs leading-tight text-[var(--color-text-muted)] sm:text-sm">
-                    Locations
-                  </p>
-                </div>
-              </div>
-
-              {/* Projects */}
-
-              <div className="flex items-center gap-3 sm:border-l sm:border-indigo-100 sm:pl-4 sm:pr-4">
-                <IconCircle className="bg-indigo-100 text-[var(--color-primary)]">
-                  <Lightbulb className="size-6 sm:size-7" />
-                </IconCircle>
-
-                <div>
-                  <p className="text-2xl font-bold leading-none text-[var(--color-primary)] sm:text-3xl">
-                    100+
-                  </p>
-
-                  <p className="mt-1 text-xs leading-tight text-[var(--color-text-muted)] sm:text-sm">
-                    AI Projects Delivered
-                  </p>
-                </div>
-              </div>
-
-              {/* Mission */}
-
-              <div className="flex items-center gap-3 sm:border-l sm:border-indigo-100 sm:pl-4">
-                <IconCircle className="bg-indigo-100 text-[var(--color-primary)]">
-                  <Heart className="size-6 fill-current sm:size-7" />
-                </IconCircle>
-
-                <div>
-                  <p className="text-2xl font-bold leading-none text-[var(--color-primary)] sm:text-3xl">
-                    1
-                  </p>
-
-                  <p className="mt-1 text-xs leading-tight text-[var(--color-text-muted)] sm:text-sm">
-                    Shared Mission
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Hero Image */}
-
-          <div className="relative min-h-[22rem] sm:min-h-[30rem] lg:min-h-0">
-            <div className="absolute left-1/2 top-1/2 -z-10 size-[30rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-100/70 blur-3xl" />
-
-            <img
-              src="/images/team/team-hero.webp"
-              alt="AI WorksForce team"
-              className="absolute inset-x-0 bottom-0 mx-auto w-full max-w-[41rem] object-contain"
-            />
-
-            {/* Handwritten note */}
-
-            <div className="absolute right-3 top-16 z-20 hidden rotate-[-5deg] font-hand text-2xl leading-tight text-[var(--color-primary)] lg:block">
-              Smarter
-              <br />
-              People
-              <br />
-              Brighter
-              <br />
-              Tomorrow
-            </div>
-
-            {/* Floating card */}
-
-            <div className="absolute bottom-5 right-0 z-30 hidden w-52 rounded-xl bg-white/95 p-4 shadow-[0_12px_35px_rgba(24,74,140,0.12)] sm:block">
-              <div className="flex items-center gap-3">
-                <IconCircle className="bg-indigo-100 text-[var(--color-primary)]">
-                  <Users className="size-6" />
-                </IconCircle>
-
-                <h3 className="text-sm font-bold leading-tight text-[var(--color-heading)] sm:text-base">
-                  A Team
-                  <br />
-                  That Builds
-                  <br />
-                  What&apos;s Next
-                </h3>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+    <PageHero
+  titleId="our-team-hero-title"
+  eyebrow="People. Ideas. Impact."
+  title="Meet"
+  highlightedTitle="Our Team"
+  description="A passionate team of AI experts, innovators, and problem-solvers working together to help businesses build a smarter, more efficient tomorrow."
+  image="/company-images/how-we-work-company-hero.png"
+  imageAlt="AI WorksForce team"
+  primaryAction={{
+    label: "Join Our Journey",
+    href: "/company/careers",
+    icon: "arrow",
+  }}
+  secondaryAction={{
+    label: "Watch Our Team Video",
+    href: "#culture",
+    icon: "play",
+  }}
+  stats={[
+    {
+      icon: "users",
+      value: "50+",
+      label: "Team Members",
+    },
+    {
+      icon: "globe",
+      value: "5+",
+      label: "Locations",
+    },
+    {
+      icon: "lightbulb",
+      value: "100+",
+      label: "AI Projects Delivered",
+    },
+    {
+      icon: "heart",
+      value: "1",
+      label: "Shared Mission",
+    },
+  ]}
+  resultCard={{
+    icon: "users",
+    lines: [
+      "A Team",
+      "That Builds",
+      "What's Next",
+    ],
+  }}
+/>
 
       {/* =====================================================
           LEADERSHIP
@@ -708,18 +413,18 @@ export default function OurTeamPage() {
           <div className="grid gap-5 sm:grid-cols-[1fr_auto] sm:items-center">
             <div className="relative overflow-hidden rounded-xl">
               <img
-                src="/images/team/team-culture.webp"
+                src="/company-images/our-team-company-bottom.png"
                 alt="AI WorksForce team culture"
                 className="aspect-[1.3/1] w-full object-cover"
               />
 
-              <div className="absolute left-5 top-5 hidden rotate-[-4deg] font-hand text-2xl leading-tight text-[var(--color-heading)] sm:block">
+              {/* <div className="absolute left-5 top-5 hidden rotate-[-4deg] font-hand text-2xl leading-tight text-[var(--color-heading)] sm:block">
                 Ideas
                 <br />
                 People
                 <br />
                 Progress
-              </div>
+              </div> */}
             </div>
 
             <div className="space-y-4">
@@ -782,7 +487,7 @@ export default function OurTeamPage() {
           {/* Person */}
 
           <img
-            src="/images/team/neha-patel.webp"
+            src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="Neha Patel"
             className="size-20 rounded-full border-4 border-white object-cover shadow-md sm:size-24"
           />
@@ -829,7 +534,7 @@ export default function OurTeamPage() {
           CTA
       ====================================================== */}
 
-      <section className="relative isolate mx-1 overflow-hidden rounded-2xl bg-gradient-to-r from-[#07154d] via-[#0b176f] to-[#2437e9] px-6 py-8 text-white sm:mx-3 sm:px-10 sm:py-9">
+      <section className="relative isolate mx-1 my-4 overflow-hidden rounded-2xl bg-gradient-to-r from-[#07154d] via-[#0b176f] to-[#2437e9] px-6 py-8 text-white sm:mx-3 sm:px-10 sm:py-9">
         {/* Decorative background */}
 
         <div className="pointer-events-none absolute inset-0 -z-10 opacity-20 [background-image:repeating-radial-gradient(ellipse_at_0%_120%,transparent_0_0.75rem,#7180ff_0.8rem_0.875rem)]" />

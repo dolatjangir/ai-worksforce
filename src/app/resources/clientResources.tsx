@@ -1,5 +1,6 @@
 "use client";
 
+import PageHero from "@/components/resources-hero/reusable-hero";
 import { useState, type ReactNode } from "react";
 
 /* ============================================================
@@ -274,7 +275,7 @@ const featuredResources = [
       "Learn how to identify opportunities, choose the right tools, and implement AI automation step by step.",
     date: "Sep 10, 2024",
     readTime: "8 min read",
-    image: "/images/resources/ai-automation-guide.webp",
+    image: "https://plus.unsplash.com/premium_photo-1725907643701-9ba38affe7bb?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGFpJTIwYXV0b21hdGlvbnxlbnwwfHwwfHx8MA%3D%3D",
   },
   {
     type: "Case Study",
@@ -283,7 +284,7 @@ const featuredResources = [
       "See how we helped a growing retail brand automate marketing and customer support to achieve 3x higher sales.",
     date: "Aug 28, 2024",
     readTime: "6 min read",
-    image: "/images/resources/retail-case-study.webp",
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FzZSUyMHN0dWR5fGVufDB8fDB8fHww",
   },
   {
     type: "Blog",
@@ -292,7 +293,7 @@ const featuredResources = [
       "A curated list of powerful AI tools to boost productivity, improve customer experience, and drive growth.",
     date: "Sep 2, 2024",
     readTime: "7 min read",
-    image: "/images/resources/ai-tools.webp",
+    image: "https://images.unsplash.com/photo-1519337265831-281ec6cc8514?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YmxvZ3xlbnwwfHwwfHx8MA%3D%3D",
   },
 ];
 
@@ -328,237 +329,79 @@ export default function ResourcesPage() {
             HERO
         ===================================================== */}
 
-        <section className="relative isolate overflow-hidden rounded-b-[1.25rem] bg-[linear-gradient(110deg,#ffffff_0%,#f8f9ff_48%,#eff0ff_100%)]">
-          {/* Background glow */}
-
-          <div className="pointer-events-none absolute -right-40 -top-40 -z-10 size-128 rounded-full bg-[radial-gradient(circle,#bbb5ff80_0%,transparent_70%)] blur-3xl" />
-
-          <div className="mx-auto grid max-w-7xl lg:grid-cols-[1.05fr_0.95fr]">
-            {/* Hero copy */}
-
-            <div className="relative z-20 px-5 py-10 sm:px-8 sm:py-12 lg:px-8 lg:py-14 xl:pl-10">
-              <p className="text-xs font-bold uppercase tracking-[0.28em] text-brand-purple sm:text-sm">
-                Knowledge. Strategies. Real Impact.
-              </p>
-
-              <h1 className="mt-3 max-w-3xl text-5xl font-bold leading-[0.96] tracking-tight text-brand-dark sm:text-6xl lg:text-7xl">
-                Resources for a{" "}
-                <span className="bg-gradient-to-r from-brand-blue via-brand-purple to-brand-blue bg-clip-text text-transparent">
-                  Smarter Tomorrow
-                </span>
-              </h1>
-
-              <p className="mt-5 max-w-2xl text-base leading-relaxed text-brand-text sm:text-lg lg:text-xl">
-                Explore our collection of guides, case studies, blog
-                posts, and more to learn how AI can transform your
-                business.
-              </p>
-
-              {/* Hero stats */}
-
-              <div className="mt-7 grid grid-cols-2 gap-5 sm:grid-cols-4 sm:gap-0">
-                <div className="flex items-center gap-3">
-                  <IconBubble
-                    icon="book"
-                    className="bg-indigo-100 text-brand-purple"
-                  />
-
-                  <div>
-                    <p className="text-2xl font-bold leading-none tracking-tight text-brand-blue sm:text-3xl">
-                      500+
-                    </p>
-
-                    <p className="mt-1 text-xs leading-tight text-brand-text-muted sm:text-sm">
-                      Resources
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 sm:border-l sm:border-indigo-100 sm:pl-4">
-                  <IconBubble
-                    icon="users"
-                    className="bg-indigo-100 text-brand-purple"
-                  />
-
-                  <div>
-                    <p className="text-2xl font-bold leading-none tracking-tight text-brand-blue sm:text-3xl">
-                      25K+
-                    </p>
-
-                    <p className="mt-1 text-xs leading-tight text-brand-text-muted sm:text-sm">
-                      Readers
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 sm:border-l sm:border-indigo-100 sm:pl-4">
-                  <IconBubble
-                    icon="lightbulb"
-                    className="bg-violet-100 text-brand-purple"
-                  />
-
-                  <div>
-                    <p className="text-2xl font-bold leading-none tracking-tight text-brand-blue sm:text-3xl">
-                      Expert
-                    </p>
-
-                    <p className="mt-1 text-xs leading-tight text-brand-text-muted sm:text-sm">
-                      Insights
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 sm:border-l sm:border-indigo-100 sm:pl-4">
-                  <IconBubble
-                    icon="chart"
-                    className="bg-indigo-100 text-brand-purple"
-                  />
-
-                  <div>
-                    <p className="text-2xl font-bold leading-none tracking-tight text-brand-blue sm:text-3xl">
-                      Real
-                    </p>
-
-                    <p className="mt-1 text-xs leading-tight text-brand-text-muted sm:text-sm">
-                      Business Impact
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Buttons */}
-
-              <div className="mt-7 flex flex-wrap gap-3 sm:gap-4">
-                <a
-                  href="#resources"
-                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-brand-blue to-brand-purple px-5 text-sm font-bold text-white shadow-[0_8px_22px_rgba(37,99,235,0.2)] transition-all hover:-translate-y-0.5 sm:px-6"
-                >
-                  Explore All Resources
-
-                  <Icon
-                    name="arrow"
-                    className="size-4"
-                  />
-                </a>
-
-                <a
-                  href="#"
-                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-brand-purple/50 bg-white/70 px-5 text-sm font-bold text-brand-dark transition-colors hover:bg-white sm:px-6"
-                >
-                  <span className="grid size-5 place-items-center rounded-full bg-violet-100 text-brand-purple">
-                    <Icon
-                      name="play"
-                      className="size-2.5"
-                    />
-                  </span>
-
-                  Watch Overview
-                </a>
-              </div>
-            </div>
-
-            {/* ==================================================
-                HERO VISUAL
-            =================================================== */}
-
-            <div className="relative min-h-[25rem] sm:min-h-[31rem] lg:min-h-0">
-              <div className="absolute left-1/2 top-5 size-80 -translate-x-1/2 rounded-full bg-indigo-100/70 blur-3xl sm:size-128" />
-
-              {/* Main image */}
-
-              <div className="absolute bottom-0 left-1/2 z-10 w-[19rem] -translate-x-1/2 sm:w-[25rem] lg:w-[29rem]">
-                <img
-                  src="/images/resources/resources-hero.webp"
-                  alt="AI WorksForce resources"
-                  className="h-auto w-full object-contain"
-                />
-              </div>
-
-              {/* Resource menu card */}
-
-              <div className="absolute right-0 top-5 z-30 hidden w-44 rounded-xl bg-white/95 p-4 shadow-[0_10px_30px_rgba(51,42,157,0.1)] sm:block lg:w-48">
-                <div className="space-y-4">
-                  {[
-                    {
-                      icon: "book" as IconName,
-                      title: "Guides",
-                      text: "Learn step by step",
-                    },
-                    {
-                      icon: "file" as IconName,
-                      title: "Case Studies",
-                      text: "Real world results",
-                    },
-                    {
-                      icon: "pen" as IconName,
-                      title: "Blog",
-                      text: "Latest insights",
-                    },
-                    {
-                      icon: "help" as IconName,
-                      title: "FAQs",
-                      text: "Quick answers",
-                    },
-                  ].map((item) => (
-                    <div
-                      key={item.title}
-                      className="flex items-center gap-3"
-                    >
-                      <IconBubble
-                        icon={item.icon}
-                        className="size-9 bg-indigo-100 text-brand-purple"
-                      />
-
-                      <div>
-                        <p className="text-xs font-bold text-brand-dark sm:text-sm">
-                          {item.title}
-                        </p>
-
-                        <p className="mt-0.5 text-[0.625rem] leading-tight text-brand-text-muted sm:text-xs">
-                          {item.text}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Handwritten message */}
-
-              <div className="absolute left-0 top-28 z-30 hidden -rotate-6 font-hand text-2xl leading-[0.95] text-brand-blue lg:block">
-                Better
-                <br />
-                Knowledge
-                <br />
-                Brighter
-                <br />
-                Business
-              </div>
-
-              <svg
-                className="absolute left-12 top-48 z-30 hidden h-20 w-24 text-brand-blue lg:block"
-                viewBox="0 0 90 80"
-                fill="none"
-                aria-hidden="true"
-              >
-                <path
-                  d="M12 10C28 30 43 42 72 55"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                />
-
-                <path
-                  d="m63 47 10 8-12 2"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </div>
-          </div>
-        </section>
+   <PageHero
+  titleId="resources-hero-title"
+  eyebrow="Knowledge. Strategies. Real Impact."
+  title="Resources for a"
+  highlightedTitle="Smarter Tomorrow"
+  description="Explore our collection of guides, case studies, blog posts, and more to learn how AI can transform your business."
+  image="/resources-images/resources-page-hero.png"
+  imageAlt="AI WorksForce resources"
+  primaryAction={{
+    label: "Explore All Resources",
+    href: "#resources",
+    icon: "arrow",
+  }}
+  secondaryAction={{
+    label: "Watch Overview",
+    href: "#",
+    icon: "play",
+  }}
+  stats={[
+    {
+      icon: "book",
+      value: "500+",
+      label: "Resources",
+    },
+    {
+      icon: "users",
+      value: "25K+",
+      label: "Readers",
+    },
+    {
+      icon: "lightbulb",
+      value: "Expert",
+      label: "Insights",
+    },
+  
+  ]}
+  benefitCards={[
+    {
+      title: "Guides",
+      description: "Learn step by step",
+      icon: "book",
+      position: "-right-12 top-5",
+    },
+    {
+      title: "Case Studies",
+      description: "Real world results",
+      icon: "file",
+      position: "-right-12 top-[20%]",
+    },
+    {
+      title: "Blog",
+      description: "Latest insights",
+      icon: "pen",
+      position: "-right-12 top-[36%]",
+    },
+    {
+      title: "FAQs",
+      description: "Quick answers",
+      icon: "help",
+      position: "-right-12 top-[52%]",
+    },
+  ]}
+  handwrittenNote={{
+    lines: [
+      "Better",
+      "Knowledge",
+      "Brighter",
+      "Business",
+    ],
+    position: "left-20 top-10",
+    rotate: "-rotate-18",
+  }}
+/>
 
         {/* ====================================================
             CATEGORY SECTION
@@ -801,7 +644,7 @@ export default function ResourcesPage() {
             <div className="flex flex-col gap-5 border-t border-blue-100 pt-6 sm:flex-row sm:items-center lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
               <div className="mx-auto size-28 shrink-0 overflow-hidden rounded-full border-4 border-indigo-100 bg-blue-50 sm:size-32 lg:mx-0">
                 <img
-                  src="/images/testimonials/rahul-mehta.webp"
+                  src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   alt="Rahul Mehta"
                   className="h-full w-full object-cover"
                 />

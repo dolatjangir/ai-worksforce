@@ -1,5 +1,6 @@
 "use client";
 
+import PageHero from "@/components/company-hero/reusable-hero";
 import {
   ArrowRight,
   CalendarDays,
@@ -43,7 +44,7 @@ type Company = {
    CONSTANTS
 ========================================================= */
 
-const HERO_IMAGE = "/images/book-demo/book-demo-hero.webp";
+const HERO_IMAGE = "/company-images/book-demo-company-hero.png";
 
 /* =========================================================
    NAVIGATION
@@ -442,157 +443,50 @@ export default function BookDemoPage() {
           HERO
       ====================================================== */}
 
-      <section className="relative isolate overflow-hidden rounded-b-2xl bg-[linear-gradient(105deg,#ffffff_0%,#f9fbff_48%,#edf2ff_100%)]">
-        <div className="pointer-events-none absolute -right-40 -top-32 -z-10 size-[30rem] rounded-full bg-indigo-200/40 blur-3xl" />
-
-        <div className="mx-auto grid max-w-7xl lg:min-h-[34rem] lg:grid-cols-2">
-          {/* Hero Copy */}
-
-          <div className="relative z-20 px-5 pb-10 pt-10 sm:px-8 sm:pb-12 sm:pt-14 lg:px-8 lg:py-14 xl:pl-10">
-            <p className="text-xs font-bold uppercase tracking-[0.3em] text-[var(--color-primary)] sm:text-sm">
-              Let&apos;s Talk
-            </p>
-
-            <h1 className="mt-4 max-w-3xl text-5xl font-bold leading-[0.94] tracking-tight text-[var(--color-heading)] sm:text-6xl lg:text-7xl">
-              Need{" "}
-              <span className="bg-gradient-to-r from-[var(--color-primary)] via-[var(--color-violet-600)] to-[var(--color-primary)] bg-clip-text text-transparent">
-                personalized help?
-              </span>
-            </h1>
-
-            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[var(--color-text)] sm:text-xl lg:text-2xl">
-              Book a demo with our AI experts and discover how
-              AI WorksForce can help you automate, scale, and grow
-              your business — tailored to your unique needs.
-            </p>
-
-            {/* Hero Buttons */}
-
-            <div className="mt-7 flex flex-wrap gap-3 sm:gap-4">
-              <a
-                href="#demo-form"
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-violet-600)] px-5 text-sm font-bold text-white shadow-lg transition hover:-translate-y-0.5 sm:px-6 sm:text-base"
-              >
-                Book a Free Consultation
-                <ArrowRight className="size-4" />
-              </a>
-
-              <a
-                href="#"
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg border border-[var(--color-violet-600)]/50 bg-white/80 px-5 text-sm font-bold text-[var(--color-heading)] transition hover:bg-white sm:px-6 sm:text-base"
-              >
-                <span className="grid size-6 place-items-center rounded-full bg-indigo-50 text-[var(--color-primary)]">
-                  <Play className="size-3 fill-current" />
-                </span>
-
-                Watch Our Video
-              </a>
-            </div>
-
-            {/* Hero Stats */}
-
-            <div className="mt-9 grid grid-cols-1 gap-5 sm:grid-cols-3 sm:gap-0">
-              {/* Flexible */}
-
-              <div className="flex items-center gap-3 sm:pr-5">
-                <span className="grid size-11 shrink-0 place-items-center rounded-full bg-indigo-100 text-[var(--color-primary)] sm:size-12">
-                  <CalendarDays className="size-6 sm:size-7" />
-                </span>
-
-                <div>
-                  <p className="text-lg font-bold leading-tight text-[var(--color-heading)] sm:text-xl">
-                    Flexible
-                  </p>
-
-                  <p className="text-sm leading-tight text-[var(--color-text-muted)] sm:text-base">
-                    Scheduling
-                  </p>
-                </div>
-              </div>
-
-              {/* Experts */}
-
-              <div className="flex items-center gap-3 border-indigo-100 sm:border-l sm:pl-5 sm:pr-5">
-                <span className="grid size-11 shrink-0 place-items-center rounded-full bg-indigo-100 text-[var(--color-primary)] sm:size-12">
-                  <Users className="size-6 sm:size-7" />
-                </span>
-
-                <div>
-                  <p className="text-lg font-bold leading-tight text-[var(--color-heading)] sm:text-xl">
-                    Talk to
-                  </p>
-
-                  <p className="text-sm leading-tight text-[var(--color-text-muted)] sm:text-base">
-                    AI Experts
-                  </p>
-                </div>
-              </div>
-
-              {/* No obligation */}
-
-              <div className="flex items-center gap-3 border-indigo-100 sm:border-l sm:pl-5">
-                <span className="grid size-11 shrink-0 place-items-center rounded-full bg-indigo-100 text-[var(--color-primary)] sm:size-12">
-                  <Zap className="size-6 sm:size-7" />
-                </span>
-
-                <div>
-                  <p className="text-lg font-bold leading-tight text-[var(--color-heading)] sm:text-xl">
-                    No Obligation
-                  </p>
-
-                  <p className="text-sm leading-tight text-[var(--color-text-muted)] sm:text-base">
-                    Just Insights
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Hero Image */}
-
-          <div className="relative min-h-[22rem] sm:min-h-[30rem] lg:min-h-0">
-            <div className="absolute left-1/2 top-1/2 -z-10 size-[30rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-100/70 blur-3xl" />
-
-            <img
-              src={HERO_IMAGE}
-              alt="AIWorksForce expert speaking with a business client"
-              className="absolute inset-0 size-full object-cover object-center lg:object-contain"
-            />
-
-            {/* Handwritten note */}
-
-            <div className="absolute bottom-24 left-5 z-30 hidden rotate-[-7deg] font-hand text-2xl leading-tight text-[var(--color-primary)] xl:block">
-              Smarter
-              <br />
-              Businesses
-              <br />
-              Happier People
-              <br />
-              A Brighter
-              <br />
-              Tomorrow
-            </div>
-
-            {/* Right Card */}
-
-            <div className="absolute bottom-5 right-5 z-30 hidden max-w-56 rounded-xl bg-white/95 p-5 shadow-xl sm:block">
-              <div className="flex items-center gap-3">
-                <span className="grid size-12 place-items-center rounded-full bg-indigo-100 text-[var(--color-primary)]">
-                  <Users className="size-6" />
-                </span>
-
-                <p className="text-sm font-semibold leading-snug text-[var(--color-heading)] sm:text-base">
-                  One Conversation
-                  <br />
-                  Can Unlock
-                  <br />
-                  Big Opportunities
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+   <PageHero
+  titleId="demo-hero-title"
+  eyebrow="Let's Talk"
+  title="Need"
+  highlightedTitle="personalized help?"
+  description="Book a demo with our AI experts and discover how AI WorksForce can help you automate, scale, and grow your business — tailored to your unique needs."
+  image={HERO_IMAGE}
+  imageAlt="AIWorksForce expert speaking with a business client"
+  primaryAction={{
+    label: "Book a Free Consultation",
+    href: "#demo-form",
+    icon: "arrow",
+  }}
+  secondaryAction={{
+    label: "Watch Our Video",
+    href: "#",
+    icon: "play",
+  }}
+  stats={[
+    {
+      icon: "heart",
+      value: "Flexible",
+      label: "Scheduling",
+    },
+    {
+      icon: "users",
+      value: "Talk to",
+      label: "AI Experts",
+    },
+    {
+      icon: "rocket",
+      value: "No Obligation",
+      label: "Just Insights",
+    },
+  ]}
+  resultCard={{
+    icon: "users",
+    lines: [
+      "One Conversation",
+      "Can Unlock",
+      "Big Opportunities",
+    ],
+  }}
+/>
 
       {/* =====================================================
           DEMO + BENEFITS
@@ -927,8 +821,8 @@ export default function BookDemoPage() {
 
             <div className="mx-auto size-24 overflow-hidden rounded-full border-4 border-white bg-indigo-100 shadow-md sm:size-28 lg:mx-0 lg:size-32">
               <img
-                src="/images/team/amit-sharma.webp"
-                alt="Amit Sharma"
+            src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Anita Sharma"
                 className="size-full object-cover"
               />
             </div>

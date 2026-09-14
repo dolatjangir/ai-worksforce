@@ -1,5 +1,6 @@
 "use client";
 
+import PageHero from "@/components/resources-hero/reusable-hero";
 import { useMemo, useState, type ReactNode } from "react";
 
 /* ============================================================
@@ -596,352 +597,80 @@ export default function OurBlogPage() {
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-white font-sans text-brand-dark">
-      {/* ======================================================
-          HEADER
-      ======================================================= */}
-
-      <header className="sticky top-0 z-50 border-b border-blue-100/70 bg-white/95 backdrop-blur-md">
-        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-7 lg:h-18 lg:px-8">
-          {/* Logo */}
-          <a
-            href="/"
-            className="shrink-0"
-            aria-label="AI WorksForce"
-          >
-            <div className="text-xl font-bold leading-none tracking-tight sm:text-2xl">
-              <span className="text-brand-blue">AI</span>{" "}
-              <span className="text-brand-dark">
-                WorksForce
-              </span>
-            </div>
-
-            <p className="mt-1 pl-7 text-xs font-medium text-brand-text-muted">
-              Automate. Accelerate. Grow.
-            </p>
-          </a>
-
-          {/* Desktop navigation */}
-          <nav className="hidden items-center gap-4 lg:flex xl:gap-6">
-            {navItems.map((item) => (
-              <a
-                key={item}
-                href="#"
-                className={`relative whitespace-nowrap py-6 text-xs transition-colors xl:text-sm ${
-                  item === "Resources"
-                    ? "font-bold text-brand-dark"
-                    : "font-medium text-brand-text hover:text-brand-blue"
-                }`}
-              >
-                {item}
-
-                {item === "Resources" && (
-                  <span className="absolute bottom-0 left-0 right-0 h-0.5 rounded-full bg-brand-blue" />
-                )}
-              </a>
-            ))}
-          </nav>
-
-          {/* CTA */}
-          <a
-            href="#contact"
-            className="hidden min-h-11 items-center gap-2 rounded-xl bg-gradient-to-r from-brand-purple to-brand-blue px-5 text-xs font-bold text-white shadow-[0_8px_22px_rgba(37,99,235,0.2)] transition-all hover:-translate-y-0.5 lg:inline-flex"
-          >
-            Book a Free Consultation
-
-            <Icon
-              name="arrow-right"
-              className="size-4"
-            />
-          </a>
-
-          {/* Mobile menu button */}
-          <button
-            type="button"
-            onClick={() => setMenuOpen((value) => !value)}
-            aria-label={
-              menuOpen
-                ? "Close navigation"
-                : "Open navigation"
-            }
-            aria-expanded={menuOpen}
-            className="grid size-11 place-items-center rounded-lg border border-blue-100 text-brand-dark lg:hidden"
-          >
-            <Icon
-              name={menuOpen ? "close" : "menu"}
-              className="size-5"
-            />
-          </button>
-        </div>
-
-        {/* Mobile navigation */}
-        {menuOpen && (
-          <div className="border-t border-blue-100 bg-white px-5 py-5 shadow-lg lg:hidden">
-            <nav className="mx-auto flex max-w-xl flex-col">
-              {navItems.map((item) => (
-                <a
-                  key={item}
-                  href="#"
-                  onClick={() => setMenuOpen(false)}
-                  className={`border-b border-slate-100 py-3 text-sm ${
-                    item === "Resources"
-                      ? "font-bold text-brand-blue"
-                      : "font-medium text-brand-dark"
-                  }`}
-                >
-                  {item}
-                </a>
-              ))}
-
-              <a
-                href="#contact"
-                onClick={() => setMenuOpen(false)}
-                className="mt-4 inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-brand-blue px-5 text-sm font-bold text-white"
-              >
-                Book a Free Consultation
-
-                <Icon
-                  name="arrow-right"
-                  className="size-4"
-                />
-              </a>
-            </nav>
-          </div>
-        )}
-      </header>
+    
 
       <main>
         {/* ====================================================
             HERO
         ===================================================== */}
 
-        <section className="relative isolate overflow-hidden rounded-b-[1.25rem] bg-[linear-gradient(112deg,#fafbff_0%,#f6f7ff_45%,#f0efff_100%)]">
-          {/* Glow */}
-          <div className="pointer-events-none absolute -right-40 -top-48 -z-10 size-128 rounded-full bg-[radial-gradient(circle,#bcb5ff80_0%,#dfe2ff40_45%,transparent_70%)]" />
-
-          <div className="mx-auto grid max-w-7xl lg:grid-cols-[1fr_0.98fr]">
-            {/* Hero content */}
-            <div className="relative z-20 px-5 py-10 sm:px-8 sm:py-12 lg:px-8 lg:py-14 xl:pl-10">
-              <p className="text-xs font-bold uppercase tracking-[0.28em] text-brand-purple sm:text-sm">
-                Insights. Ideas. Impact.
-              </p>
-
-              <h1 className="mt-3 text-5xl font-bold leading-[0.95] tracking-tight text-brand-dark sm:text-6xl lg:text-7xl">
-                Our{" "}
-                <span className="bg-gradient-to-r from-brand-blue via-brand-purple to-brand-blue bg-clip-text text-transparent">
-                  Blog
-                </span>
-              </h1>
-
-              <h2 className="mt-5 max-w-2xl text-lg font-bold leading-tight tracking-tight text-brand-dark sm:text-xl lg:text-2xl">
-                Stay ahead with the latest insights, trends, and practical
-                guides on AI, automation, and business growth.
-              </h2>
-
-              <p className="mt-3 max-w-xl text-base leading-relaxed text-brand-text sm:text-lg">
-                Expert perspectives, how-to guides, industry updates, and
-                real examples to help you build a smarter, more efficient
-                business with AI.
-              </p>
-
-              {/* Hero buttons */}
-              <div className="mt-6 flex flex-wrap gap-3 sm:gap-4">
-                <a
-                  href="#articles"
-                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-brand-blue to-brand-purple px-5 text-sm font-bold text-white shadow-[0_8px_22px_rgba(37,99,235,0.2)] transition-all hover:-translate-y-0.5 sm:px-6"
-                >
-                  Explore Articles
-
-                  <Icon
-                    name="arrow-right"
-                    className="size-4"
-                  />
-                </a>
-
-                <a
-                  href="#"
-                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-brand-purple/50 bg-white/70 px-5 text-sm font-bold text-brand-dark transition-colors hover:bg-white sm:px-6"
-                >
-                  <span className="grid size-5 place-items-center rounded-full bg-violet-100 text-brand-purple">
-                    <Icon
-                      name="play"
-                      className="size-2.5"
-                    />
-                  </span>
-
-                  Watch Intro
-                </a>
-              </div>
-
-              {/* Hero stats */}
-              <div className="mt-8 grid grid-cols-2 gap-y-5 sm:grid-cols-4 sm:gap-y-0">
-                {[
-                  {
-                    icon: "file" as IconName,
-                    value: "250+",
-                    label: "Articles",
-                    tone: "bg-indigo-100 text-brand-purple",
-                  },
-                  {
-                    icon: "users" as IconName,
-                    value: "50K+",
-                    label: "Monthly Readers",
-                    tone: "bg-blue-100 text-brand-blue",
-                  },
-                  {
-                    icon: "chart" as IconName,
-                    value: "10+",
-                    label: "Topics Covered",
-                    tone: "bg-indigo-100 text-brand-purple",
-                  },
-                  {
-                    icon: "arrow-up" as IconName,
-                    value: "Weekly",
-                    label: "New Content",
-                    tone: "bg-violet-100 text-brand-purple",
-                  },
-                ].map((stat, index) => (
-                  <div
-                    key={stat.label}
-                    className={`flex items-center gap-2 sm:gap-3 ${
-                      index > 0
-                        ? "border-l border-indigo-100 pl-3 sm:pl-4"
-                        : ""
-                    }`}
-                  >
-                    <IconBubble
-                      icon={stat.icon}
-                      className={stat.tone}
-                    />
-
-                    <div>
-                      <p className="text-xl font-bold leading-none tracking-tight text-brand-blue sm:text-2xl lg:text-3xl">
-                        {stat.value}
-                      </p>
-
-                      <p className="mt-1 text-xs leading-tight text-brand-text-muted sm:text-sm">
-                        {stat.label}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Hero visual */}
-            <div className="relative min-h-[25rem] sm:min-h-[30rem] lg:min-h-0">
-              <div className="absolute left-1/2 top-10 size-80 -translate-x-1/2 rounded-full bg-indigo-100/50 blur-2xl sm:size-128" />
-
-              {/* Person */}
-              <img
-                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1000&q=90"
-                alt="AI WorksForce professional"
-                className="absolute bottom-0 left-1/2 z-10 h-[88%] w-[64%] -translate-x-1/2 rounded-t-[6rem] object-cover object-center shadow-[0_18px_45px_rgba(48,42,185,0.14)] sm:w-[58%]"
-              />
-
-              {/* Laptop */}
-              <div className="absolute bottom-7 left-1/2 z-20 w-44 -translate-x-1/2 rounded-lg bg-slate-200 px-4 py-4 text-center shadow-xl sm:w-52">
-                <p className="text-sm font-bold text-brand-text sm:text-base">
-                  AI
-                </p>
-
-                <p className="text-xs font-semibold text-brand-text-muted sm:text-sm">
-                  WorksForce
-                </p>
-              </div>
-
-              {/* Right cards */}
-              <div className="absolute right-0 top-5 z-30 hidden w-44 rounded-xl bg-white/95 p-3 shadow-[0_7px_24px_rgba(51,42,157,0.1)] sm:block">
-                <div className="flex items-center gap-3">
-                  <IconBubble
-                    icon="file"
-                    className="bg-indigo-50 text-brand-purple"
-                  />
-
-                  <div>
-                    <p className="text-sm font-bold leading-tight text-brand-dark">
-                      Latest Trends
-                    </p>
-
-                    <p className="mt-1 text-xs text-brand-text-muted">
-                      Stay Updated
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="absolute right-0 top-28 z-30 hidden w-44 rounded-xl bg-white/95 p-3 shadow-[0_7px_24px_rgba(51,42,157,0.1)] sm:block">
-                <div className="flex items-center gap-3">
-                  <IconBubble
-                    icon="lightbulb"
-                    className="bg-violet-50 text-brand-purple"
-                  />
-
-                  <div>
-                    <p className="text-sm font-bold leading-tight text-brand-dark">
-                      Expert Insights
-                    </p>
-
-                    <p className="mt-1 text-xs text-brand-text-muted">
-                      Learn from Experts
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="absolute right-0 top-52 z-30 hidden w-44 rounded-xl bg-white/95 p-3 shadow-[0_7px_24px_rgba(51,42,157,0.1)] sm:block">
-                <div className="flex items-center gap-3">
-                  <IconBubble
-                    icon="file"
-                    className="bg-indigo-50 text-brand-purple"
-                  />
-
-                  <div>
-                    <p className="text-sm font-bold leading-tight text-brand-dark">
-                      Practical Guides
-                    </p>
-
-                    <p className="mt-1 text-xs text-brand-text-muted">
-                      Apply in Real Life
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Handwriting */}
-              <div className="absolute right-0 top-64 z-40 hidden rotate-[-8deg] font-hand text-2xl leading-[0.95] text-brand-blue md:block">
-                Knowledge
-                <br />
-                Today
-                <br />
-                A Smarter
-                <br />
-                Tomorrow
-              </div>
-
-              <svg
-                className="absolute right-12 top-72 z-30 hidden h-20 w-24 text-brand-blue md:block"
-                viewBox="0 0 90 80"
-                fill="none"
-                aria-hidden="true"
-              >
-                <path
-                  d="M76 8C59 22 56 35 42 45 31 53 20 57 7 58"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                />
-
-                <path
-                  d="m12 50-7 8 11 2"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </div>
-          </div>
-        </section>
+     <PageHero
+  titleId="blog-hero-title"
+  eyebrow="Insights. Ideas. Impact."
+  title="Our"
+  highlightedTitle="Blog"
+  description="Expert perspectives, how-to guides, industry updates, and real examples to help you build a smarter, more efficient business with AI."
+  image="/resources-images/resources-blog-hero.png"
+  imageAlt="AI WorksForce professional"
+  primaryAction={{
+    label: "Explore Articles",
+    href: "#articles",
+    icon: "arrow",
+  }}
+  secondaryAction={{
+    label: "Watch Intro",
+    href: "#",
+    icon: "play",
+  }}
+  stats={[
+    {
+      icon: "file",
+      value: "250+",
+      label: "Articles",
+    },
+  
+    {
+      icon: "chart",
+      value: "10+",
+      label: "Topics Covered",
+    },
+    {
+      icon: "arrow-up",
+      value: "Weekly",
+      label: "New Content",
+    },
+  ]}
+  benefitCards={[
+    {
+      title: "Latest Trends",
+      description: "Stay Updated",
+      icon: "file",
+      position: "right-0 top-5",
+    },
+    {
+      title: "Expert Insights",
+      description: "Learn from Experts",
+      icon: "lightbulb",
+      position: "right-0 top-28",
+    },
+    {
+      title: "Practical Guides",
+      description: "Apply in Real Life",
+      icon: "file",
+      position: "right-0 top-52",
+    },
+  ]}
+  handwrittenNote={{
+    lines: [
+      "Knowledge",
+      "Today",
+      "A Smarter",
+      "Tomorrow",
+    ],
+    position: "right-0 top-64",
+    rotate: "-rotate-[8deg]",
+  }}
+/>
 
         {/* ====================================================
             CATEGORY
@@ -1455,111 +1184,6 @@ export default function OurBlogPage() {
         </section>
       </main>
 
-      {/* ======================================================
-          FOOTER
-      ======================================================= */}
-
-      <footer className="border-t border-blue-100 bg-white">
-        <div className="mx-auto max-w-7xl px-5 py-7 sm:px-7 lg:px-8">
-          <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-            {/* Footer logo */}
-            <div className="shrink-0">
-              <a
-                href="/"
-                className="text-xl font-bold tracking-tight text-brand-dark sm:text-2xl"
-              >
-                <span className="text-brand-blue">AI</span>{" "}
-                WorksForce
-              </a>
-
-              <p className="mt-1 text-xs text-brand-text-muted sm:text-sm">
-                Automate. Accelerate. Grow.
-              </p>
-            </div>
-
-            {/* Footer nav */}
-            <nav className="flex flex-wrap items-center gap-x-5 gap-y-3">
-              {navItems.map((item) => (
-                <a
-                  key={item}
-                  href="#"
-                  className={`text-xs transition-colors sm:text-sm ${
-                    item === "Resources"
-                      ? "font-semibold text-brand-dark"
-                      : "font-medium text-brand-text hover:text-brand-blue"
-                  }`}
-                >
-                  {item}
-                </a>
-              ))}
-            </nav>
-
-            {/* Social */}
-            <div className="flex items-center gap-2">
-              {[
-                {
-                  icon: "linkedin" as IconName,
-                  label: "LinkedIn",
-                },
-                {
-                  icon: "twitter" as IconName,
-                  label: "Twitter",
-                },
-                {
-                  icon: "youtube" as IconName,
-                  label: "YouTube",
-                },
-                {
-                  icon: "instagram" as IconName,
-                  label: "Instagram",
-                },
-              ].map((social) => (
-                <a
-                  key={social.label}
-                  href="#"
-                  aria-label={social.label}
-                  className="grid size-9 place-items-center rounded-lg border border-blue-100 text-brand-dark transition-all hover:border-brand-blue hover:bg-blue-50 hover:text-brand-blue"
-                >
-                  <Icon
-                    name={social.icon}
-                    className="size-4"
-                  />
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Footer bottom */}
-          <div className="mt-6 flex flex-col gap-3 border-t border-slate-100 pt-5 text-xs text-brand-text-muted sm:flex-row sm:items-center sm:justify-between sm:text-sm">
-            <p>
-              © 2024 AI WorksForce. All rights reserved.
-            </p>
-
-            <div className="flex flex-wrap gap-5">
-              <a
-                href="/privacy-policy"
-                className="transition-colors hover:text-brand-blue"
-              >
-                Privacy Policy
-              </a>
-
-              <a
-                href="/terms"
-                className="transition-colors hover:text-brand-blue"
-              >
-                Terms of Service
-              </a>
-
-              <a
-                href="/contact"
-                className="transition-colors hover:text-brand-blue"
-              >
-                Contact
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

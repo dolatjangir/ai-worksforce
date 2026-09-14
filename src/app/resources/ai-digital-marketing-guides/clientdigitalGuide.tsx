@@ -1,5 +1,6 @@
 "use client";
 
+import PageHero from "@/components/resources-hero/reusable-hero";
 import { useMemo, useState, type ReactNode } from "react";
 
 /* ============================================================
@@ -537,305 +538,92 @@ export default function DigitalMarketingGuidesPage() {
             HERO
         ======================================================= */}
 
-        <section className="relative isolate overflow-hidden rounded-b-[1.25rem] bg-[linear-gradient(112deg,#fafbff_0%,#f5f7ff_48%,#f0efff_100%)]">
-          {/* Background glow */}
-          <div className="pointer-events-none absolute -right-32 -top-48 -z-10 size-[38rem] rounded-full bg-[radial-gradient(circle,#b5acff90_0%,#d9dcff45_42%,transparent_70%)] sm:size-[45rem]" />
-
-          <div className="pointer-events-none absolute -bottom-40 -left-40 -z-10 size-[28rem] rounded-full bg-[radial-gradient(circle,#dbeafe80_0%,transparent_70%)]" />
-
-          <div className="mx-auto grid max-w-7xl lg:grid-cols-[1.02fr_0.98fr]">
-            {/* Hero content */}
-            <div className="relative z-20 px-5 py-10 sm:px-8 sm:py-12 lg:px-8 lg:py-14 xl:pl-10">
-              <p className="text-xs font-bold uppercase tracking-[0.28em] text-brand-purple sm:text-sm">
-                Marketing Smarter. With AI.
-              </p>
-
-              <h1 className="mt-3 max-w-3xl text-5xl font-bold leading-[0.94] tracking-tight text-brand-dark sm:text-6xl lg:text-7xl">
-                AI Digital
-                <span className="block bg-gradient-to-r from-brand-blue via-brand-purple to-brand-blue bg-clip-text text-transparent">
-                  Marketing Guides
-                </span>
-              </h1>
-
-              <h2 className="mt-5 max-w-2xl text-lg font-bold leading-tight tracking-tight text-brand-dark sm:text-xl lg:text-2xl">
-                Practical guides, strategies, and frameworks to help you use
-                AI in digital marketing and achieve measurable business
-                growth.
-              </h2>
-
-              <p className="mt-3 max-w-xl text-base leading-relaxed text-brand-text sm:text-lg">
-                From content creation to paid ads, SEO, and analytics —
-                explore expert resources to market smarter, faster, and more
-                effectively with AI.
-              </p>
-
-              {/* Buttons */}
-              <div className="mt-6 flex flex-wrap gap-3 sm:gap-4">
-                <a
-                  href="#guides"
-                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-brand-blue to-brand-purple px-5 text-sm font-bold text-white shadow-[0_8px_22px_rgba(37,99,235,0.2)] transition-all hover:-translate-y-0.5 sm:px-6"
-                >
-                  Explore All Guides
-
-                  <Icon
-                    name="arrow-right"
-                    className="size-4"
-                  />
-                </a>
-
-                <a
-                  href="#"
-                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-brand-purple/50 bg-white/70 px-5 text-sm font-bold text-brand-dark transition-colors hover:bg-white sm:px-6"
-                >
-                  <span className="grid size-5 place-items-center rounded-full bg-violet-100 text-brand-purple">
-                    <Icon
-                      name="play"
-                      className="size-2.5"
-                    />
-                  </span>
-
-                  Watch Overview
-                </a>
-              </div>
-
-              {/* Hero statistics */}
-              <div className="mt-8 grid max-w-3xl grid-cols-2 gap-y-5 sm:grid-cols-4 sm:gap-y-0">
-                {[
-                  {
-                    icon: "book" as IconName,
-                    value: "100+",
-                    label: "Guides & Resources",
-                    tone: "bg-emerald-100 text-emerald-500",
-                  },
-                  {
-                    icon: "users" as IconName,
-                    value: "25K+",
-                    label: "Marketers Learning",
-                    tone: "bg-indigo-100 text-brand-purple",
-                  },
-                  {
-                    icon: "chart" as IconName,
-                    value: "3x",
-                    label: "Faster Campaign Results",
-                    tone: "bg-violet-100 text-brand-purple",
-                  },
-                  {
-                    icon: "arrow-up" as IconName,
-                    value: "70%",
-                    label: "Average Time Saved",
-                    tone: "bg-indigo-100 text-brand-purple",
-                  },
-                ].map((stat, index) => (
-                  <div
-                    key={stat.label}
-                    className={`flex items-center gap-2 sm:gap-3 ${
-                      index > 0
-                        ? "border-l border-indigo-100 pl-3 sm:pl-4"
-                        : ""
-                    }`}
-                  >
-                    <IconBubble
-                      icon={stat.icon}
-                      className={stat.tone}
-                    />
-
-                    <div className="min-w-0">
-                      <p className="text-2xl font-bold leading-none tracking-tight text-brand-blue sm:text-3xl">
-                        {stat.value}
-                      </p>
-
-                      <p className="mt-1 text-xs leading-tight text-brand-text-muted sm:text-sm">
-                        {stat.label}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Hero visual */}
-            <div className="relative min-h-[25rem] sm:min-h-[30rem] lg:min-h-0">
-              {/* Soft visual background */}
-              <div className="absolute left-1/2 top-12 size-80 -translate-x-1/2 rounded-full bg-indigo-100/50 blur-2xl sm:size-[28rem]" />
-
-              {/* Main person */}
-              <img
-                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1000&q=90"
-                alt="Digital marketing professional"
-                className="absolute bottom-0 left-1/2 z-10 h-[84%] w-[66%] -translate-x-1/2 rounded-t-[6rem] object-cover object-center shadow-[0_18px_45px_rgba(48,42,185,0.14)] sm:w-[59%]"
-              />
-
-              {/* Laptop overlay */}
-              <div className="absolute bottom-7 left-1/2 z-20 w-44 -translate-x-1/2 rounded-lg bg-slate-200 px-4 py-4 text-center shadow-xl sm:w-52">
-                <p className="text-sm font-bold text-brand-text sm:text-base">
-                  Marketing
-                </p>
-
-                <p className="text-xs font-semibold text-brand-text-muted sm:text-sm">
-                  Smarter with AI
-                </p>
-              </div>
-
-              {/* Left top card */}
-              <div className="absolute left-0 top-7 z-30 hidden w-40 items-center gap-3 rounded-xl bg-white/95 px-3 py-3 shadow-[0_7px_24px_rgba(51,42,157,0.1)] sm:flex">
-                <span className="grid size-10 shrink-0 place-items-center rounded-full bg-indigo-50 text-brand-purple">
-                  <Icon
-                    name="pen"
-                    className="size-5"
-                  />
-                </span>
-
-                <div>
-                  <p className="text-sm font-bold leading-tight text-brand-dark">
-                    AI Content
-                    <br />
-                    Creation
-                  </p>
-
-                  <p className="mt-1 text-xs text-brand-text-muted">
-                    Create. Optimize. Scale.
-                  </p>
-                </div>
-              </div>
-
-              {/* Left middle card */}
-              <div className="absolute left-0 top-28 z-30 hidden w-40 items-center gap-3 rounded-xl bg-white/95 px-3 py-3 shadow-[0_7px_24px_rgba(51,42,157,0.1)] sm:flex">
-                <span className="grid size-10 shrink-0 place-items-center rounded-full bg-rose-50 text-rose-500">
-                  <Icon
-                    name="megaphone"
-                    className="size-5"
-                  />
-                </span>
-
-                <div>
-                  <p className="text-sm font-bold leading-tight text-brand-dark">
-                    AI Ads & Paid Media
-                  </p>
-
-                  <p className="mt-1 text-xs text-brand-text-muted">
-                    Higher ROI. Lower Costs.
-                  </p>
-                </div>
-              </div>
-
-              {/* Left bottom card */}
-              <div className="absolute left-0 top-48 z-30 hidden w-40 items-center gap-3 rounded-xl bg-white/95 px-3 py-3 shadow-[0_7px_24px_rgba(51,42,157,0.1)] sm:flex">
-                <span className="grid size-10 shrink-0 place-items-center rounded-full bg-emerald-50 text-emerald-500">
-                  <Icon
-                    name="search"
-                    className="size-5"
-                  />
-                </span>
-
-                <div>
-                  <p className="text-sm font-bold leading-tight text-brand-dark">
-                    AI SEO
-                  </p>
-
-                  <p className="mt-1 text-xs text-brand-text-muted">
-                    Rank Smarter. Faster.
-                  </p>
-                </div>
-              </div>
-
-              {/* Right top card */}
-              <div className="absolute right-0 top-5 z-30 hidden w-44 items-center gap-3 rounded-xl bg-white/95 px-3 py-3 shadow-[0_7px_24px_rgba(51,42,157,0.1)] sm:flex">
-                <span className="grid size-10 shrink-0 place-items-center rounded-full bg-indigo-50 text-brand-purple">
-                  <Icon
-                    name="users"
-                    className="size-5"
-                  />
-                </span>
-
-                <div>
-                  <p className="text-sm font-bold leading-tight text-brand-dark">
-                    Social Media
-                    <br />
-                    Automation
-                  </p>
-
-                  <p className="mt-1 text-xs text-brand-text-muted">
-                    Engage. Grow. Convert.
-                  </p>
-                </div>
-              </div>
-
-              {/* Right middle card */}
-              <div className="absolute right-0 top-28 z-30 hidden w-44 items-center gap-3 rounded-xl bg-white/95 px-3 py-3 shadow-[0_7px_24px_rgba(51,42,157,0.1)] sm:flex">
-                <span className="grid size-10 shrink-0 place-items-center rounded-full bg-violet-50 text-brand-purple">
-                  <Icon
-                    name="chart"
-                    className="size-5"
-                  />
-                </span>
-
-                <div>
-                  <p className="text-sm font-bold leading-tight text-brand-dark">
-                    Marketing Analytics
-                  </p>
-
-                  <p className="mt-1 text-xs text-brand-text-muted">
-                    Turn Data into Growth.
-                  </p>
-                </div>
-              </div>
-
-              {/* Right bottom card */}
-              <div className="absolute right-0 top-48 z-30 hidden w-44 items-center gap-3 rounded-xl bg-white/95 px-3 py-3 shadow-[0_7px_24px_rgba(51,42,157,0.1)] sm:flex">
-                <span className="grid size-10 shrink-0 place-items-center rounded-full bg-blue-50 text-brand-blue">
-                  <Icon
-                    name="mail"
-                    className="size-5"
-                  />
-                </span>
-
-                <div>
-                  <p className="text-sm font-bold leading-tight text-brand-dark">
-                    Email Marketing
-                    <br />
-                    with AI
-                  </p>
-
-                  <p className="mt-1 text-xs text-brand-text-muted">
-                    Personalize. Automate.
-                  </p>
-                </div>
-              </div>
-
-              {/* Handwritten note */}
-              <div className="absolute right-0 top-64 z-40 hidden rotate-[-8deg] font-hand text-2xl leading-[0.95] text-brand-blue md:block">
-                Real
-                <br />
-                Strategies
-                <br />
-                Real Growth
-              </div>
-
-              {/* Hand drawn arrow */}
-              <svg
-                className="absolute right-16 top-72 z-30 hidden h-20 w-20 text-brand-blue md:block"
-                viewBox="0 0 80 80"
-                fill="none"
-                aria-hidden="true"
-              >
-                <path
-                  d="M66 7C50 17 47 31 37 41 28 50 18 54 8 56"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                />
-
-                <path
-                  d="m12 49-7 8 10 2"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </div>
-          </div>
-        </section>
+       <PageHero
+  titleId="ai-digital-marketing-guides-hero-title"
+  eyebrow="Marketing Smarter. With AI."
+  title="AI Digital"
+  highlightedTitle="Marketing Guides"
+  description="Practical guides, strategies, and frameworks to help you use AI in digital marketing and achieve measurable business growth. From content creation to paid ads, SEO, and analytics — explore expert resources to market smarter, faster, and more effectively with AI."
+  image="/resources-images/digital-marketing-guide-resources.png"
+  imageAlt="Digital marketing professional"
+  primaryAction={{
+    label: "Explore All Guides",
+    href: "#guides",
+    icon: "arrow",
+  }}
+  secondaryAction={{
+    label: "Watch Overview",
+    href: "#",
+    icon: "play",
+  }}
+  stats={[
+    {
+      icon: "book",
+      value: "100+",
+      label: "Guides & Resources",
+    },
+   
+    {
+      icon: "chart",
+      value: "3x",
+      label: "Faster Campaign Results",
+    },
+    {
+      icon: "arrow-up",
+      value: "70%",
+      label: "Average Time Saved",
+    },
+  ]}
+  benefitCards={[
+    {
+      title: "AI Content",
+      description: "Create. Optimize. Scale.",
+      icon: "pen",
+      position: "left-0 top-7",
+    },
+    {
+      title: "AI Ads & Paid Media",
+      description: "High ROI. Low Costs.",
+      icon: "megaphone",
+      position: "left-0 top-28",
+      variant: "default",
+    },
+    {
+      title: "AI SEO",
+      description: "Rank Smarter. Faster.",
+      icon: "search",
+      position: "left-0 top-48",
+      variant: "green",
+    },
+    {
+      title: "Social Media",
+      description: "Engage. Grow. Convert.",
+      icon: "users",
+      position: "right-0 top-5",
+    },
+    {
+      title: "Marketing Analytics",
+      description: "Turn Data into Growth.",
+      icon: "chart",
+      position: "right-0 top-28",
+    },
+    {
+      title: "Email Marketing",
+      description: "Personalize. Automate.",
+      icon: "mail",
+      position: "right-0 top-48",
+    },
+  ]}
+  handwrittenNote={{
+    lines: [
+      "Real",
+      "Strategies",
+      "Real Growth",
+    ],
+    position: "-right-8 bottom-20",
+    rotate: "-rotate-[8deg]",
+  }}
+/>
 
         {/* ======================================================
             TOPICS
@@ -1162,7 +950,7 @@ export default function DigitalMarketingGuidesPage() {
 
         <section
           id="contact"
-          className="relative isolate mx-1 mt-8 overflow-hidden rounded-2xl bg-[linear-gradient(110deg,#07154d,#0c1772_55%,#2836e4)] px-5 py-8 text-center text-white sm:mx-3 sm:px-8 sm:py-10"
+          className="relative isolate mx-1 my-8 overflow-hidden rounded-2xl bg-[linear-gradient(110deg,#07154d,#0c1772_55%,#2836e4)] px-5 py-8 text-center text-white sm:mx-3 sm:px-8 sm:py-10"
         >
           <div className="pointer-events-none absolute inset-0 -z-10 opacity-30 [background-image:repeating-radial-gradient(ellipse_at_0%_120%,transparent_0_0.75rem,#7180ff_0.8rem_0.875rem)]" />
 

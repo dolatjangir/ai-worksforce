@@ -1,5 +1,6 @@
 "use client";
 
+import PageHero from "@/components/resources-hero/reusable-hero";
 import { useMemo, useState, type ReactNode } from "react";
 
 /* ============================================================
@@ -541,207 +542,68 @@ export default function FAQPage() {
         {/* ====================================================
             HERO
         ===================================================== */}
-
-        <section className="relative isolate overflow-hidden rounded-b-[1.25rem] bg-[linear-gradient(110deg,#fafbff_0%,#f7f8ff_45%,#eeefff_100%)]">
-          <div className="pointer-events-none absolute -right-40 -top-40 -z-10 size-128 rounded-full bg-[radial-gradient(circle,#b9b2ff70_0%,transparent_70%)] blur-2xl" />
-
-          <div className="mx-auto grid max-w-7xl lg:grid-cols-[1fr_0.95fr]">
-            {/* Hero text */}
-            <div className="relative z-20 px-5 py-10 sm:px-8 sm:py-12 lg:px-8 lg:py-14 xl:pl-10">
-              <p className="text-xs font-bold uppercase tracking-[0.28em] text-brand-purple sm:text-sm">
-                Questions. Answers. Clarity.
-              </p>
-
-              <h1 className="mt-3 max-w-3xl text-5xl font-bold leading-[0.94] tracking-tight text-brand-dark sm:text-6xl lg:text-7xl">
-                Frequently Asked{" "}
-                <span className="bg-gradient-to-r from-brand-blue via-brand-purple to-brand-blue bg-clip-text text-transparent">
-                  Questions
-                </span>
-              </h1>
-
-              <p className="mt-5 max-w-2xl text-base leading-relaxed text-brand-text sm:text-lg lg:text-xl">
-                Find quick answers to the most common questions about AI
-                WorksForce, our services, implementation process, pricing,
-                and more.
-              </p>
-
-              {/* Buttons */}
-              <div className="mt-6 flex flex-wrap gap-3 sm:gap-4">
-                <a
-                  href="#faq"
-                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-brand-blue to-brand-purple px-5 text-sm font-bold text-white shadow-[0_8px_22px_rgba(37,99,235,0.2)] transition-all hover:-translate-y-0.5 sm:px-6"
-                >
-                  Ask a Question
-
-                  <Icon
-                    name="arrow-right"
-                    className="size-4"
-                  />
-                </a>
-
-                <a
-                  href="#"
-                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-brand-purple/50 bg-white/70 px-5 text-sm font-bold text-brand-dark transition-colors hover:bg-white sm:px-6"
-                >
-                  <span className="grid size-5 place-items-center rounded-full bg-violet-100 text-brand-purple">
-                    <Icon
-                      name="play"
-                      className="size-2.5"
-                    />
-                  </span>
-
-                  Watch FAQs Video
-                </a>
-              </div>
-
-              {/* Hero stats */}
-              <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-3 sm:gap-0">
-                <div className="flex items-center gap-3">
-                  <IconBubble className="bg-emerald-50 text-emerald-500" icon="message" />
-
-                  <div>
-                    <p className="text-2xl font-bold leading-none tracking-tight text-brand-blue sm:text-3xl">
-                      100+
-                    </p>
-
-                    <p className="mt-1 text-xs text-brand-text-muted sm:text-sm">
-                      Common Questions
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 border-l border-indigo-100 pl-4">
-                  <IconBubble className="bg-indigo-100 text-brand-purple" icon="users" />
-
-                  <div>
-                    <p className="text-2xl font-bold leading-none tracking-tight text-brand-blue sm:text-3xl">
-                      25K+
-                    </p>
-
-                    <p className="mt-1 text-xs text-brand-text-muted sm:text-sm">
-                      Happy Customers
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 border-l border-indigo-100 pl-4">
-                  <IconBubble className="bg-violet-100 text-brand-purple" icon="zap" />
-
-                  <div>
-                    <p className="text-2xl font-bold leading-none tracking-tight text-brand-blue sm:text-3xl">
-                      &lt; 24h
-                    </p>
-
-                    <p className="mt-1 text-xs text-brand-text-muted sm:text-sm">
-                      Average Response Time
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Hero visual */}
-            <div className="relative min-h-[25rem] sm:min-h-[30rem] lg:min-h-0">
-              <div className="absolute left-1/2 top-10 size-80 -translate-x-1/2 rounded-full bg-indigo-100/60 blur-3xl sm:size-128" />
-
-              {/* Robot */}
-              <div className="absolute bottom-0 left-1/2 z-10 w-64 -translate-x-1/2 sm:w-80 lg:w-96">
-                <div className="relative mx-auto flex aspect-[0.78] items-end justify-center">
-                  {/* Head */}
-                  <div className="absolute left-1/2 top-[7%] h-32 w-48 -translate-x-1/2 rounded-[2.5rem] border-4 border-slate-200 bg-gradient-to-br from-white via-slate-100 to-slate-300 shadow-[0_18px_35px_rgba(15,30,80,0.15)] sm:h-40 sm:w-60">
-                    <div className="absolute inset-5 rounded-[2rem] bg-slate-900 shadow-inner">
-                      <div className="flex h-full items-center justify-center gap-8">
-                        <span className="size-4 rounded-full bg-cyan-300 shadow-[0_0_18px_rgba(34,211,238,0.9)] sm:size-5" />
-                        <span className="size-4 rounded-full bg-cyan-300 shadow-[0_0_18px_rgba(34,211,238,0.9)] sm:size-5" />
-                      </div>
-
-                      <div className="absolute bottom-5 left-1/2 h-5 w-14 -translate-x-1/2 rounded-b-full border-b-2 border-cyan-300 sm:w-16" />
-                    </div>
-                  </div>
-
-                  {/* Body */}
-                  <div className="relative z-10 h-52 w-48 rounded-[5rem_5rem_2rem_2rem] border-4 border-slate-200 bg-gradient-to-br from-white to-slate-200 shadow-[0_18px_40px_rgba(15,30,80,0.14)] sm:h-64 sm:w-60">
-                    <div className="absolute left-1/2 top-14 -translate-x-1/2 text-4xl font-bold text-brand-blue sm:text-5xl">
-                      AI
-                    </div>
-                  </div>
-
-                  {/* Left arm */}
-                  <div className="absolute bottom-24 left-0 z-20 h-32 w-12 rotate-[25deg] rounded-full bg-gradient-to-b from-slate-100 to-slate-300 shadow-lg sm:h-40 sm:w-14" />
-
-                  {/* Right arm */}
-                  <div className="absolute bottom-20 right-0 z-20 h-32 w-12 rotate-[-20deg] rounded-full bg-gradient-to-b from-slate-100 to-slate-300 shadow-lg sm:h-40 sm:w-14" />
-                </div>
-              </div>
-
-              {/* Top right benefit card */}
-              <div className="absolute right-0 top-5 z-30 hidden w-44 rounded-xl bg-white/95 p-4 shadow-[0_8px_25px_rgba(51,42,157,0.1)] sm:block lg:w-48">
-                <div className="space-y-2.5">
-                  {[
-                    "Clear Answers",
-                    "Expert Support",
-                    "Helpful Resources",
-                    "Always Here for You",
-                  ].map((item) => (
-                    <div
-                      key={item}
-                      className="flex items-center gap-2 text-xs font-medium text-brand-dark sm:text-sm"
-                    >
-                      <span className="grid size-5 shrink-0 place-items-center rounded-full bg-emerald-100 text-emerald-500">
-                        <Icon
-                          name="check"
-                          className="size-3"
-                        />
-                      </span>
-
-                      {item}
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Question speech bubble */}
-              <div className="absolute left-2 top-7 z-30 hidden rotate-[-7deg] rounded-xl bg-white px-5 py-4 text-center font-hand text-2xl leading-none text-brand-blue shadow-[0_8px_25px_rgba(51,42,157,0.1)] md:block">
-                Got Questions?
-                <br />
-                We've Got Answers!
-              </div>
-
-              {/* Arrow */}
-              <svg
-                className="absolute left-16 top-28 z-30 hidden h-20 w-24 text-brand-blue md:block"
-                viewBox="0 0 90 80"
-                fill="none"
-                aria-hidden="true"
-              >
-                <path
-                  d="M70 8C56 22 58 39 41 49 30 56 19 57 7 55"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                />
-                <path
-                  d="m12 47-7 8 11 2"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-
-              {/* Handwritten message */}
-              <div className="absolute right-0 top-52 z-30 hidden rotate-[-7deg] font-hand text-2xl leading-[0.95] text-brand-blue md:block">
-                Your
-                <br />
-                AI Partner
-                <br />
-                for a Smarter
-                <br />
-                Tomorrow
-              </div>
-            </div>
-          </div>
-        </section>
+<PageHero
+  titleId="faq-hero-title"
+  eyebrow="Questions. Answers. Clarity."
+  title="Frequently Asked"
+  highlightedTitle="Questions"
+  description="Find quick answers to the most common questions about AI WorksForce, our services, implementation process, pricing, and more."
+  image="/resources-images/resources-faq-hero.png"
+  imageAlt="AI WorksForce AI assistant"
+  primaryAction={{
+    label: "Ask a Question",
+    href: "#faq",
+    icon: "arrow",
+  }}
+  secondaryAction={{
+    label: "Watch FAQs Video",
+    href: "#",
+    icon: "play",
+  }}
+  stats={[
+    {
+      icon: "message",
+      value: "100+",
+      label: "Common Questions",
+    },
+    {
+      icon: "users",
+      value: "25K+",
+      label: "Happy Customers",
+    },
+    {
+      icon: "zap",
+      value: "< 24h",
+      label: "Average Response Time",
+    },
+  ]}
+  benefitCards={[
+    {
+      title: "Clear Answers",
+      description: "Expert Support",
+      icon: "check",
+      position: "right-0 top-5",
+      variant: "green",
+    },
+    {
+      title: "Helpful Resources",
+      description: "Always Here for You",
+      icon: "check",
+      position: "right-0 top-28",
+      variant: "green",
+    },
+  ]}
+  handwrittenNote={{
+    lines: [
+      "Your",
+      "AI Partner",
+      "for a Smarter",
+      "Tomorrow",
+    ],
+    position: "right-0 top-52",
+    rotate: "-rotate-[7deg]",
+  }}
+/>
 
         {/* ====================================================
             CATEGORY NAVIGATION
@@ -811,7 +673,8 @@ export default function FAQPage() {
                 LEFT SUPPORT PANEL
             =================================================== */}
 
-            <aside className="relative overflow-hidden rounded-2xl bg-[linear-gradient(145deg,#f7faff,#eef4ff)] p-5 sm:p-6">
+            <aside className="relative overflow-hidden rounded-2xl bg-[linear-gradient(145deg,#f7faff,#eef4ff)]">
+             <div className=" p-5 sm:p-6">
               <h2 className="text-2xl font-bold leading-tight tracking-tight text-brand-dark sm:text-3xl">
                 Still Have Questions?
               </h2>
@@ -903,16 +766,17 @@ export default function FAQPage() {
                   </div>
                 </a>
               </div>
+              </div>
 
               {/* Support person */}
-              <div className="relative mt-7 h-60 overflow-hidden sm:h-72">
+              <div className="relative sm:mt-46 h-60 overflow-hidden sm:h-72">
                 <img
-                  src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=800&q=90"
+                  src="/resources-images/resources-faq-bottom.png"
                   alt="AI WorksForce support specialist"
-                  className="absolute bottom-[-1rem] left-1/2 h-full w-full -translate-x-1/2 object-cover object-top mix-blend-multiply"
+                  className="absolute bottom-0 left-1/2 h-full w-full -translate-x-1/2 object-cover object-top mix-blend-multiply"
                 />
 
-                <div className="absolute right-0 top-5 z-20 rotate-[-7deg] font-hand text-xl leading-[0.95] text-brand-blue sm:text-2xl">
+                <div className="absolute right-0 top-5 z-20 rotate-[-7deg] font-hand text-lg leading-[0.95] text-brand-blue sm:text-xl">
                   Real People
                   <br />
                   Real Support

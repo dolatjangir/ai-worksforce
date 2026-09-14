@@ -1,5 +1,6 @@
 "use client";
 
+import PageHero from "@/components/company-hero/reusable-hero";
 import { useState, type ReactNode } from "react";
 
 /* =========================================================
@@ -317,11 +318,11 @@ export default function AboutPage() {
         {/* =====================================================
             HERO
         ====================================================== */}
-<section
+{/* <section
   aria-labelledby="about-hero-title"
   className="relative isolate min-h-[85dvh] overflow-hidden rounded-2xl bg-white"
 >
-  {/* Right-side office image */}
+
   <div className="pointer-events-none absolute inset-y-0 right-0 -z-20 w-full lg:w-[65%]">
     <img
       src="/company-images/about-aiworkforce-company-hero-img.png"
@@ -332,14 +333,14 @@ export default function AboutPage() {
       className="h-full w-full object-cover object-right"
     />
 
-    {/* Blend the office image into the white content area */}
+  
     <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-white/40 lg:bg-[linear-gradient(90deg,#fff_0%,rgba(255,255,255,0.95)_10%,rgba(255,255,255,0.45)_28%,transparent_48%)]" />
 
     <div className="absolute inset-x-0 bottom-0 h-[24%] bg-gradient-to-t from-white/95 to-transparent" />
   </div>
 
   <div className="mx-auto flex min-h-[85dvh] w-full max-w-[1440px] flex-col px-5 py-7 sm:px-8 lg:px-[5.3%] lg:py-8">
-    {/* Hero copy */}
+  
     <div className="relative w-full pt-14 lg:max-w-[49%] lg:pt-[12vh]">
       <p className="text-[9px] font-bold uppercase leading-relaxed tracking-[0.16em] text-[#1600ff] sm:text-xs">
         Our Story. Our Purpose. A Smarter Tomorrow.
@@ -387,7 +388,7 @@ export default function AboutPage() {
       </div>
     </div>
 
-    {/* Bottom statistics and result card */}
+  
     <div className="relative mt-auto flex flex-col gap-6 pt-8 lg:flex-row lg:items-end lg:justify-between lg:gap-5">
       <div className="grid w-full grid-cols-2 gap-x-4 gap-y-5 sm:grid-cols-4 sm:gap-x-0 lg:w-[74%]">
         <div className="flex min-w-0 items-center gap-2.5 sm:pr-3">
@@ -485,8 +486,42 @@ export default function AboutPage() {
       </div>
     </div>
   </div>
-</section>
-        {/* =====================================================
+</section> */}
+<PageHero
+  titleId="about-hero-title"
+  eyebrow="Our Story. Our Purpose. A Smarter Tomorrow."
+  title="About"
+  highlightedTitle="AIWorksForce"
+  description="We help businesses unlock growth through the power of AI automation, intelligent agents, and modern workflows."
+  image="/company-images/about-aiworkforce-company-hero-img.png"
+  imageAlt=""
+  primaryAction={{
+    label: "Our Mission",
+    href: "#mission",
+    icon: "arrow",
+  }}
+  secondaryAction={{
+    label: "Watch Our Story",
+    href: "#our-story",
+    icon: "play",
+  }}
+  stats={[
+    { icon: "users", value: "500+", label: "Businesses Empowered" },
+    { icon: "settings", value: "250+", label: "AI Automations Deployed" },
+    { icon: "chart", value: "99%", label: "Client Satisfaction" },
+    { icon: "globe", value: "10+", label: "Industries Served" },
+  ]}
+  resultCard={{
+    icon: "chart",
+    lines: [
+      "More",
+      "Automation",
+      "More Growth",
+      "A Smarter Tomorrow",
+    ],
+  }}
+/>
+        {/* ======================== =============================
             MISSION / VISION / VALUES
         ====================================================== */}
 
@@ -749,7 +784,7 @@ export default function AboutPage() {
             FINAL CTA
         ====================================================== */}
 
-        <section className="relative isolate mx-1 mt-4 overflow-hidden rounded-2xl bg-[linear-gradient(110deg,#07154d,#0b176f_55%,#2637e8)] px-6 py-8 text-white sm:mx-3 sm:px-10 sm:py-10 lg:mt-5">
+        <section className="relative isolate mx-1 my-4 overflow-hidden rounded-2xl bg-[linear-gradient(110deg,#07154d,#0b176f_55%,#2637e8)] px-6 py-8 text-white sm:mx-3 sm:px-10 sm:py-10 lg:mt-5">
           {/* Decorative background */}
 
           <div className="pointer-events-none absolute inset-0 -z-10 opacity-20 [background-image:repeating-radial-gradient(ellipse_at_0%_120%,transparent_0_0.75rem,#7180ff_0.8rem_0.875rem)]" />

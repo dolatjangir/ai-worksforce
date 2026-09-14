@@ -120,7 +120,7 @@ const footerColumns: FooterColumn[] = [
     icon: Building2,
     color: "text-[#4D8DFF]",
     links: [
-      "About AIWorksForce",
+      "About AIWorksForce ",
       "AI Delivery Centre",
       "How We Work",
       "Partners",
@@ -513,7 +513,7 @@ export default function Footer() {
               "
             >
               <span>
-                © 2026 AIWorksForce. All rights reserved.
+                © 2026 AIWorksForce Intelligence Pvt. Ltd. All rights reserved.
               </span>
 
               <span className="hidden h-4 w-px bg-white/20 sm:block" />

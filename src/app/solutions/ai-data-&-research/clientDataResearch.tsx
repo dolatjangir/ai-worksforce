@@ -1,5 +1,6 @@
 "use client";
 
+import PageHero from "@/components/solutions-hero/reusable-hero";
 import React, { useEffect, useRef, useState } from "react";
 
 /* ============================================================
@@ -467,239 +468,70 @@ export default function AIDataResearchPage() {
           HERO
       ====================================================== */}
 
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#edf7ff] via-white to-white">
-        <div className="absolute -right-40 -top-32 h-[500px] w-[500px] rounded-full bg-[#0876ed]/10 blur-[110px]" />
+    <PageHero
+titleId="ai-data-research-title"
+eyebrow="AI Data & Research"
+title="Turn Data Into"
+highlightedTitle="Real Opportunities."
+description="Get accurate insights, in-depth research, and actionable intelligence with AI-powered data & research solutions. We help you discover trends, validate ideas, and make smarter, faster decisions."
+image="/assessment-hero-right-img.png"
+imageAlt="AI Data & Research workspace and data intelligence"
+primaryAction={{
+label: "Get a Free Data Assessment",
+href: "#contact",
+icon: "arrow",
+}}
+secondaryAction={{
+label: "See How It Works",
+href: "#how-it-works",
+icon: "play",
+}}
+stats={[
+{
+    icon: "chart",
+value: "3x",
+label: "Faster Insights",
+},
+{
+  icon: "chart",
+value: "70%",
+label: "Lower Research Costs",
+},
+{
+  icon: "rocket",
+value: "100%",
+label: "Actionable Results",
+},
+]}
 
-        <div className="relative mx-auto max-w-[1400px] px-5 pb-12 pt-7 lg:px-8 lg:pb-14">
-         
+   benefitCards={[
+    {
+      title: "Ai Agents",
+      description: "Handle Repetitive Work",
+      icon: "settings",
+    },
+    {
+      title: "Human Experts",
+      description: "Ensure Quality",
+      icon: "check",
+    },
+    {
+      title: "managed Operations",
+      description: "Drive Results",
+      icon: "chart",
+    },
 
-          <div className="grid items-center gap-8 lg:grid-cols-[1fr_1.08fr] lg:gap-4">
-            {/* HERO COPY */}
+  ]}
 
-            <Reveal>
-              <div>
-                <span className="inline-flex rounded-full border border-[#0876ed]/20 bg-blue-50 px-3.5 py-1.5 text-[10px] font-extrabold uppercase tracking-[0.13em] text-[#0876ed]">
-                  AI Data & Research
-                </span>
-
-                <h1 className="mt-5 max-w-[590px] text-[41px] font-extrabold leading-[1.07] tracking-[-0.04em] text-[#06235a] sm:text-[52px] lg:text-[57px]">
-                  Turn Data Into
-                  <br />
-                  <span className="text-[#0876ed]">
-                    Real Opportunities.
-                  </span>
-                </h1>
-
-                <p className="mt-5 max-w-[520px] text-[15px] leading-[1.6] text-slate-500">
-                  Get accurate insights, in-depth research, and actionable
-                  intelligence with AI-powered data & research solutions. We
-                  help you discover trends, validate ideas, and make smarter,
-                  faster decisions.
-                </p>
-
-                <div className="mt-7 flex flex-wrap gap-3">
-                  <a
-                    href="#contact"
-                    className="inline-flex items-center gap-2 rounded-xl bg-[#0876ed] px-5 py-3.5 text-[12px] font-extrabold text-white shadow-lg shadow-blue-500/25"
-                  >
-                    Get a Free Data Assessment
-                    <Icon name="arrow" size={14} />
-                  </a>
-
-                  <a
-                    href="#how-it-works"
-                    className="inline-flex items-center gap-2.5 rounded-xl border border-slate-200 bg-white px-5 py-3.5 text-[12px] font-extrabold text-[#06235a] shadow-sm"
-                  >
-                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#0876ed] text-white">
-                      <Icon name="play" size={9} />
-                    </span>
-                    See How It Works
-                  </a>
-                </div>
-
-                {/* hero metrics */}
-
-                <div className="mt-9 grid max-w-[560px] grid-cols-3 gap-4 border-t border-slate-200 pt-6 sm:gap-6">
-                  <div>
-                    <div className="text-[27px] font-extrabold tracking-tight text-[#0876ed] sm:text-[31px]">
-                      3x
-                    </div>
-                    <div className="text-[10px] font-medium text-slate-500 sm:text-[11px]">
-                      Faster Insights
-                    </div>
-                  </div>
-
-                  <div>
-                    <div className="text-[27px] font-extrabold tracking-tight text-[#0876ed] sm:text-[31px]">
-                      70%
-                    </div>
-                    <div className="text-[10px] font-medium text-slate-500 sm:text-[11px]">
-                      Lower Research Costs
-                    </div>
-                  </div>
-
-                  <div>
-                    <div className="text-[27px] font-extrabold tracking-tight text-[#0876ed] sm:text-[31px]">
-                      100%
-                    </div>
-                    <div className="text-[10px] font-medium text-slate-500 sm:text-[11px]">
-                      Actionable Results
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </Reveal>
-
-            {/* HERO VISUAL */}
-
-            <Reveal delay={120}>
-              <div className="relative mx-auto h-[480px] w-full max-w-[640px] sm:h-[535px]">
-                <div className="absolute inset-0 overflow-hidden rounded-[30px] bg-gradient-to-br from-[#d9edff] via-[#eef7ff] to-white">
-                  {/* background glow */}
-
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_25%,rgba(8,118,237,.24),transparent_42%)]" />
-
-                  {/* monitor */}
-
-                  <div className="absolute right-[5%] top-[5%] h-[44%] w-[64%] rounded-xl border-[6px] border-[#263b60] bg-[#071a38] shadow-2xl">
-                    <div className="relative h-full overflow-hidden rounded bg-[#08234b]">
-                      <div className="absolute left-4 top-4 text-[13px] font-bold text-white/90">
-                        AI Data Intelligence
-                      </div>
-
-                      <div className="absolute bottom-5 left-5 right-5 flex h-[55%] items-end justify-between gap-2">
-                        {[35, 55, 44, 70, 58, 83, 67, 94].map(
-                          (height, i) => (
-                            <span
-                              key={i}
-                              className="w-full rounded-t bg-gradient-to-t from-[#0876ed] to-cyan-300"
-                              style={{ height: `${height}%` }}
-                            />
-                          )
-                        )}
-                      </div>
-
-                      <svg
-                        className="absolute bottom-7 left-5 right-5 h-[55%] w-[88%] text-cyan-300"
-                        viewBox="0 0 300 100"
-                        fill="none"
-                      >
-                        <path
-                          d="M2 88C45 78 65 72 100 63C135 54 147 67 175 45C202 25 224 37 298 4"
-                          stroke="currentColor"
-                          strokeWidth="3"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-
-                  {/* monitor stand */}
-
-                  <div className="absolute right-[30%] top-[48%] h-12 w-16 bg-[#263b60]" />
-
-                  <div className="absolute right-[23%] top-[58%] h-3 w-28 rounded-full bg-[#263b60]" />
-
-                  {/* PERSON */}
-
-                  <div className="absolute bottom-0 right-[10%] h-[65%] w-[48%]">
-                    {/* hair */}
-
-                    <div className="absolute right-0 top-[4%] h-[68%] w-[73%] rounded-[48%] bg-gradient-to-br from-[#111827] via-[#1a2639] to-[#394b63] shadow-2xl" />
-
-                    {/* face */}
-
-                    <div className="absolute right-[19%] top-[15%] h-[38%] w-[42%] rounded-[45%] bg-[#dca486]">
-                      <span className="absolute left-[20%] top-[43%] h-1.5 w-1.5 rounded-full bg-[#17243b]" />
-                      <span className="absolute right-[20%] top-[43%] h-1.5 w-1.5 rounded-full bg-[#17243b]" />
-                      <span className="absolute left-[38%] top-[62%] h-1 w-4 rounded-full bg-[#b56f69]" />
-                    </div>
-
-                    {/* glasses */}
-
-                    <div className="absolute right-[17%] top-[40%] flex w-[45%] justify-between">
-                      <span className="h-7 w-8 rounded-md border-2 border-[#17243b]" />
-                      <span className="h-7 w-8 rounded-md border-2 border-[#17243b]" />
-                    </div>
-
-                    {/* body */}
-
-                    <div className="absolute bottom-[-4%] right-0 h-[49%] w-[86%] rounded-t-[44px] bg-gradient-to-br from-[#102442] via-[#111d31] to-[#030a16]" />
-
-                    <div className="absolute bottom-[18%] right-[38%] text-[8px] font-bold text-white/80">
-                      AW
-                    </div>
-                  </div>
-
-                  {/* LAPTOP */}
-
-                  <div className="absolute bottom-5 left-[7%] h-[112px] w-[55%] rounded-t-2xl border border-slate-300/70 bg-gradient-to-b from-white to-slate-200 shadow-2xl">
-                    <div className="mx-auto mt-3 h-[74px] w-[87%] rounded-lg bg-[#071b3d] p-2">
-                      <div className="flex h-full items-end justify-around rounded-md bg-[#0d2b55] px-3 pb-2">
-                        {[30, 48, 42, 65, 53, 76, 61].map((height, i) => (
-                          <span
-                            key={i}
-                            className="w-2.5 rounded-t bg-gradient-to-t from-[#0876ed] to-cyan-300"
-                            style={{ height: `${height}px` }}
-                          />
-                        ))}
-                      </div>
-                    </div>
-
-                    <div className="mx-auto mt-1 h-2 w-[94%] rounded-b-xl bg-slate-300" />
-                  </div>
-                </div>
-
-                {/* FLOATING CARD */}
-
-                <div className="absolute left-[3%] top-[10%] flex w-[200px] items-center gap-3 rounded-2xl border border-slate-100 bg-white p-3.5 shadow-xl shadow-slate-900/10 sm:w-[220px]">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-[#0876ed]">
-                    <Icon name="research" size={20} />
-                  </span>
-
-                  <div>
-                    <div className="text-[12px] font-extrabold text-[#06235a]">
-                      Market Insights
-                    </div>
-                    <div className="mt-0.5 text-[9.5px] text-slate-400">
-                      Identifying new opportunities
-                    </div>
-                  </div>
-                </div>
-
-                <div className="absolute left-[9%] top-[30%] flex w-[205px] items-center gap-3 rounded-2xl border border-slate-100 bg-white p-3.5 shadow-xl shadow-slate-900/10 sm:w-[225px]">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-[#0876ed]">
-                    <Icon name="chart" size={19} />
-                  </span>
-
-                  <div>
-                    <div className="text-[12px] font-extrabold text-[#06235a]">
-                      Data Analysis
-                    </div>
-                    <div className="mt-0.5 text-[9.5px] text-slate-400">
-                      Turning data into decisions
-                    </div>
-                  </div>
-                </div>
-
-                <div className="absolute bottom-[22%] left-[3%] flex w-[205px] items-center gap-3 rounded-2xl border border-slate-100 bg-white p-3.5 shadow-xl shadow-slate-900/10 sm:w-[225px]">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-[#0876ed]">
-                    <Icon name="growth" size={19} />
-                  </span>
-
-                  <div>
-                    <div className="text-[12px] font-extrabold text-[#06235a]">
-                      Competitive Research
-                    </div>
-                    <div className="mt-0.5 text-[9.5px] text-slate-400">
-                      Stay ahead of the market
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </section>
+  handwrittenNote={{
+    lines: [
+      "Smarter Teams",
+      "Bigger Results",
+    ],
+    position: "right-[2%] bottom-[22%]",
+    rotate: "-rotate-[5deg]",
+  }}
+/>
 
       {/* ======================================================
           TRUSTED

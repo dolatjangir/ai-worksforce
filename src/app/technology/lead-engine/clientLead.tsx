@@ -24,6 +24,7 @@ import {
   Users,
   X,
 } from "lucide-react";
+import ReusableHero from "@/components/tech-hero/reusable-hero";
 
 const navItems = [
   "Home",
@@ -137,225 +138,116 @@ export default function LeadEnginePage() {
 
   return (
     <main className="min-h-screen overflow-hidden bg-white font-sans text-brand-dark">
-      <header className="relative z-50 mx-auto flex h-[68px] max-w-[1440px] items-center justify-between px-5 lg:px-10">
-        <a href="#" className="shrink-0">
-          <span className="block text-[20px] font-extrabold leading-none tracking-[-1.1px] text-[#101d82]">
-            AI WorksForce
-          </span>
-          <span className="ml-[53px] mt-1 block text-[8px] font-semibold leading-none text-brand-text">
-            Automate. Accelerate. Grow.
-          </span>
-        </a>
+    
 
-        <nav className="hidden items-center gap-5 xl:flex">
-          {navItems.map((item) => (
-            <a
-              key={item}
-              href={item === "Solutions" ? "#solutions" : "#"}
-              className={`relative text-[10px] font-medium text-[#46558b] transition hover:text-brand-blue ${
-                item === "Solutions" ? "font-bold text-brand-dark" : ""
-              }`}
-            >
-              {item}
-              {item === "Solutions" && <ChevronDown className="ml-0.5 inline size-3" />}
-              {item === "Solutions" && (
-                <span className="absolute -bottom-[25px] left-0 h-0.5 w-full bg-brand-blue" />
-              )}
-            </a>
-          ))}
-        </nav>
-
-        <a
-          href="#contact"
-          className="hidden rounded-xl bg-gradient-to-r from-[#2415ff] to-[#0b237a] px-5 py-3 text-[10px] font-bold text-white shadow-lg shadow-blue-200 transition hover:-translate-y-0.5 sm:inline-flex sm:items-center sm:gap-1"
-        >
-          Book a Free Consultation <ArrowRight className="size-3" />
-        </a>
-
-        <button
-          type="button"
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="rounded-lg p-2 text-brand-dark xl:hidden"
-          aria-label="Toggle navigation"
-        >
-          {menuOpen ? <X /> : <Menu />}
-        </button>
-
-        {menuOpen && (
-          <div className="absolute left-0 right-0 top-full border-y border-blue-100 bg-white px-5 py-4 shadow-xl xl:hidden">
-            <nav className="grid gap-1">
-              {navItems.map((item) => (
-                <a
-                  key={item}
-                  href={item === "Solutions" ? "#solutions" : "#"}
-                  onClick={() => setMenuOpen(false)}
-                  className="rounded-lg px-3 py-2 text-sm font-medium text-brand-text hover:bg-brand-blue-soft hover:text-brand-blue"
-                >
-                  {item}
-                </a>
-              ))}
-              <a
-                href="#contact"
-                onClick={() => setMenuOpen(false)}
-                className="mt-2 rounded-lg bg-brand-blue px-4 py-3 text-center text-sm font-bold text-white"
-              >
-                Book a Free Consultation
-              </a>
-            </nav>
-          </div>
-        )}
-      </header>
-
-      <section className="relative mx-auto max-w-[1440px] overflow-hidden rounded-b-[22px] bg-[radial-gradient(circle_at_72%_38%,rgba(215,220,255,.9),rgba(242,247,255,.72)_28%,rgba(255,255,255,1)_66%)] px-5 py-10 lg:px-[76px] lg:py-8">
-        <div className="pointer-events-none absolute right-[11%] top-0 size-[480px] rounded-full bg-[#d8deff]/40 blur-3xl" />
-
-        <div className="relative grid items-center gap-10 lg:grid-cols-[1.05fr_.95fr]">
-          <div className="max-w-[570px]">
-            <p className="text-[10px] font-extrabold tracking-[3px] text-[#2029e8]">
-              MORE LEADS. MORE OPPORTUNITIES. MORE GROWTH.
-            </p>
-
-            <h1 className="mt-2 text-[50px] font-extrabold leading-[0.95] tracking-[-3px] text-[#0b176c] sm:text-[64px] lg:text-[70px]">
-              Lead{" "}
-              <span className="bg-gradient-to-r from-[#1238ff] via-[#1d26f1] to-[#5722ea] bg-clip-text text-transparent">
-                Engine
-              </span>
-            </h1>
-
-            <h2 className="mt-3 text-[18px] font-extrabold tracking-[-0.8px] text-brand-dark sm:text-[20px]">
-              AI-Powered Lead Generation for Real Business Growth.
-            </h2>
-
-            <p className="mt-2 max-w-[545px] text-[14px] leading-[1.45] text-[#536394] sm:text-[15px]">
-              Our Lead Engine uses AI to find, qualify, and engage high-intent leads, so you can focus on closing deals. Get a consistent pipeline of quality leads, without the manual effort.
-            </p>
-
-            <div className="mt-5 flex flex-wrap gap-3">
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-[#2513ff] to-[#1230e7] px-6 py-3 text-xs font-bold text-white shadow-lg shadow-indigo-200 transition hover:-translate-y-0.5"
-              >
-                Book a Free Consultation <ArrowRight className="size-4" />
-              </a>
-
-              <a
-                href="#how-it-works"
-                className="inline-flex items-center gap-2 rounded-lg border border-[#7180b5] bg-white px-5 py-3 text-xs font-bold text-[#122074] transition hover:border-brand-blue hover:text-brand-blue"
-              >
-                <span className="grid size-5 place-items-center rounded-full bg-[#e7edff] text-[#2939ef]">
-                  <Play className="ml-0.5 size-3 fill-current" />
-                </span>
-                See It in Action
-              </a>
-            </div>
-          </div>
-
-          <div className="relative mx-auto h-[335px] w-full max-w-[590px] sm:h-[380px] lg:h-[330px]">
-            <div className="absolute left-[27%] top-0 h-full w-[52%] overflow-hidden rounded-[48%] bg-gradient-to-b from-[#d7d9ff] via-[#eff3ff] to-[#eef6ff]">
-              <img
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=90"
-                alt="AI WorksForce lead generation specialist"
-                className="h-full w-full object-cover object-[58%_20%] mix-blend-multiply"
-              />
-            </div>
-
-            <div className="absolute left-0 top-[9%] z-10 space-y-2">
-              {[
-                [Search, "Find Prospects", "AI-powered research"],
-                [Users, "Qualify Leads", "Smart scoring"],
-                [Rocket, "Automate Outreach", "Multi-channel campaigns"],
-                [BarChart3, "Track & Optimize", "Real-time analytics"],
-              ].map(([Icon, title, subtitle]) => {
-                const CardIcon = Icon as typeof Search;
-                return (
-                  <div
-                    key={title as string}
-                    className="flex w-[165px] items-center gap-2.5 rounded-xl bg-white px-3 py-2.5 shadow-[0_10px_25px_rgba(38,74,151,.14)]"
-                  >
-                    <span className="grid size-9 place-items-center rounded-full bg-[#e7ecff] text-[#172bff]">
-                      <CardIcon className="size-5 fill-current stroke-[2.4]" />
-                    </span>
-                    <span>
-                      <strong className="block text-[10px] font-extrabold leading-tight text-brand-dark">
-                        {title as string}
-                      </strong>
-                      <small className="block text-[8px] font-medium text-brand-text-muted">
-                        {subtitle as string}
-                      </small>
-                    </span>
-                  </div>
-                );
-              })}
-            </div>
-
-            <div className="absolute right-0 top-[4%] z-10 w-[170px] rounded-xl bg-white p-3.5 shadow-[0_10px_25px_rgba(38,74,151,.14)]">
-              <div className="flex items-start justify-between">
-                <h3 className="text-[14px] font-extrabold leading-[1.1] tracking-[-0.5px] text-brand-dark">
-                  Turn Prospects
-                  <br />
-                  Into Revenue
-                </h3>
-                <BarChart3 className="size-7 text-[#152af1]" />
-              </div>
-
-              <ul className="mt-3 space-y-2">
-                <CheckItem>Discover Target Accounts</CheckItem>
-                <CheckItem>Engage at the Right Time</CheckItem>
-                <CheckItem>Nurture Automatically</CheckItem>
-                <CheckItem>Convert More Deals</CheckItem>
-              </ul>
-            </div>
-
-            <div className="absolute bottom-[8%] right-0 z-10 w-[164px] rounded-xl bg-white p-3 shadow-[0_10px_25px_rgba(38,74,151,.14)]">
-              <p className="text-[10px] font-extrabold text-brand-dark">Leads Generated</p>
-              <div className="mt-1 flex items-center justify-between">
-                <span className="text-[18px] font-extrabold text-brand-green">↑ 256%</span>
-                <svg viewBox="0 0 78 34" className="h-8 w-20">
-                  <path d="M2 29 14 20 23 25 34 12 44 18 55 7 64 15 76 2" fill="none" stroke="#10b981" strokeWidth="2.5" />
-                  <path d="M68 2h8v8" fill="none" stroke="#10b981" strokeWidth="2.5" />
-                </svg>
-              </div>
-            </div>
-
-            <div className="absolute bottom-[-4px] left-[29%] z-20 w-[52%] overflow-hidden rounded-t-[10px] bg-[#e8ebf0] px-6 pb-2 pt-9 shadow-[0_16px_22px_rgba(16,32,79,.2)]">
-              <p className="text-center text-[10px] font-bold text-[#0d1a82]">AI WorksForce</p>
-            </div>
-
-            <p className="absolute bottom-2 right-5 rotate-[-10deg] font-hand text-[19px] leading-[0.9] text-[#1428ee]">
-              Your
-              <br />
-              Growth
-              <br />
-              Starts with
-              <br />
-              Better Leads
-            </p>
-          </div>
-        </div>
-
-        <div className="relative mt-6 grid max-w-[575px] grid-cols-1 gap-4 sm:grid-cols-3 sm:divide-x sm:divide-blue-100">
-          {[
-            [BarChart3, "3x", "More Qualified Leads"],
-            [Clock3, "70%", "Less Manual Effort"],
-            [BarChart3, "5x", "Higher Conversion Rates"],
-          ].map(([Icon, value, label]) => {
-            const StatIcon = Icon as typeof BarChart3;
-            return (
-              <div key={value as string} className="flex items-center gap-2 sm:px-4 first:pl-0">
-                <span className="grid size-10 place-items-center rounded-full bg-brand-green-soft text-brand-green">
-                  <StatIcon className="size-5 fill-current" />
-                </span>
-                <div>
-                  <strong className="block text-[21px] font-extrabold leading-none text-[#1729ef]">
-                    {value as string}
-                  </strong>
-                  <span className="text-[10px] font-medium text-[#59689a]">{label as string}</span>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </section>
+    <ReusableHero
+  eyebrow="MORE LEADS. MORE OPPORTUNITIES. MORE GROWTH."
+  title={
+    <>
+      Lead{" "}
+      <span className="bg-gradient-to-r from-brand-purple to-brand-blue bg-clip-text text-transparent">
+        Engine
+      </span>
+    </>
+  }
+  subtitle="AI-Powered Lead Generation for Real Business Growth."
+  description="Our Lead Engine uses AI to find, qualify, and engage high-intent leads, so you can focus on closing deals. Get a consistent pipeline of quality leads, without the manual effort."
+  buttons={{
+    primary: {
+      label: "Book a Free Consultation",
+      href: "#contact",
+      variant: "primary",
+      icon: <ArrowRight className="size-4" />,
+    },
+    secondary: {
+      label: "See It in Action",
+      href: "#how-it-works",
+      variant: "secondary",
+      icon: <Play className="size-3.5 fill-current" />,
+    },
+  }}
+  stats={[
+    {
+      value: "3x",
+      label: "More Qualified Leads",
+      icon: <BarChart3 className="size-5" />,
+    },
+    {
+      value: "70%",
+      label: "Less Manual Effort",
+      icon: <Clock3 className="size-5" />,
+    },
+    {
+      value: "5x",
+      label: "Higher Conversion Rates",
+      icon: <BarChart3 className="size-5" />,
+    },
+  ]}
+  heroImageSrc={
+    "/technology/all-in-one.png"
+  }
+  heroImageAlt="AI WorksForce lead generation specialist"
+  leftCards={[
+    {
+      label: "Find Prospects",
+      subLabel: "AI-powered research",
+      symbol: "⌕",
+      colorClass: "text-brand-blue",
+    },
+    {
+      label: "Qualify Leads",
+      subLabel: "Smart scoring",
+      symbol: "♙",
+      colorClass: "text-brand-blue",
+    },
+    {
+      label: "Automate Outreach",
+      subLabel: "Multi-channel campaigns",
+      symbol: "↗",
+      colorClass: "text-brand-blue",
+    },
+    {
+      label: "Track & Optimize",
+      subLabel: "Real-time analytics",
+      symbol: "⌁",
+      colorClass: "text-brand-blue",
+    },
+  ]}
+  sideCard={{
+    title: (
+      <>
+        Turn Prospects
+        <br />
+        Into Revenue
+      </>
+    ),
+    items: [
+      "Discover Target Accounts",
+      "Engage at the Right Time",
+      "Nurture Automatically",
+      "Convert More Deals",
+    ],
+    icon: <BarChart3 className="size-6 text-brand-blue" />,
+  }}
+  rightCards={[
+    {
+      label: "Leads Generated",
+      symbol: "↑",
+      colorClass: "text-brand-green",
+    },
+  ]}
+  handwrittenText={
+    <>
+      Your
+      <br />
+      Growth
+      <br />
+      Starts with
+      <br />
+      Better Leads
+    </>
+  }
+/>
 
       <section className="mx-auto max-w-[1440px] px-5 py-5 lg:px-[76px]">
         <p className="text-[9px] font-extrabold tracking-[2.7px] text-[#1d28e7]">

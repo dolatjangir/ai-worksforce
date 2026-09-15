@@ -1,5 +1,7 @@
 "use client";
 
+import ReusableHero from "@/components/tech-hero/reusable-hero";
+import { ArrowRight, BarChart3, Database, Play, Zap } from "lucide-react";
 import { useState, type ReactNode } from "react";
 
 /**
@@ -59,7 +61,7 @@ const technologyMarks = [
 
 export default function TechnologyStackPage({
   consultationHref = "/contact",
-  heroImageSrc = "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=900&q=88",
+  heroImageSrc = "/technology/all-in-one.png",
   caseStudyImageSrc = "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=800&q=88",
   testimonialImageSrc = "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=300&q=88",
 }: TechnologyStackPageProps) {
@@ -100,56 +102,105 @@ export default function TechnologyStackPage({
 
 
       <main id="main">
-        <section aria-labelledby="hero-title" className="relative isolate overflow-hidden rounded-b-2xl" style={{ background: "radial-gradient(circle at 72% 35%, rgba(139,92,246,.18), transparent 35%), linear-gradient(112deg, #f7f9ff, #fff 54%, #eef2ff)" }}>
-          <div className="mx-auto grid max-w-[1370px] gap-7 px-5 pb-7 pt-10 sm:px-8 lg:min-h-[520px] lg:grid-cols-[1.03fr_.97fr] lg:gap-2 lg:px-10">
-            <div className="relative z-10 lg:pt-1">
-              <p className={eyebrow}>Modern technology. Real business impact.</p>
-              <h1 id="hero-title" className="mt-2 text-[52px] font-bold leading-[.98] tracking-[-0.06em] sm:text-[68px] lg:text-[76px]">Technology <span className="bg-gradient-to-r from-brand-purple to-brand-blue bg-clip-text text-transparent">Stack</span></h1>
-              <h2 className="mt-3 max-w-[600px] text-xl font-semibold leading-[1.2] tracking-[-0.03em] sm:text-[23px]">Powered by the world&apos;s best technologies.</h2>
-              <p className="mt-3 max-w-[620px] text-base leading-[1.5] text-brand-text sm:text-[18px]">We use a modern, scalable, and secure technology stack to build AI-powered solutions that deliver real results for your business. From AI models to automation tools, our stack ensures performance, reliability, and innovation.</p>
-              <div className="mt-5 flex flex-col gap-4 sm:flex-row">
-                <a href={consultationHref} className={primary}>Book a Free Consultation {icon("arrow", "size-4")}</a>
-                <a href="#solutions" className={secondary}><span className="grid size-6 place-items-center rounded-full bg-brand-purple-soft text-brand-purple">{icon("play", "size-3.5")}</span> See Our Stack in Action</a>
-              </div>
-              <div className="mt-8 grid grid-cols-3 gap-3 sm:gap-5">
-                {([
-                  { value: "3x", label: "Faster Development", icon: "bolt", tone: "bg-brand-purple-soft text-brand-purple" },
-                  { value: "70%", label: "Lower Infrastructure Costs", icon: "database", tone: "bg-brand-purple-soft text-brand-purple" },
-                  { value: "5x", label: "More Scalable Solutions", icon: "chart", tone: "bg-brand-purple-soft text-brand-purple" },
-                ] as const).map((stat) => (
-                  <div key={stat.label} className="flex flex-col gap-2 border-r border-brand-blue/10 last:border-0 sm:flex-row sm:items-center sm:gap-3">
-                    <span className={`flex size-11 shrink-0 items-center justify-center rounded-full sm:size-14 ${stat.tone}`}>{icon(stat.icon)}</span>
-                    <div><p className="text-[27px] font-bold leading-none text-brand-blue sm:text-[31px]">{stat.value}</p><p className="mt-1 text-[11px] leading-tight text-brand-text sm:text-sm">{stat.label}</p></div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="relative mx-auto h-[440px] w-full max-w-[650px] lg:-mt-5 lg:h-[500px]">
-              <div aria-hidden="true" className="absolute inset-x-[14%] inset-y-[8%] rounded-full bg-brand-purple-light/15 blur-3xl" />
-              <img src={heroImageSrc} alt="Technology solutions consultant" width={470} height={600} fetchPriority="high" className="absolute bottom-0 left-[26%] h-[87%] w-[54%] rounded-t-[45%] object-cover object-top drop-shadow-[0_18px_28px_rgba(17,24,80,.18)]" />
-              <div className="absolute bottom-0 left-[31%] flex h-[118px] w-[44%] items-center justify-center rounded-lg border border-white/80 bg-gradient-to-br from-white via-slate-200 to-slate-300 px-5 text-center text-lg font-bold shadow-xl">AI WorksForce</div>
-
-              <div className="absolute left-0 top-8 grid gap-2.5">
-                {[
-                  ["N", "Frontend", "Next.js, React", "text-neutral-950"], ["⬡", "Backend", "Node.js, Python", "text-emerald-500"],
-                  ["⚛", "AI & ML", "OpenAI, Claude", "text-brand-purple"], ["🐘", "Database", "PostgreSQL, MongoDB", "text-sky-600"], ["▲", "Cloud", "AWS, Vercel", "text-neutral-950"],
-                ].map(([mark, name, sub, color]) => (
-                  <div key={name} className="flex min-h-[50px] w-[142px] items-center gap-3 rounded-lg border border-white/90 bg-white/90 px-3 shadow-[0_8px_25px_rgba(24,74,140,.07)] backdrop-blur sm:w-[174px]">
-                    <span className={`w-8 text-center text-[28px] font-bold leading-none ${color}`}>{mark}</span><span className="text-xs font-semibold sm:text-sm">{name}{sub && <small className="block font-normal text-brand-text">{sub}</small>}</span>
-                  </div>
-                ))}
-              </div>
-
-              <aside className="absolute right-0 top-0 w-[166px] rounded-xl border border-white bg-white/90 p-4 shadow-[0_10px_35px_rgba(24,74,140,.08)] backdrop-blur sm:w-[205px]">
-                <span className="absolute right-3 top-3 text-brand-purple">{icon("sparkles", "size-6")}</span>
-                <h3 className="pr-5 text-base font-bold leading-[1.12]">Why Our Stack?</h3>
-                <ul className="mt-3 space-y-2">{["Modern & Future-Ready", "Scalable Architecture", "Secure & Reliable", "Best-in-Class Tools", "Optimized for Performance"].map((item) => <li key={item} className="flex items-center gap-2 text-[11px]"><span className="grid size-5 place-items-center rounded-full bg-emerald-100 text-emerald-500">{icon("check", "size-3")}</span>{item}</li>)}</ul>
-              </aside>
-              <p aria-hidden="true" className="absolute bottom-9 right-0 -rotate-12 font-hand text-[23px] leading-[1.05] text-brand-blue sm:text-[28px]">Right<br />Technology<br />Bigger<br />Possibilities</p>
-            </div>
-          </div>
-        </section>
+      <ReusableHero
+  eyebrow="Modern technology. Real business impact."
+  title={
+    <>
+      Technology{" "}
+      <span className="bg-gradient-to-r from-brand-purple to-brand-blue bg-clip-text text-transparent">
+        Stack
+      </span>
+    </>
+  }
+  subtitle="Powered by the world's best technologies."
+  description="We use a modern, scalable, and secure technology stack to build AI-powered solutions that deliver real results for your business. From AI models to automation tools, our stack ensures performance, reliability, and innovation."
+  buttons={{
+    primary: {
+      label: "Book a Free Consultation",
+      href: consultationHref,
+      variant: "primary",
+      icon: <ArrowRight className="size-4" />,
+    },
+    secondary: {
+      label: "See Our Stack in Action",
+      href: "#solutions",
+      variant: "secondary",
+      icon: <Play className="size-3.5" />,
+    },
+  }}
+  stats={[
+    {
+      value: "3x",
+      label: "Faster Development",
+      icon: <Zap className="size-5" />,
+    },
+    {
+      value: "70%",
+      label: "Lower Infrastructure Costs",
+      icon: <Database className="size-5" />,
+    },
+    {
+      value: "5x",
+      label: "More Scalable Solutions",
+      icon: <BarChart3 className="size-5" />,
+    },
+  ]}
+  heroImageSrc={heroImageSrc}
+  heroImageAlt="Technology solutions consultant"
+  leftCards={[
+    {
+      label: "Frontend",
+      subLabel: "Next.js, React",
+      symbol: "N",
+      colorClass: "text-neutral-950",
+    },
+    {
+      label: "Backend",
+      subLabel: "Node.js, Python",
+      symbol: "⬡",
+      colorClass: "text-emerald-500",
+    },
+    {
+      label: "AI & ML",
+      subLabel: "OpenAI, Claude",
+      symbol: "⚛",
+      colorClass: "text-brand-purple",
+    },
+    {
+      label: "Database",
+      subLabel: "PostgreSQL, MongoDB",
+      symbol: "🐘",
+      colorClass: "text-sky-600",
+    },
+    {
+      label: "Cloud",
+      subLabel: "AWS, Vercel",
+      symbol: "▲",
+      colorClass: "text-neutral-950",
+    },
+  ]}
+  sideCard={{
+    title:"Why Our Stack?",
+    items: [
+      "Modern & Future-Ready",
+      "Scalable Architecture",
+      "Secure & Reliable",
+      "Best-in-Class Tools",
+      "Optimized for Performance",
+    ],
+  }}
+  handwrittenText={
+    <>
+      Right
+      <br />
+      Technology
+      <br />
+      Bigger
+      <br />
+      Possibilities
+    </>
+  }
+/>
 
         <section aria-label="Trusted technologies" className="mx-auto max-w-[1370px] px-5 py-6 sm:px-8 lg:px-10">
           <p className={eyebrow}>Trusted technologies we work with</p>

@@ -27,6 +27,7 @@ import {
   X,
   Zap,
 } from "lucide-react";
+import ReusableHero from "@/components/tech-hero/reusable-hero";
 
 const navItems = [
   "Home",
@@ -205,211 +206,109 @@ function LogoStrip() {
 
 export default function AIInfrastructurePage() {
   const [menuOpen, setMenuOpen] = useState(false);
-
+ const heroImageSrc = "/technology/ai-infrastructure-hero.png";
   return (
     <main className="min-h-screen overflow-x-hidden bg-white font-sans text-brand-dark">
   
 
       {/* Hero */}
-      <section className="relative mx-auto max-w-[1440px] overflow-hidden rounded-b-[22px] bg-[radial-gradient(circle_at_72%_42%,rgba(211,220,255,.95),rgba(242,247,255,.78)_30%,rgba(255,255,255,1)_67%)] px-5 py-9 lg:px-[76px] lg:py-6">
-        <div className="pointer-events-none absolute -right-10 -top-20 size-[520px] rounded-full bg-[#d9e0ff]/40 blur-3xl" />
-        <div className="pointer-events-none absolute right-[24%] top-[12%] size-40 rounded-full bg-white/60 blur-3xl" />
-
-        <div className="relative grid items-center gap-8 lg:grid-cols-[0.95fr_1.05fr]">
-          <div className="max-w-[550px]">
-            <p className="text-[9px] font-extrabold tracking-[3px] text-[#2029e8]">
-              BUILT FOR TODAY. READY FOR TOMORROW.
-            </p>
-
-            <h1 className="mt-2 text-[48px] font-extrabold leading-[0.93] tracking-[-3px] text-[#0b176c] sm:text-[62px] lg:text-[68px]">
-              AI
-              <br />
-              <span className="bg-gradient-to-r from-[#1238ff] via-[#1d26f1] to-[#5722ea] bg-clip-text text-transparent">
-                Infrastructure
-              </span>
-            </h1>
-
-            <h2 className="mt-4 max-w-[500px] text-[17px] font-extrabold leading-[1.08] tracking-[-0.7px] text-brand-dark sm:text-[19px]">
-              A scalable, secure, and future-ready foundation for your AI
-              journey.
-            </h2>
-
-            <p className="mt-2 max-w-[540px] text-[13px] leading-[1.48] text-[#536394] sm:text-[14px]">
-              We design and deploy robust AI infrastructure that powers your
-              data, models, and applications — built for performance,
-              security, and scale.
-            </p>
-
-            <div className="mt-5 flex flex-wrap gap-3">
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-[#2513ff] to-[#1230e7] px-6 py-3 text-xs font-bold text-white shadow-lg shadow-indigo-200 transition hover:-translate-y-0.5"
-              >
-                Book a Free Consultation <ArrowRight className="size-4" />
-              </a>
-
-              <a
-                href="#how-it-works"
-                className="inline-flex items-center gap-2 rounded-lg border border-[#7180b5] bg-white px-5 py-3 text-xs font-bold text-[#122074] transition hover:border-brand-blue hover:text-brand-blue"
-              >
-                <span className="grid size-5 place-items-center rounded-full bg-[#e7edff] text-[#2939ef]">
-                  <Play className="ml-0.5 size-3 fill-current" />
-                </span>
-                See It in Action
-              </a>
-            </div>
-          </div>
-
-          {/* Infrastructure visual */}
-          <div className="relative mx-auto h-[350px] w-full max-w-[620px] sm:h-[390px] lg:h-[350px]">
-            <div className="absolute inset-x-[19%] bottom-4 top-5 rounded-[50%] bg-[radial-gradient(circle,rgba(147,178,255,.38),rgba(239,245,255,.2)_50%,transparent_72%)] blur-xl" />
-
-            <div className="absolute bottom-[4%] left-[22%] right-[18%] h-4 rounded-[50%] bg-[#5e91ff]/20 blur-md" />
-
-            <div className="absolute bottom-[7%] left-[27%] z-10 flex h-[230px] w-[43%] items-end justify-center gap-2 sm:h-[260px]">
-              {[0, 1, 2].map((rack) => (
-                <div
-                  key={rack}
-                  className={`relative h-full w-[31%] rounded-[5px] border border-[#5c9bff]/40 bg-gradient-to-b from-[#142b59] via-[#071735] to-[#020b1f] shadow-[0_20px_35px_rgba(25,65,150,.28)] ${
-                    rack === 1 ? "translate-y-[-7px]" : ""
-                  }`}
-                >
-                  <div className="absolute inset-[7px] rounded-[3px] border border-blue-300/10 bg-[#07132c]">
-                    <div className="space-y-2 p-2">
-                      {Array.from({ length: 8 }).map((_, i) => (
-                        <div
-                          key={i}
-                          className="h-[8px] rounded-sm border border-cyan-300/10 bg-gradient-to-r from-[#0a1f42] to-[#123d74] shadow-[0_0_8px_rgba(0,178,255,.15)]"
-                        >
-                          <span className="ml-1 inline-block h-1 w-1 rounded-full bg-cyan-300" />
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="absolute bottom-2 left-1/2 h-1 w-1/2 -translate-x-1/2 rounded-full bg-cyan-300 shadow-[0_0_12px_#22d3ee]" />
-                </div>
-              ))}
-            </div>
-
-            <div className="absolute bottom-[1%] left-[24%] z-20 h-3 w-[50%] rounded-full bg-[#dbe7ff] shadow-[0_12px_18px_rgba(37,99,235,.24)]" />
-
-            {/* Cloud outline */}
-            <div className="absolute right-[22%] top-[3%] text-[#7dbdff]">
-              <Cloud className="size-24 stroke-[1.2]" />
-            </div>
-
-            {/* Left feature cards */}
-            <div className="absolute left-0 top-[12%] z-30 space-y-3">
-              {[
-                [Database, "Scalable", "Infrastructure"],
-                [Cpu, "GPU Ready", "for AI Workloads"],
-                [ShieldCheck, "Secure & Compliant", ""],
-              ].map(([Icon, title, subtitle]) => {
-                const CardIcon = Icon as typeof Database;
-                return (
-                  <div
-                    key={title as string}
-                    className="flex w-[145px] items-center gap-2.5 rounded-xl bg-white/95 px-3 py-2.5 shadow-[0_10px_25px_rgba(38,74,151,.14)] backdrop-blur-sm sm:w-[160px]"
-                  >
-                    <span className="grid size-9 shrink-0 place-items-center rounded-full bg-[#e7ecff] text-[#172bff]">
-                      <CardIcon className="size-5" />
-                    </span>
-                    <span>
-                      <strong className="block text-[10px] font-extrabold leading-tight text-brand-dark">
-                        {title as string}
-                      </strong>
-                      {subtitle && (
-                        <small className="block text-[8px] font-medium text-brand-text-muted">
-                          {subtitle as string}
-                        </small>
-                      )}
-                    </span>
-                  </div>
-                );
-              })}
-            </div>
-
-            {/* Right performance cards */}
-            <div className="absolute right-0 top-[2%] z-30 w-[158px] rounded-xl bg-white/95 p-3.5 shadow-[0_10px_25px_rgba(38,74,151,.14)] backdrop-blur-sm sm:w-[170px]">
-              <h3 className="text-[14px] font-extrabold leading-[1.1] tracking-[-0.5px] text-brand-dark">
-                Built for AI at Scale
-              </h3>
-
-              <ul className="mt-3 space-y-2">
-                <CheckItem>High Performance</CheckItem>
-                <CheckItem>Enterprise Security</CheckItem>
-                <CheckItem>Scalable Architecture</CheckItem>
-                <CheckItem>Cost Optimized</CheckItem>
-                <CheckItem>Cloud & On-Premise</CheckItem>
-              </ul>
-            </div>
-
-            <div className="absolute bottom-[8%] right-0 z-30 w-[158px] rounded-xl bg-white/95 p-3 shadow-[0_10px_25px_rgba(38,74,151,.14)] backdrop-blur-sm sm:w-[170px]">
-              <div className="flex items-end justify-between gap-2">
-                <div>
-                  <p className="text-[10px] font-extrabold leading-tight text-brand-dark">
-                    Infrastructure
-                    <br />
-                    Performance
-                  </p>
-                  <strong className="mt-1 block text-[18px] font-extrabold leading-none text-brand-green">
-                    ↑ 256%
-                  </strong>
-                </div>
-                <div className="flex h-12 items-end gap-1">
-                  {[18, 28, 40].map((height) => (
-                    <span
-                      key={height}
-                      className="w-2 rounded-t bg-[#3034f1]"
-                      style={{ height }}
-                    />
-                  ))}
-                </div>
-              </div>
-              <p className="mt-2 text-[8px] text-brand-text-muted">
-                Higher AI Workload Capacity
-              </p>
-            </div>
-
-            <p className="absolute bottom-0 right-1 rotate-[-10deg] font-hand text-[18px] leading-[0.9] text-[#1428ee] sm:right-2 sm:text-[20px]">
-              Powering
-              <br />
-              Smarter
-              <br />
-              AI Solutions
-            </p>
-          </div>
-        </div>
-
-        {/* Hero stats */}
-        <div className="relative mt-5 grid max-w-[575px] grid-cols-1 gap-4 sm:grid-cols-3 sm:divide-x sm:divide-blue-100">
-          {[
-            [Zap, "3x", "Faster Deployment"],
-            [Database, "70%", "Lower Infrastructure Costs"],
-            [BarChart3, "5x", "More Scalability"],
-          ].map(([Icon, value, label]) => {
-            const StatIcon = Icon as typeof Zap;
-            return (
-              <div
-                key={value as string}
-                className="flex items-center gap-2 sm:px-4 first:pl-0"
-              >
-                <span className="grid size-10 shrink-0 place-items-center rounded-full bg-brand-purple-soft text-brand-purple">
-                  <StatIcon className="size-5" />
-                </span>
-                <div>
-                  <strong className="block text-[21px] font-extrabold leading-none text-[#1729ef]">
-                    {value as string}
-                  </strong>
-                  <span className="text-[10px] font-medium text-[#59689a]">
-                    {label as string}
-                  </span>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </section>
+    <ReusableHero
+  eyebrow="BUILT FOR TODAY. READY FOR TOMORROW."
+  title={
+    <>
+      AI{" "}
+      <span className="bg-gradient-to-r from-brand-purple to-brand-blue bg-clip-text text-transparent">
+        Infrastructure
+      </span>
+    </>
+  }
+  subtitle="A scalable, secure, and future-ready foundation for your AI journey."
+  description="We design and deploy robust AI infrastructure that powers your data, models, and applications — built for performance, security, and scale."
+  buttons={{
+    primary: {
+      label: "Book a Free Consultation",
+      href: "#contact",
+      variant: "primary",
+      icon: <ArrowRight className="size-4" />,
+    },
+    secondary: {
+      label: "See It in Action",
+      href: "#how-it-works",
+      variant: "secondary",
+      icon: <Play className="size-3.5 fill-current" />,
+    },
+  }}
+  stats={[
+    {
+      value: "3x",
+      label: "Faster Deployment",
+      icon: <Zap className="size-5" />,
+    },
+    {
+      value: "70%",
+      label: "Lower Infrastructure Costs",
+      icon: <Database className="size-5" />,
+    },
+    {
+      value: "5x",
+      label: "More Scalability",
+      icon: <BarChart3 className="size-5" />,
+    },
+  ]}
+  heroImageSrc={heroImageSrc}
+  heroImageAlt="AI infrastructure"
+  leftCards={[
+    {
+      label: "Scalable",
+      subLabel: "Infrastructure",
+      symbol: "▣",
+      colorClass: "text-brand-blue",
+    },
+    {
+      label: "GPU Ready",
+      subLabel: "for AI Workloads",
+      symbol: "◈",
+      colorClass: "text-brand-blue",
+    },
+    {
+      label: "Secure & Compliant",
+      symbol: "✓",
+      colorClass: "text-brand-blue",
+    },
+  ]}
+  sideCard={{
+    title: (
+      <>
+        Built for AI
+        <br />
+        at Scale
+      </>
+    ),
+    items: [
+      "High Performance",
+      "Enterprise Security",
+      "Scalable Architecture",
+      "Cost Optimized",
+      "Cloud & On-Premise",
+    ],
+  }}
+  rightCards={[
+    {
+      label: "Infrastructure Performance",
+      symbol: "↑",
+      colorClass: "text-brand-green",
+    },
+  ]}
+  handwrittenText={
+    <>
+      Powering
+      <br />
+      Smarter
+      <br />
+      AI Solutions
+    </>
+  }
+/>
 
       <LogoStrip />
 

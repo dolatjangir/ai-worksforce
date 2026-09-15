@@ -1,3 +1,4 @@
+import PageHero from "@/components/solutions-hero/reusable-hero";
 import {
   ChevronDown,
   ArrowRight,
@@ -134,105 +135,71 @@ export default function AIWorkforcePage() {
   
 
       {/* ================= HERO ================= */}
-      <section className="overflow-hidden bg-gradient-to-b from-white to-blue-50/50">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 pb-16 pt-12 lg:grid-cols-2">
-          {/* Left */}
-          <div>
-            <span className="inline-block rounded-full border border-blue-200 bg-blue-50 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.15em] text-blue-600">
-              AI Workforce
-            </span>
+     <PageHero
+titleId="ai-workforce-title"
+eyebrow="AI Workforce"
+title="Your Business."
+highlightedTitle="Powered by AI."
+description="Get a dedicated AI workforce of agents, experts and operators to help you automate work, scale growth and achieve real results — without the cost and complexity of building an AI team."
+image="/ai-workforce-hero-img.png"
+imageAlt="Professional working with AI workforce"
+primaryAction={{
+label: "Get Your AI Workforce Assessment",
+href: "#consultation",
+icon: "arrow",
+}}
+secondaryAction={{
+label: "See How it Works",
+href: "#how-it-works",
+icon: "play",
+}}
+stats={[
+    {
+      icon: "chart",
+      value: "Faster Operations",
+      label: "Automate repetitive tasks in minutes",
+    },
+    {
+      icon: "chart",
+      value: "Reduce Costs",
+      label: "Cut operational costs by up to 70%",
+    },
+    {
+      icon: "rocket",
+      value: "Higher Productivity",
+      label: "Get more done with the same team",
+    },
+  ]}
 
-            <h1 className="mt-6 text-4xl font-extrabold leading-[1.08] tracking-tight text-slate-900 md:text-5xl">
-              Your Business.
-              <br />
-              A Stronger Workforce.
-              <br />
-              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                Powered by AI.
-              </span>
-            </h1>
+   benefitCards={[
+    {
+      title: "Ai Agents",
+      description: "Handle Repetitive Work",
+      icon: "settings",
+    },
+    {
+      title: "Human Experts",
+      description: "Ensure Quality",
+      icon: "check",
+    },
+    {
+      title: "managed Operations",
+      description: "Drive Results",
+      icon: "chart",
+    },
 
-            <p className="mt-5 max-w-lg text-base leading-relaxed text-slate-600">
-              Get a dedicated AI workforce of agents, experts and operators to
-              help you automate work, scale growth and achieve real results —
-              without the cost and complexity of building an AI team.
-            </p>
+  ]}
 
-            <div className="mt-8 flex flex-wrap items-center gap-4">
-              <button className="flex items-center gap-2 rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-blue-600/25 transition hover:opacity-90">
-                Get Your AI Workforce Assessment
-                <ArrowRight className="h-4 w-4" />
-              </button>
-              <button className="flex items-center gap-2.5 rounded-lg bg-white px-5 py-3.5 text-sm font-bold text-slate-700 shadow-md ring-1 ring-slate-200 transition hover:ring-blue-300">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-600 text-white">
-                  <Play className="ml-0.5 h-3 w-3 fill-current" />
-                </span>
-                See How it Works
-              </button>
-            </div>
+  handwrittenNote={{
+    lines: [
+      "Smarter Teams",
+      "Bigger Results",
+    ],
+    position: "right-[2%] bottom-[22%]",
+    rotate: "-rotate-[5deg]",
+  }}
+/>
 
-            {/* Stats */}
-            <div className="mt-10 flex divide-x divide-slate-200">
-              {stats.map(({ value, label }, i) => (
-                <div key={label} className={i === 0 ? "pr-8" : "px-8"}>
-                  <p className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-3xl font-extrabold text-transparent">
-                    {value}
-                  </p>
-                  <p className="mt-1 text-sm text-slate-500">{label}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Right — image with floating cards */}
-          <div className="relative">
-            <img
-              src="/ai-workforce-hero-img.png"
-              alt="Professional working with AI workforce"
-              className=" w-full rounded-2xl object-cover shadow-2xl shadow-slate-900/10 md:h-[480px]"
-            />
-
-          
-            {/* Business growth card */}
-                {/* <div className="absolute -bottom-6 right-4 w-52 rounded-xl bg-white/95 p-4 shadow-xl shadow-slate-900/15 ring-1 ring-slate-100 backdrop-blur">
-                <div className="flex items-center justify-between">
-                    <p className="text-sm font-bold text-slate-900">
-                    Business Growth
-                    </p>
-                    <p className="text-sm font-extrabold text-emerald-500">
-                    ↑ 230%
-                    </p>
-                </div>
-                <div className="mt-3 flex h-14 items-end gap-1.5">
-                    {[30, 45, 40, 60, 75, 90, 100].map((h, i) => (
-                    <div
-                        key={i}
-                        className="flex-1 rounded-t-sm bg-gradient-to-t from-blue-600 to-blue-300"
-                        style={{ height: `${h}%` }}
-                    />
-                    ))}
-                </div>
-                </div> */}
-          </div>
-        </div>
-
-        {/* Trusted by strip */}
-        <div className="border-t border-slate-100 bg-white">
-          <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-10 gap-y-4 px-6 py-7">
-            <p className="text-xs font-bold uppercase tracking-[0.15em] text-slate-400">
-              Trusted by Growing Businesses
-            </p>
-            {trustedLogos.map((logo) => (
-              <span
-                key={logo}
-                className="text-lg font-extrabold tracking-tight text-slate-400 transition hover:text-slate-600"
-              >
-                {logo}
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ================= WHAT IS AN AI WORKFORCE ================= */}
       <section className="py-16">

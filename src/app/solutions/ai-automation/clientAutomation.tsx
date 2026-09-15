@@ -1,6 +1,9 @@
+// Uses your existing global.css and PageHero component.
+// Ensure /contact exists, or replace its href with your booking URL.
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import PageHero from "@/components/solutions-hero/reusable-hero";
+import React, { useEffect, useRef } from "react";
 
 /* ============================================================
    TYPES
@@ -8,16 +11,13 @@ import React, { useEffect, useRef, useState } from "react";
 
 type IconProps = React.SVGProps<SVGSVGElement> & { size?: number };
 
-type NavItem = {
-  label: string;
-  links: string[];
-}; 
-
 /* ============================================================
    INLINE SVG ICON SET (single-file, no external deps)
 ============================================================ */
 
 const baseIcon = (size = 20): React.SVGProps<SVGSVGElement> => ({
+  "aria-hidden": true,
+  focusable: false,
   width: size,
   height: size,
   viewBox: "0 0 24 24",
@@ -28,12 +28,6 @@ const baseIcon = (size = 20): React.SVGProps<SVGSVGElement> => ({
   strokeLinejoin: "round",
 });
 
-const ChevronDownIcon = ({ size = 14, ...p }: IconProps) => (
-  <svg {...baseIcon(size)} {...p}>
-    <polyline points="6 9 12 15 18 9" />
-  </svg>
-);
-
 const ArrowRightIcon = ({ size = 16, ...p }: IconProps) => (
   <svg {...baseIcon(size)} {...p}>
     <line x1="5" y1="12" x2="19" y2="12" />
@@ -42,22 +36,8 @@ const ArrowRightIcon = ({ size = 16, ...p }: IconProps) => (
 );
 
 const PlayIcon = ({ size = 16, ...p }: IconProps) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" {...p}>
+  <svg aria-hidden="true" focusable="false" width={size} height={size} viewBox="0 0 24 24" fill="currentColor" {...p}>
     <polygon points="6 3 20 12 6 21 6 3" />
-  </svg>
-);
-
-const ZapIcon = ({ size = 22, ...p }: IconProps) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" {...p}>
-    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-  </svg>
-);
-
-const DatabaseIcon = ({ size = 22, ...p }: IconProps) => (
-  <svg {...baseIcon(size)} {...p}>
-    <ellipse cx="12" cy="5" rx="9" ry="3" />
-    <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
-    <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
   </svg>
 );
 
@@ -72,30 +52,6 @@ const SettingsIcon = ({ size = 22, ...p }: IconProps) => (
   <svg {...baseIcon(size)} {...p}>
     <circle cx="12" cy="12" r="3" />
     <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
-  </svg>
-);
-
-const LinkIcon = ({ size = 20, ...p }: IconProps) => (
-  <svg {...baseIcon(size)} {...p}>
-    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
-    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
-  </svg>
-);
-
-const BrainCircuitIcon = ({ size = 20, ...p }: IconProps) => (
-  <svg {...baseIcon(size)} {...p}>
-    <circle cx="5" cy="5" r="2.2" />
-    <circle cx="19" cy="5" r="2.2" />
-    <circle cx="12" cy="19" r="2.2" />
-    <path d="M6.5 6.8 10.5 17" />
-    <path d="M17.5 6.8 13.5 17" />
-    <path d="M7.2 5h9.6" />
-  </svg>
-);
-
-const CheckIcon = ({ size = 16, ...p }: IconProps) => (
-  <svg {...baseIcon(size)} strokeWidth={3} {...p}>
-    <polyline points="20 6 9 17 4 12" />
   </svg>
 );
 
@@ -178,21 +134,6 @@ const GridIcon = ({ size = 20, ...p }: IconProps) => (
   </svg>
 );
 
-const MenuIcon = ({ size = 24, ...p }: IconProps) => (
-  <svg {...baseIcon(size)} {...p}>
-    <line x1="3" y1="6" x2="21" y2="6" />
-    <line x1="3" y1="12" x2="21" y2="12" />
-    <line x1="3" y1="18" x2="21" y2="18" />
-  </svg>
-);
-
-const CloseIcon = ({ size = 24, ...p }: IconProps) => (
-  <svg {...baseIcon(size)} {...p}>
-    <line x1="18" y1="6" x2="6" y2="18" />
-    <line x1="6" y1="6" x2="18" y2="18" />
-  </svg>
-);
-
 const BotIcon = ({ size = 64, ...p }: IconProps) => (
   <svg {...baseIcon(size)} {...p}>
     <rect x="4" y="8" width="16" height="12" rx="2" />
@@ -203,41 +144,6 @@ const BotIcon = ({ size = 64, ...p }: IconProps) => (
     <path d="M9 17h6" />
   </svg>
 );
-
-/* ============================================================
-   NAV DATA
-============================================================ */
-
-const NAV_ITEMS: NavItem[] = [
-  {
-    label: "Solutions",
-    links: ["AI Automation", "AI Agents", "AI Workforce", "AI Digital Marketing"],
-  },
-  {
-    label: "AI Workforce",
-    links: ["Managed Teams", "Dedicated Experts", "Hybrid Teams", "How It Works"],
-  },
-  {
-    label: "AI Agents",
-    links: ["Sales Agents", "Support Agents", "Marketing Agents", "All Agents"],
-  },
-  {
-    label: "Products",
-    links: ["Platform Overview", "Integrations", "Pricing", "What's New"],
-  },
-  {
-    label: "AI Digital Marketing",
-    links: ["SEO & Content", "Paid Media", "Social Media", "Email Marketing"],
-  },
-  {
-    label: "Resources",
-    links: ["Blog", "Case Studies", "Documentation", "Help Center"],
-  },
-  {
-    label: "Company",
-    links: ["About Us", "Careers", "Partners", "Contact"],
-  },
-];
 
 /* ============================================================
    SCROLL REVEAL HOOK
@@ -253,35 +159,33 @@ function Reveal({
   className?: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
-
   useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const io = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          io.disconnect();
-        }
-      },
-      { threshold: 0.12 }
-    );
-    io.observe(el);
-    return () => io.disconnect();
-  }, []);
+    const element = ref.current;
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (!element || reducedMotion.matches || !("IntersectionObserver" in window) || !element.animate) return;
 
-  return (
-    <div
-      ref={ref}
-      className={`${className} transition-all duration-700 ease-out ${
-        visible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-      }`}
-      style={{ transitionDelay: `${delay}ms` }}
-    >
-      {children}
-    </div>
-  );
+    let animation: Animation | undefined;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (!entry?.isIntersecting) return;
+      if (!reducedMotion.matches) {
+        animation = element.animate(
+          [{ opacity: 0, transform: "translateY(20px)" }, { opacity: 1, transform: "translateY(0)" }],
+          { duration: 550, delay, easing: "ease-out", fill: "backwards" }
+        );
+      }
+      observer.disconnect();
+    }, { threshold: 0.08 });
+    const stopAnimation = () => { if (reducedMotion.matches) animation?.cancel(); };
+    reducedMotion.addEventListener("change", stopAnimation);
+    observer.observe(element);
+    return () => {
+      observer.disconnect();
+      animation?.cancel();
+      reducedMotion.removeEventListener("change", stopAnimation);
+    };
+  }, [delay]);
+
+  return <div ref={ref} className={`min-w-0 ${className}`}>{children}</div>;
 }
 
 /* ============================================================
@@ -289,257 +193,130 @@ function Reveal({
 ============================================================ */
 
 export default function AIAutomationPage() {
-  const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-white font-sans text-slate-600">
+    <div className="min-h-screen bg-white font-sans text-base text-brand-dark [&_a:focus-visible]:outline-2 [&_a:focus-visible]:outline-offset-4 [&_a:focus-visible]:outline-brand-blue">
   
 
       {/* ==========================================================
           HERO
       ========================================================== */}
-      <section className="relative overflow-hidden">
-        {/* subtle backdrop wash */}
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-brand-blue-soft/60 via-white to-white" />
+    <PageHero
+  titleId="ai-automation-title"
+  eyebrow="AI Automation"
+  title="Automate Today."
+  highlightedTitle="Grow Tomorrow."
+  description="Streamline your processes, eliminate manual work, and unlock new possibilities with intelligent AI automation. We help businesses build faster, smarter and more efficient operations."
 
-        <div className="relative mx-auto max-w-[1400px] px-5 pb-14 pt-8 lg:px-8 lg:pb-20 lg:pt-10">
-          {/* Breadcrumb */}
-          <nav className="mb-8 flex items-center gap-2 text-[13px] font-medium">
-            <a href="#" className="text-slate-500 transition hover:text-brand-blue">
-              Home
-            </a>
-            <span className="text-slate-300">›</span>
-            <a href="#" className="text-slate-500 transition hover:text-brand-blue">
-              Solutions
-            </a>
-            <span className="text-slate-300">›</span>
-            <span className="font-semibold text-brand-dark">AI Automation</span>
-          </nav>
+  image="/solutions/ai-automation.png"
+  imageAlt="AI automation workspace and business operations"
 
-          <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_1fr] lg:gap-8">
-            {/* -------- Left column -------- */}
-            <div>
-              <span className="inline-block rounded-full border border-brand-blue/20 bg-brand-blue-soft px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.14em] text-brand-blue">
-                AI Automation
-              </span>
+  primaryAction={{
+    label: "Get a Free  Assessment",
+    href: "#consultation",
+    icon: "arrow",
+  }}
 
-              <h1 className="mt-5 text-[42px] font-extrabold leading-[1.08] tracking-tight text-brand-dark sm:text-[54px] lg:text-[60px]">
-                Automate Today.
-                <br />
-                <span className="text-brand-blue">Grow Tomorrow.</span>
-              </h1>
+  secondaryAction={{
+    label: "Watch How It Works",
+    href: "#how-it-works",
+    icon: "play",
+  }}
 
-              <p className="mt-5 max-w-[520px] text-[15.5px] leading-relaxed text-slate-500 sm:text-base">
-                Streamline your processes, eliminate manual work, and unlock new
-                possibilities with intelligent AI automation. We help businesses
-                build faster, smarter and more efficient operations.
-              </p>
+  stats={[
+    {
+      icon: "chart",
+      value: "Faster Operations",
+      label: "Automate repetitive tasks in minutes",
+    },
+    {
+      icon: "chart",
+      value: "Reduce Costs",
+      label: "Cut operational costs by up to 70%",
+    },
+    {
+      icon: "rocket",
+      value: "Higher Productivity",
+      label: "Get more done with the same team",
+    },
+  ]}
 
-              <div className="mt-8 flex flex-wrap items-center gap-4">
-                <a
-                  href="#consultation"
-                  className="flex items-center gap-2 rounded-xl bg-brand-blue px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-brand-blue/30 transition hover:-translate-y-0.5 hover:bg-brand-blue-dark"
-                >
-                  Get a Free Automation Assessment
-                  <ArrowRightIcon size={16} />
-                </a>
-                <a
-                  href="#how-it-works"
-                  className="flex items-center gap-2.5 rounded-xl border border-slate-200 bg-white px-6 py-3.5 text-sm font-bold text-brand-dark shadow-sm transition hover:-translate-y-0.5 hover:border-brand-blue/40 hover:shadow-md"
-                >
-                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-brand-blue text-white">
-                    <PlayIcon size={10} />
-                  </span>
-                  Watch How It Works
-                </a>
-              </div>
+  benefitCards={[
+    {
+      title: "Automate",
+      description: "Repetitive Work",
+      icon: "settings",
+    },
+    {
+      title: "Integrate",
+      description: "Your Tools",
+      icon: "check",
+    },
+    {
+      title: "Improve",
+      description: "Decision Making",
+      icon: "chart",
+    },
+    {
+      title: "Save",
+      description: "Time & Reduce Errors",
+      icon: "check",
+      variant: "green",
+    },
+    {
+      title: "Scale",
+      description: "Faster & Smarter",
+      icon: "rocket",
+      variant: "green",
+    },
+  ]}
 
-              {/* Stats */}
-              <div className="mt-12 grid grid-cols-3 gap-4 border-t border-slate-200 pt-7 sm:gap-6">
-                {[
-                  {
-                    icon: <ZapIcon className="text-brand-blue" />,
-                    title: "Faster Operations",
-                    desc: "Automate repetitive tasks in minutes",
-                  },
-                  {
-                    icon: <DatabaseIcon className="text-brand-blue" />,
-                    title: "Reduce Costs",
-                    desc: "Cut operational costs by up to 70%",
-                  },
-                  {
-                    icon: <TrendingUpIcon className="text-brand-blue" />,
-                    title: "Higher Productivity",
-                    desc: "Get more done with the same team",
-                  },
-                ].map((s) => (
-                  <div key={s.title}>
-                    <div className="mb-2.5">{s.icon}</div>
-                    <p className="text-[13px] font-extrabold text-brand-dark sm:text-sm">
-                      {s.title}
-                    </p>
-                    <p className="mt-1 text-[11.5px] leading-snug text-slate-500 sm:text-xs">
-                      {s.desc}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* -------- Right column: hero visual -------- */}
-            {/* NOTE: Replace the decorative scene below with your real photo:
-                <img src="/images/hero-automation.png" className="absolute inset-0 h-full w-full object-cover" /> */}
-            <div className="relative mx-auto h-[560px] w-full max-w-[560px] sm:h-[600px]">
-              {/* Backdrop scene */}
-              <div className="absolute inset-0 overflow-hidden rounded-[28px] bg-gradient-to-br from-brand-blue-soft via-white to-indigo-50">
-                <div className="absolute inset-0 opacity-[0.35] [background-image:linear-gradient(#0876ed12_1px,transparent_1px),linear-gradient(90deg,#0876ed12_1px,transparent_1px)] [background-size:36px_36px]" />
-                <div className="absolute -left-16 top-10 h-64 w-64 rounded-full bg-brand-blue/15 blur-3xl" />
-                <div className="absolute -right-10 bottom-0 h-72 w-72 rounded-full bg-brand-purple/10 blur-3xl" />
-                {/* Laptop / workspace abstraction */}
-                <div className="absolute bottom-14 left-1/2 h-[210px] w-[76%] -translate-x-1/2 rounded-t-2xl border border-slate-200/80 bg-gradient-to-b from-white to-slate-100 shadow-2xl shadow-slate-900/10">
-                  <div className="mx-auto mt-6 h-[110px] w-[82%] rounded-lg bg-gradient-to-br from-brand-navy to-brand-dark p-3">
-                    <div className="flex h-full flex-col justify-between rounded-md bg-white/5 p-2.5">
-                      <div className="flex gap-1.5">
-                        <span className="h-1.5 w-8 rounded-full bg-brand-sky/70" />
-                        <span className="h-1.5 w-5 rounded-full bg-brand-blue/60" />
-                        <span className="h-1.5 w-10 rounded-full bg-brand-purple/50" />
-                      </div>
-                      <div className="flex items-end gap-1.5">
-                        {[38, 62, 46, 78, 58, 88, 70].map((h, i) => (
-                          <span
-                            key={i}
-                            className="w-3 rounded-sm bg-gradient-to-t from-brand-blue to-brand-sky"
-                            style={{ height: `${h * 0.5}px` }}
-                          />
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                  <div className="mx-auto mt-2 h-2.5 w-[92%] rounded-b-xl bg-slate-300/70" />
-                </div>
-              </div>
-
-              {/* Floating card: Automate Workflows */}
-              <div className="absolute left-[2%] top-[6%] animate-float rounded-2xl border border-slate-100 bg-white p-3.5 pr-6 shadow-xl shadow-slate-900/10">
-                <div className="flex items-center gap-3">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-blue-soft text-brand-blue">
-                    <SettingsIcon size={20} />
-                  </span>
-                  <span className="text-[13px] font-bold leading-snug text-brand-dark">
-                    Automate
-                    <br />
-                    Workflows
-                  </span>
-                </div>
-              </div>
-
-              {/* Floating card: Integrate Your Tools */}
-              <div className="absolute left-0 top-[36%] animate-float-slow rounded-2xl border border-slate-100 bg-white p-3.5 pr-6 shadow-xl shadow-slate-900/10">
-                <div className="flex items-center gap-3">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-blue-soft text-brand-blue">
-                    <LinkIcon size={19} />
-                  </span>
-                  <span className="text-[13px] font-bold leading-snug text-brand-dark">
-                    Integrate
-                    <br />
-                    Your Tools
-                  </span>
-                </div>
-              </div>
-
-              {/* Floating card: AI-Powered Decision Making */}
-              <div className="absolute bottom-[16%] left-[10%] animate-float rounded-2xl border border-slate-100 bg-white p-3.5 pr-6 shadow-xl shadow-slate-900/10 [animation-delay:1.2s]">
-                <div className="flex items-center gap-3">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-blue-soft text-brand-blue">
-                    <BrainCircuitIcon size={19} />
-                  </span>
-                  <span className="text-[13px] font-bold leading-snug text-brand-dark">
-                    AI-Powered
-                    <br />
-                    Decision Making
-                  </span>
-                </div>
-              </div>
-
-              {/* Handwritten note */}
-              <div className="absolute right-[2%] top-[2%] rotate-[-5deg]">
-                <p className="font-hand text-[30px] font-semibold leading-[1.05] text-brand-dark sm:text-[34px]">
-                  Less Manual Work
-                  <br />
-                  <span className="text-brand-blue">More Possibilities</span>
-                </p>
-                <svg
-                  className="mt-1 ml-auto w-36 text-brand-blue"
-                  viewBox="0 0 140 14"
-                  fill="none"
-                >
-                  <path
-                    d="M3 10C30 4 70 3 137 6M30 11c25-3 60-4 90-3"
-                    stroke="currentColor"
-                    strokeWidth="2.4"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              </div>
-
-              {/* Checklist card */}
-              <div className="absolute right-0 top-[34%] w-56 animate-float-slow rounded-2xl border border-slate-100 bg-white p-4 shadow-xl shadow-slate-900/10 [animation-delay:0.6s]">
-                <ul className="space-y-2.5">
-                  {["Save Time", "Reduce Errors", "Increase Efficiency", "Scale Faster"].map(
-                    (item) => (
-                      <li key={item} className="flex items-center gap-2.5">
-                        <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-green-light text-white">
-                          <CheckIcon size={11} />
-                        </span>
-                        <span className="text-[12.5px] font-bold text-brand-dark">
-                          {item}
-                        </span>
-                      </li>
-                    )
-                  )}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+  handwrittenNote={{
+    lines: [
+      "Less Manual Work",
+      "More Possibilities",
+    ],
+    position: "right-[2%] bottom-[22%]",
+    rotate: "-rotate-[5deg]",
+  }}
+/>
 
       {/* ==========================================================
           TRUSTED BY LOGOS
       ========================================================== */}
-      <section className="border-y border-slate-100 bg-white py-9">
-        <div className="mx-auto max-w-[1400px] px-5 lg:px-8">
-          <p className="mb-7 text-center text-[10.5px] font-extrabold uppercase tracking-[0.22em] text-slate-400">
+      <section className="border-y border-[var(--color-border)] bg-white py-6">
+        <div className="mx-auto max-w-[1280px] px-5 sm:px-7 lg:px-8">
+          <p className="mb-6 text-center text-xs font-bold uppercase tracking-[0.18em] text-brand-purple sm:text-sm">
             Trusted by Growing Businesses
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-5 sm:gap-x-14">
-            <span className="text-xl font-extrabold lowercase tracking-tight text-slate-400">
+          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 sm:gap-x-12">
+            <span className="text-xl font-extrabold lowercase tracking-tight text-brand-text-muted">
               stripe
             </span>
-            <span className="text-xl font-bold text-slate-400">
+            <span className="text-xl font-bold text-brand-text-muted">
               <span className="mr-0.5 inline-block">🛍</span>shopify
             </span>
-            <span className="text-xl font-bold text-slate-400">
-              <span className="mr-1 inline-block h-4 w-4 rounded-full border-[5px] border-slate-400 align-[-2px]" />
+            <span className="text-xl font-bold text-brand-text-muted">
+              <span className="mr-1 inline-block h-4 w-4 rounded-full border-[5px] border-brand-text-muted align-[-2px]" />
               HubSpot
             </span>
-            <span className="text-xl font-extrabold lowercase tracking-tight text-slate-400">
-              <span className="mr-1 text-slate-400">#</span>slack
+            <span className="text-xl font-extrabold lowercase tracking-tight text-brand-text-muted">
+              <span className="mr-1 text-brand-text-muted">#</span>slack
             </span>
-            <span className="flex items-center gap-1.5 text-lg font-semibold text-slate-400">
+            <span className="flex items-center gap-1.5 text-lg font-semibold text-brand-text-muted">
               <span className="grid grid-cols-2 gap-[2px]">
-                <i className="h-2 w-2 bg-slate-400" />
-                <i className="h-2 w-2 bg-slate-400" />
-                <i className="h-2 w-2 bg-slate-400" />
-                <i className="h-2 w-2 bg-slate-400" />
+                <i className="h-2 w-2 bg-brand-text-muted" />
+                <i className="h-2 w-2 bg-brand-text-muted" />
+                <i className="h-2 w-2 bg-brand-text-muted" />
+                <i className="h-2 w-2 bg-brand-text-muted" />
               </span>
               Microsoft
             </span>
-            <span className="text-xl font-medium tracking-tight text-slate-400">Google</span>
-            <span className="text-xl font-extrabold lowercase tracking-tight text-slate-400">
+            <span className="text-xl font-medium tracking-tight text-brand-text-muted">Google</span>
+            <span className="text-xl font-extrabold lowercase tracking-tight text-brand-text-muted">
               amazon
             </span>
-            <span className="text-xl font-extrabold lowercase tracking-tight text-slate-400">
+            <span className="text-xl font-extrabold lowercase tracking-tight text-brand-text-muted">
               _zapier
             </span>
           </div>
@@ -549,23 +326,23 @@ export default function AIAutomationPage() {
       {/* ==========================================================
           WHY AI AUTOMATION
       ========================================================== */}
-      <section className="bg-white py-20 lg:py-24">
-        <div className="mx-auto max-w-[1400px] px-5 lg:px-8">
-          <Reveal className="mx-auto max-w-2xl text-center">
-            <p className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-brand-blue">
+      <section className="bg-white py-12 sm:py-16 lg:py-20">
+        <div className="mx-auto max-w-[1280px] px-5 sm:px-7 lg:px-8">
+          <Reveal className="mx-auto max-w-[850px] text-center pt-4">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-brand-purple sm:text-sm">
               Why AI Automation?
             </p>
-            <h2 className="mt-3 text-[30px] font-extrabold tracking-tight text-brand-dark sm:text-4xl">
+            <h2 className="mt-1.5 text-[28px] font-bold leading-[1.15] tracking-tight text-brand-dark sm:text-[34px] lg:text-[40px]">
               Smarter Processes. Stronger Business.
             </h2>
-            <p className="mt-4 text-[15px] leading-relaxed text-slate-500">
+            <p className="mx-auto mt-2 max-w-[780px] text-base leading-7 text-brand-text sm:text-lg">
               AI automation helps you eliminate repetitive work, reduce errors,
               and focus on what truly matters — growth, innovation, and your
               customers.
             </p>
           </Reveal>
 
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {[
               {
                 icon: <SettingsIcon size={24} />,
@@ -593,16 +370,16 @@ export default function AIAutomationPage() {
               },
             ].map((card, i) => (
               <Reveal key={card.title} delay={i * 90}>
-                <div className="group h-full rounded-2xl border border-slate-100 bg-white p-7 shadow-[0_8px_30px_rgba(24,74,140,0.06)] transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-blue/25 hover:shadow-[0_18px_45px_rgba(24,74,140,0.12)]">
+                <div className="group relative h-full min-h-[200px] rounded-[13px] bg-[image:var(--gradient-section)] p-5 transition-[transform,box-shadow] duration-200 hover:-translate-y-1 hover:shadow-[0_12px_28px_var(--shadow-blue-medium)]">
                   <span
-                    className={`flex h-14 w-14 items-center justify-center rounded-2xl transition-transform duration-300 group-hover:scale-110 ${card.bubble}`}
+                    className={`flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full transition-transform duration-300 group-hover:scale-110 ${card.bubble}`}
                   >
                     {card.icon}
                   </span>
-                  <h3 className="mt-5 text-[15.5px] font-extrabold text-brand-dark">
+                  <h3 className="mt-4 text-lg font-bold leading-snug text-brand-dark sm:text-lg">
                     {card.title}
                   </h3>
-                  <p className="mt-2 text-[13.5px] leading-relaxed text-slate-500">
+                  <p className="mt-1.5 max-w-[32ch] text-base leading-7 text-brand-text sm:text-base">
                     {card.desc}
                   </p>
                 </div>
@@ -615,27 +392,27 @@ export default function AIAutomationPage() {
       {/* ==========================================================
           INDUSTRIES WE SERVE
       ========================================================== */}
-      <section className="bg-slate-50/60 py-20 lg:py-24">
-        <div className="mx-auto max-w-[1400px] px-5 lg:px-8">
-          <Reveal className="mx-auto max-w-2xl text-center">
-            <p className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-brand-blue">
+      <section className="bg-brand-blue-soft/40 py-12 sm:py-16 lg:py-20">
+        <div className="mx-auto max-w-8xl px-5 sm:px-7 lg:px-8">
+          <Reveal className="mx-auto max-w-[850px] text-center pt-4">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-brand-purple sm:text-sm">
               Industries We Serve
             </p>
-            <h2 className="mt-3 text-[30px] font-extrabold tracking-tight text-brand-dark sm:text-4xl">
+            <h2 className="mt-1.5 text-[28px] font-bold leading-[1.15] tracking-tight text-brand-dark sm:text-[34px] lg:text-[40px]">
               Automation for Every Business
             </h2>
-            <p className="mt-4 text-[15px] text-slate-500">
+            <p className="mx-auto mt-2 max-w-[780px] text-base leading-7 text-brand-text sm:text-lg">
               From startups to enterprises, we deliver AI automation solutions
               tailored to your industry.
             </p>
           </Reveal>
 
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+          <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
             {[
               {
                 icon: <HomeIcon size={26} />,
                 chip: "bg-brand-blue",
-                tint: "from-sky-200 via-brand-blue-soft to-indigo-100",
+                tint: "from-brand-sky/25 via-brand-blue-soft to-brand-purple-soft",
                 title: "Real Estate",
                 desc: "Automate lead management, property matching, and customer communication.",
                 cta: "Learn More",
@@ -643,7 +420,7 @@ export default function AIAutomationPage() {
               {
                 icon: <CartIcon size={26} />,
                 chip: "bg-brand-sky",
-                tint: "from-slate-200 via-slate-100 to-slate-200",
+                tint: "from-brand-blue-soft via-white to-brand-blue-soft",
                 title: "E-commerce",
                 desc: "Streamline order processing, inventory updates, and customer support.",
                 cta: "Learn More",
@@ -651,7 +428,7 @@ export default function AIAutomationPage() {
               {
                 icon: <ActivityIcon size={26} />,
                 chip: "bg-brand-blue",
-                tint: "from-cyan-100 via-sky-100 to-brand-blue-soft",
+                tint: "from-brand-sky/20 via-brand-blue-soft to-brand-blue-soft",
                 title: "Healthcare",
                 desc: "Automate patient communication, data entry, and operational workflows.",
                 cta: "Learn More",
@@ -659,7 +436,7 @@ export default function AIAutomationPage() {
               {
                 icon: <LandmarkIcon size={26} />,
                 chip: "bg-brand-navy",
-                tint: "from-indigo-200 via-indigo-100 to-brand-blue-soft",
+                tint: "from-brand-purple-soft via-brand-blue-soft to-brand-blue-soft",
                 title: "Finance",
                 desc: "Simplify compliance, reporting, and customer onboarding with AI.",
                 cta: "Learn More",
@@ -667,7 +444,7 @@ export default function AIAutomationPage() {
               {
                 icon: <GraduationIcon size={26} />,
                 chip: "bg-brand-blue",
-                tint: "from-emerald-100 via-teal-50 to-brand-blue-soft",
+                tint: "from-brand-green-soft via-white to-brand-blue-soft",
                 title: "Education",
                 desc: "Automate admissions, inquiries, and student support.",
                 cta: "Learn More",
@@ -675,38 +452,39 @@ export default function AIAutomationPage() {
               {
                 icon: <GridIcon size={26} />,
                 chip: "bg-brand-purple-light",
-                tint: "from-brand-purple-soft via-indigo-100 to-brand-blue-soft",
+                tint: "from-brand-purple-soft via-brand-blue-soft to-brand-blue-soft",
                 title: "And More",
                 desc: "Custom automation solutions for your unique industry needs.",
                 cta: "Let's Talk",
               },
             ].map((ind, i) => (
               <Reveal key={ind.title} delay={i * 70}>
-                <div className="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-[0_8px_30px_rgba(24,74,140,0.06)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_45px_rgba(24,74,140,0.12)]">
-                  {/* Image area — replace with real industry photo */}
+                <div className="group flex h-full flex-col overflow-hidden rounded-[13px] border border-[var(--color-border)] bg-white shadow-[0_8px_30px_var(--shadow-blue)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_12px_28px_var(--shadow-blue-medium)]">
+                  {/* Decorative industry illustration */}
                   <div
-                    className={`relative h-32 bg-gradient-to-br ${ind.tint} overflow-hidden`}
+                    className={`relative h-28 bg-gradient-to-br ${ind.tint} sm:h-32`}
                   >
-                    <div className="absolute inset-0 opacity-30 [background-image:radial-gradient(circle_at_30%_30%,#ffffff_0,transparent_45%)]" />
+                    <div className="absolute inset-0 opacity-30 [background-image:radial-gradient(circle_at_30%_30%,var(--color-white)_0,transparent_45%)]" />
                     <span className="absolute right-3 top-3 text-white/50">
                       {ind.icon}
                     </span>
                     <span
-                      className={`absolute -bottom-0 left-4 flex h-11 w-11 translate-y-1/2 items-center justify-center rounded-xl text-white shadow-lg ${ind.chip}`}
+                      className={`absolute bottom-0 left-4 flex h-11 w-11 translate-y-1/2 items-center justify-center rounded-xl text-white shadow-lg ${ind.chip}`}
                     >
                       {ind.icon}
                     </span>
                   </div>
-                  <div className="flex flex-1 flex-col px-5 pb-5 pt-9">
-                    <h3 className="text-[15px] font-extrabold text-brand-dark">
+                  <div className="flex flex-1 flex-col px-4 pb-4 pt-8 sm:px-5 sm:pb-5 sm:pt-9">
+                    <h3 className="text-lg font-bold leading-[1.25] tracking-[-0.2px] text-brand-dark sm:text-xl">
                       {ind.title}
                     </h3>
-                    <p className="mt-1.5 flex-1 text-[12.5px] leading-relaxed text-slate-500">
+                    <p className="mt-1.5 flex-1 text-base leading-7 text-brand-text sm:text-base">
                       {ind.desc}
                     </p>
                     <a
                       href="#consultation"
-                      className="mt-4 inline-flex items-center gap-1.5 text-[13px] font-bold text-brand-blue transition group-hover:gap-2.5"
+                      aria-label={`${ind.cta}: ${ind.title} automation`}
+                      className="mt-4 inline-flex min-h-11 items-center gap-1.5 text-base font-bold text-brand-blue transition group-hover:gap-2.5 sm:text-base"
                     >
                       {ind.cta}
                       <ArrowRightIcon size={14} />
@@ -724,24 +502,24 @@ export default function AIAutomationPage() {
       ========================================================== */}
       <section
         id="how-it-works"
-        className="py-20 lg:py-24"
+        className="scroll-mt-24 py-12 sm:py-16 lg:py-20"
         style={{ backgroundImage: "var(--gradient-section)" }}
       >
-        <div className="mx-auto max-w-[1400px] px-5 lg:px-8">
-          <Reveal className="mx-auto max-w-2xl text-center">
-            <p className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-brand-blue">
+        <div className="mx-auto max-w-[1280px] px-5 sm:px-7 lg:px-8">
+          <Reveal className="mx-auto max-w-[850px] text-center pt-4">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-brand-purple sm:text-sm">
               How It Works
             </p>
-            <h2 className="mt-3 text-[30px] font-extrabold tracking-tight text-brand-dark sm:text-4xl">
+            <h2 className="mt-1.5 text-[28px] font-bold leading-[1.15] tracking-tight text-brand-dark sm:text-[34px] lg:text-[40px]">
               Your Automation Journey in 4 Simple Steps
             </h2>
-            <p className="mt-4 text-[15px] text-slate-500">
+            <p className="mx-auto mt-2 max-w-[780px] text-base leading-7 text-brand-text sm:text-lg">
               We make it easy to identify, implement, and scale AI automation in
               your business.
             </p>
           </Reveal>
 
-          <div className="mt-16 grid gap-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
             {[
               {
                 num: "1",
@@ -773,27 +551,27 @@ export default function AIAutomationPage() {
               },
             ].map((step, i) => (
               <Reveal key={step.num} delay={i * 110}>
-                <div className="relative flex flex-col items-center text-center">
+                <div className="relative h-full rounded-xl bg-white/60 px-5 py-6 text-center">
                   {/* connector arrow (desktop) */}
                   {i < 3 && (
-                    <span className="absolute left-[calc(50%+48px)] top-8 hidden text-brand-blue/60 lg:block">
+                    <span className="absolute -right-5 top-11 hidden text-brand-blue/60 lg:block">
                       <ArrowRightIcon size={22} />
                     </span>
                   )}
-                  <div className="relative">
+                  <div className="relative mx-auto w-fit">
                     <span
                       className={`flex h-16 w-16 items-center justify-center rounded-full text-white shadow-xl ${step.circle}`}
                     >
                       {step.icon}
                     </span>
-                    <span className="absolute -right-1.5 -top-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-white text-[11px] font-extrabold text-slate-700 shadow-md ring-1 ring-slate-100">
+                    <span className="absolute -right-1.5 -top-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-white text-[11px] font-extrabold text-brand-text shadow-md ring-1 ring-[var(--color-border)]">
                       {step.num}
                     </span>
                   </div>
-                  <h3 className="mt-5 text-[15.5px] font-extrabold text-brand-dark">
+                  <h3 className="mt-4 text-lg font-bold leading-snug text-brand-dark sm:text-lg">
                     {step.title}
                   </h3>
-                  <p className="mt-2 max-w-[240px] text-[13px] leading-relaxed text-slate-500">
+                  <p className="mx-auto mt-1.5 max-w-[215px] text-base leading-7 text-brand-text sm:text-base">
                     {step.desc}
                   </p>
                 </div>
@@ -806,35 +584,35 @@ export default function AIAutomationPage() {
       {/* ==========================================================
           DARK CTA
       ========================================================== */}
-      <section id="consultation" className="relative overflow-hidden bg-brand-navy">
+      <section id="consultation" className="relative isolate scroll-mt-24 mx-3 my-10 overflow-hidden rounded-[14px] bg-brand-navy text-white sm:mx-3">
         {/* glow mesh */}
         <div className="pointer-events-none absolute -left-32 top-0 h-[420px] w-[420px] rounded-full bg-brand-blue/25 blur-[120px]" />
         <div className="pointer-events-none absolute -right-24 bottom-0 h-[380px] w-[380px] rounded-full bg-brand-purple/25 blur-[120px]" />
-        <div className="pointer-events-none absolute inset-0 opacity-20 [background-image:linear-gradient(#ffffff08_1px,transparent_1px),linear-gradient(90deg,#ffffff08_1px,transparent_1px)] [background-size:44px_44px]" />
+        <div className="pointer-events-none absolute inset-0 opacity-20 [background-image:linear-gradient(color-mix(in_srgb,var(--color-white)_3%,transparent)_1px,transparent_1px),linear-gradient(90deg,color-mix(in_srgb,var(--color-white)_3%,transparent)_1px,transparent_1px)] [background-size:44px_44px]" />
 
-        <div className="relative mx-auto grid max-w-[1400px] items-center gap-14 px-5 py-20 lg:grid-cols-2 lg:px-8 lg:py-24">
+        <div className="relative mx-auto grid max-w-[1280px] items-center gap-5 px-5 py-10 sm:px-7 sm:py-14 lg:grid-cols-2 lg:px-8">
           {/* Left copy */}
           <Reveal>
-            <p className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-brand-sky">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-brand-purple-soft sm:text-sm">
               Ready to Automate?
             </p>
-            <h2 className="mt-4 max-w-[480px] text-[32px] font-extrabold leading-[1.15] tracking-tight text-white sm:text-[42px]">
+            <h2 className="mt-1.5 max-w-[550px] text-[28px] font-bold leading-[1.15] tracking-tight text-white sm:text-[34px] lg:text-[40px]">
               Let&apos;s Build Your Smarter Business Together.
             </h2>
-            <p className="mt-5 max-w-[440px] text-[15px] leading-relaxed text-slate-300">
+            <p className="mt-2 max-w-[550px] text-base leading-7 text-white/80 sm:text-lg">
               Get a personalized consultation and see how AI automation can
               transform your operations.
             </p>
             <a
-              href="#"
-              className="mt-9 inline-flex items-center gap-2 rounded-xl bg-white px-7 py-3.5 text-sm font-extrabold text-brand-dark shadow-xl shadow-black/20 transition hover:-translate-y-0.5 hover:bg-brand-blue-soft"
+              href="/contact"
+              className="mt-5 inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-white px-6 text-base font-bold text-brand-dark shadow-xl shadow-brand-navy/20 transition hover:-translate-y-0.5 hover:bg-brand-blue-soft sm:text-base"
             >
               Book a Free Consultation
               <ArrowRightIcon size={16} className="text-brand-blue" />
             </a>
 
             {/* Trust row */}
-            <div className="mt-12 flex items-center gap-4">
+            <div className="mt-5 flex flex-wrap items-center gap-4">
               <div className="flex -space-x-2.5">
                 {[
                   { initials: "SM", bg: "bg-brand-blue" },
@@ -849,7 +627,7 @@ export default function AIAutomationPage() {
                   </span>
                 ))}
               </div>
-              <p className="text-[12.5px] font-medium leading-snug text-slate-300">
+              <p className="text-[12.5px] font-medium leading-snug text-white/80">
                 Trusted by <span className="font-bold text-white">500+ Businesses</span>
                 <br />
                 Worldwide
@@ -857,13 +635,11 @@ export default function AIAutomationPage() {
             </div>
           </Reveal>
 
-          {/* Right visual — robot hand panel */}
+          {/* Automation illustration */}
           <Reveal delay={150}>
-            {/* NOTE: Replace the inner scene with your real robot-hand image:
-                <img src="/images/robot-hand.png" className="absolute inset-0 h-full w-full object-cover" /> */}
-            <div className="relative h-[380px] overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#0b2650] via-brand-navy to-[#030b1c] shadow-2xl shadow-black/40 sm:h-[420px]">
-              <div className="absolute inset-0 opacity-25 [background-image:radial-gradient(circle_at_50%_50%,#0876ed_0,transparent_60%)]" />
-              <div className="absolute inset-0 [background-image:linear-gradient(#ffffff06_1px,transparent_1px),linear-gradient(90deg,#ffffff06_1px,transparent_1px)] [background-size:32px_32px]" />
+            <div className="relative h-[300px] overflow-hidden rounded-[15px] border border-white/10 bg-gradient-to-br from-brand-dark via-brand-navy to-brand-navy shadow-2xl shadow-brand-navy/40 sm:h-[340px]">
+              <div className="absolute inset-0 opacity-25 [background-image:radial-gradient(circle_at_50%_50%,var(--color-brand-blue)_0,transparent_60%)]" />
+              <div className="absolute inset-0 [background-image:linear-gradient(color-mix(in_srgb,var(--color-white)_2%,transparent)_1px,transparent_1px),linear-gradient(90deg,color-mix(in_srgb,var(--color-white)_2%,transparent)_1px,transparent_1px)] [background-size:32px_32px]" />
 
               {/* central robot core */}
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
@@ -898,7 +674,7 @@ export default function AIAutomationPage() {
               </div>
               <div className="absolute bottom-16 left-6 flex animate-float-slow items-center gap-2 rounded-xl border border-white/10 bg-white/10 px-3.5 py-2 backdrop-blur-md [animation-delay:0.5s]">
                 <span className="h-2 w-2 rounded-full bg-brand-green-light" />
-                <span className="text-[11px] font-semibold text-slate-200">
+                <span className="text-[11px] font-semibold text-white/85">
                   Live Workflows
                 </span>
               </div>

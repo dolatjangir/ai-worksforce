@@ -24,6 +24,7 @@ import {
   Handshake,
   Building2,
 } from "lucide-react";
+import PageHero from "@/components/solutions-hero/reusable-hero";
 
 /* ============================================
    DATA
@@ -219,89 +220,81 @@ function OutlineButton({
 
 function Hero() {
   return (
-    <section className="relative overflow-hidden">
-      {/* soft section gradient backdrop */}
-      <div
-        aria-hidden
-        className="absolute inset-0 -z-10"
-        style={{ background: "var(--gradient-section)" }}
-      />
-      <div
-        aria-hidden
-        className="absolute -top-32 -left-32 -z-10 h-96 w-96 rounded-full bg-[var(--color-blue-100)] blur-3xl"
-      />
-      <div
-        aria-hidden
-        className="absolute top-40 -right-24 -z-10 h-80 w-80 rounded-full bg-[var(--color-indigo-50)] blur-3xl"
-      />
+ <PageHero
+titleId="ai-business-assessment-title"
+eyebrow="AI Business Assessment"
+title="Discover Your AI"
 
-      <div className="mx-auto grid w-full max-w-7xl items-center gap-12 px-5 py-16 sm:px-8 lg:grid-cols-2 lg:py-24">
-        {/* Left */}
-        <div>
-        
+highlightedTitle="Opportunity"
+description="A strategic assessment to help you identify, plan and implement the right AI solutions for your business."
+image="/assessment-hero-right-img.png"
+imageAlt="Your AI Opportunity — assessment session"
+primaryAction={{
+label: "Get Your AI Assessment",
+href: "#consultation",
+}}
+secondaryAction={{
+label: "Talk to Our Team",
+href: "#contact",
+}}
+ stats={[
+    {
+      icon: "chart",
+      value: "Faster Operations",
+      label: "Automate repetitive tasks in minutes",
+    },
+    {
+      icon: "chart",
+      value: "Reduce Costs",
+      label: "Cut operational costs by up to 70%",
+    },
+    {
+      icon: "rocket",
+      value: "Higher Productivity",
+      label: "Get more done with the same team",
+    },
+  ]}
 
-          <Eyebrow>AI Business Assessment</Eyebrow>
+  benefitCards={[
+    {
+      title: "Automate",
+      description: "Repetitive Work",
+      icon: "settings",
+    },
+    {
+      title: "Integrate",
+      description: "Your Tools",
+      icon: "check",
+    },
+    {
+      title: "Improve",
+      description: "Decision Making",
+      icon: "chart",
+    },
+    {
+      title: "Save",
+      description: "Time & Reduce Errors",
+      icon: "check",
+      variant: "green",
+    },
+    {
+      title: "Scale",
+      description: "Faster & Smarter",
+      icon: "rocket",
+      variant: "green",
+    },
+  ]}
 
-          <h1 className="mt-4 text-4xl leading-[1.1] font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
-            <span className="text-[var(--color-heading-dark)]">
-              Discover Your AI
-            </span>
-            <br />
-            <span
-              className="bg-clip-text text-transparent"
-              style={{ backgroundImage: "var(--gradient-heading)" }}
-            >
-              Opportunity
-            </span>
-          </h1>
+  handwrittenNote={{
+    lines: [
+      "Less Manual Work",
+      "More Possibilities",
+    ],
+    position: "right-[2%] bottom-[22%]",
+    rotate: "-rotate-[5deg]",
+  }}
+/>
 
-          <p className="mt-5 max-w-xl text-base leading-relaxed text-[var(--color-text)] sm:text-lg">
-            A strategic assessment to help you identify, plan and implement the
-            right AI solutions for your business.
-          </p>
-
-          {/* trust badges */}
-          <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3">
-            {trustBadges.map(({ icon: Icon, label }) => (
-              <span
-                key={label}
-                className="inline-flex items-center gap-2 text-sm font-medium text-[var(--color-heading-secondary)]"
-              >
-                <Icon size={16} className="text-[var(--color-primary)]" />
-                {label}
-              </span>
-            ))}
-          </div>
-
-          <div className="mt-9 flex flex-wrap gap-4">
-            <GradientButton>Get Your AI Assessment</GradientButton>
-            <OutlineButton>Talk to Our Team</OutlineButton>
-          </div>
-        </div>
-
-        {/* Right — your hero image */}
-        <div className="relative">
-          <div className="relative overflow-hidden rounded-3xl shadow-2xl shadow-[var(--shadow-blue-strong)]">
-            <Image
-              src="/assessment-hero-right-img.png"
-              alt="Your AI Opportunity — assessment session"
-              width={1024}
-              height={768}
-              priority
-              className="h-auto w-full object-cover"
-            />
-          </div>
-          {/* floating glass card, like the "Better Ideas Bigger Results" panel */}
-          <div className="absolute top-6 right-6 hidden rounded-2xl border border-white/40 bg-white/70 px-5 py-4 backdrop-blur-md sm:block">
-            <p className="text-sm font-extrabold text-[var(--color-heading)]">
-              Better Ideas.
-              <br />
-              Bigger Results.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
   );
 }
 

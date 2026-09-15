@@ -1,5 +1,6 @@
 "use client";
 
+import PageHero from "@/components/solutions-hero/reusable-hero";
 import React, { useEffect, useRef, useState } from "react";
 
 /* ============================================================
@@ -279,187 +280,51 @@ export default function AISalesOutreachPage() {
       {/* ==========================================================
           HERO
       ========================================================== */}
-      <section className="relative overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-brand-blue-soft/60 via-white to-white" />
+      <PageHero
+titleId="ai-sales-outreach-title"
+eyebrow="AI Sales & Outreach"
+title="Reach More Prospects."
+highlightedTitle="Close More Opportunities."
+description="Supercharge your sales with AI-powered outreach. Find the right prospects, engage them with personalized communication, and convert leads into revenue — faster and at scale."
+image="/images/hero-sales-outreach.png"
+imageAlt="AI Sales and Outreach workspace"
+primaryAction={{
+label: "Get a Free Outreach Assessment",
+href: "#get-started",
+icon: "arrow",
+}}
+secondaryAction={{
+label: "See How It Works",
+href: "#how-it-works",
+icon: "play",
+}}
+stats={[
+{
+      icon: "chart",
+value: "3x",
+label: "More Qualified Leads",
+},
+{
+      icon: "rocket",
+value: "60%",
+label: "Higher Reply Rates",
+},
+{
+      icon: "chart",
+value: "50%",
+label: "Lower Acquisition Costs",
+},
+]}
+handwrittenNote={{
+lines: [
+"More Conversations",
+"More Revenue",
+],
+position: "right-[2%] top-[3%]",
+rotate: "rotate-[-4deg]",
+}}
+/>
 
-        <div className="relative mx-auto max-w-[1400px] px-5 pb-14 pt-8 lg:px-8 lg:pb-20 lg:pt-10">
-          {/* Breadcrumb */}
-          <nav className="mb-8 flex items-center gap-2 text-[13px] font-medium">
-            <a href="#" className="text-slate-500 transition hover:text-brand-blue">
-              Home
-            </a>
-            <span className="text-slate-300">›</span>
-            <a href="#" className="text-slate-500 transition hover:text-brand-blue">
-              Solutions
-            </a>
-            <span className="text-slate-300">›</span>
-            <span className="font-semibold text-brand-dark">AI Sales &amp; Outreach</span>
-          </nav>
-
-          <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_1fr] lg:gap-8">
-            {/* -------- Left -------- */}
-            <div>
-              <span className="inline-block rounded-full border border-brand-blue/20 bg-brand-blue-soft px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.14em] text-brand-blue">
-                AI Sales &amp; Outreach
-              </span>
-
-              <h1 className="mt-5 text-[42px] font-extrabold leading-[1.08] tracking-tight text-brand-dark sm:text-[54px] lg:text-[58px]">
-                Reach More Prospects.
-                <br />
-                <span className="text-brand-blue">Close More Opportunities.</span>
-              </h1>
-
-              <p className="mt-5 max-w-[520px] text-[15.5px] leading-relaxed text-slate-500 sm:text-base">
-                Supercharge your sales with AI-powered outreach. Find the right
-                prospects, engage them with personalized communication, and convert
-                leads into revenue — faster and at scale.
-              </p>
-
-              <div className="mt-8 flex flex-wrap items-center gap-4">
-                <a
-                  href="#get-started"
-                  className="flex items-center gap-2 rounded-xl bg-brand-blue px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-brand-blue/30 transition hover:-translate-y-0.5 hover:bg-brand-blue-dark"
-                >
-                  Get a Free Outreach Assessment
-                  <ArrowRightIcon size={16} />
-                </a>
-                <a
-                  href="#how-it-works"
-                  className="flex items-center gap-2.5 rounded-xl border border-slate-200 bg-white px-6 py-3.5 text-sm font-bold text-brand-dark shadow-sm transition hover:-translate-y-0.5 hover:border-brand-blue/40 hover:shadow-md"
-                >
-                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-brand-blue text-white">
-                    <PlayIcon size={10} />
-                  </span>
-                  See How It Works
-                </a>
-              </div>
-
-              {/* Stats */}
-              <div className="mt-12 grid grid-cols-3 gap-4 border-t border-slate-200 pt-7 sm:gap-6">
-                {[
-                  { value: "3x", label: "More Qualified Leads" },
-                  { value: "60%", label: "Higher Reply Rates" },
-                  { value: "50%", label: "Lower Acquisition Costs" },
-                ].map((s) => (
-                  <div key={s.label}>
-                    <p className="text-[28px] font-extrabold tracking-tight text-brand-blue sm:text-[32px]">
-                      {s.value}
-                    </p>
-                    <p className="mt-1 text-[11.5px] font-medium leading-snug text-slate-500 sm:text-xs">
-                      {s.label}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* -------- Right: hero visual -------- */}
-            {/* NOTE: Replace the decorative scene with your real photo:
-                <img src="/images/hero-sales-outreach.png" className="absolute inset-0 h-full w-full object-cover" /> */}
-            <div className="relative mx-auto h-[560px] w-full max-w-[560px] sm:h-[600px]">
-              <div className="absolute inset-0 overflow-hidden rounded-[28px] bg-gradient-to-br from-brand-blue-soft via-white to-indigo-50">
-                <div className="absolute inset-0 opacity-[0.35] [background-image:linear-gradient(#0876ed12_1px,transparent_1px),linear-gradient(90deg,#0876ed12_1px,transparent_1px)] [background-size:36px_36px]" />
-                <div className="absolute -left-16 top-10 h-64 w-64 rounded-full bg-brand-blue/15 blur-3xl" />
-                <div className="absolute -right-10 bottom-0 h-72 w-72 rounded-full bg-brand-purple/10 blur-3xl" />
-                {/* laptop abstraction */}
-                <div className="absolute bottom-14 left-1/2 h-[200px] w-[74%] -translate-x-1/2 rounded-t-2xl border border-slate-200/80 bg-gradient-to-b from-white to-slate-100 shadow-2xl shadow-slate-900/10">
-                  <div className="mx-auto mt-6 h-[105px] w-[82%] rounded-lg bg-gradient-to-br from-brand-navy to-brand-dark p-3">
-                    <div className="flex h-full items-end justify-around rounded-md bg-white/5 p-3">
-                      {[35, 55, 42, 70, 52, 85, 62, 92].map((h, i) => (
-                        <span
-                          key={i}
-                          className="w-3.5 rounded-sm bg-gradient-to-t from-brand-blue to-brand-sky"
-                          style={{ height: `${h * 0.55}px` }}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                  <div className="mx-auto mt-2 h-2.5 w-[92%] rounded-b-xl bg-slate-300/70" />
-                </div>
-              </div>
-
-              {/* Floating card: Find Ideal Prospects */}
-              <div className="absolute left-[2%] top-[6%] w-64 animate-float rounded-2xl border border-slate-100 bg-white p-3.5 shadow-xl shadow-slate-900/10">
-                <div className="flex items-center gap-3">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-blue-soft text-brand-blue">
-                    <TargetIcon size={20} />
-                  </span>
-                  <span>
-                    <span className="block text-[13px] font-bold text-brand-dark">
-                      Find Ideal Prospects
-                    </span>
-                    <span className="block text-[11px] font-medium text-slate-500">
-                      AI-powered lead discovery
-                    </span>
-                  </span>
-                </div>
-              </div>
-
-              {/* Floating card: Personalized Outreach */}
-              <div className="absolute left-[6%] top-[30%] w-64 animate-float-slow rounded-2xl border border-slate-100 bg-white p-3.5 shadow-xl shadow-slate-900/10">
-                <div className="flex items-center gap-3">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-blue-soft text-brand-blue">
-                    <MailIcon size={19} />
-                  </span>
-                  <span>
-                    <span className="block text-[13px] font-bold text-brand-dark">
-                      Personalized Outreach
-                    </span>
-                    <span className="block text-[11px] font-medium text-slate-500">
-                      Multi-channel campaigns
-                    </span>
-                  </span>
-                </div>
-              </div>
-
-              {/* Floating card: Smart Follow-ups */}
-              <div className="absolute bottom-[20%] left-[2%] w-64 animate-float rounded-2xl border border-slate-100 bg-white p-3.5 shadow-xl shadow-slate-900/10 [animation-delay:1.2s]">
-                <div className="flex items-center gap-3">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-blue-soft text-brand-blue">
-                    <RefreshIcon size={19} />
-                  </span>
-                  <span>
-                    <span className="block text-[13px] font-bold text-brand-dark">
-                      Smart Follow-ups
-                    </span>
-                    <span className="block text-[11px] font-medium text-slate-500">
-                      Never miss an opportunity
-                    </span>
-                  </span>
-                </div>
-              </div>
-
-              {/* Handwritten note */}
-              <div className="absolute right-[2%] top-[3%] rotate-[-4deg]">
-                <p className="font-hand text-[30px] font-semibold leading-[1.05] text-brand-dark sm:text-[34px]">
-                  More Conversations
-                  <br />
-                  <span className="text-brand-blue">More Revenue</span>
-                </p>
-              </div>
-
-              {/* Pipeline Growth card */}
-              <div className="absolute bottom-[26%] right-0 w-48 animate-float-slow rounded-2xl border border-slate-100 bg-white p-4 shadow-xl shadow-slate-900/10 [animation-delay:0.6s]">
-                <div className="flex items-center gap-2">
-                  <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-green-soft text-brand-green">
-                    <TrendingUpIcon size={16} />
-                  </span>
-                  <span className="text-[12px] font-bold text-brand-dark">
-                    Pipeline Growth
-                  </span>
-                </div>
-                <p className="mt-2.5 flex items-center gap-1.5 text-[24px] font-extrabold tracking-tight text-brand-green">
-                  <svg width="14" height="16" viewBox="0 0 14 16" fill="currentColor">
-                    <path d="M7 0 14 9H9v7H5V9H0L7 0z" />
-                  </svg>
-                  320%
-                </p>
-                <p className="text-[10.5px] font-medium text-slate-400">In 6 months</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* ==========================================================
           TRUSTED BY

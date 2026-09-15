@@ -1,9 +1,8 @@
 
-
-
-
 "use client";
 
+import ReusableHero from "@/components/tech-hero/reusable-hero";
+import { ArrowRight, BarChart3, PieChart, Play, Search } from "lucide-react";
 import { useState, type ReactNode } from "react";
 
 type IconName =
@@ -42,29 +41,106 @@ export default function DataIntelligencePage() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const nav = ["Home", "What AI WorksForce?", "How it Works", "Our AI Workflow", "Solutions", "Industries", "Case Studies", "Resources", "About"];
   return <main className="min-h-screen overflow-hidden bg-white font-sans text-brand-dark">
-    <header className="mx-auto flex h-[62px] max-w-[1440px] items-center justify-between px-5 lg:px-8">
-      <a href="#" className="leading-none"><span className="block text-[21px] font-extrabold tracking-[-1.1px] text-[#071a7a]">AI WorksForce</span><span className="ml-14 block pt-0.5 text-[8px] font-semibold tracking-tight text-brand-text">Automate. Accelerate. Grow.</span></a>
-      <nav className="hidden items-center gap-6 text-[10px] font-medium text-[#415285] lg:flex">{nav.map((item) => <a key={item} className={item === "Solutions" ? "border-b-2 border-brand-blue pb-[22px] font-bold text-brand-dark" : "hover:text-brand-blue"} href="#solutions">{item}{item === "Solutions" && <span className="ml-1">⌄</span>}</a>)}</nav>
-      <a href="#contact" className="hidden rounded-xl bg-gradient-to-r from-[#2016ff] to-[#082771] px-5 py-3 text-[10px] font-bold text-white shadow-lg shadow-blue-200 sm:block">Book a Free Consultation <span className="ml-1">→</span></a>
-      <button onClick={() => setMobileOpen(!mobileOpen)} className="rounded-lg p-2 text-brand-dark lg:hidden" aria-label="Toggle navigation"><Icon name={mobileOpen ? "close" : "menu"}/></button>
-    </header>
-    {mobileOpen && <nav className="border-y border-blue-100 bg-white px-5 py-4 lg:hidden">{nav.map(n => <a key={n} href="#solutions" onClick={() => setMobileOpen(false)} className="block py-2 text-sm font-medium text-brand-text">{n}</a>)}</nav>}
-
-    <section className="relative mx-auto max-w-[1440px] overflow-hidden rounded-b-[18px] bg-[radial-gradient(circle_at_68%_35%,#dfe2ff_0,rgba(244,248,255,.55)_26%,#fff_60%)] px-6 pb-7 pt-9 lg:px-[76px] lg:pt-10">
-      <div className="absolute right-[10%] top-0 h-[420px] w-[500px] rounded-full bg-[#dce2ff]/50 blur-3xl"/>
-      <div className="relative grid items-center gap-8 lg:grid-cols-[1.03fr_.97fr]">
-        <div className="max-w-[570px]"><p className="mb-2 text-[10px] font-extrabold tracking-[3px] text-[#1822e5]">TURN DATA INTO OPPORTUNITIES.</p><h1 className="text-[52px] font-extrabold leading-[.9] tracking-[-3px] text-[#091a70] sm:text-[64px]">Data<br/><span className="bg-gradient-to-r from-[#172cff] via-[#1732ff] to-[#531cff] bg-clip-text text-transparent">Intelligence</span></h1><h2 className="mt-3 text-[20px] font-extrabold tracking-[-.8px] text-brand-dark">Smarter Data. Clearer Insights. Bigger Decisions.</h2><p className="mt-2 max-w-[535px] text-[15px] leading-[1.32] text-[#526294]">We help businesses unlock the true value of their data with AI-powered analytics, automation, and intelligence. Turn your data into actionable insights and drive faster, smarter, more profitable decisions.</p><div className="mt-3 flex flex-wrap gap-4"><a href="#contact" className="rounded-lg bg-gradient-to-r from-[#2412fd] to-[#122af0] px-6 py-3 text-xs font-bold text-white shadow-lg shadow-indigo-200">Book a Free Consultation →</a><a href="#how" className="rounded-lg border border-[#5365af] bg-white px-6 py-3 text-xs font-bold text-[#111b72]"><span className="mr-2 inline-flex rounded-full bg-[#e6edff] p-0.5 text-[#2738ff]"><Icon name="play" className="h-3 w-3"/></span>See It in Action</a></div></div>
-        <div className="relative mx-auto h-[310px] w-full max-w-[610px] sm:h-[345px]">
-          <div className="absolute left-[6%] top-[11%] z-10 w-[158px] rounded-xl bg-white p-4 shadow-xl shadow-blue-200/70"><p className="text-[10px] font-bold text-brand-dark">Total Data Value</p><p className="mt-1 text-xl font-extrabold text-brand-green">↑ 256%</p><div className="mt-2 flex h-11 items-end gap-2 border-b border-indigo-200 pb-1"><i className="w-3 rounded-t bg-indigo-200"/><i className="h-2 w-3 rounded-t bg-indigo-300"/><i className="h-4 w-3 rounded-t bg-indigo-400"/><i className="h-7 w-3 rounded-t bg-[#313bdb]"/><i className="h-9 w-3 rounded-t bg-[#1420d9]"/></div></div>
-          <div className="absolute bottom-[1%] left-[3%] z-10 space-y-1.5">{[["pie","Predict Trends"],["file","Real-time Insights"],["gear","Automate Reporting"],["chart","Smarter Decisions"]].map(([i,t]) => <div key={t} className="flex w-[165px] items-center gap-2 rounded-lg bg-white px-2.5 py-2 shadow-lg shadow-blue-200/70"><span className="rounded-md bg-[#e8edff] p-1.5 text-[#1726ff]"><Icon name={i as IconName} className="h-4 w-4"/></span><span className="text-[10px] font-bold text-brand-dark">{t}</span></div>)}</div>
-          <div className="absolute left-[29%] top-0 h-full w-[310px] overflow-hidden rounded-[42%] bg-gradient-to-b from-[#d9dbff] to-[#eef6ff]"><img className="h-full w-full object-cover object-[60%_30%] mix-blend-multiply" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=720&q=85" alt="Business analyst"/></div>
-          <div className="absolute right-0 top-[5%] z-10 w-[170px] rounded-xl bg-white p-4 shadow-xl shadow-blue-200/70"><p className="text-[14px] font-extrabold leading-[1.05] text-brand-dark">From Data<br/>to Real Growth</p>{["Uncover Opportunities", "Improve Efficiency", "Reduce Costs", "Make Data-Driven Decisions"].map(x => <p key={x} className="mt-2 flex items-center gap-1.5 text-[9px] text-[#435287]"><span className="rounded-full bg-green-100 p-0.5 text-green-600"><Icon name="check" className="h-3 w-3"/></span>{x}</p>)}</div>
-          <div className="absolute bottom-[8%] right-0 z-10 w-[170px] rounded-xl bg-white p-3 shadow-xl shadow-blue-200/70"><p className="text-[12px] font-extrabold text-brand-dark">AI-Powered<br/>Analytics</p><svg viewBox="0 0 160 60" className="mt-1 h-12 w-full overflow-visible"><polyline points="0,48 14,38 28,45 45,22 61,36 78,18 93,31 111,12 130,42 148,27 158,3" fill="none" stroke="#1e27ff" strokeWidth="2"/><circle cx="158" cy="3" r="2" fill="#1e27ff"/></svg></div>
-          <p className="absolute bottom-[-4px] right-[1%] z-20 rotate-[-9deg] font-hand text-[18px] leading-[.8] text-[#1726ff]">Your<br/>Data<br/>Our Intelligence</p>
-        </div>
-      </div>
-      <div className="relative mt-5 grid max-w-[570px] grid-cols-3 gap-3 text-[#1926e7]"><Stat icon="chart" value="3x" label="Faster Insights"/><Stat icon="search" value="70%" label="Less Analysis Time"/><Stat icon="pie" value="5x" label="Better Decision Making"/></div>
-    </section>
+   
+    <ReusableHero
+  eyebrow="TURN DATA INTO OPPORTUNITIES."
+  title={
+    <>
+      Data{" "}
+      <span className="bg-gradient-to-r from-brand-purple to-brand-blue bg-clip-text text-transparent">
+        Intelligence
+      </span>
+    </>
+  }
+  subtitle="Smarter Data. Clearer Insights. Bigger Decisions."
+  description="We help businesses unlock the true value of their data with AI-powered analytics, automation, and intelligence. Turn your data into actionable insights and drive faster, smarter, more profitable decisions."
+  buttons={{
+    primary: {
+      label: "Book a Free Consultation",
+      href: "#contact",
+      variant: "primary",
+      icon: <ArrowRight className="size-4" />,
+    },
+    secondary: {
+      label: "See It in Action",
+      href: "#how",
+      variant: "secondary",
+      icon: <Play className="size-3.5" />,
+    },
+  }}
+  stats={[
+    {
+      value: "3x",
+      label: "Faster Insights",
+      icon: <BarChart3 className="size-5" />,
+    },
+    {
+      value: "70%",
+      label: "Less Analysis Time",
+      icon: <Search className="size-5" />,
+    },
+    {
+      value: "5x",
+      label: "Better Decision Making",
+      icon: <PieChart className="size-5" />,
+    },
+  ]}
+  heroImageSrc="/technology/all-in-one.png"
+  heroImageAlt="Business analyst"
+  leftCards={[
+    {
+      label: "Predict Trends",
+      symbol: "◔",
+      colorClass: "text-brand-blue",
+    },
+    {
+      label: "Real-time Insights",
+      symbol: "▣",
+      colorClass: "text-brand-blue",
+    },
+    {
+      label: "Automate Reporting",
+      symbol: "⚙",
+      colorClass: "text-brand-blue",
+    },
+    {
+      label: "Smarter Decisions",
+      symbol: "⌁",
+      colorClass: "text-brand-blue",
+    },
+  ]}
+  sideCard={{
+    title: (
+      <>
+        From Data
+        <br />
+        to Real Growth
+      </>
+    ),
+    items: [
+      "Uncover Opportunities",
+      "Improve Efficiency",
+      "Reduce Costs",
+      "Make Data-Driven Decisions",
+    ],
+  }}
+  rightCards={[
+    {
+      label: "AI-Powered Analytics",
+      symbol: "⌁",
+      colorClass: "text-brand-blue",
+    },
+  ]}
+  handwrittenText={
+    <>
+      Your
+      <br />
+      Data
+      <br />
+      Our Intelligence
+    </>
+  }
+/>
     <section className="mx-auto max-w-[1440px] px-6 py-3 lg:px-[76px]"><p className="text-[10px] font-extrabold tracking-[2.5px] text-[#1822e5]">TRUSTED DATA PLATFORMS &amp; TECHNOLOGIES</p><div className="mt-3 grid grid-cols-3 items-center gap-4 text-center sm:grid-cols-5 lg:grid-cols-9">{["Google BigQuery", "Snowflake", "aws Redshift", "Microsoft Fabric", "databricks", "Power BI", "Tableau", "Looker"].map((x,i) => <div key={x} className="text-[15px] font-medium text-[#1e306a]"><span className="mr-1 text-xl text-[#0876ed]">{["◆","✽","◡","▦","◇","▮","✣","♧"][i]}</span>{x}</div>)}</div></section>
     <section id="solutions" className="mx-auto max-w-[1440px] px-6 py-4 lg:px-[76px]"><SectionTitle eyebrow="OUR DATA INTELLIGENCE SOLUTIONS" title="End-to-End Data Intelligence for Your Business" subtitle="We combine data, AI, and automation to help you extract meaningful insights and drive real business impact."/><div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">{solutions.map(([icon,title,body],i) => <article key={title} className="group min-h-[144px] rounded-xl bg-[linear-gradient(135deg,#f7f9ff,#fff)] p-4 shadow-[0_5px_18px_rgba(35,77,155,.06)]"><span className={`inline-flex rounded-full p-3 ${["bg-indigo-100 text-indigo-700","bg-emerald-100 text-emerald-600","bg-violet-100 text-violet-700","bg-sky-100 text-sky-600","bg-indigo-100 text-indigo-700","bg-sky-100 text-sky-600","bg-blue-100 text-blue-700","bg-pink-100 text-pink-500"][i]}`}><Icon name={icon as IconName}/></span><h3 className="mt-2 text-[15px] font-extrabold tracking-[-.5px] text-brand-dark">{title}</h3><p className="max-w-[185px] text-[12px] leading-[1.16] text-[#506195]">{body}</p><span className="float-right -mt-6 rounded-full bg-white p-2 text-[#1429ff] shadow-lg"><Icon name="arrow" className="h-4 w-4"/></span></article>)}</div></section>
     <section id="how" className="mx-auto max-w-[1440px] px-6 py-1 lg:px-[76px]"><SectionTitle eyebrow="HOW IT WORKS" title="From Raw Data to Real Results" subtitle="A simple, proven process to help you unlock the power of your data."/><div className="mt-2 grid rounded-xl bg-[#fafbff] p-2 sm:grid-cols-5">{process.map(([icon,title,body],i) => <div key={title} className="relative px-4 py-3 text-center"><span className="mx-auto inline-flex rounded-full bg-[#e8edff] p-3 text-[#192cff]"><Icon name={icon as IconName}/></span><p className="mt-1 text-[9px] font-bold text-[#2030ff]">0{i+1}</p><h3 className="text-sm font-extrabold text-brand-dark">{title}</h3><p className="mx-auto max-w-[160px] text-[12px] leading-[1.15] text-[#536394]">{body}</p>{i<4&&<span className="absolute right-[-8px] top-8 hidden text-2xl text-[#192cff] sm:block">→</span>}</div>)}</div></section>

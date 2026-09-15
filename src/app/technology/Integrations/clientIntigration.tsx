@@ -28,6 +28,7 @@ import {
   X,
   Zap,
 } from "lucide-react";
+import ReusableHero from "@/components/tech-hero/reusable-hero";
 
 const navItems = [
   "Home",
@@ -248,153 +249,111 @@ function BrandLogo({ name, className }: { name: string; className: string }) {
 
 export default function IntegrationsPage() {
   const [menuOpen, setMenuOpen] = useState(false);
-
+  const heroImageSrc = "/technology/Integrations-hero.png";
   return (
     <main className="min-h-screen overflow-x-hidden bg-white font-sans text-brand-dark">
    
 
       {/* Hero */}
-      <section className="relative mx-auto max-w-[1440px] overflow-hidden rounded-b-[22px] bg-[radial-gradient(circle_at_72%_44%,rgba(210,219,255,.95),rgba(242,247,255,.78)_30%,rgba(255,255,255,1)_68%)] px-5 py-9 lg:px-[76px] lg:py-16">
-        <div className="pointer-events-none absolute -right-16 -top-24 size-[530px] rounded-full bg-[#dbe1ff]/45 blur-3xl" />
-
-        <div className="relative grid items-center gap-7 lg:grid-cols-[0.98fr_1.02fr]">
-          <div className="max-w-[550px]">
-            <p className="text-[9px] font-extrabold tracking-[3px] text-[#2029e8]">
-              CONNECT EVERYTHING. UNLOCK MORE.
-            </p>
-
-            <h1 className="mt-2 text-[50px] font-extrabold leading-[0.94] tracking-[-3px] text-[#0b176c] sm:text-[62px] lg:text-[68px]">
-              Integrations
-            </h1>
-
-            <h2 className="mt-4 max-w-[510px] text-[17px] font-extrabold leading-[1.08] tracking-[-0.7px] text-brand-dark sm:text-[19px]">
-              Seamless Integrations for a More Connected Business.
-            </h2>
-
-            <p className="mt-2 max-w-[535px] text-[13px] leading-[1.48] text-[#536394] sm:text-[14px]">
-              We integrate your favorite tools, platforms, and systems to
-              create a unified workflow. Eliminate silos, automate data flow,
-              and unlock the full potential of your business with AI-powered
-              integrations.
-            </p>
-
-            <div className="mt-5 flex flex-wrap gap-3">
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-[#2513ff] to-[#1230e7] px-6 py-3 text-xs font-bold text-white shadow-lg shadow-indigo-200 transition hover:-translate-y-0.5"
-              >
-                Book a Free Consultation <ArrowRight className="size-4" />
-              </a>
-
-              <a
-                href="#how-it-works"
-                className="inline-flex items-center gap-2 rounded-lg border border-[#7180b5] bg-white px-5 py-3 text-xs font-bold text-[#122074] transition hover:border-brand-blue hover:text-brand-blue"
-              >
-                <span className="grid size-5 place-items-center rounded-full bg-[#e7edff] text-[#2939ef]">
-                  <Play className="ml-0.5 size-3 fill-current" />
-                </span>
-                See It in Action
-              </a>
-            </div>
-          </div>
-
-          {/* Integration network illustration */}
-          <div className="relative mx-auto h-[350px] w-full max-w-[610px] sm:h-[385px] lg:h-[350px]">
-            <div className="absolute inset-[7%_10%_4%] rounded-[50%] bg-[radial-gradient(circle,rgba(113,137,255,.38),rgba(229,237,255,.35)_45%,transparent_72%)] blur-xl" />
-
-            <svg
-              className="absolute inset-0 z-0 h-full w-full"
-              viewBox="0 0 600 350"
-              fill="none"
-              aria-hidden="true"
-            >
-              <g stroke="#fff" strokeWidth="2" strokeDasharray="5 4" opacity=".9">
-                <path d="M300 171 L120 70 L120 37" />
-                <path d="M300 171 L215 70 L215 25" />
-                <path d="M300 171 L300 30" />
-                <path d="M300 171 L405 70 L405 31" />
-                <path d="M300 171 L500 83" />
-                <path d="M300 171 L105 175" />
-                <path d="M300 171 L104 245" />
-                <path d="M300 171 L190 292" />
-                <path d="M300 171 L405 300" />
-                <path d="M300 171 L505 238" />
-                <path d="M300 171 L505 170" />
-              </g>
-            </svg>
-
-            {/* Center */}
-            <div className="absolute left-1/2 top-1/2 z-20 grid h-[104px] w-[104px] -translate-x-1/2 -translate-y-1/2 place-items-center rounded-2xl border border-white bg-white/95 shadow-[0_18px_45px_rgba(38,74,151,.2)]">
-              <div className="text-center">
-                <div className="text-[27px] font-extrabold leading-none text-[#0d207d]">AI</div>
-                <div className="mt-1 text-[12px] font-extrabold leading-none text-brand-dark">
-                  WorksForce
-                </div>
-              </div>
-            </div>
-
-            {/* App nodes */}
-            {[
-              { label: "Slack", x: "left-[10%]", y: "top-[2%]", icon: "✣", color: "text-[#19a981]" },
-              { label: "Drive", x: "left-[31%]", y: "top-[-1%]", icon: "▲", color: "text-[#34a853]" },
-              { label: "Notion", x: "left-[55%]", y: "top-[1%]", icon: "N", color: "text-black" },
-              { label: "Salesforce", x: "right-[9%]", y: "top-[7%]", icon: "☁", color: "text-[#1597d4]" },
-              { label: "HubSpot", x: "left-[1%]", y: "top-[24%]", icon: "●", color: "text-[#ff7a59]" },
-              { label: "Teams", x: "right-[1%]", y: "top-[28%]", icon: "T", color: "text-[#5b5fc7]" },
-              { label: "OpenAI", x: "left-[2%]", y: "top-[47%]", icon: "◎", color: "text-[#111827]" },
-              { label: "Gmail", x: "right-[1%]", y: "top-[50%]", icon: "M", color: "text-[#ea4335]" },
-              { label: "Zapier", x: "left-[15%]", y: "bottom-[6%]", icon: "✱", color: "text-[#ff4f00]" },
-              { label: "Shopify", x: "left-[39%]", y: "bottom-[2%]", icon: "S", color: "text-[#6b8e23]" },
-              { label: "Database", x: "right-[24%]", y: "bottom-[3%]", icon: "▤", color: "text-[#172cf2]" },
-            ].map((node) => (
-              <div
-                key={node.label}
-                className={`absolute ${node.x} ${node.y} z-10 grid size-[58px] place-items-center rounded-xl border border-white/80 bg-white shadow-[0_10px_24px_rgba(38,74,151,.14)] sm:size-[64px]`}
-                title={node.label}
-              >
-                <span className={`text-[25px] font-black ${node.color}`}>
-                  {node.icon}
-                </span>
-              </div>
-            ))}
-
-            <p className="absolute bottom-0 right-0 z-30 rotate-[-10deg] font-hand text-[18px] leading-[0.9] text-[#1428ee] sm:text-[20px]">
-              All Your
-              <br />
-              Tools
-              <br />
-              Working
-              <br />
-              Together
-            </p>
-          </div>
-        </div>
-
-        <div className="relative mt-4 grid max-w-[575px] grid-cols-1 gap-4 sm:grid-cols-3 sm:divide-x sm:divide-blue-100">
-          {[
-            [Zap, "3x", "Faster Workflows"],
-            [Database, "70%", "Less Manual Data Entry"],
-            [BarChart3, "5x", "Higher Productivity"],
-          ].map(([Icon, value, label]) => {
-            const StatIcon = Icon as typeof Zap;
-            return (
-              <div key={value as string} className="flex items-center gap-2 sm:px-4 first:pl-0">
-                <span className="grid size-10 shrink-0 place-items-center rounded-full bg-brand-purple-soft text-brand-purple">
-                  <StatIcon className="size-5" />
-                </span>
-                <div>
-                  <strong className="block text-[21px] font-extrabold leading-none text-[#1729ef]">
-                    {value as string}
-                  </strong>
-                  <span className="text-[10px] font-medium text-[#59689a]">
-                    {label as string}
-                  </span>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </section>
+     <ReusableHero
+  eyebrow="CONNECT EVERYTHING. UNLOCK MORE."
+  title="Integrations"
+  subtitle="Seamless Integrations for a More Connected Business."
+  description="We integrate your favorite tools, platforms, and systems to create a unified workflow. Eliminate silos, automate data flow, and unlock the full potential of your business with AI-powered integrations."
+  buttons={{
+    primary: {
+      label: "Book a Free Consultation",
+      href: "#contact",
+      variant: "primary",
+      icon: <ArrowRight className="size-4" />,
+    },
+    secondary: {
+      label: "See It in Action",
+      href: "#how-it-works",
+      variant: "secondary",
+      icon: <Play className="size-3.5 fill-current" />,
+    },
+  }}
+  stats={[
+    {
+      value: "3x",
+      label: "Faster Workflows",
+      icon: <Zap className="size-5" />,
+    },
+    {
+      value: "70%",
+      label: "Less Manual Data Entry",
+      icon: <Database className="size-5" />,
+    },
+    {
+      value: "5x",
+      label: "Higher Productivity",
+      icon: <BarChart3 className="size-5" />,
+    },
+  ]}
+  heroImageSrc={heroImageSrc}
+  heroImageAlt="AI WorksForce integrations"
+  leftCards={[
+    {
+      label: "Slack",
+      symbol: "✣",
+      colorClass: "text-emerald-600",
+    },
+    {
+      label: "Google Drive",
+      symbol: "▲",
+      colorClass: "text-green-600",
+    },
+    {
+      label: "Notion",
+      symbol: "N",
+      colorClass: "text-black",
+    },
+    {
+      label: "Salesforce",
+      symbol: "☁",
+      colorClass: "text-sky-500",
+    },
+  ]}
+  sideCard={{
+    title: (
+      <>
+        Connect
+        <br />
+        Everything
+      </>
+    ),
+    items: [
+      "Eliminate Data Silos",
+      "Automate Data Flow",
+      "Connect Your Tools",
+      "Unified Workflows",
+    ],
+  }}
+  rightCards={[
+    {
+      label: "All Your Tools Working Together",
+      symbol: "✱",
+      colorClass: "text-brand-blue",
+    },
+    {
+      label: "AI-Powered Integrations",
+      symbol: "⚙",
+      colorClass: "text-brand-purple",
+    },
+  ]}
+  handwrittenText={
+    <>
+      All Your
+      <br />
+      Tools
+      <br />
+      Working
+      <br />
+      Together
+    </>
+  }
+/>
 
       {/* Trusted companies */}
       <section className="mx-auto max-w-[1440px] px-5 py-4 lg:px-[76px]">

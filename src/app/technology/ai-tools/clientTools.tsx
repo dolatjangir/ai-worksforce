@@ -1,5 +1,7 @@
 "use client";
 
+import ReusableHero from "@/components/tech-hero/reusable-hero";
+import { ArrowRight, Clock, Play, Rocket, TrendingUp } from "lucide-react";
 import { useState, type CSSProperties, type ReactNode } from "react";
 
 /**
@@ -43,7 +45,7 @@ const navItems = [
 
 export default function AIToolsPage({
   consultationHref = "/contact",
-  heroImageSrc = "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=900&q=85",
+  heroImageSrc = "/technology/all-in-one.png",
   caseStudyImageSrc = "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=700&q=85",
   testimonialImageSrc = "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=240&q=85",
 }: AIToolsPageProps) {
@@ -84,44 +86,107 @@ export default function AIToolsPage({
   
 
       <main id="main-content">
-        <section aria-labelledby="hero-title" className="relative isolate rounded-b-2xl" style={{ background: "radial-gradient(ellipse at 73% 36%, var(--color-brand-purple-soft), transparent 48%), linear-gradient(115deg, var(--color-blue-50), white 56%, var(--color-indigo-50))" }}>
-          <div className="mx-auto grid max-w-[1370px] gap-5 px-5 pb-8 pt-10 sm:px-8 lg:min-h-[515px] lg:grid-cols-[1fr_1.08fr] lg:gap-0 lg:px-10 lg:pb-5 lg:pt-10">
-            <div className="relative z-10 lg:py-1">
-              <p className={eyebrow}>Powerful AI tools. Real business impact.</p>
-              <h1 id="hero-title" className="mt-2 text-[58px] font-bold leading-[1.03] tracking-[-0.055em] sm:text-[72px] lg:text-[80px]">AI <span className="text-brand-blue">Tools</span></h1>
-              <h2 className="mt-2 max-w-[580px] text-xl font-semibold leading-[1.25] tracking-[-0.025em] sm:text-[23px]">The right AI tools for a smarter, faster, more productive business.</h2>
-              <p className="mt-3 max-w-[570px] text-base leading-[1.5] text-brand-text sm:text-[18px]">Discover, compare, and implement the best AI tools for your business needs. From content creation and automation to analytics and productivity — we help you find, integrate, and get the most out of the right AI tools.</p>
-              <div className="mt-5 flex flex-col gap-4 sm:flex-row">
-                <a href={consultationHref} className={primaryButton}>Book a Free Consultation {icon("arrow", "size-4")}</a>
-                <a href="#tools" className={secondaryButton}><span className="rounded-full bg-brand-purple-soft p-1 text-brand-purple">{icon("play", "size-4")}</span> See AI Tools in Action</a>
-              </div>
-              <div className="mt-8 grid grid-cols-3 gap-2 sm:gap-5">
-                {([{ value: "3x", label: "Higher Productivity", icon: "trend" }, { value: "70%", label: "Time Savings", icon: "clock" }, { value: "5x", label: "Faster Execution", icon: "rocket" }] as const).map((stat) => <div key={stat.label} className="flex flex-col items-start gap-2 border-r border-brand-blue/10 last:border-0 sm:flex-row sm:items-center sm:gap-3">
-                  <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-brand-purple-soft text-brand-purple sm:size-14">{icon(stat.icon)}</span>
-                  <div><p className="text-[27px] font-bold leading-none tracking-tight text-brand-blue sm:text-[31px]">{stat.value}</p><p className="mt-1 text-[11px] leading-tight text-brand-text sm:text-sm">{stat.label}</p></div>
-                </div>)}
-              </div>
-            </div>
-            <div className="relative mx-auto mt-4 h-[415px] w-full max-w-[670px] sm:h-[460px] lg:-mt-3">
-              <div aria-hidden="true" className="absolute inset-x-[14%] inset-y-6 rounded-full bg-brand-purple-light/15 blur-2xl"/>
-              {/* For the screenshot silhouette, pass a transparent portrait PNG. */}
-              <img src={heroImageSrc} alt="AI tools consultant" width={420} height={530} fetchPriority="high" className="absolute bottom-0 left-[19%] h-[89%] w-[56%] rounded-t-[45%] rounded-b-2xl object-cover object-top shadow-[0_14px_50px_var(--shadow-blue-medium)]"/>
-              <div className="absolute bottom-0 left-[27%] flex h-[112px] w-[43%] items-center justify-center rounded-lg border border-white/80 bg-gradient-to-br from-white via-slate-200 to-slate-300 text-sm font-bold shadow-lg">AI WorksForce</div>
-              <div className="absolute left-0 top-8 grid gap-3 sm:left-1">
-                {[{ label: "ChatGPT", symbol: "◎", color: "text-brand-green" }, { label: "Claude", symbol: "✳", color: "text-brand-orange" }, { label: "Gemini", symbol: "G", color: "text-brand-blue" }, { label: "Notion AI", symbol: "N", color: "text-brand-dark" }].map((tool) => <div key={tool.label} className="flex min-h-[62px] w-[128px] items-center gap-3 rounded-xl border border-white bg-white/95 px-3 shadow-[0_8px_30px_var(--shadow-blue-soft)] sm:w-[164px] sm:px-4"><span aria-hidden="true" className={`text-[33px] font-bold leading-none ${tool.color}`}>{tool.symbol}</span><span className="text-xs font-semibold sm:text-sm">{tool.label}</span></div>)}
-              </div>
-              <aside className="absolute -right-1 top-0 w-[155px] rounded-xl border border-white bg-white/95 p-3 shadow-[0_8px_30px_var(--shadow-blue-soft)] sm:w-[225px] sm:p-5">
-                <h3 className="text-base font-bold leading-tight tracking-tight sm:text-lg">Smarter Tools<br/>Bigger Possibilities</h3>
-                <ul className="mt-3 space-y-2">{["Find the Right Tools", "Expert Recommendations", "Seamless Integration", "Real Business Results"].map((text) => <li key={text} className="flex items-center gap-2 text-[10px] sm:text-xs"><span className="rounded-full bg-brand-green-soft text-brand-green">{icon("check", "size-3.5")}</span>{text}</li>)}</ul>
-              </aside>
-              <div className="absolute right-0 top-[205px] grid gap-3 sm:right-8 sm:top-[210px]">
-                <div className="flex items-center gap-2 rounded-xl bg-white/95 px-3 py-3 shadow-sm"><span aria-hidden="true" className="text-2xl text-brand-purple">♧</span><span className="text-xs font-semibold sm:text-sm">Midjourney</span></div>
-                <div className="flex items-center gap-3 rounded-xl bg-white/95 px-3 py-3 shadow-sm"><span aria-hidden="true" className="text-3xl leading-none text-brand-orange">✱</span><span className="text-xs font-semibold sm:text-sm">Zapier</span></div>
-              </div>
-              <p className="absolute bottom-2 right-0 -rotate-12 font-hand text-[23px] leading-[1.08] text-brand-blue sm:bottom-3 sm:text-[27px]">The Best<br/>AI Tools<br/>for Your<br/>Business</p>
-            </div>
-          </div>
-        </section>
+       <ReusableHero
+  eyebrow="Powerful AI tools. Real business impact."
+  title={
+    <>
+      AI <span className="text-brand-blue">Tools</span>
+    </>
+  }
+  subtitle="The right AI tools for a smarter, faster, more productive business."
+  description="Discover, compare, and implement the best AI tools for your business needs. From content creation and automation to analytics and productivity — we help you find, integrate, and get the most out of the right AI tools."
+  buttons={{
+    primary: {
+      label: "Book a Free Consultation",
+      href: consultationHref,
+      variant: "primary",
+      icon: <ArrowRight className="size-4" />,
+    },
+    secondary: {
+      label: "See AI Tools in Action",
+      href: "#tools",
+      variant: "secondary",
+      icon: <Play className="size-4" />,
+    },
+  }}
+  stats={[
+    {
+      value: "3x",
+      label: "Higher Productivity",
+      icon: <TrendingUp className="size-5" />,
+    },
+    {
+      value: "70%",
+      label: "Time Savings",
+      icon: <Clock className="size-5" />,
+    },
+    {
+      value: "5x",
+      label: "Faster Execution",
+      icon: <Rocket className="size-5" />,
+    },
+  ]}
+  heroImageSrc={heroImageSrc}
+  heroImageAlt="AI tools consultant"
+  leftCards={[
+    {
+      label: "ChatGPT",
+      symbol: "◎",
+      colorClass: "text-brand-green",
+    },
+    {
+      label: "Claude",
+      symbol: "✳",
+      colorClass: "text-brand-orange",
+    },
+    {
+      label: "Gemini",
+      symbol: "G",
+      colorClass: "text-brand-blue",
+    },
+    {
+      label: "Notion AI",
+      symbol: "N",
+      colorClass: "text-brand-dark",
+    },
+  ]}
+  sideCard={{
+    title: (
+      <>
+        Smarter Tools
+        <br />
+        Bigger Possibilities
+      </>
+    ),
+    items: [
+      "Find the Right Tools",
+      "Expert Recommendations",
+      "Seamless Integration",
+      "Real Business Results",
+    ],
+  }}
+  rightCards={[
+    {
+      label: "Midjourney",
+      symbol: "♧",
+      colorClass: "text-brand-purple",
+    },
+    {
+      label: "Zapier",
+      symbol: "✱",
+      colorClass: "text-brand-orange",
+    },
+  ]}
+  handwrittenText={
+    <>
+      The Best
+      <br />
+      AI Tools
+      <br />
+      for Business
+    </>
+  }
+/>
 
         <section aria-label="AI tools we work with" className="mx-auto max-w-[1370px] px-5 py-6 sm:px-8 lg:px-10">
           <p className={eyebrow}>Trusted AI tools we work with</p>

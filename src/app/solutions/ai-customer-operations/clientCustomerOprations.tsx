@@ -1,5 +1,6 @@
 "use client";
 
+import PageHero from "@/components/solutions-hero/reusable-hero";
 import UseCasesSection from "@/components/useCasesSection/usecasesection";
 import { Book, Grid, Headphones, Home, Settings } from "lucide-react";
 import React, { useEffect, useRef, useState } from "react";
@@ -413,236 +414,71 @@ export default function AICustomerOperationsPage() {
           HERO
       ======================================================== */}
 
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#edf7ff] via-white to-white">
-        <div className="absolute -right-40 -top-32 h-[500px] w-[500px] rounded-full bg-[#0876ed]/10 blur-[110px]" />
+    <PageHero
+titleId="ai-customer-operations-title"
+eyebrow="AI Customer Operations"
+title="Happier Customers."
+highlightedTitle="Smarter Operations."
+description="Deliver exceptional customer experiences with AI-powered customer operations. Automate repetitive tasks, resolve queries faster, and empower your teams to focus on what truly matters — your customers."
+image="/ai-customer-operations-hero-img.png"
+imageAlt="AI Customer Operations workspace and customer support"
+primaryAction={{
+label: "Get a Free Consultation",
+href: "#contact",
+icon: "arrow",
+}}
+secondaryAction={{
+label: "See How It Works",
+href: "#how-it-works",
+icon: "play",
+}}
+stats={[
+{
+   icon: "rocket",
+value: "60%",
+label: "Faster Response Time",
+},
+{
+    icon: "chart",
+value: "45%",
+label: "Lower Support Costs",
+},
+{
+    icon: "chart",
+value: "90%",
+label: "Higher Customer Satisfaction",
+},
+]}
 
-        <div className="relative mx-auto max-w-[1400px] px-5 pb-12 pt-7 lg:px-8 lg:pb-16">
-          <div className="mb-7 flex items-center gap-2 text-[10px] font-medium text-slate-400">
-            <span>Home</span>
-            <span>›</span>
-            <span>Solutions</span>
-            <span>›</span>
-            <span className="font-bold text-[#06235a]">
-              AI Customer Operations
-            </span>
-          </div>
+   benefitCards={[
+    {
+      title: "Ai Agents",
+      description: "Handle Repetitive Work",
+      icon: "settings",
+    },
+    {
+      title: "Human Experts",
+      description: "Ensure Quality",
+      icon: "check",
+    },
+    {
+      title: "managed Operations",
+      description: "Drive Results",
+      icon: "chart",
+    },
 
-          <div className="grid items-center gap-8 lg:grid-cols-[1fr_1.08fr] lg:gap-4">
-            {/* LEFT */}
+  ]}
 
-            <Reveal>
-              <div>
-                <span className="inline-flex rounded-full border border-[#0876ed]/20 bg-blue-50 px-3.5 py-1.5 text-[10px] font-extrabold uppercase tracking-[0.13em] text-[#0876ed]">
-                  AI Customer Operations
-                </span>
+  handwrittenNote={{
+    lines: [
+      "Smarter Teams",
+      "Bigger Results",
+    ],
+    position: "right-[2%] bottom-[22%]",
+    rotate: "-rotate-[5deg]",
+  }}
+/>
 
-                <h1 className="mt-5 max-w-[600px] text-[41px] font-extrabold leading-[1.07] tracking-[-0.04em] text-[#06235a] sm:text-[52px] lg:text-[58px]">
-                  Happier Customers.
-                  <br />
-                  <span className="text-[#0876ed]">
-                    Smarter Operations.
-                  </span>
-                </h1>
-
-                <p className="mt-5 max-w-[510px] text-[15px] leading-[1.6] text-slate-500">
-                  Deliver exceptional customer experiences with AI-powered
-                  customer operations. Automate repetitive tasks, resolve
-                  queries faster, and empower your teams to focus on what truly
-                  matters — your customers.
-                </p>
-
-                <div className="mt-7 flex flex-wrap gap-3">
-                  <a
-                    href="#contact"
-                    className="inline-flex items-center gap-2 rounded-xl bg-[#0876ed] px-5 py-3.5 text-[12px] font-extrabold text-white shadow-lg shadow-blue-500/25 transition hover:-translate-y-0.5"
-                  >
-                    Get a Free Consultation
-                    <Icon name="arrow" size={14} />
-                  </a>
-
-                  <a
-                    href="#how-it-works"
-                    className="inline-flex items-center gap-2.5 rounded-xl border border-slate-200 bg-white px-5 py-3.5 text-[12px] font-extrabold text-[#06235a] shadow-sm transition hover:-translate-y-0.5"
-                  >
-                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#0876ed] text-white">
-                      <Icon name="play" size={9} />
-                    </span>
-                    See How It Works
-                  </a>
-                </div>
-
-                <div className="mt-9 grid max-w-[560px] grid-cols-3 gap-4 border-t border-slate-200 pt-6 sm:gap-6">
-                  {[
-                    ["60%", "Faster Response Time"],
-                    ["45%", "Lower Support Costs"],
-                    ["90%", "Higher Customer Satisfaction"],
-                  ].map(([value, label]) => (
-                    <div key={label}>
-                      <div className="text-[27px] font-extrabold tracking-tight text-[#0876ed] sm:text-[31px]">
-                        {value}
-                      </div>
-
-                      <div className="mt-1 text-[10px] font-medium leading-snug text-slate-500 sm:text-[11px]">
-                        {label}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </Reveal>
-
-            {/* RIGHT */}
-
-            <Reveal delay={120}>
-              <div className="relative mx-auto h-[480px] w-full max-w-[640px] sm:h-[535px]">
-                <div className="absolute inset-0 overflow-hidden rounded-[30px] bg-gradient-to-br from-[#d9edff] via-[#eef7ff] to-white">
-                  {/* light photo-like background */}
-
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_25%,rgba(8,118,237,.22),transparent_40%)]" />
-
-                  <div className="absolute right-0 top-0 h-full w-[52%] bg-[linear-gradient(110deg,transparent,rgba(31,78,121,.12))]" />
-
-                  {/* PERSON */}
-
-                  <div className="absolute bottom-0 right-[9%] h-[84%] w-[48%]">
-                    {/* hair */}
-
-                    <div className="absolute right-0 top-[3%] h-[70%] w-[75%] rounded-[48%_48%_40%_40%] bg-gradient-to-br from-[#101827] via-[#18253b] to-[#344761] shadow-2xl" />
-
-                    {/* face */}
-
-                    <div className="absolute right-[18%] top-[13%] h-[37%] w-[42%] rounded-[48%] bg-[#dca487] shadow-lg">
-                      <span className="absolute left-[21%] top-[43%] h-1.5 w-1.5 rounded-full bg-[#17243b]" />
-                      <span className="absolute right-[21%] top-[43%] h-1.5 w-1.5 rounded-full bg-[#17243b]" />
-                      <span className="absolute left-[38%] top-[61%] h-1 w-4 rounded-full bg-[#b56f69]" />
-                    </div>
-
-                    {/* headset */}
-
-                    <div className="absolute right-[4%] top-[24%] h-[30%] w-[12%] rounded-r-full border-r-4 border-[#0d1729]" />
-
-                    <div className="absolute right-[-5%] top-[42%] flex h-8 w-8 items-center justify-center rounded-full bg-[#15243b] text-white">
-                      <Icon name="headset" size={14} />
-                    </div>
-
-                    {/* body */}
-
-                    <div className="absolute bottom-[-3%] right-0 h-[50%] w-[86%] rounded-t-[45px] bg-gradient-to-br from-[#102442] via-[#111c30] to-[#030a16]" />
-
-                    <span className="absolute bottom-[20%] right-[42%] text-[8px] font-bold text-white/80">
-                      AW
-                    </span>
-                  </div>
-
-                  {/* LAPTOP */}
-
-                  <div className="absolute bottom-5 left-[7%] h-[105px] w-[57%] rounded-t-2xl border border-slate-300/70 bg-gradient-to-b from-white to-slate-200 shadow-2xl">
-                    <div className="mx-auto mt-3 h-[69px] w-[87%] rounded-lg bg-[#071b3d] p-2">
-                      <div className="flex h-full items-end justify-around rounded-md bg-[#0d2b55] px-3 pb-2">
-                        {[30, 48, 42, 65, 53, 76, 61].map((height, i) => (
-                          <span
-                            key={i}
-                            className="w-2.5 rounded-t bg-gradient-to-t from-[#0876ed] to-cyan-300"
-                            style={{ height: `${height}px` }}
-                          />
-                        ))}
-                      </div>
-                    </div>
-
-                    <div className="mx-auto mt-1 h-2 w-[94%] rounded-b-xl bg-slate-300" />
-                  </div>
-                </div>
-
-                {/* FLOATING CARD 1 */}
-
-                <div className="absolute left-[2%] top-[8%] flex w-[205px] items-center gap-3 rounded-2xl border border-slate-100 bg-white p-3.5 shadow-xl shadow-slate-900/10 sm:w-[220px]">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-[#0876ed]">
-                    <Icon name="bot" size={20} />
-                  </span>
-
-                  <div>
-                    <div className="text-[12px] font-extrabold text-[#06235a]">
-                      AI Support Agent
-                    </div>
-                    <div className="mt-0.5 text-[9.5px] font-medium text-slate-400">
-                      Instant, Accurate Responses
-                    </div>
-                  </div>
-                </div>
-
-                {/* FLOATING CARD 2 */}
-
-                <div className="absolute left-[6%] top-[29%] flex w-[210px] items-center gap-3 rounded-2xl border border-slate-100 bg-white p-3.5 shadow-xl shadow-slate-900/10 sm:w-[225px]">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-[#0876ed]">
-                    <Icon name="chat" size={19} />
-                  </span>
-
-                  <div>
-                    <div className="text-[12px] font-extrabold text-[#06235a]">
-                      Omnichannel Support
-                    </div>
-                    <div className="mt-0.5 text-[9.5px] font-medium text-slate-400">
-                      Chat · Email · Voice · Social
-                    </div>
-                  </div>
-                </div>
-
-                {/* FLOATING CARD 3 */}
-
-                <div className="absolute bottom-[22%] left-[2%] flex w-[210px] items-center gap-3 rounded-2xl border border-slate-100 bg-white p-3.5 shadow-xl shadow-slate-900/10 sm:w-[225px]">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-[#0876ed]">
-                    <Icon name="tools" size={19} />
-                  </span>
-
-                  <div>
-                    <div className="text-[12px] font-extrabold text-[#06235a]">
-                      Smart Ticket Routing
-                    </div>
-                    <div className="mt-0.5 text-[9.5px] font-medium text-slate-400">
-                      Right Query, Right Expert
-                    </div>
-                  </div>
-                </div>
-
-                {/* SATISFACTION */}
-
-                <div className="absolute right-[1%] top-[34%] w-[140px] rounded-2xl border border-slate-100 bg-white p-4 shadow-xl shadow-slate-900/10">
-                  <div className="flex items-center gap-2">
-                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border-[5px] border-emerald-100 text-[12px] font-extrabold text-emerald-500">
-                      92%
-                    </div>
-
-                    <div>
-                      <div className="text-[9px] font-extrabold leading-tight text-[#06235a]">
-                        Customer
-                        <br />
-                        Satisfaction
-                      </div>
-
-                      <div className="mt-1 text-[9px] font-bold text-emerald-500">
-                        ↑ 28%
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="mt-1 text-right text-[7.5px] text-slate-400">
-                    vs last month
-                  </div>
-                </div>
-
-                {/* CHAT */}
-
-                <div className="absolute bottom-[12%] right-[4%] flex items-center gap-2 rounded-xl border border-slate-100 bg-white px-4 py-3 text-[9px] font-bold text-[#263b60] shadow-xl">
-                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-blue-50 text-[#0876ed]">
-                    <Icon name="bot" size={14} />
-                  </span>
-                  Hi! How can I help you today?
-                </div>
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </section>
 
       {/* ========================================================
           TRUSTED

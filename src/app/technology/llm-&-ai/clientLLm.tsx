@@ -1,5 +1,7 @@
 "use client";
 
+import ReusableHero from "@/components/tech-hero/reusable-hero";
+import { ArrowRight, BarChart3, Database, Play, Zap } from "lucide-react";
 import { useState, type ReactNode } from "react";
 
 /**
@@ -55,7 +57,7 @@ const modelMarks = [
 
 export default function LLMAIPage({
   consultationHref = "/contact",
-  heroImageSrc = "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=900&q=88",
+  heroImageSrc = "/technology/all-in-one.png",
   caseStudyImageSrc = "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=800&q=88",
   testimonialImageSrc = "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=300&q=88",
 }: LLMAIPageProps) {
@@ -97,60 +99,109 @@ export default function LLMAIPage({
     
 
       <main id="main">
-        <section aria-labelledby="hero-title" className="relative isolate overflow-hidden rounded-b-2xl" style={{ background: "radial-gradient(circle at 72% 35%, rgba(139,92,246,.18), transparent 35%), linear-gradient(112deg, #f7f9ff, #fff 54%, #eef2ff)" }}>
-          <div className="mx-auto grid max-w-[1370px] gap-7 px-5 pb-7 pt-10 sm:px-8 lg:min-h-[520px] lg:grid-cols-[1.03fr_.97fr] lg:gap-2 lg:px-10">
-            <div className="relative z-10 lg:pt-1">
-              <p className={eyebrow}>Next-gen intelligence. Real business impact.</p>
-              <h1 id="hero-title" className="mt-2 text-[56px] font-bold leading-[.98] tracking-[-0.06em] sm:text-[72px] lg:text-[80px]">LLM & <span className="bg-gradient-to-r from-brand-purple to-brand-blue bg-clip-text text-transparent">AI</span></h1>
-              <h2 className="mt-3 max-w-[600px] text-xl font-semibold leading-[1.2] tracking-[-0.03em] sm:text-[23px]">Unlock the power of Large Language Models for your business.</h2>
-              <p className="mt-3 max-w-[620px] text-base leading-[1.5] text-brand-text sm:text-[18px]">From strategy to implementation, we help you leverage LLMs and advanced AI models to automate processes, enhance customer experiences, and drive innovation across your business.</p>
-              <div className="mt-5 flex flex-col gap-4 sm:flex-row">
-                <a href={consultationHref} className={primary}>Book a Free Consultation {icon("arrow", "size-4")}</a>
-                <a href="#solutions" className={secondary}><span className="grid size-6 place-items-center rounded-full bg-brand-purple-soft text-brand-purple">{icon("play", "size-3.5")}</span> See LLM & AI in Action</a>
-              </div>
-              <div className="mt-8 grid grid-cols-3 gap-3 sm:gap-5">
-                {([
-                  { value: "3x", label: "Faster Insights", icon: "bolt", tone: "bg-brand-purple-soft text-brand-purple" },
-                  { value: "70%", label: "Lower Operational Costs", icon: "database", tone: "bg-brand-purple-soft text-brand-purple" },
-                  { value: "5x", label: "Higher Productivity", icon: "chart", tone: "bg-brand-purple-soft text-brand-purple" },
-                ] as const).map((stat) => (
-                  <div key={stat.label} className="flex flex-col gap-2 border-r border-brand-blue/10 last:border-0 sm:flex-row sm:items-center sm:gap-3">
-                    <span className={`flex size-11 shrink-0 items-center justify-center rounded-full sm:size-14 ${stat.tone}`}>{icon(stat.icon)}</span>
-                    <div><p className="text-[27px] font-bold leading-none text-brand-blue sm:text-[31px]">{stat.value}</p><p className="mt-1 text-[11px] leading-tight text-brand-text sm:text-sm">{stat.label}</p></div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="relative mx-auto h-[440px] w-full max-w-[650px] lg:-mt-5 lg:h-[500px]">
-              <div aria-hidden="true" className="absolute inset-x-[14%] inset-y-[8%] rounded-full bg-brand-purple-light/15 blur-3xl" />
-              <img src={heroImageSrc} alt="AI strategy consultant" width={470} height={600} fetchPriority="high" className="absolute bottom-0 left-[26%] h-[87%] w-[54%] rounded-t-[45%] object-cover object-top drop-shadow-[0_18px_28px_rgba(17,24,80,.18)]" />
-              <div className="absolute bottom-0 left-[31%] flex h-[118px] w-[44%] items-center justify-center rounded-lg border border-white/80 bg-gradient-to-br from-white via-slate-200 to-slate-300 px-5 text-center text-lg font-bold shadow-xl">Smarter Businesses<br />with LLM & AI <span className="ml-3 grid size-12 shrink-0 place-items-center rounded-full bg-white text-brand-purple shadow">{icon("play", "size-5")}</span></div>
-
-              <div className="absolute left-0 top-8 grid gap-2.5">
-                {[
-                  ["◎", "OpenAI", "GPT-4o", "text-emerald-700"], ["✳", "Claude", "by Anthropic", "text-orange-500"],
-                  ["G", "Gemini", "by Google", "text-brand-blue"], ["∞", "Llama", "by Meta", "text-brand-blue"], ["M", "Mistral AI", "", "text-amber-500"],
-                ].map(([mark, name, sub, color]) => (
-                  <div key={name} className="flex min-h-[50px] w-[142px] items-center gap-3 rounded-lg border border-white/90 bg-white/90 px-3 shadow-[0_8px_25px_rgba(24,74,140,.07)] backdrop-blur sm:w-[174px]">
-                    <span className={`w-8 text-center text-[28px] font-bold leading-none ${color}`}>{mark}</span><span className="text-xs font-semibold sm:text-sm">{name}{sub && <small className="block font-normal text-brand-text">{sub}</small>}</span>
-                  </div>
-                ))}
-              </div>
-
-              <aside className="absolute right-0 top-0 w-[166px] rounded-xl border border-white bg-white/90 p-4 shadow-[0_10px_35px_rgba(24,74,140,.08)] backdrop-blur sm:w-[205px]">
-                <span className="absolute right-3 top-3 text-brand-purple">{icon("sparkles", "size-6")}</span>
-                <h3 className="pr-5 text-base font-bold leading-[1.12]">Turn Ideas<br />Into Intelligence</h3>
-                <ul className="mt-3 space-y-2">{["Generate", "Analyze", "Automate", "Scale"].map((item) => <li key={item} className="flex items-center gap-2 text-xs"><span className="grid size-5 place-items-center rounded-full bg-emerald-100 text-emerald-500">{icon("check", "size-3")}</span>{item}</li>)}</ul>
-              </aside>
-              <div className="absolute right-0 top-[218px] grid gap-3 sm:right-0">
-                <div className="flex min-h-[55px] w-[160px] items-center gap-3 rounded-lg bg-white/95 px-4 shadow-sm sm:w-[205px]"><span className="grid size-9 place-items-center rounded-lg bg-brand-blue text-white">{icon("shield", "size-5")}</span><span className="text-xs font-semibold">Build with<br />Responsible AI</span></div>
-                <div className="flex min-h-[55px] w-[160px] items-center gap-3 rounded-lg bg-white/95 px-4 shadow-sm sm:w-[205px]"><span className="grid size-9 place-items-center rounded-lg bg-brand-blue text-white">{icon("gear", "size-5")}</span><span className="text-xs font-semibold">Custom LLM<br /><small className="font-normal">Solutions</small></span></div>
-              </div>
-              <p aria-hidden="true" className="absolute bottom-3 right-0 -rotate-12 font-hand text-[23px] leading-[1.05] text-brand-blue sm:text-[28px]">Bigger<br />Possibilities<br />with LLMs</p>
-            </div>
-          </div>
-        </section>
+      <ReusableHero
+  eyebrow="Next-gen intelligence. Real business impact."
+  title={
+    <>
+      LLM &{" "}
+      <span className="bg-gradient-to-r from-brand-purple to-brand-blue bg-clip-text text-transparent">
+        AI
+      </span>
+    </>
+  }
+  subtitle="Unlock the power of Large Language Models for your business."
+  description="From strategy to implementation, we help you leverage LLMs and advanced AI models to automate processes, enhance customer experiences, and drive innovation across your business."
+  buttons={{
+    primary: {
+      label: "Book a Free Consultation",
+      href: consultationHref,
+      variant: "primary",
+      icon: <ArrowRight className="size-4" />,
+    },
+    secondary: {
+      label: "See LLM & AI in Action",
+      href: "#solutions",
+      variant: "secondary",
+      icon: <Play className="size-3.5" />,
+    },
+  }}
+  stats={[
+    {
+      value: "3x",
+      label: "Faster Insights",
+      icon: <Zap className="size-5" />,
+    },
+    {
+      value: "70%",
+      label: "Lower Operational Costs",
+      icon: <Database className="size-5" />,
+    },
+    {
+      value: "5x",
+      label: "Higher Productivity",
+      icon: <BarChart3 className="size-5" />,
+    },
+  ]}
+  heroImageSrc={heroImageSrc}
+  heroImageAlt="AI strategy consultant"
+  leftCards={[
+    {
+      label: "OpenAI",
+      subLabel: "GPT-4o",
+      symbol: "◎",
+      colorClass: "text-emerald-700",
+    },
+    {
+      label: "Claude",
+      subLabel: "by Anthropic",
+      symbol: "✳",
+      colorClass: "text-orange-500",
+    },
+    {
+      label: "Gemini",
+      subLabel: "by Google",
+      symbol: "G",
+      colorClass: "text-brand-blue",
+    },
+    {
+      label: "Llama",
+      subLabel: "by Meta",
+      symbol: "∞",
+      colorClass: "text-brand-blue",
+    },
+  ]}
+  sideCard={{
+    title: (
+      <>
+        Turn Ideas
+        <br />
+        Into Intelligence
+      </>
+    ),
+    items: ["Generate", "Analyze", "Automate", "Scale"],
+  }}
+  rightCards={[
+    {
+      label: "Build with Responsible AI",
+      symbol: "◆",
+      colorClass: "text-brand-blue",
+    },
+    {
+      label: "Custom LLM Solutions",
+      symbol: "⚙",
+      colorClass: "text-brand-blue",
+    },
+  ]}
+  handwrittenText={
+    <>
+      Bigger
+      <br />
+      Possibilities
+      <br />
+      with LLMs
+    </>
+  }
+/>
 
         <section aria-label="Trusted AI models and technologies" className="mx-auto max-w-[1370px] px-5 py-6 sm:px-8 lg:px-10">
           <p className={eyebrow}>Trusted AI models & technologies</p>

@@ -23,6 +23,7 @@ import {
   X,
   Zap,
 } from "lucide-react";
+import ReusableHero from "@/components/tech-hero/reusable-hero";
 
 const navItems = [
   "Home",
@@ -172,149 +173,126 @@ function MiniMetric({
 
 export default function TechnologyPage() {
   const [menuOpen, setMenuOpen] = useState(false);
-
+ const heroImageSrc = "/technology/technology-hero.png";
   return (
     <main className="min-h-screen overflow-x-hidden bg-white font-sans text-brand-dark">
   
 
       {/* Hero */}
-      <section className="relative mx-auto max-w-[1440px] overflow-hidden rounded-b-[22px] bg-[radial-gradient(circle_at_72%_42%,rgba(213,221,255,.96),rgba(242,247,255,.8)_31%,rgba(255,255,255,1)_69%)] px-5 py-9 lg:px-[76px] lg:py-6">
-        <div className="pointer-events-none absolute -right-14 -top-24 size-[540px] rounded-full bg-[#d9e0ff]/45 blur-3xl" />
-
-        <div className="relative grid items-center gap-7 lg:grid-cols-[0.98fr_1.02fr]">
-          <div className="max-w-[550px]">
-            <p className="text-[9px] font-extrabold tracking-[3px] text-[#2029e8]">
-              ONE ECOSYSTEM. ENDLESS POSSIBILITIES.
-            </p>
-
-            <h1 className="mt-2 text-[48px] font-extrabold leading-[0.91] tracking-[-3px] text-[#0b176c] sm:text-[62px] lg:text-[68px]">
-              Explore Our
-              <br />
-              <span className="bg-gradient-to-r from-[#1238ff] via-[#1d26f1] to-[#5722ea] bg-clip-text text-transparent">
-                Technology
-              </span>
-            </h1>
-
-            <h2 className="mt-4 max-w-[510px] text-[17px] font-extrabold leading-[1.08] tracking-[-0.7px] text-brand-dark sm:text-[19px]">
-              Powering smarter solutions with the world&apos;s best tools,
-              platforms, and infrastructure.
-            </h2>
-
-            <p className="mt-2 max-w-[540px] text-[13px] leading-[1.48] text-[#536394] sm:text-[14px]">
-              From AI models to automation tools, data platforms to cloud
-              infrastructure — we use the latest technology to help businesses
-              build, scale, and stay ahead.
-            </p>
-
-            <div className="mt-5 flex flex-wrap gap-3">
-              <a
-                href="#technology-areas"
-                className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-[#2513ff] to-[#1230e7] px-7 py-3 text-xs font-bold text-white shadow-lg shadow-indigo-200 transition hover:-translate-y-0.5"
-              >
-                Explore <ArrowRight className="size-4" />
-              </a>
-
-              <a
-                href="#technology-areas"
-                className="inline-flex items-center gap-2 rounded-lg border border-[#7180b5] bg-white px-5 py-3 text-xs font-bold text-[#122074] transition hover:border-brand-blue hover:text-brand-blue"
-              >
-                <span className="grid size-5 place-items-center rounded-full bg-[#e7edff] text-[#2939ef]">
-                  <Play className="ml-0.5 size-3 fill-current" />
-                </span>
-                Watch Overview
-              </a>
-            </div>
-          </div>
-
-          {/* Technology ecosystem visual */}
-          <div className="relative mx-auto h-[350px] w-full max-w-[620px] sm:h-[385px] lg:h-[350px]">
-            <div className="absolute inset-[4%_8%_5%] rounded-[50%] bg-[radial-gradient(circle,rgba(100,126,255,.38),rgba(226,235,255,.35)_48%,transparent_72%)] blur-xl" />
-
-            <div className="absolute left-1/2 top-1/2 z-20 -translate-x-1/2 -translate-y-1/2">
-              <div className="relative grid h-[118px] w-[118px] place-items-center rounded-[18px] border border-white/90 bg-white/95 shadow-[0_24px_55px_rgba(38,74,151,.22)]">
-                <div className="absolute -bottom-7 left-1/2 h-7 w-[76%] -translate-x-1/2 rounded-b-xl bg-[#3158b9]/50 blur-sm" />
-                <div className="absolute -bottom-5 left-1/2 h-4 w-[84%] -translate-x-1/2 rounded bg-[#172d68] shadow-[0_10px_20px_rgba(24,55,120,.3)]" />
-                <div className="relative text-center">
-                  <div className="text-[27px] font-extrabold leading-none text-[#0d207d]">AI</div>
-                  <div className="mt-1 text-[13px] font-extrabold text-brand-dark">
-                    WorksForce
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Floating technology cards */}
-            {[
-              ["AI Models", "(OpenAI, Claude, Llama)", Brain, "left-[2%]", "top-[5%]", "bg-[#e9e8ff] text-brand-purple"],
-              ["Cloud Platforms", "(AWS, Azure, GCP)", Cloud, "left-[2%]", "top-[32%]", "bg-brand-blue-soft text-brand-blue"],
-              ["Automation Tools", "(Zapier, Make, n8n)", Settings, "left-[2%]", "bottom-[7%]", "bg-[#ffe9f1] text-pink-500"],
-              ["Data Platforms", "(Snowflake, BigQuery)", Database, "right-[2%]", "top-[5%]", "bg-brand-blue-soft text-brand-blue"],
-              ["Integrations", "(Slack, Google, Notion)", Network, "right-[2%]", "top-[32%]", "bg-brand-purple-soft text-brand-purple"],
-              ["Development", "(Next.js, Python, React)", Layers3, "right-[2%]", "bottom-[7%]", "bg-brand-purple-soft text-brand-purple"],
-            ].map(([title, subtitle, Icon, x, y, iconClass]) => {
-              const CardIcon = Icon as typeof Brain;
-              return (
-                <div
-                  key={title as string}
-                  className={`absolute ${x} ${y} z-30 flex w-[154px] items-center gap-2 rounded-xl bg-white/95 px-3 py-2.5 shadow-[0_10px_25px_rgba(38,74,151,.14)] backdrop-blur-sm sm:w-[165px]`}
-                >
-                  <span className={`grid size-9 shrink-0 place-items-center rounded-full ${iconClass}`}>
-                    <CardIcon className="size-5" />
-                  </span>
-                  <span>
-                    <strong className="block text-[10px] font-extrabold leading-tight text-brand-dark">
-                      {title as string}
-                    </strong>
-                    <small className="block text-[8px] font-medium leading-tight text-brand-text-muted">
-                      {subtitle as string}
-                    </small>
-                  </span>
-                </div>
-              );
-            })}
-
-            {/* Floating cube */}
-            <div className="absolute left-[48%] top-[9%] z-10 grid size-9 -translate-x-1/2 place-items-center rounded-lg bg-gradient-to-br from-[#20a5ff] to-[#071b66] shadow-[0_10px_25px_rgba(23,72,190,.35)]">
-              <div className="size-2 rounded-sm bg-cyan-200" />
-            </div>
-
-            <p className="absolute bottom-0 right-0 z-40 rotate-[-10deg] font-hand text-[18px] leading-[0.9] text-[#1428ee] sm:text-[20px]">
-              Technology
-              <br />
-              That Powers
-              <br />
-              Progress
-            </p>
-          </div>
-        </div>
-
-        {/* Hero stats */}
-        <div className="relative mt-4 grid max-w-[700px] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-blue-100">
-          {[
-            [Zap, "50+", "Technologies"],
-            [Database, "100%", "Scalable Solutions"],
-            [ShieldCheck, "Enterprise", "Grade Security"],
-            [BarChart3, "Future-Ready", "Infrastructure"],
-          ].map(([Icon, value, label]) => {
-            const StatIcon = Icon as typeof Zap;
-            return (
-              <div key={value as string} className="flex items-center gap-2 lg:px-4 first:pl-0">
-                <span className="grid size-10 shrink-0 place-items-center rounded-full bg-brand-purple-soft text-brand-purple">
-                  <StatIcon className="size-5" />
-                </span>
-                <div>
-                  <strong className="block text-[20px] font-extrabold leading-none text-[#1729ef]">
-                    {value as string}
-                  </strong>
-                  <span className="text-[10px] font-medium text-[#59689a]">
-                    {label as string}
-                  </span>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </section>
+     <ReusableHero
+  eyebrow="ONE ECOSYSTEM. ENDLESS POSSIBILITIES."
+  title={
+    <>
+      Explore Our{" "}
+      <span className="bg-gradient-to-r from-brand-purple to-brand-blue bg-clip-text text-transparent">
+        Technology
+      </span>
+    </>
+  }
+  subtitle="Powering smarter solutions with the world's best tools, platforms, and infrastructure."
+  description="From AI models to automation tools, data platforms to cloud infrastructure — we use the latest technology to help businesses build, scale, and stay ahead."
+  buttons={{
+    primary: {
+      label: "Explore",
+      href: "#technology-areas",
+      variant: "primary",
+      icon: <ArrowRight className="size-4" />,
+    },
+    secondary: {
+      label: "Watch Overview",
+      href: "#technology-areas",
+      variant: "secondary",
+      icon: <Play className="size-3.5 fill-current" />,
+    },
+  }}
+  stats={[
+    {
+      value: "50+",
+      label: "Technologies",
+      icon: <Zap className="size-5" />,
+    },
+    {
+      value: "100%",
+      label: "Scalable Solutions",
+      icon: <Database className="size-5" />,
+    },
+    {
+      value: "Enterprise",
+      label: "Grade Security",
+      icon: <ShieldCheck className="size-5" />,
+    },
+    {
+      value: "Future-Ready",
+      label: "Infrastructure",
+      icon: <BarChart3 className="size-5" />,
+    },
+  ]}
+  heroImageSrc={heroImageSrc}
+  heroImageAlt="AI WorksForce technology ecosystem"
+  leftCards={[
+    {
+      label: "AI Models",
+      subLabel: "(OpenAI, Claude, Llama)",
+      symbol: "◉",
+      colorClass: "text-brand-purple",
+    },
+    {
+      label: "Cloud Platforms",
+      subLabel: "(AWS, Azure, GCP)",
+      symbol: "☁",
+      colorClass: "text-brand-blue",
+    },
+    {
+      label: "Automation Tools",
+      subLabel: "(Zapier, Make, n8n)",
+      symbol: "⚙",
+      colorClass: "text-pink-500",
+    },
+    {
+      label: "Data Platforms",
+      subLabel: "(Snowflake, BigQuery)",
+      symbol: "▤",
+      colorClass: "text-brand-blue",
+    },
+  ]}
+  sideCard={{
+    title: (
+      <>
+        One Ecosystem
+        <br />
+        Endless Possibilities
+      </>
+    ),
+    items: [
+      "AI Models",
+      "Cloud Platforms",
+      "Automation Tools",
+      "Data Platforms",
+      "Seamless Integrations",
+    ],
+  }}
+  rightCards={[
+    {
+      label: "Integrations",
+      symbol: "⌘",
+      colorClass: "text-brand-purple",
+    },
+    {
+      label: "Development",
+      symbol: "◇",
+      colorClass: "text-brand-purple",
+    },
+  ]}
+  handwrittenText={
+    <>
+      Technology
+      <br />
+      That Powers
+      <br />
+      Progress
+    </>
+  }
+/>
 
       {/* Trusted technology partners */}
       <section className="mx-auto max-w-[1440px] px-5 py-4 lg:px-[76px]">

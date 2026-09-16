@@ -362,16 +362,14 @@ const BENEFIT_POSITIONS = [
 
 const ACTION_CLASSES = "inline-flex min-h-12 w-full min-w-0 items-center justify-center gap-2 rounded-lg px-5 py-3 text-center text-base font-bold leading-snug transition-colors sm:w-auto focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-blue";
 
+
 /**
- * Desktop: exact 90dvh; the image fills the right 50% edge to edge.
- * Long copy scrolls within its own column to keep actions reachable.
- * Mobile/tablet: minimum 90dvh, expanding for stacked content without clipping.
- * Image uses object-cover: proportional cropping fills the panel without distortion.
- * A mask blends the leftmost 10% into the actual section background.
- * Import global.css once in your root layout.
- * Use a unique titleId and render one page-level h1 per page.
- * Remote image URLs must be allowed by images.remotePatterns in next.config.
- * Custom position/rotate classes must appear literally in Tailwind-scanned source.
+ * Desktop: 40% content / 60% image, with a 90dvh minimum height.
+ * Content remains in normal flow: long copy and zoom increase the hero height
+ * instead of introducing an internal scrollbar or hiding content.
+ * The image stretches with the grid row and blends over its leftmost 10%.
+ * object-cover fills the panel without distortion; use imagePosition to set focus.
+ * Import your existing global.css in the root layout. No extra CSS is required.
  */
 export default function PageHero({
   titleId,
@@ -382,7 +380,7 @@ export default function PageHero({
   image,
   imageAlt = "",
   imagePriority = true,
-  imageSizes = "(min-width: 1024px) 50vw, (min-width: 640px) calc(100vw - 64px), calc(100vw - 40px)",
+  imageSizes = "(min-width: 1024px) 60vw, (min-width: 640px) calc(100vw - 64px), calc(100vw - 40px)",
   imagePosition = "center",
   primaryAction,
   secondaryAction,
@@ -399,24 +397,22 @@ export default function PageHero({
   return (
     <section
       aria-labelledby={titleId}
-      className={`relative isolate min-h-[90dvh] overflow-hidden rounded-2xl bg-white text-brand-dark lg:h-[90dvh] lg:min-h-0 ${className}`}
+      className={`relative isolate min-h-[90dvh] overflow-clip rounded-2xl bg-white text-brand-dark ${className}`}
     >
       <div
         aria-hidden="true"
-        className={`pointer-events-none   absolute inset-0 -z-10 ${hasSpecialVisuals
+        className={`pointer-events-none absolute inset-0 -z-10 opacity-40 ${hasSpecialVisuals
           ? "bg-[radial-gradient(ellipse_at_73%_40%,var(--color-brand-purple-soft)_0%,var(--color-brand-blue-soft)_32%,var(--color-white)_73%)]"
           : "bg-[image:var(--gradient-section)]"}`}
       />
 
-      <div className="grid min-h-[90dvh] w-full items-center gap-8 py-8 sm:py-10 lg:h-full lg:min-h-0 lg:grid-cols-2 lg:items-stretch lg:gap-0 lg:py-0">
-        <div className="relative z-20 min-h-0 min-w-0 px-5 sm:px-8 lg:flex lg:h-full lg:flex-col lg:overflow-y-auto lg:py-8 lg:pl-[clamp(2rem,5.3vw,6rem)] lg:pr-8">
-          <div className="my-auto w-full shrink-0 lg:ml-auto lg:max-w-[640px]">
+      <div className="grid min-h-[90dvh] w-full items-center gap-8 py-8 sm:py-10 lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] lg:items-stretch lg:gap-0 lg:py-0">
+        <div className="relative z-20 min-w-0 px-5 sm:px-8 lg:flex lg:flex-col lg:justify-center lg:py-[clamp(2rem,5dvh,4rem)] lg:pl-[clamp(1.5rem,3vw,4rem)] lg:pr-6">
+          <div className="w-full lg:ml-auto lg:max-w-[640px]">
           <p className="text-[10px] font-semibold uppercase leading-5 tracking-[0.22em] text-brand-blue sm:text-[11px]">{eyebrow}</p>
           <h1
             id={titleId}
-            className={`mt-2 font-bold tracking-tight text-[var(--color-heading)] [overflow-wrap:anywhere] ${hasSpecialVisuals
-              ? "text-[clamp(2.5rem,4.2vw,4.25rem)] leading-[1.08]"
-              : "text-[clamp(2.5rem,4.2vw,4.25rem)] leading-[1.08]"}`}
+            className="mt-2 text-[clamp(2.5rem,4.2vw,4.25rem)] leading-[1.08] font-bold tracking-tight text-[var(--color-heading)] [overflow-wrap:anywhere]"
           >
             {title}{highlightedTitle && <> <span className="bg-[image:var(--gradient-heading)] bg-clip-text text-transparent">{highlightedTitle}</span></>}
           </h1>
@@ -465,8 +461,8 @@ export default function PageHero({
           </div>
         </div>
 
-        <div className="relative mx-5 min-h-0 min-w-0 sm:mx-8 lg:mx-0 lg:h-full">
-          <div className="relative isolate h-[clamp(20rem,85vw,30rem)] sm:h-[clamp(24rem,65vw,34rem)] lg:h-full lg:w-full">
+        <div className="relative mx-5 min-w-0 sm:mx-8 lg:mx-0 lg:flex lg:flex-col">
+          <div className="relative isolate h-[clamp(20rem,85vw,30rem)] sm:h-[clamp(24rem,65vw,34rem)] lg:h-auto lg:min-h-[32rem] lg:w-full lg:flex-1">
             <Image
               src={image}
               alt={imageAlt}
@@ -474,7 +470,7 @@ export default function PageHero({
               sizes={imageSizes}
               loading={imagePriority ? "eager" : "lazy"}
               fetchPriority={imagePriority ? "high" : "auto"}
-              className="object-cover lg:[mask-image:linear-gradient(to_right,transparent_0%,black_10%,black_100%)] lg:[-webkit-mask-image:linear-gradient(to_right,transparent_0%,black_10%,black_100%)]"
+              className="object-cover brightness-[1.03] lg:[mask-image:linear-gradient(to_right,transparent_0%,black_10%,black_100%)] lg:[-webkit-mask-image:linear-gradient(to_right,transparent_0%,black_10%,black_100%)]"
               style={{ objectPosition: imagePosition }}
             />
 
@@ -499,7 +495,7 @@ export default function PageHero({
           </div>
 
           {benefitCards.length > 0 && (
-            <div className={`relative z-10 mt-4 grid grid-cols-1 gap-3 min-[400px]:grid-cols-2 ${floatBenefits ? "lg:hidden" : "lg:absolute lg:inset-x-4 lg:bottom-4 lg:max-h-[40%] lg:overflow-y-auto"}`}>
+            <div className={`relative z-10 mt-4 grid grid-cols-1 gap-3 min-[400px]:grid-cols-2 ${floatBenefits ? "lg:hidden" : "lg:mx-4 lg:mb-4"}`}>
               {benefitCards.map((card, index) => <BenefitCard key={`${card.title}-${index}`} card={card} />)}
             </div>
           )}

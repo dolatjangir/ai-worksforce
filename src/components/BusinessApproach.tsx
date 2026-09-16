@@ -285,42 +285,42 @@ const approachSteps: ApproachStep[] = [
     number: "01",
     title: "Analyze",
     description:
-      "Understand your business, workflows, data and manpower.",
+      "AWFI Engine analyzes your business, workflows, data and operational needs..",
     icon: <AnalyzeIcon className="w-8 h-8"/>,
   },
   {
     number: "02",
     title: "Identify",
     description:
-      "Find repetitive, expensive and time-consuming processes.",
+      "Identify repetitive, expensive and high-impact processes where AI can deliver value.",
     icon: <IdentifyIcon className="w-8 h-8"/>,
   },
   {
     number: "03",
     title: "Design",
     description:
-      "Select the right mix of tools, agents, automation and people.",
+      "Design the right combination of data sources, AI tools, AI agents, automation and human expertise.",
     icon: <DesignIcon className="w-8 h-8"/>,
   },
   {
     number: "04",
     title: "Build",
     description:
-      "Create workflows, integrations, AI agents, CRM and infrastructure.",
+      "Build workflows, integrations, AI agents, CRM and required AI infrastructure.  ",
     icon: <BuildIcon className="w-8 h-8"/>,
   },
   {
     number: "05",
     title: "Operate",
     description:
-      "Our trained workforce runs the operation from our AI Delivery Centre.",
+      "AI WorksForce manages AI operations with agents, automation, and experts.",
     icon: <OperateIcon className="w-8 h-8"/>,
   },
   {
     number: "06",
     title: "Optimize",
     description:
-      "Continuously improve automation, productivity and results.",
+      "AWFI continuously helps improve automation, productivity, intelligence and business results.",
     icon: <OptimizeIcon className="w-8 h-8"/>,
   },
 ];
@@ -837,7 +837,7 @@ export default function BusinessApproach() {
                   sm:text-2xl
                 "
               >
-                From Business Problem to Managed AI Operation
+                From Business Problem to An AWFI-Powered AI Worksforce
               </h2>
 
               <p
@@ -850,10 +850,7 @@ export default function BusinessApproach() {
                   sm:text-lg
                 "
               >
-                We first understand your business. Then we build your AI
-                workforce with the right data, tools, agents and people —
-                and manage it for you.
-              </p>
+The AWFI Engine™ analyzes your business, identifies the ideal mix of AI, automation, data, and expertise, then builds and continuously improves your managed AI workforce.              </p>
 
               <Link
                 href="#solutions"

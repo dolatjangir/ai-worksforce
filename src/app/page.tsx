@@ -38,10 +38,11 @@ import {
 } from "lucide-react";
 import BusinessApproach from "@/components/BusinessApproach";
 import { BiRightArrow } from "react-icons/bi";
-import HeroSection, {
-  defaultHeroCTAs,
-  defaultHeroTags,
-} from "@/components/Hero/Hero";
+// import HeroSection, {
+//   defaultHeroCTAs,
+//   defaultHeroTags,
+// } from "@/components/Hero/Hero";
+import WorkforceHero from "@/components/Hero/Hero";
 
 export default function Home() {
   const [mobileMenu, setMobileMenu] = useState(false);
@@ -258,105 +259,14 @@ export default function Home() {
       {/* =========================================================
           HERO
       ========================================================== */}
-      {/* <section className="relative overflow-hidden bg-[#f4faff]">
-        <div className="mx-auto grid min-h-[470px] max-w-full lg:grid-cols-[48%_52%]">
-         
-          <div className="relative z-20 flex items-center px-5 py-12 sm:px-8 lg:px-12 xl:px-16">
-            <div className="max-w-[650px] ">
-              <div className="mb-4 inline-flex rounded-full bg-[#eaf5ff] px-3 py-1 text-xs font-extrabold uppercase tracking-[0.05em] text-[#1476e5]">
-               YOUR MANAGED AI WORKFORCE
-              </div>
-
-              <h1 className="max-w-[650px] text-5xl font-extrabold leading-[0.99] tracking-[-0.045em] text-[#071744] sm:text-[50px] lg:text-[47px] xl:text-[46px]">
-                Build Your AI Workforce
-                <br />
-                <span className="text-[#0876ed]">
-                  Without Building an AI Team.
-                </span>
-              </h1>
-
-              <p className="mt-5 max-w-[570px] text-[14px] leading-[1.5] text-[#26395f] sm:text-[16px]">
-We analyze your business and processes, identify the right data, AI tools, and AI agents, and then build and manage a complete AI-powered workforce for you from our India delivery center.              </p>
-
-              <div className="mt-6 grid grid-cols-2 gap-x-5 gap-y-3 sm:flex sm:flex-wrap">
-                {[
-                  { icon: Users, text: "AI Strategy" },
-                  { icon: Bot, text: "AI Tools" },
-                  { icon: Settings, text: "AI Agents" },
-                  { icon: Target, text: "Expert Workforce" },
-                    { icon: Bot, text: "Managed Operations" },
-                ].map((item) => {
-                  const Icon = item.icon;
-                  return (
-                    <div
-                      key={item.text}
-                      className="flex items-center gap-2 text-sm font-bold text-[#142652]"
-                    >
-                      <Icon size={17} className="text-[#0876ed]" />
-                      {item.text}
-                    </div>
-                  );
-                })}
-              </div>
-
-              <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-                <a
-                  href="#contact"
-                  className="inline-flex items-center justify-center gap-2 rounded-md bg-[#0876ed] px-7 py-3.5 text-md font-bold text-white shadow-[0_8px_20px_rgba(8,118,237,.18)] transition hover:-translate-y-0.5 hover:bg-[#0668d5]"
-                >
-                  Get your AI assesement
-                  <ArrowRight size={15} />
-                </a>
-
-                <a
-                  href="#contact"
-                  className="inline-flex items-center justify-center gap-2 rounded-md border border-[#0876ed] bg-white px-7 py-3.5 text-md font-bold text-[#0876ed] transition hover:bg-[#eff7ff]"
-                >
-                  Talk to  Ai expert
-                </a>
-              </div>  
-              <h3 className="pt-8 flex gap-2"><LocateFixedIcon/>From business analysis to daily operations- aiworksForce manages it for you.</h3>
-            </div>
-            
-          </div>
-
-       
-          <div className="relative min-h-[350px] overflow-hidden lg:min-h-0">
-            <img
-              src="/aiworkforce-hero-img.png"
-              alt="AI workforce team working together"
-              className="absolute inset-0 h-full w-full object-cover"
-            />
-
-            <div className="absolute inset-0 bg-gradient-to-r from-[#f4faff] via-[#f4faff]/20 to-transparent lg:w-[35%]" />
-
-            <div className="absolute bottom-8 left-8 rounded-lg bg-white/90 px-4 py-3 shadow-xl backdrop-blur">
-              <div className="font-serif text-[16px] italic text-[#142652]">
-                Your extended
-              </div>
-              <div className="font-serif text-[16px] italic text-[#142652]">
-                team in India.
-              </div>
-            </div>
-
-            <div className="absolute bottom-8 right-5 rounded-xl border border-white/60 bg-white px-4 py-3 shadow-2xl sm:right-8">
-              <div className="flex items-center gap-2">
-                <span className="text-[30px] font-extrabold tracking-tight text-[#071744]">
-                  150+
-                </span>
-                <span className="text-sm font-bold text-[#142652]">
-                  Delivery Seats
-                  <br />
-                  <span className="font-medium text-slate-500">
-                    Jaipur, India
-                  </span>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
-            <HeroSection
+      <WorkforceHero
+        backgroundImage="/hero-right-img.png"
+        backgroundAlt="AI WorksForce team and AI automation"
+        backgroundPosition="center right"
+        primaryHref="/contact"
+        demoHref="/how-we-work"
+      />
+            {/* <HeroSection
         badge="Your Outsource AI Department"
         title="Build Your AI Workforce"
         highlightedTitle="Without Building an AI Team."
@@ -379,7 +289,7 @@ AI-powered workforce for you from our India delivery center.`}
           label: "Delivery Seats",
           location: "Jaipur, India",
         }}
-      />
+      /> */}
       {/* =========================================================
           STATS STRIP
       ========================================================== */}
@@ -446,18 +356,18 @@ AI-powered workforce for you from our India delivery center.`}
           DELIVERY MODEL + PROCESS
       ========================================================== */}
     <section className="bg-gradient-to-b from-[#eaf6ff] to-[#e7f4ff] py-10 sm:py-12">
-  <div className="mx-auto max-w-[1500px] px-5 lg:px-12">
+  <div className="mx-auto max-w-[1500px] px-5 lg:px-10">
     <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
       <div>
         <div className="text-sm font-extrabold uppercase text-[#0876ed]">
           How AI Worksforce Delivers Results
         </div>
 
-        <h2 className="mt-1 text-xl font-extrabold tracking-[-0.035em] text-[#071744] sm:text-[30px]">
-          AI Agents + Human Experts + Managed Operations.
+        <h2 className="mt-1 text-xl font-extrabold tracking-[-0.035em] text-[#071744] sm:text-[26px]">
+         AWFI Intelligence + AI Technology + Human Expertise + Managed Operations
         </h2>
 
-        <p className="my-2 text-sm text-[#304466] ">
+        <p className="my-2 text-lg text-[#304466] ">
           A proven model and process to turn your requirements into real
           business results.
         </p>
@@ -485,8 +395,8 @@ AI-powered workforce for you from our India delivery center.`}
         {[
           {
             icon: Users,
-            title: "AI Experts",
-            text: "Design & Supervise",
+            title: "AWFI Engine™",
+            text: "Analyze • Decide • Orchestrate",
             color: "blue",
           },
           {
@@ -497,7 +407,7 @@ AI-powered workforce for you from our India delivery center.`}
           },
           {
             icon: Users,
-            title: "Trained Operators",
+            title: "Human Experts & Operators",
             text: "Execute & Deliver",
             color: "purple",
           },
@@ -524,10 +434,10 @@ AI-powered workforce for you from our India delivery center.`}
                       : "mx-auto text-[#0876ed]"
                   }
                 />
-                <div className="mt-2 text-lg font-extrabold">
+                <div className="mt-2 text-md font-extrabold">
                   {item.title}
                 </div>
-                <div className="mt-1 text-xs text-slate-500">
+                <div className="mt-1 text-sm text-slate-500">
                   {item.text}
                 </div>
               </div>
@@ -551,10 +461,11 @@ AI-powered workforce for you from our India delivery center.`}
               <Zap size={20} />
             </div>
             <div className="mt-1 text-sm font-extrabold">
-              Managed Results
+             Managed AI Workforce
             </div>
             <div className="text-xs text-slate-500">
-              Scale Your Business
+              
+Real Business Results
             </div>
           </div>
         </div>
@@ -571,7 +482,7 @@ AI-powered workforce for you from our India delivery center.`}
               OUR PROCESS
             </div>
             <div className="mt-1 text-xs text-slate-500">
-              From Requirement to Scale
+              From Requirement to Managed AWFI
             </div>
           </div>
         </div>
@@ -589,7 +500,7 @@ AI-powered workforce for you from our India delivery center.`}
               <div className="text-[13px] font-extrabold">
                 {step.title}
               </div>
-              <div className="mt-1 text-[10px] leading-[1.4] text-slate-500">
+              <div className="mt-1 text-[12px] leading-[1.4] text-slate-500">
                 {step.text}
               </div>
             </div>
@@ -842,7 +753,7 @@ AI-powered workforce for you from our India delivery center.`}
         </div>
 
         <h2 className="mt-1 text-xl font-extrabold tracking-[-0.025em] text-[#071744]">
-          AI, Data and Automation. Working Together.
+         AI, Data and Automation. Orchestrated by AWFI.
         </h2>
 
         <p className="mt-1 text-sm text-slate-500">

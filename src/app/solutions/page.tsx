@@ -1,3 +1,4 @@
+import SolutionsHero from "@/components/solutions-hero/reusable-hero";
 import {
   ChevronDown,
   Check,
@@ -143,93 +144,17 @@ export default function SolutionsPage() {
    
 
       {/* ================= HERO ================= */}
-      <section className="border-b border-slate-100 bg-gradient-to-b  pt-10 from-white to-blue-50/40">
-        <div className="mx-auto max-w-7xl px-6 pb-14 pt-8">
-       
-
-          <div className="grid items-center gap-10 lg:grid-cols-2">
-            {/* Left */}
-            <div>
-              <p className="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-blue-600">
-                Our Solutions
-              </p>
-              <h1 className="text-4xl font-extrabold leading-[1.1] tracking-tight text-slate-900 md:text-5xl">
-                Complete AI-Powered Operations for Your{" "}
-                <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                  Business
-                </span>
-              </h1>
-              <p className="mt-5 max-w-lg text-base leading-relaxed text-slate-600">
-                From data and research to AI agents, automation and customer
-                operations — we build and manage the right AI-powered solutions
-                for your business goals.
-              </p>
-
-              <div className="mt-8 flex flex-wrap gap-x-8 gap-y-4">
-                {heroChips.map(({ icon: Icon, label }) => (
-                  <div key={label} className="flex items-center gap-2.5">
-                    <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-50 text-blue-600">
-                      <Icon className="h-4.5 w-4.5" />
-                    </span>
-                    <span className="text-sm font-semibold text-slate-700">
-                      {label}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Right — image layout */}
-            <div className="relative">
-              <div className="overflow-hidden rounded-2xl shadow-2xl shadow-slate-900/10">
-                <img
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1200&auto=format&fit=crop"
-                  alt="AI operations expert"
-                  className="h-[340px] w-full object-cover md:h-[380px]"
-                />
-              </div>
-
-              {/* Handwritten-style badge */}
-              <div className="absolute left-5 top-6 rounded-xl bg-slate-900/60 px-4 py-3 backdrop-blur-sm">
-                <p className="font-serif text-lg italic leading-snug text-white">
-                  Your
-                  <br />
-                  AI Operations
-                  <br />
-                  Partner
-                </p>
-              </div>
-
-              {/* Checklist card */}
-              <div className="absolute -right-2 top-6 w-44 rounded-xl bg-white/95 p-4 shadow-xl shadow-slate-900/15 ring-1 ring-slate-100 backdrop-blur md:-right-4">
-                <ul className="space-y-2.5">
-                  {checklistItems.map((item) => (
-                    <li
-                      key={item}
-                      className="flex items-center gap-2 text-sm font-medium text-slate-700"
-                    >
-                      <span className="flex h-5 w-5 items-center justify-center rounded-full bg-blue-100 text-blue-600">
-                        <Check className="h-3 w-3" strokeWidth={3} />
-                      </span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                {/* Mini bar chart */}
-                <div className="mt-4 flex h-16 items-end justify-end gap-1.5">
-                  {barHeights.map((h, i) => (
-                    <div
-                      key={i}
-                      className="w-4 rounded-t-sm bg-gradient-to-t from-blue-600 to-indigo-400"
-                      style={{ height: `${h}%` }}
-                    />
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+    <SolutionsHero
+  badge="OUR SOLUTIONS"
+  title="Complete AI-Powered Operations for Your"
+  highlightedTitle="Business"
+  description="From data and research to AI agents, automation and customer operations — we build and manage the right AI-powered solutions for your business goals."
+  imageSrc="/solutions/ai-automation.png"
+  imageAlt="AI operations expert"
+  assessmentLabel="Get Your AI Assessment"
+  assessmentHref="#consultation"
+  videoHref="#how-it-works"
+/>
 
       {/* ================= SOLUTION AREAS ================= */}
       <section className="py-16">

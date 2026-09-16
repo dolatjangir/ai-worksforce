@@ -1,531 +1,131 @@
+import { Fragment } from "react";
+import type { LucideIcon } from "lucide-react";
 import Image from "next/image";
-import type { CSSProperties, ReactNode } from "react";
+import Link from "next/link";
+import { ArrowRight, ChartNoAxesCombined, ChevronRight, Database, Play, Zap } from "lucide-react";
 
-export type IconName =
-  | "users"
-  | "settings"
-  | "chart"
-  | "globe"
-  | "target"
-  | "eye"
-  | "diamond"
-  | "rocket"
-  | "lightbulb"
-  | "heart"
-  | "star"
-  | "arrow"
-  | "play"
-  | "menu"
-  | "close"
-  | "linkedin"
-  | "twitter"
-  | "youtube"
-  | "instagram"
-  | "check"
-  | "clock"
-  | "shield"
-  | "calendar"
-  | "trophy"
-  | "arrow-up"
-  | "book"
-  | "file"
-  | "pen"
-  | "megaphone"
-  | "search"
-  | "mail"
-  | "message"
-  | "zap"
-  | "help";
+export type HeroBreadcrumb = { label: string; href?: string };
+export type HeroBenefit = { icon: LucideIcon; title: string; description: string };
 
-const ICONS: Record<IconName, ReactNode> = {
-   search: (
-      <>
-        <circle cx="10.8" cy="10.8" r="6.8" />
-        <path d="m16 16 5 5" />
-      </>
-    ),
-     help: (
-      <>
-        <circle cx="12" cy="12" r="9" />
-        <path d="M9.8 9a2.3 2.3 0 1 1 4.2 1.4c-.8 1-2 1.3-2 3" />
-        <path d="M12 17h.01" />
-      </>
-    ),
-    zap: (
-      <path d="m13 2-9 12h7l-1 8 9-12h-7l1-8Z" />
-    ),
-  message: (
-      <>
-        <path d="M5 5h14a3 3 0 0 1 3 3v7a3 3 0 0 1-3 3H10l-5 3v-3a3 3 0 0 1-3-3V8a3 3 0 0 1 3-3Z" />
-      </>
-    ),
-    users: (
-      <>
-        <circle cx="12" cy="8" r="3.2" />
-        <path d="M5 21v-2.2a7 7 0 0 1 14 0V21" />
-        <path d="M5.5 7.5a3 3 0 0 0 0 5.5M18.5 7.5a3 3 0 0 1 0 5.5" />
-      </>
-    ),
-
-    mail: (
-      <>
-        <rect x="3" y="5" width="18" height="14" rx="2" />
-        <path d="m4 7 8 6 8-6" />
-      </>
-    ),
-        pen: (
-      <>
-        <path d="m4 20 4.5-1 10-10a2.2 2.2 0 0 0-3-3l-10 10L4 20Z" />
-        <path d="m13 7 4 4" />
-      </>
-    ),
-
-    megaphone: (
-      <>
-        <path d="M4 14V10a2 2 0 0 1 2-2h3l9-4v16l-9-4H6a2 2 0 0 1-2-2Z" />
-        <path d="M8 16v4" />
-        <path d="M18 9.5a3.5 3.5 0 0 1 0 5" />
-      </>
-    ),
-     "arrow-up": (
-      <>
-        <path d="M5 19 19 5" />
-        <path d="M8 5h11v11" />
-      </>
-    ),
-      file: (
-      <>
-        <path d="M6 3h8l5 5v13H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z" />
-        <path d="M14 3v6h5" />
-        <path d="M8 13h8M8 17h6" />
-      </>
-    ),
-
-    trophy: (
-  <>
-    <path d="M8 4h8v5a4 4 0 0 1-8 0V4Z" />
-    <path d="M8 6H4v2a4 4 0 0 0 4 4M16 6h4v2a4 4 0 0 1-4 4" />
-    <path d="M12 13v4M8 21h8M9 17h6" />
-  </>
-),
-
-    settings: (
-      <g transform="translate(1.2 0.4) scale(0.88)">
-        <path d="M10 2h4l.6 2.2 2 .9L18.7 4 21.5 6.8l-1.1 2.1.9 2L23.5 12v4l-2.2.6-.9 2 1.1 2.1-2.8 2.8-2.1-1.1-2 .9L14 25h-4l-.6-2.2-2-.9-2.1 1.1-2.8-2.8 1.1-2.1-.9-2L1 16v-4l2.2-.6.9-2L3.5 7.3 6.3 4.5l2.1 1.1 2-.9L10 2Z" />
-        <circle cx="12" cy="14" r="3.5" />
-      </g>
-    ),
-
-    chart: (
-      <>
-        <rect x="3" y="14" width="4" height="7" rx="1.5" />
-        <rect x="10" y="8" width="4" height="13" rx="1.5" />
-        <rect x="17" y="3" width="4" height="18" rx="1.5" />
-      </>
-    ),
-
-    globe: (
-      <>
-        <circle cx="12" cy="12" r="9" />
-        <path d="M3 12h18M12 3c2.5 2.5 3.5 5.5 3.5 9S14.5 18.5 12 21c-2.5-2.5-3.5-5.5-3.5-9S9.5 5.5 12 3Z" />
-      </>
-    ),
-     book: (
-      <>
-        <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H12v16H6.5A2.5 2.5 0 0 0 4 21.5v-16Z" />
-        <path d="M20 5.5A2.5 2.5 0 0 0 17.5 3H12v16h5.5a2.5 2.5 0 0 1 2.5 2.5v-16Z" />
-      </>
-    ),
-
-    target: (
-      <>
-        <circle cx="12" cy="12" r="9" />
-        <circle cx="12" cy="12" r="5" />
-        <circle cx="12" cy="12" r="1.5" />
-      </>
-    ),
-
-    eye: (
-      <>
-        <path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z" />
-        <circle cx="12" cy="12" r="2.5" />
-      </>
-    ),
-
-    diamond: (
-      <path d="m12 2 8 7-8 13L4 9l8-7Zm-6 7h12M9 4l-3 5m9-5 3 5m-9 0 3 13m3-13-3 13" />
-    ),
-
-    rocket: (
-      <>
-        <path d="M14 4c3-3 6-3 6-3s0 3-3 6l-6 6-4-4 7-5Z" />
-        <path d="M11 13 6 18l-1-4 3-3m3 5-5 5" />
-        <circle cx="16.5" cy="7.5" r="1.5" />
-      </>
-    ),
-
-    lightbulb: (
-      <>
-        <path d="M9 18h6M10 22h4" />
-        <path d="M8.5 14.5C7.5 13.4 7 12 7 10.5A5 5 0 0 1 12 5a5 5 0 0 1 5 5.5c0 1.5-.5 2.9-1.5 4l-1 1.5h-5l-1-1.5Z" />
-      </>
-    ),
-
-    heart: (
-      <path d="M20.8 8.8c0 5.5-8.8 10.2-8.8 10.2S3.2 14.3 3.2 8.8A4.8 4.8 0 0 1 8 4c1.7 0 3.2.9 4 2.2A4.8 4.8 0 0 1 16 4a4.8 4.8 0 0 1 4.8 4.8Z" />
-    ),
-
-    star: (
-      <path d="m12 2.5 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5-4.7-4.6 6.5-.9L12 2.5Z" />
-    ),
-
-    arrow: <path d="M5 12h14m-6-6 6 6-6 6" />,
-
-    play: <path d="M9 5v14l11-7L9 5Z" fill="currentColor" />,
-
-    menu: (
-      <>
-        <path d="M4 7h16" />
-        <path d="M4 12h16" />
-        <path d="M4 17h16" />
-      </>
-    ),
-
-    close: (
-      <>
-        <path d="m6 6 12 12" />
-        <path d="m18 6-12 12" />
-      </>
-    ),
-
-    linkedin: (
-      <>
-        <path d="M5 8v11" />
-        <path d="M5 5.5v.1" />
-        <path d="M10 19V8m0 5a4 4 0 0 1 8 0v6" />
-      </>
-    ),
-
-    twitter: (
-      <path d="M4 5.5 10 12l-6 6.5h3l4.5-5 4.5 5H20l-6.5-7L20 5.5h-3l-4 4.5-4-4.5H4Z" />
-    ),
-
-    youtube: (
-      <>
-        <rect x="3" y="6" width="18" height="12" rx="3" />
-        <path d="m10 9 5 3-5 3V9Z" fill="currentColor" />
-      </>
-    ),
-
-    instagram: (
-      <>
-        <rect x="4" y="4" width="16" height="16" rx="4" />
-        <circle cx="12" cy="12" r="3.5" />
-        <circle cx="17.2" cy="6.8" r="1" fill="currentColor" />
-      </>
-    ),
-
-    check: <path d="m5 12 4 4L19 6" />,
-
-    clock: (
-      <>
-        <circle cx="12" cy="12" r="9" />
-        <path d="M12 7v5l3 2" />
-      </>
-    ),
-
-    shield: (
-      <path d="M12 3 20 6v5c0 5.2-3.4 8.8-8 10-4.6-1.2-8-4.8-8-10V6l8-3Z" />
-    ),
-
-    calendar: (
-      <>
-        <rect x="3" y="4" width="18" height="17" rx="2" />
-        <path d="M16 2v4M8 2v4M3 10h18" />
-      </>
-    ),
-  };
-
-/** Decorative by default; supply a label when the icon conveys meaning alone. */
-export function Icon({ name, className = "size-5", label }: {
-  name: IconName;
-  className?: string;
-  label?: string;
-}) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.8"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden={label ? undefined : true}
-      aria-label={label}
-      role={label ? "img" : undefined}
-      focusable="false"
-      width={20}
-      height={20}
-      className={`shrink-0 ${className}`}
-    >
-      {ICONS[name]}
-    </svg>
-  );
-}
-
-export function IconCircle({
-  children,
-  className = "",
-}: {
-  children: ReactNode;
-  className?: string;
-}) {
-  return (
-    <span
-      className={`grid size-11 shrink-0 place-items-center rounded-full sm:size-12 ${className}`}
-    >
-      {children}
-    </span>
-  );
-}
-
-export type HeroStat = {
-  icon: IconName;
-  value: string;
-  label: string;
-};
-
-export type HeroAction = {
-  label: string;
-  href: string;
-  icon?: IconName;
-};
-
-export type HeroResultCard = {
-  icon: IconName;
-  lines: string[];
-};
-
-export type HeroBenefitCard = {
-  title: string;
-  description: string;
-  icon: IconName;
-  variant?: "default" | "green";
-  position?: string;
-};
-
-export type HeroHandwrittenNote = {
-  lines: string[];
-  position?: string;
-  rotate?: string;
-  className?: string;
-};
-
-export type PageHeroProps = {
-  titleId: string;
-
-  eyebrow: string;
-  title: string;
+export type SolutionsHeroProps = {
+  ariaLabel?: string;
+  breadcrumbs?: readonly HeroBreadcrumb[];
+  badge?: string;
+  title?: string;
   highlightedTitle?: string;
-  description: string;
-
-  image: string;
+  description?: string;
+  imageSrc?: string;
   imageAlt?: string;
-  /** Above-the-fold hero images should retain the default high priority. */
-  imagePriority?: boolean;
-  /** Override when the hero is placed inside a narrower container. */
-  imageSizes?: string;
-  /** Adjust the focal point when the image is cropped to fill its panel. */
-  imagePosition?: CSSProperties["objectPosition"];
-
-  primaryAction?: HeroAction;
-  secondaryAction?: HeroAction;
-
-  stats?: HeroStat[];
-
-  resultCard?: HeroResultCard;
-
-  benefitCards?: HeroBenefitCard[];
-
-  handwrittenNote?: HeroHandwrittenNote;
-
-  className?: string;
+  mobileImageAlt?: string;
+  assessmentLabel?: string;
+  assessmentHref?: string;
+  videoLabel?: string;
+  videoHref?: string;
+  benefitsLabel?: string;
+  /** Exactly three benefits preserve the original three-column layout. */
+  benefits?: readonly [HeroBenefit, HeroBenefit, HeroBenefit];
 };
 
-const BENEFIT_POSITIONS = [
-  "left-0 top-[9%]",
-  "left-0 top-[30%]",
-  "left-0 top-[51%]",
-  "right-0 top-[7%]",
-  "right-0 top-[30%]",
+
+
+const defaultBenefits = [
+  { icon: Zap, title: "Faster Operations", description: "Automate repetitive tasks in minutes" },
+  { icon: Database, title: "Reduce Costs", description: "Cut operational costs by up to 70%" },
+  { icon: ChartNoAxesCombined, title: "Higher Productivity", description: "Get more done with the same team" },
 ] as const;
 
-const ACTION_CLASSES = "inline-flex min-h-12 w-full min-w-0 items-center justify-center gap-2 rounded-lg px-5 py-3 text-center text-base font-bold leading-snug transition-colors sm:w-auto focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-blue";
+const focus = "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0876ed]";
 
-
-/**
- * Desktop: 40% content / 60% image, with a 90dvh minimum height.
- * Content remains in normal flow: long copy and zoom increase the hero height
- * instead of introducing an internal scrollbar or hiding content.
- * The image stretches with the grid row and blends over its leftmost 10%.
- * object-cover fills the panel without distortion; use imagePosition to set focus.
- * Import your existing global.css in the root layout. No extra CSS is required.
- */
-export default function PageHero({
-  titleId,
-  eyebrow,
-  title,
-  highlightedTitle,
-  description,
-  image,
-  imageAlt = "",
-  imagePriority = true,
-  imageSizes = "(min-width: 1024px) 60vw, (min-width: 640px) calc(100vw - 64px), calc(100vw - 40px)",
-  imagePosition = "center",
-  primaryAction,
-  secondaryAction,
-  stats = [],
-  resultCard,
-  benefitCards = [],
-  handwrittenNote,
-  className = "",
-}: PageHeroProps) {
-  const hasSpecialVisuals = benefitCards.length > 0 || Boolean(handwrittenNote);
-  // More than five cards use a grid so no extra cards share an absolute position.
-  const floatBenefits = benefitCards.length > 0 && benefitCards.length <= BENEFIT_POSITIONS.length;
-
+/** Place the right-hand artwork (without the left copy) at public/solutions.png. */
+export default function SolutionsHero({
+  ariaLabel = "AI automation",
+  
+  badge = "AI AUTOMATION",
+  title = "Automate Today.",
+  highlightedTitle = "Grow Tomorrow.",
+  description = "Streamline your processes, eliminate manual work, and unlock new possibilities with intelligent AI automation. We help businesses build faster, smarter and more efficient operations.",
+  imageSrc = "/solutions/ai-automation.png",
+  imageAlt = "AI automation specialist working on a laptop with workflow and productivity graphics",
+  mobileImageAlt = imageAlt,
+  assessmentLabel = "Get a Free Automation Assessment",
+  assessmentHref = "#contact",
+  videoLabel = "Watch How It Works",
+  benefitsLabel = "Automation benefits",
+  benefits = defaultBenefits,
+  videoHref = "#how-it-works",
+}: SolutionsHeroProps = {}) {
   return (
-    <section
-      aria-labelledby={titleId}
-      className={`relative isolate min-h-[90dvh] overflow-clip rounded-2xl bg-white text-brand-dark ${className}`}
-    >
-      <div
-        aria-hidden="true"
-        className={`pointer-events-none absolute inset-0 -z-10 opacity-40 ${hasSpecialVisuals
-          ? "bg-[radial-gradient(ellipse_at_73%_40%,var(--color-brand-purple-soft)_0%,var(--color-brand-blue-soft)_32%,var(--color-white)_73%)]"
-          : "bg-[image:var(--gradient-section)]"}`}
-      />
+    <section aria-label={ariaLabel} className="relative isolate overflow-hidden bg-[#f3f9fd] font-sans text-[#071744]">
+      {/* On desktop, the artwork blends into the copy's pale background. */}
+      <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[60%] lg:block">
+        <Image
+          src={imageSrc}
+          alt={imageAlt}
+          fill
+          sizes="60vw"
+          loading="eager"
+          fetchPriority="high"
+          className="object-cover object-right"
+        />
+        <div aria-hidden="true" className="absolute inset-y-0 left-0 w-[22%] bg-linear-to-r from-[#f3f9fd] via-[#f3f9fd]/70 to-transparent" />
+      </div>
 
-      <div className="grid min-h-[90dvh] w-full items-center gap-8 py-8 sm:py-10 lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] lg:items-stretch lg:gap-0 lg:py-0">
-        <div className="relative z-20 min-w-0 px-5 sm:px-8 lg:flex lg:flex-col lg:justify-center lg:py-[clamp(2rem,5dvh,4rem)] lg:pl-[clamp(1.5rem,3vw,4rem)] lg:pr-6">
-          <div className="w-full lg:ml-auto lg:max-w-[640px]">
-          <p className="text-[10px] font-semibold uppercase leading-5 tracking-[0.22em] text-brand-blue sm:text-[11px]">{eyebrow}</p>
-          <h1
-            id={titleId}
-            className="mt-2 text-[clamp(2.5rem,4.2vw,4.25rem)] leading-[1.08] font-bold tracking-tight text-[var(--color-heading)] [overflow-wrap:anywhere]"
-          >
-            {title}{highlightedTitle && <> <span className="bg-[image:var(--gradient-heading)] bg-clip-text text-transparent">{highlightedTitle}</span></>}
-          </h1>
-          <p className={`mt-4 max-w-2xl text-base leading-relaxed text-brand-text sm:text-lg lg:text-[clamp(1.0625rem,1.35vw,1.25rem)]`}>
-            {description}
-          </p>
+      <div className="relative z-10 mx-auto w-full max-w-[1600px] px-5 sm:px-8 lg:px-[6.1%]">
+        <div className="flex min-w-0 flex-col py-6 sm:py-8 lg:min-h-[560px] lg:w-[47%] lg:py-7 xl:min-h-[620px] xl:py-8">
+         
 
-          {(primaryAction || secondaryAction) && (
-            <div className="mt-6 flex flex-wrap gap-3 sm:gap-4">
-              {primaryAction && (
-                <a href={primaryAction.href} className={`${ACTION_CLASSES} bg-brand-blue text-white shadow-[0_10px_25px_var(--shadow-blue-medium)] hover:bg-brand-blue-dark`}>
-                  <span>{primaryAction.label}</span>
-                  {primaryAction.icon && <Icon name={primaryAction.icon} className="size-5" />}
-                </a>
-              )}
-              {secondaryAction && (
-                <a href={secondaryAction.href} className={`${ACTION_CLASSES} border border-brand-purple/40 bg-white/80 text-brand-dark hover:bg-brand-purple-soft`}>
-                  {secondaryAction.icon && (
-                    secondaryAction.icon === "play" ? (
-                      <span className="grid size-7 shrink-0 place-items-center rounded-full bg-brand-purple-soft text-brand-purple">
-                        <Icon name="play" className="size-3.5" />
-                      </span>
-                    ) : <Icon name={secondaryAction.icon} className="size-5" />
-                  )}
-                  <span>{secondaryAction.label}</span>
-                </a>
-              )}
+          <div className="my-auto min-w-0">
+            <p className="inline-flex rounded-full border border-[#cbdfe9] bg-[#eaf6fb] px-3 py-0.5 text-xs font-bold tracking-[0.04em] text-[#0965b8] sm:text-sm">
+              {badge}
+            </p>
+
+            <h1 className="mt-3 text-[clamp(2.25rem,4vw,3.5rem)] font-extrabold leading-[1.04] tracking-[-0.045em]">
+              <span className="block">{title}</span>
+              <span className="block text-[#0876ed]">{highlightedTitle}</span>
+            </h1>
+
+            <p className="mt-4 max-w-[34rem] text-base leading-[1.55] text-[#263247] xl:text-lg">
+              {description}
+            </p>
+
+            <div className="mt-5 flex flex-col gap-3 min-[480px]:flex-row min-[480px]:flex-wrap">
+              <a href={assessmentHref} className={`${focus} inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-[#0876ed] px-5 py-3 text-sm font-semibold text-white shadow-[0_4px_14px_rgba(8,118,237,0.12)] transition-colors hover:bg-[#0663c9] motion-reduce:transition-none`}>
+                {assessmentLabel}
+                <ArrowRight aria-hidden="true" className="size-4 shrink-0" />
+              </a>
+              <a href={videoHref} className={`${focus} inline-flex min-h-12 items-center justify-center gap-2 rounded-md border border-white/80 bg-white/90 px-4 py-3 text-sm font-bold text-[#071744] shadow-[0_4px_14px_rgba(7,23,68,0.04)] transition-colors hover:bg-white motion-reduce:transition-none`}>
+                <span className="grid size-6 shrink-0 place-items-center rounded-full bg-[#0876ed] text-white">
+                  <Play aria-hidden="true" className="ml-0.5 size-3 fill-current" />
+                </span>
+                {videoLabel}
+              </a>
             </div>
-          )}
 
-          {stats.length > 0 && (
-            <ul className="mt-8 grid list-none grid-cols-[repeat(auto-fit,minmax(min(100%,10rem),1fr))] gap-x-4 gap-y-6 p-0" aria-label="Key benefits">
-              {stats.map((stat, index) => (
-                <li key={`${stat.value}-${stat.label}-${index}`} className="flex min-w-0 items-start gap-3">
-                  <IconCircle className={hasSpecialVisuals && index === 0 ? "bg-brand-green-soft text-brand-green" : "bg-brand-purple-soft text-brand-purple"}>
-                    <Icon name={stat.icon} className="size-5 sm:size-6" />
-                  </IconCircle>
-                  <div className="min-w-0">
-                    <p className="text-base font-bold leading-snug text-brand-blue [overflow-wrap:anywhere] sm:text-lg">{stat.value}</p>
-                    <p className="mt-1 text-sm leading-relaxed text-brand-text">{stat.label}</p>
-                  </div>
+            <ul aria-label={benefitsLabel} className="mt-8 grid list-none grid-cols-1 gap-5 p-0 min-[480px]:grid-cols-3 min-[480px]:gap-0 xl:mt-10">
+              {benefits.map(({ icon: Icon, title, description }, index) => (
+                <li key={title} className={`min-w-0 ${index ? "min-[480px]:border-l min-[480px]:border-[#ccdae5] min-[480px]:pl-4" : ""} ${index < benefits.length - 1 ? "min-[480px]:pr-3" : ""}`}>
+                  <span className="mb-2 grid size-10 place-items-center rounded-full bg-[#e5f2fb] text-[#0876ed]">
+                    <Icon aria-hidden="true" className="size-6" strokeWidth={2.5} />
+                  </span>
+                  <h2 className="text-sm font-bold leading-snug xl:text-base">{title}</h2>
+                  <p className="mt-2 max-w-[12rem] text-xs leading-[1.45] text-[#334155] xl:text-sm">{description}</p>
                 </li>
               ))}
             </ul>
-          )}
           </div>
         </div>
+      </div>
 
-        <div className="relative mx-5 min-w-0 sm:mx-8 lg:mx-0 lg:flex lg:flex-col">
-          <div className="relative isolate h-[clamp(20rem,85vw,30rem)] sm:h-[clamp(24rem,65vw,34rem)] lg:h-auto lg:min-h-[32rem] lg:w-full lg:flex-1">
-            <Image
-              src={image}
-              alt={imageAlt}
-              fill
-              sizes={imageSizes}
-              loading={imagePriority ? "eager" : "lazy"}
-              fetchPriority={imagePriority ? "high" : "auto"}
-              className="object-cover brightness-[1.03] lg:[mask-image:linear-gradient(to_right,transparent_0%,black_10%,black_100%)] lg:[-webkit-mask-image:linear-gradient(to_right,transparent_0%,black_10%,black_100%)]"
-              style={{ objectPosition: imagePosition }}
-            />
-
-            {floatBenefits && (
-              <div className="absolute inset-x-4 inset-y-6 z-10 hidden lg:block">
-                {benefitCards.map((card, index) => (
-                  <BenefitCard key={`${card.title}-${index}`} card={card} className={`absolute w-[36%] ${card.position ?? BENEFIT_POSITIONS[index]}`} />
-                ))}
-              </div>
-            )}
-
-            {handwrittenNote && (
-              <div className={`pointer-events-none absolute z-20 hidden text-brand-purple sm:block ${handwrittenNote.position ?? "right-[1%] bottom-[15%]"} ${handwrittenNote.rotate ?? "-rotate-12"} ${handwrittenNote.className ?? ""}`}>
-                <p className="font-hand text-2xl leading-tight tracking-wide">
-                  {handwrittenNote.lines.map((line, index) => <span className="block" key={`${line}-${index}`}>{line}</span>)}
-                </p>
-                <svg viewBox="0 0 70 40" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false" className="absolute -left-16 top-8 h-10 w-16">
-                  <path d="M64 5C53 27 27 32 7 24m0 0 11-5M7 24l10 7" />
-                </svg>
-              </div>
-            )}
-          </div>
-
-          {benefitCards.length > 0 && (
-            <div className={`relative z-10 mt-4 grid grid-cols-1 gap-3 min-[400px]:grid-cols-2 ${floatBenefits ? "lg:hidden" : "lg:mx-4 lg:mb-4"}`}>
-              {benefitCards.map((card, index) => <BenefitCard key={`${card.title}-${index}`} card={card} />)}
-            </div>
-          )}
-
-          {!hasSpecialVisuals && resultCard && (
-            <div className="relative z-20 mt-4 w-full rounded-xl bg-white/95 p-4 shadow-[0_12px_35px_var(--shadow-blue-medium)] sm:absolute sm:bottom-5 sm:right-0 sm:mt-0 sm:w-60">
-              <div className="flex items-start gap-3">
-                <IconCircle className="bg-brand-blue-soft text-brand-blue"><Icon name={resultCard.icon} className="size-6" /></IconCircle>
-                <p className="min-w-0 text-base font-bold leading-snug text-brand-dark">
-                  {resultCard.lines.map((line, index) => <span className="block" key={`${line}-${index}`}>{line}</span>)}
-                </p>
-              </div>
-            </div>
-          )}
-        </div>
+      {/* A separate visual row keeps the complete artwork visible on smaller screens. */}
+      <div className="relative mx-auto aspect-[4/3] w-full max-w-2xl lg:hidden">
+        <Image
+          src={imageSrc}
+          alt={mobileImageAlt}
+          fill
+          sizes="(max-width: 672px) 100vw, 672px"
+          className="object-contain object-bottom"
+        />
       </div>
     </section>
-  );
-}
-
-function BenefitCard({ card, className = "" }: { card: HeroBenefitCard; className?: string }) {
-  return (
-    <div className={`flex min-h-18 min-w-0 items-center gap-2 rounded-xl border border-white/70 bg-white/95 p-3 shadow-[0_6px_24px_var(--shadow-blue)] ${className}`}>
-      <span className={`flex size-9 shrink-0 items-center justify-center rounded-full ${card.variant === "green" ? "bg-brand-green-soft text-brand-green" : "bg-brand-purple-soft text-brand-purple"}`}>
-        <Icon name={card.icon} className="size-5" />
-      </span>
-      <div className="min-w-0 text-brand-dark [overflow-wrap:anywhere]">
-        <p className="text-sm font-bold leading-snug">{card.title}</p>
-        <p className="mt-0.5 text-sm leading-snug text-brand-text">{card.description}</p>
-      </div>
-    </div>
   );
 }

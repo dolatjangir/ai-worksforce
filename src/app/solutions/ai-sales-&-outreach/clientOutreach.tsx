@@ -1,5 +1,6 @@
 "use client";
 
+import SolutionsHero from "@/components/solutions-hero/reusable-hero";
 import PageHero from "@/components/solutions-hero/reusable-hero";
 import React, { useEffect, useRef, useState } from "react";
 
@@ -280,49 +281,16 @@ export default function AISalesOutreachPage() {
       {/* ==========================================================
           HERO
       ========================================================== */}
-      <PageHero
-titleId="ai-sales-outreach-title"
-eyebrow="AI Sales & Outreach"
-title="Reach More Prospects."
-highlightedTitle="Close More Opportunities."
-description="Supercharge your sales with AI-powered outreach. Find the right prospects, engage them with personalized communication, and convert leads into revenue — faster and at scale."
-image="/images/hero-sales-outreach.png"
-imageAlt="AI Sales and Outreach workspace"
-primaryAction={{
-label: "Get a Free Outreach Assessment",
-href: "#get-started",
-icon: "arrow",
-}}
-secondaryAction={{
-label: "See How It Works",
-href: "#how-it-works",
-icon: "play",
-}}
-stats={[
-{
-      icon: "chart",
-value: "3x",
-label: "More Qualified Leads",
-},
-{
-      icon: "rocket",
-value: "60%",
-label: "Higher Reply Rates",
-},
-{
-      icon: "chart",
-value: "50%",
-label: "Lower Acquisition Costs",
-},
-]}
-handwrittenNote={{
-lines: [
-"More Conversations",
-"More Revenue",
-],
-position: "right-[2%] top-[3%]",
-rotate: "rotate-[-4deg]",
-}}
+ <SolutionsHero
+  badge="AI SALES & OUTREACH"
+  title="Reach More Prospects."
+  highlightedTitle="Close More Opportunities."
+  description="Supercharge your sales with AI-powered outreach. Find the right prospects, engage them with personalized communication, and convert leads into revenue — faster and at scale."
+  imageSrc="/solutions/ai-automation.png"
+  imageAlt="AI Sales and Outreach workspace"
+  assessmentLabel="Get a Free Outreach Assessment"
+  assessmentHref="#get-started"
+  videoHref="#how-it-works"
 />
 
 

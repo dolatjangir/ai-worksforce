@@ -216,44 +216,7 @@ export default function Home() {
       {/* =========================================================
           TOP BAR
       ========================================================== */}
-      <div className="hidden bg-[#061a38] text-white md:block">
-        <div className="mx-auto flex h-[26px] max-w-[1500px] items-center justify-between px-5 text-[9px] font-medium tracking-[0.01em] lg:px-8">
-          <div className="flex items-center gap-2">
-            <MapPin size={11} />
-            <span>AI Delivery Center – Jaipur, India</span>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <Users size={11} />
-            <span>People + AI • Technology + Real Business Results</span>
-          </div>
-
-          <div className="flex items-center gap-4">
-            <a
-              href="tel:+911411234567"
-              className="flex items-center gap-1.5 transition hover:text-blue-300"
-            >
-              <Phone size={10} />
-              +91 141 123 4567
-            </a>
-
-            <a
-              href="mailto:info@aiworkforce.com"
-              className="flex items-center gap-1.5 transition hover:text-blue-300"
-            >
-              <Mail size={10} />
-              info@aiworkforce.com
-            </a>
-
-            <div className="flex items-center gap-2">
-              <Linkedin size={11} />
-              <Youtube size={11} />
-              <X size={10} />
-              <Facebook size={10} />
-            </div>
-          </div>
-        </div>
-      </div>
+   
 
    
       {/* =========================================================

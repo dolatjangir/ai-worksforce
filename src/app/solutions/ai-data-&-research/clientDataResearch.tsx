@@ -1,5 +1,6 @@
 "use client";
 
+import SolutionsHero from "@/components/solutions-hero/reusable-hero";
 import PageHero from "@/components/solutions-hero/reusable-hero";
 import React, { useEffect, useRef, useState } from "react";
 
@@ -468,69 +469,16 @@ export default function AIDataResearchPage() {
           HERO
       ====================================================== */}
 
-    <PageHero
-titleId="ai-data-research-title"
-eyebrow="AI Data & Research"
-title="Turn Data Into"
-highlightedTitle="Real Opportunities."
-description="Get accurate insights, in-depth research, and actionable intelligence with AI-powered data & research solutions. We help you discover trends, validate ideas, and make smarter, faster decisions."
-image="/assessment-hero-right-img.png"
-imageAlt="AI Data & Research workspace and data intelligence"
-primaryAction={{
-label: "Get a Free Data Assessment",
-href: "#contact",
-icon: "arrow",
-}}
-secondaryAction={{
-label: "See How It Works",
-href: "#how-it-works",
-icon: "play",
-}}
-stats={[
-{
-    icon: "chart",
-value: "3x",
-label: "Faster Insights",
-},
-{
-  icon: "chart",
-value: "70%",
-label: "Lower Research Costs",
-},
-{
-  icon: "rocket",
-value: "100%",
-label: "Actionable Results",
-},
-]}
-
-   benefitCards={[
-    {
-      title: "Ai Agents",
-      description: "Handle Repetitive Work",
-      icon: "settings",
-    },
-    {
-      title: "Human Experts",
-      description: "Ensure Quality",
-      icon: "check",
-    },
-    {
-      title: "managed Operations",
-      description: "Drive Results",
-      icon: "chart",
-    },
-
-  ]}
-
-  handwrittenNote={{
-    lines: [
-      "Smarter Teams",
-      "Bigger Results",
-    ],
-    position: "right-[2%] bottom-[22%]",
-    rotate: "-rotate-[5deg]",
-  }}
+<SolutionsHero
+  badge="AI DATA & RESEARCH"
+  title="Turn Data Into"
+  highlightedTitle="Real Opportunities."
+  description="Get accurate insights, in-depth research, and actionable intelligence with AI-powered data & research solutions. We help you discover trends, validate ideas, and make smarter, faster decisions."
+  imageSrc="/solutions/ai-automation.png"
+  imageAlt="AI Data & Research workspace and data intelligence"
+  assessmentLabel="Get a Free Data Assessment"
+  assessmentHref="#contact"
+  videoHref="#how-it-works"
 />
 
       {/* ======================================================

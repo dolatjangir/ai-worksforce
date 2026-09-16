@@ -1,5 +1,6 @@
 "use client";
 
+import SolutionsHero from "@/components/solutions-hero/reusable-hero";
 import PageHero from "@/components/solutions-hero/reusable-hero";
 import UseCasesSection from "@/components/useCasesSection/usecasesection";
 import { Book, Grid, Headphones, Home, Settings } from "lucide-react";
@@ -414,69 +415,16 @@ export default function AICustomerOperationsPage() {
           HERO
       ======================================================== */}
 
-    <PageHero
-titleId="ai-customer-operations-title"
-eyebrow="AI Customer Operations"
-title="Happier Customers."
-highlightedTitle="Smarter Operations."
-description="Deliver exceptional customer experiences with AI-powered customer operations. Automate repetitive tasks, resolve queries faster, and empower your teams to focus on what truly matters — your customers."
-image="/ai-customer-operations-hero-img.png"
-imageAlt="AI Customer Operations workspace and customer support"
-primaryAction={{
-label: "Get a Free Consultation",
-href: "#contact",
-icon: "arrow",
-}}
-secondaryAction={{
-label: "See How It Works",
-href: "#how-it-works",
-icon: "play",
-}}
-stats={[
-{
-   icon: "rocket",
-value: "60%",
-label: "Faster Response Time",
-},
-{
-    icon: "chart",
-value: "45%",
-label: "Lower Support Costs",
-},
-{
-    icon: "chart",
-value: "90%",
-label: "Higher Customer Satisfaction",
-},
-]}
-
-   benefitCards={[
-    {
-      title: "Ai Agents",
-      description: "Handle Repetitive Work",
-      icon: "settings",
-    },
-    {
-      title: "Human Experts",
-      description: "Ensure Quality",
-      icon: "check",
-    },
-    {
-      title: "managed Operations",
-      description: "Drive Results",
-      icon: "chart",
-    },
-
-  ]}
-
-  handwrittenNote={{
-    lines: [
-      "Smarter Teams",
-      "Bigger Results",
-    ],
-    position: "right-[2%] bottom-[22%]",
-    rotate: "-rotate-[5deg]",
-  }}
+  <SolutionsHero
+  badge="AI CUSTOMER OPERATIONS"
+  title="Happier Customers."
+  highlightedTitle="Smarter Operations."
+  description="Deliver exceptional customer experiences with AI-powered customer operations. Automate repetitive tasks, resolve queries faster, and empower your teams to focus on what truly matters — your customers."
+  imageSrc="/solutions/ai-automation.png"
+  imageAlt="AI Customer Operations workspace and customer support"
+  assessmentLabel="Get a Free Consultation"
+  assessmentHref="#contact"
+  videoHref="#how-it-works"
 />
 
 

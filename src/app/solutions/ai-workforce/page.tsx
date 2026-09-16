@@ -1,3 +1,4 @@
+import SolutionsHero from "@/components/solutions-hero/reusable-hero";
 import PageHero from "@/components/solutions-hero/reusable-hero";
 import {
   ChevronDown,
@@ -135,69 +136,16 @@ export default function AIWorkforcePage() {
   
 
       {/* ================= HERO ================= */}
-     <PageHero
-titleId="ai-workforce-title"
-eyebrow="AI Workforce"
-title="Your Business."
-highlightedTitle="Powered by AI."
-description="Get a dedicated AI workforce of agents, experts and operators to help you automate work, scale growth and achieve real results — without the cost and complexity of building an AI team."
-image="/ai-workforce-hero-img.png"
-imageAlt="Professional working with AI workforce"
-primaryAction={{
-label: "Get Your AI Workforce Assessment",
-href: "#consultation",
-icon: "arrow",
-}}
-secondaryAction={{
-label: "See How it Works",
-href: "#how-it-works",
-icon: "play",
-}}
-stats={[
-    {
-      icon: "chart",
-      value: "Faster Operations",
-      label: "Automate repetitive tasks in minutes",
-    },
-    {
-      icon: "chart",
-      value: "Reduce Costs",
-      label: "Cut operational costs by up to 70%",
-    },
-    {
-      icon: "rocket",
-      value: "Higher Productivity",
-      label: "Get more done with the same team",
-    },
-  ]}
-
-   benefitCards={[
-    {
-      title: "Ai Agents",
-      description: "Handle Repetitive Work",
-      icon: "settings",
-    },
-    {
-      title: "Human Experts",
-      description: "Ensure Quality",
-      icon: "check",
-    },
-    {
-      title: "managed Operations",
-      description: "Drive Results",
-      icon: "chart",
-    },
-
-  ]}
-
-  handwrittenNote={{
-    lines: [
-      "Smarter Teams",
-      "Bigger Results",
-    ],
-    position: "right-[2%] bottom-[22%]",
-    rotate: "-rotate-[5deg]",
-  }}
+ <SolutionsHero
+  badge="AI WORKFORCE"
+  title="Your Business."
+  highlightedTitle="Powered by AI."
+  description="Get a dedicated AI workforce of agents, experts and operators to help you automate work, scale growth and achieve real results — without the cost and complexity of building an AI team."
+  imageSrc="/solutions/ai-automation.png"
+  imageAlt="Professional working with AI workforce"
+  assessmentLabel="Get Your AI Workforce Assessment"
+  assessmentHref="#consultation"
+  videoHref="#how-it-works"
 />
 
 

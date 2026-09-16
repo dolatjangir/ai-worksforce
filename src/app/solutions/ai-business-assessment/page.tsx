@@ -25,6 +25,7 @@ import {
   Building2,
 } from "lucide-react";
 import PageHero from "@/components/solutions-hero/reusable-hero";
+import SolutionsHero from "@/components/solutions-hero/reusable-hero";
 
 /* ============================================
    DATA
@@ -220,79 +221,16 @@ function OutlineButton({
 
 function Hero() {
   return (
- <PageHero
-titleId="ai-business-assessment-title"
-eyebrow="AI Business Assessment"
-title="Discover Your AI"
-
-highlightedTitle="Opportunity"
-description="A strategic assessment to help you identify, plan and implement the right AI solutions for your business."
-image="/assessment-hero-right-img.png"
-imageAlt="Your AI Opportunity — assessment session"
-primaryAction={{
-label: "Get Your AI Assessment",
-href: "#consultation",
-}}
-secondaryAction={{
-label: "Talk to Our Team",
-href: "#contact",
-}}
- stats={[
-    {
-      icon: "chart",
-      value: "Faster Operations",
-      label: "Automate repetitive tasks in minutes",
-    },
-    {
-      icon: "chart",
-      value: "Reduce Costs",
-      label: "Cut operational costs by up to 70%",
-    },
-    {
-      icon: "rocket",
-      value: "Higher Productivity",
-      label: "Get more done with the same team",
-    },
-  ]}
-
-  benefitCards={[
-    {
-      title: "Automate",
-      description: "Repetitive Work",
-      icon: "settings",
-    },
-    {
-      title: "Integrate",
-      description: "Your Tools",
-      icon: "check",
-    },
-    {
-      title: "Improve",
-      description: "Decision Making",
-      icon: "chart",
-    },
-    {
-      title: "Save",
-      description: "Time & Reduce Errors",
-      icon: "check",
-      variant: "green",
-    },
-    {
-      title: "Scale",
-      description: "Faster & Smarter",
-      icon: "rocket",
-      variant: "green",
-    },
-  ]}
-
-  handwrittenNote={{
-    lines: [
-      "Less Manual Work",
-      "More Possibilities",
-    ],
-    position: "right-[2%] bottom-[22%]",
-    rotate: "-rotate-[5deg]",
-  }}
+<SolutionsHero
+  badge="AI BUSINESS ASSESSMENT"
+  title="Discover Your AI"
+  highlightedTitle="Opportunity"
+  description="A strategic assessment to help you identify, plan and implement the right AI solutions for your business."
+  imageSrc="/solutions/ai-automation.png"
+  imageAlt="Your AI Opportunity — assessment session"
+  assessmentLabel="Get Your AI Assessment"
+  assessmentHref="#consultation"
+  videoHref="#contact"
 />
 
   );

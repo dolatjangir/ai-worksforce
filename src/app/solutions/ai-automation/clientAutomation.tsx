@@ -2,6 +2,7 @@
 // Ensure /contact exists, or replace its href with your booking URL.
 "use client";
 
+import SolutionsHero from "@/components/solutions-hero/reusable-hero";
 import PageHero from "@/components/solutions-hero/reusable-hero";
 import React, { useEffect, useRef } from "react";
 
@@ -201,84 +202,16 @@ export default function AIAutomationPage() {
       {/* ==========================================================
           HERO
       ========================================================== */}
-    <PageHero
-  titleId="ai-automation-title"
-  eyebrow="AI Automation"
+<SolutionsHero
+  badge="AI AUTOMATION"
   title="Automate Today."
   highlightedTitle="Grow Tomorrow."
   description="Streamline your processes, eliminate manual work, and unlock new possibilities with intelligent AI automation. We help businesses build faster, smarter and more efficient operations."
-
-  image="/solutions/ai-automation.png"
+  imageSrc="/solutions/ai-automation.png"
   imageAlt="AI automation workspace and business operations"
-
-  primaryAction={{
-    label: "Get a Free  Assessment",
-    href: "#consultation",
-    icon: "arrow",
-  }}
-
-  secondaryAction={{
-    label: "Watch How It Works",
-    href: "#how-it-works",
-    icon: "play",
-  }}
-
-  stats={[
-    {
-      icon: "chart",
-      value: "Faster Operations",
-      label: "Automate repetitive tasks in minutes",
-    },
-    {
-      icon: "chart",
-      value: "Reduce Costs",
-      label: "Cut operational costs by up to 70%",
-    },
-    {
-      icon: "rocket",
-      value: "Higher Productivity",
-      label: "Get more done with the same team",
-    },
-  ]}
-
-  benefitCards={[
-    {
-      title: "Automate",
-      description: "Repetitive Work",
-      icon: "settings",
-    },
-    {
-      title: "Integrate",
-      description: "Your Tools",
-      icon: "check",
-    },
-    {
-      title: "Improve",
-      description: "Decision Making",
-      icon: "chart",
-    },
-    {
-      title: "Save",
-      description: "Time & Reduce Errors",
-      icon: "check",
-      variant: "green",
-    },
-    {
-      title: "Scale",
-      description: "Faster & Smarter",
-      icon: "rocket",
-      variant: "green",
-    },
-  ]}
-
-  handwrittenNote={{
-    lines: [
-      "Less Manual Work",
-      "More Possibilities",
-    ],
-    position: "right-[2%] bottom-[22%]",
-    rotate: "-rotate-[5deg]",
-  }}
+  assessmentLabel="Get a Free Assessment"
+  assessmentHref="#consultation"
+  videoHref="#how-it-works"
 />
 
       {/* ==========================================================

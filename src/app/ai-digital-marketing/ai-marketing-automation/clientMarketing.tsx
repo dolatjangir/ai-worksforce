@@ -1,5 +1,6 @@
 "use client";
 
+import DigitalMarketingHero from "@/components/digital-marketing-hero/reusable-hero";
 import { useState } from "react";
 
 type IconName =
@@ -233,217 +234,42 @@ export default function AIMarketingAutomationPage() {
 
   return (
     <div className="overflow-x-hidden bg-white font-sans text-brand-dark">
-      <header className="relative z-30 bg-white">
-        <div className="mx-auto flex h-[63px] max-w-[1220px] items-center justify-between gap-5 px-5">
-          <a href="#home" className="shrink-0">
-            <div className="text-[23px] leading-none font-bold tracking-[-1px]">
-              <span className="text-brand-purple">AI</span> WorksForce
-            </div>
-            <p className="mt-1 text-right text-[8px] text-brand-text-muted">
-              Automate. Accelerate. Grow.
-            </p>
-          </a>
-
-          <nav className="hidden h-full items-center gap-5 xl:flex">
-            {nav.map((item) => (
-              <a
-                key={item}
-                href="#"
-                className={`relative flex h-full items-center text-[9px] whitespace-nowrap ${
-                  item === "Solutions"
-                    ? "font-bold text-brand-dark"
-                    : "text-brand-text-muted hover:text-brand-purple"
-                }`}
-              >
-                {item}
-                {item === "Solutions" && <span className="ml-1">⌄</span>}
-                {(item === "Home" || item === "Solutions") && (
-                  <span className="absolute right-0 bottom-0 left-0 h-px bg-brand-purple" />
-                )}
-              </a>
-            ))}
-          </nav>
-
-          <a
-            href="#contact"
-            className="hidden rounded-xl bg-gradient-to-r from-brand-purple to-[#17167d] px-4 py-3 text-[10px] font-bold text-white sm:block"
-          >
-            Book a Free Consultation <span className="ml-1">→</span>
-          </a>
-
-          <button
-            type="button"
-            onClick={() => setMenuOpen((value) => !value)}
-            className="grid size-10 place-items-center rounded-lg border border-indigo-100 text-xl xl:hidden"
-            aria-label="Toggle navigation"
-          >
-            {menuOpen ? "×" : "☰"}
-          </button>
-        </div>
-
-        {menuOpen && (
-          <nav className="absolute top-full right-0 left-0 grid border-t border-indigo-100 bg-white p-5 shadow-xl xl:hidden">
-            {nav.map((item) => (
-              <a
-                href="#"
-                key={item}
-                onClick={() => setMenuOpen(false)}
-                className="rounded-lg px-3 py-2.5 text-sm hover:bg-indigo-50"
-              >
-                {item}
-              </a>
-            ))}
-          </nav>
-        )}
-      </header>
+   
 
       <main>
-        <section
-          id="home"
-          className="relative isolate overflow-hidden rounded-b-[20px] bg-[linear-gradient(112deg,#fafbff_0%,#f5f7ff_48%,#f0efff_100%)]"
-        >
-          <div className="absolute top-[-130px] right-[-75px] -z-10 size-[690px] rounded-full bg-[radial-gradient(circle,#b5acff95_0%,#d9dcff40_42%,transparent_70%)]" />
-
-          <div className="relative mx-auto grid min-h-[440px] max-w-[1220px] lg:grid-cols-[1.02fr_1fr]">
-            <div className="z-10 px-6 pt-8 pb-6 lg:pl-6">
-              <p className="text-[10px] font-bold tracking-[0.28em] text-brand-purple">
-                AUTOMATE TODAY. GROW TOMORROW.
-              </p>
-
-              <h1 className="mt-2 text-[49px] leading-[0.92] font-bold tracking-[-2px] sm:text-[61px] lg:text-[63px]">
-                AI <span className="text-brand-purple">Marketing</span>
-                <br />
-                Automation
-              </h1>
-
-              <h2 className="mt-3 text-[18px] font-bold tracking-[-0.5px] sm:text-[20px]">
-                Smarter campaigns. Less effort. More results.
-              </h2>
-
-              <p className="mt-2 max-w-[510px] text-[15px] leading-[1.5] text-brand-text">
-                Let AI automate your marketing from end to end. From lead generation and email
-                campaigns to social media, ads, and customer nurturing — we build intelligent
-                automation systems that save time, increase engagement, and drive real business growth.
-              </p>
-
-              <div className="mt-3 flex flex-wrap gap-4">
-                <a href="#contact" className={`${button} bg-brand-purple text-white hover:bg-[#4820cc]`}>
-                  Book a Free Consultation <span>→</span>
-                </a>
-                <a
-                  href="#how-it-works"
-                  className={`${button} border border-[#7774af] bg-white/50 text-brand-dark hover:bg-white`}
-                >
-                  <span className="grid size-5 place-items-center rounded-full bg-violet-100 text-[9px] text-brand-purple">
-                    ▶
-                  </span>
-                  See It in Action
-                </a>
-              </div>
-
-              <div className="mt-6 grid max-w-[530px] grid-cols-3 gap-3">
-                {[
-                  ["zap", "3x", "More Leads"],
-                  ["layers", "70%", "Less Manual Work"],
-                  ["target", "5x", "Higher ROI"],
-                ].map(([icon, value, label], index) => (
-                  <div
-                    key={label}
-                    className={`flex flex-col items-center gap-2 text-center sm:flex-row sm:text-left ${
-                      index > 0 ? "border-l border-indigo-100 pl-3" : ""
-                    }`}
-                  >
-                    <Bubble icon={icon as IconName} small />
-                    <div>
-                      <p className="text-[25px] leading-none font-bold text-brand-purple">{value}</p>
-                      <p className="mt-1 text-[10px] text-brand-text-muted">{label}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="relative mx-auto h-[435px] w-full max-w-[610px] lg:h-auto">
-              <div className="absolute top-[45px] left-1/2 size-[365px] -translate-x-1/2 rounded-full border-[20px] border-white/15 bg-[#b7afff]/15" />
-              <div className="absolute top-[86px] left-1/2 size-[278px] -translate-x-1/2 rounded-full border-[18px] border-white/20" />
-
-              <img
-                src={images.hero}
-                alt="Marketing automation strategist"
-                className="absolute bottom-0 left-[25%] z-10 h-[82%] w-[47%] rounded-t-[100px] object-cover object-top shadow-[0_15px_45px_rgba(48,42,185,.15)]"
-              />
-
-              <div className="absolute top-7 left-2 z-20 grid gap-2">
-                {[
-                  ["mail", "Email Automation", "Personalized at scale"],
-                  ["users", "Lead Nurturing", "Turn leads into customers"],
-                  ["megaphone", "Multi-Channel Campaigns", "Email, Social, SMS & Ads"],
-                  ["settings", "Smart Workflows", "Trigger. Automate. Convert."],
-                  ["chart", "Real-Time Insights", "Track performance with AI"],
-                ].map(([icon, title, subtext]) => (
-                  <div
-                    key={title}
-                    className="flex w-[180px] items-center gap-3 rounded-xl bg-white/90 px-3 py-2.5 shadow-[0_5px_20px_rgba(51,42,157,.1)]"
-                  >
-                    <span className="text-brand-purple">
-                      <Icon name={icon as IconName} className="size-7" />
-                    </span>
-                    <span className="text-[9px] leading-tight">
-                      <strong className="block text-[10px]">{title}</strong>
-                      <span className="text-brand-text-muted">{subtext}</span>
-                    </span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="absolute top-4 right-3 z-20 w-[170px] space-y-2">
-                <div className="rounded-[14px] bg-white/90 p-3 shadow-[0_5px_20px_rgba(51,42,157,.1)]">
-                  <p className="text-[10px] font-bold">Campaign Performance</p>
-                  <p className="mt-1 text-[21px] font-bold text-emerald-500">↑ 256%</p>
-                  <p className="text-[9px] text-brand-text-muted">More Conversions</p>
-                  <div className="mt-3 flex h-12 items-end justify-between gap-2">
-                    {[4, 10, 25, 42, 66, 100].map((height) => (
-                      <span
-                        key={height}
-                        className="w-3 rounded-t bg-gradient-to-t from-[#d8d2ff] to-brand-purple"
-                        style={{ height: `${height}%` }}
-                      />
-                    ))}
-                  </div>
-                </div>
-
-                <div className="rounded-[14px] bg-white/90 p-2.5 shadow-[0_5px_20px_rgba(51,42,157,.1)]">
-                  {[
-                    ["Trigger", "New Lead", "bg-emerald-100 text-emerald-500", "users"],
-                    ["AI Action", "Send Personalized Email", "bg-violet-100 text-brand-purple", "mail"],
-                    ["Result", "Higher Engagement", "bg-emerald-100 text-emerald-500", "chart"],
-                  ].map(([title, label, tone, icon], index) => (
-                    <div key={title} className="relative flex items-center gap-2 py-1.5">
-                      {index > 0 && (
-                        <span className="absolute -top-2 left-4 h-3 border-l border-dashed border-brand-purple" />
-                      )}
-                      <Bubble icon={icon as IconName} tone={tone} small />
-                      <p className="text-[9px] leading-tight">
-                        <strong className="block text-[10px]">{title}</strong>
-                        {label}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="absolute right-5 bottom-4 z-20 rotate-[-13deg] font-hand text-[19px] leading-tight text-brand-purple">
-                Automate
-                <br />
-                Engage
-                <br />
-                Convert
-                <br />
-                Grow
-              </div>
-            </div>
-          </div>
-        </section>
+     <DigitalMarketingHero
+  eyebrow="AUTOMATE TODAY. GROW TOMORROW."
+  title="AI Marketing"
+  highlightedTitle="Automation"
+  subtitle="Smarter campaigns. Less effort. More results."
+  description="Let AI automate your marketing from end to end. From lead generation and email campaigns to social media, ads, and customer nurturing — we build intelligent automation systems that save time, increase engagement, and drive real business growth."
+  imageSrc="/digital-marketing-hero-right-img.png"
+  imageAlt="Marketing automation strategist"
+  primaryLabel="Book a Free Consultation"
+  primaryHref="#contact"
+  secondaryLabel="See It in Action"
+  secondaryHref="#how-it-works"
+  metrics={[
+    {
+      value: "3x",
+      label: "More Leads",
+      icon: "zap",
+      tone: "purple",
+    },
+    {
+      value: "70%",
+      label: "Less Manual Work",
+      icon: "layers",
+      tone: "green",
+    },
+    {
+      value: "5x",
+      label: "Higher ROI",
+      icon: "target",
+      tone: "orange",
+    },
+  ]}
+/>
 
         <section className="mx-auto max-w-[1240px] px-5 pt-5">
           <p className="text-center text-[9px] font-bold tracking-[0.28em] text-brand-purple">
@@ -626,31 +452,6 @@ export default function AIMarketingAutomationPage() {
         </section>
       </main>
 
-      <footer className="mx-auto max-w-[1220px] px-5">
-        <div className="flex flex-wrap items-center justify-between gap-5 border-b border-indigo-100 py-4">
-          <a href="#home">
-            <div className="text-[19px] font-bold">
-              <span className="text-brand-purple">AI</span> WorksForce
-            </div>
-            <p className="text-[8px] text-brand-text-muted">Automate. Accelerate. Grow.</p>
-          </a>
-          <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-[9px] text-brand-text-muted">
-            {nav.map((item) => (
-              <a key={item} href="#" className="hover:text-brand-purple">
-                {item}
-              </a>
-            ))}
-          </div>
-        </div>
-        <div className="flex flex-col justify-between gap-3 py-4 text-[9px] text-brand-text-muted sm:flex-row">
-          <p>© 2024 AI WorksForce. All rights reserved.</p>
-          <div className="flex gap-5">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <a href="#contact">Contact</a>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

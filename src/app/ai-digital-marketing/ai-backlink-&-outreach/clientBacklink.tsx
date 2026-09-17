@@ -1,5 +1,6 @@
 "use client";
 
+import DigitalMarketingHero from "@/components/digital-marketing-hero/reusable-hero";
 import { useState } from "react";
 
 // Replace these with your original images for an exact visual match.
@@ -216,156 +217,39 @@ export default function AIBacklinkOutreach() {
 
       <main>
         {/* Hero */}
-        <section className="relative isolate overflow-hidden rounded-b-[22px] bg-[linear-gradient(110deg,#f9faff_0%,#f7f9ff_46%,#eeefff_76%,#f8fbff_100%)]">
-          <div className="pointer-events-none absolute top-[-110px] right-[-35px] size-[670px] rounded-full bg-[radial-gradient(circle,#b6acff66,transparent_68%)]" />
-
-          <div className="relative mx-auto grid max-w-[1216px] lg:min-h-[470px] lg:grid-cols-[1.03fr_1fr]">
-            <div className="relative z-10 px-6 pt-10 pb-7 lg:pl-7 lg:pr-0">
-              <p className="text-[10px] font-semibold tracking-[0.24em] text-[#3620ff]">
-                STRONGER LINKS. HIGHER RANKINGS.
-              </p>
-
-              <h1 className="mt-3 text-[44px] leading-[0.98] font-bold tracking-[-1.8px] sm:text-[58px] lg:text-[64px]">
-                AI <span className="text-[#3520ff]">Backlink &</span>
-                <br />
-                Outreach
-              </h1>
-
-              <h2 className="mt-3 text-[18px] leading-snug font-semibold tracking-[-0.45px] lg:text-[20px]">
-                Build authority. Earn high-quality backlinks. Grow faster.
-              </h2>
-
-              <p className="mt-2 max-w-[505px] text-[15px] leading-[1.5] text-[#4e598b] lg:text-[16px]">
-                Let AI handle your backlink research, prospecting, outreach, and
-                follow-ups — so you get high-authority links, stronger domain
-                authority, and better search rankings without the manual effort.
-              </p>
-
-              <div className="mt-4 flex flex-wrap gap-4">
-                <a href="#contact" className={`${button} bg-[#3520ff] text-white hover:bg-[#2815dd]`}>
-                  Book a Free Consultation <span aria-hidden="true">→</span>
-                </a>
-                <a
-                  href="#how-it-works"
-                  className={`${button} border border-[#7e79b9] bg-white/40 text-[#090d55] hover:bg-white`}
-                >
-                  <span className="flex size-6 items-center justify-center rounded-full bg-[#e8e4ff] text-[12px] text-[#3520ff]">
-                    ▶
-                  </span>
-                  See How It Works
-                </a>
-              </div>
-
-              <div className="mt-9 grid grid-cols-3 gap-2 sm:gap-4">
-                {[
-                  { icon: "link" as const, value: "3x", label: "More Quality Backlinks" },
-                  { icon: "chart" as const, value: "70%", label: "Less Manual Work" },
-                  { icon: "trophy" as const, value: "2x", label: "Higher Domain Authority" },
-                ].map((stat, index) => (
-                  <div
-                    key={stat.label}
-                    className={`flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3 ${
-                      index ? "border-l border-[#e9eaff] pl-3" : ""
-                    }`}
-                  >
-                    <Bubble name={stat.icon} small />
-                    <div>
-                      <p className="text-[27px] leading-none font-bold text-[#3520ff]">
-                        {stat.value}
-                      </p>
-                      <p className="mt-1 text-[10px] leading-snug text-[#465387] sm:text-[12px]">
-                        {stat.label}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="relative mx-auto h-[460px] w-full max-w-[620px] lg:h-full">
-              {[0, 1, 2].map((ring) => (
-                <div
-                  key={ring}
-                  className="absolute top-1/2 left-1/2 rounded-full border-[18px] border-white/15 bg-[#b8afff]/10"
-                  style={{
-                    width: 460 - ring * 70,
-                    height: 460 - ring * 70,
-                    transform: "translate(-50%, -50%)",
-                  }}
-                />
-              ))}
-
-              <div className="absolute top-12 left-[48%] flex size-[84px] items-center justify-center rounded-full bg-gradient-to-br from-[#25b0ff] to-[#5730ff] text-white shadow-lg">
-                <Icon name="link" className="size-11" />
-              </div>
-
-              <img
-                src={images.hero}
-                alt="Outreach specialist working on a laptop"
-                className="absolute bottom-0 left-[10%] z-10 h-[83%] w-[67%] object-contain object-bottom"
-              />
-
-              <div className="absolute top-[58px] left-3 z-20 space-y-4 sm:left-4">
-                {[
-                  { icon: "target" as const, text: <>Find<br />Link Opportunities<br /><span className="font-normal">with AI</span></> },
-                  { icon: "mail" as const, text: <>Automate<br />Outreach & Follow-ups</> },
-                  { icon: "users" as const, text: <>Get High-Quality<br />Backlinks</> },
-                ].map((card, index) => (
-                  <div
-                    key={index}
-                    className={`flex items-center gap-2 rounded-[14px] bg-white/90 p-3 shadow-[0_5px_22px_#6960db12] ${
-                      index === 2 ? "max-w-[180px]" : "max-w-[208px]"
-                    }`}
-                  >
-                    <Bubble name={card.icon} small />
-                    <p className="text-[11px] leading-[1.35] font-semibold">{card.text}</p>
-                  </div>
-                ))}
-              </div>
-
-              <div className="absolute top-8 right-3 z-20 w-[170px] space-y-1.5 sm:right-0 sm:w-[203px]">
-                <div className="rounded-[15px] bg-white/90 px-4 pt-4 pb-5 shadow-[0_5px_22px_#6960db12]">
-                  <p className="text-[12px] font-bold">Domain Authority</p>
-                  <p className="mt-1 text-[23px] font-bold text-[#00b77f]">↑256%</p>
-                  <div className="mt-3 flex h-[73px] items-end justify-between gap-3 px-1">
-                    {[4, 13, 27, 42, 65, 100].map((height) => (
-                      <span
-                        key={height}
-                        className="w-4 rounded-t-[3px] bg-gradient-to-t from-[#d8d1ff] to-[#3920ff]"
-                        style={{ height: `${height}%` }}
-                      />
-                    ))}
-                  </div>
-                </div>
-
-                <div className="rounded-[15px] bg-white/90 p-4 shadow-[0_5px_22px_#6960db12]">
-                  <p className="mb-2 text-[12px] font-bold">High Authority Links</p>
-                  {["Guest Posts", "Niche Edits", "Digital PR", "Resource Page Links", "Directory Submissions"].map((item) => (
-                    <div key={item} className="mt-1.5 flex items-center gap-2 text-[11px]">
-                      <span className="flex size-[18px] shrink-0 items-center justify-center rounded-full bg-[#a9ead5] font-bold text-[#059f79]">
-                        ✓
-                      </span>
-                      {item}
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="absolute right-5 bottom-5 z-20 rotate-[-12deg] font-hand text-[21px] leading-[1.05] text-[#3920ff]">
-                Stronger
-                <br />
-                Authority
-                <br />
-                Bigger
-                <br />
-                Growth
-                <svg className="absolute -left-16 bottom-3 w-16" viewBox="0 0 70 40" fill="none" aria-hidden="true">
-                  <path d="M64 5C42 31 22 32 5 23m0 0 10-3M5 23l8 7M64 5l-2 11m2-11-11 3" stroke="currentColor" strokeWidth="1.5" />
-                </svg>
-              </div>
-            </div>
-          </div>
-        </section>
+      <DigitalMarketingHero
+  eyebrow="STRONGER LINKS. HIGHER RANKINGS."
+  title="AI"
+  highlightedTitle="Backlink & Outreach"
+  subtitle="Build authority. Earn high-quality backlinks. Grow faster."
+  description="Let AI handle your backlink research, prospecting, outreach, and follow-ups — so you get high-authority links, stronger domain authority, and better search rankings without the manual effort."
+  imageSrc="/digital-marketing-hero-right-img.png"
+  imageAlt="Outreach specialist working on backlink research and link-building campaigns"
+  primaryLabel="Book a Free Consultation"
+  primaryHref="#contact"
+  secondaryLabel="See How It Works"
+  secondaryHref="#how-it-works"
+  metrics={[
+    {
+      value: "3x",
+      label: "More Quality Backlinks",
+      icon: "link",
+      tone: "purple",
+    },
+    {
+      value: "70%",
+      label: "Less Manual Work",
+      icon: "chart",
+      tone: "green",
+    },
+    {
+      value: "2x",
+      label: "Higher Domain Authority",
+      icon: "trophy",
+      tone: "orange",
+    },
+  ]}
+/>
 
         {/* Solutions */}
         <section id="solutions" className="mx-auto max-w-[1280px] scroll-mt-6 px-5 pt-6 lg:px-[30px]">

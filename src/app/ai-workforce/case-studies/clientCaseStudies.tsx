@@ -22,6 +22,7 @@ import {
   Youtube,
   Instagram,
 } from "lucide-react";
+import AIWorkflowHero from "@/components/ai-workflow-hero/reusable-hero";
 
 /* =========================================================
    AI WorksForce — Case Studies Page
@@ -261,138 +262,19 @@ export default function CaseStudiesPage() {
       </header>
 
       {/* ================= HERO ================= */}
-      <section className="relative overflow-hidden bg-[linear-gradient(to_bottom_right,#eff6ff,#ffffff,#eef2ff)]">
-        <div className="pointer-events-none absolute -left-32 top-10 h-80 w-80 rounded-full bg-brand-blue-soft blur-3xl" />
-        <div className="pointer-events-none absolute -right-24 top-40 h-96 w-96 rounded-full bg-brand-purple-soft blur-3xl" />
-
-        <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 pb-16 pt-14 sm:px-6 lg:grid-cols-2 lg:px-8 lg:pb-20 lg:pt-16">
-          {/* Left copy */}
-          <div>
-            <p className="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-brand-purple">
-              Real Businesses. Real Impact.
-            </p>
-            <h1 className="text-4xl font-extrabold leading-[1.1] tracking-tight text-heading sm:text-5xl lg:text-[3.4rem]">
-              Case{" "}
-              <span className="bg-[linear-gradient(to_right,#06b6d4,#2563eb,#7c3aed)] bg-clip-text text-transparent">
-                Studies
-              </span>
-            </h1>
-            <h2 className="mt-3 text-2xl font-bold tracking-tight text-heading sm:text-3xl">
-              Real business results
-            </h2>
-            <p className="mt-5 max-w-md text-base leading-relaxed text-text-muted">
-              See how businesses across industries are using AI WorksForce to
-              automate operations, improve customer experiences, and achieve
-              measurable growth.
-            </p>
-            <div className="mt-8 flex flex-wrap items-center gap-4">
-              <a
-                href="#cta"
-                className="inline-flex items-center gap-2 rounded-full bg-brand-blue px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-blue-500/30 transition hover:bg-brand-blue-dark"
-              >
-                Book a Free Consultation <ArrowRight className="h-4 w-4" />
-              </a>
-              <a
-                href="#stories"
-                className="inline-flex items-center gap-2 rounded-full border-2 border-blue-200 bg-white/70 px-7 py-3 text-sm font-semibold text-heading backdrop-blur transition hover:border-brand-blue hover:text-brand-blue"
-              >
-                Explore Our Solutions
-              </a>
-            </div>
-          </div>
-
-          {/* Right — photo + floating cards */}
-          <div className="relative mx-auto w-full max-w-lg">
-            <div className="relative h-[460px] sm:h-[520px]">
-              {/* glow behind photo */}
-              <div className="absolute right-0 top-6 h-[90%] w-[78%] rounded-[2rem] bg-[linear-gradient(160deg,#dbeafe,#e0e7ff,#f3e8ff)]" />
-
-              <img
-                src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=800&q=80"
-                alt="Business professional"
-                className="absolute right-0 top-6 h-[90%] w-[78%] rounded-[2rem] object-cover object-top shadow-2xl shadow-[rgba(24,74,140,0.18)]"
-              />
-
-              {/* handwritten note */}
-              <div className="absolute -top-2 left-2 -rotate-6 sm:left-6">
-                <p className="font-hand text-2xl leading-tight text-brand-purple sm:text-3xl">
-                  Real Businesses
-                  <br />
-                  Real Growth
-                </p>
-                <svg className="ml-10 h-6 w-14 text-brand-purple" viewBox="0 0 56 24" fill="none" aria-hidden="true">
-                  <path d="M4 4 Q 28 22 50 10 M50 10 l-9 -3 M50 10 l-2 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                </svg>
-              </div>
-
-              {/* From Challenges to Results card */}
-              <div className="absolute right-2 top-16 w-44 animate-float rounded-2xl border border-blue-100 bg-white/95 p-4 shadow-xl shadow-[rgba(24,74,140,0.12)] backdrop-blur sm:right-0 sm:top-20 sm:w-48">
-                <div className="flex items-start justify-between">
-                  <p className="text-[13px] font-bold leading-snug text-heading">
-                    From Challenges
-                    <br />
-                    to Results
-                  </p>
-                  <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-brand-blue-soft">
-                    <ArrowUpRight className="h-4 w-4 text-brand-blue" />
-                  </span>
-                </div>
-                <div className="mt-3 flex h-16 items-end justify-between gap-1.5">
-                  {[35, 55, 45, 70, 100].map((h, i) => (
-                    <span
-                      key={i}
-                      className={`w-full rounded-t-md ${i === 4 ? "bg-brand-blue" : "bg-blue-200"}`}
-                      style={{ height: `${h}%` }}
-                    />
-                  ))}
-                </div>
-              </div>
-
-              {/* Feature pills */}
-              <div className="absolute bottom-24 left-0 flex flex-col gap-3 sm:bottom-28">
-                {HERO_FEATURES.map((f, i) => (
-                  <div
-                    key={f.label}
-                    className={`flex items-center gap-2.5 rounded-2xl border border-blue-100 bg-white/95 px-4 py-3 shadow-lg shadow-[rgba(24,74,140,0.08)] backdrop-blur ${
-                      i === 1 ? "animate-float-slow" : "animate-float"
-                    }`}
-                  >
-                    <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-blue-soft">
-                      <f.icon className="h-4 w-4 text-brand-blue" />
-                    </span>
-                    <span className="text-xs font-semibold text-heading">{f.label}</span>
-                  </div>
-                ))}
-              </div>
-
-              {/* Quote card */}
-              <div className="absolute -bottom-2 right-4 w-64 animate-float-slow rounded-2xl border border-blue-100 bg-white/95 p-4 shadow-xl shadow-[rgba(24,74,140,0.12)] backdrop-blur sm:right-10">
-                <p className="text-[13px] font-medium italic leading-relaxed text-heading">
-                  &ldquo;AI WorksForce helped us scale faster than we
-                  imagined.&rdquo;
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* ================= STATS BAND ================= */}
-        <div className="relative mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 gap-6 rounded-3xl border border-blue-100 bg-white/80 p-8 shadow-xl shadow-[rgba(24,74,140,0.08)] backdrop-blur lg:grid-cols-4 lg:divide-x lg:divide-blue-100">
-            {HERO_STATS.map((s) => (
-              <div key={s.label} className="flex items-center gap-4 lg:justify-center lg:px-6">
-                <span className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl ${s.chip}`}>
-                  <s.icon className="h-6 w-6" />
-                </span>
-                <div>
-                  <p className="text-2xl font-extrabold tracking-tight text-heading">{s.value}</p>
-                  <p className="text-xs font-medium text-text-muted">{s.label}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+    <AIWorkflowHero
+  eyebrow="REAL BUSINESSES. REAL IMPACT."
+  title="Case"
+  highlightedTitle="Studies"
+  subtitle="Real business results"
+  description="See how businesses across industries are using AI WorksForce to automate operations, improve customer experiences, and achieve measurable growth."
+  imageSrc="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=800&q=80"
+  imageAlt="Business professional"
+  primaryLabel="Book a Free Consultation"
+  primaryHref="#cta"
+  secondaryLabel="Explore Our Solutions"
+  secondaryHref="#stories"
+/>
 
       {/* ================= SUCCESS STORIES ================= */}
       <section id="stories" className="bg-white py-20 lg:py-24">

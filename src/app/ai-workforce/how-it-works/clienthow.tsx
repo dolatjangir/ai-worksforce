@@ -31,6 +31,7 @@ import {
   Youtube,
   Instagram,
 } from "lucide-react";
+import AIWorkflowHero from "@/components/ai-workflow-hero/reusable-hero";
 
 /* ============================================
    DATA
@@ -233,103 +234,19 @@ export default function HowItWorksPage() {
       </header>
 
       {/* ================= HERO ================= */}
-      <section className="relative overflow-hidden">
-        <div className="pointer-events-none absolute -right-32 top-10 h-[28rem] w-[28rem] rounded-full bg-brand-purple-soft/70 blur-3xl" />
-        <div className="pointer-events-none absolute -left-32 bottom-0 h-96 w-96 rounded-full bg-blue-50 blur-3xl" />
-
-        <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 pb-16 pt-12 sm:px-6 lg:grid-cols-2 lg:gap-8 lg:px-8 lg:pb-20 lg:pt-16">
-          {/* Left — Copy */}
-          <div className="max-w-xl">
-            <span className="mb-5 inline-block text-xs font-semibold uppercase tracking-[0.25em] text-slate-400">
-              Simple. Structured. Impactful.
-            </span>
-            <h1 className="text-4xl font-extrabold leading-[1.08] tracking-tight text-brand-dark sm:text-5xl lg:text-[3.4rem]">
-              How it Works
-            </h1>
-            <p className="mt-4 text-base font-bold text-brand-dark sm:text-lg">
-              From business problem to AI operations
-            </p>
-            <p className="mt-4 text-base leading-relaxed text-slate-500">
-              We follow a clear, step-by-step process to understand your
-              business, design the right AI workforce, and deploy it for real
-              results — quickly, securely, and at scale.
-            </p>
-            <div className="mt-8 flex flex-wrap items-center gap-4">
-              <Link
-                href="#consultation"
-                className="inline-flex items-center gap-2 rounded-full bg-brand-blue px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand-blue/25 transition-all hover:bg-brand-blue-dark hover:shadow-xl"
-              >
-                Book a Free Consultation
-                <ArrowRight size={16} />
-              </Link>
-              <Link
-                href="#process"
-                className="inline-flex items-center rounded-full border border-slate-200 bg-white px-7 py-3.5 text-sm font-semibold text-brand-dark shadow-sm transition-all hover:border-brand-blue hover:text-brand-blue"
-              >
-                Talk to Our Team
-              </Link>
-            </div>
-          </div>
-
-          {/* Right — Visual */}
-          <div className="relative mx-auto w-full max-w-md lg:max-w-none">
-            <div className="relative z-10 mx-auto w-[72%] overflow-hidden rounded-[2rem]">
-              <img
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=900&auto=format&fit=crop"
-                alt="Professional with her AI workforce"
-                className="h-full w-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-purple/15 via-transparent to-transparent" />
-            </div>
-
-            {/* Flow chips */}
-            {HERO_FLOW.map((chip, i) => (
-              <div
-                key={chip.label}
-                className={`absolute ${chip.position} z-20 animate-float rounded-2xl border border-slate-100 bg-white/95 px-3.5 py-2.5 shadow-lg shadow-slate-200/60 backdrop-blur-sm`}
-                style={{ animationDelay: `${i * 0.7}s` }}
-              >
-                <div className="flex items-center gap-2.5">
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-brand-blue">
-                    <chip.icon size={15} />
-                  </span>
-                  <span className="whitespace-pre-line text-[11px] font-bold leading-tight text-brand-dark">
-                    {chip.label}
-                  </span>
-                </div>
-              </div>
-            ))}
-
-            {/* Center card */}
-            <div className="absolute bottom-[8%] left-1/2 z-30 w-[70%] -translate-x-1/2 rounded-2xl border border-slate-100 bg-white/95 p-4 shadow-xl shadow-slate-200/70 backdrop-blur-sm">
-              <div className="flex items-center justify-between gap-3">
-                <div>
-                  <p className="text-sm font-extrabold leading-snug text-brand-dark">
-                    From Ideas
-                    <br />
-                    to Impact
-                  </p>
-                  <p className="mt-1 text-[10px] text-slate-400">
-                    with AI WorksForce
-                  </p>
-                </div>
-                <BarChart3 size={36} className="shrink-0 text-brand-purple" />
-              </div>
-            </div>
-
-            {/* Handwritten note */}
-            <p className="font-hand absolute -right-2 bottom-[26%] z-20 hidden rotate-[-10deg] text-xl font-semibold leading-tight text-brand-purple/70 lg:block">
-              Smarter
-              <br />
-              Operations
-              <br />
-              Brighter
-              <br />
-              Growth
-            </p>
-          </div>
-        </div>
-      </section>
+     <AIWorkflowHero
+      eyebrow="SIMPLE. STRUCTURED. IMPACTFUL."
+      title="How it Works"
+      highlightedTitle=""
+      subtitle="From business problem to AI operations"
+      description="We follow a clear, step-by-step process to understand your business, design the right AI workforce, and deploy it for real results — quickly, securely, and at scale."
+      imageSrc="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=900&auto=format&fit=crop"
+      imageAlt="Professional with her AI workforce"
+      primaryLabel="Book a Free Consultation"
+      primaryHref="#consultation"
+      secondaryLabel="Talk to Our Team"
+      secondaryHref="#process"
+    />
 
       {/* ================= PROCESS ================= */}
       <section id="process" className="bg-white py-20 lg:py-24">

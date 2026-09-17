@@ -1,5 +1,6 @@
 "use client";
 
+import DigitalMarketingHero from "@/components/digital-marketing-hero/reusable-hero";
 import { useState, type ReactNode } from "react";
 
 type IconName =
@@ -230,183 +231,39 @@ export default function AIMarketingAnalyticsPage() {
  
 
       <main>
-        <section
-          id="home"
-          className="relative isolate overflow-hidden rounded-b-[20px] bg-[linear-gradient(112deg,#fafbff_0%,#f5f7ff_48%,#f0efff_100%)]"
-        >
-          <div className="absolute top-[-130px] right-[-75px] -z-10 size-[690px] rounded-full bg-[radial-gradient(circle,#b5acff95_0%,#d9dcff40_42%,transparent_70%)]" />
-
-          <div className="relative mx-auto grid min-h-[440px] max-w-[1220px] lg:grid-cols-[1.02fr_1fr]">
-            <div className="z-10 px-6 pt-8 pb-6 lg:pl-6">
-              <p className="text-[10px] font-bold tracking-[0.28em] text-brand-purple">
-                DATA-DRIVEN GROWTH. SMARTER DECISIONS.
-              </p>
-
-              <h1 className="mt-2 text-[49px] leading-[0.92] font-bold tracking-[-2px] sm:text-[61px] lg:text-[63px]">
-                AI Marketing
-                <br />
-                <span className="text-brand-purple">Analytics</span>
-              </h1>
-
-              <h2 className="mt-3 text-[18px] font-bold tracking-[-0.5px] sm:text-[20px]">
-                Turn data into growth with AI.
-              </h2>
-
-              <p className="mt-2 max-w-[510px] text-[15px] leading-[1.5] text-brand-text">
-                Let AI analyze your marketing data, uncover insights, and predict what works — so
-                you can make smarter decisions, optimize your campaigns, and achieve higher ROI with less effort.
-              </p>
-
-              <div className="mt-3 flex flex-wrap gap-4">
-                <a href="#contact" className={`${button} bg-brand-purple text-white hover:bg-[#4820cc]`}>
-                  Book a Free Consultation <span>→</span>
-                </a>
-                <a
-                  href="#how-it-works"
-                  className={`${button} border border-[#7774af] bg-white/50 text-brand-dark hover:bg-white`}
-                >
-                  <span className="grid size-5 place-items-center rounded-full bg-violet-100 text-[9px] text-brand-purple">
-                    ▶
-                  </span>
-                  See It in Action
-                </a>
-              </div>
-
-              <div className="mt-6 grid max-w-[530px] grid-cols-3 gap-3">
-                {[
-                  ["chart", "3x", "Faster Insights", "bg-emerald-100 text-emerald-500"],
-                  ["clock", "70%", "Less Time on Reporting", "bg-violet-100 text-brand-purple"],
-                  ["growth", "5x", "Higher ROI", "bg-orange-100 text-orange-500"],
-                ].map(([icon, value, label, tone], index) => (
-                  <div
-                    key={label}
-                    className={`flex flex-col items-center gap-2 text-center sm:flex-row sm:text-left ${
-                      index > 0 ? "border-l border-indigo-100 pl-3" : ""
-                    }`}
-                  >
-                    <Bubble icon={icon as IconName} tone={tone} small />
-                    <div>
-                      <p className="text-[25px] leading-none font-bold text-brand-purple">{value}</p>
-                      <p className="mt-1 text-[10px] text-brand-text-muted">{label}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="relative mx-auto h-[435px] w-full max-w-[610px] lg:h-auto">
-              <div className="absolute top-[45px] left-1/2 size-[365px] -translate-x-1/2 rounded-full border-[20px] border-white/15 bg-[#b7afff]/15" />
-              <div className="absolute top-[86px] left-1/2 size-[278px] -translate-x-1/2 rounded-full border-[18px] border-white/20" />
-
-              <img
-                src={images.analyst}
-                alt="Marketing data analyst"
-                className="absolute bottom-0 left-[25%] z-10 h-[82%] w-[47%] rounded-t-[100px] object-cover object-top shadow-[0_15px_45px_rgba(48,42,185,.15)]"
-              />
-
-              <div className="absolute top-7 left-2 z-20 grid gap-2">
-                <div className="w-[164px] rounded-xl bg-white/90 p-3 shadow-[0_5px_20px_rgba(51,42,157,.1)]">
-                  <p className="text-[10px] font-bold">Marketing Overview</p>
-                  <p className="mt-1 text-[19px] font-bold text-emerald-500">↑ 256%</p>
-                  <p className="text-[9px] text-brand-text-muted">Growth in Leads</p>
-                  <svg viewBox="0 0 140 52" className="mt-2 h-10 w-full">
-                    <path
-                      d="M5 42 30 32 56 35 78 30 101 10 123 17 138 3"
-                      fill="none"
-                      stroke="#3124ff"
-                      strokeWidth="2"
-                    />
-                    {[5, 30, 56, 78, 101, 123, 138].map((x, i) => (
-                      <circle key={x} cx={x} cy={[42, 32, 35, 30, 10, 17, 3][i]} r="2.6" fill="#3124ff" />
-                    ))}
-                  </svg>
-                </div>
-
-                {[
-                  ["brain", "Campaign Insights"],
-                  ["users", "Audience Analysis"],
-                  ["target", "Predictive Analytics"],
-                  ["chart", "ROI Tracking"],
-                ].map(([icon, text]) => (
-                  <div
-                    key={text}
-                    className="flex w-[164px] items-center gap-3 rounded-lg bg-white/90 px-3 py-2 shadow-[0_5px_20px_rgba(51,42,157,.1)]"
-                  >
-                    <Icon name={icon as IconName} className="size-6 text-brand-purple" />
-                    <span className="text-[9px] font-bold">{text}</span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="absolute top-4 right-3 z-20 w-[178px] space-y-2">
-                <div className="rounded-[14px] bg-white/90 p-3 shadow-[0_5px_20px_rgba(51,42,157,.1)]">
-                  <p className="mb-2 text-[10px] font-bold">Channel Performance</p>
-                  {[
-                    ["Google Ads", "89%", "from-blue-500 to-indigo-400", "w-[89%]"],
-                    ["Social Media", "72%", "from-sky-500 to-blue-300", "w-[72%]"],
-                    ["Email", "68%", "from-emerald-500 to-emerald-200", "w-[68%]"],
-                    ["SEO", "62%", "from-yellow-400 to-amber-200", "w-[62%]"],
-                    ["Paid Social", "58%", "from-rose-500 to-pink-300", "w-[58%]"],
-                  ].map(([label, value, gradient, width]) => (
-                    <div key={label} className="mt-1.5">
-                      <div className="mb-1 flex justify-between text-[8px]">
-                        <span>{label}</span>
-                        <span>{value}</span>
-                      </div>
-                      <div className="h-2 overflow-hidden rounded-full bg-[#eef0ff]">
-                        <div className={`h-full rounded-full bg-gradient-to-r ${gradient} ${width}`} />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="rounded-[14px] bg-white/90 p-3 shadow-[0_5px_20px_rgba(51,42,157,.1)]">
-                  <p className="mb-2 text-[10px] font-bold">AI Recommendations</p>
-                  {[
-                    "Increase ad spend on top performing channels",
-                    "Target high-converting audiences",
-                    "Optimize content for better engagement",
-                  ].map((item) => (
-                    <p key={item} className="mt-2 flex gap-2 text-[9px] leading-[1.3] text-brand-text">
-                      <span className="grid size-4 shrink-0 place-items-center rounded-full bg-emerald-100 text-[10px] font-bold text-emerald-500">
-                        ✓
-                      </span>
-                      {item}
-                    </p>
-                  ))}
-                </div>
-              </div>
-
-              <div className="absolute bottom-8 left-[39%] z-20 w-[130px] rounded-xl bg-white/90 p-3 shadow-[0_5px_20px_rgba(51,42,157,.12)]">
-                <div className="flex items-center gap-2">
-                  <span className="grid size-9 place-items-center rounded-full bg-sky-100 text-xl">🤖</span>
-                  <p className="text-[10px] font-bold">
-                    Your AI
-                    <br />
-                    Marketing Analyst
-                  </p>
-                </div>
-                <p className="mt-2 text-[9px] leading-[1.3] text-brand-text">
-                  Find Insights
-                  <br />
-                  Predict Trends
-                  <br />
-                  Drive Growth
-                </p>
-              </div>
-
-              <div className="absolute right-5 bottom-4 z-20 rotate-[-13deg] font-hand text-[19px] leading-tight text-brand-purple">
-                Smarter
-                <br />
-                Data
-                <br />
-                Bigger
-                <br />
-                Results
-              </div>
-            </div>
-          </div>
-        </section>
+     <DigitalMarketingHero
+  eyebrow="DATA-DRIVEN GROWTH. SMARTER DECISIONS."
+  title="AI Marketing"
+  highlightedTitle="Analytics"
+  subtitle="Turn data into growth with AI."
+  description="Let AI analyze your marketing data, uncover insights, and predict what works — so you can make smarter decisions, optimize your campaigns, and achieve higher ROI with less effort."
+  imageSrc="/digital-marketing-hero-right-img.png"
+  imageAlt="Marketing data analyst using AI-powered marketing analytics"
+  primaryLabel="Book a Free Consultation"
+  primaryHref="#contact"
+  secondaryLabel="See It in Action"
+  secondaryHref="#how-it-works"
+  metrics={[
+    {
+      value: "3x",
+      label: "Faster Insights",
+      icon: "chart",
+      tone: "green",
+    },
+    {
+      value: "70%",
+      label: "Less Time on Reporting",
+      icon: "clock",
+      tone: "purple",
+    },
+    {
+      value: "5x",
+      label: "Higher ROI",
+      icon: "growth",
+      tone: "orange",
+    },
+  ]}
+/>
 
         <section className="mx-auto max-w-[1240px] px-5 pt-5">
           <p className="text-center text-[9px] font-bold tracking-[0.28em] text-brand-purple">

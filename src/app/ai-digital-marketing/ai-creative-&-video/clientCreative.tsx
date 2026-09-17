@@ -1,5 +1,6 @@
 "use client";
 
+import DigitalMarketingHero from "@/components/digital-marketing-hero/reusable-hero";
 import { useState } from "react";
 
 type IconName =
@@ -263,158 +264,39 @@ export default function AICreativeVideoPage() {
     
 
       <main>
-        <section
-          id="home"
-          className="relative isolate overflow-hidden rounded-b-[20px] bg-[linear-gradient(112deg,#fafbff_0%,#f5f7ff_48%,#f0efff_100%)]"
-        >
-          <div className="absolute top-[-130px] right-[-75px] -z-10 size-[690px] rounded-full bg-[radial-gradient(circle,#b5acff95_0%,#d9dcff40_42%,transparent_70%)]" />
-
-          <div className="relative mx-auto grid min-h-[430px] max-w-[1220px] lg:grid-cols-[1.02fr_1fr]">
-            <div className="z-10 px-6 pt-8 pb-6 lg:pl-6">
-              <p className="text-[10px] font-bold tracking-[0.28em] text-brand-purple">
-                IDEAS THAT MOVE PEOPLE
-              </p>
-
-              <h1 className="mt-2 text-[49px] leading-[0.92] font-bold tracking-[-2px] sm:text-[61px] lg:text-[63px]">
-                AI <span className="text-brand-purple">Creative &</span>
-                <br />
-                Video
-              </h1>
-
-              <h2 className="mt-3 text-[18px] font-bold tracking-[-0.5px] sm:text-[20px]">
-                Stunning content. Smarter production. Bigger impact.
-              </h2>
-
-              <p className="mt-2 max-w-[510px] text-[15px] leading-[1.5] text-brand-text">
-                Let AI bring your ideas to life. From eye-catching graphics to scroll-stopping
-                videos, we create high-quality, on-brand creatives that engage your audience,
-                boost your campaigns, and drive real business results — faster and at lower costs.
-              </p>
-
-              <div className="mt-3 flex flex-wrap gap-4">
-                <a href="#contact" className={`${button} bg-brand-purple text-white hover:bg-[#4820cc]`}>
-                  Book a Free Consultation <span>→</span>
-                </a>
-                <a
-                  href="#how-it-works"
-                  className={`${button} border border-[#7774af] bg-white/50 text-brand-dark hover:bg-white`}
-                >
-                  <span className="grid size-5 place-items-center rounded-full bg-violet-100 text-[9px] text-brand-purple">
-                    ▶
-                  </span>
-                  See It in Action
-                </a>
-              </div>
-
-              <div className="mt-6 grid max-w-[530px] grid-cols-3 gap-3">
-                {[
-                  ["growth", "3x", "Faster Production"],
-                  ["calendar", "70%", "Lower Creative Costs"],
-                  ["chart", "5x", "Higher Engagement"],
-                ].map(([icon, value, label], index) => (
-                  <div
-                    key={label}
-                    className={`flex flex-col items-center gap-2 text-center sm:flex-row sm:text-left ${
-                      index > 0 ? "border-l border-indigo-100 pl-3" : ""
-                    }`}
-                  >
-                    <IconBubble icon={icon as IconName} small />
-                    <div>
-                      <p className="text-[25px] leading-none font-bold text-brand-purple">{value}</p>
-                      <p className="mt-1 text-[10px] text-brand-text-muted">{label}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="relative mx-auto h-[425px] w-full max-w-[610px] lg:h-auto">
-              <div className="absolute top-[45px] left-1/2 size-[365px] -translate-x-1/2 rounded-full border-[20px] border-white/15 bg-[#b7afff]/15" />
-              <div className="absolute top-[86px] left-1/2 size-[278px] -translate-x-1/2 rounded-full border-[18px] border-white/20" />
-
-              <img
-                src={assets.woman}
-                alt="AI creative strategist"
-                className="absolute bottom-0 left-[25%] z-10 h-[82%] w-[47%] rounded-t-[100px] object-cover object-top shadow-[0_15px_45px_rgba(48,42,185,.15)]"
-              />
-
-              <div className="absolute top-8 left-2 z-20 grid gap-2">
-                {[
-                  ["image", "AI Image Generation"],
-                  ["play", "AI Video Creation"],
-                  ["megaphone", "AI Ad Creatives"],
-                  ["palette", "Brand Consistency"],
-                  ["instagram", "Social Media Content"],
-                ].map(([icon, text], index) => (
-                  <div
-                    key={text}
-                    className={`flex items-center gap-3 rounded-xl bg-white/90 px-3 py-2.5 shadow-[0_5px_20px_rgba(51,42,157,.1)] ${
-                      index < 2 ? "w-[170px]" : "w-[185px]"
-                    }`}
-                  >
-                    <span
-                      className={`grid size-8 place-items-center rounded-md ${
-                        icon === "play"
-                          ? "bg-rose-500 text-white"
-                          : icon === "instagram"
-                            ? "bg-gradient-to-br from-orange-400 via-rose-500 to-violet-600 text-white"
-                            : "text-brand-purple"
-                      }`}
-                    >
-                      <Icon name={icon as IconName} className="size-5" />
-                    </span>
-                    <span className="text-[10px] font-bold">{text}</span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="absolute top-5 right-3 z-20 w-[180px] space-y-2">
-                <div className="rounded-[14px] bg-white/90 p-2 shadow-[0_5px_20px_rgba(51,42,157,.1)]">
-                  <div className="mb-2 flex items-center gap-2 text-[10px] font-bold">
-                    <span className="text-[23px] text-brand-purple">✦</span>
-                    AI-Powered
-                    <br />
-                    Video Creation
-                  </div>
-                  <div className="relative h-[117px] overflow-hidden rounded-lg bg-[linear-gradient(135deg,#0b0b45,#5629ff,#c3c4ff)]">
-                    <p className="absolute top-3 left-3 z-10 text-[13px] leading-[0.9] font-bold text-white">
-                      Turn Ideas
-                      <br />
-                      Into Impact
-                    </p>
-                    <span className="absolute bottom-3 left-1/2 grid size-10 -translate-x-1/2 place-items-center rounded-full border-2 border-white text-white">
-                      ▶
-                    </span>
-                    <span className="absolute bottom-1 left-3 right-3 h-1 rounded-full bg-white/35">
-                      <span className="block h-full w-1/2 rounded-full bg-white" />
-                    </span>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-2 rounded-[14px] bg-white/90 p-2 shadow-[0_5px_20px_rgba(51,42,157,.1)]">
-                  <img src={assets.woman} alt="" className="size-[60px] rounded-lg object-cover object-top" />
-                  <p className="text-[10px] leading-tight font-bold">
-                    Engaging
-                    <br />
-                    Creatives
-                    <br />
-                    Higher Sales
-                  </p>
-                </div>
-              </div>
-
-              <div className="absolute right-5 bottom-5 z-20 rotate-[-13deg] font-hand text-[19px] leading-tight text-brand-purple">
-                Better
-                <br />
-                Creatives
-                <br />
-                Bigger
-                <br />
-                Results
-              </div>
-            </div>
-          </div>
-        </section>
+      <DigitalMarketingHero
+  eyebrow="IDEAS THAT MOVE PEOPLE"
+  title="AI"
+  highlightedTitle="Creative & Video"
+  subtitle="Stunning content. Smarter production. Bigger impact."
+  description="Let AI bring your ideas to life. From eye-catching graphics to scroll-stopping videos, we create high-quality, on-brand creatives that engage your audience, boost your campaigns, and drive real business results — faster and at lower costs."
+  imageSrc="/digital-marketing-hero-right-img.png"
+  imageAlt="AI creative strategist working on creative and video production"
+  primaryLabel="Book a Free Consultation"
+  primaryHref="#contact"
+  secondaryLabel="See It in Action"
+  secondaryHref="#how-it-works"
+  metrics={[
+    {
+      value: "3x",
+      label: "Faster Production",
+      icon: "growth",
+      tone: "purple",
+    },
+    {
+      value: "70%",
+      label: "Lower Creative Costs",
+      icon: "calendar",
+      tone: "green",
+    },
+    {
+      value: "5x",
+      label: "Higher Engagement",
+      icon: "chart",
+      tone: "orange",
+    },
+  ]}
+/>
 
         <section className="mx-auto max-w-[1240px] px-5 pt-5">
           <p className="text-center text-[9px] font-bold tracking-[0.28em] text-brand-purple">

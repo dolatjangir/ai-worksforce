@@ -23,6 +23,7 @@ import {
   Menu,
   X,
 } from "lucide-react";
+import AIWorkflowHero from "@/components/ai-workflow-hero/reusable-hero";
 
 /* ============================================
    DATA
@@ -146,95 +147,19 @@ export default function AIWorkforcePage() {
      
 
       {/* ================= HERO ================= */}
-      <section className="relative overflow-hidden">
-        {/* Soft background blobs */}
-        <div className="pointer-events-none absolute -left-32 top-20 h-96 w-96 rounded-full bg-brand-purple-soft blur-3xl" />
-        <div className="pointer-events-none absolute -right-32 bottom-0 h-96 w-96 rounded-full bg-blue-50 blur-3xl" />
-
-        <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 pb-20 pt-14 sm:px-6 lg:grid-cols-2 lg:gap-8 lg:px-8 lg:pb-24 lg:pt-20">
-          {/* Left — Copy */}
-          <div className="max-w-xl">
-            <span className="mb-5 inline-block text-xs font-semibold uppercase tracking-[0.25em] text-slate-400">
-              The Future of Work
-            </span>
-            <h1 className="text-4xl font-extrabold leading-[1.1] tracking-tight text-brand-dark sm:text-5xl lg:text-[3.4rem]">
-              What is an{" "}
-              <span className="bg-gradient-to-r from-brand-purple to-brand-purple-light bg-clip-text text-transparent">
-                AI Workforce?
-              </span>
-            </h1>
-            <p className="mt-6 text-base leading-relaxed text-slate-500 sm:text-lg">
-              An AI workforce is a team of intelligent AI agents that work
-              alongside your human team to automate tasks, handle operations,
-              interact with customers, and drive growth — 24/7.
-            </p>
-            <div className="mt-8 flex flex-wrap items-center gap-4">
-              <Link
-                href="#how-it-works"
-                className="inline-flex items-center gap-2 rounded-full bg-brand-blue px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand-blue/25 transition-all hover:bg-brand-blue-dark hover:shadow-xl"
-              >
-                See How It Works
-                <ArrowRight size={16} />
-              </Link>
-              <Link
-                href="#consultation"
-                className="inline-flex items-center rounded-full border border-slate-200 bg-white px-7 py-3.5 text-sm font-semibold text-brand-dark shadow-sm transition-all hover:border-brand-blue hover:text-brand-blue"
-              >
-                Talk to an Expert
-              </Link>
-            </div>
-          </div>
-
-          {/* Right — Visual */}
-          <div className="relative mx-auto w-full max-w-md lg:max-w-none">
-            {/* Center person */}
-            <div className="relative z-10 mx-auto w-[78%] overflow-hidden rounded-[2rem]">
-              <img
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=900&auto=format&fit=crop"
-                alt="Professional working with her AI workforce"
-                className="h-full w-full object-cover"
-              />
-              {/* Purple tint overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-purple/20 via-transparent to-transparent" />
-            </div>
-
-            {/* Floating agent chips */}
-            {AGENT_CHIPS.map((chip) => (
-              <div
-                key={chip.label}
-                className={`absolute ${chip.position} z-20 animate-float rounded-2xl border border-slate-100 bg-white/95 px-3 py-2.5 shadow-lg shadow-slate-200/60 backdrop-blur-sm`}
-                style={{ animationDelay: chip.delay }}
-              >
-                <div className="flex items-center gap-2">
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-brand-blue">
-                    <chip.icon size={15} />
-                  </span>
-                  <span className="whitespace-pre-line text-[10px] font-semibold leading-tight text-brand-dark">
-                    {chip.label}
-                  </span>
-                </div>
-              </div>
-            ))}
-
-            {/* Bottom badge card */}
-            <div className="absolute -bottom-4 left-1/2 z-30 w-[78%] -translate-x-1/2 rounded-2xl border border-slate-100 bg-white p-4 shadow-xl shadow-slate-200/70 sm:-bottom-6">
-              <div className="flex items-center gap-3">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-purple-soft text-brand-purple">
-                  <Sparkles size={18} />
-                </span>
-                <div>
-                  <p className="text-sm font-bold text-brand-dark">
-                    Your Always-On AI Team
-                  </p>
-                  <p className="text-xs text-slate-400">
-                    Smarter. Faster. Scalable.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+    <AIWorkflowHero
+  eyebrow="THE FUTURE OF WORK"
+  title="What is an"
+  highlightedTitle="AI Workforce?"
+  subtitle=""
+  description="An AI workforce is a team of intelligent AI agents that work alongside your human team to automate tasks, handle operations, interact with customers, and drive growth — 24/7."
+  imageSrc="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=900&auto=format&fit=crop"
+  imageAlt="Professional working with her AI workforce"
+  primaryLabel="See How It Works"
+  primaryHref="#how-it-works"
+  secondaryLabel="Talk to an Expert"
+  secondaryHref="#consultation"
+/>
 
       {/* ================= WORKFORCE FEATURES ================= */}
       <section className="bg-white py-20 lg:py-24">
@@ -330,8 +255,7 @@ export default function AIWorkforcePage() {
               Intelligence in Action
             </h2>
             <p className="mt-4 text-base leading-relaxed text-slate-500">
-              Your AI workforce understands your business, uses your data,
-              follows your processes, and takes action — just like a real team.
+            AWFI Engine™ helps your AI workforce understand your business, use your data, follow your processes and take action—just like a real team.
             </p>
 
             <div className="mt-10 space-y-7">

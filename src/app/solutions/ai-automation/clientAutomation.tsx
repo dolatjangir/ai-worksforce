@@ -466,7 +466,7 @@ export default function AIAutomationPage() {
                 icon: <SettingsIcon size={24} />,
                 circle: "bg-brand-purple-light shadow-brand-purple-light/40",
                 title: "Design & Build",
-                desc: "Our experts create tailored AI automation workflows.",
+                desc: "AWFI Engine™ designs the right automation workflows for your business.",
               },
               {
                 num: "3",

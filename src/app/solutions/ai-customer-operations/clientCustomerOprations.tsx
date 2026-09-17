@@ -343,7 +343,7 @@ export default function AICustomerOperationsPage() {
       number: "2",
       icon: "settings" as IconName,
       title: "Build & Customize",
-      desc: "We set up AI agents, workflows, and integrations tailored to your business.",
+      desc: "AWFI Engine™ builds the right AI agents and workflows for your customer operations.",
       bg: "bg-violet-500",
     },
     {
@@ -420,7 +420,7 @@ export default function AICustomerOperationsPage() {
   title="Happier Customers."
   highlightedTitle="Smarter Operations."
   description="Deliver exceptional customer experiences with AI-powered customer operations. Automate repetitive tasks, resolve queries faster, and empower your teams to focus on what truly matters — your customers."
-  imageSrc="/solutions/ai-automation.png"
+  imageSrc="/solutions/ai-customer-operation-hero.png"
   imageAlt="AI Customer Operations workspace and customer support"
   assessmentLabel="Get a Free Consultation"
   assessmentHref="#contact"
@@ -464,7 +464,7 @@ export default function AICustomerOperationsPage() {
           FEATURES
       ======================================================== */}
 
-      <section className="bg-white py-16 lg:py-20">
+      <section className="bg-white py-10">
         <div className="mx-auto max-w-[1400px] px-5 lg:px-8">
           <Reveal className="mx-auto max-w-2xl text-center">
             <p className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-[#0876ed]">
@@ -509,7 +509,7 @@ export default function AICustomerOperationsPage() {
           WHY IT MATTERS
       ======================================================== */}
 
-      <section className="bg-slate-50/70 py-16 lg:py-20">
+      <section className="bg-slate-50/70 py-10">
         <div className="mx-auto grid max-w-[1400px] items-center gap-10 px-5 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14 lg:px-8">
           {/* DARK PANEL */}
 
@@ -520,49 +520,10 @@ export default function AICustomerOperationsPage() {
               <div className="relative min-h-[340px]">
                 {/* center */}
 
-                <div className="absolute left-1/2 top-1/2 z-20 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center">
-                  <div className="relative flex h-[108px] w-[108px] items-center justify-center rounded-full border-2 border-cyan-300/50 bg-[#0876ed]/20 shadow-[0_0_55px_rgba(14,165,233,.45)]">
-                    <div className="flex h-[64px] w-[78px] items-center justify-center rounded-[35%] border-2 border-cyan-200/50 bg-gradient-to-b from-[#163967] to-[#071a38]">
-                      <div className="relative h-7 w-12">
-                        <span className="absolute left-1 top-2 h-2.5 w-2.5 rounded-full bg-cyan-300 shadow-[0_0_10px_rgba(103,232,249,.9)]" />
-                        <span className="absolute right-1 top-2 h-2.5 w-2.5 rounded-full bg-cyan-300 shadow-[0_0_10px_rgba(103,232,249,.9)]" />
-                        <span className="absolute bottom-0 left-1/2 h-1.5 w-7 -translate-x-1/2 rounded-full bg-cyan-200/60" />
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="mt-3 text-center text-[11px] font-bold text-white">
-                    Always On
-                    <br />
-                    <span className="text-slate-300">
-                      for Your Customers
-                    </span>
-                  </div>
-                </div>
-
+               <img src="/solutions/ai-customer-operation-middle.png" alt="AI Customer Operations" className="absolute left-1/2 top-1/2 z-20 -translate-x-1/2 -translate-y-1/2" />
                 {/* orbit items */}
 
-                {[
-                  ["chat", "Live Chat", "left-0 top-5"],
-                  ["mail", "Email Support", "right-0 top-5"],
-                  ["headset", "Voice Support", "left-0 bottom-14"],
-                  ["whatsapp", "WhatsApp", "left-[18%] bottom-0"],
-                  ["help", "Helpdesk & Ticketing", "right-[7%] bottom-1"],
-                  ["grid", "Social Media", "right-0 bottom-20"],
-                ].map(([icon, label, position]) => (
-                  <div
-                    key={label}
-                    className={`absolute ${position} flex flex-col items-center gap-1.5`}
-                  >
-                    <span className="flex h-11 w-11 items-center justify-center rounded-full border border-cyan-300/20 bg-[#0876ed]/25 text-cyan-200 shadow-[0_0_25px_rgba(8,118,237,.25)]">
-                      <Icon name={icon as IconName} size={19} />
-                    </span>
-
-                    <span className="rounded-md bg-black/20 px-2 py-1 text-[8px] font-bold text-white">
-                      {label}
-                    </span>
-                  </div>
-                ))}
+                
               </div>
             </div>
           </Reveal>
@@ -623,7 +584,7 @@ export default function AICustomerOperationsPage() {
 
       <section
         id="how-it-works"
-        className="py-16 lg:py-20"
+        className="py-10"
         style={{
           background:
             "linear-gradient(180deg,#f6fbff 0%,#ffffff 100%)",
@@ -696,7 +657,7 @@ export default function AICustomerOperationsPage() {
           TESTIMONIAL
       ======================================================== */}
 
-      <section className="bg-slate-50/70 py-16 lg:py-20">
+      <section className="bg-slate-50/70 py-10">
         <div className="mx-auto grid max-w-[1400px] items-center gap-10 px-5 lg:grid-cols-[0.95fr_1.2fr] lg:gap-16 lg:px-8">
           <Reveal>
             <p className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-[#0876ed]">
@@ -784,7 +745,7 @@ export default function AICustomerOperationsPage() {
 
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.025)_1px,transparent_1px)] [background-size:44px_44px]" />
 
-        <div className="relative mx-auto grid max-w-[1400px] items-center gap-12 px-5 py-16 lg:grid-cols-2 lg:px-8 lg:py-20">
+        <div className="relative mx-auto grid max-w-[1400px] items-center gap-12 px-5  lg:grid-cols-2 lg:px-8 ">
           <Reveal>
             <p className="text-[10px] font-extrabold uppercase tracking-[0.22em] text-cyan-300">
               Ready to Elevate Your Customer Support?
@@ -794,12 +755,12 @@ export default function AICustomerOperationsPage() {
               Let&apos;s Build Smarter Customer Operations Together.
             </h2>
 
-            <p className="mt-5 max-w-[480px] text-[14px] leading-relaxed text-slate-300 sm:text-[15px]">
+            <p className="mt-4 max-w-[480px] text-[14px] leading-relaxed text-slate-300 sm:text-[15px]">
               Get a free consultation and see how AI can help you deliver
               exceptional customer experiences while reducing costs.
             </p>
 
-            <div className="mt-8 flex flex-wrap items-center gap-6">
+            <div className="mt-4 flex flex-wrap items-center gap-6">
               <a
                 href="#"
                 className="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3.5 text-[13px] font-extrabold text-[#06235a] shadow-xl transition hover:-translate-y-0.5"
@@ -817,86 +778,9 @@ export default function AICustomerOperationsPage() {
             </div>
           </Reveal>
 
-          {/* CTA GRAPHIC */}
+          {/* CTA GRAPHIC img */}
 
-          <Reveal delay={120}>
-            <div className="relative h-[340px] overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#0b2a58] via-[#06235a] to-[#020b1d] shadow-2xl shadow-black/40 sm:h-[380px]">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(8,118,237,.3),transparent_55%)]" />
-
-              {/* chips */}
-
-              <div className="absolute left-5 top-5 flex flex-col gap-2.5">
-                {[
-                  ["headset", "Faster Support"],
-                  ["bot", "Happier Customers"],
-                  ["settings", "Lower Costs"],
-                  ["chart", "Scalable Growth"],
-                ].map(([icon, label]) => (
-                  <div
-                    key={label}
-                    className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/10 px-3 py-2 backdrop-blur-md"
-                  >
-                    <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-[#0876ed] text-white">
-                      <Icon name={icon as IconName} size={12} />
-                    </span>
-
-                    <span className="text-[9.5px] font-bold text-white">
-                      {label}
-                    </span>
-                  </div>
-                ))}
-              </div>
-
-              {/* bars */}
-
-              <div className="absolute bottom-0 left-[31%] flex items-end gap-3 sm:gap-5">
-                {[60, 90, 125, 165, 215].map((height, index) => (
-                  <span
-                    key={index}
-                    className="w-7 rounded-t-lg bg-gradient-to-t from-[#0876ed] via-cyan-400 to-cyan-200 shadow-[0_0_30px_rgba(14,165,233,.4)] sm:w-10"
-                    style={{ height }}
-                  />
-                ))}
-              </div>
-
-              {/* growth arrow */}
-
-              <svg
-                className="absolute bottom-[43%] left-[27%] w-[58%] text-cyan-300"
-                viewBox="0 0 220 90"
-                fill="none"
-              >
-                <path
-                  d="M4 84C60 78 140 50 206 10"
-                  stroke="currentColor"
-                  strokeWidth="4"
-                  strokeLinecap="round"
-                />
-
-                <path
-                  d="M192 6 210 6 208 24"
-                  stroke="currentColor"
-                  strokeWidth="4"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-
-              {/* handwritten-style heading */}
-
-              <div className="absolute right-5 top-7 rotate-[3deg] text-right">
-                <p className="font-serif text-[27px] font-semibold italic leading-[1.05] text-white/90 sm:text-[33px]">
-                  Better
-                  <br />
-                  Conversations
-                  <br />
-                  <span className="text-cyan-300">
-                    Bigger Loyalty
-                  </span>
-                </p>
-              </div>
-            </div>
-          </Reveal>
+         <img src="/solutions/ai-customer-operation-bottom-cta.png" alt="CTA Graphic" className="w-full max-w-[500px] rounded-xl " />
         </div>
       </section>
     </main>

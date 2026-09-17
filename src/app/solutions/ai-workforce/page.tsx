@@ -105,7 +105,7 @@ const steps = [
     icon: Users,
     color: "bg-purple-500",
     title: "Design Your Workforce",
-    description: "We build a tailored team of AI agents and experts.",
+    description: "AWFI Engine™ builds the right AI and human workforce for your business.",
   },
   {
     icon: Settings,

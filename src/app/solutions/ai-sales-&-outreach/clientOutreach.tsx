@@ -286,7 +286,7 @@ export default function AISalesOutreachPage() {
   title="Reach More Prospects."
   highlightedTitle="Close More Opportunities."
   description="Supercharge your sales with AI-powered outreach. Find the right prospects, engage them with personalized communication, and convert leads into revenue — faster and at scale."
-  imageSrc="/solutions/ai-automation.png"
+  imageSrc="/solutions/ai-sales-outreach-hero.png"
   imageAlt="AI Sales and Outreach workspace"
   assessmentLabel="Get a Free Outreach Assessment"
   assessmentHref="#get-started"
@@ -333,7 +333,7 @@ export default function AISalesOutreachPage() {
       {/* ==========================================================
           WHY AI SALES & OUTREACH
       ========================================================== */}
-      <section className="bg-white py-20 lg:py-24">
+      <section className="bg-white py-10">
         <div className="mx-auto max-w-[1400px] px-5 lg:px-8">
           <Reveal className="mx-auto max-w-2xl text-center">
             <p className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-brand-blue">
@@ -398,7 +398,7 @@ export default function AISalesOutreachPage() {
       {/* ==========================================================
           AI SALES ENGINE — split section
       ========================================================== */}
-      <section className="bg-slate-50/60 py-20 lg:py-24">
+      <section className="bg-slate-50/60 py-10">
         <div className="mx-auto grid max-w-[1400px] items-center gap-12 px-5 lg:grid-cols-2 lg:gap-16 lg:px-8">
           {/* Left: dark AI engine panel */}
           <Reveal>
@@ -406,64 +406,9 @@ export default function AISalesOutreachPage() {
               <div className="absolute inset-0 opacity-30 [background-image:radial-gradient(circle_at_50%_45%,#0876ed_0,transparent_55%)]" />
               <div className="absolute inset-0 [background-image:linear-gradient(#ffffff06_1px,transparent_1px),linear-gradient(90deg,#ffffff06_1px,transparent_1px)] [background-size:32px_32px]" />
 
-              <div className="relative grid grid-cols-2 gap-x-6 gap-y-14">
-                {/* center AI core */}
-                <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-                  <span className="absolute -inset-12 rounded-full bg-brand-blue/25 blur-2xl" />
-                  <span className="relative flex h-24 w-24 items-center justify-center rounded-full border-2 border-brand-sky/60 bg-brand-blue/20 text-[26px] font-extrabold tracking-wide text-white shadow-[0_0_50px_rgba(14,165,233,0.5)] backdrop-blur-sm">
-                    AI
-                  </span>
-                  <span className="absolute -inset-3 animate-ping rounded-full border border-brand-sky/30" />
-                </div>
+              <img src="/solutions/ai-sales-outreach-middle.png" alt="AI Sales Engine" className="relative z-10" />
 
-                {/* corner boxes */}
-                <div className="relative z-10 flex flex-col items-center gap-2 rounded-2xl border border-white/10 bg-white/5 p-4 text-center backdrop-blur-sm">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-blue text-white">
-                    <SearchIcon size={18} />
-                  </span>
-                  <span className="text-[12.5px] font-bold leading-snug text-white">
-                    Find
-                    <br />
-                    Prospects
-                  </span>
-                </div>
-                <div className="relative z-10 flex flex-col items-center gap-2 rounded-2xl border border-white/10 bg-white/5 p-4 text-center backdrop-blur-sm">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-sky text-white">
-                    <MailIcon size={18} />
-                  </span>
-                  <span className="text-[12.5px] font-bold leading-snug text-white">
-                    Engage
-                    <br />
-                    Multi-Channel
-                  </span>
-                </div>
-                <div className="relative z-10 flex flex-col items-center gap-2 rounded-2xl border border-white/10 bg-white/5 p-4 text-center backdrop-blur-sm">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-blue text-white">
-                    <UsersIcon size={18} />
-                  </span>
-                  <span className="text-[12.5px] font-bold leading-snug text-white">
-                    Nurture
-                    <br />
-                    Relationships
-                  </span>
-                </div>
-                <div className="relative z-10 flex flex-col items-center gap-2 rounded-2xl border border-white/10 bg-white/5 p-4 text-center backdrop-blur-sm">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-green-light text-white">
-                    <TrendingUpIcon size={18} />
-                  </span>
-                  <span className="text-[12.5px] font-bold leading-snug text-white">
-                    Close
-                    <br />
-                    More Deals
-                  </span>
-                </div>
-              </div>
-
-              <p className="relative mt-10 text-center text-[13px] font-bold tracking-wide text-slate-300">
-                From First Contact
-                <span className="mx-2 text-brand-sky">→</span>
-                to Closed Deal
-              </p>
+             
             </div>
           </Reveal>
 
@@ -517,7 +462,7 @@ export default function AISalesOutreachPage() {
       ========================================================== */}
       <section
         id="how-it-works"
-        className="py-20 lg:py-24"
+        className="py-10"
         style={{ backgroundImage: "var(--gradient-section)" }}
       >
         <div className="mx-auto max-w-[1400px] px-5 lg:px-8">
@@ -547,7 +492,7 @@ export default function AISalesOutreachPage() {
                 icon: <SendIcon size={22} />,
                 circle: "bg-brand-purple-light shadow-brand-purple-light/40",
                 title: "Launch AI Outreach",
-                desc: "Our AI agents send personalized, multi-channel campaigns.",
+                desc: "AWFI Engine™ identifies your ideal prospects and outreach strategy.",
               },
               {
                 num: "3",
@@ -597,7 +542,7 @@ export default function AISalesOutreachPage() {
       {/* ==========================================================
           USE CASES / INDUSTRIES
       ========================================================== */}
-      <section className="bg-white py-20 lg:py-24">
+      <section className="bg-white py-10">
         <div className="mx-auto max-w-[1400px] px-5 lg:px-8">
           <Reveal className="mx-auto max-w-2xl text-center">
             <p className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-brand-blue">
@@ -692,7 +637,7 @@ export default function AISalesOutreachPage() {
       {/* ==========================================================
           CLIENT SUCCESS / TESTIMONIAL
       ========================================================== */}
-      <section className="bg-slate-50/60 py-20 lg:py-24">
+      <section className="bg-slate-50/60 py-10">
         <div className="mx-auto grid max-w-[1400px] items-center gap-12 px-5 lg:grid-cols-[1fr_1.2fr] lg:gap-16 lg:px-8">
           {/* Left copy + arrows */}
           <Reveal>
@@ -762,25 +707,25 @@ export default function AISalesOutreachPage() {
       {/* ==========================================================
           DARK CTA
       ========================================================== */}
-      <section id="get-started" className="relative overflow-hidden bg-brand-navy">
+      <section id="get-started" className="relative overflow-hidden bg-brand-navy my-2">
         <div className="pointer-events-none absolute -left-32 top-0 h-[420px] w-[420px] rounded-full bg-brand-blue/25 blur-[120px]" />
         <div className="pointer-events-none absolute -right-24 bottom-0 h-[380px] w-[380px] rounded-full bg-brand-purple/25 blur-[120px]" />
         <div className="pointer-events-none absolute inset-0 opacity-20 [background-image:linear-gradient(#ffffff08_1px,transparent_1px),linear-gradient(90deg,#ffffff08_1px,transparent_1px)] [background-size:44px_44px]" />
 
-        <div className="relative mx-auto grid max-w-[1400px] items-center gap-14 px-5 py-20 lg:grid-cols-2 lg:px-8 lg:py-24">
+        <div className="relative mx-auto grid max-w-[1400px] items-center gap-14 px-5  lg:grid-cols-2 lg:px-8">
           {/* Left copy */}
           <Reveal>
-            <p className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-brand-sky">
+            <p className="text-[11px] mt-1 font-extrabold uppercase tracking-[0.22em] text-brand-sky">
               Ready to Scale Your Sales?
             </p>
             <h2 className="mt-4 max-w-[520px] text-[32px] font-extrabold leading-[1.15] tracking-tight text-white sm:text-[42px]">
               Let&apos;s Build Your Outreach Engine Together.
             </h2>
-            <p className="mt-5 max-w-[460px] text-[15px] leading-relaxed text-slate-300">
+            <p className="mt-4 max-w-[460px] text-[15px] leading-relaxed text-slate-300">
               Get a free consultation and see how AI sales &amp; outreach can help
               you generate more leads, close more deals, and grow your business.
             </p>
-            <div className="mt-9 flex flex-wrap items-center gap-7">
+            <div className="mt-4 flex flex-wrap items-center gap-7">
               <a
                 href="#"
                 className="inline-flex items-center gap-2 rounded-xl bg-white px-7 py-3.5 text-sm font-extrabold text-brand-dark shadow-xl shadow-black/20 transition hover:-translate-y-0.5 hover:bg-brand-blue-soft"
@@ -798,79 +743,7 @@ export default function AISalesOutreachPage() {
           </Reveal>
 
           {/* Right visual — growth chart panel */}
-          <Reveal delay={150}>
-            <div className="relative h-[380px] overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#0b2650] via-brand-navy to-[#030b1c] shadow-2xl shadow-black/40 sm:h-[420px]">
-              <div className="absolute inset-0 opacity-25 [background-image:radial-gradient(circle_at_70%_80%,#0876ed_0,transparent_55%)]" />
-              <div className="absolute inset-0 [background-image:linear-gradient(#ffffff06_1px,transparent_1px),linear-gradient(90deg,#ffffff06_1px,transparent_1px)] [background-size:32px_32px]" />
-
-              {/* rising 3D bars */}
-              <div className="absolute bottom-0 left-[30%] flex h-[70%] items-end gap-5">
-                {[
-                  { h: 70, d: "0s" },
-                  { h: 110, d: "0.15s" },
-                  { h: 155, d: "0.3s" },
-                  { h: 210, d: "0.45s" },
-                  { h: 265, d: "0.6s" },
-                ].map((b, i) => (
-                  <span
-                    key={i}
-                    className="w-9 animate-float rounded-t-lg bg-gradient-to-t from-brand-blue via-brand-sky to-cyan-300 shadow-[0_0_30px_rgba(14,165,233,0.45)] sm:w-11"
-                    style={{ height: `${b.h}px`, animationDelay: b.d }}
-                  />
-                ))}
-              </div>
-              {/* arrow */}
-              <svg
-                className="absolute bottom-[46%] left-[28%] w-[52%] text-brand-sky"
-                viewBox="0 0 220 90"
-                fill="none"
-              >
-                <path
-                  d="M4 84C60 78 140 50 206 10"
-                  stroke="currentColor"
-                  strokeWidth="4"
-                  strokeLinecap="round"
-                />
-                <path
-                  d="M192 6 210 6 208 24"
-                  stroke="currentColor"
-                  strokeWidth="4"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-
-              {/* glass chips */}
-              <div className="absolute left-5 top-6 flex animate-float flex-col gap-2.5">
-                {[
-                  { icon: <UsersIcon size={13} />, label: "More Leads" },
-                  { icon: <MailIcon size={13} />, label: "More Conversations" },
-                  { icon: <TrendingUpIcon size={13} />, label: "More Revenue" },
-                ].map((chip) => (
-                  <span
-                    key={chip.label}
-                    className="flex items-center gap-2.5 rounded-xl border border-white/10 bg-white/10 px-3.5 py-2 backdrop-blur-md"
-                  >
-                    <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-brand-blue text-white">
-                      {chip.icon}
-                    </span>
-                    <span className="text-[12px] font-bold text-white">{chip.label}</span>
-                  </span>
-                ))}
-              </div>
-
-              {/* handwritten note */}
-              <div className="absolute right-5 top-8 rotate-[3deg]">
-                <p className="text-right font-hand text-[30px] font-semibold leading-[1.05] text-white/90 sm:text-[34px]">
-                  Scale
-                  <br />
-                  Your Sales
-                  <br />
-                  <span className="text-brand-sky">with AI</span>
-                </p>
-              </div>
-            </div>
-          </Reveal>
+         <img src="/solutions/ai-sales-outreach-bottom.png" alt="Growth Chart" className="mx-auto h-full w-full object-contain" />
         </div>
       </section>
     </div>

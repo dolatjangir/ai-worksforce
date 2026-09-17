@@ -1,5 +1,6 @@
 "use client";
 
+import DigitalMarketingHero from "@/components/digital-marketing-hero/reusable-hero";
 import { useState } from "react";
 
 type IconName =
@@ -232,152 +233,39 @@ export default function AIAdvertisingPromotion() {
    
 
       <main>
-        <section className="relative isolate overflow-hidden rounded-b-[20px] bg-[linear-gradient(112deg,#fafbff_0%,#f5f7ff_48%,#f0efff_100%)]">
-          <div className="absolute top-[-130px] right-[-85px] -z-10 size-[690px] rounded-full bg-[radial-gradient(circle,#b6adff95_0%,#d9dcff40_42%,transparent_70%)]" />
-
-          <div className="relative mx-auto grid min-h-[470px] max-w-[1220px] lg:grid-cols-[1.02fr_1fr]">
-            <div className="z-10 px-6 pt-9 pb-6 lg:pl-6">
-              <p className="text-[10px] font-bold tracking-[0.28em] text-brand-purple">
-                SMART ADS. BIGGER RESULTS.
-              </p>
-
-              <h1 className="mt-3 text-[48px] leading-[0.92] font-bold tracking-[-2px] sm:text-[59px] lg:text-[63px]">
-                AI <span className="text-brand-purple">Advertising &</span>
-                <br />
-                Promotion
-              </h1>
-
-              <h2 className="mt-3 text-[18px] font-bold tracking-[-0.5px] sm:text-[20px]">
-                Smarter campaigns. Higher ROI. Real growth.
-              </h2>
-
-              <p className="mt-2 max-w-[510px] text-[15px] leading-[1.5] text-brand-text">
-                Let AI plan, create, optimize, and manage your advertising campaigns across all platforms.
-                From audience targeting to ad creatives and performance tracking — we help you get more
-                leads, sales, and brand visibility with less effort.
-              </p>
-
-              <div className="mt-3 flex flex-wrap gap-4">
-                <a href="#contact" className={`${primaryButton} bg-brand-purple text-white hover:bg-[#4820cc]`}>
-                  Book a Free Consultation <span>→</span>
-                </a>
-                <a
-                  href="#how-it-works"
-                  className={`${primaryButton} border border-[#7774af] bg-white/50 text-brand-dark hover:bg-white`}
-                >
-                  <span className="grid size-5 place-items-center rounded-full bg-violet-100 text-[9px] text-brand-purple">
-                    ▶
-                  </span>
-                  See It in Action
-                </a>
-              </div>
-
-              <div className="mt-7 grid max-w-[530px] grid-cols-3 gap-3">
-                {[
-                  ["chart", "3x", "Higher ROI"],
-                  ["users", "70%", "Lower Ad Spend"],
-                  ["target", "5x", "More Qualified Leads"],
-                ].map(([icon, value, label], index) => (
-                  <div
-                    key={label}
-                    className={`flex flex-col items-center gap-2 text-center sm:flex-row sm:text-left ${
-                      index > 0 ? "border-l border-indigo-100 pl-3" : ""
-                    }`}
-                  >
-                    <Bubble icon={icon as IconName} small />
-                    <div>
-                      <p className="text-[25px] leading-none font-bold text-brand-purple">{value}</p>
-                      <p className="mt-1 text-[10px] text-brand-text-muted">{label}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="relative mx-auto h-[450px] w-full max-w-[610px] lg:h-auto">
-              <div className="absolute top-[54px] left-1/2 size-[380px] -translate-x-1/2 rounded-full border-[20px] border-white/15 bg-[#b7afff]/15" />
-              <div className="absolute top-[90px] left-1/2 size-[280px] -translate-x-1/2 rounded-full border-[18px] border-white/20" />
-
-              <img
-                src={imageUrls.heroWoman}
-                alt="Advertising strategist"
-                className="absolute bottom-0 left-[22%] z-10 h-[80%] w-[50%] rounded-t-[100px] object-cover object-top shadow-[0_15px_45px_rgba(48,42,185,.15)]"
-              />
-
-              <div className="absolute top-8 left-2 z-20 grid gap-2">
-                {[
-                  ["▮▮▮", "AI-Powered Ad Campaigns", "Plan. Create. Optimize.", "text-brand-purple"],
-                  ["▲", "Google Ads", "", "text-[#4285F4]"],
-                  ["∞", "Meta Ads", "", "text-[#0866ff]"],
-                  ["in", "LinkedIn Ads", "", "bg-[#0a66c2] text-white"],
-                  ["▶", "YouTube Ads", "", "bg-[#ff0000] text-white"],
-                  ["◎", "Instagram Ads", "", "bg-gradient-to-br from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] text-white"],
-                ].map(([symbol, title, subtext, iconStyle], index) => (
-                  <div
-                    key={title}
-                    className={`flex items-center gap-3 rounded-xl bg-white/90 px-3 py-2.5 shadow-[0_5px_20px_rgba(51,42,157,.1)] ${
-                      index === 0 ? "w-[198px]" : "w-[145px]"
-                    }`}
-                  >
-                    <span
-                      className={`grid size-8 shrink-0 place-items-center rounded-md text-[19px] font-bold ${
-                        iconStyle.includes("bg-") ? iconStyle : `bg-transparent ${iconStyle}`
-                      }`}
-                    >
-                      {symbol}
-                    </span>
-                    <span className="min-w-0 text-[10px] leading-tight">
-                      <strong className="block font-bold">{title}</strong>
-                      {subtext && <span className="text-brand-text-muted">{subtext}</span>}
-                    </span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="absolute top-6 right-3 z-20 w-[177px] space-y-2">
-                <div className="rounded-[14px] bg-white/90 p-4 shadow-[0_5px_20px_rgba(51,42,157,.1)]">
-                  <p className="text-[11px] font-bold">Campaign Performance</p>
-                  <p className="mt-1 text-[21px] font-bold text-emerald-500">↑ 256%</p>
-                  <p className="text-[10px] text-brand-text-muted">More Conversions</p>
-                  <div className="mt-3 flex h-14 items-end justify-between gap-2">
-                    {[3, 10, 24, 35, 59, 93].map((height) => (
-                      <span
-                        key={height}
-                        className="w-3 rounded-t bg-gradient-to-t from-[#d8d2ff] to-brand-purple"
-                        style={{ height: `${height}%` }}
-                      />
-                    ))}
-                  </div>
-                </div>
-
-                <div className="rounded-[14px] bg-white/90 p-3 shadow-[0_5px_20px_rgba(51,42,157,.1)]">
-                  <p className="mb-2 text-[10px] font-bold">AI Audience Targeting</p>
-                  {[
-                    "Automated Ad Creation",
-                    "Real-Time Optimization",
-                    "Performance Tracking",
-                    "Higher ROI",
-                  ].map((text) => (
-                    <p key={text} className="mt-1.5 flex items-center gap-2 text-[9px]">
-                      <span className="grid size-4 place-items-center rounded-full bg-emerald-100 text-[10px] font-bold text-emerald-500">
-                        ✓
-                      </span>
-                      {text}
-                    </p>
-                  ))}
-                </div>
-              </div>
-
-              <div className="absolute right-5 bottom-5 z-20 rotate-[-13deg] font-hand text-[19px] leading-tight text-brand-purple">
-                Advertise
-                <br />
-                Smarter
-                <br />
-                Grow Faster
-              </div>
-            </div>
-          </div>
-        </section>
+      <DigitalMarketingHero
+  eyebrow="SMART ADS. BIGGER RESULTS."
+  title="AI"
+  highlightedTitle="Advertising & Promotion"
+  subtitle="Smarter campaigns. Higher ROI. Real growth."
+  description="Let AI plan, create, optimize, and manage your advertising campaigns across all platforms. From audience targeting to ad creatives and performance tracking — we help you get more leads, sales, and brand visibility with less effort."
+  imageSrc="/digital-marketing-hero-right-img.png"
+  imageAlt="Advertising strategist with AI-powered advertising campaign insights"
+  primaryLabel="Book a Free Consultation"
+  primaryHref="#contact"
+  secondaryLabel="See It in Action"
+  secondaryHref="#how-it-works"
+  metrics={[
+    {
+      value: "3x",
+      label: "Higher ROI",
+      icon: "chart",
+      tone: "purple",
+    },
+    {
+      value: "70%",
+      label: "Lower Ad Spend",
+      icon: "users",
+      tone: "green",
+    },
+    {
+      value: "5x",
+      label: "More Qualified Leads",
+      icon: "target",
+      tone: "orange",
+    },
+  ]}
+/>
 
         <section className="mx-auto max-w-[1240px] px-5 pt-5">
           <p className={sectionEyebrow}>COMPLETE AI ADVERTISING SOLUTIONS</p>

@@ -6,6 +6,7 @@ import {
   TrendingUp, Clock, DollarSign, Rocket, Check, Menu, X,
   Sparkles, Target, RefreshCw, Zap,
 } from "lucide-react";
+import AIWorkflowHero from "@/components/ai-workflow-hero/reusable-hero";
 
 const NAV_LINKS = [
   { label: "Home", href: "#" },
@@ -111,141 +112,19 @@ export default function AiWorkflowPage() {
       </header>
 
       {/* ================= HERO ================= */}
-      <section className="relative overflow-hidden bg-[linear-gradient(to_bottom_right,#eff6ff,#ffffff,#eef2ff)]">
-        <div className="pointer-events-none absolute -left-32 top-10 h-80 w-80 rounded-full bg-brand-blue-soft blur-3xl" />
-        <div className="pointer-events-none absolute -right-24 top-40 h-96 w-96 rounded-full bg-brand-purple-soft blur-3xl" />
-        <div className="pointer-events-none absolute bottom-0 left-1/3 h-64 w-64 rounded-full bg-cyan-50 blur-3xl" />
-
-        <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-4 pb-20 pt-14 sm:px-6 lg:grid-cols-2 lg:px-8 lg:pb-28 lg:pt-20">
-          {/* Left copy */}
-          <div>
-            <p className="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-brand-purple">
-              A Smarter Way to Work
-            </p>
-            <h1 className="text-4xl font-extrabold leading-[1.1] tracking-tight text-heading sm:text-5xl lg:text-[3.4rem]">
-              Our{" "}
-              <span className="bg-[linear-gradient(to_right,#06b6d4,#2563eb,#7c3aed)] bg-clip-text text-transparent">
-                AI WorkFlow
-              </span>
-            </h1>
-            <h2 className="mt-3 text-2xl font-bold tracking-tight text-heading sm:text-3xl">
-              AI agents, experts and operators
-            </h2>
-            <p className="mt-5 max-w-md text-base leading-relaxed text-text-muted">
-              A structured, collaborative workflow where AI agents, human experts,
-              and operators work together to turn your business goals into real
-              results — faster, smarter, and at scale.
-            </p>
-            <div className="mt-8 flex flex-wrap items-center gap-4">
-              <a href="#cta"
-                className="inline-flex items-center gap-2 rounded-full bg-brand-blue px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-blue-500/30 transition hover:bg-brand-blue-dark">
-                Book a Free Consultation <ArrowRight className="h-4 w-4" />
-              </a>
-              <a href="#process"
-                className="inline-flex items-center gap-2 rounded-full border-2 border-blue-200 bg-white/70 px-7 py-3 text-sm font-semibold text-heading backdrop-blur transition hover:border-brand-blue hover:text-brand-blue">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-brand-blue text-white">
-                  <Play className="ml-0.5 h-3 w-3 fill-current" />
-                </span>
-                See it in Action
-              </a>
-            </div>
-          </div>
-
-          {/* Right — workflow diagram */}
-          <div className="relative mx-auto w-full max-w-lg">
-            <div className="relative hidden h-[520px] md:block">
-              {/* curved connector arrows */}
-              <svg className="absolute inset-0 h-full w-full" viewBox="0 0 520 520" fill="none" aria-hidden="true">
-                <defs>
-                  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                    <path d="M0 0L10 5L0 10z" fill="#0876ed" />
-                  </marker>
-                </defs>
-                <path d="M300 110 Q 210 130 180 190" stroke="#0876ed" strokeWidth="1.5" strokeDasharray="5 5" markerEnd="url(#arrow)" />
-                <path d="M360 110 Q 450 130 470 190" stroke="#0876ed" strokeWidth="1.5" strokeDasharray="5 5" markerEnd="url(#arrow)" />
-                <path d="M190 330 Q 240 390 280 400" stroke="#0876ed" strokeWidth="1.5" strokeDasharray="5 5" markerEnd="url(#arrow)" />
-                <path d="M450 330 Q 400 390 330 400" stroke="#0876ed" strokeWidth="1.5" strokeDasharray="5 5" markerEnd="url(#arrow)" />
-                <path d="M305 415 L 305 440" stroke="#0876ed" strokeWidth="1.5" strokeDasharray="5 5" markerEnd="url(#arrow)" />
-                <path d="M305 300 L 305 255" stroke="#0876ed" strokeWidth="1.5" strokeDasharray="5 5" markerEnd="url(#arrow)" />
-              </svg>
-
-              {/* AI Agents card (top) */}
-              <div className="absolute left-1/2 top-2 w-56 -translate-x-1/2 animate-float rounded-2xl border border-blue-100 bg-white p-4 text-center shadow-xl shadow-[rgba(24,74,140,0.12)]">
-                <div className="mx-auto -mt-10 mb-2 flex h-16 w-16 items-center justify-center rounded-full border-4 border-white bg-[linear-gradient(135deg,#06b6d4,#2563eb,#7c3aed)] text-white shadow-lg">
-                  <Bot className="h-8 w-8" />
-                </div>
-                <p className="text-sm font-bold text-heading">AI Agents</p>
-                <p className="text-xs text-text-muted">Execute, automate, and learn 24/7</p>
-              </div>
-
-              {/* Smarter Operations pill */}
-              <div className="absolute left-0 top-16 flex animate-float-slow items-center gap-1.5 rounded-full border border-blue-100 bg-white px-3.5 py-2 text-xs font-semibold text-heading shadow-lg shadow-[rgba(24,74,140,0.08)]">
-                <Zap className="h-3.5 w-3.5 fill-brand-purple text-brand-purple" />
-                Smarter Operations
-              </div>
-
-              {/* Better Results pill */}
-              <div className="absolute right-0 top-16 flex animate-float items-center gap-1.5 rounded-full border border-blue-100 bg-white px-3.5 py-2 text-xs font-semibold text-heading shadow-lg shadow-[rgba(24,74,140,0.08)]">
-                <Target className="h-3.5 w-3.5 text-brand-purple" />
-                Better Results
-              </div>
-
-              {/* Experts card (left) */}
-              <div className="absolute left-0 top-44 w-44 animate-float-slow rounded-2xl border border-blue-100 bg-white p-3 text-center shadow-xl shadow-[rgba(24,74,140,0.12)]">
-                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80"
-                  alt="AI workflow expert" className="mx-auto h-24 w-full rounded-xl object-cover object-top" />
-                <p className="mt-2.5 text-sm font-bold text-heading">Experts</p>
-                <p className="text-xs text-text-muted">Design, strategize, and optimize</p>
-              </div>
-
-              {/* Operators card (right) */}
-              <div className="absolute right-0 top-44 w-44 animate-float rounded-2xl border border-blue-100 bg-white p-3 text-center shadow-xl shadow-[rgba(24,74,140,0.12)]">
-                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80"
-                  alt="AI workflow operator" className="mx-auto h-24 w-full rounded-xl object-cover object-top" />
-                <p className="mt-2.5 text-sm font-bold text-heading">Operators</p>
-                <p className="text-xs text-text-muted">Monitor, manage, and ensure success</p>
-              </div>
-
-              {/* Continuous Improvement pill */}
-              <div className="absolute bottom-24 left-1/2 flex -translate-x-1/2 animate-float-slow items-center gap-1.5 rounded-full border border-blue-100 bg-white px-3.5 py-2 text-xs font-semibold text-heading shadow-lg shadow-[rgba(24,74,140,0.08)]">
-                <RefreshCw className="h-3.5 w-3.5 text-brand-purple" />
-                Continuous Improvement
-              </div>
-
-              {/* Your Business Growth card (center) */}
-              <div className="absolute bottom-0 left-1/2 w-56 -translate-x-1/2 rounded-2xl border border-blue-100 bg-white p-4 text-center shadow-xl shadow-[rgba(24,74,140,0.12)]">
-                <div className="mx-auto mb-2 flex h-10 w-10 items-center justify-center rounded-xl bg-brand-blue-soft">
-                  <BarChart3 className="h-5 w-5 text-brand-blue" />
-                </div>
-                <p className="text-sm font-extrabold tracking-tight text-heading">Your Business Growth</p>
-              </div>
-            </div>
-
-            {/* Mobile diagram fallback */}
-            <div className="flex flex-col items-center gap-4 md:hidden">
-              {[
-                { icon: Bot, label: "AI Agents", sub: "Execute, automate, and learn 24/7", chip: "bg-[linear-gradient(135deg,#06b6d4,#2563eb,#7c3aed)] text-white" },
-                { icon: Sparkles, label: "Experts", sub: "Design, strategize, and optimize", chip: "bg-brand-blue-soft text-brand-blue" },
-                { icon: Target, label: "Operators", sub: "Monitor, manage, and ensure success", chip: "bg-brand-green-soft text-brand-green" },
-              ].map((c) => (
-                <div key={c.label} className="w-full max-w-xs rounded-2xl border border-blue-100 bg-white p-4 text-center shadow-lg shadow-[rgba(24,74,140,0.08)]">
-                  <div className={`mx-auto mb-2 flex h-12 w-12 items-center justify-center rounded-full ${c.chip}`}>
-                    <c.icon className="h-6 w-6" />
-                  </div>
-                  <p className="text-sm font-bold text-heading">{c.label}</p>
-                  <p className="text-xs text-text-muted">{c.sub}</p>
-                </div>
-              ))}
-              <div className="w-full max-w-xs rounded-2xl border border-blue-100 bg-white p-4 text-center shadow-lg shadow-[rgba(24,74,140,0.08)]">
-                <div className="mx-auto mb-2 flex h-10 w-10 items-center justify-center rounded-xl bg-brand-blue-soft">
-                  <BarChart3 className="h-5 w-5 text-brand-blue" />
-                </div>
-                <p className="text-sm font-extrabold text-heading">Your Business Growth</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+    <AIWorkflowHero
+  eyebrow="A SMARTER WAY TO WORK"
+  title="Our"
+  highlightedTitle="AI WorkFlow"
+  subtitle="AI agents, experts and operators"
+  description="A structured, collaborative workflow where AI agents, human experts, and operators work together to turn your business goals into real results — faster, smarter, and at scale."
+  imageSrc="/ai-workflow-hero.png"
+  imageAlt="AI agents, experts and operators working together"
+  primaryLabel="Book a Free Consultation"
+  primaryHref="#cta"
+  secondaryLabel="See it in Action"
+  secondaryHref="#process"
+/>
 
       {/* ================= PROCESS ================= */}
       <section id="process" className="bg-white py-20 lg:py-24">

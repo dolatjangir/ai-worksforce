@@ -57,18 +57,23 @@ export default function SolutionsHero({
   return (
     <section aria-label={ariaLabel} className="relative isolate overflow-hidden bg-[#f3f9fd] font-sans text-[#071744]">
       {/* On desktop, the artwork blends into the copy's pale background. */}
-      <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[60%] lg:block">
-        <Image
-          src={imageSrc}
-          alt={imageAlt}
-          fill
-          sizes="60vw"
-          loading="eager"
-          fetchPriority="high"
-          className="object-cover object-right"
-        />
-        <div aria-hidden="true" className="absolute inset-y-0 left-0 w-[22%] bg-linear-to-r from-[#f3f9fd] via-[#f3f9fd]/70 to-transparent" />
-      </div>
+    {/* Stable desktop artwork dimensions across pages */}
+<div className="pointer-events-none absolute right-0 top-1/2 hidden h-[560px] w-[60%] -translate-y-1/2 lg:block xl:h-[620px]">
+  <Image
+    src={imageSrc}
+    alt={imageAlt}
+    fill
+    sizes="60vw"
+    loading="eager"
+    fetchPriority="high"
+    className="object-contain object-right"
+  />
+
+  <div
+    aria-hidden="true"
+    className="absolute inset-y-0 left-0 w-[22%] bg-linear-to-r from-[#f3f9fd] via-[#f3f9fd]/70 to-transparent"
+  />
+</div>
 
       <div className="relative z-10 mx-auto w-full max-w-[1600px] px-5 sm:px-8 lg:px-[6.1%]">
         <div className="flex min-w-0 flex-col py-6 sm:py-8 lg:min-h-[560px] lg:w-[47%] lg:py-7 xl:min-h-[620px] xl:py-8">
@@ -123,7 +128,7 @@ export default function SolutionsHero({
           alt={mobileImageAlt}
           fill
           sizes="(max-width: 672px) 100vw, 672px"
-          className="object-contain object-bottom"
+          className="object-cover object-top"
         />
       </div>
     </section>

@@ -27,6 +27,7 @@ import {
   Sparkles,
   User,
 } from "lucide-react";
+import AIWorkflowHero from "@/components/ai-workflow-hero/reusable-hero";
 
 /* ============================================
    DATA
@@ -186,127 +187,19 @@ export default function AIWorkforceWhyPage() {
     
 
       {/* ================= HERO ================= */}
-      <section className="relative overflow-hidden">
-        <div className="pointer-events-none absolute -right-32 top-10 h-[28rem] w-[28rem] rounded-full bg-brand-purple-soft/70 blur-3xl" />
-        <div className="pointer-events-none absolute -left-32 bottom-0 h-96 w-96 rounded-full bg-blue-50 blur-3xl" />
-
-        <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 pb-16 pt-12 sm:px-6 lg:grid-cols-2 lg:gap-8 lg:px-8 lg:pb-20 lg:pt-16">
-          {/* Left — Copy */}
-          <div className="max-w-xl">
-            <span className="mb-5 inline-block text-xs font-semibold uppercase tracking-[0.25em] text-slate-400">
-              The New Way to Work
-            </span>
-            <h1 className="text-4xl font-extrabold leading-[1.08] tracking-tight text-brand-dark sm:text-5xl lg:text-[3.4rem]">
-              What{" "}
-              <span className="bg-gradient-to-r from-brand-purple to-brand-purple-light bg-clip-text text-transparent">
-                AI WorksForce?
-              </span>
-            </h1>
-            <p className="mt-4 text-base font-bold text-brand-dark sm:text-lg">
-              Why businesses choose our model
-            </p>
-            <p className="mt-4 text-base leading-relaxed text-slate-500">
-              AIWorksForce gives you a dedicated team of AI agents that work
-              alongside your people — automating tasks, handling operations,
-              interacting with customers, and driving growth.
-            </p>
-            <div className="mt-8 flex flex-wrap items-center gap-4">
-              <Link
-                href="#consultation"
-                className="inline-flex items-center gap-2 rounded-full bg-brand-blue px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand-blue/25 transition-all hover:bg-brand-blue-dark hover:shadow-xl"
-              >
-                Book a Free Consultation
-                <ArrowRight size={16} />
-              </Link>
-              <Link
-                href="#process"
-                className="inline-flex items-center rounded-full border border-slate-200 bg-white px-7 py-3.5 text-sm font-semibold text-brand-dark shadow-sm transition-all hover:border-brand-blue hover:text-brand-blue"
-              >
-                See How it Works
-              </Link>
-            </div>
-
-            {/* Stats */}
-            <div className="mt-12 grid grid-cols-3 gap-6 border-t border-slate-100 pt-8">
-              {STATS.map((stat) => (
-                <div key={stat.label}>
-                  <p className="text-2xl font-extrabold text-brand-dark sm:text-3xl">
-                    {stat.value}
-                  </p>
-                  <p className="mt-1 text-[11px] font-medium text-slate-400 sm:text-xs">
-                    {stat.label}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Right — Visual */}
-          <div className="relative mx-auto w-full max-w-md lg:max-w-none">
-            <div className="relative z-10 mx-auto w-[85%] overflow-hidden rounded-[2rem]">
-              <img
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=900&auto=format&fit=crop"
-                alt="Professional with her AI workforce"
-                className="h-full w-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-purple/15 via-transparent to-transparent" />
-            </div>
-
-            {/* Floating chips (left of image) */}
-            {HERO_CHIPS.map((chip) => (
-              <div
-                key={chip.title}
-                className={`absolute ${chip.position} z-20 animate-float rounded-2xl border border-slate-100 bg-white/95 px-3.5 py-2.5 shadow-lg shadow-slate-200/60 backdrop-blur-sm`}
-                style={{ animationDelay: chip.delay }}
-              >
-                <div className="flex items-center gap-2.5">
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-brand-blue">
-                    <chip.icon size={15} />
-                  </span>
-                  <div className="leading-tight">
-                    <p className="text-[11px] font-bold text-brand-dark">
-                      {chip.title}
-                    </p>
-                    <p className="text-[10px] text-slate-400">{chip.desc}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-
-            {/* Top-right badge */}
-            <div className="absolute -top-2 right-0 z-30 animate-float rounded-2xl border border-slate-100 bg-white/95 px-4 py-3 shadow-lg shadow-slate-200/60 backdrop-blur-sm" style={{ animationDelay: "0.8s" }}>
-              <div className="flex items-start gap-2">
-                <Sparkles size={14} className="mt-0.5 text-brand-purple" />
-                <div className="leading-tight">
-                  <p className="text-[11px] font-bold text-brand-dark">
-                    Your AI Workforce
-                  </p>
-                  <p className="text-[10px] font-medium text-slate-400">
-                    Always On
-                  </p>
-                  <p className="text-[10px] font-medium text-slate-400">
-                    Always Ahead
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Robot card (bottom-right) */}
-            <div className="absolute -bottom-4 right-0 z-30 hidden w-36 animate-float-slow sm:block">
-              <div className="rounded-2xl border border-slate-100 bg-white p-3 shadow-xl shadow-slate-200/70">
-                <div className="flex flex-col items-center">
-                  <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-50 to-brand-purple-soft">
-                    <Bot size={36} className="text-brand-blue" />
-                  </span>
-                  <span className="mt-2 rounded-lg bg-brand-dark px-2.5 py-1 text-[9px] font-semibold text-white">
-                    AI WorksForce
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+    <AIWorkflowHero
+  eyebrow="THE NEW WAY TO WORK"
+  title="What"
+  highlightedTitle="AI WorksForce?"
+  subtitle="Why businesses choose our model"
+  description="AIWorksForce gives you a dedicated team of AI agents that work alongside your people — automating tasks, handling operations, interacting with customers, and driving growth."
+  imageSrc="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=900&auto=format&fit=crop"
+  imageAlt="Professional with her AI workforce"
+  primaryLabel="Book a Free Consultation"
+  primaryHref="#consultation"
+  secondaryLabel="See How it Works"
+  secondaryHref="#process"
+/>
 
       {/* ================= WHY BUSINESSES CHOOSE ================= */}
       <section className="bg-slate-50/60 py-20 lg:py-24">

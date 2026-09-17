@@ -222,10 +222,10 @@ function OutlineButton({
 function Hero() {
   return (
 <SolutionsHero
-  badge="AI BUSINESS ASSESSMENT"
+  badge="AWFI-POWERED BUSINESS ASSESSMENT"
   title="Discover Your AI"
   highlightedTitle="Opportunity"
-  description="A strategic assessment to help you identify, plan and implement the right AI solutions for your business."
+  description="A strategic assessment powered by the AWFI Engine™ to identify, prioritize and plan the right AI solutions for your business."
   imageSrc="/solutions/ai-automation.png"
   imageAlt="Your AI Opportunity — assessment session"
   assessmentLabel="Get Your AI Assessment"

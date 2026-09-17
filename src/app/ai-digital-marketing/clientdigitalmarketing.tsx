@@ -1,5 +1,6 @@
 "use client";
 
+import DigitalMarketingHero from "@/components/digital-marketing-hero/reusable-hero";
 import { useState, type ReactNode } from "react";
 
 type IconName =
@@ -197,160 +198,40 @@ export default function AIDigitalMarketingPage() {
      
 
       <main>
-        <section
-          id="home"
-          className="relative isolate overflow-hidden rounded-b-[20px] bg-[linear-gradient(112deg,#fafbff_0%,#f5f7ff_48%,#f0efff_100%)]"
-        >
-          <div className="absolute top-[-130px] right-[-75px] -z-10 size-[690px] rounded-full bg-[radial-gradient(circle,#b5acff95_0%,#d9dcff40_42%,transparent_70%)]" />
-
-          <div className="relative mx-auto grid min-h-[405px] max-w-[1220px] lg:grid-cols-[1.02fr_1fr]">
-            <div className="z-10 px-6 pt-8 pb-6 lg:pl-6">
-              <p className="text-[10px] font-bold tracking-[0.28em] text-brand-purple">
-                AI-POWERED DIGITAL MARKETING
-              </p>
-
-              <h1 className="mt-2 text-[49px] leading-[0.92] font-bold tracking-[-2px] sm:text-[61px] lg:text-[63px]">
-                AI Digital
-                <br />
-                <span className="text-brand-purple">Marketing</span>
-              </h1>
-
-              <h2 className="mt-3 text-[18px] font-bold tracking-[-0.5px] sm:text-[20px]">
-                Smarter Strategies. Higher Impact. Real Growth.
-              </h2>
-
-              <p className="mt-2 max-w-[510px] text-[15px] leading-[1.5] text-brand-text">
-                Let AI handle the complexities of digital marketing — from content and campaigns to analytics and
-                automation. We help you attract more customers, boost engagement, and grow your business faster
-                with AI-powered solutions.
-              </p>
-
-              <div className="mt-3 flex flex-wrap gap-4">
-                <a href="#contact" className={`${button} bg-brand-purple text-white hover:bg-[#4820cc]`}>
-                  Book a Free Consultation <span>→</span>
-                </a>
-                <a
-                  href="#solutions"
-                  className={`${button} border border-[#7774af] bg-white/50 text-brand-dark hover:bg-white`}
-                >
-                  <span className="grid size-5 place-items-center rounded-full bg-violet-100 text-[9px] text-brand-purple">
-                    ▶
-                  </span>
-                  See How It Works
-                </a>
-              </div>
-
-              <div className="mt-6 grid max-w-[620px] grid-cols-2 gap-3 sm:grid-cols-4">
-                {[
-                  ["chart", "3x", "More Leads", "bg-emerald-100 text-emerald-500"],
-                  ["clock", "70%", "Less Manual Work", "bg-violet-100 text-brand-purple"],
-                  ["chart", "5x", "Higher ROI", "bg-violet-100 text-brand-purple"],
-                  ["clock", "24/7", "Campaign Optimization", "bg-violet-100 text-brand-purple"],
-                ].map(([icon, value, label, tone], index) => (
-                  <div
-                    key={label}
-                    className={`flex items-center gap-2 ${
-                      index > 0 ? "sm:border-l sm:border-indigo-100 sm:pl-3" : ""
-                    }`}
-                  >
-                    <Bubble icon={icon as IconName} tone={tone} small />
-                    <div>
-                      <p className="text-[23px] leading-none font-bold text-brand-purple">{value}</p>
-                      <p className="mt-1 text-[9px] leading-tight text-brand-text-muted">{label}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="relative mx-auto h-[405px] w-full max-w-[610px] lg:h-auto">
-              <div className="absolute top-[45px] left-1/2 size-[350px] -translate-x-1/2 rounded-full border-[20px] border-white/15 bg-[#b7afff]/15" />
-
-              <img
-                src={images.hero}
-                alt="Digital marketing strategist"
-                className="absolute bottom-0 left-[26%] z-10 h-[77%] w-[46%] rounded-t-[100px] object-cover object-top shadow-[0_15px_45px_rgba(48,42,185,.15)]"
-              />
-
-              <div className="absolute top-8 left-3 z-20 grid gap-2">
-                <div className="w-[170px] rounded-xl bg-white/90 p-3 shadow-[0_5px_20px_rgba(51,42,157,.1)]">
-                  <p className="text-[10px] font-bold">Total Growth</p>
-                  <p className="mt-1 text-[21px] font-bold text-emerald-500">↑ 256%</p>
-                  <div className="mt-2 flex h-11 items-end justify-between gap-2">
-                    {[4, 14, 29, 45, 67, 100].map((height) => (
-                      <span
-                        key={height}
-                        className="w-3 rounded-t bg-gradient-to-t from-[#d8d2ff] to-brand-purple"
-                        style={{ height: `${height}%` }}
-                      />
-                    ))}
-                  </div>
-                </div>
-
-                {[
-                  ["▲", "More Traffic", "bg-violet-100 text-brand-purple"],
-                  ["♧", "Better Engagement", "bg-emerald-100 text-emerald-500"],
-                  ["↻", "Higher Conversions", "bg-sky-100 text-brand-sky"],
-                  ["◉", "Stronger Brand", "bg-violet-100 text-brand-purple"],
-                ].map(([symbol, text, tone]) => (
-                  <div
-                    key={text}
-                    className="flex w-[165px] items-center gap-3 rounded-lg bg-white/90 px-3 py-2 shadow-[0_5px_20px_rgba(51,42,157,.1)]"
-                  >
-                    <span className={`grid size-7 place-items-center rounded-md text-[16px] font-bold ${tone}`}>
-                      {symbol}
-                    </span>
-                    <span className="text-[9px] font-bold">{text}</span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="absolute top-7 right-3 z-20 w-[165px] rounded-[14px] bg-white/90 p-4 shadow-[0_5px_20px_rgba(51,42,157,.1)]">
-                <p className="text-[13px] leading-tight font-bold">
-                  AI-Powered
-                  <br />
-                  Marketing for Your
-                  <br />
-                  Business
-                </p>
-
-                <div className="mt-4 grid gap-2">
-                  {[
-                    "Automate Campaigns",
-                    "Create Engaging Content",
-                    "Reach the Right Audience",
-                    "Track Real Results",
-                  ].map((item) => (
-                    <p key={item} className="flex items-center gap-2 text-[9px] text-brand-text">
-                      <span className="grid size-4 place-items-center rounded-full bg-emerald-100 text-[10px] font-bold text-emerald-500">
-                        ✓
-                      </span>
-                      {item}
-                    </p>
-                  ))}
-                </div>
-              </div>
-
-              <div className="absolute top-[24px] left-[52%] z-20 grid size-11 place-items-center rounded-xl bg-white text-[26px] shadow-md">
-                ▲
-              </div>
-              <div className="absolute top-[18px] right-[26%] z-20 grid size-10 place-items-center rounded-xl bg-gradient-to-br from-orange-400 via-rose-500 to-violet-600 text-[22px] text-white">
-                ◎
-              </div>
-              <div className="absolute top-[78px] right-[18%] z-20 grid size-10 place-items-center rounded-xl bg-[#0a66c2] text-[18px] font-bold text-white">
-                in
-              </div>
-
-              <div className="absolute right-7 bottom-7 z-20 rotate-[-13deg] font-hand text-[19px] leading-tight text-brand-purple">
-                Marketing
-                <br />
-                Smarter
-                <br />
-                with AI
-              </div>
-            </div>
-          </div>
-        </section>
+     <DigitalMarketingHero
+  eyebrow="AI-POWERED DIGITAL MARKETING"
+  title="AI Digital"
+  highlightedTitle="Marketing"
+  subtitle="Smarter Strategies. Higher Impact. Real Growth."
+  description="Let AI handle the complexities of digital marketing — from content and campaigns to analytics and automation. We help you attract more customers, boost engagement, and grow your business faster with AI-powered solutions."
+  imageSrc="/digital-marketing-hero-right-img.png"
+  imageAlt="Digital marketing strategist"
+  primaryLabel="Book a Free Consultation"
+  primaryHref="#contact"
+  secondaryLabel="See How It Works"
+  secondaryHref="#solutions"
+  metrics={[
+    {
+      value: "3x",
+      label: "More Leads",
+      icon: "chart",
+      tone: "green",
+    },
+    {
+      value: "70%",
+      label: "Less Manual Work",
+      icon: "clock",
+      tone: "purple",
+    },
+    {
+      value: "5x",
+      label: "Higher ROI",
+      icon: "chart",
+      tone: "purple",
+    },
+   
+  ]}
+/>
 
         <section id="solutions" className="mx-auto max-w-[1240px] px-5 pt-6">
           <p className="text-center text-[9px] font-bold tracking-[0.28em] text-brand-purple">

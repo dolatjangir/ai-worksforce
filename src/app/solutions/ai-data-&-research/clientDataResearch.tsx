@@ -389,7 +389,7 @@ export default function AIDataResearchPage() {
     {
       number: "1",
       icon: "research" as IconName,
-      title: "Understand Your Goals",
+      title: "Understand  Goals",
       desc: "We learn about your business, industry and research needs.",
       bg: "bg-[#0876ed]",
     },
@@ -397,7 +397,7 @@ export default function AIDataResearchPage() {
       number: "2",
       icon: "database" as IconName,
       title: "Collect & Analyze Data",
-      desc: "Our AI gathers and analyzes relevant data from trusted sources.",
+      desc: "Our AWFI Engine™ gathers and analyzes relevant data from trusted sources.",
       bg: "bg-violet-500",
     },
     {

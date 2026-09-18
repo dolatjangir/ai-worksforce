@@ -184,82 +184,7 @@ export default function CaseStudiesPage() {
 
   return (
     <main className="min-h-screen bg-white font-sans text-heading antialiased">
-      {/* ================= NAVBAR ================= */}
-      <header className="sticky top-0 z-50 border-b border-blue-100/70 bg-white/85 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-          <a href="#" className="flex items-center gap-2.5">
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[linear-gradient(135deg,#06b6d4,#2563eb,#7c3aed)] text-white shadow-lg shadow-blue-500/25">
-              <Bot className="h-5 w-5" />
-            </span>
-            <span className="leading-tight">
-              <span className="block text-lg font-extrabold tracking-tight text-heading">
-                AI Works<span className="text-brand-blue">Force</span>
-              </span>
-              <span className="block text-[10px] font-medium tracking-wide text-text-muted">
-                Automate. Accelerate. Grow.
-              </span>
-            </span>
-          </a>
-
-          <nav className="hidden items-center gap-6 lg:flex">
-            {NAV_LINKS.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className={`relative text-[13px] font-medium transition-colors ${
-                  link.active
-                    ? "text-heading after:absolute after:-bottom-4 after:left-0 after:h-0.5 after:w-full after:rounded-full after:bg-brand-blue"
-                    : "text-text-muted hover:text-heading"
-                }`}
-              >
-                {link.label}
-              </a>
-            ))}
-          </nav>
-
-          <div className="flex items-center gap-3">
-            <a
-              href="#cta"
-              className="hidden items-center gap-1.5 rounded-full bg-brand-purple px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-purple-500/25 transition hover:bg-[#4a22c7] sm:inline-flex"
-            >
-              Book Free Consultation <ArrowRight className="h-4 w-4" />
-            </a>
-            <button
-              onClick={() => setMobileOpen((v) => !v)}
-              className="flex h-10 w-10 items-center justify-center rounded-xl border border-blue-100 text-heading lg:hidden"
-              aria-label="Toggle menu"
-            >
-              {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-            </button>
-          </div>
-        </div>
-
-        {mobileOpen && (
-          <div className="border-t border-blue-100 bg-white px-4 py-4 lg:hidden">
-            <nav className="flex flex-col gap-1">
-              {NAV_LINKS.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className={`rounded-lg px-3 py-2 text-sm font-medium ${
-                    link.active
-                      ? "bg-brand-blue-soft text-brand-blue"
-                      : "text-text-muted hover:bg-blue-50"
-                  }`}
-                >
-                  {link.label}
-                </a>
-              ))}
-              <a
-                href="#cta"
-                className="mt-2 inline-flex items-center justify-center gap-1.5 rounded-full bg-brand-purple px-5 py-2.5 text-sm font-semibold text-white"
-              >
-                Book Free Consultation <ArrowRight className="h-4 w-4" />
-              </a>
-            </nav>
-          </div>
-        )}
-      </header>
+     
 
       {/* ================= HERO ================= */}
     <AIWorkflowHero
@@ -268,7 +193,7 @@ export default function CaseStudiesPage() {
   highlightedTitle="Studies"
   subtitle="Real business results"
   description="See how businesses across industries are using AI WorksForce to automate operations, improve customer experiences, and achieve measurable growth."
-  imageSrc="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=800&q=80"
+  imageSrc="/ai-workforce/case-studies-hero.png"
   imageAlt="Business professional"
   primaryLabel="Book a Free Consultation"
   primaryHref="#cta"
@@ -277,7 +202,7 @@ export default function CaseStudiesPage() {
 />
 
       {/* ================= SUCCESS STORIES ================= */}
-      <section id="stories" className="bg-white py-20 lg:py-24">
+      <section id="stories" className="bg-white py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <p className="text-xs font-bold uppercase tracking-[0.25em] text-brand-purple">
@@ -370,7 +295,7 @@ export default function CaseStudiesPage() {
       </section>
 
       {/* ================= TESTIMONIAL ================= */}
-      <section className="bg-[linear-gradient(to_bottom_right,#eff6ff,#ffffff,#eef2ff)] py-20 lg:py-24">
+      <section className="bg-[linear-gradient(to_bottom_right,#eff6ff,#ffffff,#eef2ff)] py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="relative overflow-hidden rounded-3xl border border-blue-100 bg-white/85 p-8 shadow-xl shadow-[rgba(24,74,140,0.08)] backdrop-blur sm:p-12">
             <Quote className="absolute right-8 top-8 h-16 w-16 text-brand-purple-soft" fill="currentColor" />
@@ -417,7 +342,7 @@ export default function CaseStudiesPage() {
 
       {/* ================= CTA ================= */}
       <section id="cta" className="bg-white px-4 pb-6 sm:px-6 lg:px-8">
-        <div className="relative mx-auto max-w-7xl overflow-hidden rounded-3xl bg-[linear-gradient(120deg,#061a38_0%,#0a2a63_55%,#123a8c_100%)] px-6 py-16 text-center shadow-2xl shadow-[rgba(32,83,150,0.25)] sm:px-12 lg:py-20">
+        <div className="relative mx-auto max-w-7xl overflow-hidden rounded-3xl bg-[linear-gradient(120deg,#061a38_0%,#0a2a63_55%,#123a8c_100%)] px-6 py-10 text-center shadow-2xl shadow-[rgba(32,83,150,0.25)] sm:px-12 ">
           <svg className="pointer-events-none absolute -left-10 -top-24 h-72 w-72 opacity-20" viewBox="0 0 200 200" fill="none" aria-hidden="true">
             <circle cx="40" cy="40" r="120" stroke="#22d3ee" strokeWidth="1.5" />
             <circle cx="40" cy="40" r="90" stroke="#0876ed" strokeWidth="1.5" />
@@ -464,65 +389,6 @@ export default function CaseStudiesPage() {
         </div>
       </section>
 
-      {/* ================= FOOTER ================= */}
-      <footer className="border-t border-blue-100 bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-          <div className="flex flex-col items-center justify-between gap-8 lg:flex-row">
-            <a href="#" className="flex items-center gap-2.5">
-              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[linear-gradient(135deg,#06b6d4,#2563eb,#7c3aed)] text-white shadow-lg shadow-blue-500/25">
-                <Bot className="h-5 w-5" />
-              </span>
-              <span className="leading-tight">
-                <span className="block text-lg font-extrabold tracking-tight text-heading">
-                  AI Works<span className="text-brand-blue">Force</span>
-                </span>
-                <span className="block text-[10px] font-medium tracking-wide text-text-muted">
-                  Automate. Accelerate. Grow.
-                </span>
-              </span>
-            </a>
-
-            <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2">
-              {NAV_LINKS.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className={`text-xs font-medium transition ${
-                    link.active ? "font-bold text-heading" : "text-text-muted hover:text-brand-blue"
-                  }`}
-                >
-                  {link.label}
-                </a>
-              ))}
-            </nav>
-
-            <div className="flex items-center gap-3">
-              {[Linkedin, Twitter, Youtube, Instagram].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-blue-100 text-text-muted transition hover:border-brand-blue hover:text-brand-blue"
-                >
-                  <Icon className="h-4 w-4" />
-                </a>
-              ))}
-            </div>
-          </div>
-
-          <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t border-blue-100 pt-6 sm:flex-row">
-            <p className="text-xs text-text-muted">
-              &copy; 2024 AI WorksForce. All rights reserved.
-            </p>
-            <div className="flex items-center gap-6">
-              {["Privacy Policy", "Terms of Service", "Contact"].map((l) => (
-                <a key={l} href="#" className="text-xs text-text-muted transition hover:text-brand-blue">
-                  {l}
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
-      </footer>
     </main>
   );
 }

@@ -219,11 +219,11 @@ export default function AIBacklinkOutreach() {
         {/* Hero */}
       <DigitalMarketingHero
   eyebrow="STRONGER LINKS. HIGHER RANKINGS."
-  title="AI"
-  highlightedTitle="Backlink & Outreach"
+  title="AI Backlink"
+  highlightedTitle=" & Outreach"
   subtitle="Build authority. Earn high-quality backlinks. Grow faster."
   description="Let AI handle your backlink research, prospecting, outreach, and follow-ups — so you get high-authority links, stronger domain authority, and better search rankings without the manual effort."
-  imageSrc="/digital-marketing-hero-right-img.png"
+  imageSrc="/digital-marketing/ai-backlink-outreach-hero.png"
   imageAlt="Outreach specialist working on backlink research and link-building campaigns"
   primaryLabel="Book a Free Consultation"
   primaryHref="#contact"

@@ -162,7 +162,7 @@ function UsersIcon({ className }: { className?: string }) {
 
 function CheckItem({ children }: { children: string }) {
   return (
-    <li className="flex items-center gap-2 text-[11px] font-medium leading-tight text-brand-text">
+    <li className="flex items-center gap-2 text-sm font-medium sm:text-base leading-tight text-brand-text">
       <span className="grid size-4 shrink-0 place-items-center rounded-full bg-brand-green-soft text-brand-green">
         <Check className="size-3 stroke-[3]" />
       </span>
@@ -174,7 +174,7 @@ function CheckItem({ children }: { children: string }) {
 function LogoStrip() {
   return (
     <section className="mx-auto max-w-[1440px] px-5 py-5 lg:px-[76px]">
-      <p className="text-[9px] font-extrabold tracking-[2.7px] text-[#1d28e7]">
+      <p className="text-sm sm:text-base font-extrabold sm:text-sm sm:text-base tracking-[2.7px] text-[#1d28e7]">
         TRUSTED CLOUD & INFRASTRUCTURE PARTNERS
       </p>
 
@@ -185,7 +185,7 @@ function LogoStrip() {
             className={`flex h-9 items-center justify-center text-center text-[15px] font-extrabold tracking-[-0.6px] sm:text-[16px] ${logo.className}`}
           >
             {logo.name === "aws" ? (
-              <span className="relative text-[20px] lowercase">
+              <span className="relative text-xl sm:text-2xl lowercase">
                 aws
                 <span className="absolute -bottom-1 left-0 h-[2px] w-8 rotate-[8deg] rounded-full bg-[#ff9900]" />
               </span>
@@ -318,13 +318,13 @@ export default function AIInfrastructurePage() {
         className="mx-auto max-w-[1440px] px-5 py-3 lg:px-[76px]"
       >
         <div className="text-center">
-          <p className="text-[9px] font-extrabold tracking-[2.8px] text-[#1d28e7]">
+          <p className="text-sm sm:text-base font-extrabold sm:text-sm sm:text-base tracking-[2.8px] text-[#1d28e7]">
             OUR AI INFRASTRUCTURE SOLUTIONS
           </p>
-          <h2 className="mt-1 text-[24px] font-extrabold tracking-[-1.2px] text-brand-dark sm:text-[27px]">
+          <h2 className="mt-1 text-[26px] font-extrabold sm:text-3xl sm:text-4xl lg:text-[32px] sm:text-3xl sm:text-4xl lg:text-[32px] tracking-[-1.2px] text-brand-dark sm:text-[27px]">
             Everything You Need to Build, Deploy, and Scale AI
           </h2>
-          <p className="mx-auto mt-1 max-w-3xl text-[13px] text-[#58689a]">
+          <p className="mx-auto mt-1 max-w-3xl text-[15px] sm:text-base text-[#58689a]">
             From cloud infrastructure to GPU clusters, we provide end-to-end
             solutions to power your AI initiatives.
           </p>
@@ -342,10 +342,10 @@ export default function AIInfrastructurePage() {
                 >
                   <Icon className="size-6" />
                 </span>
-                <h3 className="mt-3 text-[13px] font-extrabold leading-[1.15] tracking-[-0.45px] text-brand-dark">
+                <h3 className="mt-3 text-base font-extrabold sm:text-lg leading-[1.15] tracking-[-0.45px] text-brand-dark">
                   {title}
                 </h3>
-                <p className="mt-2 text-[12px] leading-[1.32] text-[#556595]">
+                <p className="mt-2 text-[15px] leading-[1.5] sm:text-base text-[#556595]">
                   {text}
                 </p>
               </article>
@@ -361,13 +361,13 @@ export default function AIInfrastructurePage() {
       >
         <div className="rounded-xl bg-[#fafbff] px-4 py-5 sm:px-5">
           <div className="text-center">
-            <p className="text-[9px] font-extrabold tracking-[2.8px] text-[#1d28e7]">
+            <p className="text-sm sm:text-base font-extrabold sm:text-sm sm:text-base tracking-[2.8px] text-[#1d28e7]">
               HOW IT WORKS
             </p>
-            <h2 className="mt-1 text-[24px] font-extrabold tracking-[-1.1px] text-brand-dark">
+            <h2 className="mt-1 text-[26px] font-extrabold sm:text-3xl sm:text-4xl lg:text-[32px] sm:text-3xl sm:text-4xl lg:text-[32px] tracking-[-1.1px] text-brand-dark">
               From Strategy to Scalable Infrastructure
             </h2>
-            <p className="mt-1 text-[13px] text-[#58689a]">
+            <p className="mt-1 text-[15px] sm:text-base text-[#58689a]">
               A proven process to build AI infrastructure that delivers real
               business value.
             </p>
@@ -383,13 +383,13 @@ export default function AIInfrastructurePage() {
                     <Icon className="size-6" />
                   </span>
 
-                  <p className="mt-2 text-[10px] font-extrabold text-[#1b2ce9]">
+                  <p className="mt-2 text-sm font-extrabold sm:text-base text-[#1b2ce9]">
                     {number}
                   </p>
-                  <h3 className="text-[13px] font-extrabold text-brand-dark">
+                  <h3 className="text-base font-extrabold sm:text-lg text-brand-dark">
                     {title}
                   </h3>
-                  <p className="mx-auto mt-1 max-w-[170px] text-[12px] leading-[1.28] text-[#566696]">
+                  <p className="mx-auto mt-1 max-w-[170px] text-[15px] leading-[1.45] sm:text-base text-[#566696]">
                     {text}
                   </p>
 
@@ -406,13 +406,13 @@ export default function AIInfrastructurePage() {
       {/* Results + Case study */}
       <section className="mx-auto grid max-w-[1440px] gap-5 px-5 py-4 lg:grid-cols-2 lg:px-[76px]">
         <div>
-          <p className="text-[9px] font-extrabold tracking-[2.7px] text-[#1d28e7]">
+          <p className="text-sm sm:text-base font-extrabold sm:text-sm sm:text-base tracking-[2.7px] text-[#1d28e7]">
             REAL RESULTS. REAL BUSINESSES.
           </p>
-          <h2 className="mt-1 text-[26px] font-extrabold tracking-[-1.2px] text-brand-dark">
+          <h2 className="mt-1 text-[26px] font-extrabold sm:text-3xl sm:text-4xl lg:text-[32px] tracking-[-1.2px] text-brand-dark">
             Powering Innovation with Robust AI Infrastructure
           </h2>
-          <p className="mt-1 max-w-[540px] text-[14px] leading-[1.35] text-[#58689a]">
+          <p className="mt-1 max-w-[540px] text-[15px] leading-[1.5] sm:text-base text-[#58689a]">
             See how businesses like yours are building, deploying, and scaling
             AI solutions faster with AI WorksForce.
           </p>
@@ -430,10 +430,10 @@ export default function AIInfrastructurePage() {
                   >
                     <Icon className="size-4" />
                   </span>
-                  <strong className="mt-2 block text-[22px] font-extrabold leading-none text-[#1527d9]">
+                  <strong className="mt-2 block text-2xl font-extrabold sm:text-3xl leading-none text-[#1527d9]">
                     {value}
                   </strong>
-                  <p className="mt-1 text-[10px] leading-[1.2] text-[#58689a]">
+                  <p className="mt-1 text-sm leading-tight sm:text-base text-[#58689a]">
                     {label}
                   </p>
                 </div>
@@ -475,13 +475,13 @@ export default function AIInfrastructurePage() {
             </div>
 
             <div className="pr-3">
-              <p className="text-[9px] font-extrabold tracking-[2.3px] text-[#1d28e7]">
+              <p className="text-sm sm:text-base font-extrabold sm:text-sm sm:text-base tracking-[2.3px] text-[#1d28e7]">
                 CASE STUDY
               </p>
-              <h3 className="mt-1 text-[17px] font-extrabold leading-[1.1] tracking-[-0.6px] text-brand-dark">
+              <h3 className="mt-1 text-lg font-extrabold sm:text-xl leading-[1.1] tracking-[-0.6px] text-brand-dark">
                 Healthcare Company: Scalable AI Platform on AWS
               </h3>
-              <p className="mt-2 text-[12px] leading-[1.35] text-[#556595]">
+              <p className="mt-2 text-[15px] leading-[1.5] sm:text-base text-[#556595]">
                 We helped a healthcare company design and deploy a secure,
                 scalable AI infrastructure on AWS, enabling faster model
                 training and 3x quicker deployment of AI applications.
@@ -494,10 +494,10 @@ export default function AIInfrastructurePage() {
                   ["312%", "More AI Workloads"],
                 ].map(([value, label]) => (
                   <div key={value}>
-                    <strong className="block text-[21px] font-extrabold leading-none text-[#1527e5]">
+                    <strong className="block text-2xl font-extrabold sm:text-3xl leading-none text-[#1527e5]">
                       {value}
                     </strong>
-                    <span className="mt-1 block text-[9px] leading-tight text-[#58689a]">
+                    <span className="mt-1 block text-xs leading-tight sm:text-sm text-[#58689a]">
                       {label}
                     </span>
                   </div>
@@ -513,32 +513,32 @@ export default function AIInfrastructurePage() {
         <div className="grid overflow-hidden rounded-xl bg-[#f9fbff] lg:grid-cols-[1.05fr_.95fr]">
           <div className="flex items-center gap-4 border-b border-blue-100 p-4 sm:p-5 lg:border-b-0 lg:border-r">
             <div className="grid size-20 shrink-0 place-items-center overflow-hidden rounded-full border-4 border-[#e6eaff] bg-gradient-to-br from-[#d9e6ff] to-[#f8faff] sm:size-24">
-              <span className="text-[30px] font-extrabold text-[#1d2e7f]">
+              <span className="text-3xl sm:text-4xl font-extrabold text-[#1d2e7f]">
                 VS
               </span>
             </div>
 
             <div>
-              <div className="mb-1 text-[28px] font-extrabold leading-none text-[#2235ef]">
+              <div className="mb-1 text-3xl sm:text-4xl font-extrabold leading-none text-[#2235ef]">
                 “
               </div>
-              <p className="text-[12px] leading-[1.35] text-[#536394]">
+              <p className="text-[15px] leading-[1.5] sm:text-base text-[#536394]">
                 AI WorksForce built a scalable and secure infrastructure for
                 our AI applications. Their expertise in cloud and GPU
                 infrastructure helped us accelerate our innovation and reduce
                 costs significantly.
               </p>
-              <p className="mt-1 text-[11px] font-extrabold text-brand-dark">
+              <p className="mt-1 text-sm font-extrabold sm:text-base text-brand-dark">
                 Vikram Singh
               </p>
-              <p className="text-[9px] text-[#58689a]">
+              <p className="text-xs text-[#58689a] sm:text-sm">
                 CTO, HealthTech (Healthcare)
               </p>
             </div>
           </div>
 
           <div className="p-4 sm:p-5">
-            <p className="text-[9px] font-extrabold tracking-[2.3px] text-[#1d28e7]">
+            <p className="text-sm sm:text-base font-extrabold sm:text-sm sm:text-base tracking-[2.3px] text-[#1d28e7]">
               WORKS WITH YOUR PREFERRED INFRASTRUCTURE
             </p>
 
@@ -547,7 +547,7 @@ export default function AIInfrastructurePage() {
                 (item) => (
                   <div
                     key={item}
-                    className="grid min-h-14 place-items-center rounded-lg bg-white px-2 text-center text-[10px] font-extrabold text-[#33416c] shadow-[0_4px_14px_rgba(35,77,155,.05)]"
+                    className="grid min-h-14 place-items-center rounded-lg bg-white px-2 text-center text-sm font-extrabold sm:text-base text-[#33416c] shadow-[0_4px_14px_rgba(35,77,155,.05)]"
                   >
                     {item}
                   </div>
@@ -569,13 +569,13 @@ export default function AIInfrastructurePage() {
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-[radial-gradient(ellipse_at_bottom,rgba(70,144,255,.18),transparent_65%)]" />
 
           <div className="relative">
-            <p className="text-[9px] font-bold tracking-[3px] text-blue-100">
+            <p className="text-sm sm:text-base font-bold sm:text-xs tracking-[3px] text-blue-100">
               READY TO BUILD YOUR AI FOUNDATION?
             </p>
-            <h2 className="mt-2 text-[24px] font-extrabold tracking-[-0.8px] sm:text-[27px]">
+            <h2 className="mt-2 text-[26px] font-extrabold sm:text-3xl sm:text-4xl lg:text-[32px] sm:text-[26px] font-extrabold tracking-[-0.8px] sm:text-[30px] lg:text-[32px]">
               Let’s Build a Scalable AI Infrastructure Together
             </h2>
-            <p className="mt-1 text-[12px] text-blue-100 sm:text-[13px]">
+            <p className="mt-1 text-[15px] leading-[1.5] sm:text-base text-blue-100 sm:text-[15px] sm:text-base">
               Get expert guidance on cloud, GPU, and AI infrastructure for
               your business goals.
             </p>
@@ -583,21 +583,21 @@ export default function AIInfrastructurePage() {
             <div className="mt-5 flex flex-wrap justify-center gap-3">
               <a
                 href="#"
-                className="rounded-md bg-white px-6 py-3 text-[11px] font-bold text-[#102079] shadow-lg transition hover:-translate-y-0.5"
+                className="rounded-md bg-white px-6 py-3 text-sm sm:text-base font-bold text-[#102079] shadow-lg transition hover:-translate-y-0.5"
               >
                 Book a Free Consultation{" "}
                 <ArrowRight className="ml-1 inline size-3" />
               </a>
               <a
                 href="#how-it-works"
-                className="rounded-md border border-white/70 px-6 py-3 text-[11px] font-bold text-white transition hover:bg-white/10"
+                className="rounded-md border border-white/70 px-6 py-3 text-sm sm:text-base font-bold text-white transition hover:bg-white/10"
               >
                 Talk to Our Experts
               </a>
             </div>
           </div>
 
-          <p className="absolute bottom-5 right-8 hidden rotate-[-10deg] text-left font-hand text-[20px] leading-[0.9] text-white md:block">
+          <p className="absolute bottom-5 right-8 hidden rotate-[-10deg] text-left font-hand text-xl sm:text-2xl leading-[0.9] text-white md:block">
             Scalable
             <br />
             Secure

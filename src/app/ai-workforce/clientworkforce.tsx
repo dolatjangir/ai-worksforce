@@ -302,7 +302,7 @@ export default function AIWorkforcePage() {
   highlightedTitle="AI workforce"
   subtitle=""
   description="A complete team of AI agents working together to automate your operations, drive growth, and give you more time to focus on what matters most."
-  imageSrc="/ai-workforce-hero-img.png"
+  imageSrc="/ai-workforce/ai-workforce-main-hero.png"
   imageAlt="AI workforce professional"
   primaryLabel="Get Your AI Workforce"
   primaryHref="#contact"
@@ -314,7 +314,7 @@ export default function AIWorkforcePage() {
           WORKFORCE CARDS
       ===================================================== */}
 
-      <section className="relative bg-white py-16 sm:py-20 lg:py-24">
+      <section className="relative bg-white py-10">
         <div className="mx-auto max-w-[1440px] px-6 sm:px-8 lg:px-12 xl:px-16">
           <div className="mx-auto max-w-[900px] text-center">
             <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-brand-purple">

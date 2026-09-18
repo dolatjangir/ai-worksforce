@@ -271,7 +271,7 @@ const challengeCards: ChallengeCard[] = [
   {
     title: "Too Many People to Manage",
     description:
-      "Businesses need data experts, marketers, researchers, developers, AI specialists and operations teams.",
+      "Businesses need data experts, marketers, researchers, developers, AI specialists and operations teams. AI WorksForce combines all of them into one managed AI operation.",
     icon: <PeopleManageIcon className="w-8 h-8"/>,
   },
 ];
@@ -285,42 +285,42 @@ const approachSteps: ApproachStep[] = [
     number: "01",
     title: "Analyze",
     description:
-      "AWFI Engine analyzes your business, workflows, data and operational needs..",
+      " AWFI Engine examines your business, workflows, data and operational needs.",
     icon: <AnalyzeIcon className="w-8 h-8"/>,
   },
   {
     number: "02",
     title: "Identify",
     description:
-      "Identify repetitive, expensive and high-impact processes where AI can deliver value.",
+      "Find repetitive, expensive and high-impact processes where AI can deliver value. ",
     icon: <IdentifyIcon className="w-8 h-8"/>,
   },
   {
     number: "03",
     title: "Design",
     description:
-      "Design the right combination of data sources, AI tools, AI agents, automation and human expertise.",
+      "Put together the right mix of data sources, AI tools, AI agents, automation and human expertise. ",
     icon: <DesignIcon className="w-8 h-8"/>,
   },
   {
     number: "04",
     title: "Build",
     description:
-      "Build workflows, integrations, AI agents, CRM and required AI infrastructure.  ",
+      "Create workflows, integrations, AI agents, CRM and the necessary AI infrastructure.",
     icon: <BuildIcon className="w-8 h-8"/>,
   },
   {
     number: "05",
     title: "Operate",
     description:
-      "AI WorksForce manages AI operations with agents, automation, and experts.",
+      " AI WorksForce runs AI operations with agents, automation and experts.",
     icon: <OperateIcon className="w-8 h-8"/>,
   },
   {
     number: "06",
     title: "Optimize",
     description:
-      "AWFI continuously helps improve automation, productivity, intelligence and business results.",
+      "AWFI keeps improving automation, productivity, intelligence and business results. ",
     icon: <OptimizeIcon className="w-8 h-8"/>,
   },
 ];
@@ -345,13 +345,13 @@ const solutions: SolutionCard[] = [
   {
     title: "AI Automation",
     description:
-      "Automate repetitive processes using AI, APIs and workflow automation.",
+      " Automate repetitive processes using AI, APIs and workflow automation.",
     icon: <AutomationIcon className="w-8 h-8"/>,
   },
   {
     title: "AI Data & Research",
     description:
-      "Turn data into insights with AI-powered research and analysis.",
+      "Turn data into insights with AI-powered research and analysis. ",
     icon: <DataIcon className="w-8 h-8"/>,
   },
   {
@@ -363,7 +363,7 @@ const solutions: SolutionCard[] = [
   {
     title: "AI Digital Marketing",
     description:
-      "SEO, content, social, ads, backlinks and more — powered by AI tools and operators.",
+      "SEO, content, social, ads, backlinks and more, powered by AI tools and operators. ",
     icon: <MarketingIcon className="w-8 h-8"/>,
     featured: true,
   },
@@ -419,11 +419,11 @@ function ChallengeCard({
         {icon}
       </div>
 
-      <h3 className="text-sm my-3 font-bold leading-4 text-[#152451] sm:text-lg">
+      <h3 className="text-base my-3 font-extrabold leading-tight text-[#152451] sm:text-lg">
         {title}
       </h3>
 
-      <p className=" text-xs leading-[1.45] text-[#607093] sm:text-sm">
+      <p className=" text-sm leading-[1.5] text-[#607093] sm:text-base">
         {description}
       </p>
     </article>
@@ -479,18 +479,18 @@ function ApproachStep({
             justify-center
             rounded-full
             bg-[#eef5ff]
-            text-[9px]
+            text-xs
             font-bold
             text-[#075cff]
           "
         >
           {number}
         </span>
-        <h3 className="text-sm py-2 font-bold text-[#14234f] sm:text-xl">
+        <h3 className="text-base py-2 font-bold text-[#14234f] sm:text-xl">
           {title}
         </h3>
 
-        <p className="mt-1 max-w-[115px] text-xs leading-[1.5] text-[#627294] sm:text-sm">
+        <p className="mt-1 max-w-[180px] text-sm leading-[1.5] sm:text-base text-[#627294] sm:text-base">
           {description}
         </p>
       </div>
@@ -610,9 +610,10 @@ function SolutionCard({
         <p
           className="
             mt-2
-            text-xs
-            leading-[1.55]
+            text-sm
+            leading-[1.5]
             text-[#607093]
+            sm:text-base
             sm:text-sm
             sm:leading-[1.5]
           "
@@ -717,19 +718,15 @@ export default function BusinessApproach() {
                 className="
                   mt-2
                   
-                  text-xl
+                  text-[26px]
                   font-extrabold
                   leading-[1.18]
                   tracking-[-0.025em]
                   text-[#14234f]
-                  sm:text-2xl
+                  sm:text-[30px] lg:text-[32px]
                 "
               >
-                You Don&apos;t Need More AI Tools.
-               
-                You Need AI That Actually Works
-               
-                for Your Business.
+                You don't need more AI tools. You need AI that actually works for your business.
               </h2>
             </div>
 
@@ -760,7 +757,7 @@ export default function BusinessApproach() {
                   text-lg
                   font-medium
                   text-[#3a68c9]
-                  sm:text-[9px]
+                  sm:text-sm
                 "
               >
                 <ArrowRight className="h-5 w-5 shrink-0 text-[#2563eb]" />
@@ -814,7 +811,7 @@ export default function BusinessApproach() {
             <div>
               <span
                 className="
-                  text-xs
+                  text-sm sm:text-base
                   font-bold
                   uppercase
                   tracking-[0.18em]
@@ -829,28 +826,28 @@ export default function BusinessApproach() {
                 className="
                   mt-2
                  
-                  text-xl
+                  text-[26px]
                   font-extrabold
                   leading-[1.15]
                   tracking-[-0.025em]
                   text-[#14234f]
-                  sm:text-2xl
+                  sm:text-[30px] lg:text-[32px]
                 "
               >
-                From Business Problem to An AWFI-Powered AI Worksforce
+                From Business Problem to an AWFI-Powered AI Workforce
               </h2>
 
               <p
                 className="
                   my-4
                   
-                  text-xs
-                  leading-[1.55]
+                  text-[15px]
+                  leading-[1.5]
                   text-[#647393]
-                  sm:text-lg
+                  sm:text-base
                 "
               >
-The AWFI Engine™ analyzes your business, identifies the ideal mix of AI, automation, data, and expertise, then builds and continuously improves your managed AI workforce.              </p>
+The AWFI Engine™ analyzes your business, identifies the ideal mix of AI, automation, data and expertise, then builds and continuously improves your managed AI workforce.   </p>
 
               <Link
                 href="#solutions"
@@ -939,7 +936,7 @@ The AWFI Engine™ analyzes your business, identifies the ideal mix of AI, autom
           <div className="mb-4">
             <span
               className="
-                text-xs
+                text-sm sm:text-base
                 font-bold
                 uppercase
                 tracking-[0.18em]
@@ -953,15 +950,15 @@ The AWFI Engine™ analyzes your business, identifies the ideal mix of AI, autom
             <h2
               className="
                 my-1.5
-                text-xl
+                text-[26px]
                 font-extrabold
                 leading-tight
                 tracking-[-0.025em]
                 text-[#14234f]
-                sm:text-2xl
+                sm:text-[30px] lg:text-[32px]
               "
             >
-              Everything Your Business Needs to Become AI-Powered
+Everything Your Business Needs to Become AI-Powered
             </h2>
           </div>
 

@@ -213,19 +213,20 @@ export default function Home() {
 
   return (
     <main className="min-h-screen overflow-x-hidden bg-white text-[#071744]">
-      {/* =========================================================
-          TOP BAR
-      ========================================================== */}
-   
-
    
       {/* =========================================================
           HERO
       ========================================================== */}
       <WorkforceHero
-        backgroundImage="/hero-right-img.png"
+         backgroundImages={{
+    laptop: "/hero-resolution/hero-laptop-2560x1600.png",
+    desktop: "/hero-resolution/hero-desktop-2560x1440.png",
+    ultrawide: "/hero-resolution/hero-ultrawide-3360x1440.png",
+  }}
         backgroundAlt="AI WorksForce team and AI automation"
         backgroundPosition="center right"
+          backgroundFit="cover"
+
         primaryHref="/contact"
         demoHref="/how-we-work"
       />
@@ -327,12 +328,10 @@ AI-powered workforce for you from our India delivery center.`}
         </div>
 
         <h2 className="mt-1 text-xl font-extrabold tracking-[-0.035em] text-[#071744] sm:text-[26px]">
-         AWFI Intelligence + AI Technology + Human Expertise + Managed Operations
-        </h2>
+AWFI Intelligence + AI Technology + Human Expertise + Managed Operations        </h2>
 
         <p className="my-2 text-lg text-[#304466] ">
-          A proven model and process to turn your requirements into real
-          business results.
+         A proven model and process that turns your requirements into real business results.
         </p>
       </div>
 
@@ -496,12 +495,11 @@ Real Business Results
         </div>
 
         <h2 className="my-2 text-xl font-extrabold tracking-[-0.03em] text-[#071744] sm:text-[29px]">
-          Choose How You Want to Work With Us.
+Choose How You Want to Work With Us.
         </h2>
 
         <p className="mb-2 max-w-[800px] text-md text-slate-500">
-          Expert-led teams, trained operators and AI tools — fully
-          managed or flexibly built for your needs.
+        Expert-led teams, trained operators and AI tools - fully managed or built flexibly for your needs.
         </p>
       </div>
 
@@ -644,13 +642,10 @@ Real Business Results
         </div>
 
         <h2 className="mb-1 text-2xl font-extrabold tracking-[-0.03em] text-[#071744]">
-          Turn Data Into Business Opportunities.
-        </h2>
+Turn Data Into Business Opportunities         </h2>
 
         <p className="my-2 max-w-[350px] text-sm leading-[1.5] text-slate-600">
-          We combine data, AI tools, AI agents,
-           industry-specific CRM systems and trained 
-           operators to build and manage complete lead generation engines.
+          We combine data, AI tools, AI agents, industry-specific CRM systems and trained operators to build and manage complete lead generation engines.
         </p>
       </div>
 
@@ -865,8 +860,7 @@ Real Business Results
         </h2>
 
         <p className="my-4 text-sm leading-[1.5] text-slate-300 sm:text-lg">
-          Start with a pilot, deploy a dedicated team, use our AI agents or
-          explore our lead engines.
+        Start with a pilot, deploy a dedicated team, use our AI agents or explore our lead engines.
         </p>
 
         <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:flex-wrap">

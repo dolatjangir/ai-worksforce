@@ -235,11 +235,11 @@ export default function AIAdvertisingPromotion() {
       <main>
       <DigitalMarketingHero
   eyebrow="SMART ADS. BIGGER RESULTS."
-  title="AI"
-  highlightedTitle="Advertising & Promotion"
+  title="AI Advertising"
+  highlightedTitle=" & Promotion"
   subtitle="Smarter campaigns. Higher ROI. Real growth."
   description="Let AI plan, create, optimize, and manage your advertising campaigns across all platforms. From audience targeting to ad creatives and performance tracking — we help you get more leads, sales, and brand visibility with less effort."
-  imageSrc="/digital-marketing-hero-right-img.png"
+  imageSrc="/digital-marketing/ads-promotion-hero.png"
   imageAlt="Advertising strategist with AI-powered advertising campaign insights"
   primaryLabel="Book a Free Consultation"
   primaryHref="#contact"

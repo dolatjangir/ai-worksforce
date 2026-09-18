@@ -204,7 +204,7 @@ export default function AIDigitalMarketingPage() {
   highlightedTitle="Marketing"
   subtitle="Smarter Strategies. Higher Impact. Real Growth."
   description="Let AI handle the complexities of digital marketing — from content and campaigns to analytics and automation. We help you attract more customers, boost engagement, and grow your business faster with AI-powered solutions."
-  imageSrc="/digital-marketing-hero-right-img.png"
+  imageSrc="/digital-marketing/ai-digital-marketing-hero.png"
   imageAlt="Digital marketing strategist"
   primaryLabel="Book a Free Consultation"
   primaryHref="#contact"

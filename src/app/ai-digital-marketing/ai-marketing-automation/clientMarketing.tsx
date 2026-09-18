@@ -243,7 +243,7 @@ export default function AIMarketingAutomationPage() {
   highlightedTitle="Automation"
   subtitle="Smarter campaigns. Less effort. More results."
   description="Let AI automate your marketing from end to end. From lead generation and email campaigns to social media, ads, and customer nurturing — we build intelligent automation systems that save time, increase engagement, and drive real business growth."
-  imageSrc="/digital-marketing-hero-right-img.png"
+  imageSrc="/digital-marketing/ai-marketing-automation.png"
   imageAlt="Marketing automation strategist"
   primaryLabel="Book a Free Consultation"
   primaryHref="#contact"

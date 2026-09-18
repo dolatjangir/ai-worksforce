@@ -210,11 +210,11 @@ export default function AISEOPage() {
 
     <DigitalMarketingHero
   eyebrow="RANK HIGHER. GROW FASTER."
-  title="AI"
-  highlightedTitle="SEO"
+  title=""
+  highlightedTitle="AI SEO"
   subtitle="Smarter SEO. Real Business Growth."
   description="Leverage the power of AI to create data-driven SEO strategies, automate content optimization, and achieve higher rankings with less effort. Let AI do the heavy lifting while you focus on growing your business."
-  imageSrc="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1000&q=90"
+  imageSrc="/digital-marketing/ai-seo-hero.png"
   imageAlt="Professional using AI SEO"
   primaryLabel="Book a Free Consultation"
   primaryHref="#consultation"
@@ -246,7 +246,7 @@ export default function AISEOPage() {
           SOLUTIONS SECTION
       ===================================================== */}
 
-      <section className="bg-white py-16 sm:py-20 lg:py-24">
+      <section className="bg-white py-10">
         <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12 xl:px-16">
           <motion.div
             initial="hidden"
@@ -384,7 +384,7 @@ export default function AISEOPage() {
 
       <section
         id="process"
-        className="px-4 pb-16 sm:px-6 sm:pb-20 lg:px-8 lg:pb-24"
+        className="px-4 pb-10 sm:px-6 sm:pb-10 lg:px-8 lg:pb-10"
       >
         <div className="mx-auto max-w-[1390px] rounded-2xl bg-gradient-to-br from-[var(--color-blue-50)] via-white to-[var(--color-indigo-50)] px-4 py-12 sm:px-7 sm:py-14 lg:px-10 lg:py-16">
           <div className="mx-auto max-w-[800px] text-center">
@@ -491,7 +491,7 @@ export default function AISEOPage() {
           SUCCESS SECTION
       ===================================================== */}
 
-      <section className="bg-white pb-16 sm:pb-20 lg:pb-24">
+      <section className="bg-white pb-10 ">
         <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12 xl:px-16">
           <div className="grid items-center gap-8 lg:grid-cols-[1.04fr_0.96fr] lg:gap-10 xl:gap-12">
             {/* LEFT SUCCESS STORY */}
@@ -631,149 +631,13 @@ export default function AISEOPage() {
                 relative min-h-[340px]
                 overflow-hidden rounded-2xl
                 bg-[var(--color-heading)]
-                p-6
-                sm:min-h-[380px]
-                sm:p-8
+                
+               
+               
               "
             >
               {/* Grid */}
-
-              <div
-                className="
-                  absolute inset-0 opacity-20
-                  [background-image:linear-gradient(rgba(255,255,255,.15)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.15)_1px,transparent_1px)]
-                  [background-size:55px_55px]
-                "
-              />
-
-              {/* GLOW */}
-
-              <div className="absolute right-[-100px] top-[-100px] h-[300px] w-[300px] rounded-full bg-[var(--color-primary)]/25 blur-[80px]" />
-
-              {/* GOOGLE */}
-
-              <div className="absolute left-8 top-7 flex h-12 w-12 items-center justify-center rounded-full bg-white text-[19px] font-extrabold shadow-xl sm:left-10 sm:top-9">
-                G
-              </div>
-
-              {/* GRAPH */}
-
-              <div className="absolute bottom-14 left-8 right-8 h-[190px] sm:left-10 sm:right-10">
-                <div className="absolute bottom-0 left-0 right-0 h-px bg-white/20" />
-
-                <div className="absolute bottom-0 left-[4%] h-[45px] w-[28px] rounded-t bg-[var(--color-primary)]/60 sm:w-[34px]" />
-
-                <div className="absolute bottom-0 left-[22%] h-[75px] w-[28px] rounded-t bg-[var(--color-primary)]/70 sm:w-[34px]" />
-
-                <div className="absolute bottom-0 left-[40%] h-[105px] w-[28px] rounded-t bg-[var(--color-primary)]/80 sm:w-[34px]" />
-
-                <div className="absolute bottom-0 left-[58%] h-[135px] w-[28px] rounded-t bg-[var(--color-primary)] sm:w-[34px]" />
-
-                <div className="absolute bottom-0 left-[76%] h-[165px] w-[28px] rounded-t bg-[var(--color-violet-600)] sm:w-[34px]" />
-
-                <svg
-                  className="absolute inset-0 h-full w-full"
-                  viewBox="0 0 500 200"
-                  fill="none"
-                  preserveAspectRatio="none"
-                >
-                  <path
-                    d="M0 190 C90 175 135 165 200 140 C260 115 315 95 370 55 C420 22 450 12 500 0"
-                    stroke="var(--color-cyan)"
-                    strokeWidth="3"
-                    vectorEffect="non-scaling-stroke"
-                  />
-
-                  <path
-                    d="M472 0L500 0L493 24"
-                    stroke="var(--color-cyan)"
-                    strokeWidth="3"
-                    vectorEffect="non-scaling-stroke"
-                  />
-                </svg>
-              </div>
-
-              {/* +312% BADGE */}
-
-              <div className="absolute left-[28%] top-[19%] rounded-xl border border-white/20 bg-white px-4 py-3 shadow-2xl">
-                <p className="text-[18px] font-extrabold text-[var(--color-green)]">
-                  +312%
-                </p>
-                <p className="text-[8px] font-semibold text-[var(--color-heading)]">
-                  Organic Traffic
-                </p>
-              </div>
-
-              {/* BENEFITS */}
-
-              <div className="absolute right-5 top-8 space-y-3 sm:right-8 sm:top-10">
-                {benefits.map((benefit) => (
-                  <div
-                    key={benefit.title}
-                    className="flex items-center gap-2"
-                  >
-                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[var(--color-green-soft)]">
-                      <Check
-                        size={12}
-                        strokeWidth={3}
-                        className="text-[var(--color-green)]"
-                      />
-                    </span>
-
-                    <span className="text-[10px] font-medium text-white sm:text-[11px]">
-                      {benefit.title}
-                    </span>
-                  </div>
-                ))}
-              </div>
-
-              {/* BOTTOM CARD */}
-
-              <div className="absolute bottom-5 left-7 rounded-xl bg-white px-4 py-3 shadow-2xl sm:left-9">
-                <div className="flex items-center gap-3">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[var(--color-indigo-50)]">
-                    <TrendingUp
-                      size={18}
-                      className="text-[var(--color-violet-600)]"
-                    />
-                  </div>
-
-                  <div>
-                    <p className="text-[9px] font-bold leading-4 text-[var(--color-heading)]">
-                      Higher Rankings
-                      <br />
-                      More Customers
-                      <br />
-                      Greater Revenue
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* HANDWRITTEN */}
-
-              <div className="absolute bottom-7 right-5 hidden rotate-[-7deg] font-hand text-lg leading-5 text-white/90 sm:block">
-                <span className="block">Let AI</span>
-                <span className="block">Take Your SEO</span>
-                <span className="block">to the Next Level</span>
-
-                <svg
-                  className="absolute -left-8 top-8 h-12 w-12"
-                  viewBox="0 0 50 50"
-                  fill="none"
-                >
-                  <path
-                    d="M45 4C35 17 23 29 8 43"
-                    stroke="white"
-                    strokeWidth="1.3"
-                  />
-                  <path
-                    d="M8 43L11 33M8 43L18 40"
-                    stroke="white"
-                    strokeWidth="1.3"
-                  />
-                </svg>
-              </div>
+        <img src="/digital-marketing/ai-seo-bottom.png" alt="AI SEO Graphic" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>
@@ -794,10 +658,10 @@ export default function AISEOPage() {
             from-[var(--color-heading)]
             via-[var(--color-heading-dark)]
             to-[var(--color-violet-600)]
-            px-5 py-12
+            px-5 py-8
             text-center
-            sm:px-10 sm:py-14
-            lg:px-16 lg:py-16
+            sm:px-10 sm:py-10
+            
           "
         >
           {/* WAVE DECORATION */}
@@ -873,7 +737,7 @@ export default function AISEOPage() {
 
           {/* CTA HANDWRITTEN */}
 
-          <div className="absolute bottom-8 right-7 hidden rotate-[-7deg] font-hand text-lg leading-5 text-white/90 lg:block">
+          <div className="absolute bottom-28 right-7 hidden rotate-[-7deg] font-hand text-lg leading-5 text-white/90 lg:block">
             <span className="block">Higher Rankings</span>
             <span className="block">Brighter Futures</span>
 

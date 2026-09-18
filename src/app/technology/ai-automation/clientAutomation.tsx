@@ -96,31 +96,7 @@ export default function AIAutomationPage({
     <div className="min-h-screen overflow-x-clip bg-white font-sans text-brand-dark antialiased">
       <a href="#main" className={`sr-only z-50 rounded-lg bg-white p-4 focus:fixed focus:left-4 focus:top-4 focus:not-sr-only ${focus}`}>Skip to content</a>
 
-      <header className="relative z-40 border-b border-brand-blue/10 bg-white/95 backdrop-blur">
-        <div className="mx-auto flex min-h-[72px] max-w-[1370px] items-center justify-between gap-6 px-5 sm:px-8 lg:px-10">
-          <a href="/" aria-label="AI WorksForce home" className={`shrink-0 ${focus}`}>
-            <span className="block text-[24px] font-bold leading-none tracking-[-0.055em]"><span className="text-brand-blue">AI</span> WorksForce</span>
-            <span className="mt-1 block text-right text-[9px] text-brand-text">Automate. Accelerate. Grow.</span>
-          </a>
-          <nav aria-label="Main navigation" className="hidden items-center gap-5 desktop-lg:flex">
-            {navItems.map(([label, href]) => (
-              <a key={label} href={href} className={`relative whitespace-nowrap py-7 text-[11px] font-medium transition ${label === "Solutions" ? "text-brand-dark after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 after:bg-brand-purple" : "text-brand-text hover:text-brand-blue"} ${focus}`}>
-                {label}{label === "Solutions" && <span className="ml-1">⌄</span>}
-              </a>
-            ))}
-          </nav>
-          <a href={consultationHref} className={`${primary} hidden min-h-10 px-5 py-2 text-xs sm:inline-flex`}>Book a Free Consultation {icon("arrow", "size-4")}</a>
-          <button type="button" aria-label={menuOpen ? "Close navigation" : "Open navigation"} aria-expanded={menuOpen} aria-controls="mobile-nav" onClick={() => setMenuOpen((open) => !open)} className={`grid size-11 place-items-center rounded-lg border border-brand-blue/20 desktop-lg:hidden ${focus}`}>
-            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="size-6"><path d={menuOpen ? "m6 6 12 12M6 18 18 6" : "M4 6h16M4 12h16M4 18h16"} /></svg>
-          </button>
-        </div>
-        {menuOpen && (
-          <nav id="mobile-nav" aria-label="Mobile navigation" className="absolute inset-x-0 top-full grid gap-1 border-b border-brand-blue/10 bg-white p-5 shadow-xl desktop-lg:hidden">
-            {navItems.map(([label, href]) => <a key={label} href={href} onClick={() => setMenuOpen(false)} className={`rounded-lg px-4 py-3 text-sm hover:bg-brand-blue-soft ${focus}`}>{label}</a>)}
-            <a href={consultationHref} className={primary}>Book a Free Consultation {icon("arrow", "size-4")}</a>
-          </nav>
-        )}
-      </header>
+ 
 
       <main id="main">
        <ReusableHero
@@ -277,14 +253,7 @@ export default function AIAutomationPage({
         </section>
       </main>
 
-      <footer className="border-t border-brand-blue/10 bg-white">
-        <div className="mx-auto flex max-w-[1370px] flex-col items-center justify-between gap-5 px-5 py-5 lg:flex-row lg:px-10">
-          <a href="/" aria-label="AI WorksForce home" className={focus}><span className="block text-xl font-bold tracking-[-0.05em]"><span className="text-brand-blue">AI</span> WorksForce</span><span className="block text-[8px] text-brand-text">Automate. Accelerate. Grow.</span></a>
-          <nav aria-label="Footer navigation" className="flex flex-wrap justify-center gap-x-6 gap-y-3">{navItems.map(([label, href]) => <a key={label} href={href} className={`text-[11px] text-brand-text hover:text-brand-blue ${focus}`}>{label}</a>)}</nav>
-          <div className="flex gap-3 text-brand-dark" aria-label="Social links">{["in", "♥", "▶", "◎"].map((mark, index) => <a key={`${mark}-${index}`} href="#" aria-label={["LinkedIn", "X", "YouTube", "Instagram"][index]} className={`grid size-7 place-items-center rounded-md text-sm font-bold hover:bg-brand-blue-soft ${focus}`}>{mark}</a>)}</div>
-        </div>
-        <div className="mx-auto flex max-w-[1370px] flex-col items-center justify-between gap-3 border-t border-brand-blue/10 px-5 py-4 text-[10px] text-brand-text sm:flex-row lg:px-10"><p>© 2026 AI WorksForce. All rights reserved.</p><div className="flex gap-6"><a href="/privacy" className="hover:text-brand-blue">Privacy Policy</a><a href="/terms" className="hover:text-brand-blue">Terms of Service</a><a href="/contact" className="hover:text-brand-blue">Contact</a></div></div>
-      </footer>
+     
     </div>
   );
 }

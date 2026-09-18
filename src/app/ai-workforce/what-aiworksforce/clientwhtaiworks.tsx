@@ -193,7 +193,7 @@ export default function AIWorkforceWhyPage() {
   highlightedTitle="AI WorksForce?"
   subtitle="Why businesses choose our model"
   description="AIWorksForce gives you a dedicated team of AI agents that work alongside your people — automating tasks, handling operations, interacting with customers, and driving growth."
-  imageSrc="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=900&auto=format&fit=crop"
+  imageSrc="/ai-workforce/what-aiworkforce.png"
   imageAlt="Professional with her AI workforce"
   primaryLabel="Book a Free Consultation"
   primaryHref="#consultation"
@@ -202,7 +202,7 @@ export default function AIWorkforceWhyPage() {
 />
 
       {/* ================= WHY BUSINESSES CHOOSE ================= */}
-      <section className="bg-slate-50/60 py-20 lg:py-24">
+      <section className="bg-slate-50/60 py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <span className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-400">
@@ -241,7 +241,7 @@ export default function AIWorkforceWhyPage() {
       </section>
 
       {/* ================= COMPARISON ================= */}
-      <section className="bg-white py-20 lg:py-24">
+      <section className="bg-white py-10">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <span className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-400">
@@ -306,7 +306,7 @@ export default function AIWorkforceWhyPage() {
       </section>
 
       {/* ================= PROCESS ================= */}
-      <section id="process" className="bg-slate-50/60 py-20 lg:py-24">
+      <section id="process" className="bg-slate-50/60 py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <span className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-400">
@@ -354,7 +354,7 @@ export default function AIWorkforceWhyPage() {
       </section>
 
       {/* ================= TESTIMONIALS ================= */}
-      <section className="bg-white py-20 lg:py-24">
+      <section className="bg-white py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <span className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-400">
@@ -397,7 +397,7 @@ export default function AIWorkforceWhyPage() {
 
       {/* ================= CTA BANNER ================= */}
       <section id="consultation" className="bg-white px-4 pb-24 sm:px-6 lg:px-8">
-        <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-gradient-to-br from-brand-navy via-brand-dark to-[#1e2a6e] px-6 py-16 text-center sm:px-12 sm:py-20">
+        <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-gradient-to-br from-brand-navy via-brand-dark to-[#1e2a6e] px-6 py-10 text-center sm:px-12 ">
           <div
             className="pointer-events-none absolute inset-0 opacity-[0.08]"
             style={{

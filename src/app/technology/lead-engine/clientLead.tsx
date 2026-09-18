@@ -124,7 +124,7 @@ const metrics = [
 
 function CheckItem({ children }: { children: string }) {
   return (
-    <li className="flex items-center gap-2 text-[11px] font-medium text-brand-text">
+    <li className="flex items-center gap-2 text-sm font-medium sm:text-base text-brand-text">
       <span className="grid size-4 shrink-0 place-items-center rounded-full bg-brand-green-soft text-brand-green">
         <Check className="size-3 stroke-[3]" />
       </span>
@@ -250,7 +250,7 @@ export default function LeadEnginePage() {
 />
 
       <section className="mx-auto max-w-[1440px] px-5 py-5 lg:px-[76px]">
-        <p className="text-[9px] font-extrabold tracking-[2.7px] text-[#1d28e7]">
+        <p className="text-sm sm:text-base font-extrabold sm:text-[11px] tracking-[2.7px] text-[#1d28e7]">
           TRUSTED BY GROWING BUSINESSES
         </p>
 
@@ -258,7 +258,7 @@ export default function LeadEnginePage() {
           {["HubSpot", "salesforce", "LinkedIn", "Google", "Apollo.io", "zoominfo", "pipedrive", "Outreach"].map((brand, index) => (
             <span
               key={brand}
-              className={`text-[17px] font-extrabold tracking-[-0.8px] ${
+              className={`text-base font-extrabold sm:text-lg tracking-[-0.8px] ${
                 index === 0
                   ? "text-[#283b61]"
                   : index === 1
@@ -278,13 +278,13 @@ export default function LeadEnginePage() {
 
       <section id="solutions" className="mx-auto max-w-[1440px] px-5 py-3 lg:px-[76px]">
         <div className="text-center">
-          <p className="text-[9px] font-extrabold tracking-[2.8px] text-[#1d28e7]">
+          <p className="text-sm sm:text-base font-extrabold sm:text-[11px] tracking-[2.8px] text-[#1d28e7]">
             OUR LEAD ENGINE SOLUTIONS
           </p>
-          <h2 className="mt-1 text-[24px] font-extrabold tracking-[-1.2px] text-brand-dark sm:text-[26px]">
+          <h2 className="mt-1 text-[26px] font-extrabold sm:text-[30px] lg:text-[32px] sm:text-[30px] lg:text-[32px] tracking-[-1.2px] text-brand-dark sm:text-[26px]">
             Everything You Need to Generate and Convert Leads
           </h2>
-          <p className="mx-auto mt-1 max-w-3xl text-[13px] text-[#58689a]">
+          <p className="mx-auto mt-1 max-w-3xl text-[15px] leading-[1.55] text-[#58689a] sm:text-base">
             From AI-powered prospecting to automated outreach, our Lead Engine helps you build a predictable and scalable pipeline.
           </p>
         </div>
@@ -298,10 +298,10 @@ export default function LeadEnginePage() {
               <span className={`mx-auto grid size-12 place-items-center rounded-full ${iconClass}`}>
                 <Icon className="size-6" />
               </span>
-              <h3 className="mt-3 text-[13px] font-extrabold leading-[1.15] tracking-[-0.45px] text-brand-dark">
+              <h3 className="mt-3 text-base font-extrabold sm:text-lg leading-[1.15] tracking-[-0.45px] text-brand-dark">
                 {title}
               </h3>
-              <p className="mt-2 text-[12px] leading-[1.32] text-[#556595]">{text}</p>
+              <p className="mt-2 text-[15px] leading-[1.5] text-[#556595]">{text}</p>
             </article>
           ))}
         </div>
@@ -310,11 +310,11 @@ export default function LeadEnginePage() {
       <section id="how-it-works" className="mx-auto max-w-[1440px] px-5 py-5 lg:px-[76px]">
         <div className="rounded-xl bg-[#fafbff] px-4 py-5 sm:px-5">
           <div className="text-center">
-            <p className="text-[9px] font-extrabold tracking-[2.8px] text-[#1d28e7]">HOW IT WORKS</p>
-            <h2 className="mt-1 text-[24px] font-extrabold tracking-[-1.1px] text-brand-dark">
+            <p className="text-sm sm:text-base font-extrabold sm:text-[11px] tracking-[2.8px] text-[#1d28e7]">HOW IT WORKS</p>
+            <h2 className="mt-1 text-[26px] font-extrabold sm:text-[30px] lg:text-[32px] sm:text-[30px] lg:text-[32px] tracking-[-1.1px] text-brand-dark">
               A Simple Process for Big Results
             </h2>
-            <p className="mt-1 text-[13px] text-[#58689a]">
+            <p className="mt-1 text-[15px] leading-[1.55] text-[#58689a] sm:text-base">
               We make lead generation easy, efficient, and effective with AI.
             </p>
           </div>
@@ -325,9 +325,9 @@ export default function LeadEnginePage() {
                 <span className={`mx-auto grid size-12 place-items-center rounded-full ${color}`}>
                   <Icon className="size-6" />
                 </span>
-                <p className="mt-2 text-[10px] font-extrabold text-[#1b2ce9]">{number}</p>
-                <h3 className="text-[13px] font-extrabold text-brand-dark">{title}</h3>
-                <p className="mx-auto mt-1 max-w-[170px] text-[12px] leading-[1.28] text-[#566696]">{text}</p>
+                <p className="mt-2 text-sm sm:text-base font-extrabold text-[#1b2ce9]">{number}</p>
+                <h3 className="text-base font-extrabold sm:text-lg text-brand-dark">{title}</h3>
+                <p className="mx-auto mt-1 max-w-[170px] text-[15px] leading-[1.45] text-[#566696]">{text}</p>
 
                 {index < steps.length - 1 && (
                   <ArrowRight className="absolute right-[-10px] top-8 hidden size-5 text-[#1c2de9] lg:block" />
@@ -340,10 +340,10 @@ export default function LeadEnginePage() {
 
       <section className="mx-auto grid max-w-[1440px] gap-5 px-5 py-4 lg:grid-cols-2 lg:px-[76px]">
         <div>
-          <p className="text-[9px] font-extrabold tracking-[2.7px] text-[#1d28e7]">
+          <p className="text-sm sm:text-base font-extrabold sm:text-[11px] tracking-[2.7px] text-[#1d28e7]">
             REAL RESULTS. REAL BUSINESSES.
           </p>
-          <h2 className="mt-1 text-[26px] font-extrabold tracking-[-1.2px] text-brand-dark">
+          <h2 className="mt-1 text-[26px] font-extrabold sm:text-[30px] lg:text-[32px] tracking-[-1.2px] text-brand-dark">
             Drive Predictable Growth with Lead Engine
           </h2>
           <p className="mt-1 max-w-[540px] text-[14px] leading-[1.35] text-[#58689a]">
@@ -356,10 +356,10 @@ export default function LeadEnginePage() {
                 <span className={`mx-auto grid size-9 place-items-center rounded-full ${color.split(" ")[1]} ${color.split(" ")[0]}`}>
                   <Icon className="size-4" />
                 </span>
-                <strong className="mt-2 block text-[22px] font-extrabold leading-none text-[#1527d9]">
+                <strong className="mt-2 block text-[26px] font-extrabold sm:text-[30px] leading-none text-[#1527d9]">
                   {value}
                 </strong>
-                <p className="mt-1 text-[10px] leading-[1.2] text-[#58689a]">{label}</p>
+                <p className="mt-1 text-sm sm:text-base leading-[1.2] text-[#58689a]">{label}</p>
               </div>
             ))}
           </div>
@@ -377,11 +377,11 @@ export default function LeadEnginePage() {
             />
 
             <div className="pr-3">
-              <p className="text-[9px] font-extrabold tracking-[2.3px] text-[#1d28e7]">CASE STUDY</p>
-              <h3 className="mt-1 text-[17px] font-extrabold leading-[1.1] tracking-[-0.6px] text-brand-dark">
+              <p className="text-sm sm:text-base font-extrabold sm:text-[11px] tracking-[2.3px] text-[#1d28e7]">CASE STUDY</p>
+              <h3 className="mt-1 text-base font-extrabold sm:text-lg leading-[1.1] tracking-[-0.6px] text-brand-dark">
                 B2B SaaS Company: 4x More Qualified Leads
               </h3>
-              <p className="mt-2 text-[12px] leading-[1.35] text-[#556595]">
+              <p className="mt-2 text-[15px] leading-[1.45] text-[#556595]">
                 We helped a B2B SaaS company implement our Lead Engine to automate prospecting and outreach, resulting in 312% more qualified leads and 4x higher conversion rates in just 4 months.
               </p>
 
@@ -392,7 +392,7 @@ export default function LeadEnginePage() {
                   ["70%", "Lower CPL"],
                 ].map(([value, label]) => (
                   <div key={value}>
-                    <strong className="block text-[21px] font-extrabold leading-none text-[#1527e5]">{value}</strong>
+                    <strong className="block text-2xl font-extrabold sm:text-3xl leading-none text-[#1527e5]">{value}</strong>
                     <span className="mt-1 block text-[9px] leading-tight text-[#58689a]">{label}</span>
                   </div>
                 ))}
@@ -408,31 +408,31 @@ export default function LeadEnginePage() {
           <div className="pointer-events-none absolute -right-10 -top-12 size-52 rounded-full border border-blue-300/20" />
 
           <div className="relative">
-            <p className="text-[9px] font-bold tracking-[3px] text-blue-100">READY TO FILL YOUR PIPELINE?</p>
-            <h2 className="mt-2 text-[24px] font-extrabold tracking-[-0.8px] sm:text-[27px]">
+            <p className="text-sm sm:text-base font-bold sm:text-[11px] tracking-[3px] text-blue-100">READY TO FILL YOUR PIPELINE?</p>
+            <h2 className="mt-2 text-[26px] font-extrabold sm:text-[30px] lg:text-[32px] sm:text-[30px] lg:text-[32px] tracking-[-0.8px] sm:text-[27px]">
               Let’s Build Your Lead Generation Engine
             </h2>
-            <p className="mt-1 text-[12px] text-blue-100 sm:text-[13px]">
+            <p className="mt-1 text-[15px] text-blue-100 sm:text-base sm:text-[13px]">
               Get expert guidance on how AI can help you generate, qualify, and convert more leads.
             </p>
 
             <div className="mt-5 flex flex-wrap justify-center gap-3">
               <a
                 href="#"
-                className="rounded-md bg-white px-6 py-3 text-[11px] font-bold text-[#102079] shadow-lg transition hover:-translate-y-0.5"
+                className="rounded-md bg-white px-6 py-3 text-sm font-bold sm:text-base text-[#102079] shadow-lg transition hover:-translate-y-0.5"
               >
                 Book a Free Consultation <ArrowRight className="ml-1 inline size-3" />
               </a>
               <a
                 href="#solutions"
-                className="rounded-md border border-white/70 px-6 py-3 text-[11px] font-bold text-white transition hover:bg-white/10"
+                className="rounded-md border border-white/70 px-6 py-3 text-sm font-bold sm:text-base text-white transition hover:bg-white/10"
               >
                 Explore Lead Engine
               </a>
             </div>
           </div>
 
-          <p className="absolute bottom-5 right-8 hidden rotate-[-10deg] text-left font-hand text-[20px] leading-[0.9] text-white md:block">
+          <p className="absolute bottom-5 right-8 hidden rotate-[-10deg] text-left font-hand text-2xl sm:text-3xl leading-[0.9] text-white md:block">
             More Leads
             <br />
             More Deals
@@ -445,11 +445,11 @@ export default function LeadEnginePage() {
       <footer className="mx-auto max-w-[1440px] px-5 pb-5 pt-3 lg:px-[76px]">
         <div className="flex flex-col gap-5 border-b border-blue-100 pb-4 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="text-[18px] font-extrabold tracking-[-1px] text-[#101d82]">AI WorksForce</p>
-            <p className="text-[8px] font-semibold text-brand-text">Automate. Accelerate. Grow.</p>
+            <p className="text-xl sm:text-2xl font-extrabold tracking-[-1px] text-[#101d82]">AI WorksForce</p>
+            <p className="text-xs font-semibold sm:text-sm text-brand-text">Automate. Accelerate. Grow.</p>
           </div>
 
-          <nav className="flex flex-wrap gap-x-4 gap-y-2 text-[9px] font-medium text-[#58689a]">
+          <nav className="flex flex-wrap gap-x-4 gap-y-2 text-xs font-medium sm:text-sm text-[#58689a]">
             {navItems.map((item) => (
               <a key={item} href="#" className="hover:text-brand-blue">
                 {item}

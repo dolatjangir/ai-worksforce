@@ -153,7 +153,7 @@ export default function AIWorkforcePage() {
   highlightedTitle="AI Workforce?"
   subtitle=""
   description="An AI workforce is a team of intelligent AI agents that work alongside your human team to automate tasks, handle operations, interact with customers, and drive growth — 24/7."
-  imageSrc="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=900&auto=format&fit=crop"
+  imageSrc="/ai-workforce/what-an-ai-workforce-hero.png"
   imageAlt="Professional working with her AI workforce"
   primaryLabel="See How It Works"
   primaryHref="#how-it-works"
@@ -162,7 +162,7 @@ export default function AIWorkforcePage() {
 />
 
       {/* ================= WORKFORCE FEATURES ================= */}
-      <section className="bg-white py-20 lg:py-24">
+      <section className="bg-white py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <span className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-400">
@@ -203,7 +203,7 @@ export default function AIWorkforcePage() {
       </section>
 
       {/* ================= HOW IT WORKS ================= */}
-      <section id="how-it-works" className="bg-slate-50/60 py-20 lg:py-24">
+      <section id="how-it-works" className="bg-slate-50/60 py-10">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
           {/* Left — Visual */}
           <div className="relative order-2 lg:order-1">
@@ -280,7 +280,7 @@ export default function AIWorkforcePage() {
       </section>
 
       {/* ================= REAL IMPACT ================= */}
-      <section className="bg-white py-20 lg:py-24">
+      <section className="bg-white py-10 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <span className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-400">
@@ -318,7 +318,7 @@ export default function AIWorkforcePage() {
 
       {/* ================= CTA BANNER ================= */}
       <section id="consultation" className="bg-white px-4 pb-24 sm:px-6 lg:px-8">
-        <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-gradient-to-br from-brand-navy via-brand-dark to-[#1e2a6e] px-6 py-16 text-center sm:px-12 sm:py-20">
+        <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-gradient-to-br from-brand-navy via-brand-dark to-[#1e2a6e] px-6 py-10 text-center sm:px-12">
           {/* Grid pattern overlay */}
           <div
             className="pointer-events-none absolute inset-0 opacity-[0.08]"

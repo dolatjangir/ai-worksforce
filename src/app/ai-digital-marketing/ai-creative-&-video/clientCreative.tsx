@@ -270,7 +270,7 @@ export default function AICreativeVideoPage() {
   highlightedTitle="Creative & Video"
   subtitle="Stunning content. Smarter production. Bigger impact."
   description="Let AI bring your ideas to life. From eye-catching graphics to scroll-stopping videos, we create high-quality, on-brand creatives that engage your audience, boost your campaigns, and drive real business results — faster and at lower costs."
-  imageSrc="/digital-marketing-hero-right-img.png"
+  imageSrc="/digital-marketing/ai-creative-video-hero.png"
   imageAlt="AI creative strategist working on creative and video production"
   primaryLabel="Book a Free Consultation"
   primaryHref="#contact"

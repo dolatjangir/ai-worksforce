@@ -196,7 +196,7 @@ const popularIntegrations = [
 
 function CheckItem({ children }: { children: string }) {
   return (
-    <li className="flex items-center gap-2 text-[11px] font-medium leading-tight text-brand-text">
+    <li className="flex items-center gap-2 text-sm font-medium sm:text-base leading-tight text-brand-text">
       <span className="grid size-4 shrink-0 place-items-center rounded-full bg-brand-green-soft text-brand-green">
         <Check className="size-3 stroke-[3]" />
       </span>
@@ -357,7 +357,7 @@ export default function IntegrationsPage() {
 
       {/* Trusted companies */}
       <section className="mx-auto max-w-[1440px] px-5 py-4 lg:px-[76px]">
-        <p className="text-[9px] font-extrabold tracking-[2.7px] text-[#1d28e7]">
+        <p className="text-sm font-extrabold sm:text-base tracking-[2.7px] text-[#1d28e7]">
           TRUSTED BY INNOVATIVE COMPANIES
         </p>
 
@@ -374,13 +374,13 @@ export default function IntegrationsPage() {
         className="mx-auto max-w-[1440px] px-5 py-2 lg:px-[76px]"
       >
         <div className="text-center">
-          <p className="text-[9px] font-extrabold tracking-[2.8px] text-[#1d28e7]">
+          <p className="text-sm font-extrabold sm:text-base tracking-[2.8px] text-[#1d28e7]">
             OUR INTEGRATION SOLUTIONS
           </p>
-          <h2 className="mt-1 text-[24px] font-extrabold tracking-[-1.2px] text-brand-dark sm:text-[27px]">
+          <h2 className="mt-1 text-[26px] font-extrabold sm:text-[30px] lg:text-[32px] tracking-[-1.2px] text-brand-dark sm:text-[28px] sm:text-3xl">
             Connect. Automate. Scale.
           </h2>
-          <p className="mx-auto mt-1 max-w-3xl text-[13px] text-[#58689a]">
+          <p className="mx-auto mt-1 max-w-3xl text-[15px] leading-[1.55] text-[#58689a] sm:text-base">
             We integrate the tools you already use with AI to create seamless,
             automated, and intelligent workflows.
           </p>
@@ -395,10 +395,10 @@ export default function IntegrationsPage() {
               <span className={`mx-auto grid size-12 place-items-center rounded-full ${iconClass}`}>
                 <Icon className="size-6" />
               </span>
-              <h3 className="mt-3 text-[13px] font-extrabold leading-[1.15] tracking-[-0.45px] text-brand-dark">
+              <h3 className="mt-3 text-base sm:text-lg font-extrabold leading-[1.15] tracking-[-0.45px] text-brand-dark">
                 {title}
               </h3>
-              <p className="mt-2 text-[12px] leading-[1.32] text-[#556595]">
+              <p className="mt-2 text-[15px] leading-[1.5] sm:text-base text-[#556595]">
                 {text}
               </p>
             </article>
@@ -413,13 +413,13 @@ export default function IntegrationsPage() {
       >
         <div className="rounded-xl bg-[#fafbff] px-4 py-4 sm:px-5">
           <div className="text-center">
-            <p className="text-[9px] font-extrabold tracking-[2.8px] text-[#1d28e7]">
+            <p className="text-sm font-extrabold sm:text-base tracking-[2.8px] text-[#1d28e7]">
               HOW IT WORKS
             </p>
-            <h2 className="mt-1 text-[24px] font-extrabold tracking-[-1.1px] text-brand-dark">
+            <h2 className="mt-1 text-[26px] font-extrabold sm:text-[30px] lg:text-[32px] tracking-[-1.1px] text-brand-dark">
               From Connection to Results
             </h2>
-            <p className="mt-1 text-[13px] text-[#58689a]">
+            <p className="mt-1 text-[15px] leading-[1.55] text-[#58689a] sm:text-base">
               A simple, proven process to integrate your tools and unlock automation.
             </p>
           </div>
@@ -430,9 +430,9 @@ export default function IntegrationsPage() {
                 <span className={`mx-auto grid size-12 place-items-center rounded-full ${color}`}>
                   <Icon className="size-6" />
                 </span>
-                <p className="mt-2 text-[10px] font-extrabold text-[#1b2ce9]">{number}</p>
-                <h3 className="text-[13px] font-extrabold text-brand-dark">{title}</h3>
-                <p className="mx-auto mt-1 max-w-[170px] text-[12px] leading-[1.28] text-[#566696]">
+                <p className="mt-2 text-sm font-extrabold sm:text-base text-[#1b2ce9]">{number}</p>
+                <h3 className="text-base sm:text-lg font-extrabold text-brand-dark">{title}</h3>
+                <p className="mx-auto mt-1 max-w-[170px] text-[15px] leading-[1.45] sm:text-base text-[#566696]">
                   {text}
                 </p>
                 {index < processSteps.length - 1 && (
@@ -447,13 +447,13 @@ export default function IntegrationsPage() {
       {/* Results + Case study */}
       <section className="mx-auto grid max-w-[1440px] gap-5 px-5 py-3 lg:grid-cols-2 lg:px-[76px]">
         <div>
-          <p className="text-[9px] font-extrabold tracking-[2.7px] text-[#1d28e7]">
+          <p className="text-sm font-extrabold sm:text-base tracking-[2.7px] text-[#1d28e7]">
             REAL INTEGRATIONS. REAL BUSINESS IMPACT.
           </p>
-          <h2 className="mt-1 text-[26px] font-extrabold tracking-[-1.2px] text-brand-dark">
+          <h2 className="mt-1 text-[26px] font-extrabold sm:text-[30px] lg:text-[32px] tracking-[-1.2px] text-brand-dark">
             Businesses Do More with Connected Tools
           </h2>
-          <p className="mt-1 max-w-[540px] text-[14px] leading-[1.35] text-[#58689a]">
+          <p className="mt-1 max-w-[540px] text-[15px] leading-[1.55] sm:text-base text-[#58689a]">
             See how our integration solutions help businesses save time,
             reduce errors, and achieve faster growth.
           </p>
@@ -466,10 +466,10 @@ export default function IntegrationsPage() {
                   <span className={`mx-auto grid size-9 place-items-center rounded-full ${bgColor} ${textColor}`}>
                     <Icon className="size-4" />
                   </span>
-                  <strong className="mt-2 block text-[22px] font-extrabold leading-none text-[#1527d9]">
+                  <strong className="mt-2 block text-2xl font-extrabold sm:text-3xl leading-none text-[#1527d9]">
                     {value}
                   </strong>
-                  <p className="mt-1 text-[10px] leading-[1.2] text-[#58689a]">{label}</p>
+                  <p className="mt-1 text-sm leading-[1.35] sm:text-base text-[#58689a]">{label}</p>
                 </div>
               );
             })}
@@ -509,13 +509,13 @@ export default function IntegrationsPage() {
             </div>
 
             <div className="pr-3">
-              <p className="text-[9px] font-extrabold tracking-[2.3px] text-[#1d28e7]">
+              <p className="text-sm font-extrabold sm:text-base tracking-[2.3px] text-[#1d28e7]">
                 CASE STUDY
               </p>
-              <h3 className="mt-1 text-[17px] font-extrabold leading-[1.1] tracking-[-0.6px] text-brand-dark">
+              <h3 className="mt-1 text-lg font-extrabold sm:text-xl leading-[1.1] tracking-[-0.6px] text-brand-dark">
                 Marketing Agency: Unified Workflow with AI Integrations
               </h3>
-              <p className="mt-2 text-[12px] leading-[1.35] text-[#556595]">
+              <p className="mt-2 text-[15px] leading-[1.5] sm:text-base text-[#556595]">
                 We helped a marketing agency integrate their CRM, email, and
                 analytics tools, automating lead capture, follow-ups, and
                 reporting, resulting in 3x more qualified leads and 70% less
@@ -529,10 +529,10 @@ export default function IntegrationsPage() {
                   ["312%", "Faster Reporting"],
                 ].map(([value, label]) => (
                   <div key={value}>
-                    <strong className="block text-[21px] font-extrabold leading-none text-[#1527e5]">
+                    <strong className="block text-2xl font-extrabold sm:text-3xl leading-none text-[#1527e5]">
                       {value}
                     </strong>
-                    <span className="mt-1 block text-[9px] leading-tight text-[#58689a]">
+                    <span className="mt-1 block text-sm leading-tight sm:text-base text-[#58689a]">
                       {label}
                     </span>
                   </div>
@@ -548,27 +548,27 @@ export default function IntegrationsPage() {
         <div className="grid overflow-hidden rounded-xl bg-[#f9fbff] lg:grid-cols-[1.05fr_.95fr]">
           <div className="flex items-center gap-4 border-b border-blue-100 p-4 sm:p-5 lg:border-b-0 lg:border-r">
             <div className="grid size-20 shrink-0 place-items-center overflow-hidden rounded-full border-4 border-[#e6eaff] bg-gradient-to-br from-[#d9e6ff] to-[#f8faff] sm:size-24">
-              <span className="text-[27px] font-extrabold text-[#1d2e7f]">RS</span>
+              <span className="text-[28px] sm:text-3xl font-extrabold text-[#1d2e7f]">RS</span>
             </div>
 
             <div>
-              <div className="mb-1 text-[28px] font-extrabold leading-none text-[#2235ef]">“</div>
-              <p className="text-[12px] leading-[1.35] text-[#536394]">
+              <div className="mb-1 text-3xl sm:text-4xl font-extrabold leading-none text-[#2235ef]">“</div>
+              <p className="text-[15px] leading-[1.5] sm:text-base text-[#536394]">
                 AI WorksForce seamlessly integrated all our tools and
                 transformed the way we work. Everything now runs together like
                 a single, intelligent system.
               </p>
-              <p className="mt-1 text-[11px] font-extrabold text-brand-dark">
+              <p className="mt-1 text-sm font-extrabold sm:text-base text-brand-dark">
                 Rahul Mehta
               </p>
-              <p className="text-[9px] text-[#58689a]">
+              <p className="text-sm text-[#58689a] sm:text-base">
                 Founder, GrowthTech (SaaS)
               </p>
             </div>
           </div>
 
           <div className="p-4 sm:p-5">
-            <p className="text-[9px] font-extrabold tracking-[2.3px] text-[#1d28e7]">
+            <p className="text-sm font-extrabold sm:text-base tracking-[2.3px] text-[#1d28e7]">
               POPULAR INTEGRATIONS
             </p>
 
@@ -576,7 +576,7 @@ export default function IntegrationsPage() {
               {popularIntegrations.map((item) => (
                 <div
                   key={item}
-                  className="grid min-h-14 place-items-center rounded-lg bg-white px-2 text-center text-[10px] font-extrabold text-[#33416c] shadow-[0_4px_14px_rgba(35,77,155,.05)]"
+                  className="grid min-h-14 place-items-center rounded-lg bg-white px-2 text-center text-sm font-extrabold sm:text-base text-[#33416c] shadow-[0_4px_14px_rgba(35,77,155,.05)]"
                 >
                   {item}
                 </div>
@@ -596,34 +596,34 @@ export default function IntegrationsPage() {
           <div className="pointer-events-none absolute -right-10 -top-12 size-52 rounded-full border border-blue-300/20" />
 
           <div className="relative">
-            <p className="text-[9px] font-bold tracking-[3px] text-blue-100">
+            <p className="text-sm font-bold sm:text-base tracking-[3px] text-blue-100">
               READY TO CONNECT YOUR TOOLS?
             </p>
-            <h2 className="mt-2 text-[24px] font-extrabold tracking-[-0.8px] sm:text-[27px]">
+            <h2 className="mt-2 text-[26px] font-extrabold sm:text-[30px] lg:text-[32px] tracking-[-0.8px] sm:text-[28px] sm:text-3xl">
               Let’s Build a More Connected Business
             </h2>
-            <p className="mt-1 text-[12px] text-blue-100 sm:text-[13px]">
+            <p className="mt-1 text-[15px] leading-[1.5] sm:text-base text-blue-100 sm:text-base sm:text-lg">
               Get expert guidance on integrating your tools with AI.
             </p>
 
             <div className="mt-5 flex flex-wrap justify-center gap-3">
               <a
                 href="#"
-                className="rounded-md bg-white px-6 py-3 text-[11px] font-bold text-[#102079] shadow-lg transition hover:-translate-y-0.5"
+                className="rounded-md bg-white px-6 py-3 text-sm font-bold sm:text-base text-[#102079] shadow-lg transition hover:-translate-y-0.5"
               >
                 Book a Free Consultation{" "}
                 <ArrowRight className="ml-1 inline size-3" />
               </a>
               <a
                 href="#solutions"
-                className="rounded-md border border-white/70 px-6 py-3 text-[11px] font-bold text-white transition hover:bg-white/10"
+                className="rounded-md border border-white/70 px-6 py-3 text-sm font-bold sm:text-base text-white transition hover:bg-white/10"
               >
                 Explore Integration Solutions
               </a>
             </div>
           </div>
 
-          <p className="absolute bottom-5 right-8 hidden rotate-[-10deg] text-left font-hand text-[20px] leading-[0.9] text-white md:block">
+          <p className="absolute bottom-5 right-8 hidden rotate-[-10deg] text-left font-hand text-xl sm:text-2xl leading-[0.9] text-white md:block">
             Connect
             <br />
             Automate

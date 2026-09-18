@@ -237,7 +237,7 @@ export default function AIMarketingAnalyticsPage() {
   highlightedTitle="Analytics"
   subtitle="Turn data into growth with AI."
   description="Let AI analyze your marketing data, uncover insights, and predict what works — so you can make smarter decisions, optimize your campaigns, and achieve higher ROI with less effort."
-  imageSrc="/digital-marketing-hero-right-img.png"
+  imageSrc="/digital-marketing/ai-marketing-anylitcs-hero.png"
   imageAlt="Marketing data analyst using AI-powered marketing analytics"
   primaryLabel="Book a Free Consultation"
   primaryHref="#contact"
@@ -265,7 +265,7 @@ export default function AIMarketingAnalyticsPage() {
   ]}
 />
 
-        <section className="mx-auto max-w-[1240px] px-5 pt-5">
+        <section className="mx-auto max-w-[1240px] px-5 py-5">
           <p className="text-center text-[9px] font-bold tracking-[0.28em] text-brand-purple">
             COMPLETE AI MARKETING ANALYTICS SOLUTIONS
           </p>
@@ -290,7 +290,7 @@ export default function AIMarketingAnalyticsPage() {
           </div>
         </section>
 
-        <section id="how-it-works" className="mx-auto mt-4 max-w-[1240px] px-5">
+        <section id="how-it-works" className="mx-auto py-8 max-w-[1240px] px-5">
           <div className="rounded-[14px] bg-[linear-gradient(135deg,#fafcff,#f5f7ff)] px-4 py-3">
             <p className="text-center text-[9px] font-bold tracking-[0.28em] text-brand-purple">
               HOW IT WORKS
@@ -320,7 +320,7 @@ export default function AIMarketingAnalyticsPage() {
           </div>
         </section>
 
-        <section className="mx-auto mt-3 grid max-w-[1240px] gap-4 px-5 lg:grid-cols-2">
+        <section className="mx-auto py-8 grid max-w-[1240px] gap-4 px-5 lg:grid-cols-2">
           <div>
             <p className="text-[9px] font-bold tracking-[0.28em] text-brand-purple">
               REAL RESULTS. REAL BUSINESSES.
@@ -379,7 +379,7 @@ export default function AIMarketingAnalyticsPage() {
           </article>
         </section>
 
-        <section className="mx-auto mt-3 max-w-[1240px] px-5">
+        <section className="mx-auto py-8 max-w-[1240px] px-5">
           <div className="flex flex-col items-center gap-5 rounded-[15px] bg-[linear-gradient(110deg,#f6f8ff,#f3f6ff)] px-5 py-4 lg:flex-row">
             <img
               src={images.testimonial}
@@ -419,7 +419,7 @@ export default function AIMarketingAnalyticsPage() {
 
         <section
           id="contact"
-          className="relative isolate mx-1 mt-3 overflow-hidden rounded-[14px] bg-[linear-gradient(110deg,#07154d,#0c1772_55%,#2836e4)] px-5 py-5 text-center text-white"
+          className="relative isolate mx-1 my-8 overflow-hidden rounded-[14px] bg-[linear-gradient(110deg,#07154d,#0c1772_55%,#2836e4)] px-5 py-5 text-center text-white"
         >
           <div className="absolute inset-0 -z-10 opacity-30 [background-image:repeating-radial-gradient(ellipse_at_0%_120%,transparent_0_10px,#7180ff_11px_12px)]" />
           <p className="text-[9px] tracking-[0.27em]">READY TO TURN YOUR DATA INTO GROWTH?</p>

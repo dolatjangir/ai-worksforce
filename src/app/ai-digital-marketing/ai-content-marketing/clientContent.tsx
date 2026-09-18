@@ -317,7 +317,7 @@ function Hero() {
   highlightedTitle="Marketing"
   subtitle="Create. Optimize. Engage. Grow."
   description="Leverage AI to plan, create, optimize, and distribute high-quality content at scale. From blogs and social media to emails and landing pages — we help you tell your brand story, drive engagement, and generate real business results."
-  imageSrc="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1000&q=90"
+  imageSrc="/digital-marketing/ai-content-marketing-hero.png"
   imageAlt="Content marketing professional using AI"
   primaryLabel="Book a Free Consultation"
   primaryHref="#contact"
@@ -353,7 +353,7 @@ function Hero() {
 
 function SolutionsSection() {
   return (
-    <section className="bg-white py-16 sm:py-20 lg:py-24">
+    <section className="bg-white py-16 sm:py-10">
       <div
         className="
           mx-auto
@@ -528,7 +528,7 @@ function ProcessSection() {
   return (
     <section
       id="process"
-      className="bg-white pb-16 sm:pb-20 lg:pb-24"
+      className="bg-white pb-10"
     >
       <div
         className="
@@ -705,7 +705,7 @@ function ProcessSection() {
 
 function ResultsSection() {
   return (
-    <section className="bg-white pb-8 sm:pb-10 lg:pb-12">
+    <section className="bg-white pb-10">
       <div
         className="
           mx-auto
@@ -1507,232 +1507,7 @@ function CTASection() {
   );
 }
 
-/* =========================================================
-   FOOTER
-========================================================= */
 
-function Footer() {
-  return (
-    <footer className="bg-white">
-      <div
-        className="
-          mx-auto
-          max-w-[1440px]
-          px-6
-          py-8
-          sm:px-8
-          lg:px-12
-          xl:px-16
-        "
-      >
-        {/* Top */}
-        <div
-          className="
-            flex
-            flex-col
-            gap-7
-            border-b
-            border-brand-dark/10
-            pb-7
-            lg:flex-row
-            lg:items-center
-            lg:justify-between
-          "
-        >
-          {/* Logo */}
-          <Link href="/" className="shrink-0">
-            <div
-              className="
-                text-[18px]
-                font-extrabold
-                leading-none
-                tracking-[-0.04em]
-                text-brand-dark
-              "
-            >
-              <span className="text-brand-blue">AI</span>{" "}
-              WorksForce
-            </div>
-
-            <div
-              className="
-                mt-1
-                text-[7px]
-                font-medium
-                text-slate-500
-              "
-            >
-              Automate. Accelerate. Grow.
-            </div>
-          </Link>
-
-          {/* Links */}
-          <nav
-            className="
-              flex
-              flex-wrap
-              items-center
-              gap-x-6
-              gap-y-3
-            "
-          >
-            {[
-              ["Home", "/"],
-              ["What AIWorksForce?", "/what-is-ai-workforce"],
-              ["How it Works", "/how-it-works"],
-              ["Our AI Workflow", "/our-ai-workflow"],
-              ["Solutions", "/solutions"],
-              ["Industries", "/industries"],
-              ["Resources", "/resources"],
-              ["About", "/about"],
-            ].map(([label, href]) => (
-              <Link
-                key={label}
-                href={href}
-                className="
-                  text-[9px]
-                  font-medium
-                  text-slate-500
-                  transition-colors
-                  hover:text-brand-purple
-                "
-              >
-                {label}
-              </Link>
-            ))}
-          </nav>
-
-          {/* Social */}
-          <div className="flex items-center gap-3">
-            <Link
-              href="#"
-              aria-label="LinkedIn"
-              className="
-                flex
-                h-7
-                w-7
-                items-center
-                justify-center
-                rounded-md
-                bg-brand-dark
-                text-[10px]
-                font-bold
-                text-white
-                transition-colors
-                hover:bg-brand-purple
-              "
-            >
-              in
-            </Link>
-
-            <Link
-              href="#"
-              aria-label="X"
-              className="
-                flex
-                h-7
-                w-7
-                items-center
-                justify-center
-                rounded-md
-                bg-brand-blue-50
-                text-xs
-                font-bold
-                text-brand-dark
-                transition-colors
-                hover:bg-brand-purple-soft
-              "
-            >
-              𝕏
-            </Link>
-
-            <Link
-              href="#"
-              aria-label="YouTube"
-              className="
-                flex
-                h-7
-                w-7
-                items-center
-                justify-center
-                rounded-md
-                bg-brand-blue-50
-                text-[10px]
-                text-brand-dark
-                transition-colors
-                hover:bg-brand-purple-soft
-              "
-            >
-              ▶
-            </Link>
-
-            <Link
-              href="#"
-              aria-label="Instagram"
-              className="
-                flex
-                h-7
-                w-7
-                items-center
-                justify-center
-                rounded-md
-                bg-brand-blue-50
-                text-sm
-                text-brand-dark
-                transition-colors
-                hover:bg-brand-purple-soft
-              "
-            >
-              ◎
-            </Link>
-          </div>
-        </div>
-
-        {/* Bottom */}
-        <div
-          className="
-            flex
-            flex-col
-            gap-3
-            pt-5
-            text-[9px]
-            text-slate-500
-            sm:flex-row
-            sm:items-center
-            sm:justify-between
-          "
-        >
-          <p>
-            © 2024 AI WorksForce. All rights reserved.
-          </p>
-
-          <div className="flex flex-wrap items-center gap-5">
-            <Link
-              href="/privacy-policy"
-              className="transition-colors hover:text-brand-purple"
-            >
-              Privacy Policy
-            </Link>
-
-            <Link
-              href="/terms"
-              className="transition-colors hover:text-brand-purple"
-            >
-              Terms of Service
-            </Link>
-
-            <Link
-              href="/contact"
-              className="transition-colors hover:text-brand-purple"
-            >
-              Contact
-            </Link>
-          </div>
-        </div>
-      </div>
-    </footer>
-  );
-}
 
 /* =========================================================
    PAGE

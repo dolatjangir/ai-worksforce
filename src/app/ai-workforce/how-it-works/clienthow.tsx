@@ -169,7 +169,7 @@ export default function HowItWorksPage() {
       highlightedTitle=""
       subtitle="From business problem to AI operations"
       description="We follow a clear, step-by-step process to understand your business, design the right AI workforce, and deploy it for real results — quickly, securely, and at scale."
-      imageSrc="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=900&auto=format&fit=crop"
+      imageSrc="/ai-workforce/how-it-works-hero.png"
       imageAlt="Professional with her AI workforce"
       primaryLabel="Book a Free Consultation"
       primaryHref="#consultation"
@@ -178,7 +178,7 @@ export default function HowItWorksPage() {
     />
 
       {/* ================= PROCESS ================= */}
-      <section id="process" className="bg-white py-20 lg:py-24">
+      <section id="process" className="bg-white py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <span className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-400">
@@ -241,7 +241,7 @@ export default function HowItWorksPage() {
       </section>
 
       {/* ================= PARTNERSHIP ================= */}
-      <section className="bg-slate-50/60 py-20 lg:py-24">
+      <section className="bg-slate-50/60 py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <span className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-400">
@@ -277,7 +277,7 @@ export default function HowItWorksPage() {
       </section>
 
       {/* ================= REAL OUTCOMES ================= */}
-      <section className="bg-white py-20 lg:py-24">
+      <section className="bg-white py-10">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
           {/* Left — Visual */}
           <div className="relative">
@@ -357,7 +357,7 @@ export default function HowItWorksPage() {
 
       {/* ================= CTA BANNER ================= */}
       <section id="consultation" className="bg-white px-4 pb-24 sm:px-6 lg:px-8">
-        <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-gradient-to-br from-brand-navy via-brand-dark to-[#1e2a6e] px-6 py-16 text-center sm:px-12 sm:py-20">
+        <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-gradient-to-br from-brand-navy via-brand-dark to-[#1e2a6e] px-6 py-10 text-center sm:px-12 ">
           <div
             className="pointer-events-none absolute inset-0 opacity-[0.08]"
             style={{

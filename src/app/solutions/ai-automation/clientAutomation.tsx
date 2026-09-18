@@ -207,7 +207,7 @@ export default function AIAutomationPage() {
   title="Automate Today."
   highlightedTitle="Grow Tomorrow."
   description="Streamline your processes, eliminate manual work, and unlock new possibilities with intelligent AI automation. We help businesses build faster, smarter and more efficient operations."
-  imageSrc="/solutions/ai-automation.png"
+  imageSrc="/solutions/ai-automation-hero.png"
   imageAlt="AI automation workspace and business operations"
   assessmentLabel="Get a Free Assessment"
   assessmentHref="#consultation"
@@ -569,50 +569,7 @@ export default function AIAutomationPage() {
           </Reveal>
 
           {/* Automation illustration */}
-          <Reveal delay={150}>
-            <div className="relative h-[300px] overflow-hidden rounded-[15px] border border-white/10 bg-gradient-to-br from-brand-dark via-brand-navy to-brand-navy shadow-2xl shadow-brand-navy/40 sm:h-[340px]">
-              <div className="absolute inset-0 opacity-25 [background-image:radial-gradient(circle_at_50%_50%,var(--color-brand-blue)_0,transparent_60%)]" />
-              <div className="absolute inset-0 [background-image:linear-gradient(color-mix(in_srgb,var(--color-white)_2%,transparent)_1px,transparent_1px),linear-gradient(90deg,color-mix(in_srgb,var(--color-white)_2%,transparent)_1px,transparent_1px)] [background-size:32px_32px]" />
-
-              {/* central robot core */}
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-                <span className="absolute -inset-10 rounded-full bg-brand-blue/20 blur-2xl" />
-                <span className="relative flex h-28 w-28 items-center justify-center rounded-3xl border border-white/15 bg-white/5 text-brand-sky backdrop-blur-sm">
-                  <BotIcon size={56} />
-                </span>
-                {/* orbit nodes */}
-                <span className="absolute -left-10 -top-8 h-3 w-3 animate-pulse rounded-full bg-brand-sky" />
-                <span className="absolute -right-12 top-6 h-2 w-2 animate-pulse rounded-full bg-brand-purple-light [animation-delay:0.8s]" />
-                <span className="absolute -bottom-9 left-8 h-2.5 w-2.5 animate-pulse rounded-full bg-brand-green-light [animation-delay:1.4s]" />
-              </div>
-
-              {/* floating chips */}
-              <div className="absolute left-5 top-6 flex animate-float items-center gap-2.5 rounded-xl border border-white/10 bg-white/10 px-4 py-2.5 backdrop-blur-md">
-                <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-brand-blue text-white">
-                  <SettingsIcon size={14} />
-                </span>
-                <span className="text-[12.5px] font-bold text-white">Automate</span>
-              </div>
-              <div className="absolute right-5 top-8 flex animate-float-slow items-center gap-2.5 rounded-xl border border-white/10 bg-white/10 px-4 py-2.5 backdrop-blur-md">
-                <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-brand-sky text-white">
-                  <TargetIcon size={14} />
-                </span>
-                <span className="text-[12.5px] font-bold text-white">Optimize</span>
-              </div>
-              <div className="absolute bottom-10 right-8 flex animate-float items-center gap-2.5 rounded-xl border border-white/10 bg-white/10 px-4 py-2.5 backdrop-blur-md [animation-delay:1s]">
-                <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-brand-purple-light text-white">
-                  <RocketIcon size={14} />
-                </span>
-                <span className="text-[12.5px] font-bold text-white">Scale</span>
-              </div>
-              <div className="absolute bottom-16 left-6 flex animate-float-slow items-center gap-2 rounded-xl border border-white/10 bg-white/10 px-3.5 py-2 backdrop-blur-md [animation-delay:0.5s]">
-                <span className="h-2 w-2 rounded-full bg-brand-green-light" />
-                <span className="text-[11px] font-semibold text-white/85">
-                  Live Workflows
-                </span>
-              </div>
-            </div>
-          </Reveal>
+          <img src="/solutions/ai-automation-bottom.png" alt="AI Automation" className="mx-auto h-auto w-full max-w-[500px] rounded-xl shadow-2xl" />
         </div>
       </section>
     </div>

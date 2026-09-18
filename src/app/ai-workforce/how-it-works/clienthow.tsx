@@ -160,78 +160,7 @@ export default function HowItWorksPage() {
 
   return (
     <div className="min-h-screen bg-white font-sans text-brand-dark antialiased">
-      {/* ================= NAVBAR ================= */}
-      <header className="sticky top-0 z-50 border-b border-slate-100 bg-white/90 backdrop-blur-md">
-        <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-          <Link href="/" className="flex flex-col leading-none">
-            <span className="text-xl font-extrabold tracking-tight text-brand-dark sm:text-2xl">
-              AI Works<span className="text-brand-blue">Force</span>
-            </span>
-            <span className="text-[10px] font-medium tracking-wide text-slate-400">
-              Automate. Accelerate. Grow.
-            </span>
-          </Link>
-
-          <nav className="hidden items-center gap-7 lg:flex">
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className={`relative pb-1 text-sm font-medium transition-colors ${
-                  link.active
-                    ? "text-brand-dark after:absolute after:-bottom-[22px] after:left-0 after:h-[3px] after:w-full after:rounded-full after:bg-brand-purple"
-                    : "text-slate-500 hover:text-brand-dark"
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-
-          <div className="flex items-center gap-3">
-            <Link
-              href="#consultation"
-              className="hidden items-center gap-1.5 rounded-full bg-brand-dark px-5 py-2.5 text-sm font-semibold text-white shadow-md transition-all hover:bg-brand-navy hover:shadow-lg sm:inline-flex"
-            >
-              Book a Free Consultation
-              <ArrowUpRight size={15} />
-            </Link>
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-lg text-brand-dark lg:hidden"
-              aria-label="Toggle menu"
-            >
-              {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
-            </button>
-          </div>
-        </div>
-
-        {mobileMenuOpen && (
-          <div className="border-t border-slate-100 bg-white px-4 py-4 lg:hidden">
-            <nav className="flex flex-col gap-1">
-              {NAV_LINKS.map((link) => (
-                <Link
-                  key={link.label}
-                  href={link.href}
-                  className={`rounded-lg px-3 py-2.5 text-sm font-medium ${
-                    link.active
-                      ? "bg-brand-purple-soft text-brand-purple"
-                      : "text-slate-600 hover:bg-slate-50"
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              ))}
-              <Link
-                href="#consultation"
-                className="mt-2 rounded-full bg-brand-dark px-5 py-3 text-center text-sm font-semibold text-white"
-              >
-                Book a Free Consultation
-              </Link>
-            </nav>
-          </div>
-        )}
-      </header>
+     
 
       {/* ================= HERO ================= */}
      <AIWorkflowHero
@@ -476,57 +405,7 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
-      {/* ================= FOOTER ================= */}
-      <footer className="border-t border-slate-100 bg-white py-10">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-4 sm:flex-row sm:px-6 lg:px-8">
-          <div className="flex flex-col leading-none">
-            <span className="text-xl font-extrabold tracking-tight text-brand-dark">
-              AI Works<span className="text-brand-blue">Force</span>
-            </span>
-            <span className="mt-1 text-[10px] font-medium tracking-wide text-slate-400">
-              Automate. Accelerate. Grow.
-            </span>
-          </div>
-
-          <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="text-xs font-medium text-slate-500 transition-colors hover:text-brand-dark"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-
-          <div className="flex items-center gap-3">
-            {SOCIALS.map((social, i) => (
-              <Link
-                key={i}
-                href={social.href}
-                className="flex h-8 w-8 items-center justify-center rounded-full text-slate-400 transition-colors hover:bg-blue-50 hover:text-brand-blue"
-              >
-                <social.icon size={16} />
-              </Link>
-            ))}
-          </div>
-        </div>
-        <div className="mx-auto mt-6 flex max-w-7xl flex-col items-center justify-between gap-3 border-t border-slate-100 px-4 pt-6 text-xs text-slate-400 sm:flex-row sm:px-6 lg:px-8">
-          <p>© 2024 AIWorksForce. All rights reserved.</p>
-          <div className="flex items-center gap-6">
-            <Link href="#" className="transition-colors hover:text-brand-dark">
-              Privacy Policy
-            </Link>
-            <Link href="#" className="transition-colors hover:text-brand-dark">
-              Terms of Service
-            </Link>
-            <Link href="#" className="transition-colors hover:text-brand-dark">
-              Contact
-            </Link>
-          </div>
-        </div>
-      </footer>
+     
     </div>
   );
 }

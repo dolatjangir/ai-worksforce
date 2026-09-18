@@ -226,7 +226,7 @@ function Hero() {
   title="Discover Your AI"
   highlightedTitle="Opportunity"
   description="A strategic assessment powered by the AWFI Engine™ to identify, prioritize and plan the right AI solutions for your business."
-  imageSrc="/solutions/ai-automation.png"
+  imageSrc="/company-images/careers-company-hero.png"
   imageAlt="Your AI Opportunity — assessment session"
   assessmentLabel="Get Your AI Assessment"
   assessmentHref="#consultation"

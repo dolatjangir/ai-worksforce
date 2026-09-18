@@ -141,7 +141,7 @@ export default function AIWorkforcePage() {
   title="Your Business."
   highlightedTitle="Powered by AI."
   description="Get a dedicated AI workforce of agents, experts and operators to help you automate work, scale growth and achieve real results — without the cost and complexity of building an AI team."
-  imageSrc="/solutions/ai-automation.png"
+  imageSrc="/solutions/ai-workforce.png"
   imageAlt="Professional working with AI workforce"
   assessmentLabel="Get Your AI Workforce Assessment"
   assessmentHref="#consultation"

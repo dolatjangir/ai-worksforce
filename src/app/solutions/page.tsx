@@ -149,7 +149,7 @@ export default function SolutionsPage() {
   title="Complete AI-Powered Operations for Your"
   highlightedTitle="Business"
   description="From data and research to AI agents, automation and customer operations — we build and manage the right AI-powered solutions for your business goals."
-  imageSrc="/solutions/ai-automation.png"
+  imageSrc="/company-images/about-aiworkforce-company-bottom.png"
   imageAlt="AI operations expert"
   assessmentLabel="Get Your AI Assessment"
   assessmentHref="#consultation"

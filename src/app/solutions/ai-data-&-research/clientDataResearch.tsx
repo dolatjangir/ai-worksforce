@@ -474,7 +474,7 @@ export default function AIDataResearchPage() {
   title="Turn Data Into"
   highlightedTitle="Real Opportunities."
   description="Get accurate insights, in-depth research, and actionable intelligence with AI-powered data & research solutions. We help you discover trends, validate ideas, and make smarter, faster decisions."
-  imageSrc="/solutions/ai-automation.png"
+  imageSrc="/solutions/ai-data-reasearch-hero.png"
   imageAlt="AI Data & Research workspace and data intelligence"
   assessmentLabel="Get a Free Data Assessment"
   assessmentHref="#contact"
@@ -573,69 +573,9 @@ export default function AIDataResearchPage() {
 
               {/* globe */}
 
-              <div className="absolute left-1/2 top-[57%] h-[215px] w-[215px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-cyan-300/20 shadow-[0_0_60px_rgba(8,118,237,.3)]">
-                <div className="absolute inset-[18px] rounded-full border border-cyan-300/20" />
-
-                <div className="absolute inset-[43px] rounded-full border border-cyan-300/20" />
-
-                <div className="absolute left-1/2 top-0 h-full w-px bg-cyan-300/15" />
-
-                <div className="absolute left-0 top-1/2 h-px w-full bg-cyan-300/15" />
-
-                {/* dots */}
-
-                {[
-                  "left-[28%] top-[32%]",
-                  "left-[58%] top-[22%]",
-                  "left-[67%] top-[52%]",
-                  "left-[42%] top-[66%]",
-                  "left-[25%] top-[57%]",
-                  "left-[72%] top-[72%]",
-                ].map((position, i) => (
-                  <span
-                    key={i}
-                    className={`absolute ${position} h-3 w-3 rounded-full bg-cyan-300 shadow-[0_0_16px_rgba(103,232,249,.9)]`}
-                  />
-                ))}
-              </div>
-
-              {/* search bar */}
-
-              <div className="absolute left-1/2 top-10 flex w-[60%] -translate-x-1/2 items-center gap-2 rounded-full bg-white px-4 py-2.5 shadow-xl">
-                <Icon name="search" size={15} className="text-[#0876ed]" />
-                <span className="text-[10px] font-medium text-slate-500">
-                  Discover what&apos;s possible with your data...
-                </span>
-              </div>
-
-              {/* orbit cards */}
-
-              <div className="absolute left-[7%] top-[45%] flex flex-col items-center gap-1">
-                <span className="flex h-12 w-12 items-center justify-center rounded-full border border-cyan-300/30 bg-[#0876ed]/20 text-cyan-300">
-                  <Icon name="chart" size={21} />
-                </span>
-                <span className="rounded-md bg-black/25 px-2 py-1 text-[8px] font-bold text-white">
-                  Market Trends
-                </span>
-              </div>
-
-              <div className="absolute right-[7%] top-[45%] flex flex-col items-center gap-1">
-                <span className="flex h-12 w-12 items-center justify-center rounded-full border border-cyan-300/30 bg-[#0876ed]/20 text-cyan-300">
-                  <Icon name="users" size={21} />
-                </span>
-                <span className="rounded-md bg-black/25 px-2 py-1 text-[8px] font-bold text-white">
-                  Customer Insights
-                </span>
-              </div>
-
-              <div className="absolute bottom-[8%] left-1/2 flex -translate-x-1/2 flex-col items-center gap-1">
-                <span className="flex h-12 w-12 items-center justify-center rounded-full border border-cyan-300/30 bg-[#0876ed]/20 text-cyan-300">
-                  <Icon name="chart" size={21} />
-                </span>
-                <span className="rounded-md bg-black/25 px-2 py-1 text-[8px] font-bold text-white">
-                  Industry Analysis
-                </span>
-              </div>
+             
+        <img src="/solutions/ai-data-reasearch-middle.png" alt="Data Visualization"  className="absolute inset-0 h-full w-full object-cover"/>
+              
             </div>
           </Reveal>
 
@@ -937,13 +877,13 @@ export default function AIDataResearchPage() {
 
       <section
         id="contact"
-        className="relative overflow-hidden bg-[#031d4c]"
+        className="relative overflow-hidden my-4 bg-[#031d4c]"
       >
-        <div className="absolute -left-40 top-0 h-[420px] w-[420px] rounded-full bg-[#0876ed]/20 blur-[120px]" />
+        <div className="absolute -left-40 top-0 h-[20px] w-[420px] rounded-full bg-[#0876ed]/20 blur-[120px]" />
 
-        <div className="absolute -right-40 bottom-0 h-[420px] w-[420px] rounded-full bg-cyan-500/15 blur-[120px]" />
+        <div className="absolute -right-40 bottom-0 h-[20px] w-[420px] rounded-full bg-cyan-500/15 blur-[120px]" />
 
-        <div className="relative mx-auto grid max-w-[1400px] items-center gap-10 px-5 py-16 lg:grid-cols-[0.95fr_1.05fr] lg:px-8 lg:py-20">
+        <div className="relative mx-auto grid max-w-[1400px] py-4 items-center gap-10 px-5  lg:grid-cols-[0.95fr_1.05fr] lg:px-8 ">
           {/* COPY */}
 
           <Reveal>
@@ -955,13 +895,13 @@ export default function AIDataResearchPage() {
               Ready to Unlock the Power of Your Data?
             </h2>
 
-            <p className="mt-5 max-w-[490px] text-[14px] leading-relaxed text-slate-300 sm:text-[15px]">
+            <p className="mt-4 max-w-[490px] text-[14px] leading-relaxed text-slate-300 sm:text-[15px]">
               Get a free consultation and see how AI data & research can help
               you find new opportunities, reduce risks, and drive faster
               growth.
             </p>
 
-            <div className="mt-8 flex flex-wrap items-center gap-6">
+            <div className="mt-4 flex flex-wrap items-center gap-6">
               <a
                 href="#"
                 className="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3.5 text-[13px] font-extrabold text-[#06235a] shadow-xl"
@@ -980,93 +920,7 @@ export default function AIDataResearchPage() {
           </Reveal>
 
           {/* CTA VISUAL */}
-
-          <Reveal delay={120}>
-            <div className="relative h-[340px] overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#0a2b59] via-[#06235a] to-[#020b1d] shadow-2xl sm:h-[380px]">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_65%_75%,rgba(8,118,237,.35),transparent_58%)]" />
-
-              {/* laptop */}
-
-              <div className="absolute bottom-[6%] right-[7%] h-[150px] w-[58%] rounded-t-2xl border border-white/10 bg-gradient-to-b from-slate-300 to-slate-500 shadow-2xl">
-                <div className="m-3 h-[105px] rounded-lg bg-[#061a39] p-3">
-                  <div className="relative h-full overflow-hidden rounded bg-[#092957]">
-                    <div className="absolute left-3 top-3 text-[8px] font-bold text-white">
-                      Data Intelligence
-                    </div>
-
-                    <div className="absolute bottom-3 left-4 right-4 flex h-[55%] items-end gap-2">
-                      {[30, 50, 42, 68, 55, 80].map((height, i) => (
-                        <span
-                          key={i}
-                          className="flex-1 rounded-t bg-gradient-to-t from-[#0876ed] to-cyan-300"
-                          style={{ height: `${height}%` }}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="absolute -bottom-3 left-[-7%] h-3 w-[114%] rounded-full bg-slate-500" />
-              </div>
-
-              {/* floating chips */}
-
-              <div className="absolute left-6 top-6 flex flex-col gap-2.5">
-                {[
-                  ["insight", "Insights"],
-                  ["strategy", "Strategy"],
-                  ["growth", "Growth"],
-                  ["opportunity", "Opportunities"],
-                ].map(([icon, label]) => (
-                  <div
-                    key={label}
-                    className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/10 px-3 py-2 backdrop-blur-md"
-                  >
-                    <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-[#0876ed] text-white">
-                      <Icon name={icon as IconName} size={12} />
-                    </span>
-
-                    <span className="text-[9.5px] font-bold text-white">
-                      {label}
-                    </span>
-                  </div>
-                ))}
-              </div>
-
-              {/* handwritten text */}
-
-              <div className="absolute right-5 top-6 rotate-[3deg] text-right">
-                <p className="font-serif text-[25px] font-semibold italic leading-[1.05] text-white/90 sm:text-[31px]">
-                  Better Data
-                  <br />
-                  Bigger Decisions
-                </p>
-              </div>
-
-              {/* graph arrow */}
-
-              <svg
-                className="absolute bottom-[39%] left-[38%] w-[45%] text-cyan-300"
-                viewBox="0 0 220 90"
-                fill="none"
-              >
-                <path
-                  d="M4 82C60 75 120 50 207 8"
-                  stroke="currentColor"
-                  strokeWidth="4"
-                  strokeLinecap="round"
-                />
-
-                <path
-                  d="M190 5h19v19"
-                  stroke="currentColor"
-                  strokeWidth="4"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </div>
-          </Reveal>
+        <img src="/solutions/ai-data-reasearch-bottom.png" alt="AI Data & Research" className="mx-auto h-auto w-full max-w-[500px] rounded-xl shadow-2xl" />
         </div>
       </section>
     </main>

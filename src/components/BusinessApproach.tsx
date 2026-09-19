@@ -259,13 +259,13 @@ const challengeCards: ChallengeCard[] = [
   {
     title: "Too Many Tools",
     description:
-      "Hundreds of AI tools exist. Choosing the right ones is difficult.",
+      "With hundreds of AI tools available—each offering different features, pricing, and capabilities—choosing the right solutions for your business can be confusing, time-consuming, and difficult.",
     icon: <ToolboxIcon className="w-8 h-8"/>,
   },
   {
     title: "Too Much Manual Work",
     description:
-      "Research, data entry, lead generation, follow-up, reporting and repetitive operations consume valuable time.",
+      "Too much of your team’s time goes into research, data entry, lead generation, follow-ups, reporting, and repetitive day-to-day work instead of focusing on what really moves the business forward.",
     icon: <ManualWorkIcon className="w-8 h-8"/>,
   },
   {
@@ -349,7 +349,7 @@ const solutions: SolutionCard[] = [
     icon: <AutomationIcon className="w-8 h-8"/>,
   },
   {
-    title: "AI Data & Research",
+    title: "Data & Research",
     description:
       "Turn data into insights with AI-powered research and analysis. ",
     icon: <DataIcon className="w-8 h-8"/>,
@@ -361,14 +361,14 @@ const solutions: SolutionCard[] = [
     icon: <LeadIcon className="w-8 h-8"/>,
   },
   {
-    title: "AI Digital Marketing",
+    title: "Digital Marketing",
     description:
       "SEO, content, social, ads, backlinks and more, powered by AI tools and operators. ",
     icon: <MarketingIcon className="w-8 h-8"/>,
     featured: true,
   },
   {
-    title: "AI Customer Operations",
+    title: "Customer Operations",
     description:
       "Customer support, CRM, follow-up and calling with AI and trained operators.",
     icon: <CustomerIcon className="w-8 h-8"/>,

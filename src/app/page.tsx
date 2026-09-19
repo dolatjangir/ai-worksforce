@@ -155,7 +155,7 @@ export default function Home() {
       title: "Managed AI Delivery",
       badge: "Most Popular",
       image:
-        "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=700&q=80",
+        "/IT-team.jpg",
       description:
         "We build, train and manage your AI-enabled operation.",
       bullets: [
@@ -171,7 +171,7 @@ export default function Home() {
       icon: Users,
       title: "AI Workforce",
       image:
-        "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=700&q=80",
+        "/ai-workforce-manager-img.png",
       description: "Get trained operators for your AI-enabled workflows.",
       bullets: [
         "Data operators",
@@ -184,9 +184,9 @@ export default function Home() {
     },
     {
       icon: Settings,
-      title: "Hire AI Experts",
+      title: "Hire AWFI Experts",
       image:
-        "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=700&q=80",
+        "/women-image.png",
       description:
         "Access specialist AI and technology talent when you need it.",
       bullets: [
@@ -222,6 +222,7 @@ export default function Home() {
     laptop: "/hero-resolution/hero-laptop-2560x1600.png",
     desktop: "/hero-resolution/hero-desktop-2560x1440.png",
     ultrawide: "/hero-resolution/hero-ultrawide-3360x1440.png",
+    digitalBoard: "/hero-resolution/hero-digital-board-3840x2160.png",
   }}
         backgroundAlt="AI WorksForce team and AI automation"
         backgroundPosition="center right"
@@ -358,7 +359,7 @@ AWFI Intelligence + AI Technology + Human Expertise + Managed Operations        
           {
             icon: Users,
             title: "AWFI Engine™",
-            text: "Analyze • Decide • Orchestrate",
+            text: "Analyze • Decide • Coordinate",
             color: "blue",
           },
           {

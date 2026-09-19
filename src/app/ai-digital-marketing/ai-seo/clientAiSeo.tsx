@@ -58,17 +58,17 @@ type Benefit = {
 
 const solutions: Solution[] = [
   {
-    title: "AI Keyword Research",
+    title: "AI keyword research",
     description:
-      "Find high-intent keywords and uncover new opportunities with AI.",
+      "Find keywords that people are looking for and find chances with AI.",
     icon: Search,
     iconBg: "bg-[var(--color-blue-100)]",
     iconColor: "text-[var(--color-primary)]",
   },
   {
-    title: "Content Optimization",
+    title: "Content optimization",
     description:
-      "Create and optimize SEO-friendly content that ranks.",
+      "Improve content that is good for SEO and gets ranked.",
     icon: FileSearch,
     iconBg: "bg-[var(--color-cyan-50)]",
     iconColor: "text-[var(--color-cyan-500)]",
@@ -76,31 +76,31 @@ const solutions: Solution[] = [
   {
     title: "Technical SEO",
     description:
-      "Identify and fix technical issues automatically.",
+      "Fix technical issues automatically.",
     icon: Settings,
     iconBg: "bg-[var(--color-indigo-50)]",
     iconColor: "text-[var(--color-violet-600)]",
   },
   {
-    title: "Link Building & Outreach",
+    title: "Link building and outreach",
     description:
-      "Discover and reach high-quality backlink opportunities.",
+      "Connect with good chances for backlinks.",
     icon: Link2,
     iconBg: "bg-[var(--color-purple-soft)]",
     iconColor: "text-[var(--color-violet-600)]",
   },
   {
-    title: "Rank Tracking & Analytics",
+    title: "Rank tracking and analytics",
     description:
-      "Monitor progress with real-time AI insights.",
+      "Keep track of progress with time AI insights.",
     icon: BarChart3,
     iconBg: "bg-[var(--color-orange-soft)]",
     iconColor: "text-[var(--color-orange)]",
   },
   {
-    title: "Competitor Analysis",
+    title: "Competitor analysis",
     description:
-      "Stay ahead with AI-powered competitor insights.",
+      "Stay ahead with AI-based insights about your competitors.",
     icon: Target,
     iconBg: "bg-[var(--color-blue-100)]",
     iconColor: "text-[var(--color-primary)]",
@@ -112,7 +112,7 @@ const processSteps: ProcessStep[] = [
     number: "01",
     title: "Analyze",
     description:
-      "We analyze your website, industry, and competitors using AI.",
+      "We use AI to look at your website, your industry and your competitors.",
     icon: Search,
     iconBg: "bg-[var(--color-blue-100)]",
     iconColor: "text-[var(--color-primary)]",
@@ -121,7 +121,7 @@ const processSteps: ProcessStep[] = [
     number: "02",
     title: "Optimize",
     description:
-      "Our AI optimizes your content, technical SEO, and strategy.",
+      "Our AI makes your content, technical SEO and strategy better.",
     icon: Settings,
     iconBg: "bg-[var(--color-green-soft)]",
     iconColor: "text-[var(--color-green)]",
@@ -130,7 +130,7 @@ const processSteps: ProcessStep[] = [
     number: "03",
     title: "Implement",
     description:
-      "We execute the plan with automated workflows and expert oversight.",
+      "We put the plan into action with automated steps and expert help.",
     icon: Play,
     iconBg: "bg-[var(--color-indigo-50)]",
     iconColor: "text-[var(--color-violet-600)]",
@@ -139,7 +139,7 @@ const processSteps: ProcessStep[] = [
     number: "04",
     title: "Grow",
     description:
-      "You get higher rankings, more traffic, and increased revenue.",
+      "Reach More People, Drive More Traffic, and Grow Your Business.",
     icon: BarChart3,
     iconBg: "bg-[var(--color-purple-soft)]",
     iconColor: "text-[var(--color-violet-600)]",
@@ -209,33 +209,33 @@ export default function AISEOPage() {
       ===================================================== */}
 
     <DigitalMarketingHero
-  eyebrow="RANK HIGHER. GROW FASTER."
+  eyebrow="Rank higher. Grow faster."
   title=""
   highlightedTitle="AI SEO"
-  subtitle="Smarter SEO. Real Business Growth."
-  description="Leverage the power of AI to create data-driven SEO strategies, automate content optimization, and achieve higher rankings with less effort. Let AI do the heavy lifting while you focus on growing your business."
+  subtitle="Smarter SEO. Real business growth."
+  description="Use the power of AI to create strategies that are based on data automate the work of making content and get better rankings with less effort. Let AI do the work while you focus on growing your business."
   imageSrc="/digital-marketing/ai-seo-hero.png"
   imageAlt="Professional using AI SEO"
-  primaryLabel="Book a Free Consultation"
+  primaryLabel="Book a consultation"
   primaryHref="#consultation"
-  secondaryLabel="See How It Works"
+  secondaryLabel="See how it works"
   secondaryHref="#process"
   metrics={[
     {
       value: "3x",
-      label: "Faster SEO Results",
+      label: "Faster SEO results",
       icon: "chart",
       tone: "purple",
     },
     {
       value: "70%",
-      label: "Less Manual Work",
+      label: "Less manual work",
       icon: "clock",
       tone: "green",
     },
     {
       value: "100%",
-      label: "Data-Driven Strategy",
+      label: "Data-driven strategy",
       icon: "target",
       tone: "orange",
     },
@@ -257,37 +257,37 @@ export default function AISEOPage() {
           >
             <motion.p
               variants={fadeUp}
-              className="text-[9px] font-bold uppercase tracking-[0.3em] text-[var(--color-violet-600)] sm:text-[10px]"
+              className="text-sm font-bold sm:text-base uppercase tracking-[0.3em] text-[var(--color-violet-600)] sm:text-[15px]"
             >
-              Complete AI-Powered SEO Solutions
+              Complete AI-powered SEO solutions
             </motion.p>
 
             <motion.h2
               variants={fadeUp}
               className="
                 mt-3
-                text-[29px] font-extrabold
+                text-[29px]         font-extrabold sm:text-[44px] lg:text-[48px]
                 leading-tight
                 tracking-[-0.04em]
                 text-[var(--color-heading)]
-                sm:text-[36px]
-                lg:text-[40px]
+                     sm:text-[44px] lg:text-[44px]
+                 sm:text-[44px] lg:text-[48px]
               "
             >
-              Everything You Need to Rank Higher
+              Everything you need to rank higher
             </motion.h2>
 
             <motion.p
               variants={fadeUp}
               className="
                 mx-auto mt-3 max-w-[720px]
-                text-[13px] leading-6
+                text-[15px] sm:text-base leading-6
                 text-[var(--color-text)]
                 sm:text-[15px]
               "
             >
-              From strategy to execution, our AI-driven SEO solutions
-              cover every aspect of your digital growth.
+              From strategy to action our AI-based SEO solutions
+              cover all parts of your online growth.
             </motion.p>
           </motion.div>
 
@@ -300,11 +300,11 @@ export default function AISEOPage() {
             variants={staggerContainer}
             className="
               mt-10 grid
-              grid-cols-1 gap-4
+              grid-cols-1 gap-3
               sm:grid-cols-2
               md:grid-cols-3
               lg:grid-cols-6
-              xl:gap-5
+              xl:gap-4
             "
           >
             {solutions.map((solution) => {
@@ -322,7 +322,7 @@ export default function AISEOPage() {
                     bg-gradient-to-b
                     from-[var(--color-blue-50)]/45
                     to-white
-                    px-5 py-6
+                    px-2 py-3
                     text-center
                     shadow-[0_8px_30px_rgba(24,74,140,0.025)]
                     transition-all duration-300
@@ -351,10 +351,10 @@ export default function AISEOPage() {
                   <h3
                     className="
                       mx-auto mt-5 max-w-[145px]
-                      text-[12px] font-extrabold
+                      text-base font-extrabold sm:text-lg
                       leading-[1.35]
                       text-[var(--color-heading)]
-                      sm:text-[13px]
+                      sm:text-[15px] sm:text-base
                     "
                   >
                     {solution.title}
@@ -363,10 +363,10 @@ export default function AISEOPage() {
                   <p
                     className="
                       mt-3
-                      text-[10px]
+                      text-[15px]
                       leading-[1.65]
                       text-[var(--color-text-muted)]
-                      sm:text-[11px]
+                      sm:text-base
                     "
                   >
                     {solution.description}
@@ -388,26 +388,25 @@ export default function AISEOPage() {
       >
         <div className="mx-auto max-w-[1390px] rounded-2xl bg-gradient-to-br from-[var(--color-blue-50)] via-white to-[var(--color-indigo-50)] px-4 py-12 sm:px-7 sm:py-14 lg:px-10 lg:py-16">
           <div className="mx-auto max-w-[800px] text-center">
-            <p className="text-[9px] font-bold uppercase tracking-[0.3em] text-[var(--color-violet-600)] sm:text-[10px]">
-              How Our AI SEO Works
+            <p className="text-sm font-bold sm:text-base uppercase tracking-[0.3em] text-[var(--color-violet-600)] sm:text-[15px]">
+              How our AI SEO works
             </p>
 
             <h2
               className="
                 mt-3
-                text-[28px] font-extrabold
+                text-[28px]         font-extrabold sm:text-[44px] lg:text-[48px]
                 tracking-[-0.04em]
                 text-[var(--color-heading)]
-                sm:text-[35px]
-                lg:text-[39px]
+                     sm:text-[42px] lg:text-[42px]
+                 sm:text-[42px] lg:text-[46px]
               "
             >
-              A Simple Process. Powerful Results.
+              A process. Powerful results.
             </h2>
 
-            <p className="mt-3 text-[13px] text-[var(--color-text)] sm:text-[15px]">
-              We combine AI technology with SEO expertise to deliver
-              measurable growth.
+            <p className="mt-3 text-[15px] sm:text-base text-[var(--color-text)] sm:text-[15px]">
+              We use AI technology with SEO knowledge to give you growth.
             </p>
           </div>
 
@@ -456,15 +455,15 @@ export default function AISEOPage() {
                       />
                     </div>
 
-                    <p className="mt-3 text-[10px] font-extrabold text-[var(--color-heading)]">
+                    <p className="mt-3 text-sm font-extrabold text-[var(--color-heading)] sm:text-base">
                       {step.number}
                     </p>
 
-                    <h3 className="mt-0.5 text-[13px] font-extrabold text-[var(--color-heading)]">
+                    <h3 className="mt-0.5 text-lg font-extrabold sm:text-xl text-[var(--color-heading)]">
                       {step.title}
                     </h3>
 
-                    <p className="mx-auto mt-2 max-w-[190px] text-[10px] leading-[1.6] text-[var(--color-text-muted)] sm:text-[11px]">
+                    <p className="mx-auto mt-2 max-w-[190px] text-[15px] leading-[1.6] text-[var(--color-text-muted)] sm:text-base">
                       {step.description}
                     </p>
                   </motion.article>
@@ -497,27 +496,25 @@ export default function AISEOPage() {
             {/* LEFT SUCCESS STORY */}
 
             <div>
-              <p className="text-[9px] font-bold uppercase tracking-[0.3em] text-[var(--color-violet-600)] sm:text-[10px]">
-                Real Results. Real Businesses.
+              <p className="text-sm font-bold sm:text-base uppercase tracking-[0.3em] text-[var(--color-violet-600)] sm:text-[15px]">
+                Real results. Real businesses.
               </p>
 
               <h2
                 className="
                   mt-3
-                  text-[28px] font-extrabold
+                  text-[28px]         font-extrabold sm:text-[44px] lg:text-[48px]
                   tracking-[-0.04em]
                   text-[var(--color-heading)]
-                  sm:text-[36px]
-                  lg:text-[39px]
+                       sm:text-[44px] lg:text-[44px]
+                   sm:text-[42px] lg:text-[46px]
                 "
               >
-                SEO Success with AI
+                SEO success with AI
               </h2>
 
-              <p className="mt-2 max-w-[620px] text-[13px] leading-6 text-[var(--color-text)] sm:text-[15px]">
-                See how businesses like yours are achieving higher
-                rankings, more traffic, and greater revenue with AI
-                WorksForce.
+              <p className="mt-2 max-w-[620px] text-[15px] sm:text-base leading-6 text-[var(--color-text)] sm:text-[15px]">
+                See how businesses like yours are getting rankings more visitors and more money with AI WorksForce.
               </p>
 
               {/* CASE STUDY CARD */}
@@ -558,45 +555,43 @@ export default function AISEOPage() {
                   {/* CONTENT */}
 
                   <div>
-                    <span className="inline-flex rounded-md bg-[var(--color-indigo-50)] px-2.5 py-1 text-[8px] font-bold text-[var(--color-violet-600)]">
-                      E-commerce Brand
+                    <span className="inline-flex rounded-md bg-[var(--color-indigo-50)] px-2.5 py-1 text-xs sm:text-sm font-bold text-[var(--color-violet-600)]">
+                      E-commerce brand
                     </span>
 
-                    <h3 className="mt-2 text-[16px] font-extrabold tracking-tight text-[var(--color-heading)] sm:text-[17px]">
-                      From Page 5 to #1 in 3 Months
+                    <h3 className="mt-2 text-lg sm:text-xl font-extrabold tracking-tight text-[var(--color-heading)] sm:text-lg sm:text-xl">
+                      From page 5 to the top in 3 months
                     </h3>
 
-                    <p className="mt-2 text-[10px] leading-5 text-[var(--color-text-muted)] sm:text-[11px]">
-                      With our AI SEO strategy, this e-commerce brand
-                      increased organic traffic by 312% and achieved
-                      #1 rankings for 25+ high-value keywords.
+                    <p className="mt-2 text-[15px] leading-[1.6] text-[var(--color-text-muted)] sm:text-base">
+                      Our AI-based SEO strategy helped get a 312% increase in visitors from search and number one rankings for 25+ important keywords.
                     </p>
 
                     <div className="mt-4 grid grid-cols-3 gap-3">
                       <div>
-                        <p className="text-[17px] font-extrabold text-[var(--color-primary)]">
+                        <p className="text-2xl font-extrabold sm:text-3xl text-[var(--color-primary)]">
                           312%
                         </p>
-                        <p className="mt-0.5 text-[8px] text-[var(--color-text-muted)]">
-                          Increase in Organic Traffic
+                        <p className="mt-0.5 text-sm sm:text-base text-[var(--color-text-muted)]">
+                          Increase in traffic
                         </p>
                       </div>
 
                       <div>
-                        <p className="text-[17px] font-extrabold text-[var(--color-primary)]">
+                        <p className="text-2xl font-extrabold sm:text-3xl text-[var(--color-primary)]">
                           25+
                         </p>
-                        <p className="mt-0.5 text-[8px] text-[var(--color-text-muted)]">
-                          Keywords in Top 3
+                        <p className="mt-0.5 text-sm sm:text-base text-[var(--color-text-muted)]">
+                          Keywords, in top 3
                         </p>
                       </div>
 
                       <div>
-                        <p className="text-[17px] font-extrabold text-[var(--color-primary)]">
+                        <p className="text-2xl font-extrabold sm:text-3xl text-[var(--color-primary)]">
                           3x
                         </p>
-                        <p className="mt-0.5 text-[8px] text-[var(--color-text-muted)]">
-                          More Revenue
+                        <p className="mt-0.5 text-sm sm:text-base text-[var(--color-text-muted)]">
+                          More revenue
                         </p>
                       </div>
                     </div>
@@ -672,7 +667,7 @@ export default function AISEOPage() {
 
           <div className="relative z-10 mx-auto max-w-[800px]">
             <p className="text-[9px] font-bold uppercase tracking-[0.3em] text-white/80 sm:text-[10px]">
-              Ready to Rank Higher?
+              Ready to rank higher?
             </p>
 
             <h2
@@ -685,12 +680,11 @@ export default function AISEOPage() {
                 lg:text-[39px]
               "
             >
-              Let&apos;s Grow Your Business with AI SEO
+              Lets grow your business with AI SEO
             </h2>
 
             <p className="mt-3 text-[12px] text-white/80 sm:text-[14px]">
-              Get a custom AI SEO strategy tailored to your business
-              goals.
+              Get an AI SEO strategy made for your business goals.
             </p>
 
             <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
@@ -709,7 +703,7 @@ export default function AISEOPage() {
                   hover:bg-[var(--color-blue-50)]
                 "
               >
-                Book a Free Consultation
+                Book a consultation
                 <ArrowRight size={14} />
               </Link>
 
@@ -730,7 +724,7 @@ export default function AISEOPage() {
                   hover:bg-white/10
                 "
               >
-                Explore AI Digital Marketing
+                Explore AI marketing
               </Link>
             </div>
           </div>
@@ -738,8 +732,8 @@ export default function AISEOPage() {
           {/* CTA HANDWRITTEN */}
 
           <div className="absolute bottom-28 right-7 hidden rotate-[-7deg] font-hand text-lg leading-5 text-white/90 lg:block">
-            <span className="block">Higher Rankings</span>
-            <span className="block">Brighter Futures</span>
+            <span className="block">Higher rankings</span>
+            <span className="block">Brighter futures</span>
 
             <svg
               className="absolute -left-10 top-8 h-12 w-12"

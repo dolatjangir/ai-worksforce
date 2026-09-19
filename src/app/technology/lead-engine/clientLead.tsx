@@ -41,37 +41,37 @@ const navItems = [
 const solutionCards = [
   {
     title: "Target Audience Discovery",
-    text: "Find the right prospects using AI-powered research and data intelligence.",
+    text: "Find the prospects using AI-powered research and data intelligence.",
     icon: Crosshair,
     iconClass: "bg-brand-purple-soft text-brand-purple",
   },
   {
     title: "Lead Qualification",
-    text: "Automatically score and qualify leads based on intent, behavior, and fit.",
+    text: "Automatically. Qualify leads based on intent, behavior, and fit.",
     icon: Users,
     iconClass: "bg-brand-purple-soft text-brand-purple",
   },
   {
     title: "Multi-Channel Outreach",
-    text: "Engage prospects across email, LinkedIn, SMS, and more — automatically.",
+    text: "Engage prospects across email, LinkedIn, SMS, and more. Automatically.",
     icon: Rocket,
     iconClass: "bg-brand-blue-soft text-brand-blue",
   },
   {
     title: "CRM Integration",
-    text: "Sync leads with your CRM and existing tools for a seamless workflow.",
+    text: "Sync leads with your CRM and existing tools for a workflow.",
     icon: Settings,
     iconClass: "bg-brand-purple-soft text-brand-purple",
   },
   {
     title: "Analytics & Reporting",
-    text: "Track performance, measure ROI, and get actionable insights.",
+    text: "Track performance measure ROI. Get actionable insights.",
     icon: BarChart3,
     iconClass: "bg-brand-blue-soft text-brand-blue",
   },
   {
     title: "Continuous Optimization",
-    text: "Use AI to learn, improve, and deliver better results over time.",
+    text: "Use AI to learn, improve, and deliver results over time.",
     icon: Compass,
     iconClass: "bg-brand-green-soft text-brand-green",
   },
@@ -81,34 +81,34 @@ const steps = [
   {
     number: "01",
     title: "Define Your Goals",
-    text: "Tell us your ideal customer profile and business goals.",
+    text: "Tell us your customer profile and business goals.",
     icon: Search,
     color: "bg-brand-purple-soft text-brand-purple",
   },
   {
     number: "02",
     title: "Find & Qualify",
-    text: "Our AI finds and qualifies the right prospects for you.",
+    text: "Our AI. Qualifies the right prospects for you.",
     icon: Database,
     color: "bg-brand-green-soft text-brand-green",
   },
   {
     number: "03",
     title: "Automate Outreach",
-    text: "We launch multi-channel campaigns to engage your leads.",
+    text: "We launch channel campaigns to engage your leads.",
     icon: Settings,
     color: "bg-brand-purple-soft text-brand-purple",
   },
   {
     number: "04",
     title: "Track & Optimize",
-    text: "Monitor performance and let AI optimize for better results.",
+    text: "Monitor performance. Let AI optimize for better results.",
     icon: Users,
     color: "bg-brand-purple-soft text-brand-purple",
   },
   {
     number: "05",
-    title: "Get More Customers",
+    title: "Get Customers",
     text: "Convert qualified leads into paying customers and grow.",
     icon: BarChart3,
     color: "bg-[#ffe7ef] text-pink-500",
@@ -151,7 +151,7 @@ export default function LeadEnginePage() {
     </>
   }
   subtitle="AI-Powered Lead Generation for Real Business Growth."
-  description="Our Lead Engine uses AI to find, qualify, and engage high-intent leads, so you can focus on closing deals. Get a consistent pipeline of quality leads, without the manual effort."
+  description="Our Lead Engine uses AI to find, qualify, and engage high-intent leads so you can focus on closing deals. Get a pipeline of quality leads without the manual effort."
   buttons={{
     primary: {
       label: "Book a Free Consultation",
@@ -196,7 +196,7 @@ export default function LeadEnginePage() {
     },
     {
       label: "Qualify Leads",
-      subLabel: "Smart scoring",
+      subLabel: "scoring",
       symbol: "♙",
       colorClass: "text-brand-blue",
     },
@@ -255,7 +255,7 @@ export default function LeadEnginePage() {
         </p>
 
         <div className="mt-4 grid grid-cols-3 items-center gap-x-4 gap-y-6 text-center sm:grid-cols-4 lg:grid-cols-8">
-          {["HubSpot", "salesforce", "LinkedIn", "Google", "Apollo.io", "zoominfo", "pipedrive", "Outreach"].map((brand, index) => (
+          {["HubSpot", "Salesforce", "LinkedIn", "Google", "Apollo.io", "ZoomInfo", "Pipedrive", "Outreach"].map((brand, index) => (
             <span
               key={brand}
               className={`text-base font-extrabold sm:text-lg tracking-[-0.8px] ${
@@ -347,7 +347,7 @@ export default function LeadEnginePage() {
             Drive Predictable Growth with Lead Engine
           </h2>
           <p className="mt-1 max-w-[540px] text-[14px] leading-[1.35] text-[#58689a]">
-            See how businesses like yours are generating more leads, reducing costs, and closing more deals with AI WorksForce.
+            See how businesses like yours are generating leads, reducing costs, and closing more deals with AI WorksForce.
           </p>
 
           <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-4">
@@ -382,7 +382,7 @@ export default function LeadEnginePage() {
                 B2B SaaS Company: 4x More Qualified Leads
               </h3>
               <p className="mt-2 text-[15px] leading-[1.45] text-[#556595]">
-                We helped a B2B SaaS company implement our Lead Engine to automate prospecting and outreach, resulting in 312% more qualified leads and 4x higher conversion rates in just 4 months.
+                We helped a B2B SaaS company implement our Lead Engine to automate prospecting and outreach, resulting in 312% qualified leads and 4x higher conversion rates in just 4 months.
               </p>
 
               <div className="mt-4 grid grid-cols-3 gap-3">
@@ -408,7 +408,7 @@ export default function LeadEnginePage() {
           <div className="pointer-events-none absolute -right-10 -top-12 size-52 rounded-full border border-blue-300/20" />
 
           <div className="relative">
-            <p className="text-sm sm:text-base font-bold sm:text-[11px] tracking-[3px] text-blue-100">READY TO FILL YOUR PIPELINE?</p>
+            <p className="text-sm sm:text-base font-bold sm:text-[11px] tracking-[3px] text-blue-100">TO FILL YOUR PIPELINE?</p>
             <h2 className="mt-2 text-[26px] font-extrabold sm:text-[30px] lg:text-[32px] sm:text-[30px] lg:text-[32px] tracking-[-0.8px] sm:text-[27px]">
               Let’s Build Your Lead Generation Engine
             </h2>
@@ -435,7 +435,7 @@ export default function LeadEnginePage() {
           <p className="absolute bottom-5 right-8 hidden rotate-[-10deg] text-left font-hand text-2xl sm:text-3xl leading-[0.9] text-white md:block">
             More Leads
             <br />
-            More Deals
+            Deals
             <br />
             Bigger Growth
           </p>

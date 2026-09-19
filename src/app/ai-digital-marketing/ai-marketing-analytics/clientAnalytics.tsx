@@ -150,37 +150,37 @@ export default function AIMarketingAnalyticsPage() {
     {
       icon: "database" as IconName,
       title: "Data Integration",
-      text: "Connect all your marketing data from multiple platforms in one place.",
+      text: "Link all your marketing data from platforms in one place.",
       tone: "bg-violet-100 text-brand-purple",
     },
     {
       icon: "chart" as IconName,
       title: "Real-Time Analytics",
-      text: "Get live insights into campaign performance, audience behavior, and revenue impact.",
+      text: "Get information about how your campaigns are doing, how people are acting, and how it affects your money.",
       tone: "bg-emerald-100 text-emerald-500",
     },
     {
       icon: "brain" as IconName,
       title: "Predictive Insights",
-      text: "Use AI to predict trends, identify opportunities, and prevent under-performance.",
+      text: "Use AI to guess what will happen, find chances to improve, and stop things from not working.",
       tone: "bg-rose-100 text-rose-500",
     },
     {
       icon: "users" as IconName,
       title: "Audience Intelligence",
-      text: "Understand your audience better with AI-powered segmentation and behavior analysis.",
+      text: "Know your audience better using AI to group people and study their behavior.",
       tone: "bg-orange-100 text-orange-500",
     },
     {
       icon: "target" as IconName,
       title: "Campaign Optimization",
-      text: "Get AI-driven recommendations to improve performance and maximize ROI.",
+      text: "Get suggestions from AI to make your campaigns better and get a return on investment.",
       tone: "bg-sky-100 text-brand-sky",
     },
     {
       icon: "report" as IconName,
       title: "Custom Reporting",
-      text: "Automate reports and get easy-to-understand insights tailored to your goals.",
+      text: "Automate reports. Get simple insights that match your goals.",
       tone: "bg-emerald-100 text-emerald-500",
     },
   ];
@@ -189,36 +189,36 @@ export default function AIMarketingAnalyticsPage() {
     {
       number: "01",
       icon: "search" as IconName,
-      title: "Connect",
-      text: "We integrate your marketing data from all channels.",
+      title: "Step one",
+      text: "We bring together your marketing data from all sources.",
       tone: "bg-violet-100 text-brand-purple",
     },
     {
       number: "02",
       icon: "database" as IconName,
-      title: "Analyze",
-      text: "Our AI analyzes data to find patterns and insights.",
+      title: "Step two",
+      text: "Our AI looks at the data to find patterns and ideas.",
       tone: "bg-emerald-100 text-emerald-500",
     },
     {
       number: "03",
       icon: "bulb" as IconName,
-      title: "Discover",
-      text: "We uncover opportunities, trends, and areas for improvement.",
+      title: "Step three",
+      text: "We find chances, trends, and places where you can get better.",
       tone: "bg-violet-100 text-brand-purple",
     },
     {
       number: "04",
       icon: "settings" as IconName,
-      title: "Optimize",
-      text: "Get AI-driven recommendations to take action.",
+      title: "Step four",
+      text: "Get suggestions from AI to take action.",
       tone: "bg-violet-100 text-brand-purple",
     },
     {
       number: "05",
       icon: "chart" as IconName,
-      title: "Grow",
-      text: "Implement changes and achieve higher ROI with measurable results.",
+      title: "Step five",
+      text: "Make changes. Get more return on investment with clear results.",
       tone: "bg-rose-100 text-rose-500",
     },
   ];
@@ -232,11 +232,11 @@ export default function AIMarketingAnalyticsPage() {
 
       <main>
      <DigitalMarketingHero
-  eyebrow="DATA-DRIVEN GROWTH. SMARTER DECISIONS."
+  eyebrow="Data-driven growth. Smarter decisions."
   title="AI Marketing"
   highlightedTitle="Analytics"
-  subtitle="Turn data into growth with AI."
-  description="Let AI analyze your marketing data, uncover insights, and predict what works — so you can make smarter decisions, optimize your campaigns, and achieve higher ROI with less effort."
+  subtitle="Turn data into growth using AI."
+  description="Let AI look at your marketing data, find insights, and predict what works. So you can make decisions, improve your campaigns, and get more return on investment with less work."
   imageSrc="/digital-marketing/ai-marketing-anylitcs-hero.png"
   imageAlt="Marketing data analyst using AI-powered marketing analytics"
   primaryLabel="Book a Free Consultation"
@@ -245,19 +245,19 @@ export default function AIMarketingAnalyticsPage() {
   secondaryHref="#how-it-works"
   metrics={[
     {
-      value: "3x",
+      value: "Three times",
       label: "Faster Insights",
       icon: "chart",
       tone: "green",
     },
     {
-      value: "70%",
+      value: "Seventy percent",
       label: "Less Time on Reporting",
       icon: "clock",
       tone: "purple",
     },
     {
-      value: "5x",
+      value: "Five times",
       label: "Higher ROI",
       icon: "growth",
       tone: "orange",
@@ -270,10 +270,10 @@ export default function AIMarketingAnalyticsPage() {
             COMPLETE AI MARKETING ANALYTICS SOLUTIONS
           </p>
           <h2 className="mt-1 text-center text-[25px] leading-tight font-bold tracking-[-1px] sm:text-[29px]">
-            Everything You Need to Understand, Optimize & Grow
+            All the tools you need to understand, improve, and grow
           </h2>
           <p className="mt-1 text-center text-[14px] text-brand-text">
-            From data collection to actionable insights, our AI-powered analytics solutions cover it all.
+            From collecting data to getting useful insights, our AI-powered analytics solutions do it all.
           </p>
 
           <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-6">
@@ -299,7 +299,7 @@ export default function AIMarketingAnalyticsPage() {
               From Data to Decisions
             </h2>
             <p className="mt-1 text-center text-[14px] text-brand-text">
-              A simple, streamlined process to turn your marketing data into measurable growth.
+              An easy process to turn your marketing data into real growth.
             </p>
 
             <div className="mt-3 grid gap-6 sm:grid-cols-2 lg:grid-cols-5 lg:gap-5">
@@ -327,15 +327,15 @@ export default function AIMarketingAnalyticsPage() {
             </p>
             <h2 className="mt-1 text-[25px] leading-tight font-bold">Marketing Analytics Success with AI</h2>
             <p className="mt-1 text-[13px] leading-[1.4] text-brand-text">
-              See how businesses like yours are making smarter decisions and achieving better results with AI WorksForce.
+              See how businesses similar to yours are making choices and getting better results with AI WorksForce.
             </p>
 
             <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-4">
               {[
-                ["growth", "312%", "Increase in Marketing ROI", "bg-emerald-100 text-emerald-500"],
-                ["users", "3x", "More Qualified Leads", "bg-violet-100 text-brand-purple"],
-                ["clock", "70%", "Less Time on Reporting", "bg-orange-100 text-orange-500"],
-                ["chart", "5x", "Faster Decision-Making", "bg-rose-100 text-rose-500"],
+                ["growth", "Three hundred twelve percent", "Increase in Marketing ROI", "bg-emerald-100 text-emerald-500"],
+                ["users", "Three times", "More Qualified Leads", "bg-violet-100 text-brand-purple"],
+                ["clock", "Seventy percent", "Less Time on Reporting", "bg-orange-100 text-orange-500"],
+                ["chart", "Five times", "Decision-Making", "bg-rose-100 text-rose-500"],
               ].map(([icon, value, label, tone]) => (
                 <div key={label} className="rounded-xl bg-[#fafbff] p-3 text-center">
                   <Bubble icon={icon as IconName} tone={tone} small />
@@ -365,9 +365,9 @@ export default function AIMarketingAnalyticsPage() {
               </p>
               <div className="mt-3 flex gap-6">
                 {[
-                  ["312%", "More Revenue"],
-                  ["4x", "ROI Growth"],
-                  ["70%", "Less Reporting Time"],
+                  ["Three hundred twelve percent", "More Revenue"],
+                  ["Four times", "ROI Growth"],
+                  ["Seventy percent", "Reporting Time"],
                 ].map(([value, label]) => (
                   <div key={label}>
                     <p className="text-[20px] leading-none font-bold text-brand-purple">{value}</p>
@@ -424,10 +424,10 @@ export default function AIMarketingAnalyticsPage() {
           <div className="absolute inset-0 -z-10 opacity-30 [background-image:repeating-radial-gradient(ellipse_at_0%_120%,transparent_0_10px,#7180ff_11px_12px)]" />
           <p className="text-[9px] tracking-[0.27em]">READY TO TURN YOUR DATA INTO GROWTH?</p>
           <h2 className="mt-2 text-[25px] leading-tight font-semibold">
-            Let’s Build a Smarter Marketing Strategy with AI
+            Let’s create a marketing plan with AI.
           </h2>
           <p className="mt-1 text-[12px]">
-            Get a custom AI marketing analytics strategy tailored to your business goals.
+            Get a personalized AI marketing analytics plan made for your business goals.
           </p>
           <div className="mt-3 flex flex-wrap justify-center gap-3">
             <a href="mailto:hello@example.com" className={`${button} bg-white text-brand-dark`}>

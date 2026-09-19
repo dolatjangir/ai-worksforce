@@ -86,7 +86,7 @@ const solutions: Solution[] = [
   {
     title: "AI Content Creation",
     description:
-      "Generate engaging posts, captions, and visuals in minutes.",
+      "Create scroll-stopping content, captions, and visuals in minutes.",
     icon: FileText,
     iconColor: "text-brand-blue",
     iconBg: "bg-brand-blue-soft",
@@ -359,7 +359,7 @@ function Hero() {
   title="AI"
   highlightedTitle="Social Media"
   subtitle="Plan. Create. Post. Engage. Grow."
-  description="Let AI handle your social media, so you can focus on your business. From content creation and scheduling to engagement and performance tracking — our AI-powered social media solutions help you build a stronger brand and drive real results."
+  description="AI takes care of your social presence. You take care of your business. From content creation and scheduling to engagement and performance tracking — our AI-powered social media solutions help you build a stronger brand and drive real results."
   imageSrc="/digital-marketing/ai-social-marketing-hero.png"
   imageAlt="Social media professional working with AI"
   primaryLabel="Book a Free Consultation"

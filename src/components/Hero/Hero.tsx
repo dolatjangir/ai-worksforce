@@ -32,6 +32,7 @@ export type WorkforceHeroProps = {
     laptop: string;
     desktop: string;
     ultrawide: string;
+    digitalBoard: string;
   };
 
   /**
@@ -169,6 +170,7 @@ export default function WorkforceHero({
             lg       → Laptop
             xl       → Desktop
             2xl      → Ultrawide
+            2560px+ → Digital Board
         --------------------------------------------- */}
 
         <div
@@ -225,6 +227,22 @@ export default function WorkforceHero({
               }}
             />
           </div>
+          {/* Digital Board / 4K */} 
+          <div className="absolute inset-0 hidden min-[2560px]:block">
+             <Image 
+             src={backgroundImages.digitalBoard} 
+             alt="" 
+             fill 
+             sizes="100vw" 
+             priority 
+             className="select-none" 
+             draggable={false} 
+             style={{ 
+              objectFit: backgroundFit, 
+              objectPosition: backgroundPosition,
+               }} 
+               />
+           </div>
         </div>
 
         {/* ---------------------------------------------
@@ -248,28 +266,30 @@ export default function WorkforceHero({
               --------------------------------------------- */}
 
               <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#0759ff]">
-                Boost Your Business with AI
+                Boost Your Business with AWFI <span className="font-extrabold text-md bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+  Expert
+</span>
               </p>
 
               {/* ---------------------------------------------
                   Heading
               --------------------------------------------- */}
 
-              <h1 className="mt-4 text-[clamp(2.25rem,6vw,3rem)] font-extrabold leading-[1.02] tracking-[-0.045em] lg:text-[clamp(2.5rem,3.2vw,3rem)]">
-                <span className="block">
-                  Build Your AI Workforce
-                </span>
+              <h1 className="mt-4 pb-2 text-[clamp(2.25rem,6vw,3rem)] font-extrabold leading-[1.2] tracking-[-0.045em] lg:text-[clamp(2.5rem,3.2vw,3rem)]">
+  <span className="block">
+    Build Your AI Workforce
+  </span>
 
-                <span className="block bg-linear-to-r from-[#065bff] via-[#6640ff] to-[#8200ea] bg-clip-text text-transparent">
-                  Without Building an AI Team
-                </span>
-              </h1>
+  <span className="block bg-linear-to-r from-[#065bff] via-[#6640ff] to-[#8200ea] bg-clip-text text-transparent">
+    Without Building an AI Team
+  </span>
+</h1>
 
               {/* ---------------------------------------------
                   Description
               --------------------------------------------- */}
 
-              <p className="mt-4 max-w-[38rem] text-base leading-[1.5] text-[#07184f]">
+              <p className="mt-2 max-w-[38rem] text-base leading-[1.5] text-[#07184f]">
                 We analyze your business and processes, identify the right
                 data sources, AI tools, AI agents, and automation. And then
                 build and manage a complete AI workforce for your business -

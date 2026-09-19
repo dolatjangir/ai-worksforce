@@ -222,7 +222,7 @@ export default function AIBacklinkOutreach() {
   title="AI Backlink"
   highlightedTitle=" & Outreach"
   subtitle="Build authority. Earn high-quality backlinks. Grow faster."
-  description="Let AI handle your backlink research, prospecting, outreach, and follow-ups — so you get high-authority links, stronger domain authority, and better search rankings without the manual effort."
+  description="Let AI handle your backlink research, prospecting, outreach and follow-ups. This gives you high-authority links, stronger domain authority and better search rankings all without effort."
   imageSrc="/digital-marketing/ai-backlink-outreach-hero.png"
   imageAlt="Outreach specialist working on backlink research and link-building campaigns"
   primaryLabel="Book a Free Consultation"
@@ -232,7 +232,7 @@ export default function AIBacklinkOutreach() {
   metrics={[
     {
       value: "3x",
-      label: "More Quality Backlinks",
+      label: "Quality Backlinks",
       icon: "link",
       tone: "purple",
     },
@@ -258,10 +258,10 @@ export default function AIBacklinkOutreach() {
               COMPLETE AI-POWERED LINK BUILDING SOLUTIONS
             </p>
             <h2 className="mt-1 text-[25px] leading-tight font-bold tracking-[-0.8px] sm:text-[30px]">
-              Everything You Need for Effective Link Building
+              Everything you need for link building.
             </h2>
             <p className="mt-1 text-[15px] text-[#535e90]">
-              From prospecting to outreach to tracking — our AI-powered solutions cover the entire backlink process.
+              From prospecting to outreach to tracking our AI solutions cover the backlink process.
             </p>
           </div>
 
@@ -291,10 +291,10 @@ export default function AIBacklinkOutreach() {
                 HOW IT WORKS
               </p>
               <h2 className="mt-1 text-[26px] leading-tight font-bold tracking-[-0.7px]">
-                From Prospect to Powerful Backlinks
+                From Prospect to Backlinks
               </h2>
               <p className="mt-1 text-[15px] text-[#535e90]">
-                A simple, AI-driven process to get you high-quality backlinks on autopilot.
+                A simple AI-driven process that gives you high-quality backlinks on autopilot.
               </p>
             </div>
 
@@ -330,15 +330,15 @@ export default function AIBacklinkOutreach() {
               Backlink Success with AI
             </h2>
             <p className="mt-1 max-w-[540px] text-[15px] leading-[1.45] text-[#515c8c]">
-              See how businesses like yours are building stronger authority and achieving higher rankings with AI WorksForce.
+              See how businesses like yours build authority and achieve higher rankings with AI WorksForce.
             </p>
 
             <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-4">
               {[
-                { icon: "growth" as const, tone: "green" as const, value: "256%", label: <>Increase in<br />Organic Traffic</> },
-                { icon: "chart" as const, tone: "purple" as const, value: "3x", label: <>More Quality<br />Backlinks</> },
-                { icon: "users" as const, tone: "purple" as const, value: "70%", label: <>Less Outreach<br />Time</> },
-                { icon: "trophy" as const, tone: "orange" as const, value: "2x", label: <>Higher<br />Domain Authority</> },
+                { icon: "growth" as const, tone: "green" as const, value: "256%", label: <>Increase in Organic Traffic</> },
+                { icon: "chart" as const, tone: "purple" as const, value: "3x", label: <>More Quality Backlinks</> },
+                { icon: "users" as const, tone: "purple" as const, value: "70%", label: <>Less Outreach Time</> },
+                { icon: "trophy" as const, tone: "orange" as const, value: "2x", label: <>Higher Domain Authority</> },
               ].map((stat, index) => (
                 <div key={index} className="rounded-xl bg-[#f9faff] px-2 py-3 text-center">
                   <Bubble name={stat.icon} tone={stat.tone} small />
@@ -370,7 +370,7 @@ export default function AIBacklinkOutreach() {
                 {[
                   ["3x", "Organic Traffic"],
                   ["150+", "Quality Backlinks"],
-                  ["Top 3", "Keyword Rankings"],
+                  ["3", "Keyword Rankings"],
                 ].map(([value, label]) => (
                   <div key={label}>
                     <p className="text-[22px] leading-tight font-bold tracking-[-0.7px] text-[#3520ff]">{value}</p>
@@ -440,19 +440,19 @@ export default function AIBacklinkOutreach() {
             ))}
           </svg>
 
-          <p className="text-[9px] tracking-[0.25em]">READY TO BUILD YOUR AUTHORITY?</p>
+          <p className="text-[9px] tracking-[0.25em]">TO BUILD YOUR AUTHORITY?</p>
           <h2 className="mt-2 text-[27px] leading-tight font-semibold tracking-[-0.5px]">
-            Get High-Quality Backlinks with AI
+            Get high-quality backlinks with AI.
           </h2>
           <p className="mt-1 text-[13px]">
-            Let our AI team handle the outreach, so you can focus on growing your business.
+            Let our AI team handle the outreach so you can focus on growing your business.
           </p>
           <div className="mt-4 flex flex-wrap justify-center gap-4">
             <a href="mailto:hello@your-domain.com" className={`${button} border border-[#dcdfff] bg-white text-[#080c54] hover:bg-[#eeeaff]`}>
               Book a Free Consultation <span aria-hidden="true">→</span>
             </a>
             <a href="#solutions" className={`${button} border border-white/60 bg-white/5 text-white hover:bg-white/15`}>
-              Explore Our SEO Solutions
+              Explore our SEO solutions
             </a>
           </div>
 

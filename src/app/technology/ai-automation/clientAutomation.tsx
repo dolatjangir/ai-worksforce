@@ -30,7 +30,7 @@ const navItems = [
 const solutions: { title: string; text: string; icon: IconName; tone: string }[] = [
   { title: "Process Automation", text: "Automate repetitive tasks and business processes.", icon: "gear", tone: "bg-brand-purple-soft text-brand-purple" },
   { title: "AI Agents", text: "Deploy AI agents to handle customer support, operations, and more.", icon: "users", tone: "bg-brand-purple-soft text-brand-purple" },
-  { title: "Tool Integrations", text: "Connect with 1000+ tools like Google Workspace, Slack, CRM and more.", icon: "cube", tone: "bg-sky-50 text-sky-500" },
+  { title: "Tool Integrations", text: "Connect with 1000+ tools like Google Workspace, Slack, CRM, and more.", icon: "cube", tone: "bg-sky-50 text-sky-500" },
   { title: "Data Automation", text: "Automate data collection, processing, and reporting for better insights.", icon: "document", tone: "bg-emerald-50 text-emerald-500" },
   { title: "Smart Alerts", text: "Get real-time notifications and trigger actions automatically.", icon: "sparkles", tone: "bg-brand-purple-soft text-brand-purple" },
   { title: "Workflow Optimization", text: "Identify bottlenecks and optimize your workflows with AI.", icon: "chart", tone: "bg-sky-50 text-sky-500" },
@@ -173,7 +173,7 @@ export default function AIAutomationPage({
   sideCard={{
     title:"Automation Impact",
     items: [
-      "↑ 256% Increase in Efficiency",
+      "256% Increase in Efficiency",
       "Save Time",
       "Reduce Costs",
       "Minimize Errors",
@@ -240,7 +240,7 @@ export default function AIAutomationPage({
           </section>
 
           <section aria-label="Client testimonial and technology stack" className="grid items-center gap-6 rounded-2xl bg-brand-blue-soft/25 p-5 sm:p-6 lg:grid-cols-[1.05fr_1fr]">
-            <figure className="flex flex-col items-center gap-5 sm:flex-row"><img src={testimonialImageSrc} alt="Rahul Mehta" width={140} height={140} loading="lazy" className="size-28 shrink-0 rounded-full border-4 border-brand-purple/10 object-cover" /><div><span aria-hidden="true" className="block h-7 font-serif text-5xl font-bold leading-none text-brand-blue">“</span><blockquote className="text-[14px] leading-[1.45] text-brand-text">AI WorksForce helped us automate our entire lead generation process. We now save hours every week and can focus on what really matters — growing our business.</blockquote><figcaption className="mt-2 text-sm leading-tight"><strong>Rahul Mehta</strong><span className="block text-brand-text">Founder, GrowthTech (SaaS)</span></figcaption></div></figure>
+            <figure className="flex flex-col items-center gap-5 sm:flex-row"><img src={testimonialImageSrc} alt="Rahul Mehta" width={140} height={140} loading="lazy" className="size-28 shrink-0 rounded-full border-4 border-brand-purple/10 object-cover" /><div><span aria-hidden="true" className="block h-7 font-serif text-5xl font-bold leading-none text-brand-blue">“</span><blockquote className="text-[14px] leading-[1.45] text-brand-text">AI WorksForce helped us automate our entire lead generation process. We now save hours every week and can focus on what really matters—growing our business.</blockquote><figcaption className="mt-2 text-sm leading-tight"><strong>Rahul Mehta</strong><span className="block text-brand-text">Founder, GrowthTech (SaaS)</span></figcaption></div></figure>
             <div className="lg:border-l lg:border-brand-blue/20 lg:pl-6"><p className={eyebrow}>Works with your favorite tools</p><div className="mt-3 grid grid-cols-3 gap-2 sm:grid-cols-6">{[["G", "Google Workspace"], ["✣", "Slack"], ["✳", "Zapier"], ["◉", "HubSpot"], ["N", "Notion"], ["M", "Make"]].map(([mark, label]) => <div key={label} className="rounded-lg bg-white px-2 py-3 text-center shadow-sm"><span className="block text-xl font-bold text-brand-purple">{mark}</span><span className="mt-1 block text-[10px] text-brand-text">{label}</span></div>)}</div></div>
           </section>
         </div>

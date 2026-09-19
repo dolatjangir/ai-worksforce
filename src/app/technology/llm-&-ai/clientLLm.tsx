@@ -28,20 +28,20 @@ const navItems = [
 ] as const;
 
 const solutions: { title: string; text: string; icon: IconName; tone: string }[] = [
-  { title: "LLM Strategy", text: "Find the right model, use cases, and roadmap tailored to your business goals.", icon: "message", tone: "bg-brand-purple-soft text-brand-purple" },
-  { title: "Custom AI Solutions", text: "Build custom LLM applications, chatbots, and AI agents tailored to your workflows.", icon: "document", tone: "bg-emerald-50 text-emerald-500" },
-  { title: "Data Preparation", text: "Prepare, fine-tune, and optimize your data for better model performance.", icon: "database", tone: "bg-rose-50 text-rose-500" },
-  { title: "Model Fine-Tuning", text: "Fine-tune open-source or proprietary LLMs for domain-specific use cases.", icon: "cube", tone: "bg-orange-50 text-orange-500" },
-  { title: "Deployment & Scaling", text: "Deploy LLMs securely on cloud or on-premise and scale as your business grows.", icon: "cloud", tone: "bg-sky-50 text-sky-500" },
-  { title: "Monitoring & Optimization", text: "Track performance, ensure safety, and continuously improve your AI systems.", icon: "chart", tone: "bg-rose-50 text-rose-500" },
+  { title: "LLM Strategy", text: "Find the model, scenarios, and path that fit your company's goals.", icon: "message", tone: "bg-brand-purple-soft text-brand-purple" },
+  { title: "Custom AI Solutions", text: "Create custom LLM applications, chatbots, and AI agents that match your processes.", icon: "document", tone: "bg-emerald-50 text-emerald-500" },
+  { title: "Data Preparation", text: "Get ready to adjust and improve your data for model results.", icon: "database", tone: "bg-rose-50 text-rose-500" },
+  { title: "Model Adjustment", text: "Adjust source or company models for specific situations.", icon: "cube", tone: "bg-orange-50 text-orange-500" },
+  { title: "Deployment and Expansion", text: "Place LLMs on the cloud or on-site and expand as your company grows.", icon: "cloud", tone: "bg-sky-50 text-sky-500" },
+  { title: "Tracking and Improvement", text: "Keep an eye on performance, ensure safety, and keep improving your AI systems.", icon: "chart", tone: "bg-rose-50 text-rose-500" },
 ];
 
 const steps: { title: string; text: string; icon: IconName; tone: string }[] = [
-  { title: "Discover", text: "We understand your goals, challenges, and use cases.", icon: "search", tone: "bg-brand-purple-soft text-brand-purple" },
-  { title: "Plan", text: "We design a tailored LLM & AI strategy for your business.", icon: "document", tone: "bg-emerald-50 text-emerald-500" },
-  { title: "Build", text: "We develop and fine-tune the right solution for your needs.", icon: "gear", tone: "bg-brand-purple-soft text-brand-purple" },
-  { title: "Deploy", text: "We launch and integrate it into your workflows securely.", icon: "cloud", tone: "bg-brand-purple-soft text-brand-purple" },
-  { title: "Optimize", text: "We monitor, improve, and scale for long-term success.", icon: "chart", tone: "bg-rose-50 text-rose-500" },
+  { title: "Discover", text: "We learn about your goals, problems, and scenarios.", icon: "search", tone: "bg-brand-purple-soft text-brand-purple" },
+  { title: "Plan", text: "We create an LLM and AI plan for your business.", icon: "document", tone: "bg-emerald-50 text-emerald-500" },
+  { title: "Build", text: "We. Adjust the best solution for your needs.", icon: "gear", tone: "bg-brand-purple-soft text-brand-purple" },
+  { title: "Deploy", text: "We put it into action. Connect it to your processes safely.", icon: "cloud", tone: "bg-brand-purple-soft text-brand-purple" },
+  { title: "Optimize", text: "We track, enhance, and expand for long-term success.", icon: "chart", tone: "bg-rose-50 text-rose-500" },
 ];
 
 const modelMarks = [
@@ -50,7 +50,7 @@ const modelMarks = [
   { mark: "G", name: "Gemini", className: "text-brand-blue" },
   { mark: "∞", name: "Meta", className: "text-brand-blue" },
   { mark: "M", name: "Mistral AI", className: "text-amber-500" },
-  { mark: "co:", name: "here", className: "text-neutral-700" },
+  { mark: "co:", name: "Cohere", className: "text-neutral-700" },
   { mark: "🤗", name: "Hugging Face", className: "text-amber-500" },
   { mark: "⌁", name: "LangChain", className: "text-emerald-800" },
 ] as const;
@@ -100,26 +100,26 @@ export default function LLMAIPage({
 
       <main id="main">
       <ReusableHero
-  eyebrow="Next-gen intelligence. Real business impact."
+  eyebrow="Next-generation intelligence. Real effects on business."
   title={
     <>
-      LLM &{" "}
+      LLM and{" "}
       <span className="bg-gradient-to-r from-brand-purple to-brand-blue bg-clip-text text-transparent">
         AI
       </span>
     </>
   }
-  subtitle="Unlock the power of Large Language Models for your business."
-  description="From strategy to implementation, we help you leverage LLMs and advanced AI models to automate processes, enhance customer experiences, and drive innovation across your business."
+  subtitle="Discover the strength of large language models for your company."
+  description="From planning to putting it into action, we assist you in using LLMs and advanced AI models to automate tasks, improve customer service, and encourage progress throughout your company."
   buttons={{
     primary: {
-      label: "Book a Free Consultation",
+      label: "Schedule a Free Meeting",
       href: consultationHref,
       variant: "primary",
       icon: <ArrowRight className="size-4" />,
     },
     secondary: {
-      label: "See LLM & AI in Action",
+      label: "Watch LLM and AI in action.",
       href: "#solutions",
       variant: "secondary",
       icon: <Play className="size-3.5" />,
@@ -128,17 +128,17 @@ export default function LLMAIPage({
   stats={[
     {
       value: "3x",
-      label: "Faster Insights",
+      label: "insights",
       icon: <Zap className="size-5" />,
     },
     {
       value: "70%",
-      label: "Lower Operational Costs",
+      label: "Reduced operating expenses",
       icon: <Database className="size-5" />,
     },
     {
       value: "5x",
-      label: "Higher Productivity",
+      label: "Greater efficiency",
       icon: <BarChart3 className="size-5" />,
     },
   ]}
@@ -173,38 +173,32 @@ export default function LLMAIPage({
   sideCard={{
     title: (
       <>
-        Turn Ideas
-        <br />
-        Into Intelligence
+        Turn ideas into intelligence.
       </>
     ),
-    items: ["Generate", "Analyze", "Automate", "Scale"],
+    items: ["Create", "Examine", "Automate", "Expand"],
   }}
   rightCards={[
     {
-      label: "Build with Responsible AI",
+      label: "Custom LLM options",
       symbol: "◆",
       colorClass: "text-brand-blue",
     },
     {
-      label: "Custom LLM Solutions",
+      label: "More potential with LLMs",
       symbol: "⚙",
       colorClass: "text-brand-blue",
     },
   ]}
   handwrittenText={
     <>
-      Bigger
-      <br />
-      Possibilities
-      <br />
-      with LLMs
+      Create with ethical AI.
     </>
   }
 />
 
         <section aria-label="Trusted AI models and technologies" className="mx-auto max-w-[1370px] px-5 py-6 sm:px-8 lg:px-10">
-          <p className={eyebrow}>Trusted AI models & technologies</p>
+          <p className={eyebrow}>Trusted AI models and tools</p>
           <div className="mt-4 grid grid-cols-2 items-center gap-x-5 gap-y-6 sm:grid-cols-4 xl:grid-cols-8">
             {modelMarks.map((model) => <div key={model.name} className="flex items-center justify-center gap-2 whitespace-nowrap"><span className={`text-[26px] font-bold leading-none ${model.className}`}>{model.mark}</span><span className="text-base font-semibold tracking-tight text-neutral-800 sm:text-lg">{model.name}</span></div>)}
           </div>
@@ -212,45 +206,45 @@ export default function LLMAIPage({
 
         <div className="mx-auto max-w-[1430px] space-y-4 px-5 pb-4 sm:px-8">
           <section id="solutions" aria-labelledby="solutions-title" className="scroll-mt-8 pt-3">
-            <div className="mb-4 text-center"><p className={eyebrow}>Complete LLM & AI solutions</p><h2 id="solutions-title" className={heading}>Everything You Need to Build with LLMs & AI</h2><p className={`mt-1 ${body}`}>From strategy and model selection to deployment and monitoring, our end-to-end LLM & AI solutions cover it all.</p></div>
+            <div className="mb-4 text-center"><p className={eyebrow}>Full LLM and AI solutions</p><h2 id="solutions-title" className={heading}>All you need to create with LLMs and AI</h2><p className={`mt-1 ${body}`}>From planning and choosing models to deploying and monitoring our LLM and AI solutions cover everything.</p></div>
             <div className="grid grid-cols-1 gap-3 min-[450px]:grid-cols-2 md:grid-cols-3 xl:grid-cols-6">
               {solutions.map((item) => <article key={item.title} className="rounded-xl bg-brand-blue-soft/25 px-4 py-5 text-center transition hover:-translate-y-1 hover:bg-brand-blue-soft/45 hover:shadow-lg"><span className={`mx-auto mb-3 flex size-16 items-center justify-center rounded-full ${item.tone}`}>{icon(item.icon, "size-8")}</span><h3 className="text-base font-semibold leading-tight tracking-tight">{item.title}</h3><p className="mx-auto mt-3 max-w-[210px] text-[15px] leading-[1.45] text-brand-text">{item.text}</p></article>)}
             </div>
           </section>
 
           <section id="how-it-works" aria-labelledby="process-title" className="scroll-mt-8 rounded-2xl bg-brand-blue-soft/25 p-2 pt-3">
-            <div className="text-center"><p className={eyebrow}>How it works</p><h2 id="process-title" className={heading}>From Possibility to Production</h2><p className={`mt-1 ${body}`}>A simple, proven process to implement LLMs and AI in your business.</p></div>
+            <div className="text-center"><p className={eyebrow}>How it works</p><h2 id="process-title" className={heading}>From idea to use</h2><p className={`mt-1 ${body}`}>A simple, reliable way to bring LLMs and AI into your business.</p></div>
             <ol className="mt-3 grid gap-2 sm:grid-cols-2 lg:grid-cols-5">
               {steps.map((step, index) => <li key={step.title} className="relative rounded-xl bg-white/75 px-5 py-4 text-center"><span className={`mx-auto mb-2 flex size-16 items-center justify-center rounded-full ${step.tone}`}>{icon(step.icon, "size-8")}</span>{index < steps.length - 1 && <span aria-hidden="true" className="absolute -right-4 top-9 z-10 hidden text-brand-blue lg:block">{icon("arrow", "size-7")}</span>}<span className="block text-sm font-bold">0{index + 1}</span><h3 className="text-base font-semibold leading-tight">{step.title}</h3><p className="mx-auto mt-2 max-w-[195px] text-[14px] leading-[1.4] text-brand-text">{step.text}</p></li>)}
             </ol>
           </section>
 
           <section id="case-study" aria-labelledby="results-title" className="grid scroll-mt-8 gap-5 lg:grid-cols-2">
-            <div className="px-2 py-2 lg:px-5"><p className={eyebrow}>Real results. Real businesses.</p><h2 id="results-title" className={heading}>Transforming Businesses with LLM & AI</h2><p className={`mt-1 ${body}`}>See how companies like yours are achieving higher efficiency, better customer experiences, and greater innovation.</p>
+            <div className="px-2 py-2 lg:px-5"><p className={eyebrow}>Real results. Real companies.</p><h2 id="results-title" className={heading}>Changing companies with LLM and AI</h2><p className={`mt-1 ${body}`}>See how businesses similar to yours are getting efficiency, better customer service, and more innovation.</p>
               <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
                 {[
-                  ["312%", "Increase in Operational Efficiency", "arrow", "bg-emerald-50 text-emerald-500"], ["3x", "Faster Content Creation", "users", "bg-brand-purple-soft text-brand-purple"],
-                  ["70%", "Lower Support Costs", "clock", "bg-orange-50 text-orange-500"], ["5x", "Higher Productivity", "chart", "bg-rose-50 text-rose-500"],
+                  ["312%", "efficient operations", "arrow", "bg-emerald-50 text-emerald-500"], ["3x", "Faster content writing", "users", "bg-brand-purple-soft text-brand-purple"],
+                  ["70%", "Lesser support costs", "clock", "bg-orange-50 text-orange-500"], ["5x", "Greater efficiency", "chart", "bg-rose-50 text-rose-500"],
                 ].map(([value, label, itemIcon, tone]) => <div key={label} className="rounded-xl bg-brand-blue-soft/25 px-2 py-3 text-center"><span className={`mx-auto mb-2 flex size-14 items-center justify-center rounded-full ${tone}`}>{icon(itemIcon as IconName)}</span><p className="text-[27px] font-bold leading-none">{value}</p><p className="mx-auto mt-1 max-w-[115px] text-xs leading-tight text-brand-text">{label}</p></div>)}
               </div>
             </div>
             <article className="grid gap-5 rounded-2xl bg-brand-blue-soft/30 p-5 sm:grid-cols-[.85fr_1.55fr]">
               <img src={caseStudyImageSrc} alt="Laptop showing an AI customer service workflow" width={420} height={400} loading="lazy" className="h-56 w-full rounded-xl object-cover sm:h-full sm:min-h-[250px]" />
-              <div><span className="rounded-full bg-brand-purple-soft px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-brand-purple">Case study</span><h3 className="mt-2 text-xl font-bold leading-[1.15] tracking-tight">E-commerce Brand: AI Chatbot with GPT-4o</h3><p className="mt-2 text-[14px] leading-[1.45] text-brand-text">We built a custom AI chatbot using GPT-4o to handle customer queries, product recommendations, and order tracking, resulting in 312% higher customer satisfaction in just 3 months.</p><div className="mt-5 grid grid-cols-3 gap-2">{[["312%", "Higher CSAT"], ["4x", "More Conversions"], ["70%", "Lower Support Costs"]].map(([value, label]) => <div key={label} className="border-r border-brand-blue/10 last:border-0"><p className="text-[27px] font-bold leading-none text-brand-blue">{value}</p><p className="mt-1 text-[10px] leading-tight text-brand-text">{label}</p></div>)}</div></div>
+              <div><span className="rounded-full bg-brand-purple-soft px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-brand-purple">Case study</span><h3 className="mt-2 text-xl font-bold leading-[1.15] tracking-tight">E-commerce company: AI chatbot with GPT-4o</h3><p className="mt-2 text-[14px] leading-[1.45] text-brand-text">We made a custom AI chatbot using GPT-4o to deal with customer questions, product suggestions, and order tracking, which led to 312% more customer satisfaction in only three months.</p><div className="mt-5 grid grid-cols-3 gap-2">{[["312%", "CSAT"], ["4x", "More sales"], ["70%", "Lesser support costs"]].map(([value, label]) => <div key={label} className="border-r border-brand-blue/10 last:border-0"><p className="text-[27px] font-bold leading-none text-brand-blue">{value}</p><p className="mt-1 text-[10px] leading-tight text-brand-text">{label}</p></div>)}</div></div>
             </article>
           </section>
 
           <section aria-label="Client testimonial and technology stack" className="grid items-center gap-6 rounded-2xl bg-brand-blue-soft/25 p-5 sm:p-6 lg:grid-cols-[1.05fr_1fr]">
-            <figure className="flex flex-col items-center gap-5 sm:flex-row"><img src={testimonialImageSrc} alt="Rohan Mehta" width={140} height={140} loading="lazy" className="size-28 shrink-0 rounded-full border-4 border-brand-purple/10 object-cover" /><div><span aria-hidden="true" className="block h-7 font-serif text-5xl font-bold leading-none text-brand-blue">“</span><blockquote className="text-[14px] leading-[1.45] text-brand-text">AI WorksForce helped us implement a custom LLM solution that transformed our customer support. We now resolve queries faster, reduce costs, and deliver a significantly better customer experience.</blockquote><figcaption className="mt-2 text-sm leading-tight"><strong>Rohan Mehta</strong><span className="block text-brand-text">CTO, ShopNext (E-commerce)</span></figcaption></div></figure>
-            <div className="lg:border-l lg:border-brand-blue/20 lg:pl-6"><p className={eyebrow}>Built with industry-leading tools</p><div className="mt-3 grid grid-cols-3 gap-2 sm:grid-cols-6">{[["⌁", "LangChain"], ["◌", "Pinecone"], ["◢", "Weaviate"], ["◉", "LangSmith"], ["▰", "Docker"], ["aws", "AWS"]].map(([mark, label]) => <div key={label} className="rounded-lg bg-white px-2 py-3 text-center shadow-sm"><span className="block text-xl font-bold text-brand-dark">{mark}</span><span className="mt-1 block text-[10px] text-brand-text">{label}</span></div>)}</div></div>
+            <figure className="flex flex-col items-center gap-5 sm:flex-row"><img src={testimonialImageSrc} alt="Rohan Mehta" width={140} height={140} loading="lazy" className="size-28 shrink-0 rounded-full border-4 border-brand-purple/10 object-cover" /><div><span aria-hidden="true" className="block h-7 font-serif text-5xl font-bold leading-none text-brand-blue">“</span><blockquote className="text-[14px] leading-[1.45] text-brand-text">AI WorksForce helped us use a custom LLM solution that changed our customer service. We now answer questions faster and cost less and give a much better customer experience.</blockquote><figcaption className="mt-2 text-sm leading-tight"><strong>Rohan Mehta</strong><span className="block text-brand-text">CTO, ShopNext (E-commerce)</span></figcaption></div></figure>
+            <div className="lg:border-l lg:border-brand-blue/20 lg:pl-6"><p className={eyebrow}>Built with tools in the industry</p><div className="mt-3 grid grid-cols-3 gap-2 sm:grid-cols-6">{[["⌁", "LangChain"], ["◌", "Pinecone"], ["◢", "Weaviate"], ["◉", "LangSmith"], ["▰", "Docker"], ["aws", "AWS"]].map(([mark, label]) => <div key={label} className="rounded-lg bg-white px-2 py-3 text-center shadow-sm"><span className="block text-xl font-bold text-brand-dark">{mark}</span><span className="mt-1 block text-[10px] text-brand-text">{label}</span></div>)}</div></div>
           </section>
         </div>
 
         <section aria-labelledby="cta-title" className="relative isolate mx-1 mb-4 overflow-hidden rounded-2xl px-5 py-7 text-center text-white sm:py-8" style={{ background: "linear-gradient(110deg, var(--color-brand-navy), #111d70 58%, #2138db)" }}>
           <svg aria-hidden="true" viewBox="0 0 1440 220" preserveAspectRatio="none" className="pointer-events-none absolute inset-0 -z-10 size-full opacity-20">{Array.from({ length: 16 }, (_, i) => <path key={i} d={`M-80 ${35 + i * 9} C180 ${-90 + i * 14}, 250 ${270 + i * 8}, 570 ${250 + i * 5} S1100 ${210 + i * 7}, 1500 ${i * 12}`} fill="none" stroke="#4785ff" strokeWidth="1" />)}</svg>
-          <p className="text-[10px] font-medium uppercase tracking-[0.25em] text-white/80">Ready to unlock the power of LLM & AI?</p><h2 id="cta-title" className="mt-2 text-[26px] font-semibold leading-tight tracking-[-0.03em] sm:text-[30px]">Let’s Build Smarter, Faster, Together</h2><p className="mt-2 text-[15px] text-white/85">Get expert guidance to implement LLMs and AI for your business goals.</p>
-          <div className="mx-auto mt-5 flex max-w-[570px] flex-col gap-3 sm:flex-row"><a href={consultationHref} className={`inline-flex min-h-12 flex-1 items-center justify-center gap-2 rounded-lg bg-white px-6 py-3 text-sm font-semibold text-brand-dark hover:bg-brand-blue-soft ${focus}`}>Book a Free Consultation {icon("arrow", "size-4")}</a><a href="#solutions" className={`inline-flex min-h-12 flex-1 items-center justify-center rounded-lg border border-white/70 px-6 py-3 text-sm font-medium hover:bg-white/10 ${focus}`}>Explore Our AI Solutions</a></div>
-          <p aria-hidden="true" className="absolute right-[5%] top-10 hidden -rotate-12 font-hand text-[24px] leading-[1.18] desktop-lg:block">Smarter AI<br />Real Impact<br />Bigger Growth</p>
+          <p className="text-[10px] font-medium uppercase tracking-[0.25em] text-white/80">Are you ready to discover the power of LLM and AI?</p><h2 id="cta-title" className="mt-2 text-[26px] font-semibold leading-tight tracking-[-0.03em] sm:text-[30px]">Let's create smarter things faster together.</h2><p className="mt-2 text-[15px] text-white/85">Get professional help to use LLMs and AI for your company's goals.</p>
+          <div className="mx-auto mt-5 flex max-w-[570px] flex-col gap-3 sm:flex-row"><a href={consultationHref} className={`inline-flex min-h-12 flex-1 items-center justify-center gap-2 rounded-lg bg-white px-6 py-3 text-sm font-semibold text-brand-dark hover:bg-brand-blue-soft ${focus}`}>Schedule a Free Meeting {icon("arrow", "size-4")}</a><a href="#solutions" className={`inline-flex min-h-12 flex-1 items-center justify-center rounded-lg border border-white/70 px-6 py-3 text-sm font-medium hover:bg-white/10 ${focus}`}>View Our AI Options</a></div>
+          <p aria-hidden="true" className="absolute right-[5%] top-10 hidden -rotate-12 font-hand text-[24px] leading-[1.18] desktop-lg:block">Smarter AI<br />impact<br />More growth</p>
         </section>
       </main>
 

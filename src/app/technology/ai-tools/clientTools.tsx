@@ -94,7 +94,7 @@ export default function AIToolsPage({
     </>
   }
   subtitle="The right AI tools for a smarter, faster, more productive business."
-  description="Discover, compare, and implement the best AI tools for your business needs. From content creation and automation to analytics and productivity — we help you find, integrate, and get the most out of the right AI tools."
+  description="Discover, compare, and implement the best AI tools for your business needs. From content creation and automation to analytics and productivity, we help you find, integrate, and get the most out of the right AI tools."
   buttons={{
     primary: {
       label: "Book a Free Consultation",

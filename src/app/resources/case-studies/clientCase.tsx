@@ -452,7 +452,7 @@ export default function CaseStudiesPage() {
       category: "Healthcare",
       title: "Automating Patient Support for a Healthcare Provider",
       description:
-        "Implemented an AI-powered customer support system to handle patient inquiries, reducing response time by 70%.",
+        "Implemented an AI-powered customer support system that handles inquiries, reducing response time by 70%.",
       image:
         "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1200&q=90",
       stats: [
@@ -475,7 +475,7 @@ export default function CaseStudiesPage() {
       category: "E-commerce",
       title: "3x More Sales with AI Automation for a D2C Brand",
       description:
-        "Built an AI-driven lead generation and follow-up system, resulting in 3x higher sales in just 6 months.",
+        "Built an AI-driven lead generation and follow-up system that resulted in 3x sales in just 6 months.",
       image:
         "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=90",
       stats: [
@@ -498,7 +498,7 @@ export default function CaseStudiesPage() {
       category: "Finance",
       title: "Intelligent Data Processing for a Financial Services Firm",
       description:
-        "Automated data extraction and reporting, saving 200+ hours per month and improving accuracy by 99%.",
+        "Automated data extraction and reporting save more than 200 hours per month and improve accuracy by 99%.",
       image:
         "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=90",
       stats: [
@@ -512,7 +512,7 @@ export default function CaseStudiesPage() {
         },
         {
           value: "60%",
-          label: "Faster Reporting",
+          label: "Reporting",
         },
       ],
     },
@@ -521,7 +521,7 @@ export default function CaseStudiesPage() {
       category: "Real Estate",
       title: "AI-Powered Lead Generation for a Real Estate Company",
       description:
-        "Implemented an AI lead engine to capture, qualify, and nurture leads, resulting in 4x more qualified leads.",
+        "Implemented an AI lead engine that captures, qualifies, and nurtures leads, resulting in 4x more qualified leads.",
       image:
         "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=90",
       stats: [
@@ -567,7 +567,7 @@ export default function CaseStudiesPage() {
       category: "SaaS",
       title: "Scaling Customer Support for a SaaS Company",
       description:
-        "Deployed an AI support agent to handle common queries, improving customer satisfaction and reducing support costs by 70%.",
+        "Deployed an AI support agent that handles queries, improving customer satisfaction and reducing support costs by 70%.",
       image:
         "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=90",
       stats: [
@@ -626,7 +626,7 @@ export default function CaseStudiesPage() {
   eyebrow="Real Businesses. Real Results."
   title="Case"
   highlightedTitle="Studies"
-  description="See how businesses like yours are using AI to solve real challenges and achieve measurable growth. Explore real-world examples of how AI WorksForce helps companies automate operations, improve efficiency, and unlock new opportunities with AI."
+  description="See how businesses like yours use AI to solve challenges and achieve measurable growth. Look at examples of how AI Worksforce helps companies automate operations, improve efficiency, and create new opportunities with AI."
   image="/resources-images/case-studies-resources-hero.png"
   imageAlt="Business team collaborating"
   primaryAction={{
@@ -702,14 +702,14 @@ export default function CaseStudiesPage() {
           <div className="mt-5 grid grid-cols-2 items-center gap-x-5 gap-y-6 sm:grid-cols-5 lg:grid-cols-10">
             {[
               "HubSpot",
-              "salesforce",
+              "Salesforce",
               "Google",
               "Microsoft",
-              "shopify",
+              "Shopify",
               "AWS",
               "Notion",
-              "zapier",
-              "slack",
+              "Zapier",
+              "Slack",
               "OpenAI",
             ].map((brand) => (
               <div
@@ -733,7 +733,7 @@ export default function CaseStudiesPage() {
           <SectionHeading
             eyebrow="Featured Case Studies"
             title="Real Results Across Industries"
-            description="Explore how we've helped businesses solve complex challenges with AI-powered solutions."
+            description="Explore how we have helped businesses solve challenges with AI-powered solutions."
           />
 
           {/* Filters + Search */}

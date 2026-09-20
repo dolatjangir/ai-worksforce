@@ -453,7 +453,7 @@ export default function OurBlogPage() {
       title:
         "AI in Digital Marketing: Strategies That Actually Work",
       description:
-        "Learn how to use AI tools to create better content, target the right audience, and drive higher ROI.",
+        "Find out how to use AI tools to make content reach the right people and increase your return on investment.",
       image:
         "https://images.unsplash.com/photo-1557838923-2985c318be48?auto=format&fit=crop&w=1200&q=90",
     },
@@ -466,7 +466,7 @@ export default function OurBlogPage() {
       title:
         "5 Ways AI Agents Can Improve Your Customer Experience",
       description:
-        "From instant support to personalized recommendations, discover how AI agents are changing customer service.",
+        "From help to personalized suggestions, find out how AI agents are changing the way customers are treated.",
       image:
         "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=90",
     },
@@ -479,7 +479,7 @@ export default function OurBlogPage() {
       title:
         "Top 10 AI Tools for Businesses in 2024",
       description:
-        "A curated list of the best AI tools to help you automate, analyze, and scale your business.",
+        "A carefully chosen list of the best AI tools to help you automate, study, and grow your business.",
       image:
         "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=90",
     },
@@ -492,7 +492,7 @@ export default function OurBlogPage() {
       title:
         "The Future of Work: How AI is Reshaping Every Industry",
       description:
-        "Explore the opportunities and challenges AI brings to different sectors in 2024 and beyond.",
+        "Look into the chances and problems AI brings to different areas in 2024 and after.",
       image:
         "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=90",
     },
@@ -505,7 +505,7 @@ export default function OurBlogPage() {
       title:
         "A Step-by-Step Guide to Building Your First AI Workflow",
       description:
-        "Learn how to set up a simple yet powerful AI workflow for your business — no coding required.",
+        "Learn how to create a simple but strong AI workflow for your business. No coding needed.",
       image:
         "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=1200&q=90",
     },
@@ -518,7 +518,7 @@ export default function OurBlogPage() {
       title:
         "Real-World Examples of AI Agents in Action",
       description:
-        "See how businesses are using AI agents to automate tasks, increase productivity, and deliver better results.",
+        "See how companies are using AI agents to automate jobs, boost efficiency, and get outcomes.",
       image:
         "https://images.unsplash.com/photo-1535378917042-10a22c95931a?auto=format&fit=crop&w=1200&q=90",
     },
@@ -534,9 +534,9 @@ export default function OurBlogPage() {
     date: "Sep 10, 2024",
     readTime: "8 min read",
     title:
-      "How AI Automation is Transforming Businesses in 2024",
+      "How AI Automation Is Changing Businesses in 2024",
     description:
-      "Discover how companies are using AI automation to reduce costs, improve efficiency, and unlock new growth opportunities.",
+      "Find out how companies are using AI automation to cut costs, become more efficient, and find growth possibilities.",
     image:
       "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1400&q=90",
   };
@@ -609,7 +609,7 @@ export default function OurBlogPage() {
   eyebrow="Insights. Ideas. Impact."
   title="Our"
   highlightedTitle="Blog"
-  description="Expert perspectives, how-to guides, industry updates, and real examples to help you build a smarter, more efficient business with AI."
+  description="Expert views, step-by-step guides, industry news, and real examples to help you create a more efficient business with AI."
   image="/resources-images/resources-blog-hero.png"
   imageAlt="AI WorksForce professional"
   primaryAction={{
@@ -649,13 +649,13 @@ export default function OurBlogPage() {
     },
     {
       title: "Expert Insights",
-      description: "Learn from Experts",
+      description: "Learn from professionals.",
       icon: "lightbulb",
       position: "right-0 top-28",
     },
     {
       title: "Practical Guides",
-      description: "Apply in Real Life",
+      description: "Use in Life",
       icon: "file",
       position: "right-0 top-52",
     },
@@ -949,7 +949,7 @@ export default function OurBlogPage() {
                       onChange={(event) =>
                         handleSearch(event.target.value)
                       }
-                      placeholder="Search articles, topics, or keywords..."
+                      placeholder="Search"
                       className="h-10 w-full min-w-0 rounded-lg bg-blue-50/50 pl-9 pr-3 text-xs text-brand-dark outline-none placeholder:text-brand-text-muted focus:bg-blue-50 sm:text-sm"
                     />
                   </div>
@@ -970,12 +970,11 @@ export default function OurBlogPage() {
                 </p>
 
                 <h3 className="mt-2 text-2xl font-bold leading-tight">
-                  Get the Latest Insights
+                  Get the Latest Thoughts
                 </h3>
 
                 <p className="mt-2 text-sm leading-relaxed text-blue-100 sm:text-base">
-                  Join 25,000+ professionals and receive our latest blog
-                  posts, guides, and industry updates in your inbox.
+                  Join 25,000+ professionals and get our most recent blog posts, guides, and industry news in your email.
                 </p>
 
                 <form
@@ -1014,7 +1013,7 @@ export default function OurBlogPage() {
                 </form>
 
                 <p className="mt-2 text-xs text-blue-100">
-                  No spam. Unsubscribe anytime.
+                  No spam. Cancel anytime.
                 </p>
               </div>
 
@@ -1081,11 +1080,11 @@ export default function OurBlogPage() {
 
                 <div className="mt-4 space-y-2">
                   {[
-                    "10 AI Tools to Boost Productivity in 2024",
-                    "How to Build an AI-Powered Sales Process",
+                    "10 AI Tools to Increase Productivity in 2024",
+                    "How to Create an AI-Powered Sales Process",
                     "AI in Digital Marketing: Complete Guide",
-                    "Real-World AI Use Cases for SMBs",
-                    "The Future of Work: Humans + AI",
+                    "Real-World AI Examples for Medium Businesses",
+                    "The Future of Work: People + AI",
                   ].map((item, index) => (
                     <a
                       key={item}

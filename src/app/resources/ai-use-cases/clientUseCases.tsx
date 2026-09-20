@@ -342,7 +342,7 @@ export default function AIUseCasesPage() {
     {
       icon: "activity" as IconName,
       title: "Healthcare",
-      text: "Streamline patient care, reduce admin work, and improve diagnostics with AI.",
+      text: "Streamline care, reduce admin work, and improve diagnostics with AI.",
       tone: "bg-sky-100 text-brand-sky",
     },
     {
@@ -378,7 +378,7 @@ export default function AIUseCasesPage() {
     {
       icon: "plane" as IconName,
       title: "Travel & Hospitality",
-      text: "Enhance customer service and streamline bookings with AI.",
+      text: "Enhance customer. Streamline bookings with AI.",
       tone: "bg-sky-100 text-brand-sky",
     },
     {
@@ -405,14 +405,14 @@ export default function AIUseCasesPage() {
       number: "01",
       icon: "search" as IconName,
       title: "Identify Challenges",
-      text: "We analyze your business processes to find the best AI opportunities.",
+      text: "We analyze your business processes to find the AI opportunities.",
       tone: "bg-indigo-100 text-brand-purple",
     },
     {
       number: "02",
       icon: "file" as IconName,
       title: "Design Solution",
-      text: "We create a tailored AI strategy for your specific use case.",
+      text: "We create a tailored AI strategy for your use case.",
       tone: "bg-emerald-100 text-emerald-500",
     },
     {
@@ -426,7 +426,7 @@ export default function AIUseCasesPage() {
       number: "04",
       icon: "chart" as IconName,
       title: "Measure Results",
-      text: "Track performance and achieve continuous growth.",
+      text: "Track performance and achieve growth.",
       tone: "bg-violet-100 text-brand-purple",
     },
   ];
@@ -445,7 +445,7 @@ export default function AIUseCasesPage() {
   eyebrow="REAL PROBLEMS. REAL SOLUTIONS."
   title="AI"
   highlightedTitle="Use Cases"
-  description="Discover how businesses are using AI to solve real challenges and drive measurable results. Explore practical AI use cases across industries. See how AI automation, data intelligence, and AI agents help businesses save time, reduce costs, and grow faster."
+  description="See how real businesses are using intelligence to solve real problems and get real results. Discover ways AI is being used across different industries. Learn how AI automation, data intelligence, and AI agents help companies save time, cut costs, and grow faster."
   image="/resources-images/ai-usecases-resources-hero.png"
   imageAlt="Business professional smiling behind a laptop"
   primaryAction={{
@@ -562,7 +562,7 @@ export default function AIUseCasesPage() {
           <SectionHeading
             eyebrow="Popular AI Use Cases"
             title="Most Common AI Use Cases"
-            description="Explore the top ways businesses are using AI today."
+            description="Explore the ways businesses are using AI today."
           />
 
           <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-8">
@@ -665,7 +665,7 @@ export default function AIUseCasesPage() {
                 [
                   "users",
                   "3x",
-                  "Faster Time to Market",
+                  "Time to Market",
                   "bg-violet-100 text-brand-purple",
                 ],
                 [

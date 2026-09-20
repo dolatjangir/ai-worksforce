@@ -49,7 +49,7 @@ const infrastructureSolutions = [
     iconClass: "bg-brand-blue-soft text-brand-blue",
   },
   {
-    title: "GPU & Compute",
+    title: "Compute",
     text: "High-performance GPU instances for training and inference at scale.",
     icon: Cpu,
     iconClass: "bg-brand-purple-soft text-brand-purple",
@@ -67,14 +67,14 @@ const infrastructureSolutions = [
     iconClass: "bg-brand-blue-soft text-brand-blue",
   },
   {
-    title: "MLOps & DevOps",
+    title: "DevOps",
     text: "Automate deployment, monitoring, and scaling with modern MLOps practices.",
     icon: Settings,
     iconClass: "bg-brand-purple-soft text-brand-purple",
   },
   {
     title: "On-Premise & Hybrid",
-    text: "Deploy on-premise or hybrid infrastructure for full control and flexibility.",
+    text: "Deploy on-premise or hybrid infrastructure for control and flexibility.",
     icon: Server,
     iconClass: "bg-brand-blue-soft text-brand-blue",
   },
@@ -98,7 +98,7 @@ const processSteps = [
   {
     number: "03",
     title: "Deploy",
-    text: "We set up and configure your cloud or on-premise environment.",
+    text: "We set up, configure your cloud or on-premise environment.",
     icon: Settings,
     color: "bg-brand-purple-soft text-brand-purple",
   },
@@ -127,7 +127,7 @@ const metrics = [
   },
   {
     value: "3x",
-    label: "Faster Time to Deploy",
+    label: "Time to Deploy",
     icon: UsersIcon,
     color: "text-brand-purple bg-brand-purple-soft",
   },
@@ -175,7 +175,7 @@ function LogoStrip() {
   return (
     <section className="mx-auto max-w-[1440px] px-5 py-5 lg:px-[76px]">
       <p className="text-sm sm:text-base font-extrabold sm:text-sm sm:text-base tracking-[2.7px] text-[#1d28e7]">
-        TRUSTED CLOUD & INFRASTRUCTURE PARTNERS
+        CLOUD AND INFRASTRUCTURE PARTNERS
       </p>
 
       <div className="mt-4 grid grid-cols-2 items-center gap-x-5 gap-y-5 sm:grid-cols-4 lg:grid-cols-8">
@@ -414,7 +414,7 @@ export default function AIInfrastructurePage() {
           </h2>
           <p className="mt-1 max-w-[540px] text-[15px] leading-[1.5] sm:text-base text-[#58689a]">
             See how businesses like yours are building, deploying, and scaling
-            AI solutions faster with AI WorksForce.
+            AI solutions with AI WorksForce.
           </p>
 
           <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-4">
@@ -576,7 +576,7 @@ export default function AIInfrastructurePage() {
               Let’s Build a Scalable AI Infrastructure Together
             </h2>
             <p className="mt-1 text-[15px] leading-[1.5] sm:text-base text-blue-100 sm:text-[15px] sm:text-base">
-              Get expert guidance on cloud, GPU, and AI infrastructure for
+              Get guidance on cloud GPU and AI infrastructure for
               your business goals.
             </p>
 

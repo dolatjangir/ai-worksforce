@@ -228,7 +228,7 @@ export default function Home() {
         backgroundPosition="center right"
           backgroundFit="cover"
 
-        primaryHref="/contact"
+        primaryHref="/get-your-assessment"
         demoHref="/how-we-work"
       />
             {/* <HeroSection

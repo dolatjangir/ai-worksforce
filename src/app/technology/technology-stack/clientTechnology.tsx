@@ -28,8 +28,8 @@ const navItems = [
 ] as const;
 
 const solutions: { title: string; text: string; icon: IconName; tone: string }[] = [
-  { title: "Frontend Technologies", text: "Next.js, React, TypeScript, Tailwind CSS for modern and responsive user experiences.", icon: "message", tone: "bg-brand-purple-soft text-brand-purple" },
-  { title: "Backend Technologies", text: "Node.js, Python, FastAPI for secure, scalable, and high-performance applications.", icon: "database", tone: "bg-sky-50 text-sky-500" },
+  { title: "Frontend Technologies", text: "Next.js, React, TypeScript, Tailwind CSS for responsive user experiences.", icon: "message", tone: "bg-brand-purple-soft text-brand-purple" },
+  { title: "Backend Technologies", text: "Node.js, Python FastAPI for scalable and high-performance applications.", icon: "database", tone: "bg-sky-50 text-sky-500" },
   { title: "AI & LLM Models", text: "OpenAI, Claude, Llama, Mistral for intelligent and context-aware solutions.", icon: "sparkles", tone: "bg-rose-50 text-rose-500" },
   { title: "Databases", text: "PostgreSQL, MongoDB, Redis for reliable and scalable data management.", icon: "database", tone: "bg-sky-50 text-sky-500" },
   { title: "Cloud & DevOps", text: "AWS, Vercel, Docker, Kubernetes for seamless deployment and infrastructure management.", icon: "cloud", tone: "bg-sky-50 text-sky-500" },
@@ -39,7 +39,7 @@ const solutions: { title: string; text: string; icon: IconName; tone: string }[]
 const steps: { title: string; text: string; icon: IconName; tone: string }[] = [
   { title: "Understand", text: "We analyze your business needs and technical requirements.", icon: "search", tone: "bg-brand-purple-soft text-brand-purple" },
   { title: "Plan", text: "We design the right technology architecture for your goals.", icon: "document", tone: "bg-emerald-50 text-emerald-500" },
-  { title: "Build", text: "We develop and integrate AI-powered solutions.", icon: "gear", tone: "bg-brand-purple-soft text-brand-purple" },
+  { title: "Build", text: "We integrate AI-powered solutions.", icon: "gear", tone: "bg-brand-purple-soft text-brand-purple" },
   { title: "Deploy", text: "We deploy securely on the right cloud infrastructure.", icon: "cloud", tone: "bg-brand-purple-soft text-brand-purple" },
   { title: "Scale", text: "We monitor, optimize, and scale for long-term growth.", icon: "chart", tone: "bg-rose-50 text-rose-500" },
 ];
@@ -112,8 +112,8 @@ export default function TechnologyStackPage({
       </span>
     </>
   }
-  subtitle="Powered by the world's best technologies."
-  description="We use a modern, scalable, and secure technology stack to build AI-powered solutions that deliver real results for your business. From AI models to automation tools, our stack ensures performance, reliability, and innovation."
+  subtitle="Powered by the world’s technologies."
+  description="We use a scalable and secure technology stack to build AI-powered solutions that deliver real results for your business. From AI models to automation tools, our stack ensures performance, reliability, and innovation."
   buttons={{
     primary: {
       label: "Book a Free Consultation",
@@ -225,7 +225,7 @@ export default function TechnologyStackPage({
           </section>
 
           <section id="case-study" aria-labelledby="results-title" className="grid scroll-mt-8 gap-5 lg:grid-cols-2">
-            <div className="px-2 py-2 lg:px-5"><p className={eyebrow}>Real technology. Real results.</p><h2 id="results-title" className={heading}>Businesses Grow Faster with the Right Stack</h2><p className={`mt-1 ${body}`}>See how our modern technology stack helps businesses reduce costs, improve efficiency, and achieve greater innovation.</p>
+            <div className="px-2 py-2 lg:px-5"><p className={eyebrow}>Real technology. Real results.</p><h2 id="results-title" className={heading}>Businesses Grow Faster with the Right Stack</h2><p className={`mt-1 ${body}`}>See how our modern technology stack helps businesses reduce costs improve efficiency and achieve innovation.</p>
               <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
                 {[
                   ["312%", "Increase in Operational Efficiency", "arrow", "bg-emerald-50 text-emerald-500"], ["3x", "Faster Time to Market", "users", "bg-brand-purple-soft text-brand-purple"],
@@ -235,20 +235,20 @@ export default function TechnologyStackPage({
             </div>
             <article className="grid gap-5 rounded-2xl bg-brand-blue-soft/30 p-5 sm:grid-cols-[.85fr_1.55fr]">
               <img src={caseStudyImageSrc} alt="Laptop showing a modern application technology stack" width={420} height={400} loading="lazy" className="h-56 w-full rounded-xl object-cover sm:h-full sm:min-h-[250px]" />
-              <div><span className="rounded-full bg-brand-purple-soft px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-brand-purple">Case study</span><h3 className="mt-2 text-xl font-bold leading-[1.15] tracking-tight">E-commerce Platform: Scalable Growth with Modern Stack</h3><p className="mt-2 text-[14px] leading-[1.45] text-brand-text">We built a fully scalable e-commerce platform using Next.js, Node.js, AWS, and AI integrations, resulting in 3x faster performance and 70% lower infrastructure costs.</p><div className="mt-5 grid grid-cols-3 gap-2">{[["3x", "Faster Performance"], ["70%", "Lower Costs"], ["312%", "Higher Conversions"]].map(([value, label]) => <div key={label} className="border-r border-brand-blue/10 last:border-0"><p className="text-[27px] font-bold leading-none text-brand-blue">{value}</p><p className="mt-1 text-[10px] leading-tight text-brand-text">{label}</p></div>)}</div></div>
+              <div><span className="rounded-full bg-brand-purple-soft px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-brand-purple">Case study</span><h3 className="mt-2 text-xl font-bold leading-[1.15] tracking-tight">E-commerce Platform: Scalable Growth with Modern Stack</h3><p className="mt-2 text-[14px] leading-[1.45] text-brand-text">We built a scalable e-commerce platform using Next.js, Node.js, AWS and AI integrations resulting in 3x faster performance and 70% lower infrastructure costs.</p><div className="mt-5 grid grid-cols-3 gap-2">{[["3x", "Faster Performance"], ["70%", "Lower Costs"], ["312%", "Higher Conversions"]].map(([value, label]) => <div key={label} className="border-r border-brand-blue/10 last:border-0"><p className="text-[27px] font-bold leading-none text-brand-blue">{value}</p><p className="mt-1 text-[10px] leading-tight text-brand-text">{label}</p></div>)}</div></div>
             </article>
           </section>
 
           <section aria-label="Client testimonial and technology stack" className="grid items-center gap-6 rounded-2xl bg-brand-blue-soft/25 p-5 sm:p-6 lg:grid-cols-[1.05fr_1fr]">
-            <figure className="flex flex-col items-center gap-5 sm:flex-row"><img src={testimonialImageSrc} alt="Vikram Sethi" width={140} height={140} loading="lazy" className="size-28 shrink-0 rounded-full border-4 border-brand-purple/10 object-cover" /><div><span aria-hidden="true" className="block h-7 font-serif text-5xl font-bold leading-none text-brand-blue">“</span><blockquote className="text-[14px] leading-[1.45] text-brand-text">AI WorksForce uses a modern and reliable technology stack that helped us build a scalable solution for our business. Their technical expertise and execution are truly impressive.</blockquote><figcaption className="mt-2 text-sm leading-tight"><strong>Vikram Sethi</strong><span className="block text-brand-text">CTO, GrowthTech (SaaS)</span></figcaption></div></figure>
+            <figure className="flex flex-col items-center gap-5 sm:flex-row"><img src={testimonialImageSrc} alt="Vikram Sethi" width={140} height={140} loading="lazy" className="size-28 shrink-0 rounded-full border-4 border-brand-purple/10 object-cover" /><div><span aria-hidden="true" className="block h-7 font-serif text-5xl font-bold leading-none text-brand-blue">“</span><blockquote className="text-[14px] leading-[1.45] text-brand-text">AI WorksForce uses an reliable technology stack that helped us build a scalable solution for our business. Their technical expertise and execution are truly impressive.</blockquote><figcaption className="mt-2 text-sm leading-tight"><strong>Vikram Sethi</strong><span className="block text-brand-text">CTO, GrowthTech (SaaS)</span></figcaption></div></figure>
             <div className="lg:border-l lg:border-brand-blue/20 lg:pl-6"><p className={eyebrow}>Built with our core technologies</p><div className="mt-3 grid grid-cols-3 gap-2 sm:grid-cols-6">{[["N", "Next.js"], ["⚛", "React"], ["Py", "Python"], ["aws", "AWS"], ["▰", "Docker"], ["⬡", "Kubernetes"]].map(([mark, label]) => <div key={label} className="rounded-lg bg-white px-2 py-3 text-center shadow-sm"><span className="block text-xl font-bold text-brand-purple">{mark}</span><span className="mt-1 block text-[10px] text-brand-text">{label}</span></div>)}</div></div>
           </section>
         </div>
 
         <section aria-labelledby="cta-title" className="relative isolate mx-1 mb-4 overflow-hidden rounded-2xl px-5 py-7 text-center text-white sm:py-8" style={{ background: "linear-gradient(110deg, var(--color-brand-navy), #111d70 58%, #2138db)" }}>
           <svg aria-hidden="true" viewBox="0 0 1440 220" preserveAspectRatio="none" className="pointer-events-none absolute inset-0 -z-10 size-full opacity-20">{Array.from({ length: 16 }, (_, i) => <path key={i} d={`M-80 ${35 + i * 9} C180 ${-90 + i * 14}, 250 ${270 + i * 8}, 570 ${250 + i * 5} S1100 ${210 + i * 7}, 1500 ${i * 12}`} fill="none" stroke="#4785ff" strokeWidth="1" />)}</svg>
-          <p className="text-[10px] font-medium uppercase tracking-[0.25em] text-white/80">Ready to build with modern technology?</p><h2 id="cta-title" className="mt-2 text-[26px] font-semibold leading-tight tracking-[-0.03em] sm:text-[30px]">Let’s Build Smarter Solutions Together</h2><p className="mt-2 text-[15px] text-white/85">Get expert guidance on the right technology stack for your business goals.</p>
-          <div className="mx-auto mt-5 flex max-w-[570px] flex-col gap-3 sm:flex-row"><a href={consultationHref} className={`inline-flex min-h-12 flex-1 items-center justify-center gap-2 rounded-lg bg-white px-6 py-3 text-sm font-semibold text-brand-dark hover:bg-brand-blue-soft ${focus}`}>Book a Free Consultation {icon("arrow", "size-4")}</a><a href="#solutions" className={`inline-flex min-h-12 flex-1 items-center justify-center rounded-lg border border-white/70 px-6 py-3 text-sm font-medium hover:bg-white/10 ${focus}`}>Talk to Our Tech Experts</a></div>
+          <p className="text-[10px] font-medium uppercase tracking-[0.25em] text-white/80">Ready to build with technology?</p><h2 id="cta-title" className="mt-2 text-[26px] font-semibold leading-tight tracking-[-0.03em] sm:text-[30px]">Let’s Build Smarter Solutions Together</h2><p className="mt-2 text-[15px] text-white/85">Get guidance on the right technology stack for your business goals.</p>
+          <div className="mx-auto mt-5 flex max-w-[570px] flex-col gap-3 sm:flex-row"><a href={consultationHref} className={`inline-flex min-h-12 flex-1 items-center justify-center gap-2 rounded-lg bg-white px-6 py-3 text-sm font-semibold text-brand-dark hover:bg-brand-blue-soft ${focus}`}>Book a Free Consultation {icon("arrow", "size-4")}</a><a href="#solutions" className={`inline-flex min-h-12 flex-1 items-center justify-center rounded-lg border border-white/70 px-6 py-3 text-sm font-medium hover:bg-white/10 ${focus}`}>Talk, to Our Tech Experts</a></div>
           <p aria-hidden="true" className="absolute right-[5%] top-10 hidden -rotate-12 font-hand text-[24px] leading-[1.18] desktop-lg:block">Better<br />Technology<br />Brighter<br />Tomorrow</p>
         </section>
       </main>

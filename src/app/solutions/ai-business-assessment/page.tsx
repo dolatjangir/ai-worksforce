@@ -229,7 +229,7 @@ function Hero() {
   imageSrc="/company-images/careers-company-hero.png"
   imageAlt="Your AI Opportunity — assessment session"
   assessmentLabel="Get Your AI Assessment"
-  assessmentHref="#consultation"
+ assessmentHref="/get-your-assessment"
   videoHref="#contact"
 />
 

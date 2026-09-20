@@ -423,7 +423,7 @@ export default function AICustomerOperationsPage() {
   imageSrc="/solutions/ai-customer-operation-hero.png"
   imageAlt="AI Customer Operations workspace and customer support"
   assessmentLabel="Get a Free Consultation"
-  assessmentHref="#contact"
+ assessmentHref="/get-your-assessment"
   videoHref="#how-it-works"
 />
 

@@ -452,7 +452,7 @@ export default function ResourcesPage() {
       readTime: "12 min read",
       title: "How to Automate Repetitive Tasks with AI",
       description:
-        "A practical guide to identifying, automating, and optimizing repetitive tasks in your business.",
+        "A guide to identifying, automating, and optimizing repetitive tasks in your business.",
       image:
         "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1000&q=90",
     },
@@ -462,7 +462,7 @@ export default function ResourcesPage() {
       readTime: "10 min read",
       title: "Building Effective AI Agents for Your Business",
       description:
-        "Learn how to design, deploy, and manage AI agents that drive real business value.",
+        "Learn how to design, deploy, and manage AI agents that drive business value.",
       image:
         "https://images.unsplash.com/photo-1535378917042-10a22c95931a?auto=format&fit=crop&w=1000&q=90",
     },
@@ -472,7 +472,7 @@ export default function ResourcesPage() {
       readTime: "9 min read",
       title: "Turning Your Data into Actionable Insights",
       description:
-        "A step-by-step guide to leveraging data intelligence for smarter business decisions.",
+        "A step-by-step guide to leveraging data intelligence for business decisions.",
       image:
         "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=90",
     },
@@ -492,7 +492,7 @@ export default function ResourcesPage() {
       readTime: "8 min read",
       title: "Top AI Tools for Business in 2024",
       description:
-        "A curated list of the best AI tools with practical use cases, pros, and tips.",
+        "A curated list of the AI tools with practical use cases, pros, and tips.",
       image:
         "https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&w=1000&q=90",
     },
@@ -502,7 +502,7 @@ export default function ResourcesPage() {
       readTime: "10 min read",
       title: "AI Implementation Best Practices",
       description:
-        "Key strategies and best practices to ensure successful AI adoption in your organization.",
+        "strategies and best practices to ensure successful AI adoption in your organization.",
       image:
         "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1000&q=90",
     },
@@ -510,7 +510,7 @@ export default function ResourcesPage() {
     {
       category: "Advanced",
       readTime: "14 min read",
-      title: "Building an AI-Ready Workforce",
+      title: "Building an AI Workforce",
       description:
         "A comprehensive guide to upskilling your team and creating an AI-first culture.",
       image:
@@ -900,7 +900,7 @@ export default function ResourcesPage() {
                     href="#"
                     className="mt-3 inline-flex items-center gap-2 text-sm font-bold text-brand-blue"
                   >
-                    Read the Full Guide
+                    Read the Full Guide.
 
                     <Icon
                       name="arrow-right"
@@ -932,7 +932,7 @@ export default function ResourcesPage() {
                   <p className="text-sm leading-relaxed text-brand-text sm:text-base">
                     The AI Workforce Guides are incredibly practical and easy
                     to follow. They helped our team implement automation in
-                    just weeks, saving us hours every day.
+                    in weeks, saving us hours every day.
                   </p>
 
                   <div className="mt-2">
@@ -1025,7 +1025,7 @@ export default function ResourcesPage() {
           </h2>
 
           <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-blue-100 sm:text-base lg:text-lg">
-            Get practical insights, step-by-step tutorials, and expert advice
+            Get insights, step-by-step tutorials, and expert advice
             to accelerate your AI journey.
           </p>
 

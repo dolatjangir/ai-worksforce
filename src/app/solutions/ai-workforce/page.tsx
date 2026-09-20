@@ -144,7 +144,7 @@ export default function AIWorkforcePage() {
   imageSrc="/solutions/ai-workforce.png"
   imageAlt="Professional working with AI workforce"
   assessmentLabel="Get Your AI Workforce Assessment"
-  assessmentHref="#consultation"
+ assessmentHref="/get-your-assessment"
   videoHref="#how-it-works"
 />
 

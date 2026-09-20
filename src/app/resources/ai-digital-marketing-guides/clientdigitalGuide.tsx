@@ -425,7 +425,7 @@ export default function DigitalMarketingGuidesPage() {
       readTime: "10 min read",
       title: "The Complete Guide to AI in Digital Marketing",
       description:
-        "Learn how to use AI across your marketing channels to drive higher engagement, leads, and revenue.",
+        "Learn how to use AI across your marketing channels to drive engagement leads and revenue.",
       image:
         "https://images.unsplash.com/photo-1557838923-2985c318be48?auto=format&fit=crop&w=1000&q=90",
     },
@@ -445,7 +445,7 @@ export default function DigitalMarketingGuidesPage() {
       readTime: "12 min read",
       title: "Using AI to Optimize Google Ads Campaigns",
       description:
-        "Learn how AI can help you create better ad copy, target the right audience, and maximize ROI.",
+        "Learn how AI can help you create ad copy, target the right audience, and maximize return on investment.",
       image:
         "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1000&q=90",
     },
@@ -455,7 +455,7 @@ export default function DigitalMarketingGuidesPage() {
       readTime: "9 min read",
       title: "AI SEO Guide: Rank Higher, Faster",
       description:
-        "Discover how to use AI tools to optimize your content, find the right keywords, and improve search rankings.",
+        "Discover how to use AI tools to optimize your content, find the keywords, and improve search rankings.",
       image:
         "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?auto=format&fit=crop&w=1000&q=90",
     },
@@ -475,7 +475,7 @@ export default function DigitalMarketingGuidesPage() {
       readTime: "10 min read",
       title: "AI Marketing Analytics: Turn Data into Decisions",
       description:
-        "A practical guide to using AI for smarter marketing insights and better decision-making.",
+        "A guide to using AI for smarter marketing insights and better decision-making.",
       image:
         "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=90",
     },
@@ -540,10 +540,10 @@ export default function DigitalMarketingGuidesPage() {
 
        <PageHero
   titleId="ai-digital-marketing-guides-hero-title"
-  eyebrow="Marketing Smarter. With AI."
+  eyebrow="Marketing smarter. With AI."
   title="AI Digital"
   highlightedTitle="Marketing Guides"
-  description="Practical guides, strategies, and frameworks to help you use AI in digital marketing and achieve measurable business growth. From content creation to paid ads, SEO, and analytics — explore expert resources to market smarter, faster, and more effectively with AI."
+  description="guides, strategies, and frameworks to help you use AI in digital marketing and reach clear business growth. From creating content to paid ads, SEO, and analysis. Look at resources to market smarter, faster, and more effectively with AI."
   image="/resources-images/digital-marketing-guide-resources.png"
   imageAlt="Digital marketing professional"
   primaryAction={{
@@ -560,13 +560,13 @@ export default function DigitalMarketingGuidesPage() {
     {
       icon: "book",
       value: "100+",
-      label: "Guides & Resources",
+      label: "Guides and Resources",
     },
    
     {
       icon: "chart",
       value: "3x",
-      label: "Faster Campaign Results",
+      label: "Campaign Results",
     },
     {
       icon: "arrow-up",
@@ -582,15 +582,15 @@ export default function DigitalMarketingGuidesPage() {
       position: "left-0 top-7",
     },
     {
-      title: "AI Ads & Paid Media",
-      description: "High ROI. Low Costs.",
+      title: "AI. Paid Media",
+      description: "High return on investment. Low expenses.",
       icon: "megaphone",
       position: "left-0 top-28",
       variant: "default",
     },
     {
       title: "AI SEO",
-      description: "Rank Smarter. Faster.",
+      description: "Rank better. Faster.",
       icon: "search",
       position: "left-0 top-48",
       variant: "green",
@@ -639,8 +639,8 @@ export default function DigitalMarketingGuidesPage() {
 
           <div className="mt-3">
             <SectionHeading
-              title="Find the Right Guide for Your Marketing"
-              description="Browse practical AI marketing resources built to help you market smarter, faster, and more effectively."
+              title="Find the guide for your marketing."
+              description="Look through practical AI marketing resources made to help you market smarter, faster, and more effectively."
             />
           </div>
 
@@ -791,11 +791,11 @@ export default function DigitalMarketingGuidesPage() {
             <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.25em] text-blue-100 sm:text-sm">
-                  Stay Ahead in Digital Marketing
+                  Stay ahead in marketing.
                 </p>
 
                 <h2 className="mt-2 text-2xl font-bold leading-tight tracking-tight sm:text-3xl">
-                  Get the Latest AI Marketing Guides in Your Inbox
+                  Get the latest AI marketing guides in your inbox.
                 </h2>
 
                 <p className="mt-2 max-w-2xl text-sm leading-relaxed text-blue-100 sm:text-base">
@@ -857,7 +857,7 @@ export default function DigitalMarketingGuidesPage() {
             {/* Results */}
             <div className="rounded-xl bg-[linear-gradient(135deg,#f8faff,#eef3ff)] p-4 sm:p-5">
               <p className="text-xs font-bold uppercase tracking-[0.25em] text-brand-purple sm:text-sm">
-                Real Guides. Real Impact.
+                Real guides. Real impact.
               </p>
 
               <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
@@ -865,25 +865,25 @@ export default function DigitalMarketingGuidesPage() {
                   {
                     icon: "arrow-up" as IconName,
                     value: "312%",
-                    label: "Average Increase in Campaign ROI",
+                    label: "Average increase in campaign ROI",
                     tone: "bg-emerald-100 text-emerald-500",
                   },
                   {
                     icon: "users" as IconName,
                     value: "3x",
-                    label: "Faster Content Production",
+                    label: "content production",
                     tone: "bg-indigo-100 text-brand-purple",
                   },
                   {
                     icon: "clock" as IconName,
                     value: "70%",
-                    label: "Reduction in Manual Work",
+                    label: "Reduction in manual work",
                     tone: "bg-orange-100 text-brand-orange",
                   },
                   {
                     icon: "chart" as IconName,
                     value: "5x",
-                    label: "More Qualified Leads",
+                    label: "More qualified leads",
                     tone: "bg-rose-100 text-rose-500",
                   },
                 ].map((stat) => (
@@ -935,7 +935,7 @@ export default function DigitalMarketingGuidesPage() {
                     </p>
 
                     <p className="text-xs text-brand-text-muted sm:text-sm">
-                      Head of Marketing, GrowthTech (SaaS)
+                      Head of Marketing GrowthTech (SaaS)
                     </p>
                   </div>
                 </div>
@@ -957,11 +957,11 @@ export default function DigitalMarketingGuidesPage() {
           <div className="pointer-events-none absolute -bottom-32 -right-24 -z-10 size-72 rounded-full bg-brand-blue/20 blur-3xl" />
 
           <p className="text-xs font-bold uppercase tracking-[0.25em] text-blue-100 sm:text-sm">
-            Ready to Transform Your Marketing?
+            Ready to transform your marketing?
           </p>
 
           <h2 className="mx-auto mt-3 max-w-4xl text-2xl font-semibold leading-tight tracking-tight sm:text-3xl lg:text-4xl">
-            Explore All AI Digital Marketing Guides
+            Explore all AI digital marketing guides.
           </h2>
 
           <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-blue-100 sm:text-base lg:text-lg">
@@ -986,7 +986,7 @@ export default function DigitalMarketingGuidesPage() {
               href="/contact"
               className="inline-flex min-h-11 items-center justify-center rounded-lg border border-white/60 bg-white/5 px-6 text-sm font-bold text-white transition-colors hover:bg-white/10"
             >
-              Talk to Our Marketing Experts
+              Talk to our marketing experts.
             </a>
           </div>
 

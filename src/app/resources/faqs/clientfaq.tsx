@@ -412,7 +412,7 @@ export default function FAQPage() {
       category: "General",
       question: "What is AI WorksForce?",
       answer:
-        "AI WorksForce is a leading AI automation company that helps businesses streamline operations, improve productivity, and drive growth using AI agents, automation, and intelligent workflows across sales, customer support, marketing, and more.",
+        "AI WorksForce is a leading AI automation company that helps businesses streamline operations improve productivity and drive growth using AI agents, automation and intelligent workflows across sales, customer support, marketing and more.",
     },
     {
       id: 2,
@@ -450,7 +450,7 @@ export default function FAQPage() {
       id: 6,
       category: "Services",
       question:
-        "Do you offer customized solutions?",
+        "Do you offer solutions?",
       answer:
         "Yes. AI WorksForce solutions can be tailored around your existing processes, systems, business goals, team workflows, and specific automation opportunities.",
     },
@@ -547,7 +547,7 @@ export default function FAQPage() {
   eyebrow="Questions. Answers. Clarity."
   title="Frequently Asked"
   highlightedTitle="Questions"
-  description="Find quick answers to the most common questions about AI WorksForce, our services, implementation process, pricing, and more."
+  description="Find answers to the common questions about AI WorksForce, our services, the implementation process, pricing and more."
   image="/resources-images/resources-faq-hero.png"
   imageAlt="AI WorksForce AI assistant"
   primaryAction={{
@@ -556,7 +556,7 @@ export default function FAQPage() {
     icon: "arrow",
   }}
   secondaryAction={{
-    label: "Watch FAQs Video",
+    label: "Watch the FAQs Video.",
     href: "#",
     icon: "play",
   }}
@@ -587,7 +587,7 @@ export default function FAQPage() {
     },
     {
       title: "Helpful Resources",
-      description: "Always Here for You",
+      description: "Here for You",
       icon: "check",
       position: "right-0 top-28",
       variant: "green",
@@ -701,7 +701,7 @@ export default function FAQPage() {
                     </p>
 
                     <p className="mt-0.5 text-xs text-brand-text-muted sm:text-sm">
-                      Talk to our AI experts
+                      Talk to our AI experts.
                     </p>
                   </div>
                 </a>
@@ -721,7 +721,7 @@ export default function FAQPage() {
                     </p>
 
                     <p className="mt-0.5 text-xs text-brand-text-muted sm:text-sm">
-                      Get help from our team
+                      Get help from our team.
                     </p>
                   </div>
                 </a>
@@ -761,7 +761,7 @@ export default function FAQPage() {
                     </p>
 
                     <p className="mt-0.5 text-xs text-brand-text-muted sm:text-sm">
-                      Chat with us now
+                      Chat with us
                     </p>
                   </div>
                 </a>
@@ -817,12 +817,11 @@ export default function FAQPage() {
               <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
                 <div>
                   <h2 className="text-2xl font-bold leading-tight tracking-tight text-brand-dark sm:text-3xl">
-                    Frequently Asked Questions
+                    Asked Questions
                   </h2>
 
                   <p className="mt-1 text-sm leading-relaxed text-brand-text sm:text-base">
-                    Find answers to common questions about AI WorksForce and
-                    how we help businesses grow.
+                    Find answers to questions about AI WorksForce and how we help businesses grow.
                   </p>
                 </div>
 

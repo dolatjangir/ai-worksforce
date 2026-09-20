@@ -10,6 +10,7 @@ import {
   Users,
   Zap,
 } from "lucide-react";
+import Link from "next/link";
 
 /* ---------------------------------------------
    Props
@@ -349,7 +350,7 @@ export default function WorkforceHero({
               <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:flex-wrap lg:mt-6">
                 {/* Primary CTA */}
 
-                <a
+                <Link
                   href={primaryHref}
                   className={`${focus} inline-flex min-h-14 w-full max-w-full items-center justify-center gap-3 rounded-xl bg-[#0759ff] px-5 py-4 text-center text-lg font-semibold text-white shadow-[0_8px_24px_rgba(7,89,255,0.12)] transition-colors hover:bg-[#0649d5] motion-reduce:transition-none sm:w-auto xl:px-6`}
                 >
@@ -360,11 +361,11 @@ export default function WorkforceHero({
                     className="size-5 shrink-0"
                     strokeWidth={2}
                   />
-                </a>
+                </Link>
 
                 {/* Secondary CTA */}
 
-                <a
+                <Link
                   href={demoHref}
                   className={`${focus} inline-flex min-h-14 w-full max-w-full items-center justify-center gap-3 rounded-xl border border-[#0759ff]/25 bg-white/65 px-5 py-4 text-center text-lg font-semibold text-[#071c75] transition-colors hover:bg-white motion-reduce:transition-none sm:w-auto`}
                 >
@@ -377,7 +378,7 @@ export default function WorkforceHero({
                   </span>
 
                   See How It Works
-                </a>
+                </Link>
               </div>
             </div>
 

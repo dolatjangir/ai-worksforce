@@ -210,7 +210,7 @@ export default function AIAutomationPage() {
   imageSrc="/solutions/ai-automation-hero.png"
   imageAlt="AI automation workspace and business operations"
   assessmentLabel="Get a Free Assessment"
-  assessmentHref="#consultation"
+  assessmentHref="/get-your-assessment"
   videoHref="#how-it-works"
 />
 

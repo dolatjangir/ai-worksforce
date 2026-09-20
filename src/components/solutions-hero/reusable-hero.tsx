@@ -8,6 +8,7 @@ import {
   Play,
   Zap,
 } from "lucide-react";
+import Link from "next/link";
 
 export type HeroBreadcrumb = {
   label: string;
@@ -70,7 +71,7 @@ export default function SolutionsHero({
   imageAlt = "AI automation specialist working on a laptop with workflow and productivity graphics",
   mobileImageAlt = imageAlt,
   assessmentLabel = "Get a Free Automation Assessment",
-  assessmentHref = "#contact",
+  assessmentHref = "/get-your-assessment",
   videoLabel = "Watch How It Works",
   videoHref = "#how-it-works",
   benefitsLabel = "Automation benefits",
@@ -186,7 +187,7 @@ export default function SolutionsHero({
           {(assessmentLabel || videoLabel) && (
             <div className="mt-4 flex flex-wrap items-center gap-3 sm:gap-5">
               {assessmentLabel && (
-                <a
+                <Link
                   href={assessmentHref}
                   className={`${focus} inline-flex min-h-11 min-w-[158px] max-w-full items-center justify-center gap-2 rounded-md border border-[#4936ff] bg-[#1600ff] px-5 py-2.5 text-center text-sm font-semibold text-white shadow-[0_3px_0_rgba(22,0,255,0.12)] transition-colors hover:bg-[#1000d9] motion-reduce:transition-none`}
                 >
@@ -196,11 +197,11 @@ export default function SolutionsHero({
                     aria-hidden="true"
                     className="size-4 shrink-0"
                   />
-                </a>
+                </Link>
               )}
 
               {videoLabel && (
-                <a
+                <Link
                   href={videoHref}
                   className={`${focus} inline-flex min-h-11 min-w-[176px] max-w-full items-center justify-center gap-3 rounded-md border border-[#a395ff] bg-white/80 px-4 py-2.5 text-center text-sm font-bold text-[#080044] transition-colors hover:bg-white motion-reduce:transition-none`}
                 >
@@ -212,7 +213,7 @@ export default function SolutionsHero({
                   </span>
 
                   {videoLabel}
-                </a>
+                </Link>
               )}
             </div>
           )}

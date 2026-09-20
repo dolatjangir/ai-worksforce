@@ -289,7 +289,7 @@ export default function AISalesOutreachPage() {
   imageSrc="/solutions/ai-sales-outreach-hero.png"
   imageAlt="AI Sales and Outreach workspace"
   assessmentLabel="Get a Free Outreach Assessment"
-  assessmentHref="#get-started"
+ assessmentHref="/get-your-assessment"
   videoHref="#how-it-works"
 />
 

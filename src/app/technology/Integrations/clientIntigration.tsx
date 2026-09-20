@@ -45,61 +45,61 @@ const navItems = [
 const integrationSolutions = [
   {
     title: "CRM Integrations",
-    text: "Connect with Salesforce, HubSpot, Zoho and more to automate your sales processes.",
+    text: "Connect with Salesforce, HubSpot, Zoho and others to automate your sales processes.",
     icon: Network,
     iconClass: "bg-brand-blue-soft text-brand-blue",
   },
   {
     title: "Communication Tools",
-    text: "Integrate with Slack, Microsoft Teams, and email platforms for smarter collaboration.",
+    text: "Link Slack, Microsoft Teams and email platforms for collaboration.",
     icon: MessageSquare,
     iconClass: "bg-brand-purple-soft text-brand-purple",
   },
   {
     title: "Productivity Apps",
-    text: "Sync with Notion, Google Workspace, and other productivity tools to streamline work.",
+    text: "Sync Notion, Google Workspace and other productivity tools to make work smoother.",
     icon: FileText,
     iconClass: "bg-brand-purple-soft text-brand-purple",
   },
   {
     title: "Marketing Platforms",
-    text: "Connect with Mailchimp, HubSpot, and other marketing tools to automate campaigns.",
+    text: "Link Mailchimp, HubSpot and other marketing tools to automate campaigns.",
     icon: Rocket,
     iconClass: "bg-brand-purple-soft text-brand-purple",
   },
   {
     title: "E-commerce Platforms",
-    text: "Integrate with Shopify, WooCommerce, and other e-commerce systems.",
+    text: "Link Shopify, WooCommerce and other e-commerce systems.",
     icon: ShoppingBag,
     iconClass: "bg-brand-green-soft text-brand-green",
   },
   {
     title: "Data & Analytics",
-    text: "Connect with Google Analytics, BigQuery, and data warehouses for smarter insights.",
+    text: "Link Google Analytics, BigQuery and data warehouses for insights.",
     icon: Database,
     iconClass: "bg-brand-purple-soft text-brand-purple",
   },
   {
     title: "Payment Systems",
-    text: "Integrate with Stripe, PayPal, and other payment gateways to automate financial workflows.",
+    text: "Link Stripe, PayPal and other payment gateways to automate workflows.",
     icon: CreditCardIcon,
     iconClass: "bg-brand-blue-soft text-brand-blue",
   },
   {
     title: "Custom Integrations",
-    text: "Build custom integrations with APIs and webhooks tailored to your business needs.",
+    text: "Create custom integrations with APIs and webhooks that fit your business needs.",
     icon: Code2,
     iconClass: "bg-brand-purple-soft text-brand-purple",
   },
   {
     title: "AI Model Integrations",
-    text: "Connect with OpenAI, Anthropic, and other AI models to extend your capabilities.",
+    text: "Link OpenAI, Anthropic and other AI models to extend your capabilities.",
     icon: Sparkles,
     iconClass: "bg-[#ffe7ef] text-pink-500",
   },
   {
     title: "Other Business Tools",
-    text: "Integrate with 100+ other tools using Zapier, Make, or custom solutions.",
+    text: "Link 100. Other tools using Zapier, Make or custom solutions.",
     icon: Layers3,
     iconClass: "bg-brand-purple-soft text-brand-purple",
   },
@@ -113,35 +113,35 @@ const processSteps = [
   {
     number: "01",
     title: "Discover",
-    text: "We understand your tools, systems, and business goals.",
+    text: "We learn about your tools, systems and business goals.",
     icon: Globe,
     color: "bg-brand-purple-soft text-brand-purple",
   },
   {
     number: "02",
     title: "Plan",
-    text: "We design a seamless integration strategy tailored to your needs.",
+    text: "We design a smooth integration plan that fits your needs.",
     icon: FileText,
     color: "bg-brand-green-soft text-brand-green",
   },
   {
     number: "03",
     title: "Integrate",
-    text: "We set up and test integrations for secure and reliable data flow.",
+    text: "We set up. Test integrations for safe and reliable data flow.",
     icon: Settings,
     color: "bg-brand-purple-soft text-brand-purple",
   },
   {
     number: "04",
     title: "Automate",
-    text: "We build AI-powered workflows across your connected tools.",
+    text: "We create AI-powered workflows across your tools.",
     icon: Rocket,
     color: "bg-brand-purple-soft text-brand-purple",
   },
   {
     number: "05",
     title: "Grow",
-    text: "You get a more connected, efficient, and scalable business.",
+    text: "You get a connected, efficient and scalable business.",
     icon: BarChart3,
     color: "bg-[#ffe7ef] text-pink-500",
   },
@@ -168,7 +168,7 @@ const metrics = [
   },
   {
     value: "5x",
-    label: "Faster Time to Market",
+    label: "Time to Market",
     icon: BarChart3,
     color: "text-pink-500 bg-[#ffe7ef]",
   },
@@ -258,8 +258,8 @@ export default function IntegrationsPage() {
      <ReusableHero
   eyebrow="CONNECT EVERYTHING. UNLOCK MORE."
   title="Integrations"
-  subtitle="Seamless Integrations for a More Connected Business."
-  description="We integrate your favorite tools, platforms, and systems to create a unified workflow. Eliminate silos, automate data flow, and unlock the full potential of your business with AI-powered integrations."
+  subtitle="Seamless Integrations to Build a More Connected Business."
+  description="We bring your tools, platforms and systems together to make one smooth workflow. We remove silos move data automatically and open your businesss power with AI integrations."
   buttons={{
     primary: {
       label: "Book a Free Consultation",
@@ -358,7 +358,7 @@ export default function IntegrationsPage() {
       {/* Trusted companies */}
       <section className="mx-auto max-w-[1440px] px-5 py-4 lg:px-[76px]">
         <p className="text-sm font-extrabold sm:text-base tracking-[2.7px] text-[#1d28e7]">
-          TRUSTED BY INNOVATIVE COMPANIES
+          TRUSTED BY COMPANIES
         </p>
 
         <div className="mt-3 grid grid-cols-2 items-center gap-x-4 gap-y-5 sm:grid-cols-4 lg:grid-cols-8">
@@ -381,8 +381,7 @@ export default function IntegrationsPage() {
             Connect. Automate. Scale.
           </h2>
           <p className="mx-auto mt-1 max-w-3xl text-[15px] leading-[1.55] text-[#58689a] sm:text-base">
-            We integrate the tools you already use with AI to create seamless,
-            automated, and intelligent workflows.
+            We combine your existing tools with AI to build automatic and smart workflows.
           </p>
         </div>
 
@@ -454,8 +453,7 @@ export default function IntegrationsPage() {
             Businesses Do More with Connected Tools
           </h2>
           <p className="mt-1 max-w-[540px] text-[15px] leading-[1.55] sm:text-base text-[#58689a]">
-            See how our integration solutions help businesses save time,
-            reduce errors, and achieve faster growth.
+            See how our integration solutions help businesses save time cut errors and grow faster.
           </p>
 
           <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-4">
@@ -516,17 +514,14 @@ export default function IntegrationsPage() {
                 Marketing Agency: Unified Workflow with AI Integrations
               </h3>
               <p className="mt-2 text-[15px] leading-[1.5] sm:text-base text-[#556595]">
-                We helped a marketing agency integrate their CRM, email, and
-                analytics tools, automating lead capture, follow-ups, and
-                reporting, resulting in 3x more qualified leads and 70% less
-                manual work.
+                We helped a marketing agency link their CRM, email and analytics tools, automating lead capture follow-ups and reporting which gave them 3x more qualified leads and 70% less manual work.
               </p>
 
               <div className="mt-4 grid grid-cols-3 gap-3">
                 {[
                   ["3x", "More Leads"],
                   ["70%", "Less Manual Work"],
-                  ["312%", "Faster Reporting"],
+                  ["312%", "Reporting"],
                 ].map(([value, label]) => (
                   <div key={value}>
                     <strong className="block text-2xl font-extrabold sm:text-3xl leading-none text-[#1527e5]">
@@ -554,9 +549,7 @@ export default function IntegrationsPage() {
             <div>
               <div className="mb-1 text-3xl sm:text-4xl font-extrabold leading-none text-[#2235ef]">“</div>
               <p className="text-[15px] leading-[1.5] sm:text-base text-[#536394]">
-                AI WorksForce seamlessly integrated all our tools and
-                transformed the way we work. Everything now runs together like
-                a single, intelligent system.
+                AI WorksForce seamlessly integrated all our tools and transformed the way we work. Everything now runs together like a intelligent system.
               </p>
               <p className="mt-1 text-sm font-extrabold sm:text-base text-brand-dark">
                 Rahul Mehta
@@ -600,10 +593,10 @@ export default function IntegrationsPage() {
               READY TO CONNECT YOUR TOOLS?
             </p>
             <h2 className="mt-2 text-[26px] font-extrabold sm:text-[30px] lg:text-[32px] tracking-[-0.8px] sm:text-[28px] sm:text-3xl">
-              Let’s Build a More Connected Business
+              Let’s Build a Connected Business
             </h2>
             <p className="mt-1 text-[15px] leading-[1.5] sm:text-base text-blue-100 sm:text-base sm:text-lg">
-              Get expert guidance on integrating your tools with AI.
+              Get expert guidance, on linking your tools with AI.
             </p>
 
             <div className="mt-5 flex flex-wrap justify-center gap-3">

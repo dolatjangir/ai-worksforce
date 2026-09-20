@@ -477,7 +477,7 @@ export default function AIDataResearchPage() {
   imageSrc="/solutions/ai-data-reasearch-hero.png"
   imageAlt="AI Data & Research workspace and data intelligence"
   assessmentLabel="Get a Free Data Assessment"
-  assessmentHref="#contact"
+ assessmentHref="/get-your-assessment"
   videoHref="#how-it-works"
 />
 

@@ -9,6 +9,7 @@ import {
   Zap,
 } from "lucide-react";
 import Link from "next/link";
+import VideoPopup from "../videoPopUp";
 
 export type HeroBreadcrumb = {
   label: string;
@@ -73,7 +74,7 @@ export default function SolutionsHero({
   assessmentLabel = "Get a Free Automation Assessment",
   assessmentHref = "/get-your-assessment",
   videoLabel = "Watch How It Works",
-  videoHref = "#how-it-works",
+  videoHref = "https://res.cloudinary.com/fvsobjbv/video/upload/v1789893005/WhatsApp_Video_2026-09-20_at_12.49.20_PM.mp4",
   benefitsLabel = "Automation benefits",
   benefits = defaultBenefits,
 }: SolutionsHeroProps = {}) {
@@ -200,21 +201,22 @@ export default function SolutionsHero({
                 </Link>
               )}
 
-              {videoLabel && (
-                <Link
-                  href={videoHref}
-                  className={`${focus} inline-flex min-h-11 min-w-[176px] max-w-full items-center justify-center gap-3 rounded-md border border-[#a395ff] bg-white/80 px-4 py-2.5 text-center text-sm font-bold text-[#080044] transition-colors hover:bg-white motion-reduce:transition-none`}
-                >
-                  <span className="grid size-5 shrink-0 place-items-center rounded-full bg-[#eae7ff] text-[#1600ff]">
-                    <Play
-                      aria-hidden="true"
-                      className="ml-0.5 size-3 fill-current"
-                    />
-                  </span>
+        {videoLabel && videoHref && (
+  <VideoPopup
+    src={videoHref}
+    title={videoLabel}
+    className={`${focus} inline-flex min-h-11 min-w-[176px] max-w-full items-center justify-center gap-3 rounded-md border border-[#a395ff] bg-white/80 px-4 py-2.5 text-center text-sm font-bold text-[#080044] transition-colors hover:bg-white motion-reduce:transition-none`}
+  >
+    <span className="grid size-5 shrink-0 place-items-center rounded-full bg-[#eae7ff] text-[#1600ff]">
+      <Play
+        aria-hidden="true"
+        className="ml-0.5 size-3 fill-current"
+      />
+    </span>
 
-                  {videoLabel}
-                </Link>
-              )}
+    {videoLabel}
+  </VideoPopup>
+)}
             </div>
           )}
         </div>

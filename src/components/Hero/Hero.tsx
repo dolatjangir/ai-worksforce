@@ -11,6 +11,7 @@ import {
   Zap,
 } from "lucide-react";
 import Link from "next/link";
+import VideoPopup from "../videoPopUp";
 
 /* ---------------------------------------------
    Props
@@ -365,20 +366,21 @@ export default function WorkforceHero({
 
                 {/* Secondary CTA */}
 
-                <Link
-                  href={demoHref}
-                  className={`${focus} inline-flex min-h-14 w-full max-w-full items-center justify-center gap-3 rounded-xl border border-[#0759ff]/25 bg-white/65 px-5 py-4 text-center text-lg font-semibold text-[#071c75] transition-colors hover:bg-white motion-reduce:transition-none sm:w-auto`}
-                >
-                  <span className="grid size-6 shrink-0 place-items-center rounded-full border-2 border-[#0759ff] text-[#0759ff]">
-                    <Play
-                      aria-hidden="true"
-                      className="ml-0.5 size-4 fill-current"
-                      strokeWidth={2}
-                    />
-                  </span>
+             <VideoPopup
+  src={demoHref}
+  title="See How AI WorksForce Works"
+  className={`${focus} inline-flex min-h-14 w-full max-w-full items-center justify-center gap-3 rounded-xl border border-[#0759ff]/25 bg-white/65 px-5 py-4 text-center text-lg font-semibold text-[#071c75] transition-colors hover:bg-white motion-reduce:transition-none sm:w-auto`}
+>
+  <span className="grid size-6 shrink-0 place-items-center rounded-full border-2 border-[#0759ff] text-[#0759ff]">
+    <Play
+      aria-hidden="true"
+      className="ml-0.5 size-4 fill-current"
+      strokeWidth={2}
+    />
+  </span>
 
-                  See How It Works
-                </Link>
+  See How It Works
+</VideoPopup>
               </div>
             </div>
 

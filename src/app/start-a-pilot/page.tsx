@@ -369,7 +369,7 @@ export default function PilotPage() {
           </div>
 
         {/* Hero image */}
-<div className="relative mt-10 min-h-[430px] sm:min-h-[560px] lg:absolute lg:right-[-80px] lg:top-1/2 lg:mt-0 lg:w-[720px] lg:-translate-y-1/2 xl:right-[-120px] xl:w-[800px]">
+<div className="relative mt-10 min-h-[430px] sm:min-h-[560px] lg:absolute right-0 lg:-right-7 lg:top-1/2 lg:mt-0 lg:w-[720px] lg:-translate-y-1/2  xl:w-[800px]">
   {/* Glow */}
   <div className="absolute right-[10%] top-1/2 h-[430px] w-[430px] -translate-y-1/2 rounded-full bg-blue-200/40 blur-3xl" />
 

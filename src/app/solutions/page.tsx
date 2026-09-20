@@ -146,7 +146,7 @@ export default function SolutionsPage() {
       {/* ================= HERO ================= */}
     <SolutionsHero
   badge="OUR SOLUTIONS"
-  title="Complete AI-Powered Operations for Your"
+  title="AI Operations for Your"
   highlightedTitle="Business"
   description="From data and research to AI agents, automation and customer operations — we build and manage the right AI-powered solutions for your business goals."
   imageSrc="/company-images/about-aiworkforce-company-bottom.png"

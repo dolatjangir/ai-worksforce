@@ -229,7 +229,7 @@ export default function Home() {
           backgroundFit="cover"
 
         primaryHref="/get-your-assessment"
-        demoHref="/how-we-work"
+        demoHref="https://res.cloudinary.com/fvsobjbv/video/upload/v1789893005/WhatsApp_Video_2026-09-20_at_12.49.20_PM.mp4"
       />
             {/* <HeroSection
         badge="Your Outsource AI Department"

@@ -86,7 +86,7 @@ const leadership = [
     image: "/management-team/HR-&-admin.jpeg",
   },
   {
-    name: "Rajnish",
+    name: "Rajneesh Pandey",
     role: "Operating Oprations",
     image: "/management-team/operation-oprations.jpeg",
   },

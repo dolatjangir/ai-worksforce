@@ -71,56 +71,57 @@ const navigation = [
 
 const leadership = [
   {
-    name: "Rahul Mehta",
-    role: "CEO & Founder",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    name: "Sharan Goyal",
+    role: "Founder & CEO",
+    image: "/management-team/founder-&-CEO.jpeg",
   },
   {
-    name: "Priya Sharma",
-    role: "Chief Technology Officer",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    name: "Saroj Goyal",
+    role: "Director",
+    image: "/management-team/Director.jpeg",
   },
   {
-    name: "Amit Kumar",
-    role: "Chief Operating Officer",
-    image: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    name: "Adarsh Pathak",
+    role: "HR & Admin",
+    image: "/management-team/HR-&-admin.jpeg",
   },
   {
-    name: "Sneha Verma",
-    role: "Head of People & Culture",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    name: "Rajnish",
+    role: "Operating Oprations",
+    image: "/management-team/operation-oprations.jpeg",
   },
 ];
 
 const teamMembers = [
   {
-    name: "Vikram Singh",
-    role: "AI Solutions Architect",
-    image: "https://plus.unsplash.com/premium_photo-1766341848872-bbf0bf698038?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    name: "Pooja Bangrawa",
+    role: "AWFI Expert",
+    image: "/management-team/ai-ml-seniorr.jpeg",
   },
   {
-    name: "Neha Patel",
-    role: "Data Scientist",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=761&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    name: "Anushka Jangid",
+    role: "AWFI Expert",
+    image: "/management-team/ai-ml-junior.jpeg",
+  },
+ 
+  {
+    name: "Ankita Soni",
+    role: "AWFI Expert",
+    image: "/management-team/data-anylist.jpeg",
   },
   {
+    name: "Harshita",
+    role: "AWFI Expert",
+    image: "/management-team/data-anylist-junior.jpeg",
+  },
+   {
     name: "Arjun Rao",
-    role: "Automation Engineer",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-  {
-    name: "Meera Iyer",
-    role: "AI Product Manager",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-  {
-    name: "Karan Malhotra",
-    role: "Customer Success Lead",
-    image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    role: "AWFI Expert",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     name: "Ritika Soni",
-    role: "Marketing Manager",
+    role: "AWFI Expert",
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
@@ -174,20 +175,20 @@ function TeamCard({
     >
       {/* Image */}
 
-      <div
-        className={[
-          "relative overflow-hidden bg-[linear-gradient(145deg,#f2f6fc,#ffffff)]",
-          leadership
-            ? "aspect-[1.45/1]"
-            : "aspect-[1.35/1]",
-        ].join(" ")}
-      >
-        <img
-          src={image}
-          alt={name}
-          className="absolute inset-0 size-full object-cover object-top transition duration-500 group-hover:scale-[1.025]"
-        />
-      </div>
+     <div
+  className={[
+    "relative w-full overflow-hidden bg-[linear-gradient(145deg,#f2f6fc,#ffffff)]",
+    leadership ? "aspect-[1.45/1.5]" : "aspect-[1.35/1]",
+  ].join(" ")}
+>
+  <img
+    src={image}
+    alt={name}
+    loading="lazy"
+    decoding="async"
+    className="absolute inset-0 block h-full w-full object-cover object-top"
+  />
+</div>
 
       {/* Information */}
 
@@ -216,7 +217,7 @@ function TeamCard({
           </p>
         </div>
 
-        {leadership && (
+        {/* {leadership && (
           <a
             href="#"
             aria-label={`${name} LinkedIn`}
@@ -224,7 +225,7 @@ function TeamCard({
           >
             <Linkedin className="size-4 fill-current" />
           </a>
-        )}
+        )} */}
       </div>
     </article>
   );
@@ -252,9 +253,9 @@ export default function OurTeamPage() {
   titleId="our-team-hero-title"
   eyebrow="People. Ideas. Impact."
   title="Meet"
-  highlightedTitle="Our Team"
+  highlightedTitle="AI WorksForce Team"
   description="A passionate team of AI experts, innovators, and problem-solvers working together to help businesses build a smarter, more efficient tomorrow."
-  image="/company-images/how-we-work-company-hero.png"
+  image="/company-images/careers-company-hero.png"
   imageAlt="AI WorksForce team"
   primaryAction={{
     label: "Join Our Journey",

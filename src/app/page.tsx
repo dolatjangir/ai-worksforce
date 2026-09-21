@@ -229,7 +229,7 @@ export default function Home() {
           backgroundFit="cover"
 
         primaryHref="/get-your-assessment"
-        demoHref="https://res.cloudinary.com/fvsobjbv/video/upload/v1789893005/WhatsApp_Video_2026-09-20_at_12.49.20_PM.mp4"
+        demoHref="https://res.cloudinary.com/fvsobjbv/video/upload/v1789969883/aiworkforce-home-p.mp4"
       />
             {/* <HeroSection
         badge="Your Outsource AI Department"
@@ -442,7 +442,7 @@ Real Business Results
         <div className="flex w-[150px] shrink-0 px-4 py-4">
           <div>
             <div className="text-sm font-extrabold text-[#0876ed]">
-              OUR PROCESS
+             AWFI Expert
             </div>
             <div className="mt-1 text-xs text-slate-500">
               From Requirement to Managed AWFI
@@ -866,22 +866,23 @@ Turn Data Into Business Opportunities         </h2>
 
         <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:flex-wrap">
           <a
-            href="#"
+            href="/start-a-pilot"
             className="inline-flex items-center justify-center gap-2 rounded-md bg-[#0876ed] px-5 py-2.5 text-base font-bold text-white transition hover:bg-[#0668d5] sm:text-lg"
           >
             Start a Pilot
             <ArrowRight size={13} />
           </a>
 
-          <a
-            href="#"
-            className="inline-flex items-center justify-center gap-2 rounded-md border border-white/50 px-5 py-2.5 text-base font-bold text-white transition hover:bg-white/10 sm:text-lg"
-          >
-            Talk to Our Team
-          </a>
+        <a
+  href="tel:+919649902000"
+  className="inline-flex items-center justify-center gap-2 rounded-md border border-white/50 px-5 py-2.5 text-base font-bold text-white transition hover:bg-white/10 sm:text-lg"
+>
+  Talk to Our Team
+</a>
+
 
           <a
-            href="https://wa.me/911411234567"
+            href="https://wa.me/9649902000"
             className="inline-flex items-center justify-center gap-2 rounded-md border border-white/50 px-5 py-2.5 text-base font-bold text-white transition hover:bg-white/10 sm:text-lg"
           >
             <MessageCircle size={18} />

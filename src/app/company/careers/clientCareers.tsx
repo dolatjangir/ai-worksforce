@@ -26,6 +26,7 @@ import {
   X,
   Youtube,
 } from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
 
 /* =========================================================
@@ -81,7 +82,7 @@ const benefits = [
     icon: Rocket,
     title: "Work on Real Impact",
     description:
-      "Be part of projects that solve real business challenges with AI.",
+      "Be part of projects that solve business challenges with AI.",
   },
   {
     icon: BriefcaseBusiness,
@@ -99,13 +100,13 @@ const benefits = [
     icon: BarChart3,
     title: "Growth Opportunities",
     description:
-      "Clear career paths and opportunities to take on new challenges.",
+      "Clear career. Opportunities to take on new challenges.",
   },
   {
     icon: Heart,
     title: "Work-Life Balance",
     description:
-      "Flexible work options and a culture that values your well-being.",
+      "Flexible work. A culture that values your well-being.",
   },
 ];
 
@@ -148,32 +149,38 @@ const departments = [
 const jobs = [
   {
     title: "AI/ML Engineer",
+    slug: "ai-ml-engineer",
     department: "Engineering",
     location: "Bengaluru, India (Hybrid)",
     type: "Full-time",
     icon: Rocket,
   },
   {
-    title: "Product Manager",
-    department: "Product",
-    location: "Remote / India",
-    type: "Full-time",
-    icon: BriefcaseBusiness,
-  },
-  {
-    title: "Growth Marketing Specialist",
-    department: "Marketing",
-    location: "Bengaluru, India (Hybrid)",
-    type: "Full-time",
-    icon: BarChart3,
-  },
-  {
-    title: "Customer Success Associate",
+    title: "AI Operator",
+    slug: "ai-operator",
     department: "Operations",
     location: "Remote / India",
     type: "Full-time",
     icon: Users,
   },
+  {
+    title: "AI Specialist",
+    slug: "ai-specialist",
+    department: "AI Solutions",
+    location: "Jaipur, India (Hybrid)",
+    type: "Full-time",
+    icon: BriefcaseBusiness,
+  },
+  {
+    title: "Digital Marketing Specialist",
+    slug: "digital-marketing-specialist",
+    department: "Marketing",
+    location: "Remote / India",
+    type: "Full-time",
+    icon: BarChart3,
+  },
+
+ 
 ];
 
 /* =========================================================
@@ -185,28 +192,28 @@ const hiringSteps = [
     number: "01",
     title: "Apply",
     description:
-      "Submit your application in a few minutes.",
+      "Submit your application in a minute.",
     icon: BriefcaseBusiness,
   },
   {
     number: "02",
     title: "Screening",
     description:
-      "We review your profile and get in touch.",
+      "We review your profile. Get in touch.",
     icon: Users,
   },
   {
     number: "03",
     title: "Interviews",
     description:
-      "Meet our team and showcase your skills.",
+      "Meet our team. Showcase your skills.",
     icon: Sparkles,
   },
   {
     number: "04",
     title: "Offer",
     description:
-      "We'll make an offer and welcome you aboard!",
+      "We will make an offer. Welcome you aboard!",
     icon: CheckCircle2,
   },
 ];
@@ -439,10 +446,10 @@ export default function CareersPage() {
 
     <PageHero
   titleId="careers-hero-title"
-  eyebrow="Build Your Future With AI.."
+  eyebrow="Build Your Future With AI."
   title="Careers at"
   highlightedTitle="AIWorksForce"
-  description="Join a team of innovators, builders, and problem-solvers who are using AI to create a smarter, more efficient tomorrow."
+  description="Join a team of innovators, builders, and problem‑solvers who are using AI to create a more efficient tomorrow."
   image="/company-images/careers-company-hero.png"
   imageAlt="AIWorksForce team working together"
   primaryAction={{
@@ -655,15 +662,17 @@ export default function CareersPage() {
                     <div className="flex items-center justify-between gap-4 border-t border-slate-100 pt-3 lg:border-0 lg:pt-0">
                       <ChevronRight className="hidden size-5 text-[var(--color-primary)] lg:block" />
 
-                      <a
-                        href={`/company/careers/${job.title
+                   {/* href={`/company/careers/${job.title
                           .toLowerCase()
-                          .replace(/[^a-z0-9]+/g, "-")}`}
+                          .replace(/[^a-z0-9]+/g, "-")}`} */}
+
+                      <Link
+                        href={`/company/careers/apply-now?job=${job.slug}`}
                         className="inline-flex min-h-10 items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-violet-600)] px-4 text-sm font-bold text-white transition hover:-translate-y-0.5 sm:px-5"
                       >
                         Apply Now
                         <ArrowRight className="size-4" />
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </article>
@@ -687,7 +696,7 @@ export default function CareersPage() {
             </p>
 
             <h2 className="mt-3 text-3xl font-bold leading-tight tracking-tight text-[var(--color-heading)] sm:text-4xl">
-              A Simple, Transparent Process
+              A Simple Transparent Process
             </h2>
 
             <p className="mt-2 text-base leading-relaxed text-[var(--color-text)] sm:text-lg">
@@ -814,8 +823,7 @@ export default function CareersPage() {
             </h2>
 
             <p className="mt-2 max-w-3xl text-sm leading-relaxed text-blue-100 sm:text-base lg:text-lg">
-              Be part of a team that&apos;s building a smarter,
-              more efficient future with AI.
+              Be part of a team that is building a more efficient future with AI.
             </p>
           </div>
 

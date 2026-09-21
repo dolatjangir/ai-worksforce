@@ -286,25 +286,25 @@ const deliveryFeatures = [
     icon: "users" as IconName,
     title: "Expert AI Team",
     description:
-      "A dedicated team of AI engineers, data scientists, and automation specialists.",
+      "The AI Delivery Centre has a team of AI engineers, data scientists and automation specialists.",
   },
   {
     icon: "settings" as IconName,
     title: "Advanced Infrastructure",
     description:
-      "Secure, scalable, and high-performance environment for AI development and deployment.",
+      "The AI Delivery Centre offers a scalable and high‑performance environment for AI development and deployment.",
   },
   {
     icon: "shield" as IconName,
     title: "Quality & Security",
     description:
-      "Best practices, compliance, and rigorous quality assurance at every stage.",
+      "The AI Delivery Centre follows practices ensures compliance and applies rigorous quality assurance at every stage.",
   },
   {
     icon: "chart" as IconName,
     title: "Scalable Delivery",
     description:
-      "Flexible delivery models to meet the needs of startups, SMBs, and enterprises.",
+      "The AI Delivery Centre provides delivery models that meet the needs of startups, SMBs and enterprises.",
   },
 ];
 
@@ -318,35 +318,35 @@ const deliveryProcess = [
     number: "01",
     title: "Plan",
     description:
-      "Understand business goals and requirements.",
+      "The AI Delivery Centre understands business goals and requirements.",
   },
   {
     icon: "code" as IconName,
     number: "02",
     title: "Build",
     description:
-      "Design and develop custom AI solutions with best practices.",
+      "The AI Delivery Centre designs. Develops custom AI solutions using best practices.",
   },
   {
     icon: "check" as IconName,
     number: "03",
     title: "Test",
     description:
-      "Ensure quality, security, and performance.",
+      "The AI Delivery Centre ensures quality, security and performance.",
   },
   {
     icon: "rocket" as IconName,
     number: "04",
     title: "Deploy",
     description:
-      "Deliver and integrate seamlessly into your operations.",
+      "The AI Delivery Centre. Integrates solutions seamlessly into your operations.",
   },
   {
     icon: "headphones" as IconName,
     number: "05",
     title: "Support",
     description:
-      "Continuous monitoring and optimization.",
+      "The AI Delivery Centre continuously. Optimizes solutions.",
   },
 ];
 
@@ -359,25 +359,25 @@ const advantages = [
     icon: "globe" as IconName,
     title: "Global Talent Pool",
     description:
-      "Access to diverse talent and specialized AI expertise.",
+      "The AI Delivery Centre provides access to talent and specialized AI expertise.",
   },
   {
     icon: "database" as IconName,
     title: "Cost-Effective Delivery",
     description:
-      "High-quality solutions with optimized delivery costs.",
+      "The AI Delivery Centre delivers high‑quality solutions while keeping delivery costs optimized.",
   },
   {
     icon: "clock" as IconName,
     title: "Faster Time-to-Market",
     description:
-      "Agile processes to deliver solutions quickly.",
+      "The AI Delivery Centre uses agile processes that deliver solutions quickly.",
   },
   {
     icon: "handshake" as IconName,
     title: "Long-Term Partnership",
     description:
-      "We grow with you, ensuring ongoing support and innovation.",
+      "The AI Delivery Centre grows with you. Provides ongoing support and innovation.",
   },
 ];
 
@@ -403,7 +403,7 @@ export default function AIDeliveryCentrePage() {
   eyebrow="Global Talent. Real Impact."
   title="AI Delivery"
   highlightedTitle="Centre"
-  description="Our AI Delivery Centre is the engine behind your success. A dedicated team, advanced infrastructure, and proven processes to deliver high-quality AI solutions at scale."
+  description="The AI Delivery Centre acts as the engine that drives your success. It has a team, advanced infrastructure and proven processes that deliver high‑quality AI solutions at scale."
   image="/company-images/ai-delivery-center-compan-hero.png"
   imageAlt="AI WorksForce delivery centre"
   primaryAction={{
@@ -443,7 +443,7 @@ export default function AIDeliveryCentrePage() {
     lines: [
       "Delivering",
       "Smarter Solutions",
-      "From Our Delivery Centre to Your Business",
+      "From the AI Delivery Centre to Your Business",
     ],
   }}
 />
@@ -555,7 +555,7 @@ export default function AIDeliveryCentrePage() {
                 From Strategy to
                 <br />
                 <span className="text-brand-blue">
-                  Scalable Solutions
+                  Solutions
                 </span>
               </h2>
 
@@ -674,7 +674,7 @@ export default function AIDeliveryCentrePage() {
                 href="#"
                 className="mt-5 inline-flex min-h-11 items-center gap-2 rounded-lg border border-brand-blue px-5 text-sm font-bold text-brand-blue transition hover:bg-brand-blue hover:text-white sm:text-base"
               >
-                View More Photos
+                View Photos
 
                 <Icon
                   name="arrow"

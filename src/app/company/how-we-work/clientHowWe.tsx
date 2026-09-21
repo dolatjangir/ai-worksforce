@@ -52,7 +52,7 @@ export default function HowWeWorkPage() {
   eyebrow="Our Process. Your Progress."
   title="How We"
   highlightedTitle="Work"
-  description="A clear, collaborative, and results-driven process to help you unlock the full potential of AI for your business."
+  description="A collaborative and results-driven process to help businesses unlock the full potential of AI."
   image="/company-images/how-we-work-company-hero.png"
   imageAlt="AI WorksForce team collaborating"
   primaryAction={{
@@ -115,9 +115,7 @@ export default function HowWeWorkPage() {
           </h2>
 
           <p className="mt-3 text-base leading-relaxed text-[var(--color-text)] sm:text-lg lg:text-xl">
-            We follow a proven, collaborative process to ensure
-            every solution is tailored, effective, and aligned
-            with your business goals.
+            We follow a proven process to ensure every solution is tailored, effective, and aligned with business goals.
           </p>
         </div>
 
@@ -129,13 +127,13 @@ export default function HowWeWorkPage() {
               number: "01",
               title: "Discover",
               icon: MessageCircle,
-              text: "We understand your business, goals, and challenges.",
+              text: "We understand business, goals, and challenges.",
             },
             {
               number: "02",
               title: "Analyze",
               icon: Search,
-              text: "We assess opportunities, processes, and data to find the right use cases.",
+              text: "We assess opportunities, processes, and data to find the use cases.",
             },
             {
               number: "03",
@@ -147,19 +145,19 @@ export default function HowWeWorkPage() {
               number: "04",
               title: "Build",
               icon: Settings,
-              text: "We develop and configure AI solutions, agents, and automations.",
+              text: "We configure AI solutions, agents, and automations.",
             },
             {
               number: "05",
               title: "Deploy",
               icon: Rocket,
-              text: "We launch, integrate, and ensure smooth adoption.",
+              text: "We launch. Ensure smooth adoption.",
             },
             {
               number: "06",
               title: "Optimize",
               icon: BarChart3,
-              text: "We monitor performance, refine, and scale for long-term success.",
+              text: "We monitor performance and refine and scale for long-term success.",
             },
           ].map((step, index) => {
             const StepIcon = step.icon;
@@ -215,15 +213,14 @@ export default function HowWeWorkPage() {
       </h2>
 
       <p className="mt-3 text-base leading-relaxed text-[#5143a0] sm:text-lg">
-        We don’t believe in one-size-fits-all. Our process is designed to be
-        flexible, transparent, and focused on real business outcomes.
+        We do not believe in one-size-fits-all. Our process is designed to be flexible, transparent, and focused on business outcomes.
       </p>
 
       <div className="mt-5 grid gap-3 sm:grid-cols-2">
         {[
           {
             title: "Collaborative Approach",
-            description: "We work with your team at every step.",
+            description: "We work with the client team at every step.",
             icon: (
               <>
                 <circle cx="9" cy="7" r="4" />
@@ -234,7 +231,7 @@ export default function HowWeWorkPage() {
           },
           {
             title: "Tailored Solutions",
-            description: "Custom strategies for your unique needs.",
+            description: "Custom strategies for client needs.",
             icon: (
               <g
                 fill="none"
@@ -251,7 +248,7 @@ export default function HowWeWorkPage() {
           },
           {
             title: "Transparent Process",
-            description: "Clear communication and regular updates.",
+            description: "Clear. Regular updates.",
             icon: (
               <>
                 <path d="M5 2h9l5 5v15H5V2Z" />
@@ -267,7 +264,7 @@ export default function HowWeWorkPage() {
           },
           {
             title: "Long-Term Partnership",
-            description: "We grow with you beyond the initial implementation.",
+            description: "We grow with the client beyond the implementation.",
             icon: (
               <>
                 <path d="m2 5 5-2 4 2-5 5 4 4a3 3 0 0 0 4 0l3-3 5 5-7 6-9-7-4-1V5Z" />
@@ -325,8 +322,7 @@ export default function HowWeWorkPage() {
     </h3>
 
     <p className="mt-5 text-base leading-relaxed text-white/95">
-      We combine people, processes, and AI to create solutions that deliver real,
-      measurable impact.
+      We combine people, processes, and AI to create solutions that deliver measurable impact.
     </p>
 
     <a
@@ -370,8 +366,7 @@ export default function HowWeWorkPage() {
             </h2>
 
             <p className="mt-3 max-w-xl text-base leading-relaxed text-[var(--color-text)] sm:text-lg">
-              Our process has helped hundreds of businesses
-              automate, scale, and achieve real results with AI.
+              Our process has helped hundreds of businesses automate, scale, and achieve results with AI.
             </p>
           </div>
 
@@ -451,10 +446,7 @@ export default function HowWeWorkPage() {
             </div>
 
             <p className="mt-1 text-base leading-relaxed text-[var(--color-text)] sm:text-lg">
-              The AIWorksForce team made the entire process
-              seamless. From understanding our needs to
-              deployment and support, they were with us at
-              every step. The results have been incredible.
+              The AIWorksForce team made the entire process seamless. From understanding client needs to deployment and support, they were with the client at every step. The results have been incredible.
             </p>
 
             <div className="mt-3">
@@ -500,8 +492,7 @@ export default function HowWeWorkPage() {
             </h2>
 
             <p className="mt-2 text-sm leading-relaxed text-blue-100 sm:text-base lg:text-lg">
-              Talk to our experts and discover how our process
-              can help your business grow.
+              Talk to our experts and discover how our process can help businesses grow.
             </p>
           </div>
 

@@ -280,25 +280,25 @@ const journeyItems = [
     icon: "rocket" as IconName,
     title: "The Beginning",
     description:
-      "A small team, a big vision — to make AI accessible for every business.",
+      "A team, a big vision. To make AI accessible for every business.",
   },
   {
     icon: "lightbulb" as IconName,
     title: "Building Solutions",
     description:
-      "We developed practical AI automation solutions for real-world challenges.",
+      "We created AI automation solutions to tackle real-world challenges.",
   },
   {
     icon: "users" as IconName,
     title: "Growing Together",
     description:
-      "Today, we work with 500+ businesses across industries, delivering measurable results.",
+      "Today we work with over 500 businesses, across industries delivering results.",
   },
   {
     icon: "chart" as IconName,
     title: "A Brighter Tomorrow",
     description:
-      "We continue to innovate and empower businesses for a smarter, more efficient future.",
+      "We keep innovating and empowering businesses for a more efficient future.",
   },
 ];
 
@@ -492,7 +492,7 @@ export default function AboutPage() {
   eyebrow="Our Story. Our Purpose. A Smarter Tomorrow."
   title="About"
   highlightedTitle="AIWorksForce"
-  description="We help businesses unlock growth through the power of AI automation, intelligent agents, and modern workflows."
+  description="We help businesses grow by using AI automation, smart agents and up-to-date workflows."
   image="/company-images/about-aiworkforce-company-hero-img.png"
   imageAlt=""
   primaryAction={{

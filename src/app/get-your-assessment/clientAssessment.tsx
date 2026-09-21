@@ -60,7 +60,7 @@ const benefits: {
   },
   {
     title: "Estimate ROI",
-    description: "Get clear potential cost savings and growth",
+    description: "Get potential cost savings and growth",
     icon: BarChart3,
     color: "bg-brand-green",
   },
@@ -72,7 +72,7 @@ const benefits: {
   },
   {
     title: "Expert Consultation",
-    description: "Strategic advice from AI specialists",
+    description: "advice from AI specialists",
     icon: UserRound,
     color: "bg-brand-orange",
   },
@@ -86,17 +86,17 @@ const steps = [
   },
   {
     title: "We Analyze Your Opportunities",
-    description: "Our AI experts identify automation and growth areas.",
+    description: "Our AI team spots automation and growth areas.",
     icon: Search,
   },
   {
     title: "Get Your Custom Report",
-    description: "Receive a detailed AI roadmap with actionable recommendations.",
+    description: "Receive an AI roadmap with actionable recommendations.",
     icon: FileText,
   },
   {
     title: "Discuss & Plan",
-    description: "Review your results with our team and plan your next steps.",
+    description: "Review your results with our team. Plan your next steps.",
     icon: Rocket,
   },
 ];
@@ -127,7 +127,10 @@ export default function AssessmentPage({
   testimonialAvatarSrc,
   onSubmit,
   contactHref = "/contact",
-  faqs = [],
+  faqs = [
+    { question: "What does the AI assessment include?", answer: "We review your business processes, identify AI opportunities, and recommend a roadmap for implementation." },
+    { question: "Is there any obligation to proceed?", answer: "No. You can review the recommendations before deciding your steps." },
+  ],
 }: AssessmentPageProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">(
@@ -251,8 +254,7 @@ export default function AssessmentPage({
                 Make <span className={gradient}>Smarter Decisions</span> with Data
               </h2>
               <p className="mt-3 text-base leading-relaxed text-brand-text sm:text-lg">
-                Our AI assessment helps you understand where AI can create the
-                biggest impact in your business.
+                The AI assessment helps you see where AI can have an impact on your business. I know you want to make the choices.
               </p>
             </div>
 
@@ -286,7 +288,7 @@ export default function AssessmentPage({
             <div>
               <p className={eyebrow}>Our Assessment Process</p>
               <h2 className="mt-3 text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
-                <span className={gradient}>Simple, Fast and Effective</span>
+                <span className={gradient}>Simple, Fast, and Effective</span>
               </h2>
               <p className="mt-3 text-base leading-relaxed text-brand-text">
                 Get your customized AI assessment in just a few simple steps.
@@ -382,7 +384,7 @@ export default function AssessmentPage({
               id="assessment-form"
               className="scroll-mt-8 rounded-2xl border border-brand-blue/15 bg-white p-5 shadow-[0_8px_30px_var(--shadow-blue)] sm:p-7"
             >
-              <p className={eyebrow}>Get Started Now</p>
+              <p className={eyebrow}>Get Started</p>
               <h2 className="mt-3 text-2xl font-bold tracking-tight sm:text-3xl">
                 Request Your AI Assessment
               </h2>
@@ -538,7 +540,7 @@ export default function AssessmentPage({
                         rows={4}
                         required
                         maxLength={5000}
-                        placeholder="Share a few details about your current challenges and what you want to achieve with AI..."
+                        placeholder="Tell us about your business and goals."
                         className={`${input} min-h-28 resize-y`}
                       />
                     </div>
@@ -660,7 +662,7 @@ export default function AssessmentPage({
               id="faq-heading"
               className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl"
             >
-              Your Questions, Answered
+              Your Questions Answered
             </h2>
           </div>
 

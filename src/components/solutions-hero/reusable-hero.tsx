@@ -74,7 +74,7 @@ export default function SolutionsHero({
   assessmentLabel = "Get a Free Automation Assessment",
   assessmentHref = "/get-your-assessment",
   videoLabel = "Watch How It Works",
-  videoHref = "https://res.cloudinary.com/fvsobjbv/video/upload/v1789893005/WhatsApp_Video_2026-09-20_at_12.49.20_PM.mp4",
+  videoHref = "https://res.cloudinary.com/fvsobjbv/video/upload/v1789969883/aiworkforce-home-p.mp4",
   benefitsLabel = "Automation benefits",
   benefits = defaultBenefits,
 }: SolutionsHeroProps = {}) {

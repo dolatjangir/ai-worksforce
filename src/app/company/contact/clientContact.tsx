@@ -81,16 +81,16 @@ const contactMethods = [
     title: "Email Us",
     description:
       "For general inquiries, partnerships or business opportunities.",
-    value: "hello@aiworksforce.com",
-    href: "mailto:hello@aiworksforce.com",
+    value: "Business@aiworksforce.com",
+    href: "mailto:Business@aiworksforce.com",
   },
   {
     icon: Phone,
     title: "Call Us",
     description:
       "Speak directly with our team during business hours.",
-    value: "+91 98765 43210",
-    href: "tel:+919876543210",
+    value: "+91 9649902000",
+    href: "tel:+919649902000",
   },
   {
     icon: MapPin,

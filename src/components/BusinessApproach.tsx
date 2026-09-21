@@ -25,6 +25,7 @@ type ApproachStep = {
 };
 
 type SolutionCard = {
+  href: string;
   title: string;
   description: string;
   icon: React.ReactNode;
@@ -332,36 +333,42 @@ const approachSteps: ApproachStep[] = [
 const solutions: SolutionCard[] = [
   {
     title: "AI Workforce",
+    href: "/solutions/ai-workforce",
     description:
       "A managed team of AI operators, specialists and experts.",
     icon: <WorkforceIcon className="w-8 h-8"/>,
   },
   {
     title: "AI Agents",
+    href: "/explore-ai-agent",
     description:
       "AI agents that research, generate leads, communicate, follow up and automate workflows.",
     icon: <AgentsIcon className="w-8 h-8"/>,
   },
   {
     title: "AI Automation",
+    href: "/solutions/ai-automation",
     description:
       " Automate repetitive processes using AI, APIs and workflow automation.",
     icon: <AutomationIcon className="w-8 h-8"/>,
   },
   {
     title: "Data & Research",
+    href: "/solutions/ai-data-&-research",
     description:
       "Turn data into insights with AI-powered research and analysis. ",
     icon: <DataIcon className="w-8 h-8"/>,
   },
   {
     title: "AI Lead Engines",
+    href: "/technology/lead-engine",
     description:
       "Find, enrich, qualify and nurture prospects with AI-driven lead engines.",
     icon: <LeadIcon className="w-8 h-8"/>,
   },
   {
     title: "Digital Marketing",
+    href: "/ai-digital-marketing",
     description:
       "SEO, content, social, ads, backlinks and more, powered by AI tools and operators. ",
     icon: <MarketingIcon className="w-8 h-8"/>,
@@ -369,6 +376,7 @@ const solutions: SolutionCard[] = [
   },
   {
     title: "Customer Operations",
+    href: "/solutions/ai-customer-operations",
     description:
       "Customer support, CRM, follow-up and calling with AI and trained operators.",
     icon: <CustomerIcon className="w-8 h-8"/>,
@@ -521,6 +529,7 @@ function ApproachStep({
 ========================================================= */
 
 function SolutionCard({
+  href,
   icon,
   title,
   description,
@@ -626,8 +635,8 @@ function SolutionCard({
           EXPLORE
       ===================================================== */}
 
-      <a
-        href="#"
+      <Link
+        href={href}
         aria-label={`Explore ${title}`}
         className="
           mt-auto
@@ -649,7 +658,7 @@ function SolutionCard({
         <span>Explore</span>
 
         <ArrowRight className="h-3 w-3 transition-transform duration-200 group-hover:translate-x-0.5" />
-      </a>
+      </Link>
     </article>
   );
 }

@@ -232,19 +232,19 @@ const categories = [
   {
     title: "AI Use Cases",
     description:
-      "Explore real-world applications of AI across industries.",
+      "Explore real‑world examples of AI across industries.",
     icon: "book" as IconName,
   },
   {
     title: "Case Studies",
     description:
-      "See how businesses are achieving measurable results with AI.",
+      "See how businesses are getting results with AI.",
     icon: "file" as IconName,
   },
   {
     title: "AI Workforce Guides",
     description:
-      "Practical guides to build, automate, and scale with AI.",
+      "Practical guides to build, automate, and grow with AI.",
     icon: "users" as IconName,
   },
   {
@@ -256,13 +256,13 @@ const categories = [
   {
     title: "Blog",
     description:
-      "Stay updated with the latest insights, trends, and tips.",
+      "Stay updated with the insights, trends, and tips.",
     icon: "pen" as IconName,
   },
   {
     title: "FAQs",
     description:
-      "Get quick answers to common questions.",
+      "Get answers to common questions.",
     icon: "help" as IconName,
   },
 ];
@@ -272,7 +272,7 @@ const featuredResources = [
     type: "Guide",
     title: "The Complete Guide to AI Automation for Businesses",
     description:
-      "Learn how to identify opportunities, choose the right tools, and implement AI automation step by step.",
+      "Learn how to spot opportunities, pick the tools, and put AI automation into action step by step.",
     date: "Sep 10, 2024",
     readTime: "8 min read",
     image: "https://plus.unsplash.com/premium_photo-1725907643701-9ba38affe7bb?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGFpJTIwYXV0b21hdGlvbnxlbnwwfHwwfHx8MA%3D%3D",
@@ -281,7 +281,7 @@ const featuredResources = [
     type: "Case Study",
     title: "How a Retail Brand Increased Sales by 3x with AI",
     description:
-      "See how we helped a growing retail brand automate marketing and customer support to achieve 3x higher sales.",
+      "See how we helped a growing retail brand automate marketing and customer support to get 3x higher sales.",
     date: "Aug 28, 2024",
     readTime: "6 min read",
     image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FzZSUyMHN0dWR5fGVufDB8fDB8fHww",
@@ -290,7 +290,7 @@ const featuredResources = [
     type: "Blog",
     title: "10 AI Tools Every Business Should Use in 2024",
     description:
-      "A curated list of powerful AI tools to boost productivity, improve customer experience, and drive growth.",
+      "A curated list of powerful AI tools to boost productivity, improve customer experience, and grow more.",
     date: "Sep 2, 2024",
     readTime: "7 min read",
     image: "https://images.unsplash.com/photo-1519337265831-281ec6cc8514?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YmxvZ3xlbnwwfHwwfHx8MA%3D%3D",
@@ -334,7 +334,7 @@ export default function ResourcesPage() {
   eyebrow="Knowledge. Strategies. Real Impact."
   title="Resources for a"
   highlightedTitle="Smarter Tomorrow"
-  description="Explore our collection of guides, case studies, blog posts, and more to learn how AI can transform your business."
+  description="Explore our collection of guides, case studies, blog posts, and more to see how AI can change your business."
   image="/resources-images/resources-page-hero.png"
   imageAlt="AI WorksForce resources"
   primaryAction={{
@@ -368,13 +368,13 @@ export default function ResourcesPage() {
   benefitCards={[
     {
       title: "Guides",
-      description: "Learn step by step",
+      description: "Learn step by step.",
       icon: "book",
       position: "-right-12 top-5",
     },
     {
       title: "Case Studies",
-      description: "Real world results",
+      description: "world results",
       icon: "file",
       position: "-right-12 top-[20%]",
     },

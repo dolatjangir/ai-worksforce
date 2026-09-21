@@ -268,7 +268,7 @@ export default function WorkforceHero({
               --------------------------------------------- */}
 
               <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#0759ff]">
-                Boost Your Business with AWFI <span className="font-extrabold text-md bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                Hire an AWFI AI <span className="font-extrabold text-md bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
   Expert
 </span>
               </p>

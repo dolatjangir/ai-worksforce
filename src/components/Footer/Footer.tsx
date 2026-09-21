@@ -25,8 +25,9 @@ type FooterColumn = {
   title: string;
   icon: ElementType;
   color: string;
-  links: string[];
+  links: { label: string; href: string }[];
   footerLink?: string;
+  footerHref: string;
 };
 
 const footerColumns: FooterColumn[] = [
@@ -35,13 +36,13 @@ const footerColumns: FooterColumn[] = [
     icon: Lightbulb,
     color: "text-[#4D8DFF]",
     links: [
-      "AI Business Assessment",
-      "AI Workforce",
-      "AI Automation",
-      "AI Data & Research",
-      "AI Customer Operations",
-      
+      { label: "AI Business Assessment", href: "/solutions/ai-business-assessment" },
+      { label: "AI Workforce", href: "/solutions/ai-workforce" },
+      { label: "AI Automation", href: "/solutions/ai-automation" },
+      { label: "AI Data & Research", href: "/solutions/ai-data-&-research" },
+      { label: "AI Customer Operations", href: "/solutions/ai-customer-operations" },
     ],
+    footerHref: "/solutions",
      footerLink: "View All ",
   },
   {
@@ -49,13 +50,13 @@ const footerColumns: FooterColumn[] = [
     icon: Users,
     color: "text-[#45E6C0]",
     links: [
-      "What is an AI Workforce?",
-      "Managed AI Workforce",
-      "AI Operators",
-      "AI Specialists",
-      "AI Experts",
-     
+      { label: "What is an AI Workforce?", href: "/ai-workforce/what-is-an-ai-workforce" },
+      { label: "what AI Worksforce?", href: "/ai-workforce/what-aiworksforce" },
+      { label: "How It Works", href: "/ai-workforce/how-it-works" },
+      { label: "Our AI Workflow", href: "/ai-workforce/our-ai-workFlow" },
+      { label: "Case Studies", href: "/ai-workforce/case-studies" },
     ],
+    footerHref: "/ai-workforce",
      footerLink: "View All",
   },
   {
@@ -63,14 +64,20 @@ const footerColumns: FooterColumn[] = [
     icon: Workflow,
     color: "text-[#A66FFF]",
     links: [
-      "Lead Generation ",
-      "Data Mining Agent",
-      "AI Research Agent",
-     "social mdia Agent",
-      "AI Calling Agent",
-      "Lead Capture",
-      
+      {   label: "AI Lead Qualification",
+              href: "/ai-agents/lead-qualifiction-agent" },
+      {  label: "AI Property Matching",
+              href: "/ai-agents/property-maching-agent", },
+      {  label: "Lead Capture Agent",
+              href: "/ai-agents/lead-capture-agent" },
+      { label: "AI Content Creation",
+              href: "/ai-agents/content-creation-agent" },
+      {  label: "AI  Follow-Up ",
+              href: "/ai-agents/follow-up-agent", },
+      {  label: "AI Calling Agent",
+              href: "/ai-agents/calling-agent" },
     ],
+    footerHref: "/explore-ai-agent",
     footerLink: "View All ",
   },
   {
@@ -78,13 +85,13 @@ const footerColumns: FooterColumn[] = [
     icon: Package,
     color: "text-[#FF792E]",
     links: [
-      "AI Lead Engines",
-      "B2B Lead Engine",
-      "Real Estate Lead Engine",
-      "Agency Lead Engine",
-      
-      "AI Tools",
+      { label: "AI Lead Engines", href: "/products/ai-lead-engines" },
+      { label: "B2B Lead Engine", href: "/products/b2b-lead-engine" },
+ { label: "Property Lead Engine", href: "https://property.ibigdata.in/" },
+                { label: "Consultancy Lead Engine", href: "https://consult.ibigdata.in/admin" },
+                { label: "Travel Lead Engine", href: "https://travel.ibigdata.in/admin" },
     ],
+    footerHref: "/book-demo",
      footerLink: "View All ",
   },
   {
@@ -92,13 +99,13 @@ const footerColumns: FooterColumn[] = [
     icon: Megaphone,
     color: "text-[#F15CB2]",
     links: [
-      "AI SEO",
-      "AI Content Marketing",
-      "AI Social Media",
-      "AI Backlink & Outreach",
-      "AI Advertising",
-     
+      { label: "AI SEO", href: "/ai-digital-marketing/ai-seo" },
+      { label: "AI Content Marketing", href: "/ai-digital-marketing/ai-content-marketing" },
+      { label: "AI Social Media", href: "/ai-digital-marketing/ai-social-media" },
+      { label: "AI Backlink & Outreach", href: "/ai-digital-marketing/ai-backlink-&-outreach" },
+      { label: "AI Advertising", href: "/ai-digital-marketing/ai-advertising-&-promotion" },
     ],
+    footerHref: "/ai-digital-marketing",
      footerLink: "View All ",
   },
   {
@@ -106,13 +113,33 @@ const footerColumns: FooterColumn[] = [
     icon: BookOpen,
     color: "text-[#6FE69A]",
     links: [
-      "AI Use Cases",
-      "Case Studies",
-      "AI Workforce Guides",
-     "digfital marketing",
-      "Blog",
-      "FAQs",
+      {
+              label: "AI Use Cases",
+              href: "/resources/ai-use-cases"
+            },
+            {
+              label: "Case Studies",
+              href: "/resources/case-studies",
+            
+            },
+            {
+              label: "AI Workforce Guides",
+              href: "/resources/ai-workforce-guides"
+            },
+       {
+              label: "AI Digital Marketing Guides",
+              href: "/resources/ai-digital-marketing-guides"
+            },
+            {
+              label: "Blog",
+              href: "/resources/blog"
+            },
+            {
+              label: "FAQs",
+              href: "/resources/faqs"
+            },
     ],
+    footerHref: "/resources",
      footerLink: "View All ",
   },
   {
@@ -120,13 +147,22 @@ const footerColumns: FooterColumn[] = [
     icon: Building2,
     color: "text-[#4D8DFF]",
     links: [
-      "About AIWorksForce ",
-      "AI Delivery Centre",
-      "How We Work",
-      "Partners",
-      "Careers",
-     
+        {
+              label: "About AIWorksForce",
+              href: "/company/about-aiworksforce"
+            },
+            {
+              label: "AI Delivery Centre",
+              href: "/company/ai-delivery-centre"
+            },
+            {
+              label: "How We Work",
+              href: "/company/how-we-work"
+            },
+      { label: "Partners", href: "/company/partners" },
+      { label: "Careers", href: "/company/careers" },
     ],
+    footerHref: "/company",
      footerLink: "View All ",
   },
 ];
@@ -156,6 +192,7 @@ function FooterColumn({
   color,
   links,
   footerLink,
+  footerHref,
 }: FooterColumn) {
   return (
     <div
@@ -192,12 +229,12 @@ function FooterColumn({
       {/* Links */}
       <ul className="space-y-[13px]">
         {links.map((link) => (
-          <li key={link}>
+          <li key={link.href}>
             <a
-              href="#"
+              href={link.href}
               className="text-[15px] font-normal leading-5 text-white/[0.84] transition-colors duration-200 hover:text-white"
             >
-              {link}
+              {link.label}
             </a>
           </li>
         ))}
@@ -206,7 +243,7 @@ function FooterColumn({
       {/* View all */}
       {footerLink && (
         <a
-          href="#"
+          href={footerHref}
           className="mt-5 inline-flex items-center gap-1.5 text-[15px] font-medium text-[#A26FFF] transition-colors duration-200 hover:text-[#C09AFF]"
         >
           {footerLink}
@@ -365,7 +402,7 @@ export default function Footer() {
               </p>
 
               <a
-                href="#"
+                href="/get-your-assessment"
                 className="
                   mt-3
                   inline-flex
@@ -519,7 +556,7 @@ export default function Footer() {
               <span className="hidden h-4 w-px bg-white/20 sm:block" />
 
               <a
-                href="#"
+                href="/privacy-policy"
                 className="transition-colors hover:text-white"
               >
                 Privacy Policy
@@ -528,7 +565,7 @@ export default function Footer() {
               <span className="hidden h-4 w-px bg-white/20 sm:block" />
 
               <a
-                href="#"
+                href="/terms-and-conditions"
                 className="transition-colors hover:text-white"
               >
                 Terms &amp; Conditions
@@ -537,7 +574,7 @@ export default function Footer() {
               <span className="hidden h-4 w-px bg-white/20 sm:block" />
 
               <a
-                href="#"
+                href="/cookies"
                 className="transition-colors hover:text-white"
               >
                 Cookies

@@ -495,59 +495,13 @@ export default function CareersPage() {
   }}
 />
 
-      {/* =====================================================
-          WHY WORK WITH US
-      ====================================================== */}
-
-      <section className="mx-auto max-w-7xl px-5 py-11 sm:px-7 lg:px-8 lg:py-14">
-        <div className="mx-auto max-w-4xl text-center">
-          <p className="text-xs font-bold uppercase tracking-[0.3em] text-[var(--color-primary)] sm:text-sm">
-            Why Work With Us
-          </p>
-
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-[var(--color-heading)] sm:text-4xl lg:text-5xl">
-            More Than a Job. A Meaningful Career.
-          </h2>
-
-          <p className="mt-3 text-base leading-relaxed text-[var(--color-text)] sm:text-lg">
-            We&apos;re building the future with AI, and we want
-            great people like you to be part of it.
-          </p>
-        </div>
-
-        <div className="mt-8 grid gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-5">
-          {benefits.map((benefit) => {
-            const BenefitIcon = benefit.icon;
-
-            return (
-              <article
-                key={benefit.title}
-                className="rounded-xl bg-[var(--color-blue-50)] px-5 py-6 transition duration-300 hover:-translate-y-1 hover:shadow-lg sm:px-6"
-              >
-                <span className="grid size-12 place-items-center rounded-full bg-indigo-100 text-[var(--color-primary)] sm:size-14">
-                  <BenefitIcon className="size-6 sm:size-7" />
-                </span>
-
-                <h3 className="mt-5 text-lg font-bold tracking-tight text-[var(--color-heading)] sm:text-xl">
-                  {benefit.title}
-                </h3>
-
-                <p className="mt-2 text-sm leading-relaxed text-[var(--color-text)] sm:text-base">
-                  {benefit.description}
-                </p>
-              </article>
-            );
-          })}
-        </div>
-      </section>
-
-      {/* =====================================================
+  {/* =====================================================
           OPEN POSITIONS
       ====================================================== */}
 
       <section
         id="open-positions"
-        className="mx-auto max-w-7xl px-5 pb-12 sm:px-7 lg:px-8 lg:pb-16"
+        className="mx-auto max-w-7xl px-5 pb-12 sm:px-7 lg:px-8 lg:py-10"
       >
         {/* Heading */}
 
@@ -681,6 +635,53 @@ export default function CareersPage() {
           </div>
         </div>
       </section>
+      {/* =====================================================
+          WHY WORK WITH US
+      ====================================================== */}
+
+      <section className="mx-auto max-w-7xl px-5 py-11 sm:px-7 lg:px-8 lg:py-14">
+        <div className="mx-auto max-w-4xl text-center">
+          <p className="text-xs font-bold uppercase tracking-[0.3em] text-[var(--color-primary)] sm:text-sm">
+            Why Work With Us
+          </p>
+
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-[var(--color-heading)] sm:text-4xl lg:text-5xl">
+            More Than a Job. A Meaningful Career.
+          </h2>
+
+          <p className="mt-3 text-base leading-relaxed text-[var(--color-text)] sm:text-lg">
+            We&apos;re building the future with AI, and we want
+            great people like you to be part of it.
+          </p>
+        </div>
+
+        <div className="mt-8 grid gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-5">
+          {benefits.map((benefit) => {
+            const BenefitIcon = benefit.icon;
+
+            return (
+              <article
+                key={benefit.title}
+                className="rounded-xl bg-[var(--color-blue-50)] px-5 py-6 transition duration-300 hover:-translate-y-1 hover:shadow-lg sm:px-6"
+              >
+                <span className="grid size-12 place-items-center rounded-full bg-indigo-100 text-[var(--color-primary)] sm:size-14">
+                  <BenefitIcon className="size-6 sm:size-7" />
+                </span>
+
+                <h3 className="mt-5 text-lg font-bold tracking-tight text-[var(--color-heading)] sm:text-xl">
+                  {benefit.title}
+                </h3>
+
+                <p className="mt-2 text-sm leading-relaxed text-[var(--color-text)] sm:text-base">
+                  {benefit.description}
+                </p>
+              </article>
+            );
+          })}
+        </div>
+      </section>
+
+    
 
       {/* =====================================================
           HIRING PROCESS

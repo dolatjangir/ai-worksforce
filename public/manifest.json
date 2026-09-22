@@ -1,7 +1,7 @@
 {
-  "name": "ibigdata CRM",
-  "short_name": "ibigdata",
-  "description": "AI-powered CRM to automate leads and grow your business",
+  "name": "aiWorksForce",
+  "short_name": "AWFI",
+  "description": "AI-powered AWFI to automate your business and grow your business",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",

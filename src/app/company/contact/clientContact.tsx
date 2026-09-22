@@ -292,11 +292,65 @@ export default function ContactPage() {
   const [service, setService] = useState("");
 
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+ async function handleSubmit(
+  event: FormEvent<HTMLFormElement>
+) {
+  event.preventDefault();
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
+  if (submitting) return;
+
+  const form = event.currentTarget;
+  const formData = new FormData(form);
+
+  const getValue = (name: string) =>
+    String(formData.get(name) ?? "").trim();
+
+  setSubmitting(true);
+  setSubmitted(false);
+
+  try {
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        fullName: getValue("fullName"),
+        email: getValue("email"),
+        company: getValue("company"),
+        phone: getValue("phone"),
+        service: getValue("service"),
+        message: getValue("message"),
+      }),
+    });
+
+    const result = await response.json();
+
+    if (!response.ok || !result.success) {
+      throw new Error(
+        result.message || "Failed to send message."
+      );
+    }
+
+    form.reset();
+    setService("");
     setSubmitted(true);
+
+  } catch (error) {
+    console.error("Contact form error:", error);
+
+    setSubmitted(false);
+
+    alert(
+      error instanceof Error
+        ? error.message
+        : "Unable to send your message."
+    );
+  } finally {
+    setSubmitting(false);
   }
+}
 
   return (
     <main className="min-h-screen overflow-x-hidden bg-white font-sans text-[var(--color-heading)]">
@@ -553,21 +607,23 @@ export default function ContactPage() {
               </div>
 
               {/* Submit */}
+<button
+  type="submit"
+  disabled={submitting}
+  className="mt-5 inline-flex h-11 w-full items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-violet-600)] text-sm font-bold text-white shadow-lg transition hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-60 sm:h-12 sm:text-base"
+>
+  {submitting
+    ? "Sending Message..."
+    : submitted
+      ? "Message Sent Successfully"
+      : "Send Message"}
 
-              <button
-                type="submit"
-                className="mt-5 inline-flex h-11 w-full items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-violet-600)] text-sm font-bold text-white shadow-lg transition hover:-translate-y-0.5 sm:h-12 sm:text-base"
-              >
-                {submitted
-                  ? "Message Sent Successfully"
-                  : "Send Message"}
-
-                {submitted ? (
-                  <Check className="size-4" />
-                ) : (
-                  <ArrowRight className="size-4" />
-                )}
-              </button>
+  {submitted ? (
+    <Check className="size-4" />
+  ) : (
+    <ArrowRight className="size-4" />
+  )}
+</button>
 
               <p className="mt-3 text-xs leading-relaxed text-[var(--color-text-muted)] sm:text-sm">
                 By submitting this form, you agree to our{" "}

@@ -87,43 +87,44 @@ const leadership = [
   },
   {
     name: "Rajneesh Pandey",
-    role: "Operating Oprations",
+    role: "Operation Manager",
     image: "/management-team/operation-oprations.jpeg",
   },
 ];
 
 const teamMembers = [
+   {
+    name: "Farazuddin",
+    role: "MERN stack developer",
+    image: "/management-team/faraz-developer.jpeg",
+  },
+  {
+    name: "Dolat Jangir",
+    role: "MERN stack developer",
+    image: "/management-team/dolat-developer.png",
+  },
   {
     name: "Pooja Bangrawa",
-    role: "AWFI Expert",
+    role: "AI Automation",
     image: "/management-team/ai-ml-seniorr.jpeg",
   },
   {
     name: "Anushka Jangid",
-    role: "AWFI Expert",
+    role: "AI Researcher",
     image: "/management-team/ai-ml-junior.jpeg",
   },
  
   {
     name: "Ankita Soni",
-    role: "AWFI Expert",
+    role: "Data Analyst",
     image: "/management-team/data-anylist.jpeg",
   },
   {
     name: "Harshita",
-    role: "AWFI Expert",
+    role: "Business Analyst",
     image: "/management-team/data-anylist-junior.jpeg",
   },
-   {
-    name: "Neha Rao",
-    role: "AWFI Expert",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-  {
-    name: "Ritika Soni",
-    role: "AWFI Expert",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
+  
 ];
 
 /* =========================================================
@@ -252,8 +253,8 @@ export default function OurTeamPage() {
     <PageHero
   titleId="our-team-hero-title"
   eyebrow="People. Ideas. Impact."
-  title="Meet"
-  highlightedTitle="AI WorksForce Team"
+  title="Meet AI"
+  highlightedTitle="WorksForce Team"
   description="A passionate team of AI experts, innovators, and problem-solvers working together to help businesses build a smarter, more efficient tomorrow."
   image="/company-images/careers-company-hero.png"
   imageAlt="AI WorksForce team"

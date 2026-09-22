@@ -1,0 +1,51 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Assessment {
+  id Int @id @default(autoincrement())
+
+  fullName    String @db.VarChar(120)
+  email       String @db.VarChar(254)
+  company     String @db.VarChar(160)
+  phone       String @db.VarChar(30)
+  industry    String @db.VarChar(100)
+  companySize String @db.VarChar(50)
+  goals       String @db.Text
+
+  status String @default("NEW") @db.VarChar(30)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([email])
+  @@index([company])
+  @@index([status])
+  @@index([createdAt])
+}
+
+model ContactMessage {
+  id        Int      @id @default(autoincrement())
+
+  fullName  String   @db.VarChar(120)
+  email     String   @db.VarChar(254)
+  company   String   @db.VarChar(160)
+  phone     String?  @db.VarChar(30)
+  service   String   @db.VarChar(100)
+  message   String   @db.Text
+
+  status    String   @default("NEW") @db.VarChar(30)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([email])
+  @@index([service])
+  @@index([status])
+  @@index([createdAt])
+}

@@ -148,7 +148,12 @@ export default function AssessmentPage({
     setStatus("loading");
 
     try {
-      await onSubmit({
+      const response = await fetch("/api/assessment", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
         fullName: value("fullName"),
         email: value("email"),
         company: value("company"),
@@ -156,13 +161,23 @@ export default function AssessmentPage({
         industry: value("industry"),
         companySize: value("companySize"),
         goals: value("goals"),
-      });
+      }),
+    });
+
+    const result = await response.json();
+
+    if (!response.ok || !result.success) {
+      throw new Error(
+        result.message || "Failed to submit assessment.",
+      );
+    }
 
       form.reset();
       setStatus("success");
-    } catch {
-      setStatus("error");
-    }
+    }  catch (error) {
+    console.error("Assessment submission error:", error);
+    setStatus("error");
+  }
   }
 
   return (
@@ -239,147 +254,13 @@ export default function AssessmentPage({
           </div>
         </section>
 
-        <div className="bg-[image:var(--gradient-section)]">
-          {/* BENEFITS */}
-          <section
-            aria-labelledby="benefits-heading"
-            className={`${container} py-12 sm:py-16`}
-          >
-            <div className="mx-auto max-w-3xl text-center">
-              <p className={eyebrow}>Why Get an AI Assessment?</p>
-              <h2
-                id="benefits-heading"
-                className="mt-3 text-3xl font-bold leading-tight tracking-tight sm:text-4xl"
-              >
-                Make <span className={gradient}>Smarter Decisions</span> with Data
-              </h2>
-              <p className="mt-3 text-base leading-relaxed text-brand-text sm:text-lg">
-                The AI assessment helps you see where AI can have an impact on your business. I know you want to make the choices.
-              </p>
-            </div>
-
-            <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-              {benefits.map(({ title, description, icon: Icon, color }) => (
-                <article
-                  key={title}
-                  className="rounded-2xl border border-brand-blue/10 bg-white p-6 shadow-[0_6px_24px_var(--shadow-blue)]"
-                >
-                  <span
-                    className={`flex size-14 items-center justify-center rounded-full text-white shadow-inner ${color}`}
-                  >
-                    <Icon aria-hidden="true" className="size-7" strokeWidth={2} />
-                  </span>
-                  <h3 className="mt-5 text-xl font-bold tracking-tight">
-                    {title}
-                  </h3>
-                  <p className="mt-2 text-base leading-relaxed text-brand-text">
-                    {description}
-                  </p>
-                </article>
-              ))}
-            </div>
-          </section>
-
+        <div className="bg-[image:var(--gradient-section)] pt-10">
+          
           {/* PROCESS AND FORM */}
           <section
             aria-label="Assessment process and request form"
             className={`${container} grid items-start gap-10 pb-14 lg:grid-cols-[1.05fr_1fr] lg:gap-12 lg:pb-16`}
           >
-            <div>
-              <p className={eyebrow}>Our Assessment Process</p>
-              <h2 className="mt-3 text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
-                <span className={gradient}>Simple, Fast, and Effective</span>
-              </h2>
-              <p className="mt-3 text-base leading-relaxed text-brand-text">
-                Get your customized AI assessment in just a few simple steps.
-              </p>
-
-              <ol className="mt-8 space-y-6">
-                {steps.map(({ title, description, icon: Icon }, index) => (
-                  <li key={title} className="relative flex gap-3 sm:gap-5">
-                    {index < steps.length - 1 && (
-                      <span
-                        aria-hidden="true"
-                        className="absolute left-5 top-11 h-[calc(100%+0.5rem)] w-px bg-brand-blue/20"
-                      />
-                    )}
-
-                    <span className="relative z-10 mt-2 flex size-10 shrink-0 items-center justify-center rounded-full bg-brand-blue-soft text-sm font-bold text-brand-blue">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-
-                    <span className="flex size-14 shrink-0 items-center justify-center rounded-full bg-brand-blue/10 text-brand-blue sm:size-16">
-                      <Icon aria-hidden="true" className="size-7" />
-                    </span>
-
-                    <div className="min-w-0 py-1">
-                      <h3 className="text-base font-semibold sm:text-lg">
-                        {title}
-                      </h3>
-                      <p className="mt-1 text-sm leading-relaxed text-brand-text sm:text-base">
-                        {description}
-                      </p>
-                    </div>
-                  </li>
-                ))}
-              </ol>
-
-              {/* Testimonial reproduced from the supplied design. */}
-              <figure className="mt-8 rounded-2xl border border-brand-blue/15 bg-white/80 p-5 sm:p-6">
-                <div className="flex gap-4">
-                  <span
-                    aria-hidden="true"
-                    className="font-serif text-6xl leading-none text-brand-blue/60"
-                  >
-                    “
-                  </span>
-                  <blockquote className="text-base leading-relaxed">
-                    The AI assessment helped us identify{" "}
-                    <strong>₹40+ lakhs</strong> in annual savings through
-                    automation. Highly recommended!
-                  </blockquote>
-                </div>
-
-                <figcaption className="mt-4 flex items-center gap-4">
-                  {testimonialAvatarSrc ? (
-                    <img
-                      src={testimonialAvatarSrc}
-                      alt=""
-                      width={56}
-                      height={56}
-                      loading="lazy"
-                      className="size-14 shrink-0 rounded-full object-cover"
-                    />
-                  ) : (
-                    <span
-                      aria-hidden="true"
-                      className="flex size-14 shrink-0 items-center justify-center rounded-full bg-brand-blue-soft font-bold text-brand-blue"
-                    >
-                      RM
-                    </span>
-                  )}
-                  <div>
-                    <p className="font-semibold">Rahul Mehta</p>
-                    <p className="text-sm text-brand-text">
-                      CEO, GrowthTech Solutions
-                    </p>
-                    <div
-                      aria-label="5 out of 5 stars"
-                      className="mt-1 flex gap-1 text-brand-orange"
-                    >
-                      {Array.from({ length: 5 }, (_, index) => (
-                        <Star
-                          key={index}
-                          aria-hidden="true"
-                          className="size-4 fill-current"
-                        />
-                      ))}
-                    </div>
-                  </div>
-                </figcaption>
-              </figure>
-            </div>
-
             <div
               id="assessment-form"
               className="scroll-mt-8 rounded-2xl border border-brand-blue/15 bg-white p-5 shadow-[0_8px_30px_var(--shadow-blue)] sm:p-7"
@@ -588,7 +469,143 @@ export default function AssessmentPage({
                 </p>
               </form>
             </div>
+            <div>
+              <p className={eyebrow}>Our Assessment Process</p>
+              <h2 className="mt-3 text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
+                <span className={gradient}>Simple, Fast, and Effective</span>
+              </h2>
+              <p className="mt-3 text-base leading-relaxed text-brand-text">
+                Get your customized AI assessment in just a few simple steps.
+              </p>
+
+              <ol className="mt-8 space-y-6">
+                {steps.map(({ title, description, icon: Icon }, index) => (
+                  <li key={title} className="relative flex gap-3 sm:gap-5">
+                    {index < steps.length - 1 && (
+                      <span
+                        aria-hidden="true"
+                        className="absolute left-5 top-11 h-[calc(100%+0.5rem)] w-px bg-brand-blue/20"
+                      />
+                    )}
+
+                    <span className="relative z-10 mt-2 flex size-10 shrink-0 items-center justify-center rounded-full bg-brand-blue-soft text-sm font-bold text-brand-blue">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+
+                    <span className="flex size-14 shrink-0 items-center justify-center rounded-full bg-brand-blue/10 text-brand-blue sm:size-16">
+                      <Icon aria-hidden="true" className="size-7" />
+                    </span>
+
+                    <div className="min-w-0 py-1">
+                      <h3 className="text-base font-semibold sm:text-lg">
+                        {title}
+                      </h3>
+                      <p className="mt-1 text-sm leading-relaxed text-brand-text sm:text-base">
+                        {description}
+                      </p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+
+              {/* Testimonial reproduced from the supplied design. */}
+              <figure className="mt-8 rounded-2xl border border-brand-blue/15 bg-white/80 p-5 sm:p-6">
+                <div className="flex gap-4">
+                  <span
+                    aria-hidden="true"
+                    className="font-serif text-6xl leading-none text-brand-blue/60"
+                  >
+                    “
+                  </span>
+                  <blockquote className="text-base leading-relaxed">
+                    The AI assessment helped us identify{" "}
+                    <strong>₹40+ lakhs</strong> in annual savings through
+                    automation. Highly recommended!
+                  </blockquote>
+                </div>
+
+                <figcaption className="mt-4 flex items-center gap-4">
+                  {testimonialAvatarSrc ? (
+                    <img
+                      src={testimonialAvatarSrc}
+                      alt=""
+                      width={56}
+                      height={56}
+                      loading="lazy"
+                      className="size-14 shrink-0 rounded-full object-cover"
+                    />
+                  ) : (
+                    <span
+                      aria-hidden="true"
+                      className="flex size-14 shrink-0 items-center justify-center rounded-full bg-brand-blue-soft font-bold text-brand-blue"
+                    >
+                      RM
+                    </span>
+                  )}
+                  <div>
+                    <p className="font-semibold">Rahul Mehta</p>
+                    <p className="text-sm text-brand-text">
+                      CEO, GrowthTech Solutions
+                    </p>
+                    <div
+                      aria-label="5 out of 5 stars"
+                      className="mt-1 flex gap-1 text-brand-orange"
+                    >
+                      {Array.from({ length: 5 }, (_, index) => (
+                        <Star
+                          key={index}
+                          aria-hidden="true"
+                          className="size-4 fill-current"
+                        />
+                      ))}
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+            </div>
+
+            
           </section>
+          {/* BENEFITS */}
+          <section
+            aria-labelledby="benefits-heading"
+            className={`${container} py-12 sm:py-16`}
+          >
+            <div className="mx-auto max-w-3xl text-center">
+              <p className={eyebrow}>Why Get an AI Assessment?</p>
+              <h2
+                id="benefits-heading"
+                className="mt-3 text-3xl font-bold leading-tight tracking-tight sm:text-4xl"
+              >
+                Make <span className={gradient}>Smarter Decisions</span> with Data
+              </h2>
+              <p className="mt-3 text-base leading-relaxed text-brand-text sm:text-lg">
+                The AI assessment helps you see where AI can have an impact on your business. I know you want to make the choices.
+              </p>
+            </div>
+
+            <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              {benefits.map(({ title, description, icon: Icon, color }) => (
+                <article
+                  key={title}
+                  className="rounded-2xl border border-brand-blue/10 bg-white p-6 shadow-[0_6px_24px_var(--shadow-blue)]"
+                >
+                  <span
+                    className={`flex size-14 items-center justify-center rounded-full text-white shadow-inner ${color}`}
+                  >
+                    <Icon aria-hidden="true" className="size-7" strokeWidth={2} />
+                  </span>
+                  <h3 className="mt-5 text-xl font-bold tracking-tight">
+                    {title}
+                  </h3>
+                  <p className="mt-2 text-base leading-relaxed text-brand-text">
+                    {description}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </section>
+
         </div>
 
         {/* BOTTOM CTA */}

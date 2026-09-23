@@ -191,7 +191,7 @@ export default function AIDigitalMarketingPage() {
   ];
 
   const button =
-    "inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-6 text-[12px] font-bold transition duration-200 hover:-translate-y-0.5";
+    "inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-6 text-sm font-bold sm:text-base transition duration-200 hover:-translate-y-0.5";
 
   return (
     <div className="overflow-x-hidden bg-white font-sans text-brand-dark">
@@ -234,13 +234,13 @@ export default function AIDigitalMarketingPage() {
 />
 
         <section id="solutions" className="mx-auto max-w-[1240px] px-5 pt-6">
-          <p className="text-center text-[9px] font-bold tracking-[0.28em] text-brand-purple">
+          <p className="text-center text-sm font-bold tracking-[0.2em] sm:text-base text-brand-purple">
             OUR AI DIGITAL MARKETING SOLUTIONS
           </p>
-          <h2 className="mt-1 text-center text-[25px] leading-tight font-bold tracking-[-1px] sm:text-[29px]">
+          <h2 className="mt-1 text-center text-[26px] leading-[1.16] font-bold tracking-[-0.5px] sm:text-[30px] lg:text-[32px]">
             Complete AI-Powered Digital Marketing for Your Business
           </h2>
-          <p className="mt-1 text-center text-[14px] text-brand-text">
+          <p className="mt-1 text-center text-base leading-[1.5] text-brand-text">
             Explore our AI-driven solutions to grow your brand, reach the right audience, and get real results.
           </p>
 
@@ -251,8 +251,8 @@ export default function AIDigitalMarketingPage() {
                 className="group relative min-h-[178px] rounded-[14px] bg-[linear-gradient(135deg,#fbfcff,#f5f7ff)] p-5"
               >
                 <Bubble icon={item.icon} tone={item.tone} />
-                <h3 className="mt-3 text-[15px] leading-tight font-bold">{item.title}</h3>
-                <p className="mt-2 max-w-[215px] text-[13px] leading-[1.42] text-brand-text">{item.text}</p>
+                <h3 className="mt-3 text-base leading-[1.25] font-bold sm:text-lg">{item.title}</h3>
+                <p className="mt-2 max-w-[215px] text-base leading-[1.5] text-brand-text">{item.text}</p>
                 <span className="absolute right-4 bottom-4 grid size-8 place-items-center rounded-full bg-white text-brand-purple shadow-[0_2px_12px_rgba(49,38,200,.12)] transition group-hover:translate-x-1">
                   <Icon name="arrow" className="size-4" />
                 </span>
@@ -264,11 +264,11 @@ export default function AIDigitalMarketingPage() {
         <section className="mx-auto mt-4 max-w-[1240px] px-5">
           <div className="relative isolate overflow-hidden rounded-[15px] bg-[linear-gradient(110deg,#061348,#102476_58%,#2639e7)] px-7 py-7 text-white sm:px-12">
             <div className="absolute inset-0 -z-10 opacity-30 [background-image:repeating-radial-gradient(ellipse_at_0%_120%,transparent_0_10px,#7180ff_11px_12px)]" />
-            <p className="text-[9px] tracking-[0.28em]">READY TO GROW YOUR BUSINESS?</p>
+            <p className="text-sm tracking-[0.2em] sm:text-base">READY TO GROW YOUR BUSINESS?</p>
             <div className="mt-2 flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
               <div>
-                <h2 className="text-[28px] leading-tight font-semibold">See all ai digital marketing</h2>
-                <p className="mt-2 text-[13px] text-indigo-100">
+                <h2 className="text-2xl leading-[1.15] font-semibold sm:text-3xl lg:text-4xl">See all ai digital marketing</h2>
+                <p className="mt-2 text-base leading-[1.5] text-indigo-100">
                   Discover how our AI-powered digital marketing solutions can take your business to the next level.
                 </p>
               </div>
@@ -276,7 +276,7 @@ export default function AIDigitalMarketingPage() {
                 Explore <Icon name="arrow" className="size-4" />
               </a>
             </div>
-            <p className="absolute right-8 bottom-5 hidden rotate-[-11deg] font-hand text-[19px] leading-tight xl:block">
+            <p className="absolute right-8 bottom-5 hidden rotate-[-11deg] font-hand text-lg leading-tight xl:block">
               More Traffic
               <br />
               More Customers
@@ -287,11 +287,11 @@ export default function AIDigitalMarketingPage() {
 
         <section className="mx-auto mt-5 grid max-w-[1240px] gap-5 px-5 lg:grid-cols-[1fr_1.25fr]">
           <div>
-            <p className="text-[9px] font-bold tracking-[0.28em] text-brand-purple">
+            <p className="text-sm font-bold tracking-[0.2em] sm:text-base text-brand-purple">
               TRUSTED BY GROWING BUSINESSES
             </p>
-            <h2 className="mt-1 text-[25px] leading-tight font-bold">Real Businesses. Real Results.</h2>
-            <p className="mt-1 text-[13px] leading-[1.45] text-brand-text">
+            <h2 className="mt-1 text-[26px] leading-[1.16] font-bold sm:text-[30px] lg:text-[32px]">Real Businesses. Real Results.</h2>
+            <p className="mt-1 text-base leading-[1.5] text-brand-text">
               See how companies are achieving higher traffic, better engagement, and more sales with AI WorksForce.
             </p>
 
@@ -304,8 +304,8 @@ export default function AIDigitalMarketingPage() {
               ].map(([icon, value, label, tone]) => (
                 <div key={label} className="rounded-xl bg-[#fafbff] p-3 text-center">
                   <Bubble icon={icon as IconName} tone={tone} small />
-                  <p className="mt-1.5 text-[23px] leading-none font-bold">{value}</p>
-                  <p className="mt-1 text-[10px] leading-tight text-brand-text">{label}</p>
+                  <p className="mt-1.5 text-2xl leading-none font-bold sm:text-3xl">{value}</p>
+                  <p className="mt-1 text-sm leading-[1.35] text-brand-text">{label}</p>
                 </div>
               ))}
             </div>
@@ -319,21 +319,21 @@ export default function AIDigitalMarketingPage() {
                 className="size-[112px] shrink-0 rounded-full border-4 border-indigo-100 object-cover"
               />
               <div>
-                <span className="grid size-8 place-items-center rounded-full bg-white text-[31px] leading-none font-bold text-brand-purple">
+                <span className="grid size-8 place-items-center rounded-full bg-white text-3xl leading-none font-bold text-brand-purple sm:text-4xl">
                   “
                 </span>
-                <blockquote className="mt-1 text-[13px] leading-[1.45] text-brand-text">
+                <blockquote className="mt-1 text-base leading-[1.5] text-brand-text">
                   “AI WorksForce transformed our digital marketing completely. We got higher traffic,
                   better leads, and real revenue growth — all with less effort from our side.”
                 </blockquote>
-                <p className="mt-2 text-[11px] font-bold">Rahul Mehta</p>
-                <p className="text-[10px] text-brand-text">Founder, GrowthTech (SaaS)</p>
+                <p className="mt-2 text-sm font-bold sm:text-base">Rahul Mehta</p>
+                <p className="text-sm text-brand-text">Founder, GrowthTech (SaaS)</p>
               </div>
             </div>
 
             <div className="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-indigo-100 pt-4">
-              <p className="text-[18px] tracking-[2px] text-orange-400">★★★★★ <span className="ml-2 text-[12px] font-bold text-brand-dark">5.0/5</span></p>
-              <p className="text-[12px] text-brand-text-muted">Trusted by 200+ businesses</p>
+              <p className="text-lg tracking-[2px] text-orange-400 sm:text-xl">★★★★★ <span className="ml-2 text-sm font-bold sm:text-base text-brand-dark">5.0/5</span></p>
+              <p className="text-sm text-brand-text-muted sm:text-base">Trusted by 200+ businesses</p>
             </div>
           </article>
         </section>

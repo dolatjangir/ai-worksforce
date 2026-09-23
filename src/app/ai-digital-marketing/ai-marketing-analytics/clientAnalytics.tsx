@@ -224,7 +224,7 @@ export default function AIMarketingAnalyticsPage() {
   ];
 
   const button =
-    "inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-6 text-[12px] font-bold transition duration-200 hover:-translate-y-0.5";
+    "inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-6 text-sm font-bold sm:text-base transition duration-200 hover:-translate-y-0.5";
 
   return (
     <div className="overflow-x-hidden bg-white font-sans text-brand-dark">
@@ -266,13 +266,13 @@ export default function AIMarketingAnalyticsPage() {
 />
 
         <section className="mx-auto max-w-[1240px] px-5 py-5">
-          <p className="text-center text-[9px] font-bold tracking-[0.28em] text-brand-purple">
+          <p className="text-center text-sm font-extrabold tracking-[0.18em] sm:text-base text-brand-purple">
             COMPLETE AI MARKETING ANALYTICS SOLUTIONS
           </p>
-          <h2 className="mt-1 text-center text-[25px] leading-tight font-bold tracking-[-1px] sm:text-[29px]">
+          <h2 className="mt-1 text-center text-2xl leading-[1.18] font-extrabold tracking-tight sm:text-3xl lg:text-4xl">
             All the tools you need to understand, improve, and grow
           </h2>
-          <p className="mt-1 text-center text-[14px] text-brand-text">
+          <p className="mt-1 text-center text-base leading-[1.5] text-brand-text sm:text-lg">
             From collecting data to getting useful insights, our AI-powered analytics solutions do it all.
           </p>
 
@@ -283,8 +283,8 @@ export default function AIMarketingAnalyticsPage() {
                 className="rounded-[13px] bg-[linear-gradient(135deg,#fafbff,#f7f8ff)] px-3 py-4 text-center"
               >
                 <Bubble icon={item.icon} tone={item.tone} />
-                <h3 className="mt-3 text-[13px] leading-[1.2] font-bold">{item.title}</h3>
-                <p className="mt-2 text-[12px] leading-[1.45] text-brand-text">{item.text}</p>
+                <h3 className="mt-3 text-base leading-[1.3] font-extrabold sm:text-lg">{item.title}</h3>
+                <p className="mt-2 text-base leading-[1.55] text-brand-text">{item.text}</p>
               </article>
             ))}
           </div>
@@ -292,13 +292,13 @@ export default function AIMarketingAnalyticsPage() {
 
         <section id="how-it-works" className="mx-auto py-8 max-w-[1240px] px-5">
           <div className="rounded-[14px] bg-[linear-gradient(135deg,#fafcff,#f5f7ff)] px-4 py-3">
-            <p className="text-center text-[9px] font-bold tracking-[0.28em] text-brand-purple">
+            <p className="text-center text-sm font-extrabold tracking-[0.18em] sm:text-base text-brand-purple">
               HOW IT WORKS
             </p>
-            <h2 className="mt-1 text-center text-[26px] leading-tight font-bold tracking-[-0.8px]">
+            <h2 className="mt-1 text-center text-2xl leading-[1.18] font-extrabold tracking-tight sm:text-3xl lg:text-4xl">
               From Data to Decisions
             </h2>
-            <p className="mt-1 text-center text-[14px] text-brand-text">
+            <p className="mt-1 text-center text-base leading-[1.5] text-brand-text sm:text-lg">
               An easy process to turn your marketing data into real growth.
             </p>
 
@@ -311,9 +311,9 @@ export default function AIMarketingAnalyticsPage() {
                       →
                     </span>
                   )}
-                  <p className="mt-1.5 text-[12px] font-bold">{item.number}</p>
-                  <h3 className="text-[13px] font-bold">{item.title}</h3>
-                  <p className="mt-1 text-[12px] leading-[1.4] text-brand-text">{item.text}</p>
+                  <p className="mt-1.5 text-sm font-bold sm:text-base">{item.number}</p>
+                  <h3 className="text-base font-extrabold sm:text-lg">{item.title}</h3>
+                  <p className="mt-1 text-sm leading-[1.5] text-brand-text sm:text-base">{item.text}</p>
                 </article>
               ))}
             </div>
@@ -322,11 +322,11 @@ export default function AIMarketingAnalyticsPage() {
 
         <section className="mx-auto py-8 grid max-w-[1240px] gap-4 px-5 lg:grid-cols-2">
           <div>
-            <p className="text-[9px] font-bold tracking-[0.28em] text-brand-purple">
+            <p className="text-sm font-extrabold tracking-[0.18em] sm:text-base text-brand-purple">
               REAL RESULTS. REAL BUSINESSES.
             </p>
-            <h2 className="mt-1 text-[25px] leading-tight font-bold">Marketing Analytics Success with AI</h2>
-            <p className="mt-1 text-[13px] leading-[1.4] text-brand-text">
+            <h2 className="mt-1 text-2xl leading-[1.18] font-extrabold sm:text-3xl lg:text-4xl">Marketing Analytics Success with AI</h2>
+            <p className="mt-1 text-sm leading-[1.5] text-brand-text sm:text-base">
               See how businesses similar to yours are making choices and getting better results with AI WorksForce.
             </p>
 
@@ -339,8 +339,8 @@ export default function AIMarketingAnalyticsPage() {
               ].map(([icon, value, label, tone]) => (
                 <div key={label} className="rounded-xl bg-[#fafbff] p-3 text-center">
                   <Bubble icon={icon as IconName} tone={tone} small />
-                  <p className="mt-1.5 text-[23px] leading-none font-bold">{value}</p>
-                  <p className="mt-1 text-[10px] leading-tight text-brand-text">{label}</p>
+                  <p className="mt-1.5 text-2xl leading-tight font-extrabold sm:text-3xl">{value}</p>
+                  <p className="mt-1 text-sm leading-[1.4] text-brand-text sm:text-base">{label}</p>
                 </div>
               ))}
             </div>
@@ -353,13 +353,13 @@ export default function AIMarketingAnalyticsPage() {
               className="h-[150px] w-full rounded-xl object-cover sm:w-[155px]"
             />
             <div>
-              <span className="rounded-full bg-violet-100 px-2 py-1 text-[8px] font-bold tracking-wider text-brand-purple">
+              <span className="rounded-full bg-violet-100 px-2 py-1 text-xs font-extrabold tracking-wider sm:text-sm text-brand-purple">
                 CASE STUDY
               </span>
-              <h3 className="mt-2 text-[16px] leading-tight font-bold">
+              <h3 className="mt-2 text-lg leading-[1.3] font-extrabold sm:text-xl">
                 SaaS Brand: 4x Revenue with AI Marketing Analytics
               </h3>
-              <p className="mt-2 text-[11px] leading-[1.4] text-brand-text">
+              <p className="mt-2 text-sm leading-[1.5] text-brand-text sm:text-base">
                 With our AI marketing analytics solution, this SaaS brand identified high-performing channels,
                 optimized their campaigns, and achieved 4x revenue growth in just 6 months.
               </p>
@@ -370,8 +370,8 @@ export default function AIMarketingAnalyticsPage() {
                   ["Seventy percent", "Reporting Time"],
                 ].map(([value, label]) => (
                   <div key={label}>
-                    <p className="text-[20px] leading-none font-bold text-brand-purple">{value}</p>
-                    <p className="mt-1 text-[9px] text-brand-text">{label}</p>
+                    <p className="text-xl leading-tight font-extrabold text-brand-purple sm:text-2xl">{value}</p>
+                    <p className="mt-1 text-sm text-brand-text sm:text-base">{label}</p>
                   </div>
                 ))}
               </div>
@@ -388,19 +388,19 @@ export default function AIMarketingAnalyticsPage() {
             />
 
             <div className="flex-1">
-              <span className="grid size-8 place-items-center rounded-full bg-white text-[31px] leading-none font-bold text-brand-purple">
+              <span className="grid size-8 place-items-center rounded-full bg-white text-3xl leading-none font-bold sm:text-4xl text-brand-purple">
                 “
               </span>
-              <p className="mt-1 text-[12px] leading-[1.45] text-brand-text">
+              <p className="mt-1 text-base leading-[1.55] text-brand-text">
                 “AI WorksForce gave us complete visibility into our marketing performance. The AI insights
                 helped us make smarter decisions, save hours of analysis, and significantly increase our ROI.”
               </p>
-              <p className="mt-2 text-[11px] font-bold">Vikram Sethi</p>
-              <p className="text-[10px] text-brand-text">CMO, GrowthTech (SaaS)</p>
+              <p className="mt-2 text-sm font-bold sm:text-base">Vikram Sethi</p>
+              <p className="text-sm text-brand-text sm:text-base">CMO, GrowthTech (SaaS)</p>
             </div>
 
             <div className="w-full border-t border-indigo-100 pt-3 lg:w-[460px] lg:border-t-0 lg:border-l lg:pl-4 lg:pt-0">
-              <p className="text-center text-[8px] font-bold tracking-[0.2em] text-brand-purple">
+              <p className="text-center text-sm font-extrabold tracking-[0.16em] sm:text-base text-brand-purple">
                 WORKS WITH YOUR FAVORITE PLATFORMS
               </p>
               <div className="mt-3 grid grid-cols-3 gap-2 sm:grid-cols-6">
@@ -409,7 +409,7 @@ export default function AIMarketingAnalyticsPage() {
                     <span className={`text-[20px] ${index === 0 ? "text-orange-500" : "text-brand-purple"}`}>
                       {index === 0 ? "▮▮▮" : index === 1 ? "▲" : index === 2 ? "∞" : index === 3 ? "in" : "●"}
                     </span>
-                    <p className="mt-1 text-[8px] text-brand-text">{tool}</p>
+                    <p className="mt-1 text-xs text-brand-text sm:text-sm">{tool}</p>
                   </div>
                 ))}
               </div>
@@ -422,11 +422,11 @@ export default function AIMarketingAnalyticsPage() {
           className="relative isolate mx-1 my-8 overflow-hidden rounded-[14px] bg-[linear-gradient(110deg,#07154d,#0c1772_55%,#2836e4)] px-5 py-5 text-center text-white"
         >
           <div className="absolute inset-0 -z-10 opacity-30 [background-image:repeating-radial-gradient(ellipse_at_0%_120%,transparent_0_10px,#7180ff_11px_12px)]" />
-          <p className="text-[9px] tracking-[0.27em]">READY TO TURN YOUR DATA INTO GROWTH?</p>
-          <h2 className="mt-2 text-[25px] leading-tight font-semibold">
+          <p className="text-sm font-extrabold tracking-[0.16em] sm:text-base">READY TO TURN YOUR DATA INTO GROWTH?</p>
+          <h2 className="mt-2 text-2xl leading-[1.18] font-extrabold sm:text-3xl lg:text-4xl">
             Let’s create a marketing plan with AI.
           </h2>
-          <p className="mt-1 text-[12px]">
+          <p className="mt-1 text-base sm:text-lg">
             Get a personalized AI marketing analytics plan made for your business goals.
           </p>
           <div className="mt-3 flex flex-wrap justify-center gap-3">

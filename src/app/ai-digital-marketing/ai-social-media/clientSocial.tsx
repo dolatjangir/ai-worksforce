@@ -411,7 +411,7 @@ function SolutionsSection() {
         <div className="mx-auto max-w-[900px] text-center">
           <p
             className="
-              text-[10px]
+              text-sm
               font-bold
               uppercase
               tracking-[0.3em]
@@ -427,8 +427,8 @@ function SolutionsSection() {
               mt-3
               text-3xl
               font-extrabold
-              leading-tight
-              tracking-[-0.045em]
+              leading-[1.15]
+              tracking-[-0.025em]
               text-brand-dark
               sm:text-4xl
               lg:text-[40px]
@@ -533,11 +533,11 @@ function SolutionsSection() {
                   className="
                     mt-5
                     min-h-[22px]
-                    text-sm
+                    text-base
                     font-extrabold
-                    leading-5
+                    leading-[1.35]
                     text-brand-dark
-                    sm:text-[15px]
+                    sm:text-lg
                   "
                 >
                   {solution.title}
@@ -546,8 +546,8 @@ function SolutionsSection() {
                 <p
                   className="
                     mt-3
-                    text-[12px]
-                    leading-5
+                    text-sm
+                    leading-[1.5] sm:text-base
                     text-slate-600
                   "
                 >
@@ -590,7 +590,7 @@ function ProcessSection() {
         <div className="mx-auto max-w-[800px] text-center">
           <p
             className="
-              text-[10px]
+              text-sm
               font-bold
               uppercase
               tracking-[0.3em]
@@ -698,7 +698,7 @@ function ProcessSection() {
                 <p
                   className="
                     mt-3
-                    text-[10px]
+                    text-sm
                     font-bold
                     text-brand-dark
                   "
@@ -712,7 +712,7 @@ function ProcessSection() {
                     text-sm
                     font-extrabold
                     text-brand-dark
-                    sm:text-[15px]
+                    sm:text-sm
                   "
                 >
                   {step.title}
@@ -723,8 +723,8 @@ function ProcessSection() {
                     mx-auto
                     mt-3
                     max-w-[190px]
-                    text-[11px]
-                    leading-5
+                    text-sm
+                    leading-[1.5] sm:text-base
                     text-slate-600
                     sm:text-xs
                   "
@@ -760,7 +760,7 @@ function PlatformsSection() {
         <div className="mx-auto max-w-[850px] text-center">
           <p
             className="
-              text-[10px]
+              text-sm
               font-bold
               uppercase
               tracking-[0.3em]
@@ -866,7 +866,7 @@ function PlatformsSection() {
                 <p
                   className="
                     mt-1.5
-                    text-[10px]
+                    text-sm
                     leading-4
                     text-slate-600
                   "
@@ -915,7 +915,7 @@ function ResultsSection() {
           <div>
             <p
               className="
-                text-[10px]
+                text-sm
                 font-bold
                 uppercase
                 tracking-[0.3em]
@@ -1014,7 +1014,7 @@ function ResultsSection() {
                     <p
                       className="
                         mt-1
-                        text-[10px]
+                        text-sm
                         leading-4
                         text-slate-600
                         sm:text-xs
@@ -1129,7 +1129,7 @@ function ResultsSection() {
                 <p
                   className="
                     mt-0.5
-                    text-[10px]
+                    text-sm
                     text-slate-500
                   "
                 >
@@ -1269,7 +1269,7 @@ function CTASection() {
         >
           <p
             className="
-              text-[10px]
+              text-sm
               font-bold
               uppercase
               tracking-[0.3em]

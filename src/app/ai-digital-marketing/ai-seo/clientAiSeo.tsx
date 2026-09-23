@@ -257,7 +257,7 @@ export default function AISEOPage() {
           >
             <motion.p
               variants={fadeUp}
-              className="text-sm font-bold sm:text-base uppercase tracking-[0.3em] text-[var(--color-violet-600)] sm:text-[15px]"
+              className="text-sm font-bold uppercase tracking-[0.2em] text-[var(--color-violet-600)] sm:text-base sm:tracking-[0.24em]"
             >
               Complete AI-powered SEO solutions
             </motion.p>
@@ -266,12 +266,10 @@ export default function AISEOPage() {
               variants={fadeUp}
               className="
                 mt-3
-                text-[29px]         font-extrabold sm:text-[44px] lg:text-[48px]
-                leading-tight
-                tracking-[-0.04em]
+                text-3xl font-extrabold leading-[1.15]
+                tracking-[-0.025em]
                 text-[var(--color-heading)]
-                     sm:text-[44px] lg:text-[44px]
-                 sm:text-[44px] lg:text-[48px]
+                sm:text-4xl lg:text-[48px]
               "
             >
               Everything you need to rank higher
@@ -281,9 +279,9 @@ export default function AISEOPage() {
               variants={fadeUp}
               className="
                 mx-auto mt-3 max-w-[720px]
-                text-[15px] sm:text-base leading-6
+                text-base sm:text-base leading-6
                 text-[var(--color-text)]
-                sm:text-[15px]
+                sm:text-base
               "
             >
               From strategy to action our AI-based SEO solutions
@@ -354,7 +352,7 @@ export default function AISEOPage() {
                       text-base font-extrabold sm:text-lg
                       leading-[1.35]
                       text-[var(--color-heading)]
-                      sm:text-[15px] sm:text-base
+                      sm:text-base sm:text-base
                     "
                   >
                     {solution.title}
@@ -363,7 +361,7 @@ export default function AISEOPage() {
                   <p
                     className="
                       mt-3
-                      text-[15px]
+                      text-base
                       leading-[1.65]
                       text-[var(--color-text-muted)]
                       sm:text-base
@@ -388,24 +386,23 @@ export default function AISEOPage() {
       >
         <div className="mx-auto max-w-[1390px] rounded-2xl bg-gradient-to-br from-[var(--color-blue-50)] via-white to-[var(--color-indigo-50)] px-4 py-12 sm:px-7 sm:py-14 lg:px-10 lg:py-16">
           <div className="mx-auto max-w-[800px] text-center">
-            <p className="text-sm font-bold sm:text-base uppercase tracking-[0.3em] text-[var(--color-violet-600)] sm:text-[15px]">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[var(--color-violet-600)] sm:text-base sm:tracking-[0.24em]">
               How our AI SEO works
             </p>
 
             <h2
               className="
                 mt-3
-                text-[28px]         font-extrabold sm:text-[44px] lg:text-[48px]
-                tracking-[-0.04em]
+                text-3xl font-extrabold leading-[1.15]
+                tracking-[-0.025em]
                 text-[var(--color-heading)]
-                     sm:text-[42px] lg:text-[42px]
-                 sm:text-[42px] lg:text-[46px]
+                sm:text-4xl lg:text-[48px]
               "
             >
               A process. Powerful results.
             </h2>
 
-            <p className="mt-3 text-[15px] sm:text-base text-[var(--color-text)] sm:text-[15px]">
+            <p className="mt-3 text-base sm:text-base text-[var(--color-text)] sm:text-base">
               We use AI technology with SEO knowledge to give you growth.
             </p>
           </div>
@@ -463,7 +460,7 @@ export default function AISEOPage() {
                       {step.title}
                     </h3>
 
-                    <p className="mx-auto mt-2 max-w-[190px] text-[15px] leading-[1.6] text-[var(--color-text-muted)] sm:text-base">
+                    <p className="mx-auto mt-2 max-w-[190px] text-base leading-[1.6] text-[var(--color-text-muted)] sm:text-base">
                       {step.description}
                     </p>
                   </motion.article>
@@ -496,7 +493,7 @@ export default function AISEOPage() {
             {/* LEFT SUCCESS STORY */}
 
             <div>
-              <p className="text-sm font-bold sm:text-base uppercase tracking-[0.3em] text-[var(--color-violet-600)] sm:text-[15px]">
+              <p className="text-sm font-bold uppercase tracking-[0.2em] text-[var(--color-violet-600)] sm:text-base sm:tracking-[0.24em]">
                 Real results. Real businesses.
               </p>
 
@@ -513,7 +510,7 @@ export default function AISEOPage() {
                 SEO success with AI
               </h2>
 
-              <p className="mt-2 max-w-[620px] text-[15px] sm:text-base leading-6 text-[var(--color-text)] sm:text-[15px]">
+              <p className="mt-2 max-w-[620px] text-base sm:text-base leading-6 text-[var(--color-text)] sm:text-base">
                 See how businesses like yours are getting rankings more visitors and more money with AI WorksForce.
               </p>
 
@@ -559,11 +556,11 @@ export default function AISEOPage() {
                       E-commerce brand
                     </span>
 
-                    <h3 className="mt-2 text-lg sm:text-xl font-extrabold tracking-tight text-[var(--color-heading)] sm:text-lg sm:text-xl">
+                    <h3 className="mt-2 text-lg font-extrabold leading-[1.3] tracking-tight text-[var(--color-heading)] sm:text-xl">
                       From page 5 to the top in 3 months
                     </h3>
 
-                    <p className="mt-2 text-[15px] leading-[1.6] text-[var(--color-text-muted)] sm:text-base">
+                    <p className="mt-2 text-base leading-[1.6] text-[var(--color-text-muted)] sm:text-base">
                       Our AI-based SEO strategy helped get a 312% increase in visitors from search and number one rankings for 25+ important keywords.
                     </p>
 
@@ -666,24 +663,23 @@ export default function AISEOPage() {
           <div className="pointer-events-none absolute -bottom-48 -left-10 h-[300px] w-[560px] rounded-[50%] border border-white/10 rotate-[10deg]" />
 
           <div className="relative z-10 mx-auto max-w-[800px]">
-            <p className="text-[9px] font-bold uppercase tracking-[0.3em] text-white/80 sm:text-[10px]">
+            <p className="text-xs sm:text-sm font-bold uppercase tracking-[0.3em] text-white/80 sm:text-xs sm:text-sm">
               Ready to rank higher?
             </p>
 
             <h2
               className="
                 mt-3
-                text-[28px] font-extrabold
-                tracking-[-0.04em]
+                text-3xl font-extrabold leading-[1.15]
+                tracking-[-0.025em]
                 text-white
-                sm:text-[35px]
-                lg:text-[39px]
+                sm:text-4xl lg:text-[44px]
               "
             >
               Lets grow your business with AI SEO
             </h2>
 
-            <p className="mt-3 text-[12px] text-white/80 sm:text-[14px]">
+            <p className="mt-3 text-sm sm:text-base text-white/80 sm:text-sm sm:text-base">
               Get an AI SEO strategy made for your business goals.
             </p>
 
@@ -696,7 +692,7 @@ export default function AISEOPage() {
                   rounded-xl
                   bg-white
                   px-6 py-3
-                  text-[11px] font-extrabold
+                  text-sm sm:text-base font-extrabold
                   text-[var(--color-heading)]
                   transition-all duration-300
                   hover:-translate-y-0.5
@@ -716,7 +712,7 @@ export default function AISEOPage() {
                   border border-white/50
                   bg-white/5
                   px-6 py-3
-                  text-[11px] font-extrabold
+                  text-sm sm:text-base font-extrabold
                   text-white
                   backdrop-blur-sm
                   transition-all duration-300

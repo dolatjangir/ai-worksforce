@@ -230,7 +230,7 @@ export default function AIMarketingAutomationPage() {
   ];
 
   const button =
-    "inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-6 text-[12px] font-bold transition hover:-translate-y-0.5";
+    "inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-6 text-sm font-bold transition hover:-translate-y-0.5 sm:text-base";
 
   return (
     <div className="overflow-x-hidden bg-white font-sans text-brand-dark">
@@ -272,13 +272,13 @@ export default function AIMarketingAutomationPage() {
 />
 
         <section className="mx-auto max-w-[1240px] px-5 pt-5">
-          <p className="text-center text-[9px] font-bold tracking-[0.28em] text-brand-purple">
+          <p className="text-center text-sm font-bold tracking-[0.2em] sm:text-base sm:tracking-[0.24em] text-brand-purple">
             COMPLETE AI MARKETING AUTOMATION SOLUTIONS
           </p>
-          <h2 className="mt-1 text-center text-[25px] leading-tight font-bold tracking-[-1px] sm:text-[29px]">
+          <h2 className="mt-1 text-center text-3xl leading-[1.15] font-bold tracking-[-0.02em] sm:text-4xl lg:text-[40px]">
             Everything You Need to Automate Your Marketing
           </h2>
-          <p className="mt-1 text-center text-[14px] text-brand-text">
+          <p className="mt-1 text-center text-base leading-[1.5] text-brand-text">
             From lead generation to customer retention, our AI-powered marketing automation solutions cover it all.
           </p>
 
@@ -289,8 +289,8 @@ export default function AIMarketingAutomationPage() {
                 className="rounded-[13px] bg-[linear-gradient(135deg,#fafbff,#f7f8ff)] px-3 py-4 text-center"
               >
                 <Bubble icon={item.icon} tone={item.tone} />
-                <h3 className="mt-3 text-[13px] leading-[1.2] font-bold">{item.title}</h3>
-                <p className="mt-2 text-[12px] leading-[1.45] text-brand-text">{item.text}</p>
+                <h3 className="mt-3 text-base leading-[1.35] sm:text-lg font-bold">{item.title}</h3>
+                <p className="mt-2 text-base leading-[1.5] text-brand-text">{item.text}</p>
               </article>
             ))}
           </div>
@@ -298,13 +298,13 @@ export default function AIMarketingAutomationPage() {
 
         <section id="how-it-works" className="mx-auto mt-4 max-w-[1240px] px-5">
           <div className="rounded-[14px] bg-[linear-gradient(135deg,#fafcff,#f5f7ff)] px-4 py-3">
-            <p className="text-center text-[9px] font-bold tracking-[0.28em] text-brand-purple">
+            <p className="text-center text-sm font-bold tracking-[0.2em] sm:text-base sm:tracking-[0.24em] text-brand-purple">
               HOW IT WORKS
             </p>
-            <h2 className="mt-1 text-center text-[26px] leading-tight font-bold tracking-[-0.8px]">
+            <h2 className="mt-1 text-center text-3xl leading-[1.15] font-bold tracking-[-0.02em] sm:text-4xl lg:text-[40px]">
               From Setup to Scale
             </h2>
-            <p className="mt-1 text-center text-[14px] text-brand-text">
+            <p className="mt-1 text-center text-base leading-[1.5] text-brand-text">
               A simple, streamlined process to automate your marketing with AI.
             </p>
 
@@ -313,13 +313,13 @@ export default function AIMarketingAutomationPage() {
                 <article key={item.title} className="relative rounded-xl bg-white/40 px-3 py-2 text-center">
                   <Bubble icon={item.icon} tone={item.tone} />
                   {index < steps.length - 1 && (
-                    <span className="absolute top-4 -right-4 hidden text-[29px] text-brand-purple lg:block">
+                    <span className="absolute top-4 -right-4 hidden text-3xl sm:text-4xl text-brand-purple lg:block">
                       →
                     </span>
                   )}
-                  <p className="mt-1.5 text-[12px] font-bold">{item.num}</p>
-                  <h3 className="text-[13px] font-bold">{item.title}</h3>
-                  <p className="mt-1 text-[12px] leading-[1.4] text-brand-text">{item.text}</p>
+                  <p className="mt-1.5 text-sm font-bold">{item.num}</p>
+                  <h3 className="text-base font-bold">{item.title}</h3>
+                  <p className="mt-1 text-sm leading-[1.4] text-brand-text">{item.text}</p>
                 </article>
               ))}
             </div>
@@ -328,13 +328,13 @@ export default function AIMarketingAutomationPage() {
 
         <section className="mx-auto mt-3 grid max-w-[1240px] gap-4 px-5 lg:grid-cols-2">
           <div>
-            <p className="text-[9px] font-bold tracking-[0.28em] text-brand-purple">
+            <p className="text-sm font-bold tracking-[0.2em] sm:text-base sm:tracking-[0.24em] text-brand-purple">
               REAL RESULTS. REAL BUSINESSES.
             </p>
-            <h2 className="mt-1 text-[25px] leading-tight font-bold">
+            <h2 className="mt-1 text-3xl leading-[1.15] font-bold sm:text-4xl lg:text-[40px]">
               Marketing Automation Success with AI
             </h2>
-            <p className="mt-1 text-[13px] leading-[1.4] text-brand-text">
+            <p className="mt-1 text-base leading-[1.5] text-brand-text">
               See how businesses like yours are getting more leads, higher engagement, and better ROI with AI WorksForce.
             </p>
 
@@ -347,8 +347,8 @@ export default function AIMarketingAutomationPage() {
               ].map(([icon, value, label, tone]) => (
                 <div key={label} className="rounded-xl bg-[#fafbff] p-3 text-center">
                   <Bubble icon={icon as IconName} tone={tone} small />
-                  <p className="mt-1.5 text-[23px] leading-none font-bold">{value}</p>
-                  <p className="mt-1 text-[10px] leading-tight text-brand-text">{label}</p>
+                  <p className="mt-1.5 text-2xl leading-none sm:text-3xl font-bold">{value}</p>
+                  <p className="mt-1 text-sm leading-[1.4] sm:text-base text-brand-text">{label}</p>
                 </div>
               ))}
             </div>
@@ -361,13 +361,13 @@ export default function AIMarketingAutomationPage() {
               className="h-[150px] w-full rounded-xl object-cover sm:w-[155px]"
             />
             <div>
-              <span className="rounded-full bg-violet-100 px-2 py-1 text-[8px] font-bold tracking-wider text-brand-purple">
+              <span className="rounded-full bg-violet-100 px-2 py-1 text-xs font-bold tracking-wider sm:text-sm text-brand-purple">
                 CASE STUDY
               </span>
-              <h3 className="mt-2 text-[16px] leading-tight font-bold">
+              <h3 className="mt-2 text-lg leading-[1.3] sm:text-xl font-bold">
                 E-commerce Brand: 4x Revenue with AI Marketing Automation
               </h3>
-              <p className="mt-2 text-[11px] leading-[1.4] text-brand-text">
+              <p className="mt-2 text-sm leading-[1.5] sm:text-base text-brand-text">
                 With our AI marketing automation strategy, this D2C brand automated email, social media,
                 and ad campaigns, resulting in 312% more leads and 4x revenue in just 4 months.
               </p>
@@ -378,8 +378,8 @@ export default function AIMarketingAutomationPage() {
                   ["70%", "Less Manual Work"],
                 ].map(([value, label]) => (
                   <div key={label}>
-                    <p className="text-[20px] leading-none font-bold text-brand-purple">{value}</p>
-                    <p className="mt-1 text-[9px] text-brand-text">{label}</p>
+                    <p className="text-2xl leading-none sm:text-3xl font-bold text-brand-purple">{value}</p>
+                    <p className="mt-1 text-sm text-brand-text">{label}</p>
                   </div>
                 ))}
               </div>
@@ -396,20 +396,20 @@ export default function AIMarketingAutomationPage() {
             />
 
             <div className="flex-1">
-              <span className="grid size-8 place-items-center rounded-full bg-white text-[31px] leading-none font-bold text-brand-purple">
+              <span className="grid size-8 place-items-center rounded-full bg-white text-3xl sm:text-4xl leading-none font-bold text-brand-purple">
                 “
               </span>
-              <p className="mt-1 text-[12px] leading-[1.45] text-brand-text">
+              <p className="mt-1 text-base leading-[1.5] text-brand-text">
                 “AI WorksForce transformed our marketing. What used to take hours now runs automatically,
                 and we’re getting better results with less effort.”
               </p>
-              <p className="mt-2 text-[11px] font-bold">Rahul Mehta</p>
-              <p className="text-[10px] text-brand-text">Founder, UrbanKart (D2C Brand)</p>
+              <p className="mt-2 text-sm font-bold">Rahul Mehta</p>
+              <p className="text-sm text-brand-text">Founder, UrbanKart (D2C Brand)</p>
             </div>
 
             <div className="grid w-full grid-cols-3 divide-x divide-indigo-100 lg:w-[460px]">
               <div className="px-2 text-center">
-                <p className="mb-2 text-[8px] font-bold tracking-[0.2em] text-brand-purple">
+                <p className="mb-2 text-xs font-bold tracking-[0.16em] sm:text-sm sm:tracking-[0.2em] text-brand-purple">
                   INTEGRATES WITH YOUR FAVORITE TOOLS
                 </p>
                 <div className="hidden" />
@@ -421,8 +421,8 @@ export default function AIMarketingAutomationPage() {
               ].map(([icon, value, label, tone]) => (
                 <div key={label} className="px-2 text-center">
                   <Bubble icon={icon as IconName} tone={tone} small />
-                  <p className="mt-1.5 text-[23px] leading-none font-bold">{value}</p>
-                  <p className="mt-1 text-[10px] text-brand-text">{label}</p>
+                  <p className="mt-1.5 text-2xl leading-none sm:text-3xl font-bold">{value}</p>
+                  <p className="mt-1 text-sm text-brand-text">{label}</p>
                 </div>
               ))}
             </div>
@@ -434,11 +434,11 @@ export default function AIMarketingAutomationPage() {
           className="relative isolate mx-1 mt-3 overflow-hidden rounded-[14px] bg-[linear-gradient(110deg,#07154d,#0c1772_55%,#2836e4)] px-5 py-5 text-center text-white"
         >
           <div className="absolute inset-0 -z-10 opacity-30 [background-image:repeating-radial-gradient(ellipse_at_0%_120%,transparent_0_10px,#7180ff_11px_12px)]" />
-          <p className="text-[9px] tracking-[0.27em]">READY TO AUTOMATE YOUR MARKETING?</p>
-          <h2 className="mt-2 text-[25px] leading-tight font-semibold">
+          <p className="text-sm tracking-[0.2em] sm:text-base sm:tracking-[0.24em]">READY TO AUTOMATE YOUR MARKETING?</p>
+          <h2 className="mt-2 text-3xl leading-[1.15] font-semibold sm:text-4xl lg:text-[40px]">
             Let’s Build Your AI Marketing Engine
           </h2>
-          <p className="mt-1 text-[12px]">
+          <p className="mt-1 text-sm">
             Get a custom AI marketing automation strategy tailored to your business goals.
           </p>
           <div className="mt-3 flex flex-wrap justify-center gap-3">

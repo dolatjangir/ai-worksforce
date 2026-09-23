@@ -160,13 +160,13 @@ function SectionTitle({
   return (
     <div>
       {eyebrow && (
-        <div className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-blue-600">
+        <div className="mb-3 text-sm font-extrabold uppercase tracking-[0.2em] text-blue-600 sm:text-base sm:tracking-[0.24em]">
           {eyebrow}
         </div>
       )}
 
       <div className="flex items-center gap-4">
-        <h2 className="text-3xl font-extrabold tracking-tight text-[#10204f] sm:text-4xl">
+        <h2 className="text-[26px] font-extrabold leading-[1.16] tracking-tight text-[#10204f] sm:text-3xl lg:text-4xl">
           {title}
         </h2>
 
@@ -194,8 +194,8 @@ function Benefit({
       </div>
 
       <div>
-        <div className="text-sm font-bold text-[#152451]">{title}</div>
-        <div className="text-xs text-slate-500">{text}</div>
+        <div className="text-base font-extrabold leading-tight text-[#152451] sm:text-lg">{title}</div>
+        <div className="text-sm leading-6 text-slate-500 sm:text-base">{text}</div>
       </div>
     </div>
   );
@@ -224,9 +224,9 @@ function Step({
         </div>
       </div>
 
-      <h3 className="mb-2 text-base font-bold text-[#14234f]">{title}</h3>
+      <h3 className="mb-2 text-base font-extrabold leading-tight text-[#14234f] sm:text-lg">{title}</h3>
 
-      <p className="max-w-[210px] text-sm leading-5 text-slate-500">
+      <p className="max-w-[260px] text-[15px] leading-[1.5] text-slate-500 sm:text-base">
         {text}
       </p>
     </div>
@@ -248,9 +248,9 @@ function ValueCard({
         {icon}
       </div>
 
-      <h3 className="mb-2 text-sm font-bold text-[#14234f]">{title}</h3>
+      <h3 className="mb-2 text-base font-extrabold leading-tight text-[#14234f] sm:text-lg">{title}</h3>
 
-      <p className="text-sm leading-5 text-slate-500">{text}</p>
+      <p className="text-[15px] leading-[1.5] text-slate-500 sm:text-base">{text}</p>
     </div>
   );
 }
@@ -268,122 +268,454 @@ export default function PilotPage() {
           HERO
       ===================================================== */}
 
-      <section className="relative overflow-hidden">
-        {/* Background decorations */}
-        {/* <div className="pointer-events-none absolute -right-32 -top-48 h-[650px] w-[650px] rounded-full bg-blue-100/50 blur-3xl" /> */}
+    <section className="relative isolate min-h-[90dvh] overflow-hidden bg-white">
+  <div
+    className="
+      relative mx-auto grid h-full min-h-0 w-full max-w-[1536px]
+      grid-rows-[minmax(0,1fr)_minmax(0,0.55fr)]
+      lg:grid-cols-[1.05fr_1fr] lg:grid-rows-1
+      [@media(orientation:landscape)_and_(max-height:600px)]:grid-cols-2
+      [@media(orientation:landscape)_and_(max-height:600px)]:grid-rows-1
+    "
+  >
+    {/* Content */}
+    <div
+      className="
+        relative z-20 min-h-0 min-w-0 overflow-y-auto overscroll-contain
+        px-5 py-6 sm:px-8 sm:py-8 lg:px-10 lg:py-10 xl:px-12
+        [scrollbar-width:thin]
+      "
+    >
+      <div className="flex min-h-full flex-col justify-center">
+        <div className="mb-3 flex items-center gap-3 lg:mb-5">
+          <span className="text-sm font-extrabold uppercase tracking-[0.18em] text-blue-700 sm:text-base sm:tracking-[0.22em]">
+            Start a Pilot
+          </span>
 
-        {/* <div className="pointer-events-none absolute left-1/2 top-20 h-[450px] w-[450px] -translate-x-1/2 rounded-full bg-cyan-50 blur-3xl" /> */}
-
-        {/* <div className="pointer-events-none absolute bottom-0 left-0 h-64 w-64 rounded-full bg-indigo-50 blur-3xl" /> */}
-
-<div className="relative  min-h-[700px] max-w-[1350px] px-5 pb-12 pt-14 sm:px-8 sm:pt-20 lg:px-12 lg:pb-16 lg:pt-16">          {/* Hero content */}
-          <div className="relative z-10 pl-10">
-            <div className="mb-5 flex items-center gap-4">
-              <span className="text-xs font-semibold uppercase tracking-[0.28em] text-blue-700">
-                Start a Pilot
-              </span>
-
-              <span className="h-[2px] w-12 bg-gradient-to-r from-cyan-400 to-blue-600" />
-            </div>
-
-            <h1 className="max-w-[650px] text-[45px] font-black leading-[0.98] tracking-[-0.04em] text-[#101f4e] sm:text-6xl lg:text-[68px]">
-              Turn Ideas into
-              <br />
-              <span className="bg-gradient-to-r from-cyan-500 via-blue-600 to-violet-600 bg-clip-text text-transparent">
-                Real Results
-              </span>
-            </h1>
-
-            <p className="mt-6 max-w-[590px] text-base leading-7 text-slate-600 sm:text-lg">
-              Experience the power of AI Workforce with a low-risk,
-              high-impact pilot. Test, learn, and scale with confidence.
-            </p>
-
-            {/* Benefits */}
-            <div className="mt-8 grid max-w-[650px] gap-5 sm:grid-cols-3">
-              <Benefit
-                icon={<Bolt />}
-                title="Quick Setup"
-                text="Get started in days"
-              />
-
-              <Benefit
-                icon={<Chart />}
-                title="Measurable Impact"
-                text="Track real results"
-              />
-
-              <Benefit
-                icon={<Shield />}
-                title="Low Risk"
-                text="High value, minimal commitment"
-              />
-            </div>
-
-            {/* CTA */}
-            <div className="mt-9 flex flex-col gap-5 sm:flex-row sm:items-center">
-              <a
-                href="#pilot-form"
-                className="inline-flex h-14 items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-cyan-500 to-violet-600 px-8 text-sm font-bold text-white shadow-xl shadow-blue-200 transition hover:-translate-y-1 hover:shadow-2xl"
-              >
-                Start Your Pilot
-                <ArrowRight />
-              </a>
-
-              <button className="group flex items-center gap-3 text-left">
-                <span className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-blue-500 bg-white text-blue-600 transition group-hover:bg-blue-50">
-                  <Play />
-                </span>
-
-                <span>
-                  <span className="block text-sm font-bold text-[#14234f]">
-                    Watch How It Works
-                  </span>
-
-                  <span className="block text-xs text-slate-500">
-                    2 min video
-                  </span>
-                </span>
-              </button>
-            </div>
-
-            {/* Hero stats */}
-            <div className="mt-8 grid max-w-[700px] gap-3 sm:grid-cols-3">
-              {[
-                ["10x", "Faster Execution"],
-                ["70%", "Cost Optimization"],
-                ["100+", "Businesses Trust Us"],
-              ].map(([number, label]) => (
-                <div
-                  key={number}
-                  className="rounded-2xl border border-blue-100 bg-white/80 px-4 py-3 shadow-[0_8px_30px_rgba(25,80,160,0.06)] backdrop-blur"
-                >
-                  <div className="text-xl font-black text-blue-600">
-                    {number}
-                  </div>
-
-                  <div className="text-xs text-slate-500">{label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-        {/* Hero image */}
-<div className="relative mt-10 min-h-[430px] sm:min-h-[560px] lg:absolute right-0 lg:-right-7 lg:top-1/2 lg:mt-0 lg:w-[720px] lg:-translate-y-1/2  xl:w-[800px]">
-  {/* Glow */}
-  <div className="absolute right-[10%] top-1/2 h-[430px] w-[430px] -translate-y-1/2 rounded-full bg-blue-200/40 blur-3xl" />
-
-  <img
-    src="/pilot-page-hero-img.png"
-    alt="AI Workforce pilot"
-    className="relative z-10 ml-auto w-full object-contain"
-  />
-  {/* Left-side blend */}
-  <div className="pointer-events-none absolute left-0 top-0 z-20 h-full w-[12%] bg-gradient-to-r from-white via-white/70 to-transparent" />
-</div>
+          <span className="h-0.5 w-12 bg-gradient-to-r from-cyan-400 to-blue-600" />
         </div>
-      </section>
 
+        <h1
+          className="
+            text-[clamp(2.25rem,5vw,4.25rem)]
+            font-black leading-[1.04] tracking-[-0.04em]
+            text-[#101f4e]
+          "
+        >
+          Turn Ideas into
+          <br />
+          <span className="bg-gradient-to-r from-cyan-500 via-blue-600 to-violet-600 bg-clip-text text-transparent">
+            Real Results
+          </span>
+        </h1>
+
+        <p className="mt-4 max-w-[590px] text-[15px] leading-[1.55] text-slate-600 sm:text-base lg:text-lg xl:text-xl">
+          Experience the power of AI Workforce with a low-risk,
+          high-impact pilot. Test, learn, and scale with confidence.
+        </p>
+
+        {/* Benefits */}
+        <div
+          className="
+            mt-5 grid grid-cols-1 gap-3
+            min-[480px]:grid-cols-2 lg:mt-6 lg:grid-cols-3 lg:gap-4
+            [&>*]:min-w-0
+          "
+        >
+          <Benefit
+            icon={<Bolt />}
+            title="Quick Setup"
+            text="Get started in days"
+          />
+
+          <Benefit
+            icon={<Chart />}
+            title="Measurable Impact"
+            text="Track real results"
+          />
+
+          <Benefit
+            icon={<Shield />}
+            title="Low Risk"
+            text="High value, minimal commitment"
+          />
+        </div>
+
+        {/* CTA */}
+        <div className="mt-5 flex flex-wrap items-center gap-4 lg:mt-6">
+          <a
+            href="#pilot-form"
+            className="
+              inline-flex min-h-12 items-center justify-center gap-3
+              rounded-2xl bg-gradient-to-r from-cyan-500 to-violet-600
+              px-6 py-3 text-sm font-bold text-white
+              shadow-lg shadow-blue-200
+              transition hover:-translate-y-1 hover:shadow-xl
+              focus-visible:outline-2 focus-visible:outline-offset-4
+              focus-visible:outline-blue-600
+            "
+          >
+            Start Your Pilot
+            <ArrowRight />
+          </a>
+
+          {/* Keep your existing video click handler here. */}
+          <button
+            type="button"
+            className="group flex items-center gap-3 text-left"
+          >
+            <span className="flex size-11 shrink-0 items-center justify-center rounded-full border-2 border-blue-500 bg-white text-blue-600 transition group-hover:bg-blue-50">
+              <Play />
+            </span>
+
+            <span>
+              <span className="block text-sm font-extrabold text-[#14234f] sm:text-base">
+                Watch How It Works
+              </span>
+              <span className="block text-sm leading-6 text-slate-500 sm:text-base">
+                2 min video
+              </span>
+            </span>
+          </button>
+        </div>
+
+        {/* Stats */}
+        {/* <div className="mt-5 grid grid-cols-1 gap-3 min-[420px]:grid-cols-3 lg:mt-6 lg:gap-3">
+          {[
+            ["10x", "Faster Execution"],
+            ["70%", "Cost Optimization"],
+            ["100+", "Businesses Trust Us"],
+          ].map(([number, label]) => (
+            <div
+              key={number}
+              className="
+                min-w-0 rounded-2xl border border-blue-100
+                bg-white/80 px-2 py-3
+                shadow-[0_8px_30px_rgba(25,80,160,0.06)]
+                backdrop-blur sm:px-4
+              "
+            >
+              <div className="text-lg font-black text-blue-600 sm:text-xl">
+                {number}
+              </div>
+              <div className="mt-1 text-sm leading-snug text-slate-500 sm:text-base">
+                {label}
+              </div>
+            </div>
+          ))}
+        </div> */}
+      </div>
+    </div>
+
+    {/* Image: constrained to its grid cell at every screen size */}
+    <div className="relative min-h-0 min-w-0 overflow-hidden">
+      <div
+        aria-hidden="true"
+        className="
+          pointer-events-none absolute inset-[15%]
+          rounded-full bg-blue-200/40 blur-3xl
+        "
+      />
+
+      <img
+        src="/pilot-page-hero-img.png"
+        alt="AI Workforce pilot"
+        className="
+          absolute inset-0 z-10 block h-full w-full
+          object-contain object-bottom
+          lg:object-center
+        "
+        fetchPriority="high"
+        decoding="async"
+      />
+
+      <div
+        aria-hidden="true"
+        className="
+          pointer-events-none absolute inset-y-0 left-0 z-20
+          hidden w-[10%]
+          bg-gradient-to-r from-white via-white/70 to-transparent
+          lg:block
+        "
+      />
+    </div>
+  </div>
+</section>
+ {/* =====================================================
+          WHY START A PILOT + FORM
+      ===================================================== */}
+
+   <section
+  id="why-us"
+  className="relative px-4 py-12 sm:px-8 sm:py-16 lg:px-12 lg:py-20"
+>
+  <div
+    className="
+      mx-auto grid w-full max-w-[1320px]
+      grid-cols-1 items-center gap-10
+      lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)]
+      lg:gap-12 xl:gap-16
+    "
+  >
+    {/* Form */}
+    <div
+      id="pilot-form"
+      className="
+        relative isolate w-full min-w-0 scroll-mt-24
+        rounded-[26px]
+        bg-gradient-to-br from-cyan-400 via-blue-500 to-violet-600
+        p-[2px]
+        shadow-[0_20px_65px_-15px_rgba(37,99,235,0.3)]
+      "
+    >
+      <div
+        aria-hidden="true"
+        className="
+          pointer-events-none absolute inset-0 -z-10
+          rounded-[26px] bg-gradient-to-br
+          from-cyan-300/25 to-violet-400/25 blur-xl
+        "
+      />
+
+      <div className="relative overflow-hidden rounded-[24px] bg-white">
+        {/* Form header */}
+        <div className="border-b border-blue-100 bg-gradient-to-br from-blue-50 via-white to-violet-50 px-5 py-6 sm:px-7 sm:py-7">
+          <span className="mb-3 inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-3 py-1.5 text-sm font-extrabold uppercase tracking-[0.12em] text-blue-700 sm:text-base sm:tracking-[0.14em]">
+            <span
+              aria-hidden="true"
+              className="size-2 rounded-full bg-blue-500"
+            />
+            Start Your Pilot
+          </span>
+
+          <h2 className="text-[26px] font-extrabold leading-[1.16] tracking-tight text-[#10204f] sm:text-3xl lg:text-4xl">
+            Start Your AI Pilot{" "}
+            <span className="bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">
+              Today
+            </span>
+          </h2>
+
+          <p className="mt-3 text-[15px] leading-[1.5] text-slate-600 sm:text-base">
+            Fill out the form and our team will get in touch to design your
+            pilot.
+          </p>
+        </div>
+
+        {/* Form fields */}
+        <div className="p-5 sm:p-7">
+          {/* Add your existing submission handler to this form. */}
+          <form className="space-y-4">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <label className="block min-w-0">
+                <span className="mb-1.5 block text-sm font-semibold text-[#10204f]">
+                  Full Name <span className="text-blue-600">*</span>
+                </span>
+
+                <input
+                  name="fullName"
+                  type="text"
+                  autoComplete="name"
+                  required
+                  placeholder="Your full name"
+                  className="
+                    h-12 w-full min-w-0 rounded-xl border border-blue-200
+                    bg-slate-50/70 px-4 text-base text-[#10204f]
+                    outline-none transition placeholder:text-slate-400
+                    focus:border-blue-500 focus:bg-white
+                    focus:ring-4 focus:ring-blue-100
+                  "
+                />
+              </label>
+
+              <label className="block min-w-0">
+                <span className="mb-1.5 block text-sm font-semibold text-[#10204f]">
+                  Business Email <span className="text-blue-600">*</span>
+                </span>
+
+                <input
+                  name="email"
+                  type="email"
+                  autoComplete="email"
+                  required
+                  placeholder="you@company.com"
+                  className="
+                    h-12 w-full min-w-0 rounded-xl border border-blue-200
+                    bg-slate-50/70 px-4 text-base text-[#10204f]
+                    outline-none transition placeholder:text-slate-400
+                    focus:border-blue-500 focus:bg-white
+                    focus:ring-4 focus:ring-blue-100
+                  "
+                />
+              </label>
+            </div>
+
+            <label className="block">
+              <span className="mb-1.5 block text-sm font-semibold text-[#10204f]">
+                Company Name <span className="text-blue-600">*</span>
+              </span>
+
+              <input
+                name="company"
+                type="text"
+                autoComplete="organization"
+                required
+                placeholder="Your company name"
+                className="
+                  h-12 w-full min-w-0 rounded-xl border border-blue-200
+                  bg-slate-50/70 px-4 text-base text-[#10204f]
+                  outline-none transition placeholder:text-slate-400
+                  focus:border-blue-500 focus:bg-white
+                  focus:ring-4 focus:ring-blue-100
+                "
+              />
+            </label>
+
+            <label className="block">
+              <span className="mb-1.5 block text-sm font-semibold text-[#10204f]">
+                Use Case <span className="text-blue-600">*</span>
+              </span>
+
+              <div className="relative">
+                <select
+                  name="useCase"
+                  defaultValue=""
+                  required
+                  className="
+                    h-12 w-full min-w-0 appearance-none rounded-xl
+                    border border-blue-200 bg-slate-50/70
+                    pl-4 pr-11 text-base text-[#10204f]
+                    outline-none transition invalid:text-slate-400
+                    focus:border-blue-500 focus:bg-white
+                    focus:ring-4 focus:ring-blue-100
+                  "
+                >
+                  <option value="" disabled>
+                    Select your use case
+                  </option>
+                  <option>AI Automation</option>
+                  <option>Customer Support</option>
+                  <option>Sales &amp; Marketing</option>
+                  <option>Operations</option>
+                  <option>Data &amp; Analytics</option>
+                  <option>Other</option>
+                </select>
+
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="pointer-events-none absolute right-4 top-1/2 size-4 -translate-y-1/2 text-blue-600"
+                >
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </div>
+            </label>
+
+            <label className="block">
+              <span className="mb-1.5 block text-sm font-semibold text-[#10204f]">
+                Your Goals{" "}
+                <span className="font-normal text-slate-400">
+                  (optional)
+                </span>
+              </span>
+
+              <textarea
+                name="goals"
+                rows={3}
+                placeholder="What would you like to achieve with AI?"
+                className="
+                  block min-h-24 w-full resize-y rounded-xl
+                  border border-blue-200 bg-slate-50/70
+                  p-4 text-base text-[#10204f]
+                  outline-none transition placeholder:text-slate-400
+                  focus:border-blue-500 focus:bg-white
+                  focus:ring-4 focus:ring-blue-100
+                "
+              />
+            </label>
+
+            <button
+              type="submit"
+              className="
+                group flex min-h-14 w-full items-center justify-center gap-3
+                rounded-xl bg-gradient-to-r from-blue-600 to-violet-600
+                px-5 py-3 text-base font-bold text-white
+                shadow-[0_8px_24px_rgba(79,70,229,0.3)]
+                transition duration-200 hover:brightness-110
+                hover:shadow-[0_12px_30px_rgba(79,70,229,0.4)]
+                focus-visible:outline-2 focus-visible:outline-offset-4
+                focus-visible:outline-blue-600
+                motion-safe:hover:-translate-y-0.5
+              "
+            >
+              Request a Pilot
+              <span
+                aria-hidden="true"
+                className="shrink-0 transition-transform motion-safe:group-hover:translate-x-1"
+              >
+                <ArrowRight />
+              </span>
+            </button>
+          </form>
+
+          <div className="mt-5 flex items-start justify-center gap-2 text-center text-sm leading-6 text-slate-500 sm:text-base">
+            <span aria-hidden="true" className="shrink-0">
+              🔒
+            </span>
+            <span>
+              Your information is secure and will never be shared.
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* Benefits */}
+    <div className="w-full min-w-0">
+      <SectionTitle title="Why Start a Pilot?">
+        <p className="mt-3 max-w-[560px] text-[15px] leading-[1.55] text-slate-500 sm:text-base lg:text-lg">
+          A simple way to experience real value before you scale.
+        </p>
+      </SectionTitle>
+
+      <div
+        className="
+          mt-6 grid grid-cols-1 gap-4
+          sm:grid-cols-2 lg:mt-8 xl:gap-5
+          [&>*]:h-full [&>*]:min-w-0
+        "
+      >
+        <ValueCard
+          icon={<Target />}
+          title="Validate Real Impact"
+          text="See tangible results in your environment."
+        />
+
+        <ValueCard
+          icon={<Bulb />}
+          title="Discover New Opportunities"
+          text="Uncover AI use cases unique to your business."
+        />
+
+        <ValueCard
+          icon={<Users />}
+          title="Build Team Confidence"
+          text="Get your people comfortable with AI."
+        />
+
+        <ValueCard
+          icon={<Chart />}
+          title="Create a Scalable Roadmap"
+          text="Turn pilot success into long-term growth."
+        />
+      </div>
+    </div>
+  </div>
+</section>
       {/* =====================================================
           HOW IT WORKS
       ===================================================== */}
@@ -391,7 +723,7 @@ export default function PilotPage() {
       <section id="solutions" className="relative px-5 pb-16 sm:px-8 lg:px-12">
         <div className="mx-auto max-w-[1320px] rounded-[24px] border border-blue-100 bg-white p-6 shadow-[0_15px_50px_rgba(32,83,150,0.07)] sm:p-8 lg:p-9">
           <SectionTitle title="How It Works">
-            <p className="mt-2 text-sm text-slate-500 sm:text-base">
+            <p className="mt-2 text-[15px] leading-[1.5] text-slate-500 sm:text-base lg:text-lg">
               From pilot to impact — in just a few simple steps.
             </p>
           </SectionTitle>
@@ -446,119 +778,7 @@ export default function PilotPage() {
         </div>
       </section>
 
-      {/* =====================================================
-          WHY START A PILOT + FORM
-      ===================================================== */}
-
-      <section id="why-us" className="px-5 pb-16 sm:px-8 lg:px-12">
-        <div className="mx-auto grid max-w-[1320px] gap-8 lg:grid-cols-[1.6fr_1fr]">
-          {/* Left */}
-          <div>
-            <SectionTitle title="Why Start a Pilot?">
-              <p className="mt-2 text-sm text-slate-500 sm:text-base">
-                A simple way to experience real value before you scale.
-              </p>
-            </SectionTitle>
-
-            <div className="mt-7 grid gap-4 sm:grid-cols-2">
-              <ValueCard
-                icon={<Target />}
-                title="Validate Real Impact"
-                text="See tangible results in your environment."
-              />
-
-              <ValueCard
-                icon={<Bulb />}
-                title="Discover New Opportunities"
-                text="Uncover AI use cases unique to your business."
-              />
-
-              <ValueCard
-                icon={<Users />}
-                title="Build Team Confidence"
-                text="Get your people comfortable with AI."
-              />
-
-              <ValueCard
-                icon={<Chart />}
-                title="Create a Scalable Roadmap"
-                text="Turn pilot success into long-term growth."
-              />
-            </div>
-          </div>
-
-          {/* Form */}
-          <div
-            id="pilot-form"
-            className="rounded-[22px] border border-blue-100 bg-white p-6 shadow-[0_15px_50px_rgba(32,83,150,0.1)] sm:p-7"
-          >
-            <h2 className="text-2xl font-extrabold tracking-tight text-[#10204f]">
-              Start Your AI Pilot Today
-            </h2>
-
-            <p className="mt-2 text-sm leading-5 text-slate-500">
-              Fill out the form and our team will get in touch to design your
-              pilot.
-            </p>
-
-            <form className="mt-6 space-y-3">
-              <div className="grid gap-3 sm:grid-cols-2">
-                <input
-                  type="text"
-                  placeholder="Full Name*"
-                  className="h-12 w-full rounded-xl border border-blue-100 bg-white px-4 text-sm text-[#10204f] outline-none transition placeholder:text-slate-400 focus:border-blue-400 focus:ring-4 focus:ring-blue-50"
-                />
-
-                <input
-                  type="email"
-                  placeholder="Business Email*"
-                  className="h-12 w-full rounded-xl border border-blue-100 bg-white px-4 text-sm text-[#10204f] outline-none transition placeholder:text-slate-400 focus:border-blue-400 focus:ring-4 focus:ring-blue-50"
-                />
-              </div>
-
-              <input
-                type="text"
-                placeholder="Company Name*"
-                className="h-12 w-full rounded-xl border border-blue-100 bg-white px-4 text-sm text-[#10204f] outline-none transition placeholder:text-slate-400 focus:border-blue-400 focus:ring-4 focus:ring-blue-50"
-              />
-
-              <select
-                defaultValue=""
-                className="h-12 w-full appearance-none rounded-xl border border-blue-100 bg-white px-4 text-sm text-slate-500 outline-none transition focus:border-blue-400 focus:ring-4 focus:ring-blue-50"
-              >
-                <option value="" disabled>
-                  Select Use Case*
-                </option>
-                <option>AI Automation</option>
-                <option>Customer Support</option>
-                <option>Sales & Marketing</option>
-                <option>Operations</option>
-                <option>Data & Analytics</option>
-                <option>Other</option>
-              </select>
-
-              <textarea
-                rows={3}
-                placeholder="Tell us about your goals"
-                className="w-full resize-none rounded-xl border border-blue-100 bg-white p-4 text-sm text-[#10204f] outline-none transition placeholder:text-slate-400 focus:border-blue-400 focus:ring-4 focus:ring-blue-50"
-              />
-
-              <button
-                type="submit"
-                className="flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 to-violet-600 text-sm font-bold text-white shadow-lg shadow-blue-100 transition hover:-translate-y-0.5 hover:shadow-xl"
-              >
-                Request a Pilot
-                <ArrowRight />
-              </button>
-            </form>
-
-            <div className="mt-4 flex items-center justify-center gap-2 text-[11px] text-slate-400">
-              <span>🔒</span>
-              Your information is secure and will never be shared.
-            </div>
-          </div>
-        </div>
-      </section>
+     
 
       {/* =====================================================
           TRUSTED COMPANIES
@@ -566,11 +786,11 @@ export default function PilotPage() {
 
       <section id="resources" className="px-5 pb-16 sm:px-8 lg:px-12">
         <div className="mx-auto max-w-[1320px]">
-          <div className="mb-7 text-center text-[10px] font-semibold uppercase tracking-[0.3em] text-slate-400">
+          <div className="mb-7 text-center text-sm font-extrabold uppercase tracking-[0.22em] text-slate-400 sm:text-base sm:tracking-[0.3em]">
             Trusted by forward-thinking companies
           </div>
 
-          <div className="grid grid-cols-2 items-center gap-7 text-center sm:grid-cols-4 lg:grid-cols-7">
+          <div className="grid grid-cols-2 items-center gap-6 text-center sm:grid-cols-3 sm:gap-7 md:grid-cols-4 lg:grid-cols-7">
             {[
               "Microsoft",
               "Google",
@@ -582,7 +802,7 @@ export default function PilotPage() {
             ].map((company) => (
               <div
                 key={company}
-                className="text-xl font-bold tracking-tight text-slate-400 transition hover:text-slate-600 sm:text-2xl"
+                className="text-base font-bold tracking-tight text-slate-400 transition hover:text-slate-600 sm:text-xl lg:text-2xl"
               >
                 {company}
               </div>
@@ -622,25 +842,25 @@ export default function PilotPage() {
     {/* CONTENT */}
     <div className="relative z-10 mx-auto max-w-[800px]">
       
-      <div className="mb-3 text-[9px] font-semibold uppercase tracking-[0.25em] text-slate-500 sm:text-[10px] sm:tracking-[0.32em]">
+      <div className="mb-3 text-sm font-extrabold uppercase tracking-[0.2em] text-slate-500 sm:text-base sm:tracking-[0.3em]">
         Small steps. Bigger futures.
       </div>
 
-      <h2 className="text-3xl font-black tracking-tight text-[#10204f] sm:text-4xl md:text-5xl">
+      <h2 className="text-[28px] font-black leading-[1.12] tracking-tight text-[#10204f] sm:text-4xl md:text-5xl lg:text-6xl">
         Start Your{" "}
         <span className="bg-gradient-to-r from-cyan-500 via-blue-600 to-violet-600 bg-clip-text text-transparent">
           Pilot Today
         </span>
       </h2>
 
-      <p className="mx-auto mt-3 max-w-[650px] text-xs leading-6 text-slate-500 sm:mt-4 sm:text-sm md:text-base">
+      <p className="mx-auto mt-3 max-w-[650px] text-[15px] leading-[1.55] text-slate-500 sm:mt-4 sm:text-base lg:text-lg">
         Test the possibilities. Unlock real value. Build your AI-powered
         future.
       </p>
 
       <a
         href="#pilot-form"
-        className="mt-6 inline-flex h-11 items-center gap-2 rounded-full bg-gradient-to-r from-cyan-500 to-violet-600 px-7 text-xs font-bold text-white shadow-xl shadow-blue-200 transition hover:-translate-y-1 hover:shadow-2xl sm:mt-7 sm:h-12 sm:px-8 sm:text-sm"
+        className="mt-6 inline-flex min-h-12 items-center gap-2 rounded-full bg-gradient-to-r from-cyan-500 to-violet-600 px-7 py-3 text-sm font-bold text-white shadow-xl shadow-blue-200 transition hover:-translate-y-1 hover:shadow-2xl sm:mt-7 sm:px-8 sm:text-base"
       >
         Get Started
         <ArrowRight />

@@ -241,6 +241,7 @@ function PrimaryButton({
         py-3
         text-sm
         font-bold
+        sm:text-base
         text-white
         shadow-[0_12px_30px_rgba(92,43,234,0.20)]
         transition-all
@@ -289,6 +290,7 @@ function SecondaryButton({
         py-3
         text-sm
         font-bold
+        sm:text-base
         text-brand-dark
         backdrop-blur
         transition-all
@@ -368,7 +370,7 @@ function SolutionsSection() {
         <div className="mx-auto max-w-[900px] text-center">
           <p
             className="
-              text-[10px]
+              text-sm
               font-bold
               uppercase
               tracking-[0.3em]
@@ -504,7 +506,7 @@ function SolutionsSection() {
                 <p
                   className="
                     mt-3
-                    text-[12px]
+                    text-sm
                     leading-5
                     text-slate-600
                   "
@@ -548,7 +550,7 @@ function ProcessSection() {
         <div className="mx-auto max-w-[800px] text-center">
           <p
             className="
-              text-[10px]
+              text-sm
               font-bold
               uppercase
               tracking-[0.3em]
@@ -657,7 +659,7 @@ function ProcessSection() {
                 <p
                   className="
                     mt-3
-                    text-[10px]
+                    text-sm
                     font-bold
                     text-brand-dark
                   "
@@ -682,7 +684,7 @@ function ProcessSection() {
                     mx-auto
                     mt-3
                     max-w-[190px]
-                    text-[11px]
+                    text-sm
                     leading-5
                     text-slate-600
                     sm:text-xs
@@ -729,7 +731,7 @@ function ResultsSection() {
           <div>
             <p
               className="
-                text-[10px]
+                text-sm
                 font-bold
                 uppercase
                 tracking-[0.3em]
@@ -828,7 +830,7 @@ function ResultsSection() {
                     <p
                       className="
                         mt-1
-                        text-[10px]
+                        text-sm
                         leading-4
                         text-slate-600
                         sm:text-xs
@@ -947,12 +949,12 @@ function ResultsSection() {
                       <div className="flex items-center gap-1.5">
                         <Icon size={12} />
 
-                        <p className="truncate text-[10px] font-bold">
+                        <p className="truncate text-sm font-bold">
                           {item.title}
                         </p>
                       </div>
 
-                      <p className="mt-0.5 text-[9px] text-white/70">
+                      <p className="mt-0.5 text-sm text-white/70">
                         {item.subtitle}
                       </p>
                     </div>
@@ -1061,7 +1063,7 @@ function ResultsSection() {
                   />
                 </div>
 
-                <p className="text-[10px] font-extrabold leading-4 sm:text-xs">
+                <p className="text-base font-extrabold leading-4 sm:text-xs">
                   Great Content
                   <br />
                   Builds Great Brands
@@ -1177,11 +1179,11 @@ function ResultsSection() {
                 a significant increase in leads and revenue.”
               </p>
 
-              <p className="mt-2 text-xs font-extrabold text-brand-dark">
+              <p className="mt-2 text-base font-extrabold text-brand-dark sm:text-lg">
                 Rohit Sharma
               </p>
 
-              <p className="text-[10px] text-slate-500">
+              <p className="text-sm text-slate-500 sm:text-base">
                 Marketing Head, GrowthTech
               </p>
             </div>
@@ -1220,11 +1222,11 @@ function ResultsSection() {
                 />
               </div>
 
-              <p className="mt-2 text-xl font-extrabold text-brand-purple sm:text-2xl">
+              <p className="mt-2 text-2xl font-extrabold text-brand-purple sm:text-3xl">
                 3x
               </p>
 
-              <p className="text-[9px] leading-4 text-slate-500 sm:text-[10px]">
+              <p className="text-sm leading-[1.4] text-slate-500 sm:text-base">
                 Faster Publishing
               </p>
             </div>
@@ -1248,11 +1250,11 @@ function ResultsSection() {
                 />
               </div>
 
-              <p className="mt-2 text-xl font-extrabold text-brand-purple sm:text-2xl">
+              <p className="mt-2 text-2xl font-extrabold text-brand-purple sm:text-3xl">
                 60%
               </p>
 
-              <p className="text-[9px] leading-4 text-slate-500 sm:text-[10px]">
+              <p className="text-sm leading-[1.4] text-slate-500 sm:text-base">
                 More Engagement
               </p>
             </div>
@@ -1276,11 +1278,11 @@ function ResultsSection() {
                 />
               </div>
 
-              <p className="mt-2 text-xl font-extrabold text-brand-purple sm:text-2xl">
+              <p className="mt-2 text-2xl font-extrabold text-brand-purple sm:text-3xl">
                 2x
               </p>
 
-              <p className="text-[9px] leading-4 text-slate-500 sm:text-[10px]">
+              <p className="text-sm leading-[1.4] text-slate-500 sm:text-base">
                 More Revenue
               </p>
             </div>
@@ -1361,7 +1363,7 @@ function CTASection() {
         >
           <p
             className="
-              text-[10px]
+              text-sm
               font-bold
               uppercase
               tracking-[0.3em]
@@ -1420,6 +1422,7 @@ function CTASection() {
                 px-7
                 text-sm
                 font-extrabold
+                sm:text-base
                 text-brand-dark
                 transition-all
                 duration-300
@@ -1446,6 +1449,7 @@ function CTASection() {
                 px-7
                 text-sm
                 font-extrabold
+                sm:text-base
                 text-white
                 backdrop-blur
                 transition-all

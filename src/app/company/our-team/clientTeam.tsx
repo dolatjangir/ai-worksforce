@@ -23,6 +23,7 @@ import {
   X,
   Youtube,
 } from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
 
 /* =========================================================
@@ -353,13 +354,13 @@ export default function OurTeamPage() {
             </p>
           </div>
 
-          <a
-            href="#"
+          <Link
+            href="/our-team/all-team-members"
             className="inline-flex shrink-0 items-center gap-2 text-sm font-bold text-[var(--color-primary)] sm:text-base"
           >
             View All Team Members
             <ArrowRight className="size-4" />
-          </a>
+          </Link>
         </div>
 
         {/* Team grid */}
@@ -489,8 +490,8 @@ export default function OurTeamPage() {
           {/* Person */}
 
           <img
-            src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Neha Patel"
+            src="/management-team/data-analyst-testimonial1.jpeg"
+            alt="Ankita Soni"
             className="size-20 rounded-full border-4 border-white object-cover shadow-md sm:size-24"
           />
 
@@ -509,11 +510,11 @@ export default function OurTeamPage() {
 
             <div className="mt-3">
               <p className="text-sm font-bold text-[var(--color-heading)] sm:text-base">
-                Neha Patel
+                Ankita Soni
               </p>
 
               <p className="text-xs text-[var(--color-text-muted)] sm:text-sm">
-                Data Scientist
+                Data Analyst
               </p>
             </div>
           </div>

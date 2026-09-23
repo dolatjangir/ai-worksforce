@@ -257,7 +257,7 @@ export default function AICreativeVideoPage() {
   ];
 
   const button =
-    "inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-6 text-[12px] font-bold transition duration-200 hover:-translate-y-0.5";
+    "inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-6 text-sm font-bold sm:text-base transition duration-200 hover:-translate-y-0.5";
 
   return (
     <div className="overflow-x-hidden bg-white font-sans text-brand-dark">
@@ -299,13 +299,13 @@ export default function AICreativeVideoPage() {
 />
 
         <section className="mx-auto max-w-[1240px] px-5 pt-5">
-          <p className="text-center text-[9px] font-bold tracking-[0.28em] text-brand-purple">
+          <p className="text-center text-sm font-bold tracking-[0.2em] sm:text-base sm:tracking-[0.24em] text-brand-purple">
             COMPLETE AI CREATIVE & VIDEO SOLUTIONS
           </p>
-          <h2 className="mt-1 text-center text-[25px] leading-tight font-bold tracking-[-1px] sm:text-[29px]">
+          <h2 className="mt-1 text-center text-3xl leading-[1.15] font-bold tracking-tight sm:text-4xl lg:text-[40px]">
             Everything You Need for High-Impact Visual Content
           </h2>
-          <p className="mt-1 text-center text-[14px] text-brand-text">
+          <p className="mt-1 text-center text-base text-brand-text">
             From concept to final cut, our AI-powered creative solutions cover it all.
           </p>
 
@@ -316,8 +316,8 @@ export default function AICreativeVideoPage() {
                 className="rounded-[13px] bg-[linear-gradient(135deg,#fafbff,#f7f8ff)] px-3 py-4 text-center"
               >
                 <IconBubble icon={item.icon} tone={item.tone} />
-                <h3 className="mt-3 text-[13px] leading-[1.25] font-bold">{item.title}</h3>
-                <p className="mt-2 text-[12px] leading-[1.45] text-brand-text">{item.text}</p>
+                <h3 className="mt-3 text-base leading-[1.3] font-bold sm:text-lg">{item.title}</h3>
+                <p className="mt-2 text-sm leading-[1.5] sm:text-base text-brand-text">{item.text}</p>
               </article>
             ))}
           </div>
@@ -325,13 +325,13 @@ export default function AICreativeVideoPage() {
 
         <section id="how-it-works" className="mx-auto mt-4 max-w-[1240px] px-5">
           <div className="rounded-[14px] bg-[linear-gradient(135deg,#fafcff,#f5f7ff)] px-4 py-3">
-            <p className="text-center text-[9px] font-bold tracking-[0.28em] text-brand-purple">
+            <p className="text-center text-sm font-bold tracking-[0.2em] sm:text-base sm:tracking-[0.24em] text-brand-purple">
               HOW IT WORKS
             </p>
-            <h2 className="mt-1 text-center text-[26px] leading-tight font-bold tracking-[-0.8px]">
+            <h2 className="mt-1 text-center text-3xl leading-[1.15] font-bold tracking-tight sm:text-4xl lg:text-[40px]">
               From Idea to Impact
             </h2>
-            <p className="mt-1 text-center text-[14px] text-brand-text">
+            <p className="mt-1 text-center text-base text-brand-text">
               A simple, streamlined process to create stunning visuals and videos with AI.
             </p>
 
@@ -344,9 +344,9 @@ export default function AICreativeVideoPage() {
                       →
                     </span>
                   )}
-                  <p className="mt-1.5 text-[12px] font-bold">{item.number}</p>
-                  <h3 className="text-[13px] font-bold">{item.title}</h3>
-                  <p className="mt-1 text-[12px] leading-[1.4] text-brand-text">{item.text}</p>
+                  <p className="mt-1.5 text-sm font-bold">{item.number}</p>
+                  <h3 className="text-base font-bold">{item.title}</h3>
+                  <p className="mt-1 text-sm leading-[1.5] sm:text-base text-brand-text">{item.text}</p>
                 </article>
               ))}
             </div>
@@ -354,9 +354,9 @@ export default function AICreativeVideoPage() {
         </section>
 
         <section className="mx-auto mt-3 max-w-[1240px] px-5">
-          <p className="text-[9px] font-bold tracking-[0.28em] text-brand-purple">OUR AI CREATIVE WORK</p>
-          <h2 className="mt-1 text-[25px] leading-tight font-bold">Real Content, Real Results.</h2>
-          <p className="mt-1 text-[13px] text-brand-text">
+          <p className="text-sm font-bold tracking-[0.2em] sm:text-base sm:tracking-[0.24em] text-brand-purple">OUR AI CREATIVE WORK</p>
+          <h2 className="mt-1 text-3xl leading-[1.15] font-bold sm:text-4xl lg:text-[40px]">Real Content, Real Results.</h2>
+          <p className="mt-1 text-base text-brand-text">
             Stunning visuals and videos created with AI for real businesses.
           </p>
 
@@ -374,7 +374,7 @@ export default function AICreativeVideoPage() {
                 className={`relative flex h-[95px] items-start overflow-hidden rounded-lg p-3 text-[15px] leading-[0.9] font-bold text-white ${background}`}
               >
                 <span className="max-w-[88px]">{title}</span>
-                <span className="absolute bottom-2 left-1/2 grid size-8 -translate-x-1/2 place-items-center rounded-full border border-white text-[10px]">
+                <span className="absolute bottom-2 left-1/2 grid size-8 -translate-x-1/2 place-items-center rounded-full border border-white text-sm">
                   ▶
                 </span>
               </article>
@@ -384,11 +384,11 @@ export default function AICreativeVideoPage() {
 
         <section className="mx-auto mt-3 grid max-w-[1240px] gap-4 px-5 lg:grid-cols-2">
           <div>
-            <p className="text-[9px] font-bold tracking-[0.28em] text-brand-purple">
+            <p className="text-sm font-bold tracking-[0.2em] sm:text-base sm:tracking-[0.24em] text-brand-purple">
               REAL RESULTS. REAL BUSINESSES.
             </p>
-            <h2 className="mt-1 text-[25px] leading-tight font-bold">Creative Success with AI</h2>
-            <p className="mt-1 text-[13px] leading-[1.4] text-brand-text">
+            <h2 className="mt-1 text-3xl leading-[1.15] font-bold sm:text-4xl lg:text-[40px]">Creative Success with AI</h2>
+            <p className="mt-1 text-base leading-[1.4] text-brand-text">
               See how businesses like yours are getting better engagement, more conversions, and higher ROI.
             </p>
 
@@ -401,8 +401,8 @@ export default function AICreativeVideoPage() {
               ].map(([icon, value, label, tone]) => (
                 <div key={label} className="rounded-xl bg-[#fafbff] p-3 text-center">
                   <IconBubble icon={icon as IconName} tone={tone} small />
-                  <p className="mt-1.5 text-[23px] leading-none font-bold">{value}</p>
-                  <p className="mt-1 text-[10px] leading-tight text-brand-text">{label}</p>
+                  <p className="mt-1.5 text-2xl leading-none font-bold sm:text-3xl">{value}</p>
+                  <p className="mt-1 text-sm leading-tight text-brand-text">{label}</p>
                 </div>
               ))}
             </div>
@@ -411,7 +411,7 @@ export default function AICreativeVideoPage() {
           <article className="flex flex-col gap-5 rounded-[15px] bg-[#f8f9ff] p-5 sm:flex-row sm:items-center">
             <div className="relative h-[145px] w-full overflow-hidden rounded-xl bg-[#090d28] sm:w-[155px]">
               <img src={assets.fitness} alt="Fitness campaign" className="h-full w-full object-cover opacity-75" />
-              <span className="absolute top-4 left-3 text-[18px] leading-none font-bold text-white">
+              <span className="absolute top-4 left-3 text-xl leading-none font-bold sm:text-2xl text-white">
                 FITNESS
                 <br />
                 REDEFINED
@@ -422,13 +422,13 @@ export default function AICreativeVideoPage() {
             </div>
 
             <div>
-              <span className="rounded-full bg-violet-100 px-2 py-1 text-[8px] font-bold tracking-wider text-brand-purple">
+              <span className="rounded-full bg-violet-100 px-2 py-1 text-xs font-bold tracking-wider sm:text-sm text-brand-purple">
                 CASE STUDY
               </span>
               <h3 className="mt-2 text-[16px] leading-tight font-bold">
                 Fitness Brand: 4x Sales with AI Video Ads
               </h3>
-              <p className="mt-2 text-[11px] leading-[1.4] text-brand-text">
+              <p className="mt-2 text-sm leading-[1.5] sm:text-base text-brand-text">
                 With our AI creative and video strategy, this fitness brand launched high-converting video ads,
                 increased engagement by 312%, and achieved 4x more sales in just 2 months.
               </p>
@@ -439,8 +439,8 @@ export default function AICreativeVideoPage() {
                   ["70%", "Less Production Time"],
                 ].map(([value, label]) => (
                   <div key={label}>
-                    <p className="text-[20px] leading-none font-bold text-brand-purple">{value}</p>
-                    <p className="mt-1 text-[9px] text-brand-text">{label}</p>
+                    <p className="text-xl leading-none font-bold sm:text-2xl text-brand-purple">{value}</p>
+                    <p className="mt-1 text-sm text-brand-text">{label}</p>
                   </div>
                 ))}
               </div>
@@ -457,15 +457,15 @@ export default function AICreativeVideoPage() {
             />
 
             <div className="flex-1">
-              <span className="grid size-8 place-items-center rounded-full bg-white text-[31px] leading-none font-bold text-brand-purple">
+              <span className="grid size-8 place-items-center rounded-full bg-white text-3xl leading-none font-bold sm:text-4xl text-brand-purple">
                 “
               </span>
-              <p className="mt-1 text-[12px] leading-[1.45] text-brand-text">
+              <p className="mt-1 text-sm leading-[1.5] sm:text-base text-brand-text">
                 “AI WorksForce completely transformed our creative process. We now produce high-quality
                 videos and ad creatives in a fraction of the time — and the results have never been better.”
               </p>
-              <p className="mt-2 text-[11px] font-bold">Karan Mehta</p>
-              <p className="text-[10px] text-brand-text">Marketing Director, FitLife (Fitness Brand)</p>
+              <p className="mt-2 text-sm font-bold">Karan Mehta</p>
+              <p className="text-sm text-brand-text">Marketing Director, FitLife (Fitness Brand)</p>
             </div>
 
             <div className="grid w-full grid-cols-3 divide-x divide-indigo-100 lg:w-[390px]">
@@ -476,8 +476,8 @@ export default function AICreativeVideoPage() {
               ].map(([icon, value, label, tone]) => (
                 <div key={label} className="px-2 text-center">
                   <IconBubble icon={icon as IconName} tone={tone} small />
-                  <p className="mt-1.5 text-[23px] leading-none font-bold">{value}</p>
-                  <p className="mt-1 text-[10px] text-brand-text">{label}</p>
+                  <p className="mt-1.5 text-2xl leading-none font-bold sm:text-3xl">{value}</p>
+                  <p className="mt-1 text-sm text-brand-text">{label}</p>
                 </div>
               ))}
             </div>
@@ -489,9 +489,9 @@ export default function AICreativeVideoPage() {
           className="relative isolate mx-1 mt-3 overflow-hidden rounded-[14px] bg-[linear-gradient(110deg,#07154d,#0c1772_55%,#2836e4)] px-5 py-5 text-center text-white"
         >
           <div className="absolute inset-0 -z-10 opacity-30 [background-image:repeating-radial-gradient(ellipse_at_0%_120%,transparent_0_10px,#7180ff_11px_12px)]" />
-          <p className="text-[9px] tracking-[0.27em]">READY TO CREATE STUNNING CONTENT?</p>
-          <h2 className="mt-2 text-[25px] leading-tight font-semibold">Let’s Bring Your Ideas to Life with AI</h2>
-          <p className="mt-1 text-[12px]">
+          <p className="text-sm tracking-[0.2em] sm:text-base sm:tracking-[0.24em]">READY TO CREATE STUNNING CONTENT?</p>
+          <h2 className="mt-2 text-3xl leading-[1.15] font-semibold sm:text-4xl lg:text-[40px]">Let’s Bring Your Ideas to Life with AI</h2>
+          <p className="mt-1 text-sm">
             Get a custom AI creative & video strategy tailored to your business goals.
           </p>
           <div className="mt-3 flex flex-wrap justify-center gap-3">

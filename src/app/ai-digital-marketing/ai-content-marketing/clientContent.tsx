@@ -239,9 +239,9 @@ function PrimaryButton({
         bg-brand-purple
         px-6
         py-3
-        text-sm
+        text-base
         font-bold
-        sm:text-base
+        sm:text-lg
         text-white
         shadow-[0_12px_30px_rgba(92,43,234,0.20)]
         transition-all
@@ -288,9 +288,9 @@ function SecondaryButton({
         bg-white/80
         px-6
         py-3
-        text-sm
+        text-base
         font-bold
-        sm:text-base
+        sm:text-lg
         text-brand-dark
         backdrop-blur
         transition-all
@@ -305,47 +305,45 @@ function SecondaryButton({
   );
 }
 
-
-
 /* =========================================================
    HERO
 ========================================================= */
 
 function Hero() {
   return (
-   <DigitalMarketingHero
-  eyebrow="CONTENT THAT WORKS SMARTER"
-  title="AI Content"
-  highlightedTitle="Marketing"
-  subtitle="Create. Optimize. Engage. Grow."
-  description="Leverage AI to plan, create, optimize, and distribute high-quality content at scale. From blogs and social media to emails and landing pages — we help you tell your brand story, drive engagement, and generate real business results."
-  imageSrc="/digital-marketing/ai-content-marketing-hero.png"
-  imageAlt="Content marketing professional using AI"
-  primaryLabel="Book a Free Consultation"
-  primaryHref="#contact"
-  secondaryLabel="See It in Action"
-  secondaryHref="#process"
-  metrics={[
-    {
-      value: "3x",
-      label: "More Content Output",
-      icon: "file-text",
-      tone: "purple",
-    },
-    {
-      value: "60%",
-      label: "Lower Content Costs",
-      icon: "zap",
-      tone: "green",
-    },
-    {
-      value: "5x",
-      label: "Higher Engagement",
-      icon: "chart",
-      tone: "orange",
-    },
-  ]}
-/>
+    <DigitalMarketingHero
+      eyebrow="CONTENT THAT WORKS SMARTER"
+      title="AI Content"
+      highlightedTitle="Marketing"
+      subtitle="Create. Optimize. Engage. Grow."
+      description="Leverage AI to plan, create, optimize, and distribute high-quality content at scale. From blogs and social media to emails and landing pages — we help you tell your brand story, drive engagement, and generate real business results."
+      imageSrc="/digital-marketing/ai-content-marketing-hero.png"
+      imageAlt="Content marketing professional using AI"
+      primaryLabel="Book a Free Consultation"
+      primaryHref="#contact"
+      secondaryLabel="See It in Action"
+      secondaryHref="#process"
+      metrics={[
+        {
+          value: "3x",
+          label: "More Content Output",
+          icon: "file-text",
+          tone: "purple",
+        },
+        {
+          value: "60%",
+          label: "Lower Content Costs",
+          icon: "zap",
+          tone: "green",
+        },
+        {
+          value: "5x",
+          label: "Higher Engagement",
+          icon: "chart",
+          tone: "orange",
+        },
+      ]}
+    />
   );
 }
 
@@ -355,7 +353,7 @@ function Hero() {
 
 function SolutionsSection() {
   return (
-    <section className="bg-white py-16 sm:py-10">
+    <section className="bg-white py-8">
       <div
         className="
           mx-auto
@@ -373,9 +371,9 @@ function SolutionsSection() {
               text-sm
               font-bold
               uppercase
-              tracking-[0.3em]
+              tracking-widest
               text-brand-purple
-              sm:text-xs
+              sm:text-base
             "
           >
             Complete AI Content Marketing Solutions
@@ -399,13 +397,13 @@ function SolutionsSection() {
           <p
             className="
               mx-auto
-              mt-3
+              mt-4
               max-w-[820px]
-              text-sm
-              leading-6
-              text-slate-600
-              sm:text-base
-              sm:leading-7
+              text-base
+              leading-relaxed
+              text-slate-700
+              sm:text-lg
+              md:text-xl
             "
           >
             Everything you need to plan, create, optimize, and distribute
@@ -416,9 +414,9 @@ function SolutionsSection() {
         {/* Cards */}
         <div
           className="
-            mt-11
+            mt-4
             grid
-            gap-4
+            gap-6
             sm:grid-cols-2
             lg:grid-cols-3
             xl:grid-cols-6
@@ -448,15 +446,15 @@ function SolutionsSection() {
                 }}
                 className="
                   group
-                  min-h-[205px]
+                  min-h-[220px]
                   rounded-xl
                   border
                   border-brand-blue/10
                   bg-gradient-to-b
                   from-brand-blue-50/45
                   to-white
-                  px-5
-                  py-7
+                  px-3
+                  py-4
                   text-center
                   shadow-[0_8px_30px_rgba(24,74,140,0.035)]
                   transition-all
@@ -491,13 +489,14 @@ function SolutionsSection() {
                 <h3
                   className="
                     mt-5
-                    min-h-[42px]
+                    min-h-[48px]
                     whitespace-pre-line
-                    text-sm
+                    text-base
                     font-extrabold
-                    leading-5
+                    leading-snug
                     text-brand-dark
-                    sm:text-[15px]
+                    sm:text-lg
+                    xl:text-xl
                   "
                 >
                   {solution.title}
@@ -506,9 +505,9 @@ function SolutionsSection() {
                 <p
                   className="
                     mt-3
-                    text-sm
-                    leading-5
-                    text-slate-600
+                    text-base
+                    leading-relaxed
+                    text-slate-700
                   "
                 >
                   {solution.description}
@@ -530,7 +529,7 @@ function ProcessSection() {
   return (
     <section
       id="process"
-      className="bg-white pb-10"
+      className="bg-white pb-8"
     >
       <div
         className="
@@ -539,11 +538,11 @@ function ProcessSection() {
           rounded-2xl
           bg-gradient-section
           px-5
-          py-10
+          py-12
           sm:px-8
-          sm:py-12
+          sm:py-16
           lg:px-10
-          lg:py-14
+          lg:py-20
         "
       >
         {/* Heading */}
@@ -553,8 +552,9 @@ function ProcessSection() {
               text-sm
               font-bold
               uppercase
-              tracking-[0.3em]
+              tracking-widest
               text-brand-purple
+              sm:text-base
             "
           >
             How It Works
@@ -576,11 +576,12 @@ function ProcessSection() {
 
           <p
             className="
-              mt-3
-              text-sm
-              leading-6
-              text-slate-600
-              sm:text-base
+              mt-4
+              text-base
+              leading-relaxed
+              text-slate-700
+              sm:text-lg
+              md:text-xl
             "
           >
             A simple, streamlined process to turn your ideas into
@@ -591,9 +592,9 @@ function ProcessSection() {
         {/* Steps */}
         <div
           className="
-            mt-10
+            mt-12
             grid
-            gap-3
+            gap-4
             md:grid-cols-2
             lg:grid-cols-5
           "
@@ -610,8 +611,8 @@ function ProcessSection() {
                   border
                   border-white
                   bg-white/85
-                  px-5
-                  py-6
+                  px-3
+                  py-4
                   text-center
                   shadow-[0_8px_25px_rgba(24,74,140,0.025)]
                   backdrop-blur
@@ -622,7 +623,7 @@ function ProcessSection() {
                   <div
                     className="
                       absolute
-                      -right-4
+                      -right-5
                       top-1/2
                       z-20
                       hidden
@@ -631,7 +632,7 @@ function ProcessSection() {
                     "
                   >
                     <ArrowRight
-                      size={22}
+                      size={24}
                       strokeWidth={1.7}
                       className="text-brand-purple"
                     />
@@ -642,8 +643,8 @@ function ProcessSection() {
                   className={`
                     mx-auto
                     flex
-                    h-12
-                    w-12
+                    h-14
+                    w-14
                     items-center
                     justify-center
                     rounded-full
@@ -651,17 +652,18 @@ function ProcessSection() {
                   `}
                 >
                   <Icon
-                    size={23}
+                    size={26}
                     className={step.iconColor}
                   />
                 </div>
 
                 <p
                   className="
-                    mt-3
-                    text-sm
+                    mt-4
+                    text-base
                     font-bold
                     text-brand-dark
+                    sm:text-lg
                   "
                 >
                   {step.number}
@@ -669,11 +671,11 @@ function ProcessSection() {
 
                 <h3
                   className="
-                    mt-0.5
-                    text-sm
+                    mt-1
+                    text-lg
                     font-extrabold
                     text-brand-dark
-                    sm:text-[15px]
+                    sm:text-xl
                   "
                 >
                   {step.title}
@@ -683,11 +685,10 @@ function ProcessSection() {
                   className="
                     mx-auto
                     mt-3
-                    max-w-[190px]
-                    text-sm
-                    leading-5
-                    text-slate-600
-                    sm:text-xs
+                    max-w-[220px]
+                    text-base
+                    leading-relaxed
+                    text-slate-700
                   "
                 >
                   {step.description}
@@ -707,7 +708,7 @@ function ProcessSection() {
 
 function ResultsSection() {
   return (
-    <section className="bg-white pb-10">
+    <section className="bg-white py-8">
       <div
         className="
           mx-auto
@@ -723,19 +724,20 @@ function ResultsSection() {
           className="
             grid
             items-stretch
-            gap-7
+            gap-10
             lg:grid-cols-[1.03fr_0.97fr]
           "
         >
           {/* LEFT */}
-          <div>
+          <div className="flex flex-col justify-center">
             <p
               className="
                 text-sm
                 font-bold
                 uppercase
-                tracking-[0.3em]
+                tracking-widest
                 text-brand-purple
+                sm:text-base
               "
             >
               Content That Delivers Results
@@ -757,12 +759,13 @@ function ResultsSection() {
 
             <p
               className="
-                mt-2
+                mt-4
                 max-w-[570px]
-                text-sm
-                leading-6
-                text-slate-600
-                sm:text-base
+                text-base
+                leading-relaxed
+                text-slate-700
+                sm:text-lg
+                md:text-xl
               "
             >
               Businesses using AI-powered content marketing see higher
@@ -772,10 +775,10 @@ function ResultsSection() {
             {/* Metric Cards */}
             <div
               className="
-                mt-6
+                mt-8
                 grid
                 grid-cols-2
-                gap-3
+                gap-4
                 sm:grid-cols-4
               "
             >
@@ -792,8 +795,8 @@ function ResultsSection() {
                       bg-gradient-to-b
                       from-brand-blue-50/40
                       to-white
-                      px-3
-                      py-5
+                      px-2
+                      py-3
                       text-center
                     "
                   >
@@ -801,8 +804,8 @@ function ResultsSection() {
                       className={`
                         mx-auto
                         flex
-                        h-11
-                        w-11
+                        h-12
+                        w-12
                         items-center
                         justify-center
                         rounded-full
@@ -810,14 +813,14 @@ function ResultsSection() {
                       `}
                     >
                       <Icon
-                        size={20}
+                        size={22}
                         className={metric.iconColor}
                       />
                     </div>
 
                     <p
                       className="
-                        mt-3
+                        mt-4
                         text-2xl
                         font-extrabold
                         text-brand-purple
@@ -829,11 +832,11 @@ function ResultsSection() {
 
                     <p
                       className="
-                        mt-1
-                        text-sm
-                        leading-4
-                        text-slate-600
-                        sm:text-xs
+                        mt-2
+                        text-base
+                        font-medium
+                        leading-snug
+                        text-slate-700
                       "
                     >
                       {metric.label}
@@ -848,7 +851,7 @@ function ResultsSection() {
           <div
             className="
               relative
-              min-h-[350px]
+              min-h-[400px]
               overflow-hidden
               rounded-2xl
               bg-gradient-to-br
@@ -857,9 +860,9 @@ function ResultsSection() {
               to-brand-purple
               p-6
               text-white
-              sm:min-h-[390px]
-              sm:p-7
-              lg:min-h-[405px]
+              sm:min-h-[450px]
+              sm:p-8
+              lg:min-h-[480px]
             "
           >
             {/* Grid */}
@@ -884,7 +887,7 @@ function ResultsSection() {
             </div>
 
             {/* Content channels */}
-            <div className="relative z-20 space-y-2">
+            <div className="relative z-20 space-y-3">
               {[
                 {
                   title: "Blog Post",
@@ -922,39 +925,39 @@ function ResultsSection() {
                     key={item.title}
                     className="
                       flex
-                      h-[52px]
-                      w-[210px]
+                      h-[64px]
+                      w-[240px]
                       items-center
-                      gap-3
+                      gap-4
                       rounded-lg
                       border
                       border-white/20
                       bg-white/10
-                      px-2
+                      px-3
                       backdrop-blur-md
-                      sm:w-[230px]
+                      sm:w-[270px]
                     "
                   >
-                    <div className="relative h-10 w-12 shrink-0 overflow-hidden rounded-md">
+                    <div className="relative h-12 w-14 shrink-0 overflow-hidden rounded-md">
                       <Image
                         src={item.image}
                         alt={item.title}
                         fill
-                        sizes="48px"
+                        sizes="56px"
                         className="object-cover"
                       />
                     </div>
 
                     <div className="min-w-0">
-                      <div className="flex items-center gap-1.5">
-                        <Icon size={12} />
+                      <div className="flex items-center gap-2">
+                        <Icon size={14} />
 
-                        <p className="truncate text-sm font-bold">
+                        <p className="truncate text-base font-bold sm:text-lg">
                           {item.title}
                         </p>
                       </div>
 
-                      <p className="mt-0.5 text-sm text-white/70">
+                      <p className="mt-0.5 text-sm text-white/80 sm:text-base">
                         {item.subtitle}
                       </p>
                     </div>
@@ -1009,8 +1012,8 @@ function ResultsSection() {
                 flex
                 h-[165px]
                 items-end
-                gap-2
-                sm:gap-3
+                gap-3
+                sm:gap-4
               "
             >
               {[45, 70, 95, 125, 155].map(
@@ -1018,11 +1021,11 @@ function ResultsSection() {
                   <div
                     key={index}
                     className="
-                      w-5
+                      w-6
                       rounded-t-sm
                       bg-brand-blue
                       shadow-[0_0_22px_rgba(8,118,237,0.35)]
-                      sm:w-7
+                      sm:w-8
                     "
                     style={{ height }}
                   />
@@ -1034,23 +1037,23 @@ function ResultsSection() {
             <div
               className="
                 absolute
-                bottom-6
-                left-6
+                bottom-8
+                left-8
                 z-30
                 rounded-xl
                 bg-white
-                px-4
-                py-3
+                px-5
+                py-4
                 text-brand-dark
                 shadow-xl
               "
             >
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-4">
                 <div
                   className="
                     flex
-                    h-9
-                    w-9
+                    h-11
+                    w-11
                     items-center
                     justify-center
                     rounded-full
@@ -1058,12 +1061,12 @@ function ResultsSection() {
                   "
                 >
                   <BarChart3
-                    size={18}
+                    size={20}
                     className="text-brand-purple"
                   />
                 </div>
 
-                <p className="text-base font-extrabold leading-4 sm:text-xs">
+                <p className="text-base font-extrabold leading-snug sm:text-lg">
                   Great Content
                   <br />
                   Builds Great Brands
@@ -1075,16 +1078,17 @@ function ResultsSection() {
             <div
               className="
                 absolute
-                right-5
-                top-7
+                right-6
+                top-10
                 z-30
                 hidden
                 rotate-[-6deg]
                 font-hand
-                text-lg
-                leading-5
+                text-xl
+                leading-relaxed
                 text-white
                 lg:block
+                xl:text-2xl
               "
             >
               <span className="block">One Strategy</span>
@@ -1092,20 +1096,20 @@ function ResultsSection() {
               <span className="block">Real Results</span>
 
               <svg
-                className="absolute -bottom-14 right-2 h-12 w-12"
+                className="absolute -bottom-16 right-2 h-14 w-14"
                 viewBox="0 0 50 50"
                 fill="none"
               >
                 <path
                   d="M44 4C35 16 25 25 10 38"
                   stroke="currentColor"
-                  strokeWidth="1.5"
+                  strokeWidth="2"
                 />
 
                 <path
                   d="M10 38L12 28M10 38L20 36"
                   stroke="currentColor"
-                  strokeWidth="1.5"
+                  strokeWidth="2"
                 />
               </svg>
             </div>
@@ -1118,74 +1122,77 @@ function ResultsSection() {
 
         <div
           className="
-            mt-6
+            mt-10
             grid
             items-center
-            gap-6
+            gap-8
             rounded-2xl
             border
             border-brand-blue/10
             bg-gradient-section
-            px-5
-            py-5
-            sm:px-7
-            sm:py-6
+            px-3
+            py-4
+           
             lg:grid-cols-[1.25fr_0.75fr]
           "
         >
           {/* Person + quote */}
-          <div className="flex items-center gap-4">
+          <div className="flex flex-col gap-6 sm:flex-row sm:items-center">
             <div
               className="
                 relative
-                h-[92px]
-                w-[92px]
+                h-[100px]
+                w-[100px]
                 shrink-0
                 overflow-hidden
                 rounded-full
                 border-4
                 border-white
                 shadow-md
-                sm:h-[105px]
-                sm:w-[105px]
+                sm:h-[120px]
+                sm:w-[120px]
               "
             >
               <Image
                 src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=85"
                 alt="Marketing leader testimonial"
                 fill
-                sizes="105px"
+                sizes="120px"
                 className="object-cover"
               />
             </div>
 
             <div>
-              <div className="mb-1 text-3xl font-extrabold leading-none text-brand-purple">
+              <div className="mb-2 text-4xl font-extrabold leading-none text-brand-purple">
                 “
               </div>
 
               <p
                 className="
-                  max-w-[600px]
-                  text-xs
-                  leading-5
-                  text-slate-600
-                  sm:text-sm
-                  sm:leading-6
+                  max-w-[650px]
+                  text-base
+                  italic
+                  leading-relaxed
+                  text-slate-700
+                  sm:text-md
+                  sm:leading-loose
+                  md:text-lg
                 "
               >
-                “AI WorksForce transformed our content strategy. We're
+                AI WorksForce transformed our content strategy. We're
                 now publishing high-quality content 3x faster and seeing
-                a significant increase in leads and revenue.”
+                a significant increase in leads and revenue.
               </p>
 
-              <p className="mt-2 text-base font-extrabold text-brand-dark sm:text-lg">
-                Rohit Sharma
-              </p>
+              <div className="mt-4">
+                <p className="text-md font-extrabold text-brand-dark sm:text-lg">
+                  Rohit Sharma
+                </p>
 
-              <p className="text-sm text-slate-500 sm:text-base">
-                Marketing Head, GrowthTech
-              </p>
+                <p className="text-base text-slate-600 sm:text-md">
+                  Marketing Head, GrowthTech
+                </p>
+              </div>
             </div>
           </div>
 
@@ -1196,10 +1203,10 @@ function ResultsSection() {
               grid-cols-3
               border-t
               border-brand-dark/10
-              pt-5
+              pt-6
               lg:border-l
               lg:border-t-0
-              lg:pl-7
+              lg:pl-0
               lg:pt-0
             "
           >
@@ -1208,8 +1215,8 @@ function ResultsSection() {
                 className="
                   mx-auto
                   flex
-                  h-9
-                  w-9
+                  h-12
+                  w-12
                   items-center
                   justify-center
                   rounded-full
@@ -1217,16 +1224,16 @@ function ResultsSection() {
                 "
               >
                 <BarChart3
-                  size={17}
+                  size={20}
                   className="text-brand-purple"
                 />
               </div>
 
-              <p className="mt-2 text-2xl font-extrabold text-brand-purple sm:text-3xl">
+              <p className="mt-3 text-2xl font-extrabold text-brand-purple ">
                 3x
               </p>
 
-              <p className="text-sm leading-[1.4] text-slate-500 sm:text-base">
+              <p className="mt-1 text-base font-medium leading-snug text-slate-700">
                 Faster Publishing
               </p>
             </div>
@@ -1236,8 +1243,8 @@ function ResultsSection() {
                 className="
                   mx-auto
                   flex
-                  h-9
-                  w-9
+                  h-12
+                  w-12
                   items-center
                   justify-center
                   rounded-full
@@ -1245,16 +1252,16 @@ function ResultsSection() {
                 "
               >
                 <Clock3
-                  size={17}
+                  size={20}
                   className="text-brand-blue"
                 />
               </div>
 
-              <p className="mt-2 text-2xl font-extrabold text-brand-purple sm:text-3xl">
+              <p className="mt-3 text-2xl font-extrabold text-brand-purple ">
                 60%
               </p>
 
-              <p className="text-sm leading-[1.4] text-slate-500 sm:text-base">
+              <p className="mt-1 text-base font-medium leading-snug text-slate-700">
                 More Engagement
               </p>
             </div>
@@ -1264,8 +1271,8 @@ function ResultsSection() {
                 className="
                   mx-auto
                   flex
-                  h-9
-                  w-9
+                  h-12
+                  w-12
                   items-center
                   justify-center
                   rounded-full
@@ -1273,16 +1280,16 @@ function ResultsSection() {
                 "
               >
                 <TrendingUp
-                  size={17}
+                  size={20}
                   className="text-pink-500"
                 />
               </div>
 
-              <p className="mt-2 text-2xl font-extrabold text-brand-purple sm:text-3xl">
+              <p className="mt-3 text-2xl font-extrabold text-brand-purple">
                 2x
               </p>
 
-              <p className="text-sm leading-[1.4] text-slate-500 sm:text-base">
+              <p className="mt-1 text-base font-medium leading-snug text-slate-700 ">
                 More Revenue
               </p>
             </div>
@@ -1299,7 +1306,7 @@ function ResultsSection() {
 
 function CTASection() {
   return (
-    <section id="contact" className="px-4 pb-7 sm:px-6 lg:px-8">
+    <section id="contact" className="px-4 pb-12 mb-3 sm:px-6 lg:px-8">
       <div
         className="
           relative
@@ -1312,13 +1319,10 @@ function CTASection() {
           via-brand-dark
           to-brand-purple
           px-6
-          py-12
+          py-14
           text-white
           shadow-[0_20px_60px_rgba(7,23,68,0.18)]
-          sm:px-10
-          sm:py-14
-          lg:px-16
-          lg:py-14
+        
         "
       >
         {/* Decorative waves */}
@@ -1366,8 +1370,9 @@ function CTASection() {
               text-sm
               font-bold
               uppercase
-              tracking-[0.3em]
+              tracking-widest
               text-white/80
+              sm:text-base
             "
           >
             Ready to Create Impactful Content?
@@ -1375,7 +1380,7 @@ function CTASection() {
 
           <h2
             className="
-              mt-3
+              mt-4
               text-3xl
               font-extrabold
               tracking-[-0.045em]
@@ -1389,11 +1394,12 @@ function CTASection() {
 
           <p
             className="
-              mt-3
-              text-sm
-              leading-6
-              text-white/80
-              sm:text-base
+              mt-4
+              text-base
+              leading-relaxed
+              text-white/90
+              sm:text-lg
+              md:text-xl
             "
           >
             High-quality content. Smarter marketing. Real business growth.
@@ -1401,11 +1407,11 @@ function CTASection() {
 
           <div
             className="
-              mt-7
+              mt-10
               flex
               flex-col
               justify-center
-              gap-3
+              gap-4
               sm:flex-row
             "
           >
@@ -1413,16 +1419,16 @@ function CTASection() {
               href="#contact"
               className="
                 inline-flex
-                min-h-[50px]
+                min-h-[56px]
                 items-center
                 justify-center
                 gap-2
                 rounded-xl
                 bg-white
-                px-7
-                text-sm
+                px-8
+                text-base
                 font-extrabold
-                sm:text-base
+                sm:text-lg
                 text-brand-dark
                 transition-all
                 duration-300
@@ -1431,14 +1437,14 @@ function CTASection() {
               "
             >
               Book a Free Consultation
-              <ArrowRight size={16} />
+              <ArrowRight size={18} />
             </Link>
 
             <Link
               href="/ai-digital-marketing"
               className="
                 inline-flex
-                min-h-[50px]
+                min-h-[56px]
                 items-center
                 justify-center
                 gap-2
@@ -1446,10 +1452,10 @@ function CTASection() {
                 border
                 border-white/50
                 bg-white/5
-                px-7
-                text-sm
+                px-8
+                text-base
                 font-extrabold
-                sm:text-base
+                sm:text-lg
                 text-white
                 backdrop-blur
                 transition-all
@@ -1467,13 +1473,13 @@ function CTASection() {
         <div
           className="
             absolute
-            bottom-8
-            right-7
+            bottom-10
+            right-10
             hidden
             rotate-[-7deg]
             font-hand
-            text-xl
-            leading-5
+            text-2xl
+            leading-relaxed
             text-white/90
             lg:block
           "
@@ -1485,10 +1491,10 @@ function CTASection() {
           <svg
             className="
               absolute
-              -left-12
-              top-7
-              h-14
-              w-14
+              -left-14
+              top-8
+              h-16
+              w-16
             "
             viewBox="0 0 60 60"
             fill="none"
@@ -1496,13 +1502,13 @@ function CTASection() {
             <path
               d="M54 8C38 18 25 30 12 48"
               stroke="currentColor"
-              strokeWidth="1.5"
+              strokeWidth="2"
             />
 
             <path
               d="M12 48L14 37M12 48L23 45"
               stroke="currentColor"
-              strokeWidth="1.5"
+              strokeWidth="2"
             />
           </svg>
         </div>
@@ -1511,8 +1517,6 @@ function CTASection() {
   );
 }
 
-
-
 /* =========================================================
    PAGE
 ========================================================= */
@@ -1520,8 +1524,6 @@ function CTASection() {
 export default function AIContentMarketingPage() {
   return (
     <main className="min-h-screen overflow-hidden bg-white text-brand-dark">
-
-
       <Hero />
 
       <SolutionsSection />

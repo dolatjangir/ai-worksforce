@@ -319,7 +319,7 @@ export default function AIMarketingAutomationPage() {
                   )}
                   <p className="mt-1.5 text-sm font-bold">{item.num}</p>
                   <h3 className="text-base font-bold">{item.title}</h3>
-                  <p className="mt-1 text-sm leading-[1.4] text-brand-text">{item.text}</p>
+                  <p className="mt-1 text-md leading-[1.4] text-brand-text">{item.text}</p>
                 </article>
               ))}
             </div>
@@ -396,24 +396,24 @@ export default function AIMarketingAutomationPage() {
             />
 
             <div className="flex-1">
-              <span className="grid size-8 place-items-center rounded-full bg-white text-3xl sm:text-4xl leading-none font-bold text-brand-purple">
+              <span className="grid size-8 place-items-center rounded-full text-3xl sm:text-4xl leading-none font-bold text-brand-purple">
                 “
               </span>
-              <p className="mt-1 text-base leading-[1.5] text-brand-text">
+              <p className="mt-1 text-base sm:text-lg leading-[1.5] text-brand-text">
                 “AI WorksForce transformed our marketing. What used to take hours now runs automatically,
                 and we’re getting better results with less effort.”
               </p>
-              <p className="mt-2 text-sm font-bold">Rahul Mehta</p>
+              <p className="mt-2 text-sm sm:text-md font-bold">Rahul Mehta</p>
               <p className="text-sm text-brand-text">Founder, UrbanKart (D2C Brand)</p>
             </div>
 
             <div className="grid w-full grid-cols-3 divide-x divide-indigo-100 lg:w-[460px]">
-              <div className="px-2 text-center">
+              {/* <div className="px-2 text-center">
                 <p className="mb-2 text-xs font-bold tracking-[0.16em] sm:text-sm sm:tracking-[0.2em] text-brand-purple">
                   INTEGRATES WITH YOUR FAVORITE TOOLS
                 </p>
                 <div className="hidden" />
-              </div>
+              </div> */}
               {[
                 ["growth", "3x", "More Revenue", "bg-emerald-100 text-emerald-500"],
                 ["clock", "70%", "Time Saved", "bg-violet-100 text-brand-purple"],
@@ -431,7 +431,7 @@ export default function AIMarketingAutomationPage() {
 
         <section
           id="contact"
-          className="relative isolate mx-1 mt-3 overflow-hidden rounded-[14px] bg-[linear-gradient(110deg,#07154d,#0c1772_55%,#2836e4)] px-5 py-5 text-center text-white"
+          className="relative isolate mx-1 my-3 overflow-hidden rounded-[14px] bg-[linear-gradient(110deg,#07154d,#0c1772_55%,#2836e4)] px-5 py-5 text-center text-white"
         >
           <div className="absolute inset-0 -z-10 opacity-30 [background-image:repeating-radial-gradient(ellipse_at_0%_120%,transparent_0_10px,#7180ff_11px_12px)]" />
           <p className="text-sm tracking-[0.2em] sm:text-base sm:tracking-[0.24em]">READY TO AUTOMATE YOUR MARKETING?</p>

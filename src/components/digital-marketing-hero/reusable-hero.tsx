@@ -75,7 +75,7 @@ export default function DigitalMarketingHero({
             {subtitle}
           </p>
 
-          <p className="mt-2 max-w-[39rem] text-base leading-[1.45] text-[#55566e] xl:text-xl">
+          <p className="mt-2 max-w-[39rem] text-base leading-[1.45] text-[#55566e] xl:text-lg">
             {description}
           </p>
 

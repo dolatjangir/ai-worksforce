@@ -447,7 +447,7 @@ export default function PilotPage() {
 
    <section
   id="why-us"
-  className="relative px-4 py-12 sm:px-8 sm:py-16 lg:px-12 lg:py-20"
+  className="relative px-4 sm:px-8 lg:px-12 "
 >
   <div
     className="
@@ -479,8 +479,8 @@ export default function PilotPage() {
 
       <div className="relative overflow-hidden rounded-[24px] bg-white">
         {/* Form header */}
-        <div className="border-b border-blue-100 bg-gradient-to-br from-blue-50 via-white to-violet-50 px-5 py-6 sm:px-7 sm:py-7">
-          <span className="mb-3 inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-3 py-1.5 text-sm font-extrabold uppercase tracking-[0.12em] text-blue-700 sm:text-base sm:tracking-[0.14em]">
+        <div className="border-b border-blue-100 bg-gradient-to-br from-blue-50 via-white to-violet-50 px-5 py-6">
+          <span className="mb-3 inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-blue-700 sm:tracking-[0.14em]">
             <span
               aria-hidden="true"
               className="size-2 rounded-full bg-blue-500"
@@ -488,23 +488,23 @@ export default function PilotPage() {
             Start Your Pilot
           </span>
 
-          <h2 className="text-[26px] font-extrabold leading-[1.16] tracking-tight text-[#10204f] sm:text-3xl lg:text-4xl">
+          <h2 className="text-[26px] font-extrabold leading-[1.16] tracking-tight text-[#10204f] sm:text-3xl ">
             Start Your AI Pilot{" "}
             <span className="bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">
               Today
             </span>
           </h2>
 
-          <p className="mt-3 text-[15px] leading-[1.5] text-slate-600 sm:text-base">
+          <p className="mt-1 text-[15px] leading-[1.5] text-slate-600 sm:text-sm">
             Fill out the form and our team will get in touch to design your
             pilot.
           </p>
         </div>
 
         {/* Form fields */}
-        <div className="p-5 sm:p-7">
+        <div className="p-5">
           {/* Add your existing submission handler to this form. */}
-          <form className="space-y-4">
+          <form className="space-y-2">
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <label className="block min-w-0">
                 <span className="mb-1.5 block text-sm font-semibold text-[#10204f]">
@@ -720,7 +720,7 @@ export default function PilotPage() {
           HOW IT WORKS
       ===================================================== */}
 
-      <section id="solutions" className="relative px-5 pb-16 sm:px-8 lg:px-12">
+      <section id="solutions" className="relative my-3 px-5 pb-16 sm:px-8 lg:px-12">
         <div className="mx-auto max-w-[1320px] rounded-[24px] border border-blue-100 bg-white p-6 shadow-[0_15px_50px_rgba(32,83,150,0.07)] sm:p-8 lg:p-9">
           <SectionTitle title="How It Works">
             <p className="mt-2 text-[15px] leading-[1.5] text-slate-500 sm:text-base lg:text-lg">

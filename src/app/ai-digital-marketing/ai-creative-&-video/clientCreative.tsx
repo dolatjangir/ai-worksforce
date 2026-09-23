@@ -298,7 +298,7 @@ export default function AICreativeVideoPage() {
   ]}
 />
 
-        <section className="mx-auto max-w-[1240px] px-5 pt-5">
+        <section className="mx-auto max-w-7xl px-5 pt-5">
           <p className="text-center text-sm font-bold tracking-[0.2em] sm:text-base sm:tracking-[0.24em] text-brand-purple">
             COMPLETE AI CREATIVE & VIDEO SOLUTIONS
           </p>
@@ -323,7 +323,7 @@ export default function AICreativeVideoPage() {
           </div>
         </section>
 
-        <section id="how-it-works" className="mx-auto mt-4 max-w-[1240px] px-5">
+        <section id="how-it-works" className="mx-auto mt-4 max-w-7xl px-5">
           <div className="rounded-[14px] bg-[linear-gradient(135deg,#fafcff,#f5f7ff)] px-4 py-3">
             <p className="text-center text-sm font-bold tracking-[0.2em] sm:text-base sm:tracking-[0.24em] text-brand-purple">
               HOW IT WORKS
@@ -353,7 +353,7 @@ export default function AICreativeVideoPage() {
           </div>
         </section>
 
-        <section className="mx-auto mt-3 max-w-[1240px] px-5">
+        <section className="mx-auto mt-3 max-w-7xl px-5">
           <p className="text-sm font-bold tracking-[0.2em] sm:text-base sm:tracking-[0.24em] text-brand-purple">OUR AI CREATIVE WORK</p>
           <h2 className="mt-1 text-3xl leading-[1.15] font-bold sm:text-4xl lg:text-[40px]">Real Content, Real Results.</h2>
           <p className="mt-1 text-base text-brand-text">
@@ -382,7 +382,7 @@ export default function AICreativeVideoPage() {
           </div>
         </section>
 
-        <section className="mx-auto mt-3 grid max-w-[1240px] gap-4 px-5 lg:grid-cols-2">
+        <section className="mx-auto mt-3 grid max-w-7xl gap-4 px-5 lg:grid-cols-2">
           <div>
             <p className="text-sm font-bold tracking-[0.2em] sm:text-base sm:tracking-[0.24em] text-brand-purple">
               REAL RESULTS. REAL BUSINESSES.
@@ -448,7 +448,7 @@ export default function AICreativeVideoPage() {
           </article>
         </section>
 
-        <section className="mx-auto mt-3 max-w-[1240px] px-5">
+        <section className="mx-auto mt-3 max-w-7xl px-5">
           <div className="flex flex-col items-center gap-5 rounded-[15px] bg-[linear-gradient(110deg,#f6f8ff,#f3f6ff)] px-5 py-4 lg:flex-row">
             <img
               src={assets.profile}
@@ -486,7 +486,7 @@ export default function AICreativeVideoPage() {
 
         <section
           id="contact"
-          className="relative isolate mx-1 mt-3 overflow-hidden rounded-[14px] bg-[linear-gradient(110deg,#07154d,#0c1772_55%,#2836e4)] px-5 py-5 text-center text-white"
+          className="relative isolate mx-1 my-3 overflow-hidden rounded-[14px] bg-[linear-gradient(110deg,#07154d,#0c1772_55%,#2836e4)] px-5 py-5 text-center text-white"
         >
           <div className="absolute inset-0 -z-10 opacity-30 [background-image:repeating-radial-gradient(ellipse_at_0%_120%,transparent_0_10px,#7180ff_11px_12px)]" />
           <p className="text-sm tracking-[0.2em] sm:text-base sm:tracking-[0.24em]">READY TO CREATE STUNNING CONTENT?</p>

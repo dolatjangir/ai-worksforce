@@ -226,7 +226,7 @@ export default function AIAdvertisingPromotion() {
   const primaryButton =
     "inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-6 text-sm font-bold transition sm:text-base hover:-translate-y-0.5";
   const sectionEyebrow =
-    "text-center text-xs font-bold tracking-[0.2em] sm:text-sm sm:tracking-[0.24em] lg:text-base text-brand-purple";
+    "text-center text-xs font-bold tracking-[0.2em] sm:text-sm sm:tracking-[0.24em] lg:text-base text-brand-purple min-[1440px]:text-lg";
 
   return (
     <div className="overflow-x-hidden bg-white font-sans text-[#090d56]">
@@ -267,12 +267,12 @@ export default function AIAdvertisingPromotion() {
   ]}
 />
 
-        <section className="mx-auto max-w-[1240px] px-5 pt-8 sm:px-6 sm:pt-10 lg:px-8 lg:pt-12">
+        <section className="mx-auto max-w-8xl px-5 pt-8 sm:px-6 sm:pt-10 lg:px-8 lg:pt-12">
           <p className={sectionEyebrow}>COMPLETE AI ADVERTISING SOLUTIONS</p>
-          <h2 className="mt-1 text-center text-[26px] leading-[1.16] font-extrabold tracking-tight sm:text-[30px] lg:text-[32px]">
+          <h2 className="mt-1 text-center text-[26px] leading-[1.16] font-extrabold tracking-tight sm:text-[30px] lg:text-[32px] min-[1440px]:text-[36px] min-[1440px]:leading-[1.12]">
             Everything You Need to Run Successful Ad Campaigns
           </h2>
-          <p className="mt-1 text-center text-[15px] leading-[1.5] text-brand-text sm:text-base">
+          <p className="mt-1 text-center text-[15px] leading-[1.5] text-brand-text sm:text-base min-[1440px]:text-lg min-[1440px]:leading-[1.55]">
             From strategy to execution, our AI-powered advertising solutions cover all your business promotion needs.
           </p>
 
@@ -283,20 +283,20 @@ export default function AIAdvertisingPromotion() {
                 className="rounded-[13px] bg-[linear-gradient(135deg,#fafbff,#f7f8ff)] px-4 py-5 text-center sm:px-5"
               >
                 <Bubble icon={item.icon} tone={item.tone} />
-                <h3 className="mt-3 text-base leading-[1.25] font-extrabold sm:text-lg">{item.title}</h3>
-                <p className="mt-2 text-[15px] leading-[1.5] text-brand-text sm:text-base">{item.text}</p>
+                <h3 className="mt-3 text-base leading-[1.25] font-extrabold sm:text-lg min-[1440px]:text-xl">{item.title}</h3>
+                <p className="mt-2 text-[15px] leading-[1.5] text-brand-text sm:text-base min-[1440px]:text-lg min-[1440px]:leading-[1.55]">{item.text}</p>
               </article>
             ))}
           </div>
         </section>
 
-        <section id="how-it-works" className="mx-auto mt-8 max-w-[1240px] px-5 sm:px-6 lg:px-8">
+        <section id="how-it-works" className="mx-auto mt-8 max-w-8xl px-5 sm:px-6 lg:px-8">
           <div className="rounded-[14px] bg-[linear-gradient(135deg,#fafcff,#f5f7ff)] px-4 py-3">
             <p className={sectionEyebrow}>HOW IT WORKS</p>
-            <h2 className="mt-1 text-center text-[26px] leading-[1.16] font-extrabold tracking-tight sm:text-[30px] lg:text-[32px]">
+            <h2 className="mt-1 text-center text-[26px] leading-[1.16] font-extrabold tracking-tight sm:text-[30px] lg:text-[32px] min-[1440px]:text-[36px] min-[1440px]:leading-[1.12]">
               From Goal to Growth
             </h2>
-            <p className="mt-1 text-center text-[15px] leading-[1.5] text-brand-text sm:text-base">
+            <p className="mt-1 text-center text-[15px] leading-[1.5] text-brand-text sm:text-base min-[1440px]:text-lg min-[1440px]:leading-[1.55]">
               A simple, AI-driven process to launch and scale your advertising campaigns.
             </p>
 
@@ -307,22 +307,22 @@ export default function AIAdvertisingPromotion() {
                   {index !== process.length - 1 && (
                     <span className="absolute top-4 -right-4 hidden text-2xl text-brand-purple lg:block xl:text-3xl">→</span>
                   )}
-                  <p className="mt-1.5 text-sm font-bold sm:text-base">{`0${index + 1}`}</p>
+                  <p className="mt-1.5 text-sm font-bold sm:text-base min-[1440px]:text-lg">{`0${index + 1}`}</p>
                   <h3 className="text-base font-extrabold sm:text-lg">{item.title}</h3>
-                  <p className="mt-1 text-[15px] leading-[1.5] text-brand-text sm:text-base">{item.text}</p>
+                  <p className="mt-1 text-[15px] leading-[1.5] text-brand-text sm:text-base min-[1440px]:text-lg min-[1440px]:leading-[1.55]">{item.text}</p>
                 </article>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="mx-auto mt-8 grid max-w-[1240px] gap-6 px-5 sm:px-6 lg:grid-cols-2 lg:gap-8 lg:px-8">
+        <section className="mx-auto mt-8 grid max-w-8xl gap-6 px-5 sm:px-6 lg:grid-cols-2 lg:gap-8 lg:px-8">
           <div>
             <p className="text-xs font-bold tracking-[0.2em] sm:text-sm sm:tracking-[0.24em] lg:text-base text-brand-purple">
               REAL RESULTS. REAL BUSINESSES.
             </p>
-            <h2 className="mt-1 text-[26px] leading-[1.16] font-extrabold tracking-tight sm:text-[30px] lg:text-[32px]">Advertising Success with AI</h2>
-            <p className="mt-1 text-[15px] leading-[1.5] text-brand-text sm:text-base">
+            <h2 className="mt-1 text-[26px] leading-[1.16] font-extrabold tracking-tight sm:text-[30px] lg:text-[32px] min-[1440px]:text-[36px] min-[1440px]:leading-[1.12]">Advertising Success with AI</h2>
+            <p className="mt-1 text-[15px] leading-[1.5] text-brand-text sm:text-base min-[1440px]:text-lg min-[1440px]:leading-[1.55]">
               See how businesses like yours are getting more leads, higher sales, and better ROI with AI WorksForce.
             </p>
 
@@ -335,8 +335,8 @@ export default function AIAdvertisingPromotion() {
               ].map(([icon, value, text, tone]) => (
                 <div key={text} className="rounded-xl bg-[#fafbff] p-3 text-center">
                   <Bubble icon={icon as IconName} tone={tone} small />
-                  <p className="mt-1.5 text-xl leading-none font-extrabold sm:text-2xl lg:text-[26px]">{value}</p>
-                  <p className="mt-1 text-sm leading-[1.4] text-brand-text sm:text-base">{text}</p>
+                  <p className="mt-1.5 text-xl leading-none font-extrabold sm:text-2xl lg:text-[26px] min-[1440px]:text-3xl">{value}</p>
+                  <p className="mt-1 text-sm leading-[1.4] text-brand-text sm:text-base min-[1440px]:text-lg">{text}</p>
                 </div>
               ))}
             </div>
@@ -352,10 +352,10 @@ export default function AIAdvertisingPromotion() {
               <span className="rounded-full bg-violet-100 px-2 py-1 text-xs font-bold tracking-wider sm:text-sm text-brand-purple">
                 CASE STUDY
               </span>
-              <h3 className="mt-2 text-lg leading-[1.25] font-extrabold sm:text-xl lg:text-2xl">
+              <h3 className="mt-2 text-lg leading-[1.25] font-extrabold sm:text-xl lg:text-2xl min-[1440px]:text-3xl">
                 E-commerce Brand: 3x Sales in 3 Months
               </h3>
-              <p className="mt-2 text-[15px] leading-[1.5] text-brand-text sm:text-base">
+              <p className="mt-2 text-[15px] leading-[1.5] text-brand-text sm:text-base min-[1440px]:text-lg min-[1440px]:leading-[1.55]">
                 With our AI advertising strategy, this e-commerce brand reduced ad spend by 60% and
                 achieved 3x higher sales through targeted Meta and Google Ads.
               </p>
@@ -367,7 +367,7 @@ export default function AIAdvertisingPromotion() {
                 ].map(([value, label]) => (
                   <div key={label}>
                     <p className="text-xl leading-none font-extrabold text-brand-purple sm:text-2xl lg:text-[26px]">{value}</p>
-                    <p className="mt-1 text-sm text-brand-text sm:text-base">{label}</p>
+                    <p className="mt-1 text-sm text-brand-text sm:text-base min-[1440px]:text-lg">{label}</p>
                   </div>
                 ))}
               </div>
@@ -375,7 +375,7 @@ export default function AIAdvertisingPromotion() {
           </article>
         </section>
 
-        <section className="mx-auto mt-8 max-w-[1240px] px-5 sm:px-6 lg:px-8">
+        <section className="mx-auto mt-8 max-w-8xl px-5 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center gap-6 rounded-[15px] bg-[linear-gradient(110deg,#f6f8ff,#f3f6ff)] px-5 py-4 lg:flex-row">
             <img
               src={imageUrls.testimonial}
@@ -384,15 +384,15 @@ export default function AIAdvertisingPromotion() {
             />
 
             <div className="flex-1">
-              <span className="grid size-8 place-items-center rounded-full bg-white text-3xl leading-none font-bold text-brand-purple sm:text-[32px]">
+              <span className="grid size-8 place-items-center rounded-full  text-3xl leading-none font-bold text-brand-purple sm:text-[32px] min-[1440px]:text-4xl">
                 “
               </span>
-              <p className="mt-1 text-[15px] leading-[1.5] text-brand-text sm:text-base">
+              <p className="mt-1 text-base sm:text-lg leading-[1.5] text-brand-text sm:text-base min-[1440px]:text-lg min-[1440px]:leading-[1.55]">
                 “AI WorksForce completely transformed our advertising. We’re getting better leads,
                 lower costs, and a significant increase in revenue.”
               </p>
-              <p className="mt-2 text-sm font-bold sm:text-base">Amit Verma</p>
-              <p className="text-sm text-brand-text sm:text-base">Founder, StyleKart (E-commerce)</p>
+              <p className="mt-2 text-sm font-bold sm:text-lg min-[1440px]:text-lg">Amit Verma</p>
+              <p className="text-sm text-brand-text sm:text-base min-[1440px]:text-lg">Founder, StyleKart (E-commerce)</p>
             </div>
 
             <div className="grid w-full grid-cols-3 divide-x divide-indigo-100 lg:w-[390px]">
@@ -403,8 +403,8 @@ export default function AIAdvertisingPromotion() {
               ].map(([icon, value, label, tone]) => (
                 <div key={label} className="px-2 text-center">
                   <Bubble icon={icon as IconName} tone={tone} small />
-                  <p className="mt-1.5 text-xl leading-none font-extrabold sm:text-2xl lg:text-[26px]">{value}</p>
-                  <p className="mt-1 text-sm text-brand-text sm:text-base">{label}</p>
+                  <p className="mt-1.5 text-xl leading-none font-extrabold sm:text-2xl lg:text-[26px] min-[1440px]:text-3xl">{value}</p>
+                  <p className="mt-1 text-sm text-brand-text sm:text-base min-[1440px]:text-lg">{label}</p>
                 </div>
               ))}
             </div>
@@ -413,14 +413,14 @@ export default function AIAdvertisingPromotion() {
 
         <section
           id="contact"
-          className="relative isolate mx-1 mt-8 overflow-hidden rounded-[14px] bg-[linear-gradient(110deg,#07154d,#0c1772_55%,#2836e4)] px-5 py-5 text-center text-white"
+          className="relative isolate mx-1 my-4 overflow-hidden rounded-[14px] bg-[linear-gradient(110deg,#07154d,#0c1772_55%,#2836e4)] px-5 py-5 text-center text-white"
         >
           <div className="absolute inset-0 -z-10 opacity-30 [background-image:repeating-radial-gradient(ellipse_at_0%_120%,transparent_0_10px,#7180ff_11px_12px)]" />
-          <p className="text-sm font-semibold tracking-[0.18em] sm:text-base sm:tracking-[0.24em]">READY TO SCALE YOUR BUSINESS?</p>
-          <h2 className="mt-2 text-[26px] leading-[1.16] font-extrabold tracking-tight sm:text-[30px] lg:text-[32px]">
+          <p className="text-sm font-semibold tracking-[0.18em] sm:text-base sm:tracking-[0.24em] min-[1440px]:text-lg">READY TO SCALE YOUR BUSINESS?</p>
+          <h2 className="mt-2 text-[26px] leading-[1.16] font-extrabold tracking-tight sm:text-[30px] lg:text-[32px] min-[1440px]:text-[36px] min-[1440px]:leading-[1.12]">
             Let’s Launch Smarter Ad Campaigns with AI
           </h2>
-          <p className="mt-1 text-[15px] leading-[1.5] sm:text-base">
+          <p className="mt-1 text-[15px] leading-[1.5] sm:text-base min-[1440px]:text-lg min-[1440px]:leading-[1.55]">
             Get a custom AI advertising strategy tailored to your business goals.
           </p>
           <div className="mt-3 flex flex-wrap justify-center gap-3">
@@ -431,7 +431,7 @@ export default function AIAdvertisingPromotion() {
               Talk to Our Ad Experts
             </a>
           </div>
-          <p className="absolute right-[6%] bottom-5 hidden rotate-[-10deg] text-left font-hand text-lg leading-[1.25] sm:text-xl xl:block">
+          <p className="absolute right-[6%] bottom-5 hidden rotate-[-10deg] text-left font-hand text-lg leading-[1.25] sm:text-xl xl:block min-[1440px]:text-2xl">
             More Leads
             <br />
             More Sales

@@ -325,53 +325,53 @@ export default function AIMarketingAnalyticsPage() {
             <p className="text-sm font-extrabold tracking-[0.18em] sm:text-base text-brand-purple">
               REAL RESULTS. REAL BUSINESSES.
             </p>
-            <h2 className="mt-1 text-2xl leading-[1.18] font-extrabold sm:text-3xl lg:text-4xl">Marketing Analytics Success with AI</h2>
+            <h2 className="mt-1 text-2xl leading-[1.18] font-extrabold sm:text-3xl ">Marketing Analytics Success with AI</h2>
             <p className="mt-1 text-sm leading-[1.5] text-brand-text sm:text-base">
               See how businesses similar to yours are making choices and getting better results with AI WorksForce.
             </p>
 
             <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-4">
               {[
-                ["growth", "Three hundred twelve percent", "Increase in Marketing ROI", "bg-emerald-100 text-emerald-500"],
+                ["growth", "hundred  percent", "Increase in Marketing ROI", "bg-emerald-100 text-emerald-500"],
                 ["users", "Three times", "More Qualified Leads", "bg-violet-100 text-brand-purple"],
                 ["clock", "Seventy percent", "Less Time on Reporting", "bg-orange-100 text-orange-500"],
                 ["chart", "Five times", "Decision-Making", "bg-rose-100 text-rose-500"],
               ].map(([icon, value, label, tone]) => (
-                <div key={label} className="rounded-xl bg-[#fafbff] p-3 text-center">
+                <div key={label} className="rounded-xl bg-[#fafbff] p-2 text-center">
                   <Bubble icon={icon as IconName} tone={tone} small />
-                  <p className="mt-1.5 text-2xl leading-tight font-extrabold sm:text-3xl">{value}</p>
+                  <p className="mt-1.5 text-lg leading-tight font-extrabold ">{value}</p>
                   <p className="mt-1 text-sm leading-[1.4] text-brand-text sm:text-base">{label}</p>
                 </div>
               ))}
             </div>
           </div>
 
-          <article className="flex flex-col gap-5 rounded-[15px] bg-[#f8f9ff] p-5 sm:flex-row sm:items-center">
+          <article className="flex flex-col gap-5 rounded-[15px] bg-[#f8f9ff] p-5 sm:flex-row sm:items-start">
             <img
               src={images.caseStudy}
               alt="SaaS analytics dashboard"
               className="h-[150px] w-full rounded-xl object-cover sm:w-[155px]"
             />
             <div>
-              <span className="rounded-full bg-violet-100 px-2 py-1 text-xs font-extrabold tracking-wider sm:text-sm text-brand-purple">
+              <span className="rounded-full bg-violet-100 px-2 py-1 text-xs font-bold tracking-wider sm:text-sm text-brand-purple">
                 CASE STUDY
               </span>
-              <h3 className="mt-2 text-lg leading-[1.3] font-extrabold sm:text-xl">
+              <h3 className="mt-2 text-lg leading-[1.3] font-bold sm:text-xl">
                 SaaS Brand: 4x Revenue with AI Marketing Analytics
               </h3>
-              <p className="mt-2 text-sm leading-[1.5] text-brand-text sm:text-base">
+              <p className="mt-2 text-sm leading-[1.2] text-brand-text sm:text-lg">
                 With our AI marketing analytics solution, this SaaS brand identified high-performing channels,
                 optimized their campaigns, and achieved 4x revenue growth in just 6 months.
               </p>
-              <div className="mt-3 flex gap-6">
+              <div className="mt-3 flex gap-3">
                 {[
-                  ["Three hundred twelve percent", "More Revenue"],
+                  ["hundred percent", "More Revenue"],
                   ["Four times", "ROI Growth"],
                   ["Seventy percent", "Reporting Time"],
                 ].map(([value, label]) => (
                   <div key={label}>
-                    <p className="text-xl leading-tight font-extrabold text-brand-purple sm:text-2xl">{value}</p>
-                    <p className="mt-1 text-sm text-brand-text sm:text-base">{label}</p>
+                    <p className="text-lg leading-tight font-semibold text-brand-purple ">{value}</p>
+                    <p className="mt-1 text-xs text-brand-text sm:text-sm">{label}</p>
                   </div>
                 ))}
               </div>
@@ -391,7 +391,7 @@ export default function AIMarketingAnalyticsPage() {
               <span className="grid size-8 place-items-center rounded-full bg-white text-3xl leading-none font-bold sm:text-4xl text-brand-purple">
                 “
               </span>
-              <p className="mt-1 text-base leading-[1.55] text-brand-text">
+              <p className="mt-1 text-base leading-[1.55] text-brand-text sm:text-lg">
                 “AI WorksForce gave us complete visibility into our marketing performance. The AI insights
                 helped us make smarter decisions, save hours of analysis, and significantly increase our ROI.”
               </p>
@@ -403,8 +403,8 @@ export default function AIMarketingAnalyticsPage() {
               <p className="text-center text-sm font-extrabold tracking-[0.16em] sm:text-base text-brand-purple">
                 WORKS WITH YOUR FAVORITE PLATFORMS
               </p>
-              <div className="mt-3 grid grid-cols-3 gap-2 sm:grid-cols-6">
-                {["Google Analytics", "Google Ads", "Meta Ads", "LinkedIn", "HubSpot", "Salesforce"].map((tool, index) => (
+              <div className="mt-3 grid grid-cols-3 gap-2 sm:grid-cols-5">
+                {["Google Analytics", "Google Ads", "Meta Ads", "LinkedIn", "HubSpot"].map((tool, index) => (
                   <div key={tool} className="rounded-lg bg-white p-2 text-center">
                     <span className={`text-[20px] ${index === 0 ? "text-orange-500" : "text-brand-purple"}`}>
                       {index === 0 ? "▮▮▮" : index === 1 ? "▲" : index === 2 ? "∞" : index === 3 ? "in" : "●"}

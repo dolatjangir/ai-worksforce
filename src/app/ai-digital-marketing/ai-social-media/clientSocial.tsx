@@ -396,7 +396,7 @@ function Hero() {
 
 function SolutionsSection() {
   return (
-    <section className="bg-white py-16 sm:py-20 lg:py-24">
+    <section className="bg-white py-7">
       <div
         className="
           mx-auto
@@ -570,7 +570,7 @@ function ProcessSection() {
   return (
     <section
       id="process"
-      className="bg-white pb-16 sm:pb-20 lg:pb-24"
+      className="bg-white pb-10"
     >
       <div
         className="
@@ -712,7 +712,7 @@ function ProcessSection() {
                     text-sm
                     font-extrabold
                     text-brand-dark
-                    sm:text-sm
+                    sm:text-lg
                   "
                 >
                   {step.title}
@@ -721,12 +721,12 @@ function ProcessSection() {
                 <p
                   className="
                     mx-auto
-                    mt-3
+                    mt-1
                     max-w-[190px]
-                    text-sm
+                    text-xs
                     leading-[1.5] sm:text-base
                     text-slate-600
-                    sm:text-xs
+                    sm:text-md
                   "
                 >
                   {step.description}
@@ -746,7 +746,7 @@ function ProcessSection() {
 
 function PlatformsSection() {
   return (
-    <section className="bg-white pb-16 sm:pb-20 lg:pb-24">
+    <section className="bg-white pb-10">
       <div
         className="
           mx-auto
@@ -888,7 +888,7 @@ function PlatformsSection() {
 
 function ResultsSection() {
   return (
-    <section className="bg-white pb-8 sm:pb-10 lg:pb-12">
+    <section className="bg-white pb-8">
       <div
         className="
           mx-auto

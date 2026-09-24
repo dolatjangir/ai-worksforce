@@ -7,6 +7,7 @@ import ScrollProgressBar from "@/components/common/indicators/ScrollProgressBar"
 import ScrollUpButton from "@/components/common/scrollUpButton/ScrollUpButton";
 import WhatsAppChatbot from "@/components/whatsapp-button/whatsapp";
 import Header from "@/components/header";
+import LayoutWrapper from "@/components/layoutwrapper/layoutwrapper";
 
 
 export const metadata = {
@@ -42,12 +43,12 @@ export default function RootLayout({
 
 
           {/* Header / Navigation */}
-          <Header/>
-          <ScrollProgressBar position="sticky" top="top-[64px]" className=" max-md:hidden" zIndex="99" />
+         <LayoutWrapper>
+         
           {children}
           {/* Footer */}
-          <Footer />
-          <WhatsAppChatbot />
+        </LayoutWrapper>
+        
         </div>
 
       </body>

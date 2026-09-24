@@ -125,6 +125,17 @@ const teamMembers = [
     role: "Business Analyst",
     image: "/management-team/data-anylist-junior.jpeg",
   },
+  {
+     name: "Syed Masood Alam",
+    role: "DIgital Marketing & SEO Expert",
+    image: "/management-team/data-anylist-junio.jpeg",
+  },
+    {
+     name: "Saurabh",
+    role: "ML Engineer",
+    image: "/management-team/data-anylist-junio.jpeg",
+  }
+  
   
 ];
 
@@ -355,7 +366,7 @@ export default function OurTeamPage() {
           </div>
 
           <Link
-            href="/our-team/all-team-members"
+            href="/company/our-team/all-team-members"
             className="inline-flex shrink-0 items-center gap-2 text-sm font-bold text-[var(--color-primary)] sm:text-base"
           >
             View All Team Members

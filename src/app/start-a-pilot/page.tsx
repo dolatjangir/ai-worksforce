@@ -268,7 +268,8 @@ export default function PilotPage() {
           HERO
       ===================================================== */}
 
-    <section className="relative isolate min-h-[90dvh] overflow-hidden bg-white">
+    <section className="relative isolate min-h-[90dvh] overflow-hidden bg-linear-to-r from-blue-200/30 to blue-100/30">
+            <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_75%_40%,rgba(218,210,255,0.55)_0%,transparent_60%)]" />
   <div
     className="
       relative mx-auto grid h-full min-h-0 w-full max-w-[1536px]
@@ -413,7 +414,7 @@ export default function PilotPage() {
         aria-hidden="true"
         className="
           pointer-events-none absolute inset-[15%]
-          rounded-full bg-blue-200/40 blur-3xl
+          rounded-full  blur-3xl
         "
       />
 
@@ -428,7 +429,7 @@ export default function PilotPage() {
         fetchPriority="high"
         decoding="async"
       />
-
+{/* 
       <div
         aria-hidden="true"
         className="
@@ -437,7 +438,7 @@ export default function PilotPage() {
           bg-gradient-to-r from-white via-white/70 to-transparent
           lg:block
         "
-      />
+      /> */}
     </div>
   </div>
 </section>

@@ -29,49 +29,6 @@ import {
 import Link from "next/link";
 import { useState } from "react";
 
-/* =========================================================
-   NAVIGATION
-========================================================= */
-
-const navigation = [
-  {
-    label: "Home",
-    href: "/",
-  },
-  {
-    label: "What AIWorksForce?",
-    href: "/what-aiworksforce",
-  },
-  {
-    label: "How it Works",
-    href: "/how-it-works",
-  },
-  {
-    label: "Our AI Workflow",
-    href: "/ai-workflow",
-  },
-  {
-    label: "Solutions",
-    href: "#",
-    dropdown: true,
-  },
-  {
-    label: "Industries",
-    href: "/industries",
-  },
-  {
-    label: "Case Studies",
-    href: "/case-studies",
-  },
-  {
-    label: "Resources",
-    href: "/resources",
-  },
-  {
-    label: "About",
-    href: "/company/about",
-  },
-];
 
 /* =========================================================
    WHY WORK WITH US

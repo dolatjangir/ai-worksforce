@@ -54,23 +54,23 @@ export default function DashboardLayout({
       label: 'Seo Manager',
       icon: SquareUser
     },
-    // { path: '/admin-dashboard/properties', label: 'Property Manager', icon: HousePlus },
+    { path: '/admin-dashboard/applications', label: 'Posted Application', icon: HousePlus },
     // { path: '/admin-dashboard/requirements', label: 'Requirements', icon: UsersRound },
     {
       path: '/admin-dashboard/contact-us',
       label: 'Contact-Us Requirements',
       icon: UsersRound
     },
-    {
-      path: '/admin-dashboard/subscriber',
-      label: 'Subscriber',
-      icon: SquareUser
-    },
-    {
-      path: '/admin-dashboard/inquiry',
-      label: 'Inquiry',
-      icon: UsersRound
-    },
+    // {
+    //   path: '/admin-dashboard/subscriber',
+    //   label: 'Subscriber',
+    //   icon: SquareUser
+    // },
+    // {
+    //   path: '/admin-dashboard/inquiry',
+    //   label: 'Inquiry',
+    //   icon: UsersRound
+    // },
     {
       path: '/admin-dashboard/certificates',
       label: 'Certificates',

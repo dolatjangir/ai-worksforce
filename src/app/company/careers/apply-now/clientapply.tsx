@@ -101,14 +101,18 @@ function ApplicationForm() {
     setBusy(true);
     setError("");
 
+    // const data = new FormData(e.currentTarget);
+
+    // data.set("resume", file);
+    // data.set("job", selectedJob.title);
+    // data.set("jobSlug", selectedJob.slug);
+    // data.set("department", selectedJob.department);
+    // data.set("location", selectedJob.location);
+    // data.set("type", selectedJob.type);
     const data = new FormData(e.currentTarget);
 
-    data.set("resume", file);
-    data.set("job", selectedJob.title);
-    data.set("jobSlug", selectedJob.slug);
-    data.set("department", selectedJob.department);
-    data.set("location", selectedJob.location);
-    data.set("type", selectedJob.type);
+data.set("resume", file);
+data.set("jobSlug", selectedJob.slug);
 
     try {
       const response = await fetch("/api/applications", {

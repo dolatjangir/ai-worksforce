@@ -98,3 +98,43 @@ enum Status {
   published
   draft
 }
+
+
+model JobApplication {
+  id String @id @default(cuid())
+
+  // Candidate information
+  name              String  @db.VarChar(160)
+  email             String  @db.VarChar(191)
+  phone             String  @db.VarChar(30)
+  candidateLocation String  @db.VarChar(120)
+  linkedin          String? @db.VarChar(500)
+  portfolio         String? @db.VarChar(500)
+  motivation        String  @db.Text
+  consent           Boolean @default(false)
+
+  // Job information
+  jobSlug     String @db.VarChar(191)
+  jobTitle    String @db.VarChar(191)
+  department  String @db.VarChar(191)
+  jobLocation String @db.VarChar(191)
+  jobType     String @db.VarChar(100)
+
+  // Google Drive resume information
+  resumeName     String  @db.VarChar(255)
+  resumeDriveId  String  @db.VarChar(255)
+  resumeViewLink String? @db.Text
+  resumeMimeType String  @db.VarChar(100)
+  resumeSize     Int
+
+  // Application
+  status    String   @default("NEW") @db.VarChar(40)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([email])
+  @@index([jobSlug])
+  @@index([status])
+  @@index([createdAt])
+  @@index([resumeDriveId])
+}

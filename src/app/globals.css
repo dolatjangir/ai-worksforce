@@ -464,3 +464,127 @@ img {
     scroll-behavior: auto !important;
   }
 }
+/* Fit the login design to the available viewport height. */
+.login-panel {
+  --login-control-height: clamp(38px, 5.1dvh, 52px);
+}
+
+.login-language {
+  flex-shrink: 0;
+}
+
+.login-language > div {
+  height: clamp(30px, 4.1dvh, 42px);
+}
+
+.login-brand {
+  width: min(100%, 45dvh);
+  margin-top: clamp(4px, 0.9dvh, 9px);
+}
+
+.login-intro {
+  margin-top: clamp(10px, 2.8dvh, 29px);
+}
+
+.login-intro h1 {
+  font-size: clamp(23px, 3dvh, 30px);
+}
+
+.login-intro p {
+  margin-top: 6px;
+  font-size: clamp(14px, 1.7dvh, 17px);
+  line-height: 1.45;
+}
+
+.login-form {
+  margin-top: clamp(12px, 2.4dvh, 25px);
+}
+
+.login-form input:not([type="checkbox"]) {
+  height: var(--login-control-height);
+}
+
+.login-password-label {
+  margin-top: clamp(12px, 2.2dvh, 23px);
+}
+
+.login-remember {
+  margin-top: clamp(8px, 1.3dvh, 14px);
+}
+
+.login-submit {
+  height: var(--login-control-height);
+  margin-top: clamp(10px, 1.6dvh, 17px);
+}
+
+.login-divider {
+  margin-block: clamp(12px, 2.1dvh, 22px);
+}
+
+.login-social {
+  margin-top: 0;
+}
+
+.login-social button {
+  min-height: var(--login-control-height);
+  padding-block: 8px;
+}
+
+.login-contact {
+  margin-top: clamp(10px, 1.8dvh, 20px);
+}
+
+.login-security {
+  margin-top: clamp(14px, 2.8dvh, 30px);
+  padding-block: clamp(12px, 2.2dvh, 24px);
+}
+
+/* Keep the form usable on smaller mobile screens. */
+@media (max-width: 639px) {
+  .login-brand {
+    width: min(100%, 330px);
+  }
+
+  .login-social {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .login-social button {
+    gap: 7px;
+    padding-inline: 8px;
+    font-size: 12px;
+  }
+
+  .login-social button > :first-child {
+    flex-shrink: 0;
+  }
+
+  .login-security {
+    display: none;
+  }
+}
+
+/* Recover space on short laptop displays. */
+@media (max-height: 740px) {
+  .login-security {
+    display: none;
+  }
+}
+
+/*
+ * Very short windows, browser zoom, or the mobile keyboard
+ * require scrolling to keep every form control reachable.
+ */
+@media (max-height: 600px) {
+  .login-page {
+    height: auto;
+    min-height: 100dvh;
+    overflow: visible;
+  }
+
+  .login-panel {
+    height: auto;
+    min-height: calc(100dvh - 24px);
+  }
+}

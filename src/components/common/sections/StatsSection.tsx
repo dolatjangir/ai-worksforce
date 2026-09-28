@@ -1,5 +1,5 @@
 import React from "react";
-import Counter from "@/utils/Counter";
+
 
 export interface StatItem {
   value: number;             // target value for the counter
@@ -26,12 +26,7 @@ const StatsSection: React.FC<StatsSectionProps> = ({
           {stats.map((stat, i) => (
             <div key={i}>
               <div className="text-5xl font-bold mb-2">
-                <Counter
-                  end={stat.value}
-                  duration={3}
-                  prefix={stat.prefix || ""}
-                  suffix={stat.suffix || ""}
-                />
+                <span>{stat.value}</span>
               </div>
               <div className="text-cyan-100">{stat.label}</div>
             </div>

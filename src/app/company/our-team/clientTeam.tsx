@@ -124,16 +124,6 @@ const teamMembers = [
     name: "Harshita",
     role: "Business Analyst",
     image: "/management-team/data-anylist-junior.jpeg",
-  },
-  {
-     name: "Syed Masood Alam",
-    role: "DIgital Marketing & SEO Expert",
-    image: "/management-team/data-anylist-junio.jpeg",
-  },
-    {
-     name: "Saurabh",
-    role: "ML Engineer",
-    image: "/management-team/data-anylist-junio.jpeg",
   }
   
   

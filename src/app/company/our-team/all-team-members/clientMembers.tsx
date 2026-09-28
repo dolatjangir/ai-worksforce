@@ -115,6 +115,20 @@ const teamMembers: TeamMember[] = [
     image: "/management-team/data-anylist-junior.jpeg",
     description: "Connecting business requirements with practical technology solutions.",
   },
+  {
+     name: "Syed Masood Alam",
+    role: "DIgital Marketing & SEO Expert",
+        department: "digital-marketing",
+    image: "/management-team/seo-manager.jpeg",
+     description: "Connecting business requirements with practical technology solutions.",
+  },
+  //   {
+  //    name: "Saurabh",
+  //   role: "ML Engineer",
+  //       department: "Product",
+  //   image: "/management-team/data-anylist-junio.jpeg",
+  //    description: "Connecting business requirements with practical technology solutions.",
+  // }
 ];
 
 const filters = [

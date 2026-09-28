@@ -575,19 +575,19 @@ const handleKeywordsChange = (value: string) => {
     e.target.value = '';
   };
 
-  const loadBrokerStats = async () => {
-  try {
-    const res = await fetch("/api/brokers"); //  broker API
-    const data = await res.json();
+//   const loadBrokerStats = async () => {
+//   try {
+//     const res = await fetch("/api/brokers"); //  broker API
+//     const data = await res.json();
 
-    setBrokerCount(data.length); // or data.total if you return it
-  } catch (err) {
-    console.error(err);
-  }
-};
-useEffect(() => {
-  loadBrokerStats();
-}, []);
+//     setBrokerCount(data.length); // or data.total if you return it
+//   } catch (err) {
+//     console.error(err);
+//   }
+// };
+// useEffect(() => {
+//   loadBrokerStats();
+// }, []);
   const calculatePreviewScore = (entry: Partial<SEOEntry>): number => {
     let score = 0;
     if (entry.metaTitle && entry.metaTitle.length >= 50 && entry.metaTitle.length <= 60) score += 25;

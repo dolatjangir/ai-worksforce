@@ -3,7 +3,6 @@
 import { auth } from "@/auth";
 import { prisma } from "./prisma";
 
-
 export async function getCurrentAdmin() {
   const session = await auth();
 
@@ -11,11 +10,7 @@ export async function getCurrentAdmin() {
     return null;
   }
 
-  const adminId = Number(session.user.id);
-
-  if (!Number.isInteger(adminId)) {
-    return null;
-  }
+  const adminId = session.user.id;
 
   const admin = await prisma.adminUser.findFirst({
     where: {

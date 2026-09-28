@@ -12,7 +12,7 @@ enum AdminRole {
 }
 
 model AdminUser {
-  id Int @id @default(autoincrement())
+  id String @id @default(uuid())
 
   fullName String @db.VarChar(120)
 

@@ -2,31 +2,24 @@
 
 import type { NextAuthConfig } from "next-auth";
 
-export const authConfig = {
+export const authConfig: NextAuthConfig = {
   pages: {
     signIn: "/login",
   },
 
   callbacks: {
     authorized({ auth, request }) {
-      const isLoggedIn = !!auth?.user;
       const pathname = request.nextUrl.pathname;
 
-      // Protect the complete admin dashboard
+      // Protect every admin-dashboard route.
       if (pathname.startsWith("/admin-dashboard")) {
-        return isLoggedIn;
+        return Boolean(auth?.user);
       }
 
-      // Prevent authenticated users from opening login again
-      if (pathname === "/login" && isLoggedIn) {
-        return Response.redirect(
-          new URL("/admin-dashboard", request.nextUrl),
-        );
-      }
-
+      // Never redirect /login from proxy.
       return true;
     },
   },
 
   providers: [],
-} satisfies NextAuthConfig;
+};

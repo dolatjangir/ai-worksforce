@@ -5,7 +5,7 @@ import { prisma } from "./prisma";
 
 export async function getCurrentAdmin() {
   const session = await auth();
-
+             
   if (!session?.user?.id) {
     return null;
   }

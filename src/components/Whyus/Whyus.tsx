@@ -1,6 +1,6 @@
 "use client";
 
-import Counter from "@/utils/Counter";
+
 
 export default function Whyus() {
   const reasons = [
@@ -82,19 +82,19 @@ export default function Whyus() {
           <div className="flex flex-wrap justify-center items-center gap-8 sm:gap-12">
             <div>
               <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
-                <Counter end={500} duration={3} suffix="+"/>
+               <span>500</span>
               </div>
               <div className="text-sm text-gray-600 mt-1">Businesses Automated</div>
             </div>
             <div>
               <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
-                <Counter end={99.9} duration={3} suffix="%" />
+                <span>99.9%</span>
               </div>
               <div className="text-sm text-gray-600 mt-1">Agent Uptime</div>
             </div>
             <div>
               <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
-                 <Counter end={24} duration={3} />/<Counter end={7} duration={3} />
+                 <span>24</span>/<span>7</span>
               </div>
               <div className="text-sm text-gray-600 mt-1">AI Agent Availability</div>
             </div>

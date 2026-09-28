@@ -17,26 +17,8 @@ const nextConfig = withPWA({
     ],
   },
   reactStrictMode: true,
- turbopack: {},
+//  turbopack: {},
 })
 
 module.exports = nextConfig
 
-
-// /** @type {import('next').NextConfig} */
-
-// const nextConfig = {
-//   images: {
-//     remotePatterns: [
-//       {
-//         protocol: "https",
-//         hostname: "images.unsplash.com",
-//         pathname: "/**",
-//       },
-//     ],
-//   },
-
-//   reactStrictMode: true,
-// };
-
-// module.exports = nextConfig;

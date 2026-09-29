@@ -2,6 +2,10 @@
 import AssessmentPage, { AssessmentFormData } from "./clientAssessment";
 
 
+// import { generateSEOMetadata } from '../../../lib/seometadata';
+
+// export const generateMetadata = generateSEOMetadata;
+
 
 export default function Page() {
   async function handleAssessmentSubmit(data: AssessmentFormData) {

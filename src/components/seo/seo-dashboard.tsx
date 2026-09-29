@@ -53,49 +53,343 @@ interface Stats {
   total: number;
   totalKeywords: number;
 }
-
 const canonicalUrl = [
-  {pagename:"home",url:`${process.env.NEXT_PUBLIC_APP_URL}`},
- {pagename:"Calling Agent",url:`${process.env.NEXT_PUBLIC_APP_URL}/products/calling-agent`},
- {pagename:"Content Creation Agent",url:`${process.env.NEXT_PUBLIC_APP_URL}/products/content-creation-agent`},
- {pagename:"Seo Content Agent",url:`${process.env.NEXT_PUBLIC_APP_URL}/products/seo-content-agent`},
- {pagename:"Follow Up Agent",url:`${process.env.NEXT_PUBLIC_APP_URL}/products/follow-up-agent`},
- {pagename:"Data Mining Agent",url:`${process.env.NEXT_PUBLIC_APP_URL}/products/data-mining-agent`},
- {pagename:"Campaign Automation",url:`${process.env.NEXT_PUBLIC_APP_URL}/products/campaign-automation`},
- {pagename:"Lead Capture Agent",url:`${process.env.NEXT_PUBLIC_APP_URL}/products/lead-capture-agent`},
- {pagename:"lead Qualifiction Agent",url:`${process.env.NEXT_PUBLIC_APP_URL}/products/lead-qualifiction-agent`},
- {pagename:"Property Maching Agent",url:`${process.env.NEXT_PUBLIC_APP_URL}/products/property-maching-agent`},
- {pagename:"Social Media Agent",url:`${process.env.NEXT_PUBLIC_APP_URL}/products/social-media-agent`},
- {pagename:"Ai Automation",url:`${process.env.NEXT_PUBLIC_APP_URL}/training/ai-automation`},
- {pagename:"Ai Machine Learning",url:`${process.env.NEXT_PUBLIC_APP_URL}/training/ai-machine-learning`},
- {pagename:"Fullstack Web Development",url:`${process.env.NEXT_PUBLIC_APP_URL}/training/fullstack-web-development`},
- {pagename:"Digital Marketing",url:`${process.env.NEXT_PUBLIC_APP_URL}/training/digital-marketing`},
+  // =========================================================
+  // HOME
+  // =========================================================
+  {
+    pagename: "Home",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/`,
+  },
 
- {pagename:"Social-Media",url:`${process.env.NEXT_PUBLIC_APP_URL}/training/social-media`},
- {pagename:"Google Ads",url:`${process.env.NEXT_PUBLIC_APP_URL}/training/google-ads`},
- {pagename:"Education",url:`${process.env.NEXT_PUBLIC_APP_URL}/industry/education`},
- {pagename:"Real Estate",url:`${process.env.NEXT_PUBLIC_APP_URL}/industry/real-estate`},
- {pagename:"Healthcare",url:`${process.env.NEXT_PUBLIC_APP_URL}/industry/healthcare`},
- {pagename:"Technology",url:`${process.env.NEXT_PUBLIC_APP_URL}/industry/technology`},
- {pagename:"Travel Tourism",url:`${process.env.NEXT_PUBLIC_APP_URL}/industry/travel-tourism`},
- {pagename:"Consumer Goods Retail",url:`${process.env.NEXT_PUBLIC_APP_URL}/industry/consumer-goods-retail`},
- {pagename:"Bussiness Enhance",url:`${process.env.NEXT_PUBLIC_APP_URL}/services/bussiness-enhance`},
- {pagename:"Video Creation",url:`${process.env.NEXT_PUBLIC_APP_URL}/services/video-creation`},
- {pagename:"Content Creation",url:`${process.env.NEXT_PUBLIC_APP_URL}/services/content-creation`},
- {pagename:"Bussiness Automation",url:`${process.env.NEXT_PUBLIC_APP_URL}/services/bussiness-automation`},
- {pagename:"Lead Automation",url:`${process.env.NEXT_PUBLIC_APP_URL}/services/lead-automation`},
- {pagename:"Workflow Automation",url:`${process.env.NEXT_PUBLIC_APP_URL}/services/workflow-automation`},
- {pagename:"AI Chatbot",url:`${process.env.NEXT_PUBLIC_APP_URL}/services/ai-chatbot`},
- {pagename:"AI Personal Assistant",url:`${process.env.NEXT_PUBLIC_APP_URL}/services/ai-personal-assistant`},
- {pagename:"AI Tools",url:`${process.env.NEXT_PUBLIC_APP_URL}/services/ai-tools`},
- {pagename:"About Us",url:`${process.env.NEXT_PUBLIC_APP_URL}/resourses/about-us`},
-  {pagename:"Contact Us",url:`${process.env.NEXT_PUBLIC_APP_URL}/resourses/contact-us`},
-  {pagename:"Why Choose Us",url:`${process.env.NEXT_PUBLIC_APP_URL}/resourses/why-choose-us`},
-  {pagename:"Help Center",url:`${process.env.NEXT_PUBLIC_APP_URL}/resourses/help-center`},
-  {pagename:"Community",url:`${process.env.NEXT_PUBLIC_APP_URL}/resourses/community`},
-  {pagename:"Blog",url:`${process.env.NEXT_PUBLIC_APP_URL}/resourses/blog`},
+  // =========================================================
+  // SOLUTIONS
+  // =========================================================
+  {
+    pagename: "AI Business Assessment",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/solutions/ai-business-assessment`,
+  },
+  {
+    pagename: "AI Workforce",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/solutions/ai-workforce`,
+  },
+  {
+    pagename: "AI Automation",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/solutions/ai-automation`,
+  },
+  {
+    pagename: "AI Data & Research",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/solutions/ai-data-&-research`,
+  },
+  {
+    pagename: "AI Customer Operations",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/solutions/ai-customer-operations`,
+  },
+  {
+    pagename: "AI Sales & Outreach",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/solutions/ai-sales-&-outreach`,
+  },
+  {
+    pagename: "Solutions",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/solutions`,
+  },
 
-]
+  // =========================================================
+  // AI WORKFORCE
+  // =========================================================
+  {
+    pagename: "What is an AI Workforce",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/ai-workforce/what-is-an-ai-workforce`,
+  },
+  {
+    pagename: "What AIWorksForce",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/ai-workforce/what-aiworksforce`,
+  },
+  {
+    pagename: "How it Works",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/ai-workforce/how-it-works`,
+  },
+  {
+    pagename: "Our AI Workflow",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/ai-workforce/our-ai-workFlow`,
+  },
+  {
+    pagename: "AI Workforce Case Studies",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/ai-workforce/case-studies`,
+  },
+  {
+    pagename: "AI Workforce",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/ai-workforce`,
+  },
+
+  // =========================================================
+  // AI AGENTS
+  // =========================================================
+  {
+    pagename: "AI Lead Qualification Agent",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/ai-agents/lead-qualifiction-agent`,
+  },
+  {
+    pagename: "AI Property Matching Agent",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/ai-agents/property-maching-agent`,
+  },
+  {
+    pagename: "Lead Capture Agent",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/ai-agents/lead-capture-agent`,
+  },
+  {
+    pagename: "AI Content Creation Agent",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/ai-agents/content-creation-agent`,
+  },
+  {
+    pagename: "AI Follow-Up Agent",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/ai-agents/follow-up-agent`,
+  },
+  {
+    pagename: "AI Calling Agent",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/ai-agents/calling-agent`,
+  },
+  {
+    pagename: "AI Campaign Automation Agent",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/ai-agents/campaign-automation`,
+  },
+  {
+    pagename: "Data Mining Agent",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/ai-agents/data-mining-agent`,
+  },
+  {
+    pagename: "Social Media Agent",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/ai-agents/social-media-agent`,
+  },
+  {
+    pagename: "AI SEO Content Agent",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/ai-agents/seo-content-agent`,
+  },
+  {
+    pagename: "Explore AI Agents",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/explore-ai-agent`,
+  },
+
+  // =========================================================
+  // PRODUCTS
+  // =========================================================
+  {
+    pagename: "Products",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/products`,
+  },
+
+  // AI Lead Engine
+  {
+    pagename: "AI Lead Engine",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/industry/agencies`,
+  },
+  {
+    pagename: "B2B Lead Engine",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/products/crm/b2b`,
+  },
+  {
+    pagename: "B2C Lead Engine",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/products/crm/b2c`,
+  },
+  {
+    pagename: "Custom Lead Engine",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/products/crm/bulk`,
+  },
+
+  // AI Agents Product Category
+  {
+    pagename: "AI Agents Products",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/industry/customer-sucess`,
+  },
+
+  // AI Tools
+  {
+    pagename: "AI Tools",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/industry/enterprise`,
+  },
+  {
+    pagename: "AI Chatbot Builder",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/ai-tools/chatbot-builder`,
+  },
+  {
+    pagename: "Workflow Automator",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/ai-tools/workflow-automator`,
+  },
+  {
+    pagename: "Data Analyzer",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/ai-tools/data-analyzer`,
+  },
+  {
+    pagename: "Smart Scheduler",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/ai-tools/smart-scheduler`,
+  },
+  {
+    pagename: "Content Generator",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/ai-tools/content-generator`,
+  },
+
+  // Other Product CTA
+  {
+    pagename: "Book a Demo",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/book-demo`,
+  },
+
+  // =========================================================
+  // AI DIGITAL MARKETING
+  // =========================================================
+  {
+    pagename: "AI Digital Marketing",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/ai-digital-marketing`,
+  },
+  {
+    pagename: "AI SEO",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/ai-digital-marketing/ai-seo`,
+  },
+  {
+    pagename: "AI Content Marketing",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/ai-digital-marketing/ai-content-marketing`,
+  },
+  {
+    pagename: "AI Social Media",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/ai-digital-marketing/ai-social-media`,
+  },
+  {
+    pagename: "AI Backlink & Outreach",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/ai-digital-marketing/ai-backlink-&-outreach`,
+  },
+  {
+    pagename: "AI Advertising & Promotion",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/ai-digital-marketing/ai-advertising-&-promotion`,
+  },
+  {
+    pagename: "AI Creative & Video",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/ai-digital-marketing/ai-creative-&-video`,
+  },
+  {
+    pagename: "AI Marketing Automation",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/ai-digital-marketing/ai-marketing-automation`,
+  },
+  {
+    pagename: "AI Marketing Analytics",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/ai-digital-marketing/ai-marketing-analytics`,
+  },
+
+  // =========================================================
+  // TECHNOLOGY
+  // =========================================================
+  {
+    pagename: "Technology",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/technology`,
+  },
+  {
+    pagename: "AI Tools Technology",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/technology/ai-tools`,
+  },
+  {
+    pagename: "LLM & AI",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/technology/llm-&-ai`,
+  },
+  {
+    pagename: "AI Automation Technology",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/technology/ai-automation`,
+  },
+  {
+    pagename: "Technology Stack",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/technology/technology-stack`,
+  },
+  {
+    pagename: "Data Intelligence",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/technology/data-intelligence`,
+  },
+  {
+    pagename: "Lead Engine Technology",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/technology/lead-engine`,
+  },
+  {
+    pagename: "AI Infrastructure",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/technology/ai-infrastructure`,
+  },
+  {
+    pagename: "Integrations",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/technology/Integrations`,
+  },
+
+  // =========================================================
+  // RESOURCES
+  // =========================================================
+  {
+    pagename: "Resources",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/resources`,
+  },
+  {
+    pagename: "AI Use Cases",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/resources/ai-use-cases`,
+  },
+  {
+    pagename: "Case Studies",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/resources/case-studies`,
+  },
+  {
+    pagename: "AI Workforce Guides",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/resources/ai-workforce-guides`,
+  },
+  {
+    pagename: "AI Digital Marketing Guides",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/resources/ai-digital-marketing-guides`,
+  },
+  {
+    pagename: "Blog",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/resources/blog`,
+  },
+  {
+    pagename: "FAQs",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/resources/faqs`,
+  },
+
+  // =========================================================
+  // COMPANY
+  // =========================================================
+  {
+    pagename: "Company",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/company`,
+  },
+  {
+    pagename: "About AIWorksForce",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/company/about-aiworksforce`,
+  },
+  {
+    pagename: "AI Delivery Centre",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/company/ai-delivery-centre`,
+  },
+  {
+    pagename: "How We Work",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/company/how-we-work`,
+  },
+  {
+    pagename: "Our Team",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/company/our-team`,
+  },
+  {
+    pagename: "Careers",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/company/careers`,
+  },
+  {
+    pagename: "Contact",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/company/contact`,
+  },
+  {
+    pagename: "Get Demo",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/get-demo`,
+  },
+
+  // =========================================================
+  // START A PILOT
+  // =========================================================
+  {
+    pagename: "Start A Pilot",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/start-a-pilot`,
+  },
+];
 
 // ── API Functions (untouched) ────────────────────────────────────────────────
 const api = {

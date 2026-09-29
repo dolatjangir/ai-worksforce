@@ -117,7 +117,8 @@ export const {
   auth,
 } = NextAuth({
   ...authConfig,
-
+  
+ trustHost: true,
   session: {
     strategy: "jwt",
     maxAge: 8 * 60 * 60,

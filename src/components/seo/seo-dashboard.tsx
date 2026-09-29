@@ -53,6 +53,7 @@ interface Stats {
   total: number;
   totalKeywords: number;
 }
+
 const canonicalUrl = [
   // =========================================================
   // HOME
@@ -520,8 +521,8 @@ function PreviewPanel({
                 <Search className="w-4 h-4 text-[var(--color-text-faint)]" />
               </div>
               <div className="min-w-0">
-                <p className="text-xs text-[var(--color-text-primary)] font-medium">CreatikAI</p>
-                <p className="text-xs text-green-700 truncate">{formData.canonicalUrl || 'https://creatikai.com'}{formData.url}</p>
+                <p className="text-xs text-[var(--color-text-primary)] font-medium">aiworksforce</p>
+                <p className="text-xs text-green-700 truncate">{formData.canonicalUrl || 'https://aiworksforce.com'}{formData.url}</p>
               </div>
             </div>
             <h5 className="text-[#1a0dab] text-base font-medium mb-1 hover:underline cursor-pointer line-clamp-1">
@@ -547,7 +548,7 @@ function PreviewPanel({
               )}
             </div>
             <div className="p-3 bg-[#f0f2f5]">
-              <p className="text-xs text-[var(--color-text-muted)] uppercase mb-1">CreatikAi.COM</p>
+              <p className="text-xs text-[var(--color-text-muted)] uppercase mb-1">aiworksforce.COM</p>
               <h5 className="text-sm font-semibold text-[var(--color-text-primary)] line-clamp-1 mb-1">
                 {formData.ogTitle || formData.metaTitle || 'Page Title'}
               </h5>
@@ -579,7 +580,7 @@ function PreviewPanel({
                 {formData.twitterDescription || formData.metaDescription || 'Description will appear here...'}
               </p>
               <p className="text-xs text-[var(--color-text-faint)] flex items-center gap-1">
-                <Globe className="w-3 h-3" /> creatikai.com
+                <Globe className="w-3 h-3" /> aiworksforce.com
               </p>
             </div>
           </div>
@@ -724,7 +725,7 @@ const selectedLabel =
       canonicalUrl: selectedUrl,
       pageName,
       slug: slug,
-      url: slug,
+      url: path,
     }));
   } catch (error) {
     console.error("Invalid URL");
@@ -939,7 +940,7 @@ const handleKeywordsChange = (value: string) => {
       </div>
       <div className="flex-1 min-w-0">
         <p className="text-sm font-medium text-[var(--color-primary-dark)] truncate">Admin User</p>
-        <p className="text-xs text-[var(--color-primary)] truncate">admin@creatikai.com</p>
+        <p className="text-xs text-[var(--color-primary)] truncate">admin@aiworksforce.com</p>
       </div>
     </div>
   );
@@ -965,7 +966,7 @@ const handleKeywordsChange = (value: string) => {
           <div className="flex items-center gap-3">
            <img src="/creatikai-logo.png"/>
             <div>
-              <h1 className="font-bold text-lg text-[var(--color-primary-dark)]">CreatikAi</h1>
+              <h1 className="font-bold text-lg text-[var(--color-primary-dark)]">aiworksforce</h1>
               <p className="text-xs text-[var(--color-primary)]">Admin Dashboard</p>
             </div>
           </div>
@@ -990,7 +991,7 @@ const handleKeywordsChange = (value: string) => {
                <img src="/creatikai-logo.png"/>
             </div>
             <div>
-              <h1 className="font-bold text-xl text-[var(--color-primary-dark)]">CreatikAI</h1>
+              <h1 className="font-bold text-xl text-[var(--color-primary-dark)]">aiworksforce</h1>
               <p className="text-xs text-[var(--color-primary)]">Admin Dashboard</p>
             </div>
           </div>
@@ -1416,7 +1417,7 @@ const handleKeywordsChange = (value: string) => {
   {/* === AI GENERATE PANEL — INSERTED HERE === */}
   <AIGeneratePanel
     pageName={formData.pageName || ''}
-    canonicalUrl={formData.canonicalUrl || 'https://creatikai.com'}
+    canonicalUrl={formData.canonicalUrl || 'https://aiworksforce.com'}
     onGenerated={(data: SEOPromptOutput) => {
       setFormData(prev => ({
         ...prev,
@@ -1622,3 +1623,4 @@ const handleKeywordsChange = (value: string) => {
     </div>
   );
 }
+

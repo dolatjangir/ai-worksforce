@@ -1,9 +1,17 @@
 import AIAdvertisingPromotion from "./clientAdvPromotion";
-
+import RelatedBlogs from '@/components/related-blogs';
 import { generateSEOMetadata } from '../../../../lib/seometadata';
-
+import { getPageBlogs } from '../../../../lib/blogs';
 export const generateMetadata = generateSEOMetadata;
 
-export default function Page(){
-    return <AIAdvertisingPromotion/>
+
+
+export default async function  Page() {
+   const blogs = await getPageBlogs('ai-advertising-&-promotion');
+  return(
+    <>
+<AIAdvertisingPromotion/>
+    <RelatedBlogs blogs={blogs} />
+    </>
+  ) 
 }

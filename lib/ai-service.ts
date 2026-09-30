@@ -63,7 +63,7 @@ export async function generateSEO(input: SEOPromptInput): Promise<SEOPromptOutpu
 const fullPrompt = `${getSEOSystemPrompt()}\n\n${buildUserPrompt(input)}`;
   const result = await retryWithBackoff(async () => {
     return await ai.models.generateContent({
-      model: 'models/gemini-2.5-flash-lite',
+      model: 'models/gemini-2.5-flash',
       contents: fullPrompt,
     });
   });

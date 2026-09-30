@@ -1,10 +1,19 @@
 import AIMarketingAutomationPage from "./clientMarketing";
 
-import { generateSEOMetadata } from '../../../../lib/seometadata';
 
+import RelatedBlogs from '@/components/related-blogs';
+import { generateSEOMetadata } from '../../../../lib/seometadata';
+import { getPageBlogs } from '../../../../lib/blogs';
 export const generateMetadata = generateSEOMetadata;
 
 
-export default function Page(){
-    return <AIMarketingAutomationPage/>
+
+export default async function  Page() {
+   const blogs = await getPageBlogs('ai-marketing-automation');
+  return(
+    <>
+<AIMarketingAutomationPage/>
+    <RelatedBlogs blogs={blogs} />
+    </>
+  ) 
 }

@@ -1,12 +1,22 @@
 import LeadEnginePage from "./clientLead";
 
 
+
+import RelatedBlogs from '@/components/related-blogs';
 import { generateSEOMetadata } from '../../../../lib/seometadata';
+import { getPageBlogs } from '../../../../lib/blogs';
 
 export const generateMetadata = generateSEOMetadata;
 
 
 
-export default function Page(){
-    return <LeadEnginePage/>
+export default async function  Page() {
+   const blogs = await getPageBlogs('lead-engine');
+  return(
+    <>
+ <LeadEnginePage/>
+
+    <RelatedBlogs blogs={blogs} />
+    </>
+  ) 
 }

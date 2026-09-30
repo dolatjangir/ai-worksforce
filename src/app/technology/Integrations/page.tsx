@@ -1,12 +1,21 @@
 import IntegrationsPage from "./clientIntigration";
 
 
+import RelatedBlogs from '@/components/related-blogs';
 import { generateSEOMetadata } from '../../../../lib/seometadata';
+import { getPageBlogs } from '../../../../lib/blogs';
 
 export const generateMetadata = generateSEOMetadata;
 
 
 
-export default function Page(){
-    return <IntegrationsPage/>
+export default async function  Page() {
+   const blogs = await getPageBlogs('integrations');
+  return(
+    <>
+ <IntegrationsPage/>
+
+    <RelatedBlogs blogs={blogs} />
+    </>
+  ) 
 }

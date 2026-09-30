@@ -1,11 +1,20 @@
 import DataIntelligencePage from "./clientData";
 
-
+import RelatedBlogs from '@/components/related-blogs';
 import { generateSEOMetadata } from '../../../../lib/seometadata';
+import { getPageBlogs } from '../../../../lib/blogs';
 
 export const generateMetadata = generateSEOMetadata;
 
 
-export default function Page(){
-    return <DataIntelligencePage/>
+
+export default async function  Page() {
+   const blogs = await getPageBlogs('ai-tools');
+  return(
+    <>
+ <DataIntelligencePage/>
+
+    <RelatedBlogs blogs={blogs} />
+    </>
+  ) 
 }

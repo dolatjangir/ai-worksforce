@@ -9,10 +9,6 @@ import {
 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { LogOut } from 'lucide-react';
-import BrokersPage from '@/components/explore-broker/exploreBroker';
-import RequirementsPage from '@/components/getRequirement/requirement';
-import AdminPropertiesPage from '@/components/property-admin/properties';
-import JoinBrokerApplicationsAdmin from '@/components/join-broker-network/joinNetwork';
 
 import { SEOPromptOutput } from '../../../lib/seo-prompt';
 import AIGeneratePanel from './ai-generate-panel';
@@ -725,7 +721,7 @@ const selectedLabel =
       canonicalUrl: selectedUrl,
       pageName,
       slug: slug,
-      url: path,
+      url: slug,
     }));
   } catch (error) {
     console.error("Invalid URL");

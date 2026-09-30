@@ -1,24 +1,25 @@
-/** @type {import('next').NextConfig} */
-const withPWA = require("next-pwa")({
+import withPWAInit from "next-pwa";
+import type { NextConfig } from "next";
+
+const withPWA = withPWAInit({
   dest: "public",
   register: true,
   skipWaiting: true,
   disable: process.env.NODE_ENV === "development",
-})
+});
 
-const nextConfig = withPWA({
-    images: {
+const nextConfig: NextConfig = {
+  images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-        pathname: '/**', // Matches any image folder path coming from Unsplash
+        protocol: "https",
+        hostname: "images.unsplash.com",
+        pathname: "/**",
       },
     ],
   },
   reactStrictMode: true,
-//  turbopack: {},
-})
+   turbopack: {}, // Note: turbopack is usually configured via CLI flags in Next 15, but you can leave this if your setup requires it.
+};
 
-module.exports = nextConfig
-
+export default withPWA(nextConfig);

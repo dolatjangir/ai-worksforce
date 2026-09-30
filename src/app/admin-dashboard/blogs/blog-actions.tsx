@@ -23,7 +23,7 @@ export function BlogActions({ blogId, slug }: { blogId: string; slug: string }) 
 
   return (
     <>
-    <MasterProtectedRoute>
+  
       <div className="flex items-center gap-1">
         <Link
           href={`/blog/${slug}`}
@@ -63,7 +63,7 @@ export function BlogActions({ blogId, slug }: { blogId: string; slug: string }) 
         onClose={() => setShowDelete(false)}
         onConfirm={handleDelete}
       />
-      </MasterProtectedRoute>
+     
     </>
   );
 }

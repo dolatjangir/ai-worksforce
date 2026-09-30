@@ -95,7 +95,7 @@ useEffect(() => {
   };
 
   return (
-    <MasterProtectedRoute>
+
     <div className="min-h-screen bg-[var(--color-section-alt)]">
       <div className="max-w-[1280px] mx-auto px-[var(--container-padding)] py-8">
         {/* Header */}
@@ -336,6 +336,6 @@ useEffect(() => {
         </div>
       </div>
     </div>
-    </MasterProtectedRoute>
+  
   );
 }

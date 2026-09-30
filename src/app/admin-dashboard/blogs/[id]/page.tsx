@@ -126,7 +126,7 @@ export default function EditBlogPage() {
   }
 
   return (
-    <MasterProtectedRoute>
+  
     <div className="min-h-screen bg-[var(--color-section-alt)]">
       <div className="max-w-[1280px] mx-auto px-[var(--container-padding)] py-8">
         <div className="flex items-center gap-4 mb-8">
@@ -278,6 +278,6 @@ export default function EditBlogPage() {
         </div>
       </div>
     </div>
-    </MasterProtectedRoute>
+  
   );
 }

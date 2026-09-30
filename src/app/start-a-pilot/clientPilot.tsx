@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 
 /* =========================================================
    INLINE ICONS
@@ -260,6 +260,62 @@ function ValueCard({
 ========================================================= */
 
 export default function PilotPage() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+const [submitMessage, setSubmitMessage] = useState("");
+const [submitError, setSubmitError] = useState("");
+
+const handleSubmit = async (
+  event: React.FormEvent<HTMLFormElement>
+) => {
+  event.preventDefault();
+
+  setIsSubmitting(true);
+  setSubmitMessage("");
+  setSubmitError("");
+
+  const form = event.currentTarget;
+  const formData = new FormData(form);
+
+  const payload = {
+    fullName: String(formData.get("fullName") || "").trim(),
+    email: String(formData.get("email") || "").trim(),
+    company: String(formData.get("company") || "").trim(),
+    useCase: String(formData.get("useCase") || "").trim(),
+    goals: String(formData.get("goals") || "").trim(),
+  };
+
+  try {
+    const response = await fetch("/api/pilot", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
+
+    const result = await response.json();
+
+    if (!response.ok) {
+      throw new Error(
+        result?.message || "Something went wrong."
+      );
+    }
+
+    setSubmitMessage(
+      result.message || "Your pilot request has been submitted successfully."
+    );
+
+    form.reset();
+  } catch (error) {
+    setSubmitError(
+      error instanceof Error
+        ? error.message
+        : "Unable to submit your request."
+    );
+  } finally {
+    setIsSubmitting(false);
+  }
+};
   return (
     <main className="min-h-screen overflow-hidden bg-white text-[#10204f]">
     
@@ -505,7 +561,7 @@ export default function PilotPage() {
         {/* Form fields */}
         <div className="p-5">
           {/* Add your existing submission handler to this form. */}
-          <form className="space-y-2">
+          <form className="space-y-2" onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <label className="block min-w-0">
                 <span className="mb-1.5 block text-sm font-semibold text-[#10204f]">
@@ -641,6 +697,7 @@ export default function PilotPage() {
 
             <button
               type="submit"
+              disabled={isSubmitting}
               className="
                 group flex min-h-14 w-full items-center justify-center gap-3
                 rounded-xl bg-gradient-to-r from-blue-600 to-violet-600
@@ -653,7 +710,7 @@ export default function PilotPage() {
                 motion-safe:hover:-translate-y-0.5
               "
             >
-              Request a Pilot
+             {isSubmitting ? "Submitting..." : "Request a Pilot"}
               <span
                 aria-hidden="true"
                 className="shrink-0 transition-transform motion-safe:group-hover:translate-x-1"
@@ -662,7 +719,23 @@ export default function PilotPage() {
               </span>
             </button>
           </form>
+{submitMessage && (
+  <div
+    className="mt-4 rounded-xl border border-green-200 bg-green-50 px-4 py-3 text-sm font-medium text-green-700"
+    role="status"
+  >
+    {submitMessage}
+  </div>
+)}
 
+{submitError && (
+  <div
+    className="mt-4 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-medium text-red-700"
+    role="alert"
+  >
+    {submitError}
+  </div>
+)}
           <div className="mt-5 flex items-start justify-center gap-2 text-center text-sm leading-6 text-slate-500 sm:text-base">
             <span aria-hidden="true" className="shrink-0">
               🔒

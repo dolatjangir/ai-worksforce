@@ -59,11 +59,11 @@ export default function DashboardLayoutClient({
       label: "Posted Application",
       icon: HousePlus,
     },
-    // {
-    //   path: "/admin-dashboard/requirements",
-    //   label: "Requirements",
-    //   icon: UsersRound,
-    // },
+    {
+      path: "/admin-dashboard/pilot-manager",
+      label: "Pilot Req Manager",
+      icon: SquareUser,
+    },
     {
       path: "/admin-dashboard/contact-us",
       label: "Contact-Us Requirements",
@@ -74,11 +74,11 @@ export default function DashboardLayoutClient({
     //   label: "Subscriber",
     //   icon: SquareUser,
     // },
-    // {
-    //   path: "/admin-dashboard/inquiry",
-    //   label: "Inquiry",
-    //   icon: UsersRound,
-    // },
+    {
+      path: "/admin-dashboard/assessment-manager",
+      label: "Assessment-Manager",
+      icon: UsersRound,
+    },
     {
       path: "/admin-dashboard/certificates",
       label: "Certificates",

@@ -163,3 +163,100 @@ model JobApplication {
   @@index([createdAt])
   @@index([resumeDriveId])
 }
+
+model Subscriber {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  createdAt DateTime @default(now())
+}
+
+model Certificate {
+  id String @id @default(cuid())
+
+  // The unique public ID (e.g., cr43534)
+  certificateId String @unique
+
+  // Core Information
+  participantName String
+  courseName      String
+  duration        String
+  startDate       DateTime @db.Date
+  endDate         DateTime @db.Date
+
+  // Media
+  imageUrl String? @db.VarChar(500)
+
+  // Added Details
+  instructorName String?
+  skills         Json? // Stores an array of strings, e.g., ["Next.js", "Node.js", "Prisma"]
+  status         CertStatus @default(VALID)
+
+  isHidden Boolean? @default(false)
+
+  // System fields
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([certificateId])
+  @@index([participantName])
+  @@index([status])
+  @@map("certificates")
+}
+
+// Enum for the status field
+enum CertStatus {
+  VALID
+  REVOKED
+  EXPIRED
+}
+
+model EmployeeIdCard {
+  id             String   @id @default(cuid())
+  employeeId     String   @unique
+  employeeName   String
+  email          String   @unique
+  phone          String
+  jobTitle       String?
+  qualifications String   @db.Text
+  dateOfBirth    DateTime @db.Date
+  skills         Json? // Array of strings
+  imageUrl       String?  @db.VarChar(500)
+
+  // Status Flags
+  hasCertificate Boolean @default(false)
+  hasVerified    Boolean @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([email])
+  @@index([hasVerified])
+  @@index([employeeId])
+  @@map("employee_id_cards")
+}
+
+model PilotRequest {
+  id       Int     @id @default(autoincrement())
+  fullName String  @db.VarChar(150)
+  email    String  @db.VarChar(255)
+  company  String  @db.VarChar(200)
+  useCase  String  @db.VarChar(100)
+  goals    String? @db.Text
+
+  status PilotRequestStatus @default(NEW)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([createdAt])
+  @@index([status])
+  @@index([email])
+}
+
+enum PilotRequestStatus {
+  NEW
+  CONTACTED
+  QUALIFIED
+  CONVERTED
+  CLOSED
+}

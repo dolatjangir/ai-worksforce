@@ -10,7 +10,7 @@ export const generateMetadata = generateSEOMetadata;
 
 
 export default async function  Page() {
-   const blogs = await getPageBlogs('our-team');
+   const blogs = await getPageBlogs('all-team-members');
   return(
     <>
 <AllTeamPage/>

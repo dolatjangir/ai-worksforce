@@ -14,8 +14,8 @@ export default async function BlogDashboard() {
 
   const stats = {
     total: blogs.length,
-    published: blogs.filter((b) => b.isPublished).length,
-    drafts: blogs.filter((b) => !b.isPublished).length,
+    published: blogs.filter((b:any) => b.isPublished).length,
+    drafts: blogs.filter((b:any) => !b.isPublished).length,
   };
 
   const formatDate = (date: Date) => {
@@ -27,7 +27,7 @@ export default async function BlogDashboard() {
   };
 
   return (
-    <MasterProtectedRoute>
+  
     <div className="min-h-screen bg-white">
       <div className="max-w-[1280px] mx-auto px-[var(--container-padding)] py-8">
         {/* Header */}
@@ -172,7 +172,7 @@ export default async function BlogDashboard() {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-[var(--color-border-light)]">
-                  {blogs.map((blog) => (
+                  {blogs.map((blog:any) => (
                     <tr key={blog.id} className="hover:bg-[var(--color-bg-hover)] transition-colors group">
                       <td className="px-6 py-4">
                         <div className="flex items-center gap-3">
@@ -232,6 +232,6 @@ export default async function BlogDashboard() {
         )}
       </div>
     </div>
-    </MasterProtectedRoute>
+  
   );
 }

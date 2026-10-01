@@ -18,6 +18,7 @@
     "aos": "^2.3.4",
     "axios": "^1.13.2",
     "bcryptjs": "^3.0.3",
+    "cloudinary": "^2.11.0",
     "framer-motion": "^13.2.0",
     "genai": "^0.0.18",
     "googleapis": "^182.0.0",
@@ -39,10 +40,10 @@
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/aos": "^3.0.7",
-    "@types/node": "^20.19.43",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "cross-env": "^10.1.0",
+    "save-dev": "^0.0.1-security",
     "tailwindcss": "^4",
     "tsx": "^4.23.15",
     "typescript": "^5"

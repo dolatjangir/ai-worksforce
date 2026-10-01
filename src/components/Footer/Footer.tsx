@@ -91,7 +91,7 @@ const footerColumns: FooterColumn[] = [
                 { label: "Consultancy Lead Engine", href: "https://consult.ibigdata.in/admin" },
                 { label: "Travel Lead Engine", href: "https://travel.ibigdata.in/admin" },
     ],
-    footerHref: "/book-demo",
+    footerHref: "/get-your-assessment",
      footerLink: "View All ",
   },
   {

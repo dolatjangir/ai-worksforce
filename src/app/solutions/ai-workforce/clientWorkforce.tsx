@@ -12,6 +12,7 @@ import {
   Briefcase,
   Rocket,
 } from "lucide-react";
+import Link from "next/link";
 
 const navItems = [
   "Solutions",
@@ -250,10 +251,12 @@ export default function AIWorkforcePage() {
                 Get a personalized consultation and see how an AI workforce can
                 help your business grow faster.
               </p>
+              <Link href="/get-your-assessment">
               <button className="mt-8 flex items-center gap-2 rounded-lg bg-white px-6 py-3.5 text-sm font-bold text-slate-900 shadow-lg transition hover:bg-blue-50">
                 Book a Free Consultation
                 <ArrowRight className="h-4 w-4" />
               </button>
+              </Link>
             </div>
           </div>
 
@@ -263,10 +266,12 @@ export default function AIWorkforcePage() {
               <h3 className="text-xl font-extrabold tracking-tight text-slate-900">
                 Frequently Asked Questions
               </h3>
+              <Link href="/resources/faqs">
               <button className="flex items-center gap-1.5 text-sm font-bold text-blue-600 transition hover:gap-2.5">
                 View All FAQs
                 <ArrowRight className="h-4 w-4" />
               </button>
+              </Link>
             </div>
             <div className="divide-y divide-slate-100 rounded-2xl border border-slate-100">
               {faqs.map((question) => (

@@ -2,6 +2,7 @@
 
 import SolutionsHero from "@/components/solutions-hero/reusable-hero";
 import PageHero from "@/components/solutions-hero/reusable-hero";
+import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 
 /* ============================================================
@@ -619,13 +620,13 @@ export default function AIDataResearchPage() {
               ))}
             </ul>
 
-            <a
-              href="#contact"
+            <Link
+              href="/company/contact"
               className="mt-7 inline-flex items-center gap-2 rounded-xl bg-[#0876ed] px-6 py-3.5 text-[13px] font-extrabold text-white shadow-lg shadow-blue-500/25"
             >
               Talk to Our Experts
               <Icon name="arrow" size={15} />
-            </a>
+            </Link>
           </Reveal>
         </div>
       </section>
@@ -741,8 +742,8 @@ export default function AIDataResearchPage() {
                       {industry.desc}
                     </p>
 
-                    <a
-                      href="#contact"
+                    <Link
+                      href="/company/contact"
                       className="mt-4 inline-flex items-center gap-1.5 text-[11px] font-bold text-[#0876ed]"
                     >
                       {industry.title === "And More"
@@ -750,7 +751,7 @@ export default function AIDataResearchPage() {
                         : "Learn More"}
 
                       <Icon name="arrow" size={12} />
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </Reveal>
@@ -902,20 +903,20 @@ export default function AIDataResearchPage() {
             </p>
 
             <div className="mt-4 flex flex-wrap items-center gap-6">
-              <a
-                href="#"
+              <Link
+                href="/get-your-assessment"
                 className="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3.5 text-[13px] font-extrabold text-[#06235a] shadow-xl"
               >
                 Get Started Today
                 <Icon name="arrow" size={15} className="text-[#0876ed]" />
-              </a>
+              </Link>
 
-              <a
-                href="#"
+              <Link
+                href="/company/contact"
                 className="text-[13px] font-bold text-white"
               >
                 Talk to Our Experts
-              </a>
+              </Link>
             </div>
           </Reveal>
 

@@ -38,6 +38,7 @@ import {
 } from "lucide-react";
 import WorkforceHero from "./Hero/Hero";
 import BusinessApproach from "./BusinessApproach";
+import Link from "next/link";
 
 
 export default function Home() {
@@ -597,14 +598,14 @@ Choose How You Want to Work With Us.
                 </ul>
 
                 {/* Button */}
-                <a
-                  href="#contact"
+                <Link
+                  href="/company/contact"
                   className="mt-6 inline-flex items-center gap-1.5 rounded-md bg-[#0876ed] px-4 py-2.5 text-sm font-bold text-white transition hover:bg-[#0668d5]"
                 >
                   {team.button}
 
                   <ArrowRight size={12} />
-                </a>
+                </Link>
               </div>
 
               {/* =================================================

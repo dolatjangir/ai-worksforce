@@ -1,6 +1,7 @@
 "use client";
 
 import PageHero from "@/components/company-hero/reusable-hero";
+import Link from "next/link";
 import { useState, type ReactNode } from "react";
 
 /* =========================================================
@@ -670,7 +671,7 @@ export default function AIDeliveryCentrePage() {
                 team and deliver exceptional results for our clients.
               </p>
 
-              <a
+              <Link
                 href="#"
                 className="mt-5 inline-flex min-h-11 items-center gap-2 rounded-lg border border-brand-blue px-5 text-sm font-bold text-brand-blue transition hover:bg-brand-blue hover:text-white sm:text-base"
               >
@@ -680,7 +681,7 @@ export default function AIDeliveryCentrePage() {
                   name="arrow"
                   className="size-4"
                 />
-              </a>
+              </Link>
             </div>
 
             {/* Gallery */}
@@ -737,8 +738,8 @@ export default function AIDeliveryCentrePage() {
               </p>
             </div>
 
-            <a
-              href="/book-demo"
+            <Link
+              href="/get-your-assessment"
               className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-white px-6 text-sm font-bold text-brand-dark shadow-lg transition hover:-translate-y-0.5 sm:text-base"
             >
               Book a Free Consultation
@@ -747,7 +748,7 @@ export default function AIDeliveryCentrePage() {
                 name="arrow"
                 className="size-4"
               />
-            </a>
+            </Link>
           </div>
         </section>
       </main>

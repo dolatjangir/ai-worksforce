@@ -24,6 +24,7 @@ import {
   Youtube,
   Zap,
 } from "lucide-react";
+import Link from "next/link";
 
 import { FormEvent, useState } from "react";
 
@@ -370,7 +371,7 @@ export default function ContactPage() {
   imageAlt="AIWorksForce office"
   primaryAction={{
     label: "Book a Free Consultation",
-    href: "#contact-form",
+    href: "/get-your-assessment",
     icon: "arrow",
   }}
   secondaryAction={{
@@ -438,205 +439,207 @@ export default function ContactPage() {
               to you shortly.
             </p>
 
-            <form
-              onSubmit={handleSubmit}
-              className="mt-7 rounded-xl border border-blue-100 bg-white p-5 shadow-[0_8px_30px_rgba(24,74,140,0.05)] sm:p-6 lg:p-7"
-            >
-              <div className="grid gap-5 sm:grid-cols-2">
-                {/* Full Name */}
-
-                <div>
-                  <label
-                    htmlFor="full-name"
-                    className="mb-2 block text-sm font-bold text-[var(--color-heading)] sm:text-base"
-                  >
-                    Full Name *
-                  </label>
-
-                  <input
-                    id="full-name"
-                    name="fullName"
-                    required
-                    type="text"
-                    placeholder="John Doe"
-                    className="h-11 w-full rounded-lg border border-blue-100 bg-white px-3 text-sm text-[var(--color-heading)] outline-none transition placeholder:text-slate-400 focus:border-[var(--color-primary)] focus:ring-4 focus:ring-blue-50 sm:h-12 sm:text-base"
-                  />
-                </div>
-
-                {/* Business Email */}
-
-                <div>
-                  <label
-                    htmlFor="business-email"
-                    className="mb-2 block text-sm font-bold text-[var(--color-heading)] sm:text-base"
-                  >
-                    Business Email *
-                  </label>
-
-                  <input
-                    id="business-email"
-                    name="email"
-                    required
-                    type="email"
-                    placeholder="you@company.com"
-                    className="h-11 w-full rounded-lg border border-blue-100 bg-white px-3 text-sm text-[var(--color-heading)] outline-none transition placeholder:text-slate-400 focus:border-[var(--color-primary)] focus:ring-4 focus:ring-blue-50 sm:h-12 sm:text-base"
-                  />
-                </div>
-
-                {/* Company */}
-
-                <div>
-                  <label
-                    htmlFor="company"
-                    className="mb-2 block text-sm font-bold text-[var(--color-heading)] sm:text-base"
-                  >
-                    Company Name *
-                  </label>
-
-                  <input
-                    id="company"
-                    name="company"
-                    required
-                    type="text"
-                    placeholder="Your Company"
-                    className="h-11 w-full rounded-lg border border-blue-100 bg-white px-3 text-sm text-[var(--color-heading)] outline-none transition placeholder:text-slate-400 focus:border-[var(--color-primary)] focus:ring-4 focus:ring-blue-50 sm:h-12 sm:text-base"
-                  />
-                </div>
-
-                {/* Phone */}
-
-                <div>
-                  <label
-                    htmlFor="phone"
-                    className="mb-2 block text-sm font-bold text-[var(--color-heading)] sm:text-base"
-                  >
-                    Phone Number
-                  </label>
-
-                  <div className="flex h-11 overflow-hidden rounded-lg border border-blue-100 focus-within:border-[var(--color-primary)] focus-within:ring-4 focus-within:ring-blue-50 sm:h-12">
-                    <div className="flex items-center gap-2 border-r border-blue-100 px-3 text-sm text-[var(--color-text)]">
-                      <span>🇮🇳</span>
-                      <ChevronDown className="size-3" />
-                    </div>
-
-                    <input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      placeholder="+91 98765 43210"
-                      className="min-w-0 flex-1 px-3 text-sm text-[var(--color-heading)] outline-none placeholder:text-slate-400 sm:text-base"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              {/* Service */}
-
-              <div className="mt-5">
-                <label
-                  htmlFor="service"
-                  className="mb-2 block text-sm font-bold text-[var(--color-heading)] sm:text-base"
-                >
-                  How can we help you? *
-                </label>
-
-                <div className="relative">
-                  <select
-                    id="service"
-                    name="service"
-                    required
-                    value={service}
-                    onChange={(event) =>
-                      setService(event.target.value)
-                    }
-                    className="h-11 w-full appearance-none rounded-lg border border-blue-100 bg-white px-3 pr-10 text-sm text-[var(--color-heading)] outline-none transition focus:border-[var(--color-primary)] focus:ring-4 focus:ring-blue-50 sm:h-12 sm:text-base"
-                  >
-                    <option value="" disabled>
-                      Select an option
-                    </option>
-                    <option value="automation">
-                      AI Automation
-                    </option>
-                    <option value="agents">AI Agents</option>
-                    <option value="customer-operations">
-                      AI Customer Operations
-                    </option>
-                    <option value="sales">
-                      AI Sales & Outreach
-                    </option>
-                    <option value="marketing">
-                      AI Digital Marketing
-                    </option>
-                    <option value="data">
-                      AI Data & Research
-                    </option>
-                    <option value="other">
-                      Something Else
-                    </option>
-                  </select>
-
-                  <ChevronDown className="pointer-events-none absolute right-3 top-1/2 size-4 -translate-y-1/2 text-[var(--color-text-muted)]" />
-                </div>
-              </div>
-
-              {/* Message */}
-
-              <div className="mt-5">
-                <label
-                  htmlFor="message"
-                  className="mb-2 block text-sm font-bold text-[var(--color-heading)] sm:text-base"
-                >
-                  Your Message *
-                </label>
-
-                <div className="relative">
-                  <textarea
-                    id="message"
-                    name="message"
-                    required
-                    rows={5}
-                    maxLength={500}
-                    placeholder="Tell us about your project, goals, or any questions..."
-                    className="min-h-32 w-full resize-none rounded-lg border border-blue-100 bg-white px-3 py-3 text-sm leading-relaxed text-[var(--color-heading)] outline-none transition placeholder:text-slate-400 focus:border-[var(--color-primary)] focus:ring-4 focus:ring-blue-50 sm:min-h-36 sm:text-base"
-                  />
-
-                  <span className="absolute bottom-2 right-3 text-xs text-[var(--color-text-muted)]">
-                    0/500
-                  </span>
-                </div>
-              </div>
-
-              {/* Submit */}
-<button
-  type="submit"
-  disabled={submitting}
-  className="mt-5 inline-flex h-11 w-full items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-violet-600)] text-sm font-bold text-white shadow-lg transition hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-60 sm:h-12 sm:text-base"
+<form
+  onSubmit={handleSubmit}
+  className="mt-7 rounded-2xl border border-blue-200/80 bg-gradient-to-br from-white via-white to-blue-50/40 p-5 shadow-[0_20px_55px_rgba(37,99,235,0.12)] transition-shadow duration-300 hover:shadow-[0_24px_65px_rgba(37,99,235,0.16)] sm:p-6 lg:p-7"
 >
-  {submitting
-    ? "Sending Message..."
-    : submitted
-      ? "Message Sent Successfully"
-      : "Send Message"}
+  <div className="grid gap-5 sm:grid-cols-2">
+    {/* Full Name */}
 
-  {submitted ? (
-    <Check className="size-4" />
-  ) : (
-    <ArrowRight className="size-4" />
-  )}
-</button>
+    <div>
+      <label
+        htmlFor="full-name"
+        className="mb-2 block text-sm font-bold text-[var(--color-heading)] sm:text-base"
+      >
+        Full Name *
+      </label>
 
-              <p className="mt-3 text-xs leading-relaxed text-[var(--color-text-muted)] sm:text-sm">
-                By submitting this form, you agree to our{" "}
-                <a
-                  href="/privacy-policy"
-                  className="font-medium text-[var(--color-primary)] hover:underline"
-                >
-                  Privacy Policy
-                </a>
-                . We respect your privacy and will never share
-                your information.
-              </p>
-            </form>
+      <input
+        id="full-name"
+        name="fullName"
+        required
+        type="text"
+        placeholder="John Doe"
+        className="h-11 w-full rounded-xl border border-blue-200/80 bg-white px-3 text-sm text-[var(--color-heading)] shadow-sm outline-none transition-all duration-200 placeholder:text-slate-400 hover:border-blue-300 hover:shadow-[0_4px_14px_rgba(37,99,235,0.06)] focus:border-[var(--color-primary)] focus:bg-blue-50/20 focus:ring-4 focus:ring-blue-100/80 sm:h-12 sm:text-base"
+      />
+    </div>
+
+    {/* Business Email */}
+
+    <div>
+      <label
+        htmlFor="business-email"
+        className="mb-2 block text-sm font-bold text-[var(--color-heading)] sm:text-base"
+      >
+        Business Email *
+      </label>
+
+      <input
+        id="business-email"
+        name="email"
+        required
+        type="email"
+        placeholder="you@company.com"
+        className="h-11 w-full rounded-xl border border-blue-200/80 bg-white px-3 text-sm text-[var(--color-heading)] shadow-sm outline-none transition-all duration-200 placeholder:text-slate-400 hover:border-blue-300 hover:shadow-[0_4px_14px_rgba(37,99,235,0.06)] focus:border-[var(--color-primary)] focus:bg-blue-50/20 focus:ring-4 focus:ring-blue-100/80 sm:h-12 sm:text-base"
+      />
+    </div>
+
+    {/* Company */}
+
+    <div>
+      <label
+        htmlFor="company"
+        className="mb-2 block text-sm font-bold text-[var(--color-heading)] sm:text-base"
+      >
+        Company Name *
+      </label>
+
+      <input
+        id="company"
+        name="company"
+        required
+        type="text"
+        placeholder="Your Company"
+        className="h-11 w-full rounded-xl border border-blue-200/80 bg-white px-3 text-sm text-[var(--color-heading)] shadow-sm outline-none transition-all duration-200 placeholder:text-slate-400 hover:border-blue-300 hover:shadow-[0_4px_14px_rgba(37,99,235,0.06)] focus:border-[var(--color-primary)] focus:bg-blue-50/20 focus:ring-4 focus:ring-blue-100/80 sm:h-12 sm:text-base"
+      />
+    </div>
+
+    {/* Phone */}
+
+    <div>
+      <label
+        htmlFor="phone"
+        className="mb-2 block text-sm font-bold text-[var(--color-heading)] sm:text-base"
+      >
+        Phone Number
+      </label>
+
+      <div className="flex h-11 overflow-hidden rounded-xl border border-blue-200/80 bg-white shadow-sm transition-all duration-200 hover:border-blue-300 hover:shadow-[0_4px_14px_rgba(37,99,235,0.06)] focus-within:border-[var(--color-primary)] focus-within:bg-blue-50/20 focus-within:ring-4 focus-within:ring-blue-100/80 sm:h-12">
+        <div className="flex items-center gap-2 border-r border-blue-100 px-3 text-sm text-[var(--color-text)]">
+          <span>🇮🇳</span>
+          <ChevronDown className="size-3" />
+        </div>
+
+        <input
+          id="phone"
+          name="phone"
+          type="tel"
+          placeholder="+91 98765 43210"
+          className="min-w-0 flex-1 bg-transparent px-3 text-sm text-[var(--color-heading)] outline-none placeholder:text-slate-400 sm:text-base"
+        />
+      </div>
+    </div>
+  </div>
+
+  {/* Service */}
+
+  <div className="mt-5">
+    <label
+      htmlFor="service"
+      className="mb-2 block text-sm font-bold text-[var(--color-heading)] sm:text-base"
+    >
+      How can we help you? *
+    </label>
+
+    <div className="relative">
+      <select
+        id="service"
+        name="service"
+        required
+        value={service}
+        onChange={(event) =>
+          setService(event.target.value)
+        }
+        className="h-11 w-full appearance-none rounded-xl border border-blue-200/80 bg-white px-3 pr-10 text-sm text-[var(--color-heading)] shadow-sm outline-none transition-all duration-200 hover:border-blue-300 hover:shadow-[0_4px_14px_rgba(37,99,235,0.06)] focus:border-[var(--color-primary)] focus:bg-blue-50/20 focus:ring-4 focus:ring-blue-100/80 sm:h-12 sm:text-base"
+      >
+        <option value="" disabled>
+          Select an option
+        </option>
+        <option value="automation">
+          AI Automation
+        </option>
+        <option value="agents">AI Agents</option>
+        <option value="customer-operations">
+          AI Customer Operations
+        </option>
+        <option value="sales">
+          AI Sales & Outreach
+        </option>
+        <option value="marketing">
+          AI Digital Marketing
+        </option>
+        <option value="data">
+          AI Data & Research
+        </option>
+        <option value="other">
+          Something Else
+        </option>
+      </select>
+
+      <ChevronDown className="pointer-events-none absolute right-3 top-1/2 size-4 -translate-y-1/2 text-[var(--color-text-muted)]" />
+    </div>
+  </div>
+
+  {/* Message */}
+
+  <div className="mt-5">
+    <label
+      htmlFor="message"
+      className="mb-2 block text-sm font-bold text-[var(--color-heading)] sm:text-base"
+    >
+      Your Message *
+    </label>
+
+    <div className="relative">
+      <textarea
+        id="message"
+        name="message"
+        required
+        rows={5}
+        maxLength={500}
+        placeholder="Tell us about your project, goals, or any questions..."
+        className="min-h-32 w-full resize-none rounded-xl border border-blue-200/80 bg-white px-3 py-3 text-sm leading-relaxed text-[var(--color-heading)] shadow-sm outline-none transition-all duration-200 placeholder:text-slate-400 hover:border-blue-300 hover:shadow-[0_4px_14px_rgba(37,99,235,0.06)] focus:border-[var(--color-primary)] focus:bg-blue-50/20 focus:ring-4 focus:ring-blue-100/80 sm:min-h-36 sm:text-base"
+      />
+
+      <span className="absolute bottom-2 right-3 rounded-md bg-white/90 px-1.5 py-0.5 text-xs text-[var(--color-text-muted)]">
+        0/500
+      </span>
+    </div>
+  </div>
+
+  {/* Submit */}
+
+  <button
+    type="submit"
+    disabled={submitting}
+    className="mt-5 inline-flex h-11 w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[var(--color-primary)] via-blue-600 to-[var(--color-violet-600)] text-sm font-bold text-white shadow-[0_10px_25px_rgba(37,99,235,0.28)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_14px_32px_rgba(37,99,235,0.35)] hover:brightness-105 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-200 active:translate-y-0 disabled:cursor-not-allowed disabled:opacity-60 sm:h-12 sm:text-base"
+  >
+    {submitting
+      ? "Sending Message..."
+      : submitted
+        ? "Message Sent Successfully"
+        : "Send Message"}
+
+    {submitted ? (
+      <Check className="size-4" />
+    ) : (
+      <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-0.5" />
+    )}
+  </button>
+
+  <p className="mt-3 text-xs leading-relaxed text-[var(--color-text-muted)] sm:text-sm">
+    By submitting this form, you agree to our{" "}
+    <a
+      href="/privacy-policy"
+      className="font-medium text-[var(--color-primary)] transition-colors hover:text-[var(--color-violet-600)] hover:underline"
+    >
+      Privacy Policy
+    </a>
+    . We respect your privacy and will never share
+    your information.
+  </p>
+</form>
+
           </div>
 
           {/* =================================================
@@ -706,7 +709,7 @@ export default function ContactPage() {
                 </p>
 
                 <div className="mt-4 space-y-1 text-sm text-[var(--color-heading)] sm:text-base">
-                  <p>Mon - Fri: 9:00 AM - 6:00 PM (IST)</p>
+                  <p>Mon - Fri: 10:00 AM - 6:30 PM (IST)</p>
                   <p>Sat: 10:00 AM - 2:00 PM (IST)</p>
                   <p>Sun: Closed</p>
                 </div>
@@ -783,13 +786,13 @@ export default function ContactPage() {
                 services, process, and partnerships.
               </p>
 
-              <a
+              <Link
                 href="/resources/faqs"
                 className="mt-5 inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-[var(--color-primary)] bg-white px-5 text-sm font-bold text-[var(--color-primary)] transition hover:bg-blue-50 sm:text-base"
               >
                 View FAQs
                 <ArrowRight className="size-4" />
-              </a>
+              </Link>
             </div>
 
             {/* Call */}
@@ -809,13 +812,13 @@ export default function ContactPage() {
                   your needs in detail.
                 </p>
 
-                <a
-                  href="/book-demo"
+                <Link
+                  href="/get-your-assessment"
                   className="mt-4 inline-flex min-h-10 items-center justify-center gap-2 rounded-lg border border-[var(--color-primary)] px-4 text-sm font-bold text-[var(--color-primary)] transition hover:bg-white"
                 >
                   Schedule a Call
                   <ArrowRight className="size-4" />
-                </a>
+                </Link>
               </div>
 
               <div className="hidden rotate-[-6deg] font-hand text-2xl leading-tight text-[var(--color-primary)] xl:block">
@@ -856,7 +859,7 @@ export default function ContactPage() {
           </div>
 
           <a
-            href="/book-demo"
+            href="/get-your-assessment"
             className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-white px-6 text-sm font-bold text-[var(--color-heading)] shadow-lg transition hover:-translate-y-0.5 sm:text-base"
           >
             Book a Free Consultation

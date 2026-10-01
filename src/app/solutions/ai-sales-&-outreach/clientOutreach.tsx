@@ -2,6 +2,7 @@
 
 import SolutionsHero from "@/components/solutions-hero/reusable-hero";
 import PageHero from "@/components/solutions-hero/reusable-hero";
+import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 
 /* ============================================================
@@ -446,13 +447,13 @@ export default function AISalesOutreachPage() {
               ))}
             </ul>
 
-            <a
-              href="#get-started"
+            <Link
+              href="/get-your-assessment"
               className="mt-9 inline-flex items-center gap-2 rounded-xl bg-brand-blue px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-brand-blue/30 transition hover:-translate-y-0.5 hover:bg-brand-blue-dark"
             >
               Talk to Our Experts
               <ArrowRightIcon size={16} />
-            </a>
+            </Link>
           </Reveal>
         </div>
       </section>
@@ -619,13 +620,13 @@ export default function AISalesOutreachPage() {
                     <p className="mt-1.5 flex-1 text-[12.5px] leading-relaxed text-slate-500">
                       {ind.desc}
                     </p>
-                    <a
-                      href="#get-started"
+                    <Link
+                      href="/get-your-assessment"
                       className="mt-4 inline-flex items-center gap-1.5 text-[13px] font-bold text-brand-blue transition group-hover:gap-2.5"
                     >
                       Learn More
                       <ArrowRightIcon size={14} />
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </Reveal>
@@ -726,19 +727,19 @@ export default function AISalesOutreachPage() {
               you generate more leads, close more deals, and grow your business.
             </p>
             <div className="mt-4 flex flex-wrap items-center gap-7">
-              <a
-                href="#"
+              <Link
+                href="/get-your-assessment"
                 className="inline-flex items-center gap-2 rounded-xl bg-white px-7 py-3.5 text-sm font-extrabold text-brand-dark shadow-xl shadow-black/20 transition hover:-translate-y-0.5 hover:bg-brand-blue-soft"
               >
                 Get Started Today
                 <ArrowRightIcon size={16} className="text-brand-blue" />
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                href="/pricing"
                 className="text-sm font-bold text-white underline decoration-brand-sky/60 decoration-2 underline-offset-4 transition hover:text-brand-sky"
               >
                 See Pricing Options
-              </a>
+              </Link>
             </div>
           </Reveal>
 

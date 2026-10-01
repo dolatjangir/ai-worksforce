@@ -18,6 +18,7 @@ import {
   Twitter,
   Instagram,
 } from "lucide-react";
+import Link from "next/link";
 
 const navItems = [
   "Solutions",
@@ -196,6 +197,7 @@ export default function SolutionsPage() {
                     <p className="mt-1 text-sm leading-relaxed text-slate-500">
                       {description}
                     </p>
+                    <Link href="/company/about-aiworksforce"></Link>
                     <button className="mt-3 flex items-center gap-1.5 text-sm font-bold text-blue-600 transition hover:gap-2.5">
                       Learn More
                       <ArrowRight className="h-4 w-4" />
@@ -256,10 +258,11 @@ export default function SolutionsPage() {
             </p>
           </div>
           <div className="flex shrink-0 flex-wrap gap-4">
-            <button className="flex items-center gap-2 rounded-lg bg-gradient-to-r from-blue-500 to-indigo-500 px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-blue-900/40 transition hover:opacity-90">
-              Get AI Assessment
+            <Link href="/get-your-assessment"> 
+            <button  className="flex items-center gap-2 rounded-lg bg-gradient-to-r from-blue-500 to-indigo-500 px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-blue-900/40 transition hover:opacity-90">
+             Get AI Assessment
               <ArrowRight className="h-4 w-4" />
-            </button>
+            </button></Link>
             <button className="rounded-lg border border-white/40 px-6 py-3.5 text-sm font-bold text-white transition hover:bg-white/10">
               Talk to Our Team
             </button>

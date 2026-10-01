@@ -807,7 +807,7 @@ export default function AboutPage() {
 
             <div className="flex flex-wrap gap-3">
               <a
-                href="/book-demo"
+                href="/get-your-assessment"
                 className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-white px-5 text-sm font-bold text-brand-dark shadow-lg transition-all hover:-translate-y-0.5 sm:px-6 sm:text-base"
               >
                 Book a Free Consultation

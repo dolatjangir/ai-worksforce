@@ -257,315 +257,399 @@ export default function AssessmentPage({
         <div className="bg-[image:var(--gradient-section)] pt-10">
           
           {/* PROCESS AND FORM */}
-          <section
-            aria-label="Assessment process and request form"
-            className={`${container} grid items-start gap-10 pb-14 lg:grid-cols-[1.05fr_1fr] lg:gap-12 lg:pb-16`}
-          >
-            <div
-              id="assessment-form"
-              className="scroll-mt-8 rounded-2xl border border-brand-blue/15 bg-white p-5 shadow-[0_8px_30px_var(--shadow-blue)] sm:p-7"
+         <section
+  aria-label="Assessment process and request form"
+  className={`${container} grid items-start gap-10 pb-14 lg:grid-cols-[1.05fr_1fr] lg:gap-12 lg:pb-16`}
+>
+  <div
+    id="assessment-form"
+    className="scroll-mt-8 rounded-2xl border border-brand-blue/20 bg-gradient-to-br from-white via-white to-brand-blue-soft/30 p-5 shadow-[0_18px_55px_rgba(8,118,237,0.12)] transition-shadow duration-300 sm:p-7"
+  >
+    <p className={eyebrow}>Get Started</p>
+
+    <h2 className="mt-3 text-2xl font-bold tracking-tight sm:text-3xl">
+      Request Your AI Assessment
+    </h2>
+
+    <p className="mt-2 text-base leading-relaxed text-brand-text">
+      Fill out the form and our team will get back to you within 24
+      hours.
+    </p>
+
+    <form
+      onSubmit={handleSubmit}
+      aria-busy={status === "loading"}
+      className="mt-6"
+    >
+      <fieldset
+        disabled={status === "loading"}
+        className="m-0 min-w-0 border-0 p-0"
+      >
+        <legend className="sr-only">Your business details</legend>
+
+        <div className="grid gap-5 sm:grid-cols-2">
+          {/* Full Name */}
+
+          <div>
+            <label
+              htmlFor="assessment-name"
+              className={label}
             >
-              <p className={eyebrow}>Get Started</p>
-              <h2 className="mt-3 text-2xl font-bold tracking-tight sm:text-3xl">
-                Request Your AI Assessment
-              </h2>
-              <p className="mt-2 text-base leading-relaxed text-brand-text">
-                Fill out the form and our team will get back to you within 24
-                hours.
-              </p>
+              Full Name{" "}
+              <span className="text-red-500">*</span>
+            </label>
 
-              <form
-                onSubmit={handleSubmit}
-                aria-busy={status === "loading"}
-                className="mt-6"
-              >
-                <fieldset
-                  disabled={status === "loading"}
-                  className="m-0 min-w-0 border-0 p-0"
-                >
-                  <legend className="sr-only">Your business details</legend>
+            <input
+              id="assessment-name"
+              name="fullName"
+              autoComplete="name"
+              placeholder="John Doe"
+              required
+              maxLength={120}
+              pattern=".*\S.*"
+              className={input}
+            />
+          </div>
 
-                  <div className="grid gap-5 sm:grid-cols-2">
-                    <div>
-                      <label htmlFor="assessment-name" className={label}>
-                        Full Name <span className="text-red-500">*</span>
-                      </label>
-                      <input
-                        id="assessment-name"
-                        name="fullName"
-                        autoComplete="name"
-                        placeholder="John Doe"
-                        required
-                        maxLength={120}
-                        pattern=".*\S.*"
-                        className={input}
-                      />
-                    </div>
+          {/* Business Email */}
 
-                    <div>
-                      <label htmlFor="assessment-email" className={label}>
-                        Business Email <span className="text-red-500">*</span>
-                      </label>
-                      <input
-                        id="assessment-email"
-                        name="email"
-                        type="email"
-                        autoComplete="email"
-                        placeholder="you@company.com"
-                        required
-                        maxLength={254}
-                        className={input}
-                      />
-                    </div>
+          <div>
+            <label
+              htmlFor="assessment-email"
+              className={label}
+            >
+              Business Email{" "}
+              <span className="text-red-500">*</span>
+            </label>
 
-                    <div>
-                      <label htmlFor="assessment-company" className={label}>
-                        Company Name <span className="text-red-500">*</span>
-                      </label>
-                      <input
-                        id="assessment-company"
-                        name="company"
-                        autoComplete="organization"
-                        placeholder="Your Company"
-                        required
-                        maxLength={160}
-                        pattern=".*\S.*"
-                        className={input}
-                      />
-                    </div>
+            <input
+              id="assessment-email"
+              name="email"
+              type="email"
+              autoComplete="email"
+              placeholder="you@company.com"
+              required
+              maxLength={254}
+              className={input}
+            />
+          </div>
 
-                    <div>
-                      <label htmlFor="assessment-phone" className={label}>
-                        Phone Number <span className="text-red-500">*</span>
-                      </label>
-                      <input
-                        id="assessment-phone"
-                        name="phone"
-                        type="tel"
-                        autoComplete="tel"
-                        placeholder="+91 98765 43210"
-                        required
-                        minLength={7}
-                        maxLength={30}
-                        pattern="[+0-9().\s\-]{7,30}"
-                        title="Enter your phone number, including the country code."
-                        className={input}
-                      />
-                    </div>
+          {/* Company */}
 
-                    <div>
-                      <label htmlFor="assessment-industry" className={label}>
-                        Industry <span className="text-red-500">*</span>
-                      </label>
-                      <select
-                        id="assessment-industry"
-                        name="industry"
-                        defaultValue=""
-                        required
-                        className={input}
-                      >
-                        <option value="" disabled>
-                          Select Industry
-                        </option>
-                        {[
-                          "Real Estate",
-                          "Technology",
-                          "Retail & E-commerce",
-                          "Healthcare",
-                          "Education",
-                          "Finance",
-                          "Manufacturing",
-                          "Professional Services",
-                          "Hospitality",
-                          "Other",
-                        ].map((industry) => (
-                          <option key={industry} value={industry}>
-                            {industry}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
+          <div>
+            <label
+              htmlFor="assessment-company"
+              className={label}
+            >
+              Company Name{" "}
+              <span className="text-red-500">*</span>
+            </label>
 
-                    <div>
-                      <label htmlFor="assessment-size" className={label}>
-                        Company Size <span className="text-red-500">*</span>
-                      </label>
-                      <select
-                        id="assessment-size"
-                        name="companySize"
-                        defaultValue=""
-                        required
-                        className={input}
-                      >
-                        <option value="" disabled>
-                          Select Size
-                        </option>
-                        {["1–10", "11–50", "51–200", "201–500", "501+"].map(
-                          (size) => (
-                            <option key={size} value={size}>
-                              {size} employees
-                            </option>
-                          ),
-                        )}
-                      </select>
-                    </div>
+            <input
+              id="assessment-company"
+              name="company"
+              autoComplete="organization"
+              placeholder="Your Company"
+              required
+              maxLength={160}
+              pattern=".*\S.*"
+              className={input}
+            />
+          </div>
 
-                    <div className="sm:col-span-2">
-                      <label htmlFor="assessment-goals" className={label}>
-                        Tell us about your business and goals{" "}
-                        <span className="text-red-500">*</span>
-                      </label>
-                      <textarea
-                        id="assessment-goals"
-                        name="goals"
-                        rows={4}
-                        required
-                        maxLength={5000}
-                        placeholder="Tell us about your business and goals."
-                        className={`${input} min-h-28 resize-y`}
-                      />
-                    </div>
-                  </div>
+          {/* Phone */}
 
-                  <button
-                    type="submit"
-                    disabled={status === "loading"}
-                    className={`mt-5 flex min-h-12 w-full items-center justify-center gap-3 rounded-lg bg-brand-blue px-5 py-3.5 text-base font-semibold text-white transition hover:bg-brand-blue-dark disabled:cursor-wait disabled:opacity-70 ${focus}`}
-                  >
-                    {status === "loading"
-                      ? "Sending Your Request..."
-                      : "Get My AI Assessment"}
-                    <ArrowRight aria-hidden="true" className="size-5" />
-                  </button>
-                </fieldset>
+          <div>
+            <label
+              htmlFor="assessment-phone"
+              className={label}
+            >
+              Phone Number{" "}
+              <span className="text-red-500">*</span>
+            </label>
 
-                <div aria-live="polite" aria-atomic="true">
-                  {status === "success" && (
-                    <p className="mt-4 flex items-start gap-2 rounded-lg bg-brand-green-soft p-3 text-sm text-brand-dark">
-                      <CheckCircle2
-                        aria-hidden="true"
-                        className="size-5 shrink-0 text-brand-green"
-                      />
-                      Your request has been sent. Our team will be in touch.
-                    </p>
-                  )}
-                  {status === "error" && (
-                    <p className="mt-4 rounded-lg bg-red-50 p-3 text-sm text-red-700">
-                      We couldn’t send your request. Please try again or{" "}
-                      <a href={contactHref} className="font-semibold underline">
-                        contact our team
-                      </a>
-                      .
-                    </p>
-                  )}
-                </div>
+            <input
+              id="assessment-phone"
+              name="phone"
+              type="tel"
+              autoComplete="tel"
+              placeholder="+91 98765 43210"
+              required
+              minLength={7}
+              maxLength={30}
+              pattern="[+0-9().\s\\-]{7,30}"
+              title="Enter your phone number, including the country code."
+              className={input}
+            />
+          </div>
 
-                <p className="mt-5 flex items-start justify-center gap-2 text-center text-xs leading-relaxed text-brand-text sm:text-sm">
-                  <LockKeyhole
-                    aria-hidden="true"
-                    className="mt-0.5 size-4 shrink-0"
-                  />
-                  Your information is secure and will never be shared.
-                </p>
-              </form>
-            </div>
-            <div>
-              <p className={eyebrow}>Our Assessment Process</p>
-              <h2 className="mt-3 text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
-                <span className={gradient}>Simple, Fast, and Effective</span>
-              </h2>
-              <p className="mt-3 text-base leading-relaxed text-brand-text">
-                Get your customized AI assessment in just a few simple steps.
-              </p>
+          {/* Industry */}
 
-              <ol className="mt-8 space-y-6">
-                {steps.map(({ title, description, icon: Icon }, index) => (
-                  <li key={title} className="relative flex gap-3 sm:gap-5">
-                    {index < steps.length - 1 && (
-                      <span
-                        aria-hidden="true"
-                        className="absolute left-5 top-11 h-[calc(100%+0.5rem)] w-px bg-brand-blue/20"
-                      />
-                    )}
+          <div>
+            <label
+              htmlFor="assessment-industry"
+              className={label}
+            >
+              Industry{" "}
+              <span className="text-red-500">*</span>
+            </label>
 
-                    <span className="relative z-10 mt-2 flex size-10 shrink-0 items-center justify-center rounded-full bg-brand-blue-soft text-sm font-bold text-brand-blue">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
+            <select
+              id="assessment-industry"
+              name="industry"
+              defaultValue=""
+              required
+              className={input}
+            >
+              <option value="" disabled>
+                Select Industry
+              </option>
 
-                    <span className="flex size-14 shrink-0 items-center justify-center rounded-full bg-brand-blue/10 text-brand-blue sm:size-16">
-                      <Icon aria-hidden="true" className="size-7" />
-                    </span>
+              {[
+                "Real Estate",
+                "Technology",
+                "Retail & E-commerce",
+                "Healthcare",
+                "Education",
+                "Finance",
+                "Manufacturing",
+                "Professional Services",
+                "Hospitality",
+                "Other",
+              ].map((industry) => (
+                <option key={industry} value={industry}>
+                  {industry}
+                </option>
+              ))}
+            </select>
+          </div>
 
-                    <div className="min-w-0 py-1">
-                      <h3 className="text-base font-semibold sm:text-lg">
-                        {title}
-                      </h3>
-                      <p className="mt-1 text-sm leading-relaxed text-brand-text sm:text-base">
-                        {description}
-                      </p>
-                    </div>
-                  </li>
-                ))}
-              </ol>
+          {/* Company Size */}
 
-              {/* Testimonial reproduced from the supplied design. */}
-              <figure className="mt-8 rounded-2xl border border-brand-blue/15 bg-white/80 p-5 sm:p-6">
-                <div className="flex gap-4">
-                  <span
-                    aria-hidden="true"
-                    className="font-serif text-6xl leading-none text-brand-blue/60"
-                  >
-                    “
-                  </span>
-                  <blockquote className="text-base leading-relaxed">
-                    The AI assessment helped us identify{" "}
-                    <strong>₹40+ lakhs</strong> in annual savings through
-                    automation. Highly recommended!
-                  </blockquote>
-                </div>
+          <div>
+            <label
+              htmlFor="assessment-size"
+              className={label}
+            >
+              Company Size{" "}
+              <span className="text-red-500">*</span>
+            </label>
 
-                <figcaption className="mt-4 flex items-center gap-4">
-                  {testimonialAvatarSrc ? (
-                    <img
-                      src={testimonialAvatarSrc}
-                      alt=""
-                      width={56}
-                      height={56}
-                      loading="lazy"
-                      className="size-14 shrink-0 rounded-full object-cover"
-                    />
-                  ) : (
-                    <span
-                      aria-hidden="true"
-                      className="flex size-14 shrink-0 items-center justify-center rounded-full bg-brand-blue-soft font-bold text-brand-blue"
-                    >
-                      RM
-                    </span>
-                  )}
-                  <div>
-                    <p className="font-semibold">Rahul Mehta</p>
-                    <p className="text-sm text-brand-text">
-                      CEO, GrowthTech Solutions
-                    </p>
-                    <div
-                      aria-label="5 out of 5 stars"
-                      className="mt-1 flex gap-1 text-brand-orange"
-                    >
-                      {Array.from({ length: 5 }, (_, index) => (
-                        <Star
-                          key={index}
-                          aria-hidden="true"
-                          className="size-4 fill-current"
-                        />
-                      ))}
-                    </div>
-                  </div>
-                </figcaption>
-              </figure>
-            </div>
+            <select
+              id="assessment-size"
+              name="companySize"
+              defaultValue=""
+              required
+              className={input}
+            >
+              <option value="" disabled>
+                Select Size
+              </option>
 
-            
-          </section>
+              {["1–10", "11–50", "51–200", "201–500", "501+"].map(
+                (size) => (
+                  <option key={size} value={size}>
+                    {size} employees
+                  </option>
+                ),
+              )}
+            </select>
+          </div>
+
+          {/* Goals */}
+
+          <div className="sm:col-span-2">
+            <label
+              htmlFor="assessment-goals"
+              className={label}
+            >
+              Tell us about your business and goals{" "}
+              <span className="text-red-500">*</span>
+            </label>
+
+            <textarea
+              id="assessment-goals"
+              name="goals"
+              rows={4}
+              required
+              maxLength={5000}
+              placeholder="Tell us about your business and goals."
+              className={`${input} min-h-28 resize-y`}
+            />
+          </div>
+        </div>
+
+        {/* Submit */}
+
+        <button
+          type="submit"
+          disabled={status === "loading"}
+          className={`mt-5 flex min-h-12 w-full items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-brand-blue via-brand-blue-dark to-brand-purple px-5 py-3.5 text-base font-bold text-white shadow-[0_10px_30px_rgba(8,118,237,0.28)] transition-all duration-200 hover:-translate-y-0.5 hover:brightness-105 hover:shadow-[0_15px_38px_rgba(8,118,237,0.35)] active:translate-y-0 disabled:cursor-wait disabled:opacity-70 ${focus}`}
+        >
+          {status === "loading"
+            ? "Sending Your Request..."
+            : "Get My AI Assessment"}
+
+          <ArrowRight
+            aria-hidden="true"
+            className="size-5"
+          />
+        </button>
+      </fieldset>
+
+      <div
+        aria-live="polite"
+        aria-atomic="true"
+      >
+        {status === "success" && (
+          <p className="mt-4 flex items-start gap-2 rounded-xl border border-brand-green/20 bg-brand-green-soft p-3.5 text-sm font-medium text-brand-dark shadow-[0_5px_18px_rgba(22,163,74,0.08)]">
+            <CheckCircle2
+              aria-hidden="true"
+              className="size-5 shrink-0 text-brand-green"
+            />
+
+            Your request has been sent. Our team will be in touch.
+          </p>
+        )}
+
+        {status === "error" && (
+          <p className="mt-4 rounded-xl border border-red-200 bg-red-50 p-3.5 text-sm font-medium text-red-700 shadow-[0_5px_18px_rgba(239,68,68,0.08)]">
+            We couldn’t send your request. Please try again or{" "}
+            <a
+              href={contactHref}
+              className="font-semibold underline"
+            >
+              contact our team
+            </a>
+            .
+          </p>
+        )}
+      </div>
+
+      <p className="mt-5 flex items-start justify-center gap-2 text-center text-xs leading-relaxed text-brand-text sm:text-sm">
+        <LockKeyhole
+          aria-hidden="true"
+          className="mt-0.5 size-4 shrink-0"
+        />
+
+        Your information is secure and will never be shared.
+      </p>
+    </form>
+  </div>
+
+  <div>
+    <p className={eyebrow}>Our Assessment Process</p>
+
+    <h2 className="mt-3 text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
+      <span className={gradient}>
+        Simple, Fast, and Effective
+      </span>
+    </h2>
+
+    <p className="mt-3 text-base leading-relaxed text-brand-text">
+      Get your customized AI assessment in just a few simple steps.
+    </p>
+
+    <ol className="mt-8 space-y-6">
+      {steps.map(({ title, description, icon: Icon }, index) => (
+        <li
+          key={title}
+          className="relative flex gap-3 sm:gap-5"
+        >
+          {index < steps.length - 1 && (
+            <span
+              aria-hidden="true"
+              className="absolute left-5 top-11 h-[calc(100%+0.5rem)] w-px bg-gradient-to-b from-brand-blue/30 via-brand-blue/15 to-transparent"
+            />
+          )}
+
+          <span className="relative z-10 mt-2 flex size-10 shrink-0 items-center justify-center rounded-full border border-brand-blue/20 bg-white text-sm font-bold text-brand-blue shadow-[0_6px_18px_rgba(8,118,237,0.12)]">
+            {String(index + 1).padStart(2, "0")}
+          </span>
+
+          <span className="flex size-14 shrink-0 items-center justify-center rounded-full border border-brand-blue/15 bg-gradient-to-br from-brand-blue-soft to-brand-purple-soft text-brand-blue shadow-[0_8px_24px_rgba(8,118,237,0.10)] sm:size-16">
+            <Icon
+              aria-hidden="true"
+              className="size-7"
+            />
+          </span>
+
+          <div className="min-w-0 py-1">
+            <h3 className="text-base font-semibold sm:text-lg">
+              {title}
+            </h3>
+
+            <p className="mt-1 text-sm leading-relaxed text-brand-text sm:text-base">
+              {description}
+            </p>
+          </div>
+        </li>
+      ))}
+    </ol>
+
+    {/* Testimonial reproduced from the supplied design. */}
+
+    <figure className="mt-8 rounded-2xl border border-brand-blue/15 bg-gradient-to-br from-white via-white to-brand-blue-soft/40 p-5 shadow-[0_12px_35px_rgba(8,118,237,0.08)] sm:p-6">
+      <div className="flex gap-4">
+        <span
+          aria-hidden="true"
+          className="font-serif text-6xl leading-none text-brand-blue/60"
+        >
+          “
+        </span>
+
+        <blockquote className="text-base leading-relaxed">
+          The AI assessment helped us identify{" "}
+          <strong>₹40+ lakhs</strong> in annual savings through
+          automation. Highly recommended!
+        </blockquote>
+      </div>
+
+      <figcaption className="mt-4 flex items-center gap-4">
+        {testimonialAvatarSrc ? (
+          <img
+            src={testimonialAvatarSrc}
+            alt=""
+            width={56}
+            height={56}
+            loading="lazy"
+            className="size-14 shrink-0 rounded-full object-cover"
+          />
+        ) : (
+          <span
+            aria-hidden="true"
+            className="flex size-14 shrink-0 items-center justify-center rounded-full bg-brand-blue-soft font-bold text-brand-blue"
+          >
+            RM
+          </span>
+        )}
+
+        <div>
+          <p className="font-semibold">
+            Rahul Mehta
+          </p>
+
+          <p className="text-sm text-brand-text">
+            CEO, GrowthTech Solutions
+          </p>
+
+          <div
+            aria-label="5 out of 5 stars"
+            className="mt-1 flex gap-1 text-brand-orange"
+          >
+            {Array.from({ length: 5 }, (_, index) => (
+              <Star
+                key={index}
+                aria-hidden="true"
+                className="size-4 fill-current"
+              />
+            ))}
+          </div>
+        </div>
+      </figcaption>
+    </figure>
+  </div>
+</section>
           {/* BENEFITS */}
           <section
             aria-labelledby="benefits-heading"

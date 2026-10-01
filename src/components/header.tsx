@@ -109,7 +109,7 @@ const navItems: NavItem[] = [
       ],
       footer: {
         text: "Not sure which services fits your business?",
-        link: "show all solutions→",
+        link: "show all solutions",
         href: "/solutions"
       }
     }
@@ -232,7 +232,7 @@ const navItems: NavItem[] = [
       ],
       footer: {
         text: "See all features",
-        link: "Explore →",
+        link: "Explore",
         href: "/explore-ai-agent"
       }
     }
@@ -285,8 +285,8 @@ const navItems: NavItem[] = [
       ],
       footer: {
         text: "",
-        link: "Book a Demo →",
-        href: "/book-demo"
+        link: "Book a Demo",
+        href: "/get-your-assessment"
       }
     }
   },
@@ -340,7 +340,7 @@ const navItems: NavItem[] = [
       ],
       footer: {
         text: "See all ai digital marketing",
-        link: "Explore →",
+        link: "Explore",
         href: "/ai-digital-marketing"
       }
     }
@@ -395,7 +395,7 @@ const navItems: NavItem[] = [
       ],
       footer: {
         text: "See all technology",
-        link: "Explore →",
+        link: "Explore",
         href: "/technology"
       }
     }
@@ -442,7 +442,7 @@ const navItems: NavItem[] = [
       ],
       footer: {
         text: "See all resources",
-        link: "Explore →",
+        link: "Explore",
         href: "/resources"
       }
     }
@@ -490,8 +490,8 @@ const navItems: NavItem[] = [
       ],
       footer: {
         text: "Need personalized help?",
-        link: "Book a Demo →",
-        href: "/get-demo"
+        link: "Book a Demo",
+        href: "/get-your-assessment"
       }
     }
   },

@@ -57,7 +57,7 @@ export default function HowWeWorkPage() {
   imageAlt="AI WorksForce team collaborating"
   primaryAction={{
     label: "Book a Free Consultation",
-    href: "/book-demo",
+    href: "/get-your-assessment",
     icon: "arrow",
   }}
   secondaryAction={{
@@ -497,7 +497,7 @@ export default function HowWeWorkPage() {
           </div>
 
           <a
-            href="/book-demo"
+            href="/get-your-assessment"
             className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-white px-6 text-sm font-bold text-[var(--color-heading)] shadow-lg transition hover:-translate-y-0.5 sm:text-base"
           >
             Book a Free Consultation

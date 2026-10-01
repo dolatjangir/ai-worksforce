@@ -4,6 +4,7 @@
 
 import SolutionsHero from "@/components/solutions-hero/reusable-hero";
 import PageHero from "@/components/solutions-hero/reusable-hero";
+import Link from "next/link";
 import React, { useEffect, useRef } from "react";
 
 /* ============================================================
@@ -536,13 +537,13 @@ export default function AIAutomationPage() {
               Get a personalized consultation and see how AI automation can
               transform your operations.
             </p>
-            <a
-              href="/contact"
+            <Link
+              href="/company/contact"
               className="mt-5 inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-white px-6 text-base font-bold text-brand-dark shadow-xl shadow-brand-navy/20 transition hover:-translate-y-0.5 hover:bg-brand-blue-soft sm:text-base"
             >
               Book a Free Consultation
               <ArrowRightIcon size={16} className="text-brand-blue" />
-            </a>
+            </Link>
 
             {/* Trust row */}
             <div className="mt-5 flex flex-wrap items-center gap-4">

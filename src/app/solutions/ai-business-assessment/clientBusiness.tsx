@@ -26,6 +26,7 @@ import {
 } from "lucide-react";
 import PageHero from "@/components/solutions-hero/reusable-hero";
 import SolutionsHero from "@/components/solutions-hero/reusable-hero";
+import Link from "next/link";
 
 /* ============================================
    DATA
@@ -181,20 +182,20 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
 
 function GradientButton({
   children,
-  href = "#",
+  href = "/get-your-assessment",
 }: {
   children: React.ReactNode;
   href?: string;
 }) {
   return (
-    <a
+    <Link
       href={href}
       className="inline-flex items-center gap-2 rounded-xl px-6 py-3.5 text-sm font-semibold text-white shadow-lg transition-transform duration-300 hover:-translate-y-0.5"
       style={{ background: "var(--gradient-brand-soft)" }}
     >
       {children}
       <ArrowRight size={16} />
-    </a>
+    </Link>
   );
 }
 
@@ -489,12 +490,12 @@ function CtaBanner() {
         </div>
         <div className="flex flex-wrap gap-4">
           <GradientButton>Get AI Assessment</GradientButton>
-          <a
-            href="#"
+          <Link
+            href="/company/contact"
             className="inline-flex items-center gap-2 rounded-xl border border-white/30 px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white/10"
           >
             Talk to Our Team
-          </a>
+          </Link>
         </div>
       </div>
     </section>

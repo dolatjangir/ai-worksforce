@@ -4,6 +4,7 @@ import SolutionsHero from "@/components/solutions-hero/reusable-hero";
 import PageHero from "@/components/solutions-hero/reusable-hero";
 import UseCasesSection from "@/components/useCasesSection/usecasesection";
 import { Book, Grid, Headphones, Home, Settings } from "lucide-react";
+import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import { MdCastForEducation } from "react-icons/md";
 
@@ -567,13 +568,13 @@ export default function AICustomerOperationsPage() {
               ))}
             </ul>
 
-            <a
-              href="#contact"
+            <Link
+              href="/company/contact"
               className="mt-8 inline-flex items-center gap-2 rounded-xl bg-[#0876ed] px-6 py-3.5 text-[13px] font-extrabold text-white shadow-lg shadow-blue-500/25 transition hover:-translate-y-0.5"
             >
               Talk to Our Experts
               <Icon name="arrow" size={15} />
-            </a>
+            </Link>
           </Reveal>
         </div>
       </section>
@@ -761,20 +762,20 @@ export default function AICustomerOperationsPage() {
             </p>
 
             <div className="mt-4 flex flex-wrap items-center gap-6">
-              <a
-                href="#"
+              <Link
+                href="/get-your-assessment"
                 className="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3.5 text-[13px] font-extrabold text-[#06235a] shadow-xl transition hover:-translate-y-0.5"
               >
                 Get Started Today
                 <Icon name="arrow" size={15} className="text-[#0876ed]" />
-              </a>
+              </Link>
 
-              <a
-                href="#"
+              <Link
+                href="/pricing"
                 className="text-[13px] font-bold text-white underline decoration-cyan-300/60 decoration-2 underline-offset-4"
               >
                 See Pricing Options
-              </a>
+              </Link>
             </div>
           </Reveal>
 

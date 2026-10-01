@@ -859,7 +859,7 @@ export default function BusinessApproach() {
 The AWFI Engine™ analyzes your business, identifies the ideal mix of AI, automation, data and expertise, then builds and continuously improves your managed AI workforce.   </p>
 
               <Link
-                href="#solutions"
+                href="/solutions"
                 className="
                   mt-4
                   inline-flex

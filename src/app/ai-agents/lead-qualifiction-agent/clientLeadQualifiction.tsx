@@ -292,22 +292,22 @@ const heroRef = useRef<HTMLDivElement>(null);
         }`}
       >
         <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold  leading-[0.9] mb-8 tracking-tight text-[var(--color-primary-800)]">
-          Your Smartest Sales{" "}
+         AI Lead Generation & {" "}
           <span className="relative inline-block">
             <span className="text-gradient animate-gradient">
-              Rep Never    
-            </span>                       <span>Sleeps</span>
+          AI Sales Automation   
+            </span>
                           
           </span>
         
         </h1>
 
         <p className="text-lg sm:text-xl text-[#0057ad] mb-10 max-w-xl leading-relaxed font-light">
-          leadAgent AI qualifies, scores, and routes inbound leads 24/7 — so your
-          team closes deals instead of chasing dead ends.
+       Boost sales with AI lead generation and sales automation. Find qualified leads,
+        automate follow-ups, and close 
           <span className="text-[#0066cc] font-medium">
             {" "}
-            94% accuracy. Instant engagement.
+           more deals in less time.
           </span>
         </p>
 

@@ -172,7 +172,7 @@ export default function HowItWorksPage() {
       imageSrc="/ai-workforce/how-it-works-hero.png"
       imageAlt="Professional with her AI workforce"
       primaryLabel="Book a Free Consultation"
-      primaryHref="#consultation"
+      primaryHref="/get-your-assessment"
       secondaryLabel="Talk to Our Team"
       secondaryHref="#process"
     />

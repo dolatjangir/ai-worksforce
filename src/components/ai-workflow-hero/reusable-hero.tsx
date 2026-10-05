@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ArrowRight, Play } from "lucide-react";
+import Link from "next/link";
 
 export type AIWorkflowHeroProps = {
   titleId?: string;
@@ -90,7 +91,7 @@ className={`relative isolate overflow-hidden rounded-2xl bg-white font-sans text
           {(primaryLabel || secondaryLabel) && (
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
               {primaryLabel && (
-                <a
+                <Link
                   href={primaryHref}
                   className={`${focus} inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-linear-to-r from-[var(--color-primary,#3525df)] to-[var(--color-violet-600,#7c3aed)] px-5 py-3 text-center text-sm font-bold text-white shadow-[0_10px_25px_rgba(37,99,235,0.2)] transition-[transform,box-shadow] hover:-translate-y-0.5 hover:shadow-[0_12px_28px_rgba(37,99,235,0.25)] motion-reduce:transform-none motion-reduce:transition-none sm:px-6 sm:text-base`}
                 >
@@ -100,11 +101,11 @@ className={`relative isolate overflow-hidden rounded-2xl bg-white font-sans text
                     aria-hidden="true"
                     className="size-4 shrink-0"
                   />
-                </a>
+                </Link>
               )}
 
               {secondaryLabel && (
-                <a
+                <Link
                   href={secondaryHref}
                   className={`${focus} inline-flex min-h-12 items-center justify-center gap-3 rounded-lg border border-[#a398ff] bg-white/60 px-5 py-3 text-center text-sm font-bold text-[var(--color-heading,#080b37)] transition-colors hover:bg-white motion-reduce:transition-none sm:px-6 sm:text-base`}
                 >
@@ -116,7 +117,7 @@ className={`relative isolate overflow-hidden rounded-2xl bg-white font-sans text
                   </span>
 
                   {secondaryLabel}
-                </a>
+                </Link>
               )}
             </div>
           )}

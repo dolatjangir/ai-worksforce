@@ -246,7 +246,7 @@ export default function AIMarketingAutomationPage() {
   imageSrc="/digital-marketing/ai-marketing-automation.png"
   imageAlt="Marketing automation strategist"
   primaryLabel="Book a Free Consultation"
-  primaryHref="#contact"
+  primaryHref="/get-your-assessment"
   secondaryLabel="See It in Action"
   secondaryHref="#how-it-works"
   metrics={[

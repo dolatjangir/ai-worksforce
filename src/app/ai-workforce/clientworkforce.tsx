@@ -305,7 +305,7 @@ export default function AIWorkforcePage() {
   imageSrc="/ai-workforce/ai-workforce-main-hero.png"
   imageAlt="AI workforce professional"
   primaryLabel="Get Your AI Workforce"
-  primaryHref="#contact"
+  primaryHref="/get-your-assessment"
   secondaryLabel="See How It Works"
   secondaryHref="#how-it-works"
 />

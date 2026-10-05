@@ -240,7 +240,7 @@ export default function AIMarketingAnalyticsPage() {
   imageSrc="/digital-marketing/ai-marketing-anylitcs-hero.png"
   imageAlt="Marketing data analyst using AI-powered marketing analytics"
   primaryLabel="Book a Free Consultation"
-  primaryHref="#contact"
+  primaryHref="/get-your-assessment"
   secondaryLabel="See It in Action"
   secondaryHref="#how-it-works"
   metrics={[
@@ -430,7 +430,7 @@ export default function AIMarketingAnalyticsPage() {
             Get a personalized AI marketing analytics plan made for your business goals.
           </p>
           <div className="mt-3 flex flex-wrap justify-center gap-3">
-            <a href="mailto:hello@example.com" className={`${button} bg-white text-brand-dark`}>
+            <a href="mailto:business@aiworksforce.com" className={`${button} bg-white text-brand-dark`}>
               Book a Free Consultation <span>→</span>
             </a>
             <a href="#home" className={`${button} border border-white/60 text-white`}>

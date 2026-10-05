@@ -189,14 +189,14 @@ export default function AIWorkforceWhyPage() {
       {/* ================= HERO ================= */}
     <AIWorkflowHero
   eyebrow="THE NEW WAY TO WORK"
-  title="What"
-  highlightedTitle="AI WorksForce?"
+  title="AI Workforce Experts | "
+  highlightedTitle="Hire AI Workforce"
   subtitle="Why businesses choose our model"
-  description="AIWorksForce gives you a dedicated team of AI agents that work alongside your people — automating tasks, handling operations, interacting with customers, and driving growth."
+  description="Looking to hire AI workforce experts? Build smarter teams with AI agents and specialists that boost productivity and streamline operations."
   imageSrc="/ai-workforce/what-aiworkforce.png"
   imageAlt="Professional with her AI workforce"
   primaryLabel="Book a Free Consultation"
-  primaryHref="#consultation"
+  primaryHref="/get-your-assessment"
   secondaryLabel="See How it Works"
   secondaryHref="#process"
 />

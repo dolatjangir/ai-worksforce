@@ -60,7 +60,7 @@ export default function AiWorkflowPage() {
   imageSrc="/ai-workforce/our-workforce-hero.png"
   imageAlt="AI agents, experts and operators working together"
   primaryLabel="Book a Free Consultation"
-  primaryHref="#cta"
+  primaryHref="/get-your-assessment"
   secondaryLabel="See it in Action"
   secondaryHref="#process"
 />

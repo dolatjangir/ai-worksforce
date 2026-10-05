@@ -153,7 +153,7 @@ export default function SolutionsPage() {
   imageSrc="/company-images/about-aiworkforce-company-bottom.png"
   imageAlt="AI operations expert"
   assessmentLabel="Get Your AI Assessment"
-  assessmentHref="#consultation"
+  assessmentHref="/get-your-assessment"
   videoHref="#how-it-works"
 />
 

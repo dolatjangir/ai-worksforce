@@ -207,7 +207,7 @@ export default function AIDigitalMarketingPage() {
   imageSrc="/digital-marketing/ai-digital-marketing-hero.png"
   imageAlt="Digital marketing strategist"
   primaryLabel="Book a Free Consultation"
-  primaryHref="#contact"
+  primaryHref="/get-your-assessment"
   secondaryLabel="See How It Works"
   secondaryHref="#solutions"
   metrics={[

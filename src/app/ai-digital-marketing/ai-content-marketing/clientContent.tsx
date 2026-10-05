@@ -320,7 +320,7 @@ function Hero() {
       imageSrc="/digital-marketing/ai-content-marketing-hero.png"
       imageAlt="Content marketing professional using AI"
       primaryLabel="Book a Free Consultation"
-      primaryHref="#contact"
+      primaryHref="/get-your-assessment"
       secondaryLabel="See It in Action"
       secondaryHref="#process"
       metrics={[
@@ -1416,7 +1416,7 @@ function CTASection() {
             "
           >
             <Link
-              href="#contact"
+              href="/get-your-assessment"
               className="
                 inline-flex
                 min-h-[56px]

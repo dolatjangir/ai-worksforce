@@ -242,7 +242,7 @@ export default function AIAdvertisingPromotion() {
   imageSrc="/digital-marketing/ads-promotion-hero.png"
   imageAlt="Advertising strategist with AI-powered advertising campaign insights"
   primaryLabel="Book a Free Consultation"
-  primaryHref="#contact"
+  primaryHref="/get-your-assessment"
   secondaryLabel="See It in Action"
   secondaryHref="#how-it-works"
   metrics={[
@@ -424,7 +424,7 @@ export default function AIAdvertisingPromotion() {
             Get a custom AI advertising strategy tailored to your business goals.
           </p>
           <div className="mt-3 flex flex-wrap justify-center gap-3">
-            <a href="mailto:hello@example.com" className={`${primaryButton} bg-white text-brand-dark`}>
+            <a href="mailto:business@aiworksforce.com" className={`${primaryButton} bg-white text-brand-dark`}>
               Book a Free Consultation <span>→</span>
             </a>
             <a href="#contact" className={`${primaryButton} border border-white/60 text-white`}>

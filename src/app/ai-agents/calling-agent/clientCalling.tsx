@@ -313,10 +313,10 @@ export default function AICallingAgentLanding() {
                       }`}
                     >
                       <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold  leading-[0.9] mb-8 tracking-tight text-[var(--color-primary-800)]">
-                       AI That Makes{" "} <br/>
+                      AI Calling Agents{" "} <br/>
                         <span className="relative inline-block">
                           <span className="text-gradient animate-gradient">
-                         Real Calls 
+                         for Business
                           </span>                       
                                         
                         </span>
@@ -324,10 +324,10 @@ export default function AICallingAgentLanding() {
                       </h1>
               
                       <p className="text-lg sm:text-xl text-[#0057ad] mb-10 max-w-xl leading-relaxed font-light">
-                     An AI calling agent that dials, converses, qualifies, and books meetings—automatically. 
-                        <span className="text-[#0066cc] font-medium">
+                    Automate sales, support & follow-up calls with AI calling agents. Cut costs, respond 24/7 & scale conversations for your business. Book a free demo.
+                      <span className="text-[#0066cc] font-medium">
                           {" "}
-                         Human-like voice. Superhuman scale.
+                        for your business. Book a free demo.
                         </span>
                       </p>
               

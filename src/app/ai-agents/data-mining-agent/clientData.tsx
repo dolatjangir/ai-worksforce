@@ -203,10 +203,11 @@ export default function DataMiningAgentLanding() {
                            }`}
                          >
                            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold  leading-[0.9] mb-8 tracking-tight text-[var(--color-primary-800)]">
-                           Find Gold Leads in {" "} <br/>
+                          
+AI Data Mining &{" "} <br/>
                              <span className="relative inline-block">
                                <span className="text-gradient animate-gradient">
-                             Your Data
+                             Business Intelligence 
                                </span>                       
                                              
                              </span>
@@ -214,10 +215,10 @@ export default function DataMiningAgentLanding() {
                            </h1>
                    
                            <p className="text-lg sm:text-xl text-[#0057ad] mb-10 max-w-xl leading-relaxed font-light">
-                        An AI agent that mines, cleans, and analyzes your data to uncover hidden insights.
+                       Turn raw data into smart decisions. Explore AI data mining and business intelligence solutions that uncover hidden patterns, predict trends, and grow your business.
                              <span className="text-[#0066cc] font-medium">
                                {" "}
-                               Turn raw data into revenue—automatically.
+                             patterns, predict trends, and grow your business.
                              </span>
                            </p>
                    

@@ -217,7 +217,7 @@ export default function AISEOPage() {
   imageSrc="/digital-marketing/ai-seo-hero.png"
   imageAlt="Professional using AI SEO"
   primaryLabel="Book a consultation"
-  primaryHref="#consultation"
+  primaryHref="/get-your-assessment"
   secondaryLabel="See how it works"
   secondaryHref="#process"
   metrics={[
@@ -685,7 +685,7 @@ export default function AISEOPage() {
 
             <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
               <Link
-                href="#consultation"
+                href="/get-your-assessment"
                 className="
                   inline-flex min-h-[50px]
                   items-center justify-center gap-2

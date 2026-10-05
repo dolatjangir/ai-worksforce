@@ -196,7 +196,7 @@ export default function CaseStudiesPage() {
   imageSrc="/ai-workforce/case-studies-hero.png"
   imageAlt="Business professional"
   primaryLabel="Book a Free Consultation"
-  primaryHref="#cta"
+  primaryHref="/get-your-assessment"
   secondaryLabel="Explore Our Solutions"
   secondaryHref="#stories"
 />

@@ -204,16 +204,16 @@ export default function ExploreAgentsPage() {
 
               {/* Headline */}
               <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
-                Meet Your{' '}
+               AI Agents  {' '}
                 <span className="bg-gradient-to-r from-[#0066cc] to-[#0052a3] bg-clip-text text-transparent">
-                  AI Workforce
+                 for Business
                 </span>
               </h1>
 
               {/* Subheadline */}
               <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-                Deploy intelligent agents that work 24/7 to capture leads, qualify prospects, 
-                create content, and close deals—while you focus on what matters most.
+             AI agents for business handle support, sales, and operations around the clock.
+              Learn how they work and how to deploy them in your company.
               </p>
 
               {/* CTA Buttons */}

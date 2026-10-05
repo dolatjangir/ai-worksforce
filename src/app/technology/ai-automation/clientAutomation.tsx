@@ -103,14 +103,14 @@ export default function AIAutomationPage({
   eyebrow="Automate today. Achieve more tomorrow."
   title={
     <>
-      AI{" "}
+      AI Automation {" "}
       <span className="bg-gradient-to-r from-brand-purple to-brand-blue bg-clip-text text-transparent">
-        Automation
+       Services for Businesses
       </span>
     </>
   }
   subtitle="Automate your work. Scale your business."
-  description="We help businesses automate repetitive tasks, streamline workflows, and unlock new levels of productivity with AI-powered automation solutions."
+  description="Automate repetitive tasks with smart AI solutions built for your business. Save time, reduce errors, and grow faster. Book your free demo now."
   buttons={{
     primary: {
       label: "Book a Free Consultation",

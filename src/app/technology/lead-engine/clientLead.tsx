@@ -144,14 +144,14 @@ export default function LeadEnginePage() {
   eyebrow="MORE LEADS. MORE OPPORTUNITIES. MORE GROWTH."
   title={
     <>
-      Lead{" "}
+     AI-Powered CRM & {" "}
       <span className="bg-gradient-to-r from-brand-purple to-brand-blue bg-clip-text text-transparent">
-        Engine
+        Lead Management
       </span>
     </>
   }
   subtitle="AI-Powered Lead Generation for Real Business Growth."
-  description="Our Lead Engine uses AI to find, qualify, and engage high-intent leads so you can focus on closing deals. Get a pipeline of quality leads without the manual effort."
+  description="Turn leads into customers with AI-powered CRM. Automate follow-ups, prioritize hot leads, and get smart insights to grow revenue faster."
   buttons={{
     primary: {
       label: "Book a Free Consultation",

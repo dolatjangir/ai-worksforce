@@ -1,6 +1,7 @@
 "use client";
 
 import PageHero from "@/components/company-hero/reusable-hero";
+import Link from "next/link";
 import { useState, type ReactNode } from "react";
 
 /* =========================================================
@@ -806,7 +807,7 @@ export default function AboutPage() {
             </div>
 
             <div className="flex flex-wrap gap-3">
-              <a
+              <Link
                 href="/get-your-assessment"
                 className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-white px-5 text-sm font-bold text-brand-dark shadow-lg transition-all hover:-translate-y-0.5 sm:px-6 sm:text-base"
               >
@@ -816,14 +817,14 @@ export default function AboutPage() {
                   name="arrow"
                   className="size-4"
                 />
-              </a>
+              </Link>
 
-              <a
+              <Link
                 href="/company/contact"
                 className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-white/50 px-5 text-sm font-bold text-white transition-colors hover:bg-white/10 sm:px-6 sm:text-base"
               >
                 Contact Our Team
-              </a>
+              </Link>
             </div>
           </div>
         </section>

@@ -1,46 +1,89 @@
 "use client";
 
+
+
 import PageHero from "@/components/resources-hero/reusable-hero";
-import { useMemo, useState, type ReactNode } from "react";
+import Link from "next/link";
+
+import { useEffect, useMemo, useState, type ReactNode } from "react";
+
+
 
 /* ============================================================
+
    TYPES
-============================================================ */
+
+\============================================================ */
+
+
 
 type IconName =
+
   | "grid"
+
   | "settings"
+
   | "bot"
+
   | "megaphone"
+
   | "chart"
+
   | "link"
+
   | "building"
+
   | "lightbulb"
+
   | "file"
+
   | "search"
+
   | "arrow-right"
+
   | "arrow-left"
+
   | "play"
+
   | "menu"
+
   | "close"
+
   | "calendar"
+
   | "clock"
+
   | "flame"
+
   | "linkedin"
+
   | "twitter"
+
   | "youtube"
+
   | "instagram"
+
   | "arrow-up";
 
+
+
 type Category = {
+
   name: string;
+
   icon: IconName;
+
   tone: string;
+
 };
 
+
+
 type Article = {
-  id: number;
+  id: number | string;
+  slug: string;
   category: string;
+  tags: string[];
   date: string;
   readTime: string;
   title: string;
@@ -48,1141 +91,2123 @@ type Article = {
   image: string;
 };
 
+type BlogApiItem = {
+  id: number | string;
+  title: string;
+  slug: string;
+  excerpt?: string | null;
+  content?: string | null;
+  featuredImg?: string | null;
+  pageName?: string | null;
+  tags?: string | string[] | null;
+  isPublished: boolean;
+  createdAt?: string;
+  updatedAt?: string;
+};
+
+type BlogApiResponse = {
+  success: boolean;
+  data?: BlogApiItem[];
+  error?: string;
+};
+
+const FALLBACK_BLOG_IMAGE = "/resources-images/resources-blog-hero.png";
+const ARTICLES_PER_PAGE = 6;
+
+function parseTags(value: BlogApiItem["tags"]): string[] {
+  if (!value) return [];
+
+  if (Array.isArray(value)) {
+    return value.map((tag) => String(tag).trim()).filter(Boolean);
+  }
+
+  const raw = String(value).trim();
+  if (!raw) return [];
+
+  try {
+    const parsed = JSON.parse(raw);
+    if (Array.isArray(parsed)) {
+      return parsed.map((tag) => String(tag).trim()).filter(Boolean);
+    }
+  } catch {
+    // Supports comma-separated tags stored as plain text.
+  }
+
+  return raw.split(",").map((tag) => tag.trim()).filter(Boolean);
+}
+
+function formatBlogDate(value?: string): string {
+  if (!value) return "Recently";
+
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return "Recently";
+
+  return date.toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  });
+}
+
+function calculateReadTime(content?: string | null): string {
+  const wordCount = (content ?? "")
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean).length;
+
+  return `${Math.max(1, Math.ceil(wordCount / 200))} min read`;
+}
+
+function mapBlogToArticle(blog: BlogApiItem): Article {
+  const tags = parseTags(blog.tags);
+
+  return {
+    id: blog.id,
+    slug: blog.slug,
+    category: tags[0] || "Industry Insights",
+    tags,
+    date: formatBlogDate(blog.createdAt || blog.updatedAt),
+    readTime: calculateReadTime(blog.content),
+    title: blog.title,
+    description:
+      blog.excerpt?.trim() || "Read the latest insights from AI WorksForce.",
+    image: blog.featuredImg?.trim() || FALLBACK_BLOG_IMAGE,
+  };
+}
+
+
+
 /* ============================================================
+
    ICON COMPONENT
-============================================================ */
+
+\============================================================ */
+
+
 
 function Icon({
+
   name,
+
   className = "size-5",
+
 }: {
+
   name: IconName;
+
   className?: string;
+
 }) {
+
   const icons: Record<IconName, ReactNode> = {
+
     grid: (
+
       <>
+
         <rect x="4" y="4" width="6" height="6" rx="1" />
+
         <rect x="14" y="4" width="6" height="6" rx="1" />
+
         <rect x="4" y="14" width="6" height="6" rx="1" />
+
         <rect x="14" y="14" width="6" height="6" rx="1" />
+
       </>
+
     ),
+
+
 
     settings: (
+
       <>
+
         <path d="M12 2.5 14 5l3 .5.5 3 2.5 2-1.5 3 1.5 3-2.5 2-.5 3-3 .5-2 2.5-2-2.5-3-.5-.5-3-2.5-2 1.5-3-1.5-3 2.5-2 .5-3 3-.5 2-2.5Z" />
+
         <circle cx="12" cy="12" r="3" />
+
       </>
+
     ),
+
+
 
     bot: (
+
       <>
+
         <rect x="5" y="7" width="14" height="12" rx="3" />
+
         <path d="M12 3v4M9 12h.01M15 12h.01M9 16h6" />
+
         <path d="M3 12h2M19 12h2" />
+
       </>
+
     ),
+
+
 
     megaphone: (
+
       <>
+
         <path d="M4 14v-4a2 2 0 0 1 2-2h3l9-4v16l-9-4H6a2 2 0 0 1-2-2Z" />
+
         <path d="M9 16v4" />
+
         <path d="M18 9a4 4 0 0 1 0 6" />
+
       </>
+
     ),
+
+
 
     chart: (
+
       <>
+
         <path d="M4 20V12" />
+
         <path d="M10 20V8" />
+
         <path d="M16 20V4" />
+
         <path d="M22 20H2" />
+
       </>
+
     ),
+
+
 
     link: (
+
       <>
+
         <path d="M10 13.5 14 9.5" />
+
         <path d="M7 17H6a4 4 0 0 1 0-8h3" />
+
         <path d="M17 7h1a4 4 0 0 1 0 8h-3" />
+
       </>
+
     ),
+
+
 
     building: (
+
       <>
+
         <path d="M5 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16" />
+
         <path d="M3 21h18" />
+
         <path d="M9 7h1M13 7h1M9 11h1M13 11h1M9 15h1M13 15h1" />
+
       </>
+
     ),
+
+
 
     lightbulb: (
+
       <>
+
         <path d="M9 18h6" />
+
         <path d="M10 22h4" />
+
         <path d="M8.5 14.5a7 7 0 1 1 7 0c-.9.7-1.5 1.5-1.5 2.5h-4c0-1-.6-1.8-1.5-2.5Z" />
+
       </>
+
     ),
+
+
 
     file: (
+
       <>
+
         <path d="M6 3h8l4 4v14H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z" />
+
         <path d="M14 3v5h5" />
+
         <path d="M8 13h8M8 17h6M8 9h2" />
+
       </>
+
     ),
+
+
 
     search: (
+
       <>
+
         <circle cx="10.5" cy="10.5" r="6.5" />
+
         <path d="m16 16 5 5" />
+
       </>
+
     ),
+
+
 
     "arrow-right": (
+
       <>
+
         <path d="M4 12h16" />
+
         <path d="m13 5 7 7-7 7" />
+
       </>
+
     ),
+
+
 
     "arrow-left": (
+
       <>
+
         <path d="M20 12H4" />
+
         <path d="m11 5-7 7 7 7" />
+
       </>
+
     ),
+
+
 
     play: (
+
       <path
+
         d="m9 6 9 6-9 6V6Z"
+
         fill="currentColor"
+
         stroke="none"
+
       />
+
     ),
+
+
 
     menu: (
+
       <>
+
         <path d="M4 7h16" />
+
         <path d="M4 12h16" />
+
         <path d="M4 17h16" />
+
       </>
+
     ),
+
+
 
     close: (
+
       <>
+
         <path d="m6 6 12 12" />
+
         <path d="m18 6-12 12" />
+
       </>
+
     ),
+
+
 
     calendar: (
+
       <>
+
         <rect x="4" y="5" width="16" height="15" rx="2" />
+
         <path d="M8 3v4M16 3v4M4 10h16" />
+
       </>
+
     ),
+
+
 
     clock: (
+
       <>
+
         <circle cx="12" cy="12" r="9" />
+
         <path d="M12 7v5l3 2" />
+
       </>
+
     ),
+
+
 
     flame: (
+
       <path d="M12 22c4.5 0 7-3 7-7 0-3.2-1.8-5.5-4.3-8.3.2 2.7-1.1 4.1-2.6 5.1.2-3.7-1.6-6.4-4.5-8.8.2 3.8-3.5 6.5-3.5 10.4C4.1 18.9 7.3 22 12 22Z" />
+
     ),
+
+
 
     "arrow-up": (
+
       <>
+
         <path d="M5 19 19 5" />
+
         <path d="M8 5h11v11" />
+
       </>
+
     ),
+
+
 
     linkedin: (
+
       <>
+
         <rect x="4" y="4" width="16" height="16" rx="2" />
+
         <path d="M8 10v6M8 8v.1M12 16v-6M12 13c0-2 4-2 4 0v3" />
+
       </>
+
     ),
+
+
 
     twitter: (
+
       <path d="M21 6.5c-.7.3-1.4.5-2.2.6A3.7 3.7 0 0 0 20.4 5c-.7.4-1.5.7-2.4.9A3.7 3.7 0 0 0 11.7 9c0 .3 0 .6.1.9A10.5 10.5 0 0 1 4 5.3a3.7 3.7 0 0 0 1.1 5 3.6 3.6 0 0 1-1.7-.5v.1a3.7 3.7 0 0 0 3 3.6c-.6.2-1.2.2-1.7.1a3.7 3.7 0 0 0 3.5 2.6A7.4 7.4 0 0 1 3.6 18a10.5 10.5 0 0 0 5.7 1.7c6.9 0 10.7-5.7 10.7-10.7v-.5c.7-.5 1.3-1.1 1.8-1.8Z" />
+
     ),
+
+
 
     youtube: (
+
       <>
+
         <rect x="3" y="6" width="18" height="12" rx="3" />
+
         <path
+
           d="m10 9 5 3-5 3V9Z"
+
           fill="currentColor"
+
           stroke="none"
+
         />
+
       </>
+
     ),
+
+
 
     instagram: (
+
       <>
+
         <rect x="4" y="4" width="16" height="16" rx="4" />
+
         <circle cx="12" cy="12" r="3.5" />
+
         <circle
+
           cx="17"
+
           cy="7"
+
           r=".8"
+
           fill="currentColor"
+
           stroke="none"
+
         />
+
       </>
+
     ),
+
   };
 
+
+
   return (
+
     <svg
+
       viewBox="0 0 24 24"
+
       fill="none"
+
       stroke="currentColor"
+
       strokeWidth="2"
+
       strokeLinecap="round"
+
       strokeLinejoin="round"
+
       className={className}
+
       aria-hidden="true"
+
     >
+
       {icons[name]}
+
     </svg>
+
   );
+
 }
 
+
+
 /* ============================================================
+
    ICON BUBBLE
-============================================================ */
+
+\============================================================ */
+
+
 
 function IconBubble({
+
   icon,
+
   className,
+
 }: {
+
   icon: IconName;
+
   className: string;
+
 }) {
+
   return (
+
     <span
+
       className={`inline-flex size-10 shrink-0 items-center justify-center rounded-full sm:size-11 ${className}`}
+
     >
+
       <Icon
+
         name={icon}
+
         className="size-5 sm:size-6"
+
       />
+
     </span>
+
   );
+
 }
 
+
+
 /* ============================================================
+
    ARTICLE META
-============================================================ */
+
+\============================================================ */
+
+
 
 function ArticleMeta({
+
   date,
+
   readTime,
+
 }: {
+
   date: string;
+
   readTime: string;
+
 }) {
+
   return (
+
     <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-brand-text-muted sm:text-sm">
-      <span className="inline-flex items-center gap-1.5">
-        <Icon
-          name="calendar"
-          className="size-3.5 sm:size-4"
-        />
-        {date}
-      </span>
 
       <span className="inline-flex items-center gap-1.5">
+
         <Icon
-          name="clock"
+
+          name="calendar"
+
           className="size-3.5 sm:size-4"
+
         />
-        {readTime}
+
+        {date}
+
       </span>
+
+
+
+      <span className="inline-flex items-center gap-1.5">
+
+        <Icon
+
+          name="clock"
+
+          className="size-3.5 sm:size-4"
+
+        />
+
+        {readTime}
+
+      </span>
+
     </div>
+
   );
+
 }
 
+
+
 /* ============================================================
+
    ARTICLE CARD
-============================================================ */
+
+\============================================================ */
+
+
 
 function ArticleCard({
+
   article,
+
 }: {
+
   article: Article;
+
 }) {
+
   return (
+
     <article className="group overflow-hidden rounded-xl border border-blue-50 bg-white shadow-[0_5px_20px_rgba(24,74,140,0.05)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_14px_35px_rgba(24,74,140,0.1)]">
+
       <div className="relative aspect-[16/9] overflow-hidden">
+
         <img
+
           src={article.image}
+
           alt={article.title}
+
           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+
         />
+
+
 
         <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-brand-navy/20 to-transparent" />
 
+
+
         <span className="absolute left-3 top-3 rounded-full bg-white px-3 py-1 text-xs font-bold text-brand-blue shadow-sm sm:text-sm">
+
           {article.category}
+
         </span>
+
       </div>
+
+
 
       <div className="p-4 sm:p-5">
+
         <ArticleMeta
+
           date={article.date}
+
           readTime={article.readTime}
+
         />
 
+
+
         <h3 className="mt-3 text-lg font-bold leading-tight tracking-tight text-brand-dark sm:text-xl">
+
           {article.title}
+
         </h3>
 
+
+
         <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-brand-text sm:text-base">
+
           {article.description}
+
         </p>
 
+
+
         <a
-          href="#"
+
+          href={`/resources/blog/${article.slug}`}
+
           className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-brand-blue transition-colors hover:text-brand-purple"
+
         >
+
           Read More
 
+
+
           <Icon
+
             name="arrow-right"
+
             className="size-4 transition-transform group-hover:translate-x-1"
+
           />
+
         </a>
+
       </div>
+
     </article>
+
   );
+
 }
 
+
+
 /* ============================================================
+
    PAGE
-============================================================ */
+
+\============================================================ */
+
+
 
 export default function OurBlogPage() {
+
   const [menuOpen, setMenuOpen] = useState(false);
+
   const [activeCategory, setActiveCategory] =
+
     useState("All Posts");
+
   const [search, setSearch] = useState("");
+
   const [email, setEmail] = useState("");
+
   const [page, setPage] = useState(1);
 
+
+
   /* ==========================================================
+
      NAV
+
   ========================================================== */
+
+
 
   const navItems = [
+
     "Home",
+
     "What AIWorksForce?",
+
     "How it Works",
+
     "Our AI Workflow",
+
     "Solutions",
+
     "Industries",
+
     "Case Studies",
+
     "Resources",
+
     "About",
+
   ];
 
+
+
   /* ==========================================================
+
      CATEGORIES
+
   ========================================================== */
+
+
 
   const categories: Category[] = [
+
     {
+
       name: "All Posts",
+
       icon: "grid",
+
       tone: "bg-indigo-100 text-brand-purple",
+
     },
+
     {
+
       name: "AI Automation",
+
       icon: "settings",
+
       tone: "bg-blue-100 text-brand-blue",
+
     },
+
     {
+
       name: "AI Agents",
+
       icon: "bot",
+
       tone: "bg-emerald-100 text-emerald-500",
+
     },
+
     {
+
       name: "Digital Marketing",
+
       icon: "megaphone",
+
       tone: "bg-violet-100 text-brand-purple",
+
     },
+
     {
+
       name: "Business Growth",
+
       icon: "chart",
+
       tone: "bg-blue-100 text-brand-blue",
+
     },
+
     {
+
       name: "Tools & Integrations",
+
       icon: "link",
+
       tone: "bg-indigo-100 text-brand-purple",
+
     },
+
     {
+
       name: "Industry Insights",
+
       icon: "building",
+
       tone: "bg-blue-100 text-brand-blue",
+
     },
+
     {
+
       name: "Tips & Tutorials",
+
       icon: "lightbulb",
+
       tone: "bg-violet-100 text-brand-purple",
+
     },
+
   ];
 
-  /* ==========================================================
-     ARTICLES
-  ========================================================== */
 
-  const articles: Article[] = [
-    {
-      id: 1,
-      category: "Digital Marketing",
-      date: "Sep 8, 2024",
-      readTime: "6 min read",
-      title:
-        "AI in Digital Marketing: Strategies That Actually Work",
-      description:
-        "Find out how to use AI tools to make content reach the right people and increase your return on investment.",
-      image:
-        "https://images.unsplash.com/photo-1557838923-2985c318be48?auto=format&fit=crop&w=1200&q=90",
-    },
-
-    {
-      id: 2,
-      category: "Business Growth",
-      date: "Sep 5, 2024",
-      readTime: "7 min read",
-      title:
-        "5 Ways AI Agents Can Improve Your Customer Experience",
-      description:
-        "From help to personalized suggestions, find out how AI agents are changing the way customers are treated.",
-      image:
-        "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=90",
-    },
-
-    {
-      id: 3,
-      category: "Tools & Integrations",
-      date: "Sep 2, 2024",
-      readTime: "5 min read",
-      title:
-        "Top 10 AI Tools for Businesses in 2024",
-      description:
-        "A carefully chosen list of the best AI tools to help you automate, study, and grow your business.",
-      image:
-        "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=90",
-    },
-
-    {
-      id: 4,
-      category: "Industry Insights",
-      date: "Aug 28, 2024",
-      readTime: "8 min read",
-      title:
-        "The Future of Work: How AI is Reshaping Every Industry",
-      description:
-        "Look into the chances and problems AI brings to different areas in 2024 and after.",
-      image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=90",
-    },
-
-    {
-      id: 5,
-      category: "Tips & Tutorials",
-      date: "Aug 25, 2024",
-      readTime: "6 min read",
-      title:
-        "A Step-by-Step Guide to Building Your First AI Workflow",
-      description:
-        "Learn how to create a simple but strong AI workflow for your business. No coding needed.",
-      image:
-        "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=1200&q=90",
-    },
-
-    {
-      id: 6,
-      category: "AI Agents",
-      date: "Aug 20, 2024",
-      readTime: "7 min read",
-      title:
-        "Real-World Examples of AI Agents in Action",
-      description:
-        "See how companies are using AI agents to automate jobs, boost efficiency, and get outcomes.",
-      image:
-        "https://images.unsplash.com/photo-1535378917042-10a22c95931a?auto=format&fit=crop&w=1200&q=90",
-    },
-  ];
 
   /* ==========================================================
-     FEATURED ARTICLE
+     BLOG DATA
   ========================================================== */
 
-  const featuredArticle: Article = {
-    id: 0,
-    category: "AI Automation",
-    date: "Sep 10, 2024",
-    readTime: "8 min read",
-    title:
-      "How AI Automation Is Changing Businesses in 2024",
-    description:
-      "Find out how companies are using AI automation to cut costs, become more efficient, and find growth possibilities.",
-    image:
-      "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1400&q=90",
-  };
+  const [articles, setArticles] = useState<Article[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+  const [searchInput, setSearchInput] = useState("");
+
+  /* ==========================================================
+     FETCH PUBLISHED BLOGS
+  ========================================================== */
+
+  useEffect(() => {
+    const controller = new AbortController();
+
+    async function loadBlogs() {
+      try {
+        setLoading(true);
+        setError("");
+
+        const params = new URLSearchParams({
+          status: "published",
+        });
+
+        if (search.trim()) {
+          params.set("search", search.trim());
+        }
+
+        const response = await fetch(`/api/blogs?${params.toString()}`, {
+          method: "GET",
+          cache: "no-store",
+          signal: controller.signal,
+        });
+
+        const result: BlogApiResponse = await response.json();
+
+        if (!response.ok || !result.success) {
+          throw new Error(result.error || "Failed to fetch blogs");
+        }
+
+        setArticles((result.data ?? []).map(mapBlogToArticle));
+        setPage(1);
+      } catch (fetchError) {
+        if (
+          fetchError instanceof DOMException &&
+          fetchError.name === "AbortError"
+        ) {
+          return;
+        }
+
+        console.error("Failed to load blogs:", fetchError);
+        setError(
+          fetchError instanceof Error
+            ? fetchError.message
+            : "Failed to load blogs.",
+        );
+        setArticles([]);
+        setPage(1);
+      } finally {
+        if (!controller.signal.aborted) {
+          setLoading(false);
+        }
+      }
+    }
+
+    void loadBlogs();
+
+    return () => controller.abort();
+  }, [search]);
 
   /* ==========================================================
      FILTER
   ========================================================== */
 
   const filteredArticles = useMemo(() => {
-    const query = search.trim().toLowerCase();
+    if (activeCategory === "All Posts") {
+      return articles;
+    }
+
+    const normalizedCategory = activeCategory.toLowerCase();
 
     return articles.filter((article) => {
-      const categoryMatch =
-        activeCategory === "All Posts" ||
-        article.category === activeCategory;
-
-      const searchMatch =
-        query.length === 0 ||
-        article.title.toLowerCase().includes(query) ||
-        article.description.toLowerCase().includes(query) ||
-        article.category.toLowerCase().includes(query);
-
-      return categoryMatch && searchMatch;
+      return (
+        article.category.toLowerCase() === normalizedCategory ||
+        article.tags.some(
+          (tag) => tag.toLowerCase() === normalizedCategory,
+        )
+      );
     });
-  }, [activeCategory, search]);
+  }, [activeCategory, articles]);
+
+  const featuredArticle = filteredArticles[0] ?? null;
+
+  const latestArticles = featuredArticle
+    ? filteredArticles.slice(1)
+    : filteredArticles;
+
+  const totalPages = Math.max(
+    1,
+    Math.ceil(latestArticles.length / ARTICLES_PER_PAGE),
+  );
+
+  const pageNumbers = Array.from(
+    { length: totalPages },
+    (_, index) => index + 1,
+  );
+
+  const paginatedArticles = latestArticles.slice(
+    (page - 1) * ARTICLES_PER_PAGE,
+    page * ARTICLES_PER_PAGE,
+  );
 
   /* ==========================================================
+
      NEWSLETTER
+
   ========================================================== */
 
+
+
   function handleNewsletter(
+
     event: React.FormEvent<HTMLFormElement>,
+
   ) {
+
     event.preventDefault();
+
+
 
     if (!email.trim()) return;
 
+
+
     setEmail("");
+
   }
 
+
+
   /* ==========================================================
+
      CATEGORY CHANGE
+
   ========================================================== */
+
+
 
   function changeCategory(category: string) {
+
     setActiveCategory(category);
+
     setPage(1);
+
   }
+
+
 
   /* ==========================================================
+
      SEARCH
+
   ========================================================== */
 
+
+
   function handleSearch(value: string) {
-    setSearch(value);
+    setSearchInput(value);
+  }
+
+  function submitSearch() {
+    setSearch(searchInput.trim());
     setPage(1);
   }
 
+
+
   return (
+
     <div className="min-h-screen overflow-x-hidden bg-white font-sans text-brand-dark">
-    
+
+
+
+
 
       <main>
+
         {/* ====================================================
+
             HERO
+
         ===================================================== */}
+
+
 
      <PageHero
+
   titleId="blog-hero-title"
+
   eyebrow="Insights. Ideas. Impact."
+
   title="Our"
+
   highlightedTitle="Blog"
+
   description="Expert views, step-by-step guides, industry news, and real examples to help you create a more efficient business with AI."
+
   image="/resources-images/resources-blog-hero.png"
+
   imageAlt="AI WorksForce professional"
+
   primaryAction={{
+
     label: "Explore Articles",
+
     href: "#articles",
+
     icon: "arrow",
+
   }}
+
   secondaryAction={{
+
     label: "Watch Intro",
+
     href: "#",
+
     icon: "play",
+
   }}
+
   stats={[
+
     {
+
       icon: "file",
-      value: "250+",
+
+      value: articles.length ? `${articles.length}+` : "0",
+
       label: "Articles",
+
     },
-  
+
+
+
     {
+
       icon: "chart",
-      value: "10+",
+
+      value: articles.length ? `${new Set(articles.flatMap((article) => article.tags)).size}+` : "0",
+
       label: "Topics Covered",
+
     },
+
     {
+
       icon: "arrow-up",
+
       value: "Weekly",
+
       label: "New Content",
+
     },
+
   ]}
+
   benefitCards={[
+
     {
+
       title: "Latest Trends",
+
       description: "Stay Updated",
+
       icon: "file",
+
       position: "right-0 top-5",
+
     },
+
     {
+
       title: "Expert Insights",
+
       description: "Learn from professionals.",
+
       icon: "lightbulb",
+
       position: "right-0 top-28",
+
     },
+
     {
+
       title: "Practical Guides",
+
       description: "Use in Life",
+
       icon: "file",
+
       position: "right-0 top-52",
+
     },
+
   ]}
+
   handwrittenNote={{
+
     lines: [
+
       "Knowledge",
+
       "Today",
+
       "A Smarter",
+
       "Tomorrow",
+
     ],
+
     position: "right-0 top-64",
+
     rotate: "-rotate-[8deg]",
+
   }}
+
 />
 
+
+
         {/* ====================================================
+
             CATEGORY
+
         ===================================================== */}
+
+
 
         <section className="mx-auto max-w-7xl px-5 pt-8 sm:px-7 lg:px-8">
+
           <p className="text-xs font-bold uppercase tracking-[0.25em] text-brand-purple sm:text-sm">
+
             Explore by Category
+
           </p>
 
+
+
           <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-8">
+
             {categories.map((category) => {
+
               const active =
+
                 activeCategory === category.name;
 
+
+
               return (
+
                 <button
+
                   key={category.name}
+
                   type="button"
+
                   onClick={() =>
+
                     changeCategory(category.name)
+
                   }
+
                   className={`group flex min-h-20 flex-col items-center justify-center rounded-xl px-2 py-3 text-center transition-all sm:min-h-24 ${
+
                     active
+
                       ? "bg-gradient-to-b from-brand-blue to-brand-purple text-white shadow-[0_10px_24px_rgba(37,99,235,0.2)]"
+
                       : "bg-blue-50/60 text-brand-dark hover:-translate-y-0.5 hover:bg-blue-50"
+
                   }`}
+
                 >
-                  <span
-                    className={`grid size-9 place-items-center rounded-full sm:size-10 ${
-                      active
-                        ? "bg-white/15 text-white"
-                        : category.tone
-                    }`}
-                  >
-                    <Icon
-                      name={category.icon}
-                      className="size-4.5 sm:size-5"
-                    />
-                  </span>
 
                   <span
-                    className={`mt-2 text-xs font-bold leading-tight sm:text-sm ${
+
+                    className={`grid size-9 place-items-center rounded-full sm:size-10 ${
+
                       active
-                        ? "text-white"
-                        : "text-brand-dark"
+
+                        ? "bg-white/15 text-white"
+
+                        : category.tone
+
                     }`}
+
                   >
-                    {category.name}
+
+                    <Icon
+
+                      name={category.icon}
+
+                      className="size-4.5 sm:size-5"
+
+                    />
+
                   </span>
+
+
+
+                  <span
+
+                    className={`mt-2 text-xs font-bold leading-tight sm:text-sm ${
+
+                      active
+
+                        ? "text-white"
+
+                        : "text-brand-dark"
+
+                    }`}
+
+                  >
+
+                    {category.name}
+
+                  </span>
+
                 </button>
+
               );
+
             })}
+
           </div>
+
         </section>
 
+
+
         {/* ====================================================
+
             BLOG CONTENT
+
         ===================================================== */}
 
+
+
         <section
+
           id="articles"
+
           className="mx-auto max-w-7xl px-5 pt-8 sm:px-7 lg:px-8"
+
         >
+
           <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_18rem] xl:grid-cols-[minmax(0,1fr)_20rem]">
+
             {/* Main column */}
+
             <div>
+
               {/* Featured */}
+
               <div className="flex items-center justify-between gap-4">
+
                 <p className="text-xs font-bold uppercase tracking-[0.25em] text-brand-purple sm:text-sm">
+
                   Featured Article
+
                 </p>
 
+
+
                 <a
+
                   href="#"
+
                   className="hidden items-center gap-2 text-sm font-bold text-brand-blue hover:text-brand-purple sm:inline-flex"
+
                 >
+
                   View All Articles
 
+
+
                   <Icon
+
                     name="arrow-right"
+
                     className="size-4"
+
                   />
+
                 </a>
+
               </div>
 
-              <article className="mt-4 overflow-hidden rounded-xl border border-blue-50 bg-white shadow-[0_6px_24px_rgba(24,74,140,0.05)]">
-                <div className="grid md:grid-cols-[1.05fr_0.95fr]">
-                  <div className="relative aspect-[16/10] md:aspect-auto">
-                    <img
-                      src={featuredArticle.image}
-                      alt={featuredArticle.title}
-                      className="h-full w-full object-cover"
-                    />
 
-                    <span className="absolute left-3 top-3 rounded-full bg-white px-3 py-1 text-xs font-bold text-brand-blue shadow-sm sm:text-sm">
-                      {featuredArticle.category}
-                    </span>
-                  </div>
 
-                  <div className="flex flex-col justify-center p-5 sm:p-6 lg:p-7">
-                    <ArticleMeta
-                      date={featuredArticle.date}
-                      readTime={featuredArticle.readTime}
-                    />
-
-                    <h2 className="mt-3 text-2xl font-bold leading-tight tracking-tight text-brand-dark sm:text-3xl">
-                      {featuredArticle.title}
-                    </h2>
-
-                    <p className="mt-3 text-sm leading-relaxed text-brand-text sm:text-base lg:text-lg">
-                      {featuredArticle.description}
-                    </p>
-
-                    <a
-                      href="#"
-                      className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-brand-blue"
-                    >
-                      Read Full Article
-
-                      <Icon
-                        name="arrow-right"
-                        className="size-4"
-                      />
-                    </a>
-                  </div>
+              {loading ? (
+                <div className="mt-4 rounded-xl border border-blue-50 bg-blue-50/40 px-5 py-16 text-center">
+                  <p className="text-sm font-semibold text-brand-text sm:text-base">
+                    Loading featured article...
+                  </p>
                 </div>
-              </article>
+              ) : error ? (
+                <div className="mt-4 rounded-xl border border-red-100 bg-red-50 px-5 py-10 text-center">
+                  <p className="text-sm font-semibold text-red-700 sm:text-base">
+                    {error}
+                  </p>
+                </div>
+              ) : featuredArticle ? (
+                <article className="mt-4 overflow-hidden rounded-xl border border-blue-50 bg-white shadow-[0_6px_24px_rgba(24,74,140,0.05)]">
+                  <div className="grid md:grid-cols-[1.05fr_0.95fr]">
+                    <div className="relative aspect-[16/10] md:aspect-auto">
+                      <img
+                        src={featuredArticle.image}
+                        alt={featuredArticle.title}
+                        className="h-full w-full object-cover"
+                      />
 
-              {/* Latest */}
-              <div className="mt-7 flex items-center justify-between gap-4">
-                <p className="text-xs font-bold uppercase tracking-[0.25em] text-brand-purple sm:text-sm">
-                  Latest Articles
-                </p>
+                      <span className="absolute left-3 top-3 rounded-full bg-white px-3 py-1 text-xs font-bold text-brand-blue shadow-sm sm:text-sm">
+                        {featuredArticle.category}
+                      </span>
+                    </div>
 
-                <a
-                  href="#"
-                  className="hidden items-center gap-2 text-sm font-bold text-brand-blue hover:text-brand-purple sm:inline-flex"
-                >
-                  View All Articles
+                    <div className="flex flex-col justify-center p-5 sm:p-6 lg:p-7">
+                      <ArticleMeta
+                        date={featuredArticle.date}
+                        readTime={featuredArticle.readTime}
+                      />
 
-                  <Icon
-                    name="arrow-right"
-                    className="size-4"
-                  />
-                </a>
-              </div>
+                      <h2 className="mt-3 text-2xl font-bold leading-tight tracking-tight text-brand-dark sm:text-3xl">
+                        {featuredArticle.title}
+                      </h2>
 
-              <div className="mt-4 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
-                {filteredArticles.map((article) => (
-                  <ArticleCard
-                    key={article.id}
-                    article={article}
-                  />
-                ))}
-              </div>
+                      <p className="mt-3 text-sm leading-relaxed text-brand-text sm:text-base lg:text-lg">
+                        {featuredArticle.description}
+                      </p>
 
-              {/* Empty state */}
-              {filteredArticles.length === 0 && (
-                <div className="mt-5 rounded-xl border border-blue-100 bg-blue-50/50 px-5 py-12 text-center">
+                      <Link
+                        href={`/resources/blog/${featuredArticle.slug}`}
+                        className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-brand-blue"
+                      >
+                        Read Full Article
+
+                        <Icon
+                          name="arrow-right"
+                          className="size-4"
+                        />
+                      </Link>
+                    </div>
+                  </div>
+                </article>
+              ) : (
+                <div className="mt-4 rounded-xl border border-blue-100 bg-blue-50/50 px-5 py-12 text-center">
                   <div className="mx-auto grid size-14 place-items-center rounded-full bg-white text-brand-blue shadow-sm">
-                    <Icon
-                      name="search"
-                      className="size-6"
-                    />
+                    <Icon name="search" className="size-6" />
                   </div>
 
                   <h3 className="mt-4 text-xl font-bold text-brand-dark">
-                    No articles found
+                    No published articles
                   </h3>
 
                   <p className="mt-2 text-sm text-brand-text sm:text-base">
-                    Try another category or search term.
+                    Publish a blog from your admin dashboard to show it here.
                   </p>
-
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setSearch("");
-                      changeCategory("All Posts");
-                    }}
-                    className="mt-4 text-sm font-bold text-brand-blue"
-                  >
-                    Clear filters
-                  </button>
                 </div>
               )}
 
-              {/* Pagination */}
-              <div className="mt-7 flex flex-wrap items-center justify-center gap-2">
-                <button
-                  type="button"
-                  onClick={() =>
-                    setPage((value) =>
-                      Math.max(1, value - 1),
-                    )
-                  }
-                  disabled={page === 1}
-                  className="inline-flex min-h-10 items-center gap-2 rounded-lg border border-blue-100 px-4 text-xs font-semibold text-brand-text transition-colors hover:border-brand-blue hover:text-brand-blue disabled:cursor-not-allowed disabled:opacity-40 sm:text-sm"
-                >
-                  <Icon
-                    name="arrow-left"
-                    className="size-4"
-                  />
-                  Previous
-                </button>
+              {/* Latest */}
 
-                {[1, 2, 3].map((number) => (
-                  <button
-                    key={number}
-                    type="button"
-                    onClick={() => setPage(number)}
-                    className={`grid size-10 place-items-center rounded-lg border text-sm font-semibold transition-all ${
-                      page === number
-                        ? "border-brand-blue bg-brand-blue text-white"
-                        : "border-blue-100 text-brand-dark hover:border-brand-blue hover:text-brand-blue"
-                    }`}
-                  >
-                    {number}
-                  </button>
+              <div className="mt-7 flex items-center justify-between gap-4">
+
+                <p className="text-xs font-bold uppercase tracking-[0.25em] text-brand-purple sm:text-sm">
+
+                  Latest Articles
+
+                </p>
+
+
+
+                <a
+
+                  href="#"
+
+                  className="hidden items-center gap-2 text-sm font-bold text-brand-blue hover:text-brand-purple sm:inline-flex"
+
+                >
+
+                  View All Articles
+
+
+
+                  <Icon
+
+                    name="arrow-right"
+
+                    className="size-4"
+
+                  />
+
+                </a>
+
+              </div>
+
+
+
+              <div className="mt-4 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+
+                {paginatedArticles.map((article) => (
+
+                  <ArticleCard
+
+                    key={article.id}
+
+                    article={article}
+
+                  />
+
                 ))}
 
-                <span className="px-1 text-sm text-brand-text-muted">
-                  ...
-                </span>
-
-                <button
-                  type="button"
-                  onClick={() => setPage(10)}
-                  className={`grid size-10 place-items-center rounded-lg border text-sm font-semibold ${
-                    page === 10
-                      ? "border-brand-blue bg-brand-blue text-white"
-                      : "border-blue-100 text-brand-dark"
-                  }`}
-                >
-                  10
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() =>
-                    setPage((value) =>
-                      Math.min(10, value + 1),
-                    )
-                  }
-                  disabled={page === 10}
-                  className="inline-flex min-h-10 items-center gap-2 rounded-lg border border-blue-100 px-4 text-xs font-semibold text-brand-text transition-colors hover:border-brand-blue hover:text-brand-blue disabled:cursor-not-allowed disabled:opacity-40 sm:text-sm"
-                >
-                  Next
-
-                  <Icon
-                    name="arrow-right"
-                    className="size-4"
-                  />
-                </button>
               </div>
-            </div>
 
-            {/* ==================================================
-                SIDEBAR
-            =================================================== */}
 
-            <aside className="space-y-5">
-              {/* Search */}
-              <div className="rounded-xl border border-blue-100 bg-white p-2 shadow-[0_5px_18px_rgba(24,74,140,0.04)]">
-                <div className="flex gap-2">
-                  <div className="relative min-w-0 flex-1">
+
+              {/* Empty state */}
+
+              {!loading && !error && latestArticles.length === 0 && (
+
+                <div className="mt-5 rounded-xl border border-blue-100 bg-blue-50/50 px-5 py-12 text-center">
+
+                  <div className="mx-auto grid size-14 place-items-center rounded-full bg-white text-brand-blue shadow-sm">
+
                     <Icon
+
                       name="search"
-                      className="absolute left-3 top-1/2 size-4 -translate-y-1/2 text-brand-blue"
+
+                      className="size-6"
+
                     />
 
-                    <input
-                      type="search"
-                      value={search}
-                      onChange={(event) =>
-                        handleSearch(event.target.value)
-                      }
-                      placeholder="Search"
-                      className="h-10 w-full min-w-0 rounded-lg bg-blue-50/50 pl-9 pr-3 text-xs text-brand-dark outline-none placeholder:text-brand-text-muted focus:bg-blue-50 sm:text-sm"
-                    />
                   </div>
+
+
+
+                  <h3 className="mt-4 text-xl font-bold text-brand-dark">
+
+                    No articles found
+
+                  </h3>
+
+
+
+                  <p className="mt-2 text-sm text-brand-text sm:text-base">
+
+                    Try another category or search term.
+
+                  </p>
+
+
+
+                  <button
+
+                    type="button"
+
+                    onClick={() => {
+
+                      setSearch("");
+                      setSearchInput("");
+                      changeCategory("All Posts");
+
+                    }}
+
+                    className="mt-4 text-sm font-bold text-brand-blue"
+
+                  >
+
+                    Clear filters
+
+                  </button>
+
+                </div>
+
+              )}
+
+
+
+              {/* Pagination */}
+              {totalPages > 1 && (
+                <div className="mt-7 flex flex-wrap items-center justify-center gap-2">
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setPage((value) => Math.max(1, value - 1))
+                    }
+                    disabled={page === 1}
+                    className="inline-flex min-h-10 items-center gap-2 rounded-lg border border-blue-100 px-4 text-xs font-semibold text-brand-text transition-colors hover:border-brand-blue hover:text-brand-blue disabled:cursor-not-allowed disabled:opacity-40 sm:text-sm"
+                  >
+                    <Icon
+                      name="arrow-left"
+                      className="size-4"
+                    />
+                    Previous
+                  </button>
+
+                  {pageNumbers.map((number) => (
+                    <button
+                      key={number}
+                      type="button"
+                      onClick={() => setPage(number)}
+                      className={`grid size-10 place-items-center rounded-lg border text-sm font-semibold transition-all ${
+                        page === number
+                          ? "border-brand-blue bg-brand-blue text-white"
+                          : "border-blue-100 text-brand-dark hover:border-brand-blue hover:text-brand-blue"
+                      }`}
+                    >
+                      {number}
+                    </button>
+                  ))}
 
                   <button
                     type="button"
-                    className="rounded-lg bg-brand-blue px-4 text-xs font-bold text-white transition-colors hover:bg-brand-purple sm:text-sm"
+                    onClick={() =>
+                      setPage((value) => Math.min(totalPages, value + 1))
+                    }
+                    disabled={page === totalPages}
+                    className="inline-flex min-h-10 items-center gap-2 rounded-lg border border-blue-100 px-4 text-xs font-semibold text-brand-text transition-colors hover:border-brand-blue hover:text-brand-blue disabled:cursor-not-allowed disabled:opacity-40 sm:text-sm"
                   >
-                    Search
-                  </button>
-                </div>
-              </div>
-
-              {/* Newsletter */}
-              <div className="rounded-xl bg-[linear-gradient(145deg,#07154d,#101e88,#2739e5)] p-5 text-white shadow-[0_10px_25px_rgba(20,45,150,0.15)] sm:p-6">
-                <p className="text-xs font-bold uppercase tracking-[0.25em] text-blue-100">
-                  Stay Updated
-                </p>
-
-                <h3 className="mt-2 text-2xl font-bold leading-tight">
-                  Get the Latest Thoughts
-                </h3>
-
-                <p className="mt-2 text-sm leading-relaxed text-blue-100 sm:text-base">
-                  Join 25,000+ professionals and get our most recent blog posts, guides, and industry news in your email.
-                </p>
-
-                <form
-                  onSubmit={handleNewsletter}
-                  className="mt-5 space-y-2"
-                >
-                  <div className="relative">
-                    <Icon
-                      name="file"
-                      className="absolute left-3 top-1/2 size-4 -translate-y-1/2 text-brand-text-muted"
-                    />
-
-                    <input
-                      type="email"
-                      required
-                      value={email}
-                      onChange={(event) =>
-                        setEmail(event.target.value)
-                      }
-                      placeholder="Enter your email address"
-                      className="h-11 w-full rounded-lg bg-white pl-9 pr-3 text-xs text-brand-dark outline-none placeholder:text-brand-text-muted sm:text-sm"
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="flex h-11 w-full items-center justify-center gap-2 rounded-lg border border-white/60 bg-brand-purple text-sm font-bold text-white transition-colors hover:bg-brand-purple-light"
-                  >
-                    Subscribe
+                    Next
 
                     <Icon
                       name="arrow-right"
                       className="size-4"
                     />
                   </button>
+                </div>
+              )}
+
+            </div>
+
+
+
+            {/* ==================================================
+
+                SIDEBAR
+
+            =================================================== */}
+
+
+
+            <aside className="space-y-5">
+
+              {/* Search */}
+
+              <div className="rounded-xl border border-blue-100 bg-white p-2 shadow-[0_5px_18px_rgba(24,74,140,0.04)]">
+
+                <div className="flex gap-2">
+
+                  <div className="relative min-w-0 flex-1">
+
+                    <Icon
+
+                      name="search"
+
+                      className="absolute left-3 top-1/2 size-4 -translate-y-1/2 text-brand-blue"
+
+                    />
+
+
+
+                    <input
+
+                      type="search"
+
+                      value={searchInput}
+                      onChange={(event) =>
+                        handleSearch(event.target.value)
+                      }
+                      onKeyDown={(event) => {
+                        if (event.key === "Enter") {
+                          submitSearch();
+                        }
+                      }}
+
+                      placeholder="Search"
+
+                      className="h-10 w-full min-w-0 rounded-lg bg-blue-50/50 pl-9 pr-3 text-xs text-brand-dark outline-none placeholder:text-brand-text-muted focus:bg-blue-50 sm:text-sm"
+
+                    />
+
+                  </div>
+
+
+
+                  <button
+
+                    type="button"
+                    onClick={submitSearch}
+
+                    className="rounded-lg bg-brand-blue px-4 text-xs font-bold text-white transition-colors hover:bg-brand-purple sm:text-sm"
+
+                  >
+
+                    Search
+
+                  </button>
+
+                </div>
+
+              </div>
+
+
+
+              {/* Newsletter */}
+
+              <div className="rounded-xl bg-[linear-gradient(145deg,#07154d,#101e88,#2739e5)] p-5 text-white shadow-[0_10px_25px_rgba(20,45,150,0.15)] sm:p-6">
+
+                <p className="text-xs font-bold uppercase tracking-[0.25em] text-blue-100">
+
+                  Stay Updated
+
+                </p>
+
+
+
+                <h3 className="mt-2 text-2xl font-bold leading-tight">
+
+                  Get the Latest Thoughts
+
+                </h3>
+
+
+
+                <p className="mt-2 text-sm leading-relaxed text-blue-100 sm:text-base">
+
+                  Join 25,000+ professionals and get our most recent blog posts, guides, and industry news in your email.
+
+                </p>
+
+
+
+                <form
+
+                  onSubmit={handleNewsletter}
+
+                  className="mt-5 space-y-2"
+
+                >
+
+                  <div className="relative">
+
+                    <Icon
+
+                      name="file"
+
+                      className="absolute left-3 top-1/2 size-4 -translate-y-1/2 text-brand-text-muted"
+
+                    />
+
+
+
+                    <input
+
+                      type="email"
+
+                      required
+
+                      value={email}
+
+                      onChange={(event) =>
+
+                        setEmail(event.target.value)
+
+                      }
+
+                      placeholder="Enter your email address"
+
+                      className="h-11 w-full rounded-lg bg-white pl-9 pr-3 text-xs text-brand-dark outline-none placeholder:text-brand-text-muted sm:text-sm"
+
+                    />
+
+                  </div>
+
+
+
+                  <button
+
+                    type="submit"
+
+                    className="flex h-11 w-full items-center justify-center gap-2 rounded-lg border border-white/60 bg-brand-purple text-sm font-bold text-white transition-colors hover:bg-brand-purple-light"
+
+                  >
+
+                    Subscribe
+
+
+
+                    <Icon
+
+                      name="arrow-right"
+
+                      className="size-4"
+
+                    />
+
+                  </button>
+
                 </form>
 
+
+
                 <p className="mt-2 text-xs text-blue-100">
+
                   No spam. Cancel anytime.
+
                 </p>
+
               </div>
+
+
 
               {/* Popular topics */}
+
               <div className="rounded-xl border border-blue-100 bg-white p-4 shadow-[0_5px_18px_rgba(24,74,140,0.04)] sm:p-5">
+
                 <div className="flex items-center gap-2">
+
                   <Icon
+
                     name="flame"
+
                     className="size-5 text-brand-orange"
+
                   />
 
+
+
                   <h3 className="text-lg font-bold text-brand-dark sm:text-xl">
+
                     Popular Topics
+
                   </h3>
+
                 </div>
+
+
 
                 <div className="mt-4 divide-y divide-blue-50">
-                  {[
-                    ["AI Automation", "42"],
-                    ["AI Agents", "38"],
-                    ["Digital Marketing", "36"],
-                    ["Business Growth", "28"],
-                    ["Tools & Integrations", "24"],
-                    ["Industry Insights", "20"],
-                    ["Tips & Tutorials", "18"],
-                  ].map(([topic, count]) => (
+
+                  {categories
+                    .filter((category) => category.name !== "All Posts")
+                    .map((category) => {
+                      const count = articles.filter((article) =>
+                        article.tags.some(
+                          (tag) =>
+                            tag.toLowerCase() === category.name.toLowerCase(),
+                        ) ||
+                        article.category.toLowerCase() ===
+                          category.name.toLowerCase(),
+                      ).length;
+
+                      return [category.name, String(count)] as const;
+                    })
+                    .map(([topic, count]) => (
+
                     <button
+
                       key={topic}
+
                       type="button"
+
                       onClick={() =>
+
                         changeCategory(topic)
+
                       }
+
                       className="flex w-full items-center justify-between gap-3 py-2 text-left text-sm text-brand-text transition-colors hover:text-brand-blue"
+
                     >
+
                       <span className="flex items-center gap-2">
+
                         <Icon
+
                           name="grid"
+
                           className="size-3.5"
+
                         />
 
+
+
                         {topic}
+
                       </span>
+
+
 
                       <span className="rounded-full bg-indigo-50 px-2.5 py-0.5 text-xs font-semibold text-brand-purple">
+
                         {count}
+
                       </span>
+
                     </button>
+
                   ))}
+
                 </div>
+
               </div>
+
+
 
               {/* Trending */}
+
               <div className="rounded-xl border border-blue-100 bg-white p-4 shadow-[0_5px_18px_rgba(24,74,140,0.04)] sm:p-5">
+
                 <div className="flex items-center gap-2">
+
                   <Icon
+
                     name="arrow-up"
+
                     className="size-5 text-emerald-500"
+
                   />
 
+
+
                   <h3 className="text-lg font-bold text-brand-dark sm:text-xl">
+
                     Trending This Week
+
                   </h3>
+
                 </div>
+
+
 
                 <div className="mt-4 space-y-2">
-                  {[
-                    "10 AI Tools to Increase Productivity in 2024",
-                    "How to Create an AI-Powered Sales Process",
-                    "AI in Digital Marketing: Complete Guide",
-                    "Real-World AI Examples for Medium Businesses",
-                    "The Future of Work: People + AI",
-                  ].map((item, index) => (
-                    <a
-                      key={item}
-                      href="#"
+
+                  {articles
+                  .slice(0, 5)
+                  .map((article, index) => (
+
+                    <Link
+
+                      key={article.title}
+
+                      href={`/resources/blog/${article.slug}`}
+
                       className="flex items-start gap-3 border-b border-blue-50 py-2.5 text-sm leading-snug text-brand-text transition-colors hover:text-brand-blue"
+
                     >
+
                       <span className="grid size-6 shrink-0 place-items-center rounded-full bg-indigo-50 text-xs font-bold text-brand-purple">
+
                         {index + 1}
+
                       </span>
 
-                      <span>{item}</span>
-                    </a>
+
+
+                      <span>{article.title}</span>
+
+                    </Link>
+
                   ))}
+
                 </div>
+
               </div>
+
             </aside>
+
           </div>
+
         </section>
+
+
 
         {/* ====================================================
+
             CTA
+
         ===================================================== */}
 
+
+
         <section
+
           id="contact"
+
           className="relative isolate mx-1 mt-8 overflow-hidden rounded-2xl bg-[linear-gradient(110deg,#07154d,#0c1772_55%,#2836e4)] px-5 py-8 text-center text-white sm:mx-3 sm:px-8 sm:py-10"
+
         >
+
           <div className="pointer-events-none absolute inset-0 -z-10 opacity-30 [background-image:repeating-radial-gradient(ellipse_at_0%_120%,transparent_0_0.75rem,#7180ff_0.8rem_0.875rem)]" />
 
+
+
           <p className="text-xs font-bold uppercase tracking-[0.25em] text-blue-100 sm:text-sm">
+
             Turn Insights Into Action
+
           </p>
+
+
 
           <h2 className="mx-auto mt-3 max-w-4xl text-2xl font-bold leading-tight tracking-tight sm:text-3xl lg:text-4xl">
+
             Ready to Build a Smarter Business with AI?
+
           </h2>
 
+
+
           <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-blue-100 sm:text-base lg:text-lg">
+
             Get expert guidance, explore our resources, or talk to our team
+
             about your goals.
+
           </p>
 
+
+
           <div className="mt-6 flex flex-wrap justify-center gap-3">
+
             <a
+
               href="#"
+
               className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-white px-6 text-sm font-bold text-brand-dark shadow-[0_8px_20px_rgba(0,0,0,0.12)] transition-all hover:-translate-y-0.5 hover:bg-blue-50"
+
             >
+
               Book a Free Consultation
 
+
+
               <Icon
+
                 name="arrow-right"
+
                 className="size-4"
+
               />
+
             </a>
+
+
 
             <a
+
               href="#articles"
+
               className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-white/60 bg-white/5 px-6 text-sm font-bold text-white transition-colors hover:bg-white/10"
+
             >
+
               Explore Our Resources
+
             </a>
+
           </div>
+
+
 
           {/* Handwriting */}
+
           <div className="absolute bottom-7 right-8 hidden rotate-[-8deg] font-hand text-2xl leading-[0.95] text-white md:block">
+
             Learn
+
             <br />
+
             Share
+
             <br />
+
             Grow
+
             <br />
+
             Together
+
           </div>
 
+
+
           <svg
+
             className="absolute bottom-3 right-8 hidden h-14 w-20 text-white md:block"
+
             viewBox="0 0 80 60"
+
             fill="none"
+
             aria-hidden="true"
+
           >
-            <path
-              d="M69 5C62 25 44 40 10 47"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-            />
 
             <path
-              d="m16 40-7 7 10 3"
+
+              d="M69 5C62 25 44 40 10 47"
+
               stroke="currentColor"
+
               strokeWidth="2"
+
               strokeLinecap="round"
-              strokeLinejoin="round"
+
             />
+
+
+
+            <path
+
+              d="m16 40-7 7 10 3"
+
+              stroke="currentColor"
+
+              strokeWidth="2"
+
+              strokeLinecap="round"
+
+              strokeLinejoin="round"
+
+            />
+
           </svg>
+
         </section>
+
       </main>
 
+
+
     </div>
+
   );
+
 }

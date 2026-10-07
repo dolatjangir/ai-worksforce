@@ -10,19 +10,97 @@ import TagInput from '@/components/blog-tag-input';
 import MasterProtectedRoute from '@/utils/masterProtectedRoute';
   
 
-const PAGES = ['Home', 'calling-agent', 'content-creation-agent', 'seo-content-agent',
-   'follow-up-agent',
-   'data-mining-agent', 'campaign-automation',"lead-capture-agent" , 
-   "lead-qualification-agent","property-maching-agent"
-  ,"social-media-agent","ai-training","ai-machine-learning"
-  ,"fullstack-development-training",
-"digital-marketing-training","social-media-training", "google-ads-training",
-"education","real-estate","healthcare","technology","tour-&-tourism","customer-goods-retail",
-"business-enhance","video-creation","content-creation","business-automation",
-"lead-automation","workflow-automation",
-"ai-chatbot","ai-personal-assistent", "ai-tools-course","about-us","contact-us",
-"why-choose-us","help-center","community","blog","blog-insights"];
+const PAGES = [
+  "home",
 
+  // Solutions
+  "solutions",
+  "ai-business-assessment",
+  "/solutions/ai-workforce",
+  "/solutions/ai-automation",
+  "/solutions/ai-data-&-research",
+  "/solutions/ai-customer-operations",
+  "/solutions/ai-sales-&-outreach",
+
+  // AI Workforce
+  "/ai-workforce",
+  "/ai-workforce/what-is-an-ai-workforce",
+  "/ai-workforce/what-aiworksforce",
+  "/ai-workforce/how-it-works",
+  "/ai-workforce/our-ai-workFlow",
+  "/ai-workforce/case-studies",
+
+  // AI Agents
+  "/explore-ai-agent",
+  "/ai-agents/lead-qualifiction-agent",
+  "/ai-agents/property-maching-agent",
+  "/ai-agents/lead-capture-agent",
+  "/ai-agents/content-creation-agent",
+  "/ai-agents/follow-up-agent",
+  "calling-agent",
+  "campaign-automation",
+  "data-mining-agent",
+  "social-media-agent",
+  "seo-content-agent",
+
+  // Products
+  // "/industry/agencies",
+  // "/industry/customer-sucess",
+  // "/industry/enterprise",
+  // "/products/crm/b2b",
+  // "/products/crm/b2c",
+  // "/products/crm/bulk",
+
+  // AI Tools
+  // "/ai-tools/chatbot-builder",
+  // "/ai-tools/workflow-automator",
+  // "/ai-tools/data-analyzer",
+  // "/ai-tools/smart-scheduler",
+  // "/ai-tools/content-generator",
+
+  // AI Digital Marketing
+  "ai-digital-marketing",
+  "ai-seo",
+  "ai-content-marketing",
+  "ai-social-media",
+  "ai-backlink-&-outreach",
+  "ai-advertising-&-promotion",
+  "ai-creative-&-video",
+  "ai-marketing-automation",
+  "ai-marketing-analytics",
+
+  // Technology
+  "technology",
+  "ai-tools",
+  "llm-&-ai",
+  "ai-automation",
+  "technology-stack",
+  "data-intelligence",
+  "lead-engine",
+  "ai-infrastructure",
+  "Integrations",
+
+  // Resources
+  "resources",
+  "ai-use-cases",
+  "case-studies",
+  "ai-workforce-guides",
+  "ai-digital-marketing-guides",
+  "blog",
+  "faqs",
+
+  // Company
+  "about-aiworksforce",
+  "ai-delivery-centre",
+  "how-we-work",
+  "our-team",
+  "careers",
+  "contact",
+
+  // Assessment and Pilot
+  "get-your-assessment",
+  "start-a-pilot",
+];
 export default function NewBlogPage() {
   const router = useRouter();
   const [loading, setLoading] = useState(false);

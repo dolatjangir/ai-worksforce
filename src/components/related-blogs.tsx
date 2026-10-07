@@ -45,7 +45,7 @@ export default function RelatedBlogs({ blogs, title = 'Latest Insights' }: Relat
             </h2>
           </div>
           <Link
-            href="/blog"
+            href="/resources/blog"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-[var(--color-border)] text-[var(--color-text-secondary)] text-sm font-medium hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] hover:bg-[var(--color-icon-bg-1)] transition-all duration-300 shrink-0"
           >
             View all articles
@@ -61,7 +61,7 @@ export default function RelatedBlogs({ blogs, title = 'Latest Insights' }: Relat
           {blogs.map((blog, index) => (
             <Link
               key={blog.id}
-              href={`/blog/${blog.slug}`}
+              href={`/resources/blog/${blog.slug}`}
               className="group flex flex-col bg-white rounded-2xl border border-[var(--color-border)] overflow-hidden hover:shadow-[var(--shadow-xl)] hover:border-[var(--color-border-hover)] hover:-translate-y-1 transition-all duration-300"
             >
               {/* Image Container */}
@@ -143,7 +143,7 @@ export default function RelatedBlogs({ blogs, title = 'Latest Insights' }: Relat
         {/* Mobile CTA */}
         <div className="mt-10 text-center sm:hidden">
           <Link
-            href="/blog"
+            href="/resources/blog"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-[var(--color-border)] text-[var(--color-text-secondary)] text-sm font-medium hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] hover:bg-[var(--color-icon-bg-1)] transition-all duration-300"
           >
             View all articles
@@ -219,7 +219,7 @@ export default function RelatedBlogs({ blogs, title = 'Latest Insights' }: Relat
 //             </h2>
 //           </div>
 //           <Link
-//             href="/blog"
+//             href="/resources/blog"
 //             className="hidden sm:inline-flex items-center gap-1.5 text-[var(--color-primary)] font-medium hover:text-[var(--color-primary-hover)] transition-colors text-sm"
 //           >
 //             View all blogs
@@ -234,7 +234,7 @@ export default function RelatedBlogs({ blogs, title = 'Latest Insights' }: Relat
 //           {filteredBlogs.map((blog) => (
 //             <Link
 //               key={blog.id}
-//               href={`/blog/${blog.slug}`}
+//               href={`/resources/blog/${blog.slug}`}
 //               className="group block bg-white rounded-2xl border border-[var(--color-border)] overflow-hidden hover:shadow-[var(--shadow-lg)] hover:border-[var(--color-border-hover)] transition-all duration-300"
 //             >
 //               {blog.featuredImg ? (
@@ -274,7 +274,7 @@ export default function RelatedBlogs({ blogs, title = 'Latest Insights' }: Relat
 
 //         <div className="mt-6 text-center sm:hidden">
 //           <Link
-//             href="/blog"
+//             href="/resources/blog"
 //             className="inline-flex items-center gap-1.5 text-[var(--color-primary)] font-medium hover:text-[var(--color-primary-hover)] transition-colors text-sm"
 //           >
 //             View all blogs

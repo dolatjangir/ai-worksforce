@@ -2,6 +2,7 @@
 
 import ReusableHero from "@/components/tech-hero/reusable-hero";
 import { ArrowRight, Clock, Play, Rocket, TrendingUp } from "lucide-react";
+import Link from "next/link";
 import { useState, type CSSProperties, type ReactNode } from "react";
 
 /**
@@ -44,7 +45,7 @@ const navItems = [
 ];
 
 export default function AIToolsPage({
-  consultationHref = "/contact",
+  consultationHref = "/get-your-assessment",
   heroImageSrc = "/technology/all-in-one.png",
   caseStudyImageSrc = "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=700&q=85",
   testimonialImageSrc = "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=240&q=85",
@@ -188,7 +189,7 @@ export default function AIToolsPage({
   }
 />
 
-        <section aria-label="AI tools we work with" className="mx-auto max-w-[1370px] px-5 py-6 sm:px-8 lg:px-10">
+        {/* <section aria-label="AI tools we work with" className="mx-auto max-w-[1370px] px-5 py-6 sm:px-8 lg:px-10">
           <p className={eyebrow}>Trusted AI tools we work with</p>
           <div className="mt-4 grid grid-cols-4 items-center gap-x-5 gap-y-6 text-center md:grid-cols-8 md:gap-6">
             <span className="text-lg font-semibold tracking-tight text-black sm:text-2xl">◎ OpenAI</span>
@@ -200,7 +201,7 @@ export default function AIToolsPage({
             <span className="text-xl font-bold tracking-[-0.065em] text-neutral-900 sm:text-[29px]"><span className="text-brand-orange">_</span>zapier</span>
             <span className="font-hand text-[32px] font-bold italic text-brand-sky sm:text-[38px]">Canva</span>
           </div>
-        </section>
+        </section> */}
 
         <div className="mx-auto max-w-[1430px] space-y-4 px-5 pb-4 sm:px-8">
           <section id="tools" aria-labelledby="tools-title" className="scroll-mt-6 pt-3">
@@ -244,7 +245,7 @@ export default function AIToolsPage({
         <section aria-labelledby="cta-title" className="relative isolate mx-1 mb-8 overflow-hidden rounded-2xl px-5 py-7 text-center text-white sm:py-8" style={{ background: "linear-gradient(110deg, var(--color-brand-navy), var(--color-brand-dark) 46%, var(--color-brand-blue-dark))" }}>
           <svg aria-hidden="true" viewBox="0 0 1440 240" preserveAspectRatio="none" className="pointer-events-none absolute inset-0 -z-10 size-full opacity-20">{Array.from({ length: 18 }, (_, index) => <path key={index} d={`M-60 ${30 + index * 9} C180 ${-80 + index * 13}, 240 ${290 + index * 8}, 550 ${270 + index * 6} S1100 ${210 + index * 8}, 1510 ${index * 13}`} fill="none" stroke="var(--color-brand-blue)" strokeWidth="1"/>)}</svg>
           <p className="text-[10px] font-medium uppercase tracking-[0.24em] text-white/90">Ready to find your perfect AI tools?</p><h2 id="cta-title" className="mx-auto mt-2 max-w-4xl text-[26px] font-semibold leading-tight tracking-[-0.03em] sm:text-[30px]">Let’s Build a Smarter, More Productive Business</h2><p className="mx-auto mt-2 max-w-3xl text-[15px] leading-relaxed text-white/90 sm:text-base">Get expert recommendations and support to implement the best AI tools for your goals.</p>
-          <div className="mx-auto mt-5 flex max-w-[580px] flex-col justify-center gap-4 sm:flex-row"><a href={consultationHref} className={`inline-flex min-h-12 flex-1 items-center justify-center gap-2 rounded-lg bg-white px-6 py-3 text-sm font-semibold text-brand-dark transition-colors hover:bg-brand-blue-soft ${focus}`}>Book a Free Consultation {icon("arrow", "size-4")}</a><a href="#tools" className={`inline-flex min-h-12 flex-1 items-center justify-center rounded-lg border border-white/65 px-6 py-3 text-sm font-medium transition-colors hover:bg-white/10 ${focus}`}>Explore AI Tools</a></div>
+          <div className="mx-auto mt-5 flex max-w-[580px] flex-col justify-center gap-4 sm:flex-row"><Link href={consultationHref} className={`inline-flex min-h-12 flex-1 items-center justify-center gap-2 rounded-lg bg-white px-6 py-3 text-sm font-semibold text-brand-dark transition-colors hover:bg-brand-blue-soft ${focus}`}>Book a Free Consultation {icon("arrow", "size-4")}</Link><Link href="#tools" className={`inline-flex min-h-12 flex-1 items-center justify-center rounded-lg border border-white/65 px-6 py-3 text-sm font-medium transition-colors hover:bg-white/10 ${focus}`}>Explore AI Tools</Link></div>
           <p aria-hidden="true" className="absolute right-[4%] top-12 hidden -rotate-12 font-hand text-[25px] leading-[1.2] desktop-lg:block">Right Tools<br/>Greater Productivity<br/>Bigger Growth</p>
         </section>
       </main>

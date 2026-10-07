@@ -2,6 +2,7 @@
 
 import ReusableHero from "@/components/tech-hero/reusable-hero";
 import { ArrowRight, BarChart3, Database, Play, Zap } from "lucide-react";
+import Link from "next/link";
 import { useState, type ReactNode } from "react";
 
 /**
@@ -56,7 +57,7 @@ const modelMarks = [
 ] as const;
 
 export default function LLMAIPage({
-  consultationHref = "/contact",
+  consultationHref = "/company/contact",
   heroImageSrc = "/technology/all-in-one.png",
   caseStudyImageSrc = "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=800&q=88",
   testimonialImageSrc = "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=300&q=88",
@@ -94,7 +95,7 @@ export default function LLMAIPage({
 
   return (
     <div className="min-h-screen overflow-x-clip bg-white font-sans text-brand-dark antialiased">
-      <a href="#main" className={`sr-only z-50 rounded-lg bg-white p-4 focus:fixed focus:left-4 focus:top-4 focus:not-sr-only ${focus}`}>Skip to content</a>
+   
 
     
 
@@ -120,7 +121,7 @@ export default function LLMAIPage({
     },
     secondary: {
       label: "Watch LLM and AI in action.",
-      href: "#solutions",
+      href: "/solutions",
       variant: "secondary",
       icon: <Play className="size-3.5" />,
     },
@@ -197,12 +198,12 @@ export default function LLMAIPage({
   }
 />
 
-        <section aria-label="Trusted AI models and technologies" className="mx-auto max-w-[1370px] px-5 py-6 sm:px-8 lg:px-10">
+        {/* <section aria-label="Trusted AI models and technologies" className="mx-auto max-w-[1370px] px-5 py-6 sm:px-8 lg:px-10">
           <p className={eyebrow}>Trusted AI models and tools</p>
           <div className="mt-4 grid grid-cols-2 items-center gap-x-5 gap-y-6 sm:grid-cols-4 xl:grid-cols-8">
             {modelMarks.map((model) => <div key={model.name} className="flex items-center justify-center gap-2 whitespace-nowrap"><span className={`text-[26px] font-bold leading-none ${model.className}`}>{model.mark}</span><span className="text-base font-semibold tracking-tight text-neutral-800 sm:text-lg">{model.name}</span></div>)}
           </div>
-        </section>
+        </section> */}
 
         <div className="mx-auto max-w-[1430px] space-y-4 px-5 pb-4 sm:px-8">
           <section id="solutions" aria-labelledby="solutions-title" className="scroll-mt-8 pt-3">
@@ -243,7 +244,7 @@ export default function LLMAIPage({
         <section aria-labelledby="cta-title" className="relative isolate mx-1 mb-4 overflow-hidden rounded-2xl px-5 py-7 text-center text-white sm:py-8" style={{ background: "linear-gradient(110deg, var(--color-brand-navy), #111d70 58%, #2138db)" }}>
           <svg aria-hidden="true" viewBox="0 0 1440 220" preserveAspectRatio="none" className="pointer-events-none absolute inset-0 -z-10 size-full opacity-20">{Array.from({ length: 16 }, (_, i) => <path key={i} d={`M-80 ${35 + i * 9} C180 ${-90 + i * 14}, 250 ${270 + i * 8}, 570 ${250 + i * 5} S1100 ${210 + i * 7}, 1500 ${i * 12}`} fill="none" stroke="#4785ff" strokeWidth="1" />)}</svg>
           <p className="text-[10px] font-medium uppercase tracking-[0.25em] text-white/80">Are you ready to discover the power of LLM and AI?</p><h2 id="cta-title" className="mt-2 text-[26px] font-semibold leading-tight tracking-[-0.03em] sm:text-[30px]">Let's create smarter things faster together.</h2><p className="mt-2 text-[15px] text-white/85">Get professional help to use LLMs and AI for your company's goals.</p>
-          <div className="mx-auto mt-5 flex max-w-[570px] flex-col gap-3 sm:flex-row"><a href={consultationHref} className={`inline-flex min-h-12 flex-1 items-center justify-center gap-2 rounded-lg bg-white px-6 py-3 text-sm font-semibold text-brand-dark hover:bg-brand-blue-soft ${focus}`}>Schedule a Free Meeting {icon("arrow", "size-4")}</a><a href="#solutions" className={`inline-flex min-h-12 flex-1 items-center justify-center rounded-lg border border-white/70 px-6 py-3 text-sm font-medium hover:bg-white/10 ${focus}`}>View Our AI Options</a></div>
+          <div className="mx-auto mt-5 flex max-w-[570px] flex-col gap-3 sm:flex-row"><Link href={consultationHref} className={`inline-flex min-h-12 flex-1 items-center justify-center gap-2 rounded-lg bg-white px-6 py-3 text-sm font-semibold text-brand-dark hover:bg-brand-blue-soft ${focus}`}>Schedule a Free Meeting {icon("arrow", "size-4")}</Link><Link href="/solutions" className={`inline-flex min-h-12 flex-1 items-center justify-center rounded-lg border border-white/70 px-6 py-3 text-sm font-medium hover:bg-white/10 ${focus}`}>View Our AI Options</Link></div>
           <p aria-hidden="true" className="absolute right-[5%] top-10 hidden -rotate-12 font-hand text-[24px] leading-[1.18] desktop-lg:block">Smarter AI<br />impact<br />More growth</p>
         </section>
       </main>

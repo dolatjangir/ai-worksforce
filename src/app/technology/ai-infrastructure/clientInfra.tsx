@@ -28,6 +28,7 @@ import {
   Zap,
 } from "lucide-react";
 import ReusableHero from "@/components/tech-hero/reusable-hero";
+import Link from "next/link";
 
 const navItems = [
   "Home",
@@ -227,7 +228,7 @@ export default function AIInfrastructurePage() {
   buttons={{
     primary: {
       label: "Book a Free Consultation",
-      href: "#contact",
+      href: "/get-your-assessment",
       variant: "primary",
       icon: <ArrowRight className="size-4" />,
     },
@@ -310,7 +311,7 @@ export default function AIInfrastructurePage() {
   }
 />
 
-      <LogoStrip />
+      {/* <LogoStrip /> */}
 
       {/* Solutions */}
       <section
@@ -581,19 +582,19 @@ export default function AIInfrastructurePage() {
             </p>
 
             <div className="mt-5 flex flex-wrap justify-center gap-3">
-              <a
-                href="#"
+              <Link
+                href="/get-your-assessment"
                 className="rounded-md bg-white px-6 py-3 text-sm sm:text-base font-bold text-[#102079] shadow-lg transition hover:-translate-y-0.5"
               >
                 Book a Free Consultation{" "}
                 <ArrowRight className="ml-1 inline size-3" />
-              </a>
-              <a
-                href="#how-it-works"
+              </Link>
+              <Link
+                href="/company/contact"
                 className="rounded-md border border-white/70 px-6 py-3 text-sm sm:text-base font-bold text-white transition hover:bg-white/10"
               >
                 Talk to Our Experts
-              </a>
+              </Link>
             </div>
           </div>
 

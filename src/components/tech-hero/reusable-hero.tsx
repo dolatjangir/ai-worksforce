@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { ReactNode } from "react";
 
 export type HeroButton = {
@@ -90,7 +91,7 @@ export default function ReusableHero({
     "inline-flex min-h-12 items-center justify-center gap-2 rounded-[9px] border border-brand-blue/55 bg-white/70 px-6 py-3 text-sm font-semibold text-brand-dark transition-colors hover:bg-brand-blue-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2";
 
   const eyebrowClass =
-    "text-[10px] font-semibold uppercase leading-5 tracking-[0.22em] text-brand-blue sm:text-[11px]";
+    "text-xs font-semibold uppercase leading-5 tracking-[0.22em] text-brand-blue sm:text-sm";
 
   return (
     <section
@@ -119,22 +120,22 @@ export default function ReusableHero({
             {subtitle}
           </h2>
 
-          <p className="mt-3 max-w-[570px] text-xs leading-[1.5] text-brand-text sm:text-sm">
+          <p className="mt-3 max-w-[570px] text-xs leading-[1.5] text-brand-text sm:text-base">
             {description}
           </p>
 
           {/* Buttons */}
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-            <a
+            <Link
               href={buttons.primary.href}
               className={primaryButton}
             >
               {buttons.primary.label}
 
               {buttons.primary.icon}
-            </a>
+            </Link>
 
-            <a
+            <Link
               href={buttons.secondary.href}
               className={secondaryButton}
             >
@@ -145,7 +146,7 @@ export default function ReusableHero({
               )}
 
               {buttons.secondary.label}
-            </a>
+            </Link>
           </div>
 
           {/* =======================================================

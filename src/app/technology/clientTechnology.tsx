@@ -24,6 +24,7 @@ import {
   Zap,
 } from "lucide-react";
 import ReusableHero from "@/components/tech-hero/reusable-hero";
+import Link from "next/link";
 
 const navItems = [
   "Home",
@@ -160,13 +161,13 @@ function MiniMetric({
 
   return (
     <div className="rounded-xl bg-[#f8faff] p-3 text-center">
-      <span className={`mx-auto grid size-9 place-items-center rounded-full ${bgColor} ${textColor}`}>
-        <Icon className="size-4" />
+      <span className={`mx-auto grid size-12 place-items-center rounded-full ${bgColor} ${textColor}`}>
+        <Icon className="size-6" />
       </span>
-      <strong className="mt-2 block text-[22px] font-extrabold leading-none text-[#1527d9]">
+      <strong className="mt-2 block text-2xl font-extrabold leading-none text-[#1527d9]">
         {value}
       </strong>
-      <p className="mt-1 text-[10px] leading-[1.2] text-[#58689a]">{label}</p>
+      <p className="mt-1 text-sm leading-[1.2] text-[#58689a]">{label}</p>
     </div>
   );
 }
@@ -295,8 +296,8 @@ export default function TechnologyPage() {
 />
 
       {/* Trusted technology partners */}
-      <section className="mx-auto max-w-[1440px] px-5 py-4 lg:px-[76px]">
-        <p className="text-[9px] font-extrabold tracking-[2.7px] text-[#1d28e7]">
+      {/* <section className="mx-auto max-w-[1440px] px-5 py-4 lg:px-[76px]">
+        <p className="text-sm font-extrabold tracking-[2.7px] text-[#1d28e7]">
           TRUSTED TECHNOLOGIES WE WORK WITH
         </p>
 
@@ -310,7 +311,7 @@ export default function TechnologyPage() {
             />
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* Technology areas */}
       <section
@@ -318,13 +319,13 @@ export default function TechnologyPage() {
         className="mx-auto max-w-[1440px] px-5 py-2 lg:px-[76px]"
       >
         <div className="text-center">
-          <p className="text-[9px] font-extrabold tracking-[2.8px] text-[#1d28e7]">
+          <p className="text-sm pt-3 font-extrabold tracking-[2.8px] text-[#1d28e7]">
             OUR TECHNOLOGY AREAS
           </p>
-          <h2 className="mt-1 text-[24px] font-extrabold tracking-[-1.2px] text-brand-dark sm:text-[27px]">
+          <h2 className="mt-1 text-2xl font-extrabold tracking-[-1.2px] text-brand-dark sm:text-3xl">
             Explore Our Technology Capabilities
           </h2>
-          <p className="mx-auto mt-1 max-w-3xl text-[13px] text-[#58689a]">
+          <p className="mx-auto mt-1 max-w-3xl text-md text-[#58689a]">
             Click on any technology area to learn more about how we use these
             tools to deliver real business results.
           </p>
@@ -340,10 +341,10 @@ export default function TechnologyPage() {
               <span className={`grid size-12 place-items-center rounded-full ${iconClass}`}>
                 <Icon className="size-6" />
               </span>
-              <h3 className="mt-3 pr-8 text-[14px] font-extrabold leading-[1.15] tracking-[-0.45px] text-brand-dark">
+              <h3 className="mt-3 pr-8 text-lg font-extrabold leading-[1.15] tracking-[-0.45px] text-brand-dark">
                 {title}
               </h3>
-              <p className="mt-2 max-w-[205px] text-[12px] leading-[1.32] text-[#556595]">
+              <p className="mt-2 max-w-[205px] text-lg leading-[1.32] text-[#556595]">
                 {text}
               </p>
               <span className="absolute bottom-4 right-4 grid size-8 place-items-center rounded-full bg-white text-brand-blue shadow-[0_4px_14px_rgba(35,77,155,.1)] transition group-hover:bg-brand-blue group-hover:text-white">
@@ -355,20 +356,20 @@ export default function TechnologyPage() {
       </section>
 
       {/* See all technology banner */}
-      <section className="mx-auto max-w-[1440px] px-5 py-3 lg:px-[76px]">
+      <section className="mx-auto max-w-[1440px] px-5 py-3 lg:px-[76px] my-6">
         <div className="relative overflow-hidden rounded-xl bg-[linear-gradient(110deg,#061f69,#1524e8,#092d9f)] px-6 py-6 text-white sm:px-10">
           <div className="pointer-events-none absolute -left-16 bottom-0 size-64 rounded-full border border-blue-300/20" />
           <div className="pointer-events-none absolute right-[-30px] top-[-55px] size-56 rounded-full border border-blue-300/20" />
 
           <div className="relative flex flex-col items-center gap-5 text-center md:flex-row md:justify-between md:text-left">
             <div className="md:max-w-[500px]">
-              <p className="text-[9px] font-bold tracking-[3px] text-blue-100">
+              <p className="text-sm font-bold tracking-[3px] text-blue-100">
                 READY TO EXPLORE MORE?
               </p>
-              <h2 className="mt-2 text-[24px] font-extrabold tracking-[-0.8px]">
+              <h2 className="mt-2 text-2xl sm:text-3xl font-bold tracking-[-0.8px]">
                 See all technology
               </h2>
-              <p className="mt-1 text-[12px] text-blue-100 sm:text-[13px]">
+              <p className="mt-1 text-md text-blue-100 ">
                 Discover our complete range of tools, platforms, and
                 integrations that power smarter business solutions.
               </p>
@@ -376,12 +377,12 @@ export default function TechnologyPage() {
 
             <a
               href="#technology-areas"
-              className="shrink-0 rounded-md bg-white px-9 py-3 text-[12px] font-extrabold text-[#102079] shadow-lg transition hover:-translate-y-0.5"
+              className="shrink-0 rounded-md bg-white px-9 py-3 text-lg font-bold text-[#102079] shadow-lg transition hover:-translate-y-0.5"
             >
               Explore <ArrowRight className="ml-1 inline size-3" />
             </a>
 
-            <p className="hidden rotate-[-8deg] text-left font-hand text-[18px] leading-[0.9] md:block">
+            <p className="hidden rotate-[-8deg] text-left font-hand text-xl leading-[0.9] md:block">
               More Tools
               <br />
               More Possibilities
@@ -395,13 +396,13 @@ export default function TechnologyPage() {
       {/* Results + testimonial */}
       <section className="mx-auto grid max-w-[1440px] gap-5 px-5 py-3 lg:grid-cols-[1fr_1.05fr] lg:px-[76px]">
         <div>
-          <p className="text-[9px] font-extrabold tracking-[2.7px] text-[#1d28e7]">
+          <p className="text-sm font-extrabold tracking-[2.7px] text-[#1d28e7]">
             REAL TECHNOLOGY. REAL IMPACT.
           </p>
-          <h2 className="mt-1 text-[26px] font-extrabold tracking-[-1.2px] text-brand-dark">
+          <h2 className="mt-1 text-2xl sm:text-3xl font-extrabold tracking-[-1.2px] text-brand-dark">
             Technology That Drives Results
           </h2>
-          <p className="mt-1 max-w-[540px] text-[14px] leading-[1.35] text-[#58689a]">
+          <p className="mt-1 max-w-[540px] text-md leading-[1.35] text-[#58689a]">
             See how our technology ecosystem helps businesses reduce costs,
             improve efficiency, and achieve faster growth.
           </p>
@@ -425,16 +426,16 @@ export default function TechnologyPage() {
               <div className="mb-1 text-[29px] font-extrabold leading-none text-[#2235ef]">
                 “
               </div>
-              <p className="text-[12px] leading-[1.4] text-[#536394]">
+              <p className="text-md leading-[1.4] text-[#536394]">
                 AI WorksForce uses the best technologies in the world to
                 deliver real results. Their expertise and technology stack
                 helped us automate our operations and scale faster than we
                 imagined.
               </p>
-              <p className="mt-2 text-[11px] font-extrabold text-brand-dark">
+              <p className="mt-2 text-sm font-extrabold text-brand-dark">
                 Amit Sharma
               </p>
-              <p className="text-[9px] text-[#58689a]">
+              <p className="text-sm text-[#58689a]">
                 CTO, GrowthTech (SaaS)
               </p>
             </div>
@@ -449,35 +450,35 @@ export default function TechnologyPage() {
           <div className="pointer-events-none absolute -right-10 -top-12 size-52 rounded-full border border-blue-300/20" />
 
           <div className="relative">
-            <p className="text-[9px] font-bold tracking-[3px] text-blue-100">
+            <p className="text-sm font-bold tracking-[3px] text-blue-100">
               LET&apos;S BUILD TOGETHER
             </p>
-            <h2 className="mt-2 text-[24px] font-extrabold tracking-[-0.8px] sm:text-[27px]">
+            <h2 className="mt-2 text-2xl font-extrabold tracking-[-0.8px] sm:text-[27px]">
               Ready to Leverage the Right Technology?
             </h2>
-            <p className="mt-1 text-[12px] text-blue-100 sm:text-[13px]">
+            <p className="mt-1 text-xl text-blue-100 sm:text-[13px]">
               Get expert guidance on the best tools and technologies for your
               business goals.
             </p>
 
             <div className="mt-5 flex flex-wrap justify-center gap-3">
-              <a
-                href="#"
-                className="rounded-md bg-white px-6 py-3 text-[11px] font-bold text-[#102079] shadow-lg transition hover:-translate-y-0.5"
+              <Link
+                href="/get-your-assessment"
+                className="rounded-md bg-white px-6 py-3 text-sm font-bold text-[#102079] shadow-lg transition hover:-translate-y-0.5"
               >
                 Book a Free Consultation{" "}
                 <ArrowRight className="ml-1 inline size-3" />
-              </a>
-              <a
-                href="#technology-areas"
-                className="rounded-md border border-white/70 px-6 py-3 text-[11px] font-bold text-white transition hover:bg-white/10"
+              </Link>
+              <Link
+                href="/company/contact"
+                className="rounded-md border border-white/70 px-6 py-3 text-sm font-bold text-white transition hover:bg-white/10"
               >
                 Talk to Our Experts
-              </a>
+              </Link>
             </div>
           </div>
 
-          <p className="absolute bottom-5 right-8 hidden rotate-[-10deg] text-left font-hand text-[20px] leading-[0.9] text-white md:block">
+          <p className="absolute bottom-5 right-8 hidden rotate-[-10deg] text-left font-hand text-2xl leading-[0.9] text-white md:block">
             Better
             <br />
             Technology

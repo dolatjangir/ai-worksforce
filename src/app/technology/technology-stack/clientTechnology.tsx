@@ -2,6 +2,7 @@
 
 import ReusableHero from "@/components/tech-hero/reusable-hero";
 import { ArrowRight, BarChart3, Database, Play, Zap } from "lucide-react";
+import Link from "next/link";
 import { useState, type ReactNode } from "react";
 
 /**
@@ -21,11 +22,6 @@ type IconName =
   | "message" | "document" | "cube" | "cloud" | "search" | "gear"
   | "users" | "clock" | "shield" | "sparkles";
 
-const navItems = [
-  ["Home", "/"], ["What AI WorksForce?", "/about"], ["How it Works", "#how-it-works"],
-  ["Our AI Workflow", "/ai-workflow"], ["Solutions", "#solutions"], ["Industries", "/industries"],
-  ["Case Studies", "#case-study"], ["Resources", "/resources"], ["About", "/about"],
-] as const;
 
 const solutions: { title: string; text: string; icon: IconName; tone: string }[] = [
   { title: "Frontend Technologies", text: "Next.js, React, TypeScript, Tailwind CSS for responsive user experiences.", icon: "message", tone: "bg-brand-purple-soft text-brand-purple" },
@@ -60,7 +56,7 @@ const technologyMarks = [
 ] as const;
 
 export default function TechnologyStackPage({
-  consultationHref = "/contact",
+  consultationHref = "/company/contact",
   heroImageSrc = "/technology/all-in-one.png",
   caseStudyImageSrc = "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=800&q=88",
   testimonialImageSrc = "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=300&q=88",
@@ -202,12 +198,12 @@ export default function TechnologyStackPage({
   }
 />
 
-        <section aria-label="Trusted technologies" className="mx-auto max-w-[1370px] px-5 py-6 sm:px-8 lg:px-10">
+        {/* <section aria-label="Trusted technologies" className="mx-auto max-w-[1370px] px-5 py-6 sm:px-8 lg:px-10">
           <p className={eyebrow}>Trusted technologies we work with</p>
           <div className="mt-4 grid grid-cols-3 items-center gap-x-4 gap-y-6 sm:grid-cols-6 xl:grid-cols-12">
             {technologyMarks.map((technology) => <div key={technology.name} className="text-center"><span className={`block text-[27px] font-bold leading-none ${technology.className}`}>{technology.mark}</span><span className="mt-2 block whitespace-nowrap text-[11px] text-brand-text">{technology.name}</span></div>)}
           </div>
-        </section>
+        </section> */}
 
         <div className="mx-auto max-w-[1430px] space-y-4 px-5 pb-4 sm:px-8">
           <section id="solutions" aria-labelledby="solutions-title" className="scroll-mt-8 pt-3">
@@ -248,7 +244,7 @@ export default function TechnologyStackPage({
         <section aria-labelledby="cta-title" className="relative isolate mx-1 mb-4 overflow-hidden rounded-2xl px-5 py-7 text-center text-white sm:py-8" style={{ background: "linear-gradient(110deg, var(--color-brand-navy), #111d70 58%, #2138db)" }}>
           <svg aria-hidden="true" viewBox="0 0 1440 220" preserveAspectRatio="none" className="pointer-events-none absolute inset-0 -z-10 size-full opacity-20">{Array.from({ length: 16 }, (_, i) => <path key={i} d={`M-80 ${35 + i * 9} C180 ${-90 + i * 14}, 250 ${270 + i * 8}, 570 ${250 + i * 5} S1100 ${210 + i * 7}, 1500 ${i * 12}`} fill="none" stroke="#4785ff" strokeWidth="1" />)}</svg>
           <p className="text-[10px] font-medium uppercase tracking-[0.25em] text-white/80">Ready to build with technology?</p><h2 id="cta-title" className="mt-2 text-[26px] font-semibold leading-tight tracking-[-0.03em] sm:text-[30px]">Let’s Build Smarter Solutions Together</h2><p className="mt-2 text-[15px] text-white/85">Get guidance on the right technology stack for your business goals.</p>
-          <div className="mx-auto mt-5 flex max-w-[570px] flex-col gap-3 sm:flex-row"><a href={consultationHref} className={`inline-flex min-h-12 flex-1 items-center justify-center gap-2 rounded-lg bg-white px-6 py-3 text-sm font-semibold text-brand-dark hover:bg-brand-blue-soft ${focus}`}>Book a Free Consultation {icon("arrow", "size-4")}</a><a href="#solutions" className={`inline-flex min-h-12 flex-1 items-center justify-center rounded-lg border border-white/70 px-6 py-3 text-sm font-medium hover:bg-white/10 ${focus}`}>Talk, to Our Tech Experts</a></div>
+          <div className="mx-auto mt-5 flex max-w-[570px] flex-col gap-3 sm:flex-row"><Link href={consultationHref} className={`inline-flex min-h-12 flex-1 items-center justify-center gap-2 rounded-lg bg-white px-6 py-3 text-sm font-semibold text-brand-dark hover:bg-brand-blue-soft ${focus}`}>Book a Free Consultation {icon("arrow", "size-4")}</Link><Link href="/solutions" className={`inline-flex min-h-12 flex-1 items-center justify-center rounded-lg border border-white/70 px-6 py-3 text-sm font-medium hover:bg-white/10 ${focus}`}>Talk, to Our Tech Experts</Link></div>
           <p aria-hidden="true" className="absolute right-[5%] top-10 hidden -rotate-12 font-hand text-[24px] leading-[1.18] desktop-lg:block">Better<br />Technology<br />Brighter<br />Tomorrow</p>
         </section>
       </main>

@@ -97,9 +97,20 @@ const PAGES = [
   "careers",
   "contact",
 
+  // industry
+  "real-estate",
+  "technology",
+  "travel-tourism",
+  "healthcare",
+  "education",
+  "customer-goods-retail",
+
+
   // Assessment and Pilot
   "get-your-assessment",
   "start-a-pilot",
+  "privacy-policy",
+  "terms-and-conditions"
 ];
 export default function NewBlogPage() {
   const router = useRouter();

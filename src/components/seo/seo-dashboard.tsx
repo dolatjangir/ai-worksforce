@@ -378,6 +378,33 @@ const canonicalUrl = [
     pagename: "Get Demo",
     url: `${process.env.NEXT_PUBLIC_APP_URL}/get-demo`,
   },
+  //========================================
+  // INDUSTRY
+  //========================================
+  {
+    pagename: "Real Estate",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/industry/real-estate`,
+  },
+  {
+    pagename: "Technology",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/industry/technology`,
+  },
+  {
+    pagename: "Travel & Tourism",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/industry/travel-tourism`,
+  },
+  {
+    pagename: "Healthcare",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/industry/healthcare`,
+  },
+  {
+    pagename: "Education",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/industry/education`,
+  },
+  {
+    pagename: "Customer Goods & Retail",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/industry/customer-goods-retail`,
+  },
 
   // =========================================================
   // START A PILOT
@@ -385,6 +412,20 @@ const canonicalUrl = [
   {
     pagename: "Start A Pilot",
     url: `${process.env.NEXT_PUBLIC_APP_URL}/start-a-pilot`,
+  },
+
+   {
+    pagename: "Get Your Assessment",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/get-your-assessment`,
+  },
+    {
+    pagename: "Privacy Policy",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/privacy-policy`,
+  },
+
+    {
+    pagename: "Terms and Conditions",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/terms-and-conditions`,
   },
 ];
 

@@ -38,6 +38,7 @@ import {
 import Link from 'next/link'
 
 interface SubMenuItem {
+  icon?: React.ReactNode;
   title: string;
   href: string;
 }
@@ -163,80 +164,80 @@ const navItems: NavItem[] = [
       }
     }
   },
-  {
-    label: "AI Agents",
-    href: "#ai-agents",
-    hasDropdown: true,
-    dropdownContent: {
-      sections: [
-        {
-          items: [
-            {
-              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335520/img-1_nz99v7.png" className="max-w-12 max-h-12" />,
-              title: "AI Lead Qualification Agent",
-              href: "/ai-agents/lead-qualifiction-agent"
-            },
-            {
-              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335520/img-2_l1xdll.png" className="max-w-12 max-h-12" />,
-              title: "AI Property Matching Agent",
-              href: "/ai-agents/property-maching-agent",
-              badge: "AI"
-            },
-            {
-              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335520/img-3_scja92.png" className="max-w-12 max-h-12" />,
-              title: "Lead Capture Agent",
-              href: "/ai-agents/lead-capture-agent"
-            },
-            {
-              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335521/img-4_damgxf.png" className="max-w-12 max-h-12" />,
-              title: "AI Content Creation Agent",
-              href: "/ai-agents/content-creation-agent"
-            },
-            {
-              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335553/img-555_kabvyd.png" className="max-w-12 max-h-12" />,
-              title: "AI  Follow-Up Agent",
-              href: "/ai-agents/follow-up-agent",
-              badge: "AI"
-            },
-          ]
-        },
-        {
-          items: [
-            {
-              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335521/img-6_mky5rb.png" className="max-w-12 max-h-12" />,
-              title: "AI Calling Agent",
-              href: "/ai-agents/calling-agent"
-            },
-            {
-              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335523/img-7_xjwzbl.png" className="max-w-12 max-h-12" />,
-              title: "AI Campaign Automation Agent",
-              href: "/ai-agents/campaign-automation"
-            },
-            {
-              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335552/img-8_twulvb.png" className="max-w-12 max-h-12" />,
-              title: "Data Mining Agent",
-              href: "/ai-agents/data-mining-agent"
-            },
-            {
-              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335553/img-9_i1wlut.png" className="max-w-12 max-h-12" />,
-              title: "Social Media Agent",
-              href: "/ai-agents/social-media-agent"
-            },
-            {
-              icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335553/img-10_ajsusz.png" className="max-w-12 max-h-12 rounded-xl" />,
-              title: "AI SEO Content Agent",
-              href: "/ai-agents/seo-content-agent"
-            },
-          ]
-        }
-      ],
-      footer: {
-        text: "See all features",
-        link: "Explore",
-        href: "/explore-ai-agent"
-      }
-    }
-  },
+  // {
+  //   label: "AI Agents",
+  //   href: "#ai-agents",
+  //   hasDropdown: true,
+  //   dropdownContent: {
+  //     sections: [
+  //       {
+  //         items: [
+  //           {
+  //             icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335520/img-1_nz99v7.png" className="max-w-12 max-h-12" />,
+  //             title: "AI Lead Qualification Agent",
+  //             href: "/ai-agents/lead-qualifiction-agent"
+  //           },
+  //           {
+  //             icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335520/img-2_l1xdll.png" className="max-w-12 max-h-12" />,
+  //             title: "AI Property Matching Agent",
+  //             href: "/ai-agents/property-maching-agent",
+  //             badge: "AI"
+  //           },
+  //           {
+  //             icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335520/img-3_scja92.png" className="max-w-12 max-h-12" />,
+  //             title: "Lead Capture Agent",
+  //             href: "/ai-agents/lead-capture-agent"
+  //           },
+  //           {
+  //             icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335521/img-4_damgxf.png" className="max-w-12 max-h-12" />,
+  //             title: "AI Content Creation Agent",
+  //             href: "/ai-agents/content-creation-agent"
+  //           },
+  //           {
+  //             icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335553/img-555_kabvyd.png" className="max-w-12 max-h-12" />,
+  //             title: "AI  Follow-Up Agent",
+  //             href: "/ai-agents/follow-up-agent",
+  //             badge: "AI"
+  //           },
+  //         ]
+  //       },
+  //       {
+  //         items: [
+  //           {
+  //             icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335521/img-6_mky5rb.png" className="max-w-12 max-h-12" />,
+  //             title: "AI Calling Agent",
+  //             href: "/ai-agents/calling-agent"
+  //           },
+  //           {
+  //             icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335523/img-7_xjwzbl.png" className="max-w-12 max-h-12" />,
+  //             title: "AI Campaign Automation Agent",
+  //             href: "/ai-agents/campaign-automation"
+  //           },
+  //           {
+  //             icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335552/img-8_twulvb.png" className="max-w-12 max-h-12" />,
+  //             title: "Data Mining Agent",
+  //             href: "/ai-agents/data-mining-agent"
+  //           },
+  //           {
+  //             icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335553/img-9_i1wlut.png" className="max-w-12 max-h-12" />,
+  //             title: "Social Media Agent",
+  //             href: "/ai-agents/social-media-agent"
+  //           },
+  //           {
+  //             icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335553/img-10_ajsusz.png" className="max-w-12 max-h-12 rounded-xl" />,
+  //             title: "AI SEO Content Agent",
+  //             href: "/ai-agents/seo-content-agent"
+  //           },
+  //         ]
+  //       }
+  //     ],
+  //     footer: {
+  //       text: "See all features",
+  //       link: "Explore",
+  //       href: "/explore-ai-agent"
+  //     }
+  //   }
+  // },
    {
     label: "Products",
     href: "#products",
@@ -255,18 +256,63 @@ const navItems: NavItem[] = [
                 { title: "Consultancy Lead Engine", href: "https://consult.ibigdata.in/admin" },
                 { title: "Travel Lead Engine", href: "https://travel.ibigdata.in/admin" },
                 { title: "Custom Lead Engine", href: "/products/crm/bulk" },
-                
+
               ]
             },
             {
               title: "AI Agents",
               href: "/industry/customer-sucess",
               children: [
-                { title: "AI Lead Qualification Agent", href: "/ai-agents/lead-qualifiction-agent" },
-                { title: "AI Property Matching Agent", href: "/ai-agents/property-maching-agent" },
-                { title: "Lead Capture Agent", href: "/ai-agents/lead-capture-agent" },
-                { title: "AI Content Creation Agent", href: "/ai-agents/content-creation-agent" },
-                { title: "AI Follow-Up Agent", href: "/ai-agents/follow-up-agent" },
+                {
+                  title: "AI Lead Qualification Agent",
+                  href: "/ai-agents/lead-qualifiction-agent",
+                  icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335520/img-1_nz99v7.png" alt="" width={36} height={36} className="size-9 shrink-0 object-contain" />,
+                },
+                {
+                  title: "AI Property Matching Agent",
+                  href: "/ai-agents/property-maching-agent",
+                  icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335520/img-2_l1xdll.png" alt="" width={36} height={36} className="size-9 shrink-0 object-contain" />,
+                },
+                {
+                  title: "Lead Capture Agent",
+                  href: "/ai-agents/lead-capture-agent",
+                  icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335520/img-3_scja92.png" alt="" width={36} height={36} className="size-9 shrink-0 object-contain" />,
+                },
+                {
+                  title: "AI Content Creation Agent",
+                  href: "/ai-agents/content-creation-agent",
+                  icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335521/img-4_damgxf.png" alt="" width={36} height={36} className="size-9 shrink-0 object-contain" />,
+                },
+                {
+                  title: "AI  Follow-Up Agent",
+                  href: "/ai-agents/follow-up-agent",
+                  icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335553/img-555_kabvyd.png" alt="" width={36} height={36} className="size-9 shrink-0 object-contain" />,
+                },
+                {
+                  title: "AI Calling Agent",
+                  href: "/ai-agents/calling-agent",
+                  icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335521/img-6_mky5rb.png" alt="" width={36} height={36} className="size-9 shrink-0 object-contain" />,
+                },
+                {
+                  title: "AI Campaign Automation Agent",
+                  href: "/ai-agents/campaign-automation",
+                  icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335523/img-7_xjwzbl.png" alt="" width={36} height={36} className="size-9 shrink-0 object-contain" />,
+                },
+                {
+                  title: "Data Mining Agent",
+                  href: "/ai-agents/data-mining-agent",
+                  icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335552/img-8_twulvb.png" alt="" width={36} height={36} className="size-9 shrink-0 object-contain" />,
+                },
+                {
+                  title: "Social Media Agent",
+                  href: "/ai-agents/social-media-agent",
+                  icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335553/img-9_i1wlut.png" alt="" width={36} height={36} className="size-9 shrink-0 object-contain" />,
+                },
+                {
+                  title: "AI SEO Content Agent",
+                  href: "/ai-agents/seo-content-agent",
+                  icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335553/img-10_ajsusz.png" alt="" width={36} height={36} className="size-9 shrink-0 object-contain" />,
+                }
               ]
             },
             {
@@ -447,8 +493,8 @@ const navItems: NavItem[] = [
       }
     }
   },
- 
- 
+
+
   {
     label: "Company",
     href: "#company",
@@ -495,7 +541,53 @@ const navItems: NavItem[] = [
       }
     }
   },
- 
+  {
+    label: "Industry",
+    href: "#industry",
+    hasDropdown: true,
+    dropdownContent: {
+      sections: [
+        {
+          items: [
+            {
+              title: "Real Estate",
+              href: "/industry/real-estate"
+            },
+            {
+              title: "Education",
+              href: "/industry/education"
+            },
+            {
+              title: "Consumer Goods & Retail",
+              href: "/industry/consumer-goods-retail"
+            },
+          ]
+        },
+        {
+          items: [
+            {
+              title: "Technology",
+              href: "/industry/technology"
+            },
+            {
+              title: "Travel Tourism",
+              href: "/industry/travel-tourism"
+            },
+            {
+              title: "Healthcare",
+              href: "/industry/healthcare"
+            },
+          ]
+        }
+      ],
+      footer: {
+        text: "Need personalized help?",
+        link: "Book a Demo",
+        href: "/get-your-assessment"
+      }
+    }
+  },
+
   // {
   //   label: "Contact-us",
   //   href: "/contact-us",
@@ -551,7 +643,7 @@ function Header() {
                   <span>●</span>
                   <span>AI Delivery Center · Jaipur, India</span>
                 </div>
-      
+
                 <div className="hidden items-center gap-5 lg:flex">
                   <span>✉ hello@aiworkforce.com</span>
                   <span>⌕ +91 72300 12345</span>
@@ -654,7 +746,9 @@ function Header() {
 
                             {/* Right Panel - Submenu */}
                             {activeSubmenu && (
-                              <div className="w-56 p-3 border-l border-gray-100 shrink-0 bg-white">
+                              <div
+  className="w-56 h-[320px] overflow-y-auto overscroll-contain p-3 border-l border-gray-100 shrink-0 bg-white [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+>
                                 {item.dropdownContent.sections.map((section) => {
                                   const activeSubItem = section.items.find(i => i.title === activeSubmenu);
                                   if (!activeSubItem?.children) return null;
@@ -669,7 +763,12 @@ function Header() {
                                           href={child.href}
                                           className="block p-2.5 rounded-lg text-sm font-medium text-gray-600 hover:bg-violet-50/60 hover:text-violet-700 transition-all duration-200"
                                         >
-                                          {child.title}
+                                          {child.icon ? (
+                                              <span className="flex items-center gap-3">
+                                                <span aria-hidden="true" className="shrink-0">{child.icon}</span>
+                                                <span className="min-w-0">{child.title}</span>
+                                              </span>
+                                            ) : child.title}
                                         </Link>
                                       ))}
                                     </div>
@@ -882,7 +981,12 @@ function Header() {
                                             onClick={() => setIsMenuOpen(false)}
                                             className="block p-2.5 text-sm text-gray-600 hover:text-violet-700 hover:bg-violet-50/50 rounded-lg transition-all"
                                           >
-                                            {child.title}
+                                            {child.icon ? (
+                                              <span className="flex items-center gap-3">
+                                                <span aria-hidden="true" className="shrink-0">{child.icon}</span>
+                                                <span className="min-w-0">{child.title}</span>
+                                              </span>
+                                            ) : child.title}
                                           </Link>
                                         ))}
                                       </div>

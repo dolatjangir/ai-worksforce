@@ -13,6 +13,9 @@ import LayoutWrapper from "@/components/layoutwrapper/layoutwrapper";
 export const metadata = {
   title: "AI WorksForce",
   description: "AI-powered worksForce platform",
+   verification: {
+    google: "2yhg8GCNrG11l1huT8ZaPrChumFmRGHwTK43YpEjCrg",
+  },
   manifest: "/manifest.json",
 };
 export function generateViewport() {

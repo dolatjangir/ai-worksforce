@@ -665,7 +665,7 @@ function Header() {
               <div
                 className=" flex items-center justify-center "
               >
-                <Link href="/">  <img width={220} height={150} src="/aiworksforce-logo.png" /></Link>
+                <Link href="/">  <img width={220} height={150} src="/aiworksforce-logo.png" alt="aiworksforce"/></Link>
               </div>
             </div>
 

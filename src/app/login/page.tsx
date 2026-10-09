@@ -223,7 +223,7 @@ export default function AIWorksForceLogin({
             <div className="relative aspect-[842/906] w-full shrink-0">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/images/ai-worksforce-login.png"
+                src="/ai-worksforce-logo.png"
                 alt="AI WorksForce — Your AI Workforce for Real Business Results"
                 width={1536}
                 height={1024}
@@ -258,7 +258,7 @@ export default function AIWorksForceLogin({
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/ai-worksforce-login.png"
+              src="/ai-worksforce-logo.png"
               alt=""
               width={1536}
               height={1024}

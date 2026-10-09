@@ -1,6 +1,29 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '../../../../../lib/prisma';
+import { Prisma } from "@prisma/client";
 
+
+function parseSchemaMarkup(value: unknown) {
+  if (value == null || (typeof value === "string" && !value.trim())) {
+    return { value: Prisma.DbNull };
+  }
+
+  let parsed: unknown;
+
+  try {
+    parsed = typeof value === "string" ? JSON.parse(value) : value;
+  } catch {
+    return { error: "Schema Markup must contain valid JSON-LD" };
+  }
+
+  if (parsed === null || typeof parsed !== "object") {
+    return { error: "Schema Markup must be a JSON object or array" };
+  }
+
+  return {
+    value: parsed as Prisma.InputJsonValue,
+  };
+}
 
 // GET /api/seo/[id] - Get single entry
 export async function GET(
@@ -50,6 +73,16 @@ export async function PUT(
     const { id } = await params;
     const body = await request.json();
     
+    // Validate schema markup
+    const schemaResult = parseSchemaMarkup(body.schemaMarkup);
+
+if ("error" in schemaResult) {
+  return NextResponse.json(
+    { error: schemaResult.error },
+    { status: 400 }
+  );
+}
+
     // Calculate new SEO score
     const seoScore = calculateSEOScore(body);
 const { id: _, createdAt, ...safeData } = body;
@@ -57,6 +90,10 @@ const { id: _, createdAt, ...safeData } = body;
       where: { id },
       data: {
         ...safeData,
+         schemaEnabled: body.schemaEnabled ?? false,
+  schemaType: body.schemaType?.trim() || null,
+  schemaMarkup: schemaResult.value,
+        canonicalEnabled: body.canonicalEnabled ?? false,
         keywords: JSON.stringify(body.keywords || []),
         seoScore,
       },

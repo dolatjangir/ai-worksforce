@@ -23,6 +23,10 @@ interface SEOEntry {
   metaDescription: string;
   keywords: string[];
   canonicalUrl: string;
+  canonicalEnabled: boolean;
+  schemaEnabled: boolean;
+schemaType: string;
+schemaMarkup: string;
   ogTitle: string;
   ogDescription: string;
   ogImage: string;
@@ -57,6 +61,7 @@ const canonicalUrl = [
   {
     pagename: "Home",
     url: `${process.env.NEXT_PUBLIC_APP_URL}/`,
+    
   },
 
   // =========================================================
@@ -799,7 +804,12 @@ const selectedLabel =
   const handleCreate = () => {
     setIsCreateMode(true);
     setFormData({ pageName:'', slug:'', url:'', metaTitle:'', metaDescription:'', keywords:[],
-      canonicalUrl:'', ogTitle:'', ogDescription:'', ogImage:'', twitterTitle:'',
+      schemaEnabled: false,
+schemaType: "",
+schemaMarkup: "",
+      canonicalUrl:'',
+      canonicalEnabled: false,
+       ogTitle:'', ogDescription:'', ogImage:'', twitterTitle:'',
       twitterDescription:'', twitterImage:'', indexable: true, status: 'draft' });
     setIsModalOpen(true);
     setIsDirty(false);
@@ -809,7 +819,18 @@ const selectedLabel =
   const handleEdit = async (entry: SEOEntry) => {
     setIsCreateMode(false);
     setSelectedEntry(entry);
-    setFormData({ ...entry });
+    setFormData({ 
+         ...entry,
+         // Schema Markup fields
+    schemaEnabled: entry.schemaEnabled ?? false,
+    schemaType: entry.schemaType ?? "",
+    schemaMarkup:
+      typeof entry.schemaMarkup === "string"
+        ? entry.schemaMarkup
+        : entry.schemaMarkup
+          ? JSON.stringify(entry.schemaMarkup, null, 2)
+          : "",
+        });
     setIsModalOpen(true);
     setIsDirty(false);
     setIsPreviewOpen(false);
@@ -1449,10 +1470,92 @@ const handleKeywordsChange = (value: string) => {
     </div>
   )}
 </div>
+<label className="flex items-center gap-2">
+  <input
+    type="checkbox"
+    checked={formData.canonicalEnabled ?? false}
+    onChange={(e) =>
+      handleInputChange("canonicalEnabled", e.target.checked)
+    }
+  />
+  <span>Enable Canonical URL</span>
+</label>
+
   </div>
 
+{/* Schema Markup (JSON-LD) */}
+<div className="space-y-4 rounded-lg border p-4">
+  <h3 className="text-lg font-semibold">
+    Schema Markup (JSON-LD)
+  </h3>
+
+  {/* Enable Schema */}
+  <label className="flex items-center gap-2">
+    <input
+      type="checkbox"
+      checked={formData.schemaEnabled ?? false}
+      onChange={(e) =>
+        handleInputChange("schemaEnabled", e.target.checked)
+      }
+    />
+    <span>Enable Schema Markup</span>
+  </label>
+
+  {/* Schema Type */}
+  <div className="space-y-2">
+    <label htmlFor="schemaType" className="block text-sm font-medium">
+      Schema Type
+    </label>
+
+    <select
+      id="schemaType"
+      value={formData.schemaType ?? ""}
+      onChange={(e) =>
+        handleInputChange("schemaType", e.target.value)
+      }
+      className="w-full rounded-md border px-3 py-2"
+    >
+      <option value="">Select schema type</option>
+      <option value="Organization">Organization</option>
+      <option value="WebSite">WebSite</option>
+      <option value="Service">Service</option>
+      <option value="Article">Article</option>
+      <option value="BreadcrumbList">BreadcrumbList</option>
+      <option value="FAQPage">FAQPage</option>
+      <option value="Custom">Custom JSON-LD</option>
+    </select>
+  </div>
+
+  {/* JSON-LD Editor */}
+  <div className="space-y-2">
+    <label htmlFor="schemaMarkup" className="block text-sm font-medium">
+      JSON-LD Markup
+    </label>
+
+    <textarea
+      id="schemaMarkup"
+      value={formData.schemaMarkup ?? ""}
+      onChange={(e) =>
+        handleInputChange("schemaMarkup", e.target.value)
+      }
+      placeholder={`{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "AI Automation"
+}`}
+      rows={10}
+      spellCheck={false}
+      className="w-full rounded-md border px-3 py-2 font-mono text-sm"
+    />
+
+    <p className="text-sm text-gray-500">
+      Enter valid JSON-LD structured data for this page.
+    </p>
+  </div>
+</div>
+
   {/* === AI GENERATE PANEL — INSERTED HERE === */}
-  <AIGeneratePanel
+  {/* <AIGeneratePanel
     pageName={formData.pageName || ''}
     canonicalUrl={formData.canonicalUrl || 'https://aiworksforce.com'}
     onGenerated={(data: SEOPromptOutput) => {
@@ -1472,7 +1575,7 @@ const handleKeywordsChange = (value: string) => {
       setIsDirty(true);
       showNotification('AI generated SEO metadata!', 'success');
     }}
-  />
+  /> */}
   {/* === END AI PANEL === */}
 </div>
 

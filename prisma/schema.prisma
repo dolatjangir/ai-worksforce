@@ -95,14 +95,21 @@ model Blog {
 }
 
 model SeoEntry {
-  id                 String   @id @default(uuid())
-  pageName           String
-  slug               String   @unique
-  url                String   @unique
-  metaTitle          String
-  metaDescription    String   @db.VarChar(1000)
-  keywords           String   @db.VarChar(1000) // Stored as JSON string array
-  canonicalUrl       String?  @db.VarChar(500)
+  id              String  @id @default(uuid())
+  pageName        String
+  slug            String  @unique
+  url             String  @unique
+  metaTitle       String
+  metaDescription String  @db.VarChar(1000)
+  keywords        String  @db.VarChar(1000) // Stored as JSON string array
+  canonicalUrl    String? @db.VarChar(500)
+
+  canonicalEnabled Boolean @default(false)
+
+  schemaEnabled Boolean @default(false)
+  schemaType    String?
+  schemaMarkup  Json?
+
   ogTitle            String?  @db.VarChar(255)
   ogDescription      String?  @db.VarChar(1000)
   ogImage            String?  @db.VarChar(500)

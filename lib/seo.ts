@@ -23,3 +23,25 @@ export async function getSEO(slug: string) {
     return null; // 👈 prevent crash
   }
 }
+
+
+export async function getSEOByUrl(pathname: string) {
+  const url = pathname.replace(/^\/+|\/+$/g, "");
+
+  const entry = await prisma.seoEntry.findFirst({
+    where: {
+      url,
+      status: "published",
+    },
+    orderBy: {
+      lastModified: "desc",
+    },
+  });
+
+  if (!entry) return null;
+
+  return {
+    ...entry,
+    keywords: JSON.parse(entry.keywords || "[]"),
+  };
+}

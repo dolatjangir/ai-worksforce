@@ -74,7 +74,7 @@ export async function generateSEOMetadata() {
   const slug =
      cleanPath === "/"
       ? "home"
-      : cleanPath.replace(/^\/+/, "").replace(/\//g, "-");
+      : cleanPath.replace(/^\/+/, "");
 
   const seo = await getSEO(slug);
 

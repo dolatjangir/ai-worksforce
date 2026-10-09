@@ -33,18 +33,21 @@ export async function GET(request: NextRequest) {
     const status = searchParams.get('status') as 'published' | 'draft' | 'all' | null;
     const search = searchParams.get('search') || '';
 
-    const where = {
-      AND: [
-        status && status !== 'all' ? { status } : {},
-        search ? {
+    const where: Prisma.SeoEntryWhereInput = {
+  AND: [
+    status && status !== 'all' ? { status } : {},
+    search
+      ? {
           OR: [
-            { pageName: { contains: search, mode: 'insensitive' } },
-            { metaTitle: { contains: search, mode: 'insensitive' } },
-            { slug: { contains: search, mode: 'insensitive' } },
+            { pageName: { contains: search } },
+            { metaTitle: { contains: search } },
+            { slug: { contains: search } },
+            { url: { contains: search } },
           ],
-        } : {},
-      ],
-    };
+        }
+      : {},
+  ],
+};
 
     const entries = await prisma.seoEntry.findMany({
       where,

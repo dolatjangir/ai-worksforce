@@ -5,7 +5,8 @@ import {
   Search, Plus, Edit3, Trash2, CheckCircle, AlertCircle, FileText,
   Layout, Settings, X, Upload, Download, Filter, BarChart3, Users,
   Shield, Zap, Eye, Loader2, Globe, Save, Menu, ChevronDown, ChevronUp,
-  Check
+  Check,
+  RotateCcw
 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { LogOut } from 'lucide-react';
@@ -711,6 +712,15 @@ export default function SEODashboard({showlogout = false}:HeaderProp) {
   const [isCreateMode, setIsCreateMode] = useState(false);
   const [activeTab, setActiveTab] = useState<'all' | 'published' | 'draft'>('all');
   const [searchQuery, setSearchQuery] = useState('');
+
+
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
+const [scoreFilter, setScoreFilter] = useState('all');
+const [indexFilter, setIndexFilter] = useState('all');
+const [canonicalFilter, setCanonicalFilter] = useState('all');
+const [schemaFilter, setSchemaFilter] = useState('all');
+
+
   const [notifications, setNotifications] = useState<Notification[]>([]);
   const [activeSidebarItem, setActiveSidebarItem] = useState('seo');
   const [previewMode, setPreviewMode] = useState<'google' | 'facebook' | 'twitter'>('google');
@@ -789,12 +799,36 @@ const selectedLabel =
     }
   }, [activeTab, searchQuery]);
 
-  useEffect(() => { loadData(); }, [loadData]);
+  // useEffect(() => { loadData(); }, [loadData]);
   useEffect(() => {
     const t = setTimeout(() => loadData(), 300);
     return () => clearTimeout(t);
   }, [searchQuery, loadData]);
 
+  const filteredEntries = entries.filter((entry) => {
+  const matchesScore =
+    scoreFilter === 'all' ||
+    (scoreFilter === 'excellent' && entry.seoScore >= 80) ||
+    (scoreFilter === 'good' && entry.seoScore >= 60 && entry.seoScore < 80) ||
+    (scoreFilter === 'poor' && entry.seoScore < 60);
+
+  const matchesIndex =
+    indexFilter === 'all' ||
+    (indexFilter === 'indexable' && entry.indexable) ||
+    (indexFilter === 'noindex' && !entry.indexable);
+
+  const matchesCanonical =
+    canonicalFilter === 'all' ||
+    (canonicalFilter === 'enabled' && entry.canonicalEnabled) ||
+    (canonicalFilter === 'disabled' && !entry.canonicalEnabled);
+
+  const matchesSchema =
+    schemaFilter === 'all' ||
+    (schemaFilter === 'enabled' && entry.schemaEnabled) ||
+    (schemaFilter === 'disabled' && !entry.schemaEnabled);
+
+  return matchesScore && matchesIndex && matchesCanonical && matchesSchema;
+});
   const showNotification = (message: string, type: Notification['type'] = 'success') => {
     const id = Date.now().toString();
     setNotifications(prev => [...prev, { id, message, type }]);
@@ -1189,12 +1223,99 @@ const handleKeywordsChange = (value: string) => {
                   className="pl-10 pr-4 py-2 w-full sm:max-w-xs bg-[var(--color-section-alt)] border border-[var(--color-border)] rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent transition-all"
                 />
               </div>
-                <button className="p-2 text-[var(--color-text-secondary)] hover:bg-[var(--color-border-light)] rounded-xl transition-colors shrink-0">
+                <button onClick={() => setIsFilterOpen((prev) => !prev)} className="p-2 text-[var(--color-text-secondary)] hover:bg-[var(--color-border-light)] rounded-xl transition-colors shrink-0">
                   <Filter className="min-w-4 min-h-4 sm:min-w-5 sm:min-h-5" />
                 </button>
                 </div>
+                
               </div>
-             
+
+              {/* Filter Panel */}
+   {isFilterOpen && (
+  <div className="filter-panel-animation grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-5 rounded-2xl border border-[var(--color-border)] bg-[var(--color-card-bg)] shadow-sm">    <div className="flex flex-col gap-2">
+      <label className="block text-sm font-medium text-[var(--color-text)]">
+        SEO Score
+      </label>
+      <select
+        value={scoreFilter}
+        onChange={(e) => setScoreFilter(e.target.value)}
+        className="w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-card-bg)] px-3 py-2.5 text-sm text-[var(--color-text)] outline-none transition-all duration-200 focus:border-[var(--color-brand-blue)] focus:ring-2 focus:ring-[var(--color-brand-blue)]/20"
+      >
+        <option value="all">All Scores</option>
+        <option value="excellent">Excellent (80+)</option>
+        <option value="good">Good (60–79)</option>
+        <option value="poor">Needs Improvement (&lt;60)</option>
+      </select>
+    </div>
+
+    <div className="flex flex-col gap-2">
+      <label className="block text-sm font-medium text-[var(--color-text)]">
+        Indexing
+      </label>
+      <select
+        value={indexFilter}
+        onChange={(e) => setIndexFilter(e.target.value)}
+        className="w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-card-bg)] px-3 py-2.5 text-sm text-[var(--color-text)] outline-none transition-all duration-200 focus:border-[var(--color-brand-blue)] focus:ring-2 focus:ring-[var(--color-brand-blue)]/20"
+      >
+        <option value="all">All Pages</option>
+        <option value="indexable">Indexable</option>
+        <option value="noindex">Noindex</option>
+      </select>
+    </div>
+
+    <div className="flex flex-col gap-2">
+      <label className="block text-sm font-medium text-[var(--color-text)]">
+        Canonical
+      </label>
+      <select
+        value={canonicalFilter}
+        onChange={(e) => setCanonicalFilter(e.target.value)}
+        className="w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-card-bg)] px-3 py-2.5 text-sm text-[var(--color-text)] outline-none transition-all duration-200 focus:border-[var(--color-brand-blue)] focus:ring-2 focus:ring-[var(--color-brand-blue)]/20"
+      >
+        <option value="all">All</option>
+        <option value="enabled">Enabled</option>
+        <option value="disabled">Disabled</option>
+      </select>
+    </div>
+
+    <div className="flex flex-col gap-2">
+      <label className="block text-sm font-medium text-[var(--color-text)]">
+        Schema Markup
+      </label>
+      <select
+        value={schemaFilter}
+        onChange={(e) => setSchemaFilter(e.target.value)}
+        className="w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-card-bg)] px-3 py-2.5 text-sm text-[var(--color-text)] outline-none transition-all duration-200 focus:border-[var(--color-brand-blue)] focus:ring-2 focus:ring-[var(--color-brand-blue)]/20"
+      >
+        <option value="all">All</option>
+        <option value="enabled">Enabled</option>
+        <option value="disabled">Disabled</option>
+      </select>
+    </div>
+
+    <div className="sm:col-span-2 lg:col-span-4 flex flex-col-reverse sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-3 border-t border-[var(--color-border)]">
+      <p className="text-xs text-[var(--color-text-muted)]">
+        Refine your SEO entries using the filters above.
+      </p>
+
+      <button
+        type="button"
+        onClick={() => {
+          setScoreFilter('all');
+          setIndexFilter('all');
+          setCanonicalFilter('all');
+          setSchemaFilter('all');
+        }}
+        className="inline-flex items-center justify-center gap-2 rounded-xl border border-[var(--color-border)] bg-[var(--color-card-bg)] px-4 py-2.5 text-sm font-medium text-[var(--color-text)] transition-all duration-200 hover:bg-[var(--color-brand-blue-soft)] hover:border-[var(--color-brand-blue)] hover:text-[var(--color-brand-blue)] focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-blue)]/20"
+      >
+        <RotateCcw className="h-4 w-4" />
+        Reset Filters
+      </button>
+    </div>
+  </div>
+)}
+
+
             </div>
 
             {/* Desktop table */}
@@ -1223,7 +1344,7 @@ const handleKeywordsChange = (value: string) => {
                       <p className="text-[var(--color-text-muted)] font-medium">No pages found</p>
                       <p className="text-sm text-[var(--color-text-faint)] mt-1">Try adjusting your search or filters</p>
                     </td></tr>
-                  ) : entries.map(entry => (
+                  ) : filteredEntries.map(entry => (
                     <tr key={entry.id} className="hover:bg-[var(--color-section-alt)] transition-colors group">
                       <td className="px-6 py-4">
                         <div className="flex items-center gap-3">

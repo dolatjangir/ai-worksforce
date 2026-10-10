@@ -727,6 +727,7 @@ const [schemaFilter, setSchemaFilter] = useState('all');
   const [isLoading, setIsLoading] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [canonicalSearch, setCanonicalSearch] = useState('');
 const dropdownRef = useRef<HTMLDivElement>(null);
   // Responsive-only state
   const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
@@ -752,6 +753,7 @@ const [keywordInput, setKeywordInput] = useState('');
   const handleClickOutside = (e: MouseEvent) => {
     if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
       setIsOpen(false);
+      setCanonicalSearch('');
     }
   };
   document.addEventListener("mousedown", handleClickOutside);
@@ -760,6 +762,16 @@ const [keywordInput, setKeywordInput] = useState('');
 const selectedLabel =
   canonicalUrl.find((v) => v.url === formData.canonicalUrl)?.pagename ||
   "Select Canonical URL";
+
+// filter canonicalUrl based on canonicalSearch
+  const filteredCanonicalUrls = canonicalUrl.filter((item) => {
+  const query = canonicalSearch.trim().toLowerCase();
+
+  return (
+    item.pagename.toLowerCase().includes(query) ||
+    item.url.toLowerCase().includes(query)
+  );
+});
 
   const handleSelect = (selectedUrl: string) => {
   handleInputChange("canonicalUrl", selectedUrl);
@@ -1560,36 +1572,68 @@ const handleKeywordsChange = (value: string) => {
   </button>
 
   {/* Dropdown panel */}
-  {isOpen && (
-    <div
-      className="absolute z-20 mt-2 w-full bg-white border border-blue-100 rounded-xl shadow-lg shadow-blue-900/5 py-1.5 h-64 overflow-y-auto
-                 animate-in fade-in slide-in-from-top-1 duration-150"
-    >
-      {canonicalUrl.length === 0 && (
-        <div className="px-4 py-2.5 text-sm text-slate-400">No options available</div>
-      )}
+ 
+{/* Dropdown panel */}
+{isOpen && (
+  <div
+    className="absolute z-20 mt-2 w-full bg-white border border-blue-100 rounded-xl shadow-lg shadow-blue-900/5 animate-in fade-in slide-in-from-top-1 duration-150"
+  >
+    {/* Search input */}
+    <div className="sticky top-0 z-10 bg-white p-2 border-b border-slate-100 rounded-t-xl">
+      <div className="relative">
+        <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
 
-      {canonicalUrl.map((value, index) => {
-        const isSelected = formData.canonicalUrl === value.url;
-        return (
-          <button
-            key={index}
-            type="button"
-            onClick={() => handleSelect(value.url)}
-            className={`w-full flex items-center justify-between px-4 py-2.5 text-sm text-left transition-colors
-              ${isSelected
-                ? "bg-blue-50 text-blue-700 font-medium"
-                : "text-slate-700 hover:bg-blue-50/60"
-              }
-            `}
-          >
-            <span className="truncate">{value.pagename}</span>
-            {isSelected && <Check size={15} className="text-blue-600 shrink-0 ml-2" />}
-          </button>
-        );
-      })}
+        <input
+          type="text"
+          value={canonicalSearch}
+          onChange={(e) => setCanonicalSearch(e.target.value)}
+          placeholder="Search page name or URL..."
+          className="w-full pl-9 pr-3 py-2.5 border border-slate-200 rounded-lg text-sm text-slate-700 placeholder:text-slate-400 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+        />
+      </div>
     </div>
-  )}
+
+    {/* Filtered page options */}
+    <div className="max-h-52 overflow-y-auto py-1">
+      {canonicalUrl.length === 0 ? (
+        <div className="px-4 py-3 text-sm text-slate-400">
+          No options available
+        </div>
+      ) : filteredCanonicalUrls.length === 0 ? (
+        <div className="px-4 py-3 text-sm text-slate-400">
+          No pages found
+        </div>
+      ) : (
+        filteredCanonicalUrls.map((value) => {
+          const isSelected = formData.canonicalUrl === value.url;
+
+          return (
+            <button
+              key={value.url}
+              type="button"
+              onClick={() => handleSelect(value.url)}
+              className={`w-full flex items-center justify-between px-4 py-2.5 text-sm text-left transition-colors ${
+                isSelected
+                  ? "bg-blue-50 text-blue-700 font-medium"
+                  : "text-slate-700 hover:bg-blue-50/60"
+              }`}
+            >
+              <span className="truncate">{value.pagename}</span>
+
+              {isSelected && (
+                <Check
+                  size={15}
+                  className="text-blue-600 shrink-0 ml-2"
+                />
+              )}
+            </button>
+          );
+        })
+      )}
+    </div>
+  </div>
+)}
+
 </div>
 <label className="flex items-center gap-2">
   <input

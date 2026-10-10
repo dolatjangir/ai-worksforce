@@ -610,7 +610,7 @@ const featureSlides = [
 
     src="/login-left-img.png"
 
-    alt=""
+    alt="login-left-img"
 
     aria-hidden="true"
 

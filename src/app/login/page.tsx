@@ -840,7 +840,7 @@ const featureSlides = [
 
             aria-label="AI WorksForce. AI agents. Human experts. Managed results."
 
-            className="login-brand relative aspect-[470/82] w-full
+            className="login-brand relative aspect-[460/92] w-full
 
               max-w-[470px] shrink-0 overflow-hidden"
 
@@ -856,9 +856,7 @@ const featureSlides = [
 
               alt="aiworksforce-logo"
 
-              width={1536}
-
-              height={1024}
+              
 
               draggable={false}
 
@@ -882,7 +880,7 @@ const featureSlides = [
 
 
 
-          <div className="login-intro mt-[29px]">
+          <div className="login-intro mt-[16px]">
 
             <h1
 
@@ -900,7 +898,7 @@ const featureSlides = [
 
 
 
-            <p className="mt-[9px] text-[17px] leading-[1.55] text-[#65729a]">
+            <p className="mt-[7px] text-[17px] leading-[1.55] text-[#65729a]">
 
               Access your AI WorksForce dashboard and manage your business
 
@@ -918,7 +916,7 @@ const featureSlides = [
 
             action={formAction}
 
-            className="login-form mt-[25px]"
+            className="login-form mt-[16px]"
 
           >
 
@@ -974,7 +972,7 @@ const featureSlides = [
 
 
 
-            <div className="mb-[9px] mt-[23px] flex items-center justify-between gap-3">
+            <div className="mb-[9px] mt-[16px] flex items-center justify-between gap-3">
 
               <label
 
@@ -1192,7 +1190,7 @@ const featureSlides = [
 
 
 
-          {/* <div className="login-divider my-[26px] flex items-center gap-[15px]">
+          <div className="login-divider my-[10px] flex items-center gap-[15px]">
 
             <span className="h-px flex-1 bg-[#e2e7f2]" />
 
@@ -1208,7 +1206,7 @@ const featureSlides = [
 
             <span className="h-px flex-1 bg-[#e2e7f2]" />
 
-          </div> */}
+          </div>
 
 
 
@@ -1216,7 +1214,7 @@ const featureSlides = [
 
             {/* Google OAuth */}
 
-            {/* <form action={signInWithGoogle}>
+            <form action={signInWithGoogle}>
 
               <button
 
@@ -1238,17 +1236,17 @@ const featureSlides = [
 
 
 
-                <span>Continue with Google</span>
+                <span> Google</span>
 
               </button>
 
-            </form> */}
+            </form>
 
 
 
             {/* Microsoft OAuth */}
 
-            {/* <form action={signInWithMicrosoft}>
+            <form action={signInWithMicrosoft}>
 
               <button
 
@@ -1270,11 +1268,11 @@ const featureSlides = [
 
 
 
-                <span>Continue with Microsoft</span>
+                <span> Microsoft</span>
 
               </button>
 
-            </form> */}
+            </form>
 
           </div>
 

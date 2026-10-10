@@ -36,6 +36,7 @@ const aiAgents = [
   {
     id: 'lead-qualification',
     icon: "https://res.cloudinary.com/djipgt6vc/image/upload/v1774335520/img-2_l1xdll.png",
+    alt: 'Lead Qualification Agent Icon',
     title: 'Lead Qualification Agent',
     description: 'AI-powered lead scoring and qualification that automatically identifies high-intent prospects and prioritizes your sales pipeline.',
     category: 'Lead Generation',
@@ -48,6 +49,7 @@ const aiAgents = [
   {
     id: 'property-matching',
     icon: "https://res.cloudinary.com/djipgt6vc/image/upload/v1774335520/img-3_scja92.png",
+    alt: 'Property Matching Agent Icon',
     title: 'Property Matching Agent',
     description: 'Intelligent property recommendations that match buyer preferences with available listings using advanced AI algorithms.',
     category: 'Lead Generation',
@@ -60,6 +62,7 @@ const aiAgents = [
   {
     id: 'lead-capture',
     icon: "https://res.cloudinary.com/djipgt6vc/image/upload/v1774335521/img-4_damgxf.png",
+    alt: 'Lead Capture Agent Icon',
     title: 'Lead Capture Agent',
     description: '24/7 automated lead capture across all channels. Never miss an opportunity with instant response and qualification.',
     category: 'Lead Generation',
@@ -72,6 +75,7 @@ const aiAgents = [
   {
     id: 'content-creation',
     icon: "https://res.cloudinary.com/djipgt6vc/image/upload/v1774335521/img-6_mky5rb.png",
+    alt: 'Content Creation Agent Icon',
     title: 'Content Creation Agent',
     description: 'AI-generated marketing content, property descriptions, and social posts that engage your audience and drive conversions.',
     category: 'Marketing',
@@ -84,6 +88,7 @@ const aiAgents = [
   {
     id: 'follow-up',
     icon: "https://res.cloudinary.com/djipgt6vc/image/upload/v1774335523/img-7_xjwzbl.png",
+    alt: 'Follow-Up Agent Icon',
     title: 'Follow-Up Agent',
     description: 'Smart nurture sequences that maintain engagement with personalized follow-ups at the perfect time.',
     category: 'Engagement',
@@ -96,6 +101,7 @@ const aiAgents = [
   {
     id: 'calling',
     icon: "https://res.cloudinary.com/djipgt6vc/image/upload/v1774335553/img-9_i1wlut.png",
+    alt: 'Calling Agent Icon',
     title: 'AI Calling Agent',
     description: 'Human-like voice conversations that handle inquiries, schedule appointments, and qualify leads automatically.',
     category: 'Communication',
@@ -108,6 +114,7 @@ const aiAgents = [
   {
     id: 'campaign-automation',
     icon: "https://res.cloudinary.com/djipgt6vc/image/upload/v1774335552/img-8_twulvb.png",
+    alt: 'Campaign Automation Agent Icon',
     title: 'Campaign Automation Agent',
     description: 'End-to-end campaign management from creation to optimization with AI-driven performance insights.',
     category: 'Marketing',
@@ -120,6 +127,7 @@ const aiAgents = [
   {
     id: 'data-mining',
     icon: "https://res.cloudinary.com/djipgt6vc/image/upload/v1774335520/img-1_nz99v7.png",
+    alt: 'Data Mining Agent Icon',
     title: 'Data Mining Agent',
     description: 'Intelligent data extraction and analysis that uncovers hidden opportunities and market insights.',
     category: 'Analytics',
@@ -132,6 +140,7 @@ const aiAgents = [
   {
     id: 'social-media',
     icon: "https://res.cloudinary.com/djipgt6vc/image/upload/v1774335553/img-10_ajsusz.png",
+    alt: 'Social Media Agent Icon',
     title: 'Social Media Agent',
     description: 'Automated social engagement that builds your brand presence and generates leads across all platforms.',
     category: 'Marketing',
@@ -144,6 +153,7 @@ const aiAgents = [
   {
     id: 'seo-content',
     icon: "https://res.cloudinary.com/djipgt6vc/image/upload/v1774335553/img-555_kabvyd.png",
+    alt: 'SEO Content Agent Icon',
     title: 'SEO Content Agent',
     description: 'Rank-optimized content creation that boosts your visibility and drives organic traffic automatically.',
     category: 'Marketing',
@@ -256,11 +266,11 @@ export default function ExploreAgentsPage() {
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
             <div className="relative h-44 lg:h-60 perspective-1000">
               {[
-                { icon: "https://res.cloudinary.com/djipgt6vc/image/upload/v1774335520/img-1_nz99v7.png", color: 'bg-blue-500', delay: '0s', position: 'left-[5%] top-0' },
-                { icon: "https://res.cloudinary.com/djipgt6vc/image/upload/v1774335521/img-4_damgxf.png", color: 'bg-indigo-500', delay: '0.1s', position: 'left-[25%] top-8' },
-                { icon: "https://res.cloudinary.com/djipgt6vc/image/upload/v1774335521/img-6_mky5rb.png", color: 'bg-cyan-500', delay: '0.2s', position: 'left-[45%] top-0' },
-                { icon: "https://res.cloudinary.com/djipgt6vc/image/upload/v1774335553/img-9_i1wlut.png", color: 'bg-violet-500', delay: '0.3s', position: 'left-[65%] top-8' },
-                { icon: "https://res.cloudinary.com/djipgt6vc/image/upload/v1774335523/img-7_xjwzbl.png", color: 'bg-emerald-500', delay: '0.4s', position: 'left-[85%] top-0' },
+                { icon: "https://res.cloudinary.com/djipgt6vc/image/upload/v1774335520/img-1_nz99v7.png", alt: "Lead Qualification Agent Icon", color: 'bg-blue-500', delay: '0s', position: 'left-[5%] top-0' },
+                { icon: "https://res.cloudinary.com/djipgt6vc/image/upload/v1774335521/img-4_damgxf.png", alt: "Property Matching Agent Icon", color: 'bg-indigo-500', delay: '0.1s', position: 'left-[25%] top-8' },
+                { icon: "https://res.cloudinary.com/djipgt6vc/image/upload/v1774335521/img-6_mky5rb.png", alt: "Lead Capture Agent Icon", color: 'bg-cyan-500', delay: '0.2s', position: 'left-[45%] top-0' },
+                { icon: "https://res.cloudinary.com/djipgt6vc/image/upload/v1774335553/img-9_i1wlut.png", alt: "Content Creation Agent Icon", color: 'bg-violet-500', delay: '0.3s', position: 'left-[65%] top-8' },
+                { icon: "https://res.cloudinary.com/djipgt6vc/image/upload/v1774335523/img-7_xjwzbl.png", alt: "Follow-Up Agent Icon", color: 'bg-emerald-500', delay: '0.4s', position: 'left-[85%] top-0' },
               ].map((item, idx) => (
                 <div 
                   key={idx}
@@ -271,7 +281,7 @@ export default function ExploreAgentsPage() {
                     boxShadow: '0 25px 50px -12px rgba(0,0,0,0.25)'
                   }}
                 >
-                  <img src={item.icon} className="max-w-12 max-h-12 lg:max-w-20 lg:max-h-20 text-white" />
+                  <img src={item.icon} alt={item.alt} className="max-w-12 max-h-12 lg:max-w-20 lg:max-h-20 text-white" />
                 </div>
               ))}
             </div>
@@ -616,7 +626,7 @@ function AgentCard({
         className="group flex items-center gap-6 p-6 bg-white rounded-2xl border border-gray-100 hover:border-blue-200 hover:shadow-xl transition-all duration-300"
       >
         <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${agent.color} flex items-center justify-center flex-shrink-0 shadow-lg`}>
-          <img src={Icon} className="max-w-14 max-h-14 text-white" />
+          <img src={Icon} alt={agent.alt} className="max-w-14 max-h-14 text-white" />
         </div>
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-3 mb-2">
@@ -667,7 +677,7 @@ function AgentCard({
         {/* Header */}
         <div className="flex items-start justify-between mb-4">
           <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${agent.color} flex items-center justify-center shadow-lg transform transition-transform duration-300 ${isHovered ? 'scale-110 rotate-3' : ''}`}>
-            <img src={Icon} className="max-w-14 max-h-14 text-white" />
+            <img src={Icon} alt={agent.alt} className="max-w-14 max-h-14 text-white" />
           </div>
           {agent.badge && (
             <span className="px-3 py-1 text-xs font-semibold bg-gradient-to-r from-[#0066cc] to-[#0052a3] text-white rounded-full shadow-md">

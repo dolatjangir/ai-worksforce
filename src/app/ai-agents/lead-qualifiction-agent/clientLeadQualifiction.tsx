@@ -536,7 +536,7 @@ const heroRef = useRef<HTMLDivElement>(null);
           leadAgent intercepts every inbound signal, runs a deep qualification interview, and hands your reps a warm, scored prospect.
         </p>
         </div>
-        <img width={400} height={400} src="/assets/lead-crm-with-robo.png"/>
+        <img width={400} height={400} src="/assets/lead-crm-with-robo.png" alt="Lead Qualification Agent" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0.5 bg-slate-200 rounded-2xl overflow-hidden border border-slate-200">
@@ -673,7 +673,7 @@ const heroRef = useRef<HTMLDivElement>(null);
         <p className="text-slate-500 text-lg leading-relaxed font-light mb-12 max-w-xl">
           leadAgent connects to your CRM, calendar, communication tools, and data enrichment providers out of the box.
         </p></div>
-        <img width={400} height={400} src="/assets/stack-robo.png"/>
+        <img width={400} height={400} src="/assets/stack-robo.png" alt="Revenue Stack Integration" />
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
@@ -713,7 +713,7 @@ const heroRef = useRef<HTMLDivElement>(null);
           From seed-stage startups to enterprise revenue orgs — leadAgent works at every scale.
         </p>
 </div>
-<img width={400} height={400} src="/assets/pc-robo.png" className="pb-4"/>
+<img width={400} height={400} src="/assets/pc-robo.png" alt="PC Robo" className="pb-4"/>
 </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {[
@@ -743,9 +743,9 @@ const heroRef = useRef<HTMLDivElement>(null);
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
         
         <div className="flex justify-center gap-4 mb-12">
-          <span className="text-4xl opacity-70 drop-shadow-[0_0_12px_rgba(51,153,255,0.4)] animate-[float_4s_ease-in-out_infinite]"><img width={50} height={50} src="/assets/head-robo.png"/></span>
-          <span className="text-5xl drop-shadow-[0_0_12px_rgba(51,153,255,0.4)] animate-[float_4s_ease-in-out_infinite]" style={{ animationDelay: '0.7s' }}><img width={80} height={80} src="/assets/head-robo.png"/></span>
-          <span className="text-4xl opacity-70 drop-shadow-[0_0_12px_rgba(51,153,255,0.4)] animate-[float_4s_ease-in-out_infinite]" style={{ animationDelay: '1.4s' }}><img width={50} height={50} src="/assets/head-robo.png"/></span>
+          <span className="text-4xl opacity-70 drop-shadow-[0_0_12px_rgba(51,153,255,0.4)] animate-[float_4s_ease-in-out_infinite]"><img width={50} height={50} src="/assets/head-robo.png" alt="Head Robo" /></span>
+          <span className="text-5xl drop-shadow-[0_0_12px_rgba(51,153,255,0.4)] animate-[float_4s_ease-in-out_infinite]" style={{ animationDelay: '0.7s' }}><img width={80} height={80} src="/assets/head-robo.png" alt="Head Robo" /></span>
+          <span className="text-4xl opacity-70 drop-shadow-[0_0_12px_rgba(51,153,255,0.4)] animate-[float_4s_ease-in-out_infinite]" style={{ animationDelay: '1.4s' }}><img width={50} height={50} src="/assets/head-robo.png" alt="Head Robo" /></span>
         </div>
         
         <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight mb-5 text-[var(--color-primary-700)] ">

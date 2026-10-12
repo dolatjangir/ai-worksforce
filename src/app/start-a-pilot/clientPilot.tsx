@@ -263,6 +263,8 @@ export default function PilotPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 const [submitMessage, setSubmitMessage] = useState("");
 const [submitError, setSubmitError] = useState("");
+const [showSuccessPopup, setShowSuccessPopup] = useState(false);
+
 
 const handleSubmit = async (
   event: React.FormEvent<HTMLFormElement>
@@ -277,33 +279,40 @@ const handleSubmit = async (
   const formData = new FormData(form);
 
   const payload = {
-    fullName: String(formData.get("fullName") || "").trim(),
+    name: String(formData.get("fullName") || "").trim(),
     email: String(formData.get("email") || "").trim(),
-    company: String(formData.get("company") || "").trim(),
     useCase: String(formData.get("useCase") || "").trim(),
-    goals: String(formData.get("goals") || "").trim(),
+    companyName: String(formData.get("company") || "").trim(),
+    bio: String(formData.get("goals") || "").trim(),
   };
 
   try {
-    const response = await fetch("/api/pilot", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(payload),
-    });
+    const response = await fetch(
+      "https://appapi.aiworksforce.com/api/customer-request/public/request",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      }
+    );
 
-    const result = await response.json();
+    const result = await response.json().catch(() => null);
 
     if (!response.ok) {
       throw new Error(
-        result?.message || "Something went wrong."
+        result?.message || "Something went wrong. Please try again."
       );
     }
 
-    setSubmitMessage(
-      result.message || "Your pilot request has been submitted successfully."
-    );
+  setSubmitMessage(
+  result?.message ||
+    "Your pilot request has been submitted successfully. Wait for Admin Approval."
+);
+
+setShowSuccessPopup(true);
+form.reset();
 
     form.reset();
   } catch (error) {
@@ -557,6 +566,57 @@ const handleSubmit = async (
     role="alert"
   >
     {submitError}
+  </div>
+)}
+
+
+{showSuccessPopup && (
+  <div
+    className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/50 p-4 backdrop-blur-sm"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="success-popup-title"
+    onClick={() => setShowSuccessPopup(false)}
+  >
+    <div
+      className="w-full max-w-md rounded-3xl border border-blue-100 bg-white p-8 text-center shadow-2xl"
+      onClick={(event) => event.stopPropagation()}
+    >
+      <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-green-100 text-green-600">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="h-9 w-9"
+          aria-hidden="true"
+        >
+          <path d="m5 12 4 4L19 6" />
+        </svg>
+      </div>
+
+      <h2
+        id="success-popup-title"
+        className="text-2xl font-extrabold text-[#10204f]"
+      >
+        Request Submitted!
+      </h2>
+
+      <p className="mt-3 text-base leading-7 text-slate-500">
+        {submitMessage ||
+          "Your pilot request has been submitted successfully. Our team will get in touch with you soon."}
+      </p>
+
+      <button
+        type="button"
+        onClick={() => setShowSuccessPopup(false)}
+        className="mt-7 inline-flex min-h-12 w-full items-center justify-center rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 px-6 py-3 text-base font-bold text-white shadow-lg transition hover:brightness-110"
+      >
+        Got it
+      </button>
+    </div>
   </div>
 )}
           <div className="mt-5 flex items-start justify-center gap-2 text-center text-sm leading-6 text-slate-500 sm:text-base">

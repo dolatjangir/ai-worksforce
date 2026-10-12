@@ -320,191 +320,14 @@ const handleSubmit = async (
     <main className="min-h-screen overflow-hidden bg-white text-[#10204f]">
     
 
-      {/* =====================================================
-          HERO
-      ===================================================== */}
-
-    <section className="relative isolate min-h-[90dvh] overflow-hidden bg-linear-to-r from-blue-200/30 to blue-100/30">
-            <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_75%_40%,rgba(218,210,255,0.55)_0%,transparent_60%)]" />
-  <div
-    className="
-      relative mx-auto grid h-full min-h-0 w-full max-w-[1536px]
-      grid-rows-[minmax(0,1fr)_minmax(0,0.55fr)]
-      lg:grid-cols-[1.05fr_1fr] lg:grid-rows-1
-      [@media(orientation:landscape)_and_(max-height:600px)]:grid-cols-2
-      [@media(orientation:landscape)_and_(max-height:600px)]:grid-rows-1
-    "
-  >
-    {/* Content */}
-    <div
-      className="
-        relative z-20 min-h-0 min-w-0 overflow-y-auto overscroll-contain
-        px-5 py-6 sm:px-8 sm:py-8 lg:px-10 lg:py-10 xl:px-12
-        [scrollbar-width:thin]
-      "
-    >
-      <div className="flex min-h-full flex-col justify-center">
-        <div className="mb-3 flex items-center gap-3 lg:mb-5">
-          <span className="text-sm font-extrabold uppercase tracking-[0.18em] text-blue-700 sm:text-base sm:tracking-[0.22em]">
-            Start a Pilot
-          </span>
-
-          <span className="h-0.5 w-12 bg-gradient-to-r from-cyan-400 to-blue-600" />
-        </div>
-
-        <h1
-          className="
-            text-[clamp(2.25rem,5vw,4.25rem)]
-            font-black leading-[1.04] tracking-[-0.04em]
-            text-[#101f4e]
-          "
-        >
-          Turn Ideas into
-          <br />
-          <span className="bg-gradient-to-r from-cyan-500 via-blue-600 to-violet-600 bg-clip-text text-transparent">
-            Real Results
-          </span>
-        </h1>
-
-        <p className="mt-4 max-w-[590px] text-[15px] leading-[1.55] text-slate-600 sm:text-base lg:text-lg xl:text-xl">
-          Experience the power of AI Workforce with a low-risk,
-          high-impact pilot. Test, learn, and scale with confidence.
-        </p>
-
-        {/* Benefits */}
-        <div
-          className="
-            mt-5 grid grid-cols-1 gap-3
-            min-[480px]:grid-cols-2 lg:mt-6 lg:grid-cols-3 lg:gap-4
-            [&>*]:min-w-0
-          "
-        >
-          <Benefit
-            icon={<Bolt />}
-            title="Quick Setup"
-            text="Get started in days"
-          />
-
-          <Benefit
-            icon={<Chart />}
-            title="Measurable Impact"
-            text="Track real results"
-          />
-
-          <Benefit
-            icon={<Shield />}
-            title="Low Risk"
-            text="High value, minimal commitment"
-          />
-        </div>
-
-        {/* CTA */}
-        <div className="mt-5 flex flex-wrap items-center gap-4 lg:mt-6">
-          <a
-            href="#pilot-form"
-            className="
-              inline-flex min-h-12 items-center justify-center gap-3
-              rounded-2xl bg-gradient-to-r from-cyan-500 to-violet-600
-              px-6 py-3 text-sm font-bold text-white
-              shadow-lg shadow-blue-200
-              transition hover:-translate-y-1 hover:shadow-xl
-              focus-visible:outline-2 focus-visible:outline-offset-4
-              focus-visible:outline-blue-600
-            "
-          >
-            Start Your Pilot
-            <ArrowRight />
-          </a>
-
-          {/* Keep your existing video click handler here. */}
-          <button
-            type="button"
-            className="group flex items-center gap-3 text-left"
-          >
-            <span className="flex size-11 shrink-0 items-center justify-center rounded-full border-2 border-blue-500 bg-white text-blue-600 transition group-hover:bg-blue-50">
-              <Play />
-            </span>
-
-            <span>
-              <span className="block text-sm font-extrabold text-[#14234f] sm:text-base">
-                Watch How It Works
-              </span>
-              <span className="block text-sm leading-6 text-slate-500 sm:text-base">
-                2 min video
-              </span>
-            </span>
-          </button>
-        </div>
-
-        {/* Stats */}
-        {/* <div className="mt-5 grid grid-cols-1 gap-3 min-[420px]:grid-cols-3 lg:mt-6 lg:gap-3">
-          {[
-            ["10x", "Faster Execution"],
-            ["70%", "Cost Optimization"],
-            ["100+", "Businesses Trust Us"],
-          ].map(([number, label]) => (
-            <div
-              key={number}
-              className="
-                min-w-0 rounded-2xl border border-blue-100
-                bg-white/80 px-2 py-3
-                shadow-[0_8px_30px_rgba(25,80,160,0.06)]
-                backdrop-blur sm:px-4
-              "
-            >
-              <div className="text-lg font-black text-blue-600 sm:text-xl">
-                {number}
-              </div>
-              <div className="mt-1 text-sm leading-snug text-slate-500 sm:text-base">
-                {label}
-              </div>
-            </div>
-          ))}
-        </div> */}
-      </div>
-    </div>
-
-    {/* Image: constrained to its grid cell at every screen size */}
-    <div className="relative min-h-0 min-w-0 overflow-hidden">
-      <div
-        aria-hidden="true"
-        className="
-          pointer-events-none absolute inset-[15%]
-          rounded-full  blur-3xl
-        "
-      />
-
-      <img
-        src="/pilot-page-hero-img.png"
-        alt="AI Workforce pilot"
-        className="
-          absolute inset-0 z-10 block h-full w-full
-          object-contain object-bottom
-          lg:object-center
-        "
-        fetchPriority="high"
-        decoding="async"
-      />
-{/* 
-      <div
-        aria-hidden="true"
-        className="
-          pointer-events-none absolute inset-y-0 left-0 z-20
-          hidden w-[10%]
-          bg-gradient-to-r from-white via-white/70 to-transparent
-          lg:block
-        "
-      /> */}
-    </div>
-  </div>
-</section>
+    
  {/* =====================================================
           WHY START A PILOT + FORM
       ===================================================== */}
 
    <section
   id="why-us"
-  className="relative px-4 sm:px-8 lg:px-12 "
+  className="relative px-4 mt-10 sm:px-8 lg:px-12 "
 >
   <div
     className="
@@ -787,6 +610,185 @@ const handleSubmit = async (
           text="Turn pilot success into long-term growth."
         />
       </div>
+    </div>
+  </div>
+</section>
+
+  {/* =====================================================
+          HERO
+      ===================================================== */}
+
+    <section className="relative isolate min-h-[90dvh] overflow-hidden bg-linear-to-r from-blue-200/30 to blue-100/30">
+            <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_75%_40%,rgba(218,210,255,0.55)_0%,transparent_60%)]" />
+  <div
+    className="
+      relative mx-auto grid h-full min-h-0 w-full max-w-[1536px]
+      grid-rows-[minmax(0,1fr)_minmax(0,0.55fr)]
+      lg:grid-cols-[1.05fr_1fr] lg:grid-rows-1
+      [@media(orientation:landscape)_and_(max-height:600px)]:grid-cols-2
+      [@media(orientation:landscape)_and_(max-height:600px)]:grid-rows-1
+    "
+  >
+    {/* Content */}
+    <div
+      className="
+        relative z-20 min-h-0 min-w-0 overflow-y-auto overscroll-contain
+        px-5 py-6 sm:px-8 sm:py-8 lg:px-10 lg:py-10 xl:px-12
+        [scrollbar-width:thin]
+      "
+    >
+      <div className="flex min-h-full flex-col justify-center">
+        <div className="mb-3 flex items-center gap-3 lg:mb-5">
+          <span className="text-sm font-extrabold uppercase tracking-[0.18em] text-blue-700 sm:text-base sm:tracking-[0.22em]">
+            Start a Pilot
+          </span>
+
+          <span className="h-0.5 w-12 bg-gradient-to-r from-cyan-400 to-blue-600" />
+        </div>
+
+        <h1
+          className="
+            text-[clamp(2.25rem,5vw,4.25rem)]
+            font-black leading-[1.04] tracking-[-0.04em]
+            text-[#101f4e]
+          "
+        >
+          Turn Ideas into
+          <br />
+          <span className="bg-gradient-to-r from-cyan-500 via-blue-600 to-violet-600 bg-clip-text text-transparent">
+            Real Results
+          </span>
+        </h1>
+
+        <p className="mt-4 max-w-[590px] text-[15px] leading-[1.55] text-slate-600 sm:text-base lg:text-lg xl:text-xl">
+          Experience the power of AI Workforce with a low-risk,
+          high-impact pilot. Test, learn, and scale with confidence.
+        </p>
+
+        {/* Benefits */}
+        <div
+          className="
+            mt-5 grid grid-cols-1 gap-3
+            min-[480px]:grid-cols-2 lg:mt-6 lg:grid-cols-3 lg:gap-4
+            [&>*]:min-w-0
+          "
+        >
+          <Benefit
+            icon={<Bolt />}
+            title="Quick Setup"
+            text="Get started in days"
+          />
+
+          <Benefit
+            icon={<Chart />}
+            title="Measurable Impact"
+            text="Track real results"
+          />
+
+          <Benefit
+            icon={<Shield />}
+            title="Low Risk"
+            text="High value, minimal commitment"
+          />
+        </div>
+
+        {/* CTA */}
+        <div className="mt-5 flex flex-wrap items-center gap-4 lg:mt-6">
+          <a
+            href="#pilot-form"
+            className="
+              inline-flex min-h-12 items-center justify-center gap-3
+              rounded-2xl bg-gradient-to-r from-cyan-500 to-violet-600
+              px-6 py-3 text-sm font-bold text-white
+              shadow-lg shadow-blue-200
+              transition hover:-translate-y-1 hover:shadow-xl
+              focus-visible:outline-2 focus-visible:outline-offset-4
+              focus-visible:outline-blue-600
+            "
+          >
+            Start Your Pilot
+            <ArrowRight />
+          </a>
+
+          {/* Keep your existing video click handler here. */}
+          <button
+            type="button"
+            className="group flex items-center gap-3 text-left"
+          >
+            <span className="flex size-11 shrink-0 items-center justify-center rounded-full border-2 border-blue-500 bg-white text-blue-600 transition group-hover:bg-blue-50">
+              <Play />
+            </span>
+
+            <span>
+              <span className="block text-sm font-extrabold text-[#14234f] sm:text-base">
+                Watch How It Works
+              </span>
+              <span className="block text-sm leading-6 text-slate-500 sm:text-base">
+                2 min video
+              </span>
+            </span>
+          </button>
+        </div>
+
+        {/* Stats */}
+        {/* <div className="mt-5 grid grid-cols-1 gap-3 min-[420px]:grid-cols-3 lg:mt-6 lg:gap-3">
+          {[
+            ["10x", "Faster Execution"],
+            ["70%", "Cost Optimization"],
+            ["100+", "Businesses Trust Us"],
+          ].map(([number, label]) => (
+            <div
+              key={number}
+              className="
+                min-w-0 rounded-2xl border border-blue-100
+                bg-white/80 px-2 py-3
+                shadow-[0_8px_30px_rgba(25,80,160,0.06)]
+                backdrop-blur sm:px-4
+              "
+            >
+              <div className="text-lg font-black text-blue-600 sm:text-xl">
+                {number}
+              </div>
+              <div className="mt-1 text-sm leading-snug text-slate-500 sm:text-base">
+                {label}
+              </div>
+            </div>
+          ))}
+        </div> */}
+      </div>
+    </div>
+
+    {/* Image: constrained to its grid cell at every screen size */}
+    <div className="relative min-h-0 min-w-0 overflow-hidden">
+      <div
+        aria-hidden="true"
+        className="
+          pointer-events-none absolute inset-[15%]
+          rounded-full  blur-3xl
+        "
+      />
+
+      <img
+        src="/pilot-page-hero-img.png"
+        alt="AI Workforce pilot"
+        className="
+          absolute inset-0 z-10 block h-full w-full
+          object-contain object-bottom
+          lg:object-center
+        "
+        fetchPriority="high"
+        decoding="async"
+      />
+{/* 
+      <div
+        aria-hidden="true"
+        className="
+          pointer-events-none absolute inset-y-0 left-0 z-20
+          hidden w-[10%]
+          bg-gradient-to-r from-white via-white/70 to-transparent
+          lg:block
+        "
+      /> */}
     </div>
   </div>
 </section>

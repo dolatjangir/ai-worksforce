@@ -15,6 +15,32 @@ export interface SEOPromptOutput {
   twitterDescription: string;
   twitterImage: string;
 }
+export type SEOSchemaType =
+  | "Organization"
+  | "WebSite"
+  | "Service"
+  | "Article"
+  | "BreadcrumbList"
+  | "FAQPage"
+  | "Custom";
+
+  export interface SEOPromptOutput {
+  metaTitle: string;
+  metaDescription: string;
+  keywords: string[];
+
+  ogTitle: string;
+  ogDescription: string;
+  ogImage: string;
+
+  twitterTitle: string;
+  twitterDescription: string;
+  twitterImage: string;
+
+  // New fields
+  schemaType: SEOSchemaType;
+  schemaMarkup: string;
+}
 
 export const getSEOSystemPrompt = (): string => `
 You are an elite SEO strategist and copywriter with 15+ years of experience writing metadata that ranks AND converts. You write for a specific page's actual content — never generic templates.
@@ -34,7 +60,10 @@ Return ONLY a valid JSON object matching this exact schema. No markdown, no \`\`
   "ogImage": "string",
   "twitterTitle": "string",
   "twitterDescription": "string",
-  "twitterImage": "string"
+  "twitterImage": "string",
+   "schemaType": "Service",
+  "schemaMarkup": "{\"@context\":\"https://schema.org\",\"@type\":\"Service\",\"name\":\"Example\",\"url\":\"https://example.com\"}"
+
 }
  
 ## HARD CONSTRAINTS (do not violate)
@@ -61,6 +90,34 @@ Return ONLY a valid JSON object matching this exact schema. No markdown, no \`\`
  
 **ogImage / twitterImage** — format: /images/og-{page-slug}.jpg, where {page-slug} is derived from the Page Name (lowercase, hyphenated, no special characters).
  
+SCHEMA MARKUP RULES
+
+1. Generate valid JSON-LD structured data appropriate for the
+   selected page's actual content.
+
+2. schemaType must be one of:
+   Organization, WebSite, Service, Article, BreadcrumbList,
+   FAQPage, or Custom.
+
+3. schemaMarkup must be a STRING containing a serialized,
+   valid JSON object.
+
+4. Include "@context": "https://schema.org" and an appropriate
+   "@type".
+
+5. Use the selected page's name and canonical URL for its
+   name and url properties.
+
+6. Add properties only when supported by the actual page content.
+   Do not invent addresses, ratings, prices, reviews, statistics,
+   FAQ answers, or business claims.
+
+7. If no specialized schema type is justified, use WebPage as
+   the JSON-LD "@type" and set schemaType to "Custom".
+
+8. Generate both SEO metadata and schema in the same response.
+   Never omit schemaType or schemaMarkup.
+   
 ## ANTI-REPETITION RULE
 Before finalizing, check your own draft against these failure patterns and rewrite any field that matches:
 - Sentence opens with "Discover the best...", "Looking for...", "Welcome to...", "Unlock...", or "Your one-stop..."
@@ -82,6 +139,7 @@ Silently verify, then output only the final JSON:
 - [ ] Output is valid JSON, nothing outside the { }
 `;
  
+
 
 export const buildUserPrompt = (input: SEOPromptInput): string => `
 ## INPUT DATA (read-only — do not modify these values, only extract meaning from them)

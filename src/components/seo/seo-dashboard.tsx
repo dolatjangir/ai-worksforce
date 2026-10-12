@@ -1492,6 +1492,43 @@ const handleKeywordsChange = (value: string) => {
                 </div>
               </div>
               <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+                {isCreateMode && (
+  <AIGeneratePanel
+    pageName={formData.pageName || ""}
+    canonicalUrl={formData.canonicalUrl || ""}
+    slug={formData.slug || ""}
+    onGenerated={(data: SEOPromptOutput) => {
+      setFormData((prev) => ({
+        ...prev,
+
+        metaTitle: data.metaTitle,
+        metaDescription: data.metaDescription,
+        keywords: data.keywords,
+
+        ogTitle: data.ogTitle,
+        ogDescription: data.ogDescription,
+        ogImage: data.ogImage,
+
+        twitterTitle: data.twitterTitle,
+        twitterDescription: data.twitterDescription,
+        twitterImage: data.twitterImage,
+
+        // Automatically populate generated schema.
+        schemaEnabled: true,
+        schemaType: data.schemaType,
+        schemaMarkup: data.schemaMarkup,
+      }));
+
+      setKeywordInput(data.keywords.join(", "));
+      setIsDirty(true);
+
+      showNotification(
+        "AI generated SEO metadata and schema!",
+        "success"
+      );
+    }}
+  />
+)}
                 {isDirty && (
                   <>
                     <span className="hidden sm:flex text-sm text-amber-600 items-center gap-1">

@@ -799,44 +799,6 @@ const selectedLabel =
 };
 
 
-// const handleSelect = (selectedUrl: string) => {
-//   const selectedPage = canonicalUrl.find(
-//     (item) => item.url === selectedUrl
-//   );
-
-//   try {
-//     const parsedUrl = new URL(selectedUrl);
-//     const path = parsedUrl.pathname;
-
-//     // Remove the starting slash for the slug field
-//     const slug = path.replace(/^\/+|\/+$/g, "");
-
-//     // Use the actual page name from the dropdown
-//     const pageName =
-//       selectedPage?.pagename ||
-//       path.split("/").filter(Boolean).pop() ||
-//       "Home";
-
-//     // Update page details without removing existing SEO fields
-//     setFormData((prev) => ({
-//       ...prev,
-//       canonicalUrl: selectedUrl,
-//       pageName,
-//       slug,
-//       url: path,
-//     }));
-
-//     setIsDirty(true);
-//   } catch (error) {
-//     console.error("Invalid canonical URL:", error);
-//     return;
-//   }
-
-//   setIsOpen(false);
-//   setCanonicalSearch("");
-// };
-
-
 
   const loadData = useCallback(async () => {
     setIsLoading(true);

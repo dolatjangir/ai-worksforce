@@ -1568,32 +1568,54 @@ const handleKeywordsChange = (value: string) => {
                 </div>
               </div>
               <div className="flex items-center gap-2 sm:gap-3 shrink-0">
-                {isCreateMode && (
+                {/* {isCreateMode && ( */}
   <AIGeneratePanel
     pageName={formData.pageName || ""}
     canonicalUrl={formData.canonicalUrl || ""}
     slug={formData.slug || ""}
     onGenerated={(data: SEOPromptOutput) => {
+      // setFormData((prev) => ({
+      //   ...prev,
+
+      //   metaTitle: data.metaTitle,
+      //   metaDescription: data.metaDescription,
+      //   keywords: data.keywords,
+
+      //   ogTitle: data.ogTitle,
+      //   ogDescription: data.ogDescription,
+      //   ogImage: data.ogImage,
+
+      //   twitterTitle: data.twitterTitle,
+      //   twitterDescription: data.twitterDescription,
+      //   twitterImage: data.twitterImage,
+
+      //   // Automatically populate generated schema.
+      //   schemaEnabled: true,
+      //   schemaType: data.schemaType,
+      //   schemaMarkup: data.schemaMarkup,
+      // }));
+      
+      
+      
       setFormData((prev) => ({
-        ...prev,
+  ...prev,
+  metaTitle: prev.metaTitle || data.metaTitle,
+  metaDescription: prev.metaDescription || data.metaDescription,
+  keywords: (prev.keywords?.length) ? prev.keywords : data.keywords,
+  ogTitle: prev.ogTitle || data.ogTitle,
+  ogDescription: prev.ogDescription || data.ogDescription,
+  ogImage: prev.ogImage || data.ogImage,
+  twitterTitle: prev.twitterTitle || data.twitterTitle,
+  twitterDescription: prev.twitterDescription || data.twitterDescription,
+  twitterImage: prev.twitterImage || data.twitterImage,
+  schemaEnabled: prev.schemaEnabled || true,
+  schemaType: prev.schemaType || data.schemaType,
+  schemaMarkup: prev.schemaMarkup || data.schemaMarkup,
+}));
 
-        metaTitle: data.metaTitle,
-        metaDescription: data.metaDescription,
-        keywords: data.keywords,
-
-        ogTitle: data.ogTitle,
-        ogDescription: data.ogDescription,
-        ogImage: data.ogImage,
-
-        twitterTitle: data.twitterTitle,
-        twitterDescription: data.twitterDescription,
-        twitterImage: data.twitterImage,
-
-        // Automatically populate generated schema.
-        schemaEnabled: true,
-        schemaType: data.schemaType,
-        schemaMarkup: data.schemaMarkup,
-      }));
+if (!formData.keywords?.length) {
+  setKeywordInput(data.keywords.join(", "));
+}
 
       setKeywordInput(data.keywords.join(", "));
       setIsDirty(true);
@@ -1604,7 +1626,7 @@ const handleKeywordsChange = (value: string) => {
       );
     }}
   />
-)}
+{/* )} */}
                 {isDirty && (
                   <>
                     <span className="hidden sm:flex text-sm text-amber-600 items-center gap-1">

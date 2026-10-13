@@ -276,7 +276,7 @@ export default function WorkforceHero({
               {/* ---------------------------------------------
                   Heading
               --------------------------------------------- */}
-
+{/* 
               <h1 className="mt-4 pb-2 text-[clamp(2.25rem,6vw,3rem)] font-extrabold leading-[1.2] tracking-[-0.045em] lg:text-[clamp(2.5rem,3.2vw,3rem)]">
   <span className="block">
     Build Your AI Workforce
@@ -285,7 +285,27 @@ export default function WorkforceHero({
   <span className="block bg-linear-to-r from-[#065bff] via-[#6640ff] to-[#8200ea] bg-clip-text text-transparent">
     Without Building an AI Team
   </span>
+</h1> */}
+<h1 className="mt-4 pb-2 text-[clamp(1.75rem,5.5vw,3rem)] font-extrabold leading-[1.2] tracking-[-0.045em] lg:text-[clamp(2.5rem,3.2vw,3rem)]">
+  <span className="block">
+    Build Your AI Workforce
+  </span>
+
+  <span className="block bg-linear-to-r from-[#065bff] via-[#6640ff] to-[#8200ea] bg-clip-text text-transparent">
+    Without Building an AI Team
+  </span>
 </h1>
+
+{/* Show below lg; hide on lg and larger screens */}
+<div className="relative my-4 aspect-square w-full overflow-hidden rounded-xl sm:rounded-2xl lg:hidden">
+  <Image
+    src="/hero-resolution/mobile-screen-home-page.png"
+    alt="AWFI Engine with a human expert and AI robot"
+    fill
+    sizes="(max-width: 1023px) 100vw, 1px"
+    className="object-cover"
+  />
+</div>
 
               {/* ---------------------------------------------
                   Description

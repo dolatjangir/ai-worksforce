@@ -526,11 +526,13 @@ function PreviewPanel({
   previewMode,
   setPreviewMode,
   calculatePreviewScore,
+  ogImagePreview
 }: {
   formData: Partial<SEOEntry>;
   previewMode: 'google' | 'facebook' | 'twitter';
   setPreviewMode: (m: 'google' | 'facebook' | 'twitter') => void;
   calculatePreviewScore: (e: Partial<SEOEntry>) => number;
+  ogImagePreview: string;
 }) {
   const score = calculatePreviewScore(formData);
   return (
@@ -580,9 +582,9 @@ function PreviewPanel({
         {previewMode === 'facebook' && (
           <div className="bg-[var(--color-card-bg)] rounded-lg overflow-hidden shadow-sm border border-[var(--color-border)]">
             <div className="aspect-[1.91/1] bg-[var(--color-border-light)] flex items-center justify-center">
-              {formData.ogImage ? (
+              {(ogImagePreview || formData.ogImage) ? (
                 // eslint-disable-next-line @next/next/no-img-element
-                <img src={formData.ogImage} alt="OG" className="w-full h-full object-cover" />
+                <img src={(ogImagePreview || formData.ogImage || "")} alt="OG" className="w-full h-full object-cover" />
               ) : (
                 <div className="text-center">
                   <FacebookIcon className="w-10 h-10 text-[var(--color-text-faint)] mx-auto mb-1" />
@@ -607,7 +609,7 @@ function PreviewPanel({
             <div className="aspect-[2/1] bg-[var(--color-border-light)] flex items-center justify-center">
               {formData.twitterImage ? (
                 // eslint-disable-next-line @next/next/no-img-element
-                <img src={formData.twitterImage} alt="Twitter" className="w-full h-full object-cover" />
+                <img src={ogImagePreview || formData.twitterImage} alt="Twitter" className="w-full h-full object-cover" />
               ) : (
                 <div className="text-center">
                   <TwitterIcon className="w-10 h-10 text-[var(--color-text-faint)] mx-auto mb-1" />
@@ -735,6 +737,14 @@ const dropdownRef = useRef<HTMLDivElement>(null);
 const [keywordInput, setKeywordInput] = useState('');
   const [formData, setFormData] = useState<Partial<SEOEntry>>({});
   const [isDirty, setIsDirty] = useState(false);
+
+  const [ogImageFile, setOgImageFile] = useState<File | null>(null);
+const [ogImagePreview, setOgImagePreview] = useState<string>('');
+
+const [twitterImageFile, setTwitterImageFile] = useState<File | null>(null);
+const [twitterImagePreview, setTwitterImagePreview] = useState("");
+
+
   const router = useRouter();
    const handleLogout = () => {
     // Clear cookie
@@ -895,33 +905,99 @@ schemaMarkup: "",
     }
   };
 
-  const handleSave = async () => {
-    if (!formData.pageName || !formData.metaTitle) {
-      showNotification('Please fill in required fields', 'error');
-      return;
-    }
-    setIsSaving(true);
-    try {
-      if (isCreateMode) {
-        await api.createEntry({
-          ...formData,
-          slug: formData.slug || generateSlug(formData.pageName || ''),
-          url: formData.url || `/${generateSlug(formData.pageName || '')}`,
-        });
-        showNotification('New SEO entry created successfully');
-      } else {
-        await api.updateEntry(selectedEntry!.id, formData);
-        showNotification('SEO entry updated successfully');
+  
+const handleSave = async () => {
+  if (!formData.pageName || !formData.metaTitle) {
+    showNotification('Please fill in required fields', 'error');
+    return;
+  }
+
+  setIsSaving(true);
+  try {
+    // NEW: Keep existing form data
+    let dataToSave: Partial<SEOEntry> = { ...formData };
+
+    // NEW: Upload facebook OG image to Cloudinary if a new file is selected
+    if (ogImageFile) {
+      const uploadData = new FormData();
+      uploadData.append('file', ogImageFile);
+
+      const uploadResponse = await fetch('/api/upload-og-image', {
+        method: 'POST',
+        body: uploadData,
+      });
+
+      const uploadResult = await uploadResponse.json();
+
+      if (
+        !uploadResponse.ok ||
+        !uploadResult.success ||
+        !uploadResult.url
+      ) {
+        throw new Error(
+          uploadResult.message || 'OG image upload failed'
+        );
       }
-      setIsModalOpen(false);
-      setIsDirty(false);
-      loadData();
-    } catch (error: unknown) {
-      showNotification((error as Error).message, 'error');
-    } finally {
-      setIsSaving(false);
+
+      // NEW: Store the Cloudinary URL in the existing ogImage field
+      dataToSave = {
+        ...dataToSave,
+        ogImage: uploadResult.url,
+      };
     }
-  };
+    // NEW: Upload Twitter image to Cloudinary if a new file is selected
+    if (twitterImageFile) {
+  const uploadData = new FormData();
+  uploadData.append("file", twitterImageFile);
+
+  const uploadResponse = await fetch("/api/upload-og-image", {
+    method: "POST",
+    body: uploadData,
+  });
+
+  const uploadResult = await uploadResponse.json();
+
+  if (
+    !uploadResponse.ok ||
+    !uploadResult.success ||
+    !uploadResult.url
+  ) {
+    throw new Error(
+      uploadResult.message || "Twitter image upload failed"
+    );
+  }
+
+  dataToSave.twitterImage = uploadResult.url;
+}
+
+    // EXISTING: Create SEO entry
+    if (isCreateMode) {
+      await api.createEntry({
+        ...dataToSave,
+        slug: dataToSave.slug || generateSlug(dataToSave.pageName || ''),
+        url: dataToSave.url || `/${generateSlug(dataToSave.pageName || '')}`,
+      });
+      showNotification('New SEO entry created successfully');
+    } else {
+      // EXISTING: Update SEO entry
+      await api.updateEntry(selectedEntry!.id, dataToSave);
+      showNotification('SEO entry updated successfully');
+    }
+
+    // EXISTING: Close modal and refresh data
+    setIsModalOpen(false);
+    setIsDirty(false);
+    loadData();
+
+    // NEW: Clear selected file after successful save
+    setOgImageFile(null);
+    setOgImagePreview('');
+  } catch (error: unknown) {
+    showNotification((error as Error).message, 'error');
+  } finally {
+    setIsSaving(false);
+  }
+};
 
   const handleInputChange = (field: keyof SEOEntry, value: unknown) => {
     setFormData(prev => {
@@ -1836,9 +1912,19 @@ const handleKeywordsChange = (value: string) => {
                       <div>
                         <label className="block text-sm font-medium text-[var(--color-text-secondary)] mb-1.5">OG Image URL</label>
                         <div className="relative">
-                          <input type="text" value={formData.ogImage || ''} onChange={(e) => handleInputChange('ogImage', e.target.value)}
+                         <input
+                            type="file"
+                            accept="image/png,image/jpeg,image/webp"
+                            onChange={(e) => {
+                              const file = e.target.files?.[0];
+                              if (!file) return;
+
+                              setOgImageFile(file);
+                              setOgImagePreview(URL.createObjectURL(file));
+                              setIsDirty(true);
+                            }}
                             className="w-full pl-10 pr-4 py-2.5 bg-[var(--color-card-bg)] border border-[var(--color-border)] rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] transition-all"
-                            placeholder="https://..." />
+                          />
                           <Upload className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--color-text-faint)]" />
                         </div>
                       </div>
@@ -1866,9 +1952,19 @@ const handleKeywordsChange = (value: string) => {
                       <div>
                         <label className="block text-sm font-medium text-[var(--color-text-secondary)] mb-1.5">Twitter Image URL</label>
                         <div className="relative">
-                          <input type="text" value={formData.twitterImage || ''} onChange={(e) => handleInputChange('twitterImage', e.target.value)}
-                            className="w-full pl-10 pr-4 py-2.5 bg-[var(--color-card-bg)] border border-[var(--color-border)] rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] transition-all"
-                            placeholder="https://..." />
+                          <input
+    type="file"
+    accept="image/png,image/jpeg,image/webp"
+    onChange={(e) => {
+      const file = e.target.files?.[0];
+      if (!file) return;
+
+      setTwitterImageFile(file);
+      setTwitterImagePreview(URL.createObjectURL(file));
+      setIsDirty(true);
+    }}
+    className="w-full pl-10 pr-4 py-2.5 bg-[var(--color-card-bg)] border border-[var(--color-border)] rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] transition-all"
+  />
                           <Upload className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--color-text-faint)]" />
                         </div>
                       </div>
@@ -1914,7 +2010,13 @@ const handleKeywordsChange = (value: string) => {
                     </button>
                     {isPreviewOpen && (
                       <div className="mt-3 bg-[var(--color-section-alt)] rounded-2xl border border-[var(--color-border)] p-4 space-y-5">
-                        <PreviewPanel formData={formData} previewMode={previewMode} setPreviewMode={setPreviewMode} calculatePreviewScore={calculatePreviewScore} />
+                        <PreviewPanel 
+                        formData={formData}
+                         previewMode={previewMode}
+                          setPreviewMode={setPreviewMode}
+                           calculatePreviewScore={calculatePreviewScore}
+                            ogImagePreview={ogImagePreview}
+                           />
                       </div>
                     )}
                   </div>
@@ -1922,7 +2024,13 @@ const handleKeywordsChange = (value: string) => {
 
                 {/* Preview sidebar – desktop only */}
                 <div className="hidden lg:block bg-[var(--color-section-alt)] p-6 space-y-6">
-                  <PreviewPanel formData={formData} previewMode={previewMode} setPreviewMode={setPreviewMode} calculatePreviewScore={calculatePreviewScore} />
+                  <PreviewPanel 
+                  formData={formData}
+                   previewMode={previewMode}
+                    setPreviewMode={setPreviewMode}
+                    calculatePreviewScore={calculatePreviewScore}
+                     ogImagePreview={ogImagePreview}
+                      />
                 </div>
 
               </div>

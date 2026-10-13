@@ -4,6 +4,7 @@ import AOSProvider from "@/providers/AOSProvider";
 
 import LayoutWrapper from "@/components/layoutwrapper/layoutwrapper";
 import SchemaMarkup from "@/components/seo/schema-markup";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "AI WorksForce",
@@ -54,6 +55,20 @@ export default function RootLayout({
             {children}
           </LayoutWrapper>
         </div>
+
+          <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-BD31YVM6GF"
+          strategy="afterInteractive"
+        />
+
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){window.dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-BD31YVM6GF');
+          `}
+        </Script>
       </body>
     </html>
   );

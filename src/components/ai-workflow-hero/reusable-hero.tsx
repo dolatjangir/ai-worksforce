@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ArrowRight, Play } from "lucide-react";
 import Link from "next/link";
+import VideoPopup from "../videoPopUp";
 
 export type AIWorkflowHeroProps = {
   titleId?: string;
@@ -105,8 +106,8 @@ className={`relative isolate overflow-hidden rounded-2xl bg-white font-sans text
               )}
 
               {secondaryLabel && (
-                <Link
-                  href={secondaryHref}
+                <VideoPopup
+                  src="https://res.cloudinary.com/fvsobjbv/video/upload/v1791807842/ai-worksforce-vid.mp4"
                   className={`${focus} inline-flex min-h-12 items-center justify-center gap-3 rounded-lg border border-[#a398ff] bg-white/60 px-5 py-3 text-center text-sm font-bold text-[var(--color-heading,#080b37)] transition-colors hover:bg-white motion-reduce:transition-none sm:px-6 sm:text-base`}
                 >
                   <span className="grid size-6 shrink-0 place-items-center rounded-full bg-[#eae6ff] text-[var(--color-primary,#3525df)]">
@@ -117,7 +118,7 @@ className={`relative isolate overflow-hidden rounded-2xl bg-white font-sans text
                   </span>
 
                   {secondaryLabel}
-                </Link>
+                </VideoPopup>
               )}
             </div>
           )}

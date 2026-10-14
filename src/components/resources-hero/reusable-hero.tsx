@@ -1,6 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
+import VideoPopup from "../videoPopUp";
 
 export type IconName =
   | "users"
@@ -476,8 +477,8 @@ export default function PageHero({
               )}
 
               {secondaryAction && (
-                <a
-                  href={secondaryAction.href}
+                <VideoPopup
+                  src="https://res.cloudinary.com/fvsobjbv/video/upload/v1791807842/resources-vid.mp4"
                   className={`inline-flex min-h-12 items-center justify-center gap-3 rounded-lg text-sm font-bold transition sm:text-base ${
                     hasSpecialVisuals
                       ? "border border-[#a398ff] bg-white/60 px-5 py-3 text-[#09075b] hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2800ff]"
@@ -500,7 +501,7 @@ export default function PageHero({
                   )}
 
                   {secondaryAction.label}
-                </a>
+                </VideoPopup>
               )}
             </div>
           )}

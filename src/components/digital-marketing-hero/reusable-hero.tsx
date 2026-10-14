@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ArrowRight, Calendar, ChartNoAxesColumnIncreasing, Clock3, FileText, Layers, Link, Play, Target, Trophy, Users, Zap } from "lucide-react";
 import { GiGrowth } from "react-icons/gi";
+import VideoPopup from "../videoPopUp";
 
 export type MarketingMetric = {
   value: string;
@@ -84,12 +85,15 @@ export default function DigitalMarketingHero({
               {primaryLabel}
               <ArrowRight aria-hidden="true" className="size-4 shrink-0" />
             </a>
-            <a href={secondaryHref} className={`${focus} inline-flex min-h-11 items-center justify-center gap-2 rounded-md border border-[#858694] bg-white/40 px-5 py-3 text-xs font-bold text-[#080735] transition-colors hover:bg-white motion-reduce:transition-none xl:min-h-12 xl:px-6 xl:text-sm`}>
+            <VideoPopup
+              src="https://res.cloudinary.com/fvsobjbv/video/upload/v1791807842/ai-digital-marketing-vid.mp4"
+              className={`${focus} inline-flex min-h-11 items-center justify-center gap-2 rounded-md border border-[#858694] bg-white/40 px-5 py-3 text-xs font-bold text-[#080735] transition-colors hover:bg-white motion-reduce:transition-none xl:min-h-12 xl:px-6 xl:text-sm`}
+            >
               <span className="grid size-5 shrink-0 place-items-center rounded-full bg-[#e8e4ff] text-[#3210e8]">
                 <Play aria-hidden="true" className="ml-0.5 size-3" strokeWidth={2.5} />
               </span>
               {secondaryLabel}
-            </a>
+            </VideoPopup>
           </div>
 
           <ul aria-label="Marketing analytics benefits" className="mt-6 grid list-none grid-cols-1 gap-4 p-0 min-[480px]:grid-cols-[1fr_1.3fr_0.85fr] min-[480px]:gap-3 xl:mt-8">

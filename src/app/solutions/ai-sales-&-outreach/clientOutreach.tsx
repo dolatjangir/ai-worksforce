@@ -291,7 +291,7 @@ export default function AISalesOutreachPage() {
   imageAlt="AI Sales and Outreach workspace"
   assessmentLabel="Get a Free Outreach Assessment"
  assessmentHref="/get-your-assessment"
-  videoHref="#how-it-works"
+  videoHref="https://res.cloudinary.com/fvsobjbv/video/upload/v1791807842/solutions-vid.mp4"
 />
 
 

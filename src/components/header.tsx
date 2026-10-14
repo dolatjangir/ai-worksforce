@@ -761,6 +761,16 @@ function Header() {
                                         <Link
                                           key={childIdx}
                                           href={child.href}
+                                           target={
+                                            activeSubmenu === "AI Lead Engine"
+                                              ? "_blank"
+                                              : undefined
+                                          }
+                                          rel={
+                                            activeSubmenu === "AI Lead Engine"
+                                              ? "noopener noreferrer"
+                                              : undefined
+                                          }
                                           className="block p-2.5 rounded-lg text-sm font-medium text-gray-600 hover:bg-violet-50/60 hover:text-violet-700 transition-all duration-200"
                                         >
                                           {child.icon ? (

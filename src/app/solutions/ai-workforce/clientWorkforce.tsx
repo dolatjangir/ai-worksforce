@@ -146,7 +146,7 @@ export default function AIWorkforcePage() {
   imageAlt="Professional working with AI workforce"
   assessmentLabel="Get Your AI Workforce Assessment"
  assessmentHref="/get-your-assessment"
-  videoHref="#how-it-works"
+  videoHref="https://res.cloudinary.com/fvsobjbv/video/upload/v1791807842/solutions-vid.mp4"
 />
 
 

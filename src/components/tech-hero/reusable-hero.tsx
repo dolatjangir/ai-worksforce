@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import React, { ReactNode } from "react";
+import VideoPopup from "../videoPopUp";
 
 export type HeroButton = {
   label: string;
@@ -135,8 +136,8 @@ export default function ReusableHero({
               {buttons.primary.icon}
             </Link>
 
-            <Link
-              href={buttons.secondary.href}
+            <VideoPopup
+              src="https://res.cloudinary.com/fvsobjbv/video/upload/v1791807842/technology-vid.mp4"
               className={secondaryButton}
             >
               {buttons.secondary.icon && (
@@ -146,7 +147,7 @@ export default function ReusableHero({
               )}
 
               {buttons.secondary.label}
-            </Link>
+            </VideoPopup>
           </div>
 
           {/* =======================================================

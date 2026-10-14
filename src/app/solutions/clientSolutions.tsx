@@ -154,7 +154,7 @@ export default function SolutionsPage() {
   imageAlt="AI operations expert"
   assessmentLabel="Get Your AI Assessment"
   assessmentHref="/get-your-assessment"
-  videoHref="#how-it-works"
+  videoHref="https://res.cloudinary.com/fvsobjbv/video/upload/v1791807842/solutions-vid.mp4"
 />
 
       {/* ================= SOLUTION AREAS ================= */}

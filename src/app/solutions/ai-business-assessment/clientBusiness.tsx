@@ -231,7 +231,7 @@ function Hero() {
   imageAlt="Your AI Opportunity — assessment session"
   assessmentLabel="Get Your AI Assessment"
  assessmentHref="/get-your-assessment"
-  videoHref="#contact"
+  videoHref="https://res.cloudinary.com/fvsobjbv/video/upload/v1791807842/solutions-vid.mp4"
 />
 
   );

@@ -220,7 +220,7 @@ export default async function BlogPostPage({
         {/* Back Link */}
         <div className="mb-6">
           <Link
-            href="/blog"
+            href="/resources/blog"
             className="inline-flex items-center gap-2 text-sm font-medium text-brand-text-muted transition-colors hover:text-brand-blue"
           >
             <svg
@@ -543,7 +543,7 @@ export default async function BlogPostPage({
                       {otherBlogs.map((item) => (
                         <Link
                           key={item.id}
-                          href={`/blog/${item.slug}`}
+                          href={`/resources/blog/${item.slug}`}
                           className="group flex items-center gap-3 rounded-xl p-2.5 transition-colors hover:bg-blue-50/70"
                         >
 
@@ -690,7 +690,7 @@ export default async function BlogPostPage({
 
               {/* Back to Blog */}
               <Link
-                href="/blog"
+                href="/resources/blog"
                 className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-xl border border-blue-100 bg-white px-5 text-sm font-semibold text-brand-dark shadow-[0_8px_20px_rgba(24,74,140,0.04)] transition-all hover:-translate-y-0.5 hover:border-brand-blue hover:text-brand-blue"
               >
 

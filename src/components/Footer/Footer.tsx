@@ -20,6 +20,7 @@ import {
   Youtube,
   Zap,
 } from "lucide-react";
+import Link from "next/link";
 
 type FooterColumn = {
   title: string;
@@ -159,11 +160,12 @@ const footerColumns: FooterColumn[] = [
               label: "How We Work",
               href: "/company/how-we-work"
             },
-      { label: "Partners", href: "/company/partners" },
+      { label: "Our Team", href: "/company/our-team" },
       { label: "Careers", href: "/company/careers" },
+    
     ],
-    footerHref: "/company",
-     footerLink: "View All ",
+    footerHref: "/company/contact",
+     footerLink: "Contact Us",
   },
 ];
 
@@ -555,30 +557,30 @@ export default function Footer() {
 
               <span className="hidden h-4 w-px bg-white/20 sm:block" />
 
-              <a
+              <Link
                 href="/privacy-policy"
                 className="transition-colors hover:text-white"
               >
                 Privacy Policy
-              </a>
+              </Link>
 
               <span className="hidden h-4 w-px bg-white/20 sm:block" />
 
-              <a
+              <Link
                 href="/terms-and-conditions"
                 className="transition-colors hover:text-white"
               >
                 Terms &amp; Conditions
-              </a>
+              </Link>
 
               <span className="hidden h-4 w-px bg-white/20 sm:block" />
 
-              <a
+              {/* <a
                 href="/cookies"
                 className="transition-colors hover:text-white"
               >
                 Cookies
-              </a>
+              </a> */}
             </div>
 
             {/* SOCIAL */}

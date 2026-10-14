@@ -15,7 +15,7 @@ import {
   getFacebookScheduledPosts,
   getInstagramAnalytics,
   getFacebookAnalytics,
-} from "@/store/social-media/social-media/socialMedia";
+} from "@/store/social-media/socialMedia";
 import SchedulerPanel from "@/components/social/SchedulerPanel";
 import MasterProtectedRoute from "@/utils/masterProtectedRoute";
 import { Sparkles } from "lucide-react";

@@ -1,6 +1,6 @@
 "use client";
 
-import { getFacebookAnalytics } from "@/store/social-media/social-media/socialMedia";
+import { getFacebookAnalytics } from "@/store/social-media/socialMedia";
 import MasterProtectedRoute from "@/utils/masterProtectedRoute";
 import { useEffect, useState, useRef } from "react";
 

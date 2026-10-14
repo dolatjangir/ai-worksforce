@@ -1,8 +1,8 @@
 
-// import { NextResponse } from "next/server";
-// import { prisma } from "../../../../../lib/prisma";
+import { NextResponse } from "next/server";
+import { prisma } from "../../../../../lib/prisma";
 
-// // GET: Get Direct Instagram Live Posts
+// GET: Get Direct Instagram Live Posts
 // export async function GET(req: Request) {
 //     try {
 //         const adminId = (req as any).admin?.id;
@@ -86,8 +86,12 @@
 //     }
 // }
 
-// // POST: Direct Instagram OAuth Callback (No Facebook Pages involved)
-// export async function POST(req: Request) {
+// GET: Direct Instagram OAuth Callback (No Facebook Pages involved)
+
+// Import your Prisma client here, e.g., import prisma from "@/lib/prisma";
+
+// GET: Direct Instagram OAuth Callback (No Facebook Pages involved)
+// export async function GET(req: Request) {
 //     try {
 //         const { searchParams } = new URL(req.url);
 //         const code = searchParams.get("code");
@@ -98,6 +102,8 @@
 //             });
 //         }
 
+//         // Note: Make sure your middleware or auth wrapper is properly injecting the admin object into the request for a GET route, 
+//         // or extract it from a session/cookie if standard req mutation isn't working in App Router GET handlers.
 //         const adminId = (req as any).admin?.id;
 
 //         if (!adminId) {
@@ -228,3 +234,4 @@
 //         );
 //     }
 // }
+

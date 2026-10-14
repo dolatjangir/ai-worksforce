@@ -1,5 +1,5 @@
 
-import { disconnectAccount, getInstagramLivePosts } from "@/store/social-media/social-media/socialMedia";
+import { disconnectAccount, getInstagramLivePosts } from "@/store/social-media/socialMedia";
 import { ApiResponse, PlatformModuleConfig } from "../../page";
 
 

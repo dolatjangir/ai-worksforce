@@ -26,11 +26,40 @@ model AdminUser {
 
   lastLoginAt DateTime?
 
+  socialAccounts SocialAccount[]
+
   createdAt DateTime @default(now())
 
   updatedAt DateTime @updatedAt
 
   @@index([role, isActive])
+}
+
+model SocialAccount {
+  id     String @id @default(cuid())
+  userId String // Change to Int if your Admin.id is an Int
+
+  platform    Platform
+  accessToken String   @db.Text // Meta tokens can be very long, @db.Text prevents truncation errors
+
+  igAccountId String? // Instagram specific ID
+  pageId      String? // Facebook specific ID
+  username    String? // To store the IG username or FB Page name
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relation back to your Admin/User model
+  admin AdminUser @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  // 🟢 CRITICAL: This composite key allows your userId_platform: { ... } upsert to work
+  @@unique([userId, platform])
+}
+
+enum Platform {
+  FACEBOOK
+  INSTAGRAM
+  // Add others later like TWITTER, LINKEDIN, etc.
 }
 
 model Assessment {

@@ -1,6 +1,6 @@
 "use client";
 
-import { disconnectFacebookAccount, getFacebookLivePosts } from "@/store/social-media/social-media/socialMedia";
+import { disconnectFacebookAccount, getFacebookLivePosts } from "@/store/social-media/socialMedia";
 
 import { ApiResponse, PlatformModuleConfig } from "../../page";
 

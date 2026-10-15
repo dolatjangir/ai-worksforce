@@ -22,6 +22,7 @@ import {
   Youtube,
   Instagram,
 } from "lucide-react";
+import Link from "next/link";
 import AIWorkflowHero from "@/components/ai-workflow-hero/reusable-hero";
 
 /* =========================================================
@@ -193,7 +194,7 @@ export default function CaseStudiesPage() {
   highlightedTitle="Studies"
   subtitle="Real business results"
   description="See how businesses across industries are using AI WorksForce to automate operations, improve customer experiences, and achieve measurable growth."
-  imageSrc="/ai-workforce/case-studies-hero.png"
+  imageSrc="https://res.cloudinary.com/fvsobjbv/image/upload/v1789724361/case-studies-hero.png"
   imageAlt="Business professional"
   primaryLabel="Book a Free Consultation"
   primaryHref="/get-your-assessment"
@@ -361,18 +362,18 @@ export default function CaseStudiesPage() {
           </p>
 
           <div className="relative mt-9 flex flex-wrap items-center justify-center gap-4">
-            <a
-              href="#"
+            <Link
+              href="/get-your-assessment"
               className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-bold text-heading shadow-xl transition hover:bg-blue-50"
             >
               Book a Free Consultation <ArrowRight className="h-4 w-4" />
-            </a>
-            <a
-              href="#stories"
+            </Link>
+            <Link
+              href="/case-studies"
               className="inline-flex items-center gap-2 rounded-full border-2 border-white/40 px-7 py-3 text-sm font-bold text-white backdrop-blur transition hover:border-white hover:bg-white/10"
             >
               See More Case Studies
-            </a>
+            </Link>
           </div>
 
           {/* handwritten note */}

@@ -169,7 +169,7 @@ export default function HowItWorksPage() {
       highlightedTitle=""
       subtitle="From business problem to AI operations"
       description="We follow a clear, step-by-step process to understand your business, design the right AI workforce, and deploy it for real results — quickly, securely, and at scale."
-      imageSrc="/ai-workforce/how-it-works-hero.png"
+      imageSrc="https://res.cloudinary.com/fvsobjbv/image/upload/v1789724378/how-it-works-hero.png"
       imageAlt="Professional with her AI workforce"
       primaryLabel="Book a Free Consultation"
       primaryHref="/get-your-assessment"
@@ -382,14 +382,14 @@ export default function HowItWorksPage() {
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <Link
-                href="#"
+                href="/get-your-assessment"
                 className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-brand-dark shadow-lg transition-all hover:bg-blue-50"
               >
                 Book a Free Consultation
                 <ArrowRight size={16} />
               </Link>
               <Link
-                href="#"
+                href="/solutions"
                 className="inline-flex items-center rounded-full border border-white/30 px-7 py-3.5 text-sm font-semibold text-white transition-all hover:bg-white/10"
               >
                 See Our Solutions

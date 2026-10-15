@@ -287,7 +287,7 @@ export default function AISalesOutreachPage() {
   title="Reach More Prospects."
   highlightedTitle="Close More Opportunities."
   description="Supercharge your sales with AI-powered outreach. Find the right prospects, engage them with personalized communication, and convert leads into revenue — faster and at scale."
-  imageSrc="/solutions/ai-sales-outreach-hero.png"
+  imageSrc="https://res.cloudinary.com/fvsobjbv/image/upload/v1789726582/ai-sales-outreach-hero.png"
   imageAlt="AI Sales and Outreach workspace"
   assessmentLabel="Get a Free Outreach Assessment"
  assessmentHref="/get-your-assessment"
@@ -407,7 +407,10 @@ export default function AISalesOutreachPage() {
               <div className="absolute inset-0 opacity-30 [background-image:radial-gradient(circle_at_50%_45%,#0876ed_0,transparent_55%)]" />
               <div className="absolute inset-0 [background-image:linear-gradient(#ffffff06_1px,transparent_1px),linear-gradient(90deg,#ffffff06_1px,transparent_1px)] [background-size:32px_32px]" />
 
-              <img src="/solutions/ai-sales-outreach-middle.png" alt="AI Sales Engine" className="relative z-10" />
+              <img 
+              src="https://res.cloudinary.com/fvsobjbv/image/upload/v1789726576/ai-sales-outreach-middle.png"
+               alt="AI Sales Engine" 
+               className="relative z-10" />
 
              
             </div>
@@ -744,7 +747,9 @@ export default function AISalesOutreachPage() {
           </Reveal>
 
           {/* Right visual — growth chart panel */}
-         <img src="/solutions/ai-sales-outreach-bottom.png" alt="Growth Chart" className="mx-auto h-full w-full object-contain" />
+         <img 
+         src="https://res.cloudinary.com/fvsobjbv/image/upload/v1789726559/ai-sales-outreach-bottom.png"
+          alt="Growth Chart" className="mx-auto h-full w-full object-contain" />
         </div>
       </section>
     </div>

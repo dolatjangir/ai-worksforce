@@ -227,7 +227,7 @@ function Hero() {
   title="Discover Your AI"
   highlightedTitle="Opportunity"
   description="A strategic assessment powered by the AWFI Engine™ to identify, prioritize and plan the right AI solutions for your business."
-  imageSrc="/company-images/careers-company-hero.png"
+  imageSrc="https://res.cloudinary.com/fvsobjbv/image/upload/v1789726369/careers-company-hero.png"
   imageAlt="Your AI Opportunity — assessment session"
   assessmentLabel="Get Your AI Assessment"
  assessmentHref="/get-your-assessment"
@@ -405,7 +405,7 @@ function IdealForSection() {
         {/* image panel */}
         <div className="relative min-h-[260px] overflow-hidden rounded-2xl">
           <Image
-            src="/assessment-page-img.jpeg"
+            src="https://res.cloudinary.com/fvsobjbv/image/upload/v1789723504/assessment-page-img.jpg"
             alt="Business leader ready for AI assessment"
             fill
             className="object-cover object-top"

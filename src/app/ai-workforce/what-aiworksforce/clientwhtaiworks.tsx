@@ -193,7 +193,7 @@ export default function AIWorkforceWhyPage() {
   highlightedTitle="Hire AI Workforce"
   subtitle="Why businesses choose our model"
   description="Looking to hire AI workforce experts? Build smarter teams with AI agents and specialists that boost productivity and streamline operations."
-  imageSrc="/ai-workforce/what-aiworkforce.png"
+  imageSrc="https://res.cloudinary.com/fvsobjbv/image/upload/v1792058197/what-aiworkforce.png"
   imageAlt="Professional with her AI workforce"
   primaryLabel="Book a Free Consultation"
   primaryHref="/get-your-assessment"
@@ -422,14 +422,14 @@ export default function AIWorkforceWhyPage() {
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <Link
-                href="#"
+                href="/get-your-assessment"
                 className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-brand-dark shadow-lg transition-all hover:bg-blue-50"
               >
                 Book a Free Consultation
                 <ArrowRight size={16} />
               </Link>
               <Link
-                href="#"
+                href="/solutions"
                 className="inline-flex items-center rounded-full border border-white/30 px-7 py-3.5 text-sm font-semibold text-white transition-all hover:bg-white/10"
               >
                 Explore Our Solutions

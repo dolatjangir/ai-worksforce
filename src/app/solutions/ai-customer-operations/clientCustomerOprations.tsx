@@ -421,7 +421,7 @@ export default function AICustomerOperationsPage() {
   title="Happier Customers."
   highlightedTitle="Smarter Operations."
   description="Deliver exceptional customer experiences with AI-powered customer operations. Automate repetitive tasks, resolve queries faster, and empower your teams to focus on what truly matters — your customers."
-  imageSrc="/solutions/ai-customer-operation-hero.png"
+  imageSrc="https://res.cloudinary.com/fvsobjbv/image/upload/v1789726561/ai-customer-operation-hero.png"
   imageAlt="AI Customer Operations workspace and customer support"
   assessmentLabel="Get a Free Consultation"
  assessmentHref="/get-your-assessment"
@@ -521,7 +521,7 @@ export default function AICustomerOperationsPage() {
               <div className="relative min-h-[340px]">
                 {/* center */}
 
-               <img src="/solutions/ai-customer-operation-middle.png" alt="AI Customer Operations" className="absolute left-1/2 top-1/2 z-20 -translate-x-1/2 -translate-y-1/2" />
+               <img src="https://res.cloudinary.com/fvsobjbv/image/upload/v1789726521/ai-customer-operation-middle.png" alt="AI Customer Operations" className="absolute left-1/2 top-1/2 z-20 -translate-x-1/2 -translate-y-1/2" />
                 {/* orbit items */}
 
                 
@@ -593,7 +593,7 @@ export default function AICustomerOperationsPage() {
       >
         <div className="mx-auto max-w-[1400px] px-5 lg:px-8">
           <Reveal className="mx-auto max-w-2xl text-center">
-            <p className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-[#0876ed]">
+            <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0876ed]">
               How It Works
             </p>
 
@@ -601,7 +601,7 @@ export default function AICustomerOperationsPage() {
               From Queries to Happy Customers in 4 Simple Steps
             </h2>
 
-            <p className="mt-3 text-[14px] text-slate-500 sm:text-[15px]">
+            <p className="mt-3 text-xs text-slate-500 sm:text-sm">
               We make it easy to implement AI customer operations in your
               business.
             </p>
@@ -629,11 +629,11 @@ export default function AICustomerOperationsPage() {
                     </span>
                   </div>
 
-                  <h3 className="mt-5 max-w-[200px] text-[15px] font-extrabold leading-snug text-[#06235a]">
+                  <h3 className="mt-5 max-w-[200px] text-lg font-extrabold leading-snug text-[#06235a]">
                     {step.title}
                   </h3>
 
-                  <p className="mt-2 max-w-[230px] text-[12.5px] leading-relaxed text-slate-500">
+                  <p className="mt-2 max-w-[230px] text-sm leading-relaxed text-slate-500">
                     {step.desc}
                   </p>
                 </div>
@@ -781,7 +781,7 @@ export default function AICustomerOperationsPage() {
 
           {/* CTA GRAPHIC img */}
 
-         <img src="/solutions/ai-customer-operation-bottom-cta.png" alt="CTA Graphic" className="w-full max-w-[500px] rounded-xl " />
+         <img src="https://res.cloudinary.com/fvsobjbv/image/upload/v1789726488/ai-customer-operation-bottom-cta.png" alt="CTA Graphic" className="w-full max-w-[500px] rounded-xl " />
         </div>
       </section>
     </main>

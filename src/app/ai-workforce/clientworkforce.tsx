@@ -100,29 +100,29 @@ const agents: Agent[] = [
 
 const benefits: Benefit[] = [
   {
-    title: "Save Time",
-    description: "Automate repetitive work and focus on what matters.",
+    title: "Save Time with AI Automation",
+    description: "Reduce repetitive manual tasks with AI-powered workflows so your team can focus on higher-value activities.",
     icon: Zap,
     iconColor: "text-brand-orange",
     iconBg: "bg-brand-orange-soft",
   },
   {
-    title: "Reduce Costs",
-    description: "Do more with less, without compromising quality.",
+    title: "Improve Operational Efficiency",
+    description: "Streamline business processes and reduce unnecessary manual effort while maintaining your operational standards.",
     icon: DollarSign,
     iconColor: "text-brand-green",
     iconBg: "bg-brand-green-soft",
   },
   {
-    title: "Increase Productivity",
-    description: "Your AI team works around the clock.",
+    title: "Increase Business Productivity",
+    description: "Use AI agents to support routine business activities and help your team work more efficiently.",
     icon: BarChart3,
     iconColor: "text-brand-purple",
     iconBg: "bg-brand-purple-soft",
   },
   {
-    title: "Scale Faster",
-    description: "Easily expand your capabilities as you grow.",
+    title: "Scale Your Business with AI Workforce Solutions",
+    description: "Adapt your AI workforce as business needs change and new opportunities emerge.",
     icon: Users,
     iconColor: "text-brand-purple",
     iconBg: "bg-brand-purple-soft",
@@ -131,46 +131,46 @@ const benefits: Benefit[] = [
 
 const workforceCards = [
   {
-    title: "Customer Support",
-    suffix: "AI Agents",
+    title: "AI Agents for",
+    suffix: "Customer Support",
     description:
-      "Handle inquiries, resolve issues, and keep your customers happy 24/7.",
+      "Support customer inquiries, respond to common questions, and streamline customer service workflows with AI-powered agents.",
     icon: MessageCircle,
     iconColor: "text-brand-purple",
     iconBg: "bg-brand-purple-soft",
   },
   {
-    title: "Sales & Outreach",
-    suffix: "AI Agents",
+    title: "AI Agents for Sales &",
+    suffix: "Outreach",
     description:
-      "Find leads, engage prospects, and boost your sales pipeline.",
+      "Support lead research, prospect engagement, and sales follow-ups with AI agents designed to streamline your sales workflow.",
     icon: TrendingUp,
     iconColor: "text-brand-green",
     iconBg: "bg-brand-green-soft",
   },
   {
-    title: "Marketing",
-    suffix: "AI Agents",
+    title: "AI Marketing",
+    suffix: "Agents",
     description:
-      "Create content, run campaigns, and grow your brand.",
+      "Assist with content creation, campaign workflows, and marketing tasks using AI-powered marketing agents.",
     icon: Megaphone,
     iconColor: "text-rose-500",
     iconBg: "bg-rose-100",
   },
   {
-    title: "Data & Research",
-    suffix: "AI Agents",
+    title: "AI Data & Research",
+    suffix: "Agents",
     description:
-      "Analyze data, find insights, and support smarter decisions.",
+      "Organize business data, research information, and identify useful insights to support informed business decisions.",
     icon: FileSearch,
     iconColor: "text-brand-blue",
     iconBg: "bg-brand-blue-soft",
   },
   {
-    title: "Operations",
-    suffix: "AI Agents",
+    title: "AI Agents for Business",
+    suffix: "Operations",
     description:
-      "Automate workflows, manage tasks, and keep your business running smoothly.",
+      "Streamline routine workflows, support task management, and reduce manual effort across business operations with AI automation.",
     icon: Settings,
     iconColor: "text-brand-orange",
     iconBg: "bg-brand-orange-soft",
@@ -297,16 +297,16 @@ export default function AIWorkforcePage() {
       ===================================================== */}
 
     <AIWorkflowHero
-  eyebrow="ONE TEAM. ENDLESS POSSIBILITIES."
-  title="Get your all"
-  highlightedTitle="AI workforce"
+  eyebrow="AI WORKFORCE EXPERTS FOR YOUR BUSINESS"
+  title="Hire AI Workforce Experts"
+  highlightedTitle="for Your Business"
   subtitle=""
-  description="A complete team of AI agents working together to automate your operations, drive growth, and give you more time to focus on what matters most."
-  imageSrc="/ai-workforce/ai-workforce-main-hero.png"
+  description="Hire AI workforce experts to help automate business operations, streamline workflows, and improve productivity. Our AI workforce solutions combine intelligent AI agents, automation technology, and human expertise to support your business goals."
+  imageSrc="https://res.cloudinary.com/fvsobjbv/image/upload/v1789724360/ai-workforce-main-hero.png"
   imageAlt="AI workforce professional"
-  primaryLabel="Get Your AI Workforce"
+  primaryLabel="Hire AI Workforce Experts"
   primaryHref="/get-your-assessment"
-  secondaryLabel="See How It Works"
+  secondaryLabel="See How AWFi Works"
   secondaryHref="#how-it-works"
 />
 
@@ -318,7 +318,7 @@ export default function AIWorkforcePage() {
         <div className="mx-auto max-w-[1440px] px-6 sm:px-8 lg:px-12 xl:px-16">
           <div className="mx-auto max-w-[900px] text-center">
             <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-brand-purple">
-              One Connected Team
+              Your AI Workforce Experts
             </p>
 
             <h2
@@ -329,12 +329,11 @@ export default function AIWorkforcePage() {
                 lg:text-[42px]
               "
             >
-              A Complete AI Team for Every Part of Your Business
+              AI Workforce Solutions for Every Part of Your Business
             </h2>
 
             <p className="mx-auto mt-4 max-w-[760px] text-sm leading-6 text-brand-text sm:text-base">
-              Specialized AI agents working together like a real workforce —
-              built to solve your biggest challenges.
+              Discover AI workforce solutions that bring together specialized AI agents to support customer service, sales, marketing, research, and business operations.
             </p>
           </div>
 
@@ -388,13 +387,13 @@ export default function AIWorkforcePage() {
                     />
                   </div>
 
-                  <h3 className="mt-6 text-[15px] font-extrabold leading-5 text-brand-dark">
+                  <h3 className="mt-6 text-XL font-extrabold leading-5 text-brand-dark">
                     {card.title}
                     <br />
                     {card.suffix}
                   </h3>
 
-                  <p className="mt-4 text-xs leading-5 text-brand-text">
+                  <p className="mt-4 text-sm leading-5 text-brand-text">
                     {card.description}
                   </p>
                 </motion.div>
@@ -424,7 +423,7 @@ export default function AIWorkforcePage() {
             {/* LEFT */}
             <div className="max-w-[570px]">
               <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-brand-purple">
-                Built for Business
+                Business Benefits
               </p>
 
               <h2
@@ -435,12 +434,11 @@ export default function AIWorkforcePage() {
                   lg:text-[42px]
                 "
               >
-                Why Get Your AI Workforce?
+                Why Hire AI Workforce Experts?
               </h2>
 
               <p className="mt-4 max-w-[530px] text-sm leading-6 text-brand-text sm:text-base sm:leading-7">
-                More than just tools — it’s a complete, collaborative team
-                designed to deliver real business impact.
+                Get more than individual AI tools. Build a connected AI workforce that combines intelligent agents and automation to support your business operations and goals.
               </p>
 
               <div className="mt-8 space-y-5">
@@ -484,91 +482,15 @@ export default function AIWorkforcePage() {
             <div className="relative">
               <div className="relative min-h-[430px] overflow-hidden rounded-2xl sm:min-h-[500px] lg:min-h-[540px]">
                 <img
-                  src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1400&q=85"
+                  src="https://res.cloudinary.com/fvsobjbv/image/upload/v1789724360/ai-workforce-main-bottom.png"
                   alt="Business professional using AI workforce"
                   sizes="(max-width: 1024px) 100vw, 55vw"
                   className="object-cover"
                 />
 
                 {/* Image overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-brand-navy/75 via-brand-dark/35 to-brand-purple/35" />
+                {/* <div className="absolute inset-0 bg-gradient-to-br from-brand-navy/75 via-brand-dark/35 to-brand-purple/35" /> */}
 
-                {/* UI panel */}
-                <div className="absolute left-5 top-5 w-[245px] rounded-2xl border border-white/20 bg-brand-navy/55 p-4 shadow-2xl backdrop-blur-md sm:left-7 sm:top-7 sm:w-[290px]">
-                  <div className="mb-4 flex items-center gap-2 text-white">
-                    <Sparkles size={18} />
-                    <span className="text-sm font-bold">
-                      AI Workforce
-                    </span>
-                  </div>
-
-                  <div className="space-y-2">
-                    {[
-                      "Customer Support",
-                      "Sales & Outreach",
-                      "Marketing",
-                      "Data & Research",
-                      "Operations",
-                    ].map((item) => (
-                      <div
-                        key={item}
-                        className="
-                          flex items-center gap-3 rounded-lg
-                          border border-white/10
-                          bg-white/10 px-3 py-2.5
-                          text-xs font-medium text-white
-                          backdrop-blur-sm
-                        "
-                      >
-                        <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white/15">
-                          <CheckCircle2 size={13} />
-                        </span>
-
-                        {item}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Impact badge */}
-                <div className="absolute bottom-7 right-6 max-w-[180px] text-right sm:bottom-10 sm:right-8">
-                  <p className="text-xl font-extrabold leading-tight text-white sm:text-2xl">
-                    One Team
-                    <br />
-                    Infinite Impact
-                  </p>
-
-                  <div className="ml-auto mt-4 flex h-10 w-10 items-center justify-center rounded-full border border-white/40 bg-white/10 text-white backdrop-blur-md">
-                    <ArrowRight size={17} />
-                  </div>
-                </div>
-
-                {/* Quote */}
-                <div
-                  className="
-                    absolute bottom-5 left-1/2
-                    w-[80%] max-w-[310px]
-                    -translate-x-1/2
-                    rounded-xl bg-white/95 px-5 py-4
-                    shadow-2xl backdrop-blur
-                    sm:bottom-7 sm:left-7
-                    sm:w-[300px]
-                    sm:translate-x-0
-                  "
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-brand-purple-soft">
-                      <BarChart3
-                        size={19}
-                        className="text-brand-purple"
-                      />
-                    </div>
-
-                    <p className="text-xs font-medium leading-5 text-brand-dark">
-                      “It’s like having a dedicated team that never sleeps.”
-                    </p>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -618,20 +540,20 @@ export default function AIWorkforcePage() {
 
           <div className="relative z-10 mx-auto max-w-[850px] text-center">
             <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/75 sm:text-xs">
-              Ready to Build Your AI Team?
+              Ready to Hire AI Workforce Experts?
             </p>
 
             <h2 className="mt-4 text-3xl font-extrabold tracking-[-0.035em] sm:text-4xl lg:text-[42px]">
-              Get Your All AI Workforce Today
+              Hire AI Workforce Experts for Your Business Today
             </h2>
 
             <p className="mt-3 text-sm text-white/80 sm:text-base">
-              Step into a smarter, more efficient future with AI WorksForce.
+              Discover how AI workforce experts, intelligent agents, and automation can help streamline your business operations and support growth.
             </p>
 
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
               <Link
-                href="#contact"
+                href="/get-your-assessment"
                 className="
                   inline-flex min-h-[52px]
                   items-center justify-center gap-2
@@ -643,12 +565,12 @@ export default function AIWorkforcePage() {
                   hover:bg-brand-blue-50
                 "
               >
-                Get Your AI Workforce
+                Hire AI Workforce Experts
                 <ArrowRight size={17} />
               </Link>
 
-              <Link
-                href="#contact"
+              <a
+                href="tel:+919649902000"
                 className="
                   inline-flex min-h-[52px]
                   items-center justify-center gap-2
@@ -661,8 +583,8 @@ export default function AIWorkforcePage() {
                   hover:bg-white/10
                 "
               >
-                Talk to Our Experts
-              </Link>
+                Talk to Our AI Workforce Experts
+              </a>
             </div>
           </div>
 
@@ -699,70 +621,7 @@ export default function AIWorkforcePage() {
         </div>
       </section>
 
-      {/* =====================================================
-          TRUSTED BRANDS
-      ===================================================== */}
-
-      <section className="bg-white py-8 sm:py-10">
-        <div className="mx-auto flex max-w-[1440px] flex-col items-center gap-7 px-6 sm:px-8 lg:flex-row lg:justify-between lg:px-12 xl:px-16">
-          <p className="shrink-0 text-sm font-bold text-brand-dark">
-            Trusted by growing businesses
-          </p>
-
-          <div
-            className="
-              flex w-full
-              flex-wrap items-center
-              justify-center gap-x-8 gap-y-5
-              lg:justify-end
-              xl:gap-x-12
-            "
-          >
-            {/* Shopify */}
-            <div className="flex items-center gap-1.5 text-xl font-bold text-slate-500">
-              <BriefcaseBusiness size={22} />
-              <span>shopify</span>
-            </div>
-
-            {/* HubSpot */}
-            <div className="text-lg font-bold text-slate-500">
-              HubSpot
-            </div>
-
-            {/* Slack */}
-            <div className="flex items-center gap-1 text-lg font-bold text-slate-500">
-              <span className="grid grid-cols-2 gap-0.5">
-                <span className="h-2 w-2 rounded-full bg-current" />
-                <span className="h-2 w-2 rounded-full bg-current" />
-                <span className="h-2 w-2 rounded-full bg-current" />
-                <span className="h-2 w-2 rounded-full bg-current" />
-              </span>
-              slack
-            </div>
-
-            {/* Google */}
-            <div className="text-xl font-semibold text-slate-500">
-              Google
-            </div>
-
-            {/* Meta */}
-            <div className="text-xl font-semibold tracking-tight text-slate-500">
-              ∞ Meta
-            </div>
-
-            {/* Microsoft */}
-            <div className="flex items-center gap-2 text-lg font-semibold text-slate-500">
-              <span className="grid grid-cols-2 gap-0.5">
-                <span className="h-2.5 w-2.5 bg-current" />
-                <span className="h-2.5 w-2.5 bg-current" />
-                <span className="h-2.5 w-2.5 bg-current" />
-                <span className="h-2.5 w-2.5 bg-current" />
-              </span>
-              Microsoft
-            </div>
-          </div>
-        </div>
-      </section>
+  
     </main>
   );
 }

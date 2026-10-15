@@ -168,7 +168,7 @@ export default function SolutionsHero({
             </p>
           )}
 
-          <h1 className="mt-4 text-[clamp(2rem,5.8vw,5.25rem)] font-bold leading-[0.99] tracking-[-0.045em] text-[#080044]">
+          <h1 className="mt-4 text-[clamp(2rem,5.8vw,3.8rem)] font-bold leading-[0.99] tracking-[-0.045em] text-[#080044]">
             {title}
 
             {highlightedTitle && (

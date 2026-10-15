@@ -208,7 +208,7 @@ export default function AIAutomationPage() {
   title="Automate Today."
   highlightedTitle="Grow Tomorrow."
   description="Streamline your processes, eliminate manual work, and unlock new possibilities with intelligent AI automation. We help businesses build faster, smarter and more efficient operations."
-  imageSrc="/solutions/ai-automation-hero.png"
+  imageSrc="https://res.cloudinary.com/fvsobjbv/image/upload/v1789726564/ai-automation-hero.png"
   imageAlt="AI automation workspace and business operations"
   assessmentLabel="Get a Free Assessment"
   assessmentHref="/get-your-assessment"
@@ -570,7 +570,10 @@ export default function AIAutomationPage() {
           </Reveal>
 
           {/* Automation illustration */}
-          <img src="/solutions/ai-automation-bottom.png" alt="AI Automation" className="mx-auto h-auto w-full max-w-[500px] rounded-xl shadow-2xl" />
+          <img 
+              src="https://res.cloudinary.com/fvsobjbv/image/upload/v1789726486/ai-automation-bottom.png"
+               alt="AI Automation"
+                className="mx-auto h-auto w-full max-w-[500px] rounded-xl shadow-2xl" />
         </div>
       </section>
     </div>

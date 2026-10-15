@@ -153,7 +153,7 @@ export default function AIWorkforcePage() {
   highlightedTitle="AI Workforce?"
   subtitle=""
   description="An AI workforce is a team of intelligent AI agents that work alongside your human team to automate tasks, handle operations, interact with customers, and drive growth — 24/7."
-  imageSrc="/ai-workforce/what-an-ai-workforce-hero.png"
+  imageSrc="https://res.cloudinary.com/fvsobjbv/image/upload/v1789724411/what-an-ai-workforce-hero.png"
   imageAlt="Professional working with her AI workforce"
   primaryLabel="See How It Works"
   primaryHref="/ai-workforce/how-it-works"
@@ -344,14 +344,14 @@ export default function AIWorkforcePage() {
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <Link
-                href="#"
+                href="/get-your-assessment"
                 className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-brand-dark shadow-lg transition-all hover:bg-blue-50"
               >
                 Book a Free Consultation
                 <ArrowRight size={16} />
               </Link>
               <Link
-                href="#"
+                href="/solutions"
                 className="inline-flex items-center rounded-full border border-white/30 px-7 py-3.5 text-sm font-semibold text-white transition-all hover:bg-white/10"
               >
                 Explore Our Solutions

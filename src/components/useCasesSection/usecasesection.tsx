@@ -56,7 +56,7 @@ export default function UseCasesSection({
 
   imageClassName = "",
 
-  imageHeight = "h-[108px]",
+  imageHeight = "h-[128px]",
 
   animation = true,
 }: UseCasesSectionProps) {
@@ -67,7 +67,7 @@ export default function UseCasesSection({
         {/* Section Header */}
         <div className="mx-auto max-w-2xl text-center">
           {eyebrow && (
-            <p className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-[#0876ed]">
+            <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0876ed]">
               {eyebrow}
             </p>
           )}
@@ -77,7 +77,7 @@ export default function UseCasesSection({
           </h2>
 
           {description && (
-            <p className="mt-3 text-[14px] text-slate-500 sm:text-[15px]">
+            <p className="mt-3 text-xs text-slate-500 sm:text-sm">
               {description}
             </p>
           )}
@@ -135,11 +135,11 @@ export default function UseCasesSection({
 
               {/* Content */}
               <div className="flex flex-1 flex-col px-4 pb-5 pt-8">
-                <h3 className="text-[14px] font-extrabold text-[#06235a]">
+                <h3 className="text-lg font-extrabold text-[#06235a]">
                   {item.title}
                 </h3>
 
-                <p className="mt-1.5 flex-1 text-[11.5px] leading-relaxed text-slate-500">
+                <p className="mt-1.5 flex-1 text-sm leading-relaxed text-slate-500">
                   {item.desc}
                 </p>
 
@@ -147,7 +147,7 @@ export default function UseCasesSection({
                 {showCta && (
                   <a
                     href={item.href || defaultHref}
-                    className="mt-4 inline-flex items-center gap-1.5 text-[12px] font-bold text-[#0876ed] transition-all group-hover:gap-2.5"
+                    className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-[#0876ed] transition-all group-hover:gap-2.5"
                   >
                     {item.ctaLabel || defaultCtaLabel}
 

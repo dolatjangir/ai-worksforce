@@ -7,17 +7,8 @@ import {
   Sparkles, Target, RefreshCw, Zap,
 } from "lucide-react";
 import AIWorkflowHero from "@/components/ai-workflow-hero/reusable-hero";
+import Link from "next/link";
 
-const NAV_LINKS = [
-  { label: "Home", href: "#" },
-  { label: "What is AIWorksForce?", href: "#" },
-  { label: "How it Works", href: "#" },
-  { label: "Our AI Workflow", href: "#", active: true },
-  { label: "Solutions", href: "#" },
-  { label: "Industries", href: "#" },
-  { label: "Resources", href: "#" },
-  { label: "About", href: "#" },
-];
 
 const PROCESS_STEPS = [
   { num: "01", title: "Understand", desc: "We analyze your business goals, challenges, and opportunities.", icon: Search, chip: "bg-[#e0e7ff] text-indigo-500", ring: "bg-indigo-50", iconColor: "text-indigo-500" },
@@ -57,7 +48,7 @@ export default function AiWorkflowPage() {
   highlightedTitle="AI WorkFlow"
   subtitle="AI agents, experts and operators"
   description="A structured, collaborative workflow where AI agents, human experts, and operators work together to turn your business goals into real results — faster, smarter, and at scale."
-  imageSrc="/ai-workforce/our-workforce-hero.png"
+  imageSrc="https://res.cloudinary.com/fvsobjbv/image/upload/v1789724405/our-workforce-hero.png"
   imageAlt="AI agents, experts and operators working together"
   primaryLabel="Book a Free Consultation"
   primaryHref="/get-your-assessment"
@@ -183,14 +174,14 @@ export default function AiWorkflowPage() {
           </p>
 
           <div className="relative mt-9 flex flex-wrap items-center justify-center gap-4">
-            <a href="#"
+            <Link href="/get-your-assessment"
               className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-bold text-heading shadow-xl transition hover:bg-blue-50">
               Book a Free Consultation <ArrowRight className="h-4 w-4" />
-            </a>
-            <a href="#"
+            </Link>
+            <Link href="/company/contact"
               className="inline-flex items-center gap-2 rounded-full border-2 border-white/40 px-7 py-3 text-sm font-bold text-white backdrop-blur transition hover:border-white hover:bg-white/10">
               Talk to Our Experts
-            </a>
+            </Link>
           </div>
 
           {/* handwritten note */}

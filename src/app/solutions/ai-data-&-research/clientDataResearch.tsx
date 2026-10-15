@@ -475,7 +475,7 @@ export default function AIDataResearchPage() {
   title="Turn Data Into"
   highlightedTitle="Real Opportunities."
   description="Get accurate insights, in-depth research, and actionable intelligence with AI-powered data & research solutions. We help you discover trends, validate ideas, and make smarter, faster decisions."
-  imageSrc="/solutions/ai-data-reasearch-hero.png"
+  imageSrc="https://res.cloudinary.com/fvsobjbv/image/upload/v1789726543/ai-data-reasearch-hero.png"
   imageAlt="AI Data & Research workspace and data intelligence"
   assessmentLabel="Get a Free Data Assessment"
  assessmentHref="/get-your-assessment"
@@ -637,7 +637,7 @@ export default function AIDataResearchPage() {
 
       <section
         id="how-it-works"
-        className="py-16 lg:py-20"
+        className="py-10"
         style={{
           background:
             "linear-gradient(180deg,#eef8ff 0%,#f8fbff 55%,#ffffff 100%)",
@@ -645,7 +645,7 @@ export default function AIDataResearchPage() {
       >
         <div className="mx-auto max-w-[1400px] px-5 lg:px-8">
           <Reveal className="mx-auto max-w-2xl text-center">
-            <p className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-[#0876ed]">
+            <p className="text-sm font-extrabold uppercase tracking-[0.2em] text-[#0876ed]">
               How It Works
             </p>
 
@@ -653,7 +653,7 @@ export default function AIDataResearchPage() {
               From Data to Decisions in 4 Simple Steps
             </h2>
 
-            <p className="mt-3 text-[14px] text-slate-500 sm:text-[15px]">
+            <p className="mt-3 text-xs text-slate-500 sm:text-sm">
               We make research simple, fast, and actionable.
             </p>
           </Reveal>
@@ -675,16 +675,16 @@ export default function AIDataResearchPage() {
                       <Icon name={step.icon} size={23} />
                     </div>
 
-                    <span className="absolute -right-1.5 -top-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-white text-[10px] font-extrabold text-slate-700 shadow-md">
+                    <span className="absolute -right-1.5 -top-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-white text-xs font-extrabold text-slate-700 shadow-md">
                       {step.number}
                     </span>
                   </div>
 
-                  <h3 className="mt-5 max-w-[200px] text-[15px] font-extrabold leading-snug text-[#06235a]">
+                  <h3 className="mt-5 max-w-[200px] text-lg font-extrabold leading-snug text-[#06235a]">
                     {step.title}
                   </h3>
 
-                  <p className="mt-2 max-w-[220px] text-[12px] leading-relaxed text-slate-500">
+                  <p className="mt-2 max-w-[220px] text-sm leading-relaxed text-slate-500">
                     {step.desc}
                   </p>
                 </div>
@@ -698,10 +698,10 @@ export default function AIDataResearchPage() {
           USE CASES
       ====================================================== */}
 
-      <section className="bg-white py-16 lg:py-20">
+      <section className="bg-white py-10">
         <div className="mx-auto max-w-[1400px] px-5 lg:px-8">
           <Reveal className="mx-auto max-w-2xl text-center">
-            <p className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-[#0876ed]">
+            <p className="text-sm font-extrabold uppercase tracking-[0.2em] text-[#0876ed]">
               Use Cases
             </p>
 
@@ -709,7 +709,7 @@ export default function AIDataResearchPage() {
               Research Solutions for Every Business
             </h2>
 
-            <p className="mt-3 text-[14px] text-slate-500 sm:text-[15px]">
+            <p className="mt-3 text-sm text-slate-500 sm:text-base">
               No matter your industry, our AI data & research solutions help
               you move faster and make better decisions.
             </p>
@@ -719,7 +719,7 @@ export default function AIDataResearchPage() {
             {industries.map((industry, index) => (
               <Reveal key={industry.title} delay={index * 60}>
                 <div className="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-[0_8px_30px_rgba(24,74,140,0.06)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_45px_rgba(24,74,140,0.12)]">
-                  <div className="relative h-[106px] overflow-hidden">
+                  <div className="relative h-[140px] overflow-hidden">
                     <img
                       src={industry.image}
                       alt={industry.title}
@@ -734,17 +734,17 @@ export default function AIDataResearchPage() {
                   </div>
 
                   <div className="flex flex-1 flex-col px-4 pb-5 pt-8">
-                    <h3 className="text-[14px] font-extrabold text-[#06235a]">
+                    <h3 className="text-lg font-extrabold text-[#06235a]">
                       {industry.title}
                     </h3>
 
-                    <p className="mt-1.5 flex-1 text-[11px] leading-relaxed text-slate-500">
+                    <p className="mt-1.5 flex-1 text-sm leading-relaxed text-slate-500">
                       {industry.desc}
                     </p>
 
                     <Link
                       href="/company/contact"
-                      className="mt-4 inline-flex items-center gap-1.5 text-[11px] font-bold text-[#0876ed]"
+                      className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-[#0876ed]"
                     >
                       {industry.title === "And More"
                         ? "Let's Talk"
@@ -785,11 +785,11 @@ export default function AIDataResearchPage() {
               </span>
 
               <div>
-                <div className="text-[22px] font-extrabold text-white">
+                <div className="text-2xl font-extrabold text-white">
                   {value}
                 </div>
 
-                <div className="text-[9px] font-medium text-slate-300 sm:text-[10px]">
+                <div className="text-sm font-medium text-slate-300 sm:text-base">
                   {label}
                 </div>
               </div>
@@ -805,7 +805,7 @@ export default function AIDataResearchPage() {
       <section className="bg-white py-16 lg:py-20">
         <div className="mx-auto grid max-w-[1400px] items-center gap-10 px-5 lg:grid-cols-[0.9fr_1.15fr] lg:gap-16 lg:px-8">
           <Reveal>
-            <span className="inline-flex rounded-full border border-[#0876ed]/20 bg-blue-50 px-3 py-1 text-[9px] font-extrabold uppercase tracking-[0.15em] text-[#0876ed]">
+            <span className="inline-flex rounded-full border border-[#0876ed]/20 bg-blue-50 px-3 py-1 text-xs font-extrabold uppercase tracking-[0.15em] text-[#0876ed]">
               Client Success
             </span>
 
@@ -837,7 +837,7 @@ export default function AIDataResearchPage() {
                 “
               </div>
 
-              <p className="relative text-[14px] leading-relaxed text-slate-600 sm:text-[15px]">
+              <p className="relative text-sm leading-relaxed text-slate-600 sm:text-lg">
                 <strong className="font-extrabold text-[#06235a]">
                   AIWorksForce helped us uncover market opportunities
                 </strong>{" "}
@@ -853,11 +853,11 @@ export default function AIDataResearchPage() {
                   </div>
 
                   <div>
-                    <div className="text-[13px] font-extrabold text-[#06235a]">
+                    <div className="text-[16px] font-extrabold text-[#06235a]">
                       Priya Sharma
                     </div>
 
-                    <div className="text-[10px] text-slate-500">
+                    <div className="text-[12px] text-slate-500">
                       CEO, GrowthPath Ventures
                     </div>
                   </div>
@@ -921,7 +921,10 @@ export default function AIDataResearchPage() {
           </Reveal>
 
           {/* CTA VISUAL */}
-        <img src="/solutions/ai-data-reasearch-bottom.png" alt="AI Data & Research" className="mx-auto h-auto w-full max-w-[500px] rounded-xl shadow-2xl" />
+        <img
+         src="https://res.cloudinary.com/fvsobjbv/image/upload/v1789726524/ai-data-reasearch-bottom.png" 
+        alt="AI Data & Research" 
+        className="mx-auto h-auto w-full max-w-[500px] rounded-xl shadow-2xl" />
         </div>
       </section>
     </main>

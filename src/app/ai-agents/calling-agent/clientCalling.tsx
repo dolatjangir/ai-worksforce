@@ -34,7 +34,7 @@ import {
   AudioWaveformIcon
 } from 'lucide-react';
 
-export default function AICallingAgentLanding() {
+export default function AICallsAgentLanding() {
   const [isVisible, setIsVisible] = useState(false);
   const [callStatus, setCallStatus] = useState<'idle' | 'connecting' | 'active' | 'ended'>('idle');
   const [callDuration, setCallDuration] = useState(0);
@@ -110,38 +110,38 @@ export default function AICallingAgentLanding() {
   };
 
   const stats = [
-    { value: '3×', label: 'More Conversations', subtext: 'vs manual dialing' },
-    { value: '85%', label: 'Answer Rate', subtext: 'Local presence AI' },
-    { value: '25hrs', label: 'Saved Weekly', subtext: 'Per sales rep' },
-    { value: '<2s', label: 'Response Time', subtext: 'Instant replies' },
+    { value: 'AI', label: 'Improve Calls Productivity', subtext: 'Automate calling workflows' },
+    { value: 'Live', label: 'Track Call Performance', subtext: 'Monitor calling outcomes' },
+    { value: 'Time', label: 'Save Time on Repetitive Calls', subtext: 'Reduce manual calling tasks' },
+    { value: 'Fast', label: 'Fast AI Call Responses', subtext: 'Support timely conversations' },
   ];
 
   const features = [
     {
       icon: <AudioWaveform className="w-8 h-8" />,
-      title: 'Human-Like Voice AI',
-      description: 'Advanced neural voices that pause, breathe, and adapt tone naturally. Prospects can\'t tell it\'s AI until you tell them.',
+      title: 'Human-Like AI Calls',
+      description: 'Deliver natural-sounding AI conversations to answer questions, share information, and support customer interactions.',
       stat: '99%',
       statLabel: 'Human Score'
     },
     {
       icon: <Target className="w-8 h-8" />,
-      title: 'Smart Call Routing',
-      description: 'AI qualifies leads in real-time, handles objections, and seamlessly transfers hot prospects to your team instantly.',
+      title: 'Smart Call Routing and Lead Qualification',
+      description: 'Route calls based on business rules and help direct customers or qualified prospects to the appropriate team.',
       stat: 'Real-Time',
       statLabel: 'Transfer'
     },
     {
       icon: <Globe className="w-8 h-8" />,
-      title: 'Global Local Presence',
-      description: 'Automatic local area code matching in 50+ countries. Increase answer rates by appearing as a trusted local caller.',
+      title: 'Local and Global Calls Support',
+      description: 'Support customer conversations across your target markets with calling workflows configured for your business needs.',
       stat: '50+',
       statLabel: 'Countries'
     },
     {
       icon: <Activity className="w-8 h-8" />,
-      title: 'Live Conversation IQ',
-      description: 'Real-time sentiment analysis, talk-to-listen ratios, and coaching prompts. Every call optimized for conversion.',
+      title: 'Real-Time Conversation Intelligence',
+      description: 'Support live conversations with AI-driven responses and context-aware interactions where supported by your system.',
       stat: 'Live',
       statLabel: 'Analytics'
     }
@@ -324,10 +324,10 @@ export default function AICallingAgentLanding() {
                       </h1>
               
                       <p className="text-lg sm:text-xl text-[#0057ad] mb-10 max-w-xl leading-relaxed font-light">
-                    Automate sales, support & follow-up calls with AI calling agents. Cut costs, respond 24/7 & scale conversations for your business. Book a free demo.
+                    Automate inbound and outbound calls with AI calling agents for business. Handle customer inquiries, qualify leads, follow up with prospects, and support appointment booking while reducing repetitive calling tasks.
                       <span className="text-[#0066cc] font-medium">
                           {" "}
-                        for your business. Book a free demo.
+                        Book a free demo.
                         </span>
                       </p>
               
@@ -338,12 +338,12 @@ export default function AICallingAgentLanding() {
                                         type="email" 
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}
-                                        placeholder="Enter your email"
+                                        placeholder="Enter your business email"
                                         className="w-full px-6 py-3 rounded-2xl bg-white border-2 border-[#99ccff] text-[#003871] placeholder:text-[#3399ff] focus:outline-none focus:border-[#0066cc] focus:ring-4 focus:ring-[#cce5ff] transition-all text-lg shadow-sm"
                                       />
                                     </div>
                                     <button className="px-4 py-2 rounded-2xl bg-[#0066cc] hover:bg-[#0057ad] text-white font-bold text-lg transition-all hover:scale-105 active:scale-95 shadow-xl shadow-[#cce5ff] flex items-center justify-center gap-2 group whitespace-nowrap">
-                                     Deploy Ai Caller
+                                     Book a Free Demo
                                       <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                     </button>
                                     
@@ -353,15 +353,15 @@ export default function AICallingAgentLanding() {
                       <div className="flex items-center gap-6 text-sm text-[#0066cc] flex-wrap">
                         <div className="flex items-center gap-2">
                           <CheckCircle2 className="w-4 h-4 text-[#0066cc]" />
-                          <span>Free 14-day trial</span>
+                          <span>Free 14-Day Trial</span>
                         </div>
                         <div className="flex items-center gap-2">
                           <CheckCircle2 className="w-4 h-4 text-[#0066cc]" />
-                          <span>No credit card</span>
+                          <span>No Credit Card Required</span>
                         </div>
                         <div className="flex items-center gap-2">
                           <CheckCircle2 className="w-4 h-4 text-[#0066cc]" />
-                          <span>5-min setup</span>
+                          <span>Quick Setup</span>
                         </div>
                       </div>
                     </div>
@@ -408,11 +408,11 @@ export default function AICallingAgentLanding() {
           <div className="text-center max-w-3xl mx-auto mb-20">
             <span className="inline-block text-sm font-medium text-[var(--color-primary-600)] uppercase tracking-widest mb-4">Capabilities</span>
             <h2 className="text-5xl lg:text-6xl font-bold mb-6 text-[var(--color-primary-900)]">
-              Voice AI That{' '}
-              <span className="text-gradient">Actually Works</span>
+              AI Calling Agents That{' '}
+              <span className="text-gradient">Work for Your Business</span>
             </h2>
             <p className="text-xl text-[var(--color-primary-700)]">
-              Advanced conversational AI built specifically for sales calls. Natural, persuasive, and relentlessly effective.
+              Use AI calling agents to support sales outreach, customer service, lead qualification, and follow-up conversations based on your business requirements.
             </p>
           </div>
 
@@ -443,8 +443,8 @@ export default function AICallingAgentLanding() {
           <div className="text-center mb-20">
             <span className="inline-block text-sm font-medium text-[var(--color-primary-600)] uppercase tracking-widest mb-4">How It Works</span>
             <h2 className="text-5xl lg:text-6xl font-bold mb-6 text-[var(--color-primary-900)]">
-              Deploy in{' '}
-              <span className="text-gradient">5 Minutes</span>
+              Get Your AI Calls Agent Started{' '}
+              <span className="text-gradient">in Simple Steps</span>
             </h2>
           </div>
 
@@ -457,19 +457,19 @@ export default function AICallingAgentLanding() {
                 step: '01',
                 icon: <Target className="w-6 h-6" />,
                 title: 'Upload Your Leads',
-                description: 'Import from CRM or CSV. The AI instantly enriches data and prioritizes based on fit and intent signals.'
+                description: 'Import eligible prospect or customer contact data and prepare your calling list.'
               },
               {
                 step: '02',
                 icon: <Mic className="w-6 h-6" />,
-                title: 'Train Your Voice',
-                description: 'Select from premium neural voices or clone your own. Set talking points, objections handling, and booking criteria.'
+                title: 'Configure Your AI Calls Agent',
+                description: 'Configure the agent’s voice, conversation instructions, and calling workflow to match your business needs.'
               },
               {
                 step: '03',
                 icon: <Phone className="w-6 h-6" />,
-                title: 'Start Calling',
-                description: 'The AI dials, converses, qualifies, and books meetings 24/7. You get notified only for qualified opportunities.'
+                title: 'Start Your AI Calls Campaign',
+                description: 'Launch your configured calling workflow and monitor call outcomes, follow-ups, and performance.'
               }
             ].map((item, idx) => (
               <div key={idx} className="relative group">
@@ -497,17 +497,17 @@ export default function AICallingAgentLanding() {
           <div className="text-center mb-20">
             <span className="inline-block text-sm font-medium text-[var(--color-primary-600)] uppercase tracking-widest mb-4">Voice Technology</span>
             <h2 className="text-5xl lg:text-6xl font-bold mb-6 text-[var(--color-primary-900)]">
-              Why Our AI Voice{' '}
-              <span className="text-gradient">Converts Better</span>
+              Why AI Calling Agents Support{' '}
+              <span className="text-gradient">Better Customer Conversations</span>
             </h2>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: <AudioWaveformIcon className="w-8 h-8" />, title: 'Neural TTS', desc: 'ElevenLabs-powered voices with natural cadence, emotion, and breathing', color: 'from-blue-500 to-blue-700' },
-              { icon: <Activity className="w-8 h-8" />, title: 'Real-Time Adaptation', desc: 'AI adjusts tone and pace based on prospect responses and sentiment', color: 'from-green-500 to-emerald-700' },
-              { icon: <Shield className="w-8 h-8" />, title: 'Compliance Ready', desc: 'Built-in TCPA, GDPR, and DNC list compliance with automatic opt-out handling', color: 'from-purple-500 to-violet-700' },
-              { icon: <BarChart3 className="w-8 h-8" />, title: 'Call Analytics', desc: 'Transcription, sentiment analysis, and conversion tracking for every call', color: 'from-orange-500 to-amber-700' },
+              { icon: <AudioWaveformIcon className="w-8 h-8" />, title: 'Natural-Sounding AI Voice', desc: 'Use natural-sounding speech to support clear and engaging customer conversations.', color: 'from-blue-500 to-blue-700' },
+              { icon: <Activity className="w-8 h-8" />, title: 'Real-Time Conversation Adaptation', desc: 'Adapt responses to the conversation context based on the agent’s configured capabilities.', color: 'from-green-500 to-emerald-700' },
+              { icon: <Shield className="w-8 h-8" />, title: 'Calls Compliance and Consent', desc: 'Configure calling workflows to follow applicable consent, privacy, and telemarketing requirements.', color: 'from-purple-500 to-violet-700' },
+              { icon: <BarChart3 className="w-8 h-8" />, title: 'AI Calls Analytics', desc: 'Review call outcomes and available performance data to identify opportunities for improvement.', color: 'from-orange-500 to-amber-700' },
             ].map((feature, idx) => (
               <div key={idx} className="glass rounded-3xl p-6 hover:bg-white transition-all duration-500 group border border-[var(--color-primary-200)] hover:border-[var(--color-primary-400)] shadow-sm hover:shadow-lg text-center">
                 <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${feature.color} flex items-center justify-center text-white mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform`}>
@@ -527,8 +527,8 @@ export default function AICallingAgentLanding() {
           <div className="text-center mb-20">
             <span className="inline-block text-sm font-medium text-[var(--color-primary-600)] uppercase tracking-widest mb-4">Results</span>
             <h2 className="text-5xl lg:text-6xl font-bold mb-6 text-[var(--color-primary-900)]">
-              Sales Teams{' '}
-              <span className="text-gradient">Love the Voice</span>
+              Help Sales Teams Manage Calls{' '}
+              <span className="text-gradient">More Efficiently</span>
             </h2>
           </div>
 
@@ -567,8 +567,8 @@ export default function AICallingAgentLanding() {
         <div className="max-w-6xl mx-auto text-center">
           <span className="inline-block text-sm font-medium text-[var(--color-primary-600)] uppercase tracking-widest mb-4">Connected</span>
           <h2 className="text-5xl lg:text-6xl font-bold mb-16 text-[var(--color-primary-900)]">
-            Works With Your{' '}
-            <span className="text-gradient">Stack</span>
+            AI Calling Agents That Fit Your Business{' '}
+            <span className="text-gradient">Workflow</span>
           </h2>
 
           <div className="glass-strong rounded-3xl p-12 relative overflow-hidden border border-[var(--color-primary-200)] shadow-lg">
@@ -616,55 +616,33 @@ export default function AICallingAgentLanding() {
               </div>
 
               <h2 className="text-4xl lg:text-6xl font-bold mb-6 text-[var(--color-primary-900)]">
-                Let AI Handle Your{' '}
-                <span className="text-gradient">Calling</span>
+                Let AI Calling Agents Handle Your{' '}
+                <span className="text-gradient">Business Calls</span>
               </h2>
               
               <p className="text-xl text-[var(--color-primary-700)] mb-10 max-w-2xl mx-auto">
-                Join 1,000+ sales teams using AI voice to book more meetings. 
-                Start with 100 free calls.
+                Explore how AI calling agents can support customer inquiries, sales outreach, lead qualification, and follow-ups for your business. 
+                Explore how AI calling agents can support your business calling workflows.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto mb-8">
                 <input 
                   type="email" 
-                  placeholder="your@email.com"
+                  placeholder="Enter your business email"
                   className="flex-1 px-6 py-4 rounded-xl bg-white border-2 border-[var(--color-primary-200)] text-[var(--color-primary-900)] placeholder:text-[var(--color-primary-400)] focus:outline-none focus:border-[var(--color-primary-600)] focus:ring-4 focus:ring-[var(--color-primary-100)] transition-all shadow-sm"
                 />
                 <button className="px-8 py-4 rounded-xl bg-[var(--color-primary-600)] hover:bg-[var(--color-primary-700)] text-white font-bold transition-all hover:scale-105 active:scale-95 shadow-xl shadow-[var(--color-primary-200)] whitespace-nowrap">
-                  Start Free Trial
+                  Start Your Free Trial
                 </button>
               </div>
 
               <p className="text-sm text-[var(--color-primary-600)]">
-                100 free calls • No credit card • Cancel anytime
+                100 free calls • No Credit Card Required • Cancel anytime
               </p>
             </div>
           </div>
         </div>
       </section>
-
-      {/* FOOTER */}
-      <footer className="relative py-12 px-4 border-t border-[var(--color-primary-200)] bg-white/50">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[var(--color-primary-500)] to-[var(--color-primary-700)] flex items-center justify-center shadow-md">
-              <Phone className="w-5 h-5 text-white" />
-            </div>
-            <span className="font-bold text-xl text-[var(--color-primary-900)]">AICaller</span>
-          </div>
-          
-          <div className="flex gap-8 text-sm text-[var(--color-primary-600)]">
-            <a href="#" className="hover:text-[var(--color-primary-900)] transition-colors">Privacy</a>
-            <a href="#" className="hover:text-[var(--color-primary-900)] transition-colors">Terms</a>
-            <a href="#" className="hover:text-[var(--color-primary-900)] transition-colors">Contact</a>
-          </div>
-
-          <div className="text-sm text-[var(--color-primary-500)]">
-            © 2026 AICaller AI
-          </div>
-        </div>
-      </footer>
     </main>
   );
 }

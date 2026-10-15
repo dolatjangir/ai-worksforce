@@ -216,10 +216,10 @@ export default function Home() {
       ========================================================== */}
       <WorkforceHero
          backgroundImages={{
-    laptop: "/hero-resolution/hero-laptop-2560x1600.png",
-    desktop: "/hero-resolution/hero-desktop-2560x1440.png",
-    ultrawide: "/hero-resolution/hero-ultrawide-3360x1440.png",
-    digitalBoard: "/hero-resolution/hero-digital-board-3840x2160.png",
+    laptop: "https://res.cloudinary.com/fvsobjbv/image/upload/v1792043182/hero-laptop-2560x1600.png",
+    desktop: "https://res.cloudinary.com/fvsobjbv/image/upload/v1792043182/hero-desktop-2560x1440.png",
+    ultrawide: "https://res.cloudinary.com/fvsobjbv/image/upload/v1792043182/hero-ultrawide-3360x1440.png",
+    digitalBoard: "https://res.cloudinary.com/fvsobjbv/image/upload/v1792043181/hero-digital-board-3840x2160.png",
   }}
         backgroundAlt="AI WorksForce team and AI automation"
         backgroundPosition="center right"
@@ -228,87 +228,7 @@ export default function Home() {
         primaryHref="/get-your-assessment"
         demoHref="https://res.cloudinary.com/fvsobjbv/video/upload/v1791968864/home-hero-eng-voice-vid.mp4"
       />
-            {/* <HeroSection
-        badge="Your Outsource AI Department"
-        title="Build Your AI Workforce"
-        highlightedTitle="Without Building an AI Team."
-        description={`We analyze your business and processes, identify the right data,
-AI tools, and AI agents, and then build and manage a complete
-AI-powered workforce for you from our India delivery center.`}
-        tags={defaultHeroTags}
-        ctas={defaultHeroCTAs}
-        bottomTagline="From business analysis to daily operations — AIWorkForce manages it for you."
-        image={{
-          src: "/aiworkforce-hero-img1.png",
-          alt: "AI workforce team working together",
-          priority: true,
-        }}
-        quote={{
-          lines: ["Your extended", "team in India."],
-        }}
-        stats={{
-          value: "150+",
-          label: "Delivery Seats",
-          location: "Jaipur, India",
-        }}
-      /> */}
-      {/* =========================================================
-          STATS STRIP
-      ========================================================== */}
-    {/* <section className="border-y border-slate-200 bg-white">
-  <div className="mx-auto grid max-w-[1500px] grid-cols-2 lg:grid-cols-5">
-    {[
-      {
-        icon: Users,
-        number: "100+",
-        text: "Delivery Capacity",
-      },
-      {
-        icon: Settings,
-        number: "AI + Human",
-        text: "Operations Model",
-      },
-      {
-        icon: Clock3,
-        number: "24/7",
-        text: "Scalable Operations",
-      },
-      {
-        icon: Cpu,
-        number: "AI Tools + Agents",
-        text: "Technology Enabled",
-      },
-      {
-        icon: Globe2,
-        number: "Global",
-        text: "Clients & Partners",
-      },
-    ].map((item) => {
-      const Icon = item.icon;
-
-      return (
-        <div
-          key={item.number}
-          className="flex items-center gap-3 border-r border-slate-100 px-4 py-5 even:border-r-0 last:border-r-0 sm:px-6 sm:py-7 [&:nth-child(-n+4)]:border-b lg:border-r lg:even:border-r lg:[&:nth-child(-n+4)]:border-b-0 lg:px-6"
-        >
-          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#edf7ff] text-[#0876ed] sm:h-14 sm:w-14">
-            <Icon size={24} />
-          </div>
-
-          <div>
-            <div className="text-base font-extrabold text-[#071744] sm:text-lg">
-              {item.number}
-            </div>
-            <div className="text-xs font-medium text-slate-500">
-              {item.text}
-            </div>
-          </div>
-        </div>
-      );
-    })}
-  </div>
-</section> */}
-
+       
       {/* =========================================================
           SERVICES
       ========================================================== */}
@@ -830,7 +750,7 @@ Turn Data Into Business Opportunities         </h2>
     <div className="relative min-h-[220px] overflow-hidden sm:min-h-[260px] lg:min-h-[145px]">
       {/* Full-cover image */}
       <img
-        src="https://img.magnific.com/premium-photo/office-workers-smiling-working_658385-1366.jpg?semt=ais_hybrid&w=740&q=80"
+        src="https://res.cloudinary.com/fvsobjbv/image/upload/v1792044613/office-workers.avif"
         alt="Jaipur"
         className="absolute inset-0 h-full w-full object-cover object-center"
       />

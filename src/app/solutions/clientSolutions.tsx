@@ -46,6 +46,7 @@ const solutions = [
     title: "AI Business Assessment",
     description:
       "Understand your business needs and get a customized AI roadmap.",
+      href:"/solutions/ai-business-assessment",
   },
   {
     icon: GraduationCap,
@@ -54,6 +55,7 @@ const solutions = [
     title: "AI Workforce Solutions",
     description:
       "Expert-led teams with AI tools and trained operators to run your operations.",
+      href:"/solutions/ai-workforce",
   },
   {
     icon: Bot,
@@ -62,6 +64,7 @@ const solutions = [
     title: "AI Automation",
     description:
       "Automate repetitive work, processes and business workflows.",
+      href:"/solutions/ai-automation",
   },
   {
     icon: Database,
@@ -70,6 +73,7 @@ const solutions = [
     title: "AI Data & Research",
     description:
       "Data mining, enrichment, research and business intelligence operations.",
+      href:"/solutions/ai-data-&-research",
   },
   {
     icon: Headset,
@@ -78,6 +82,7 @@ const solutions = [
     title: "AI Customer Operations",
     description:
       "Support, CRM and customer engagement operations.",
+      href:"/solutions/ai-customer-operations",
   },
   {
     icon: Rocket,
@@ -86,6 +91,7 @@ const solutions = [
     title: "AI Sales & Outreach",
     description:
       "Lead generation, outreach and pipeline management.",
+      href:"/solutions/ai-sales-&-outreach",
   },
 ];
 
@@ -177,7 +183,7 @@ export default function SolutionsPage() {
           </div>
 
           <div className="grid gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
-            {solutions.map(({ icon: Icon, image, title, description }) => (
+            {solutions.map(({ icon: Icon, image, title, description, href }) => (
               <div key={title} className="group">
                 <div className="mb-5 overflow-hidden rounded-xl">
                   <img
@@ -197,11 +203,12 @@ export default function SolutionsPage() {
                     <p className="mt-1 text-sm leading-relaxed text-slate-500">
                       {description}
                     </p>
-                    <Link href="/company/about-aiworksforce"></Link>
+                    <Link href={href}>
                     <button className="mt-3 flex items-center gap-1.5 text-sm font-bold text-blue-600 transition hover:gap-2.5">
                       Learn More
                       <ArrowRight className="h-4 w-4" />
                     </button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -263,9 +270,11 @@ export default function SolutionsPage() {
              Get AI Assessment
               <ArrowRight className="h-4 w-4" />
             </button></Link>
+            <a href="tel:+919649902000">
             <button className="rounded-lg border border-white/40 px-6 py-3.5 text-sm font-bold text-white transition hover:bg-white/10">
               Talk to Our Team
             </button>
+            </a> 
           </div>
         </div>
       </section>

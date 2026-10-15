@@ -244,7 +244,7 @@ function FooterColumn({
 
       {/* View all */}
       {footerLink && (
-        <a
+        <Link
           href={footerHref}
           className="mt-5 inline-flex items-center gap-1.5 text-[15px] font-medium text-[#A26FFF] transition-colors duration-200 hover:text-[#C09AFF]"
         >
@@ -254,7 +254,7 @@ function FooterColumn({
             className="h-[17px] w-[17px]"
             strokeWidth={2}
           />
-        </a>
+        </Link>
       )}
     </div>
   );
@@ -403,7 +403,7 @@ export default function Footer() {
                 can work for your business.
               </p>
 
-              <a
+              <Link
                 href="/get-your-assessment"
                 className="
                   mt-3
@@ -435,7 +435,7 @@ export default function Footer() {
                   className="h-[21px] w-[21px] shrink-0"
                   strokeWidth={2}
                 />
-              </a>
+              </Link>
             </div>
 
             {/* =====================================================

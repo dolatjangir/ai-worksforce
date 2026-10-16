@@ -39,6 +39,7 @@ import {
 import WorkforceHero from "./Hero/Hero";
 import BusinessApproach from "./BusinessApproach";
 import Link from "next/link";
+import DiwaliDecoration from "./DiwaliDecoration";
 
 
 export default function Home() {
@@ -209,6 +210,9 @@ export default function Home() {
   ];
 
   return (
+    <>
+    
+
     <main className="min-h-screen overflow-x-hidden bg-white text-[#071744]">
    
       {/* =========================================================
@@ -813,5 +817,6 @@ Turn Data Into Business Opportunities         </h2>
 
     
     </main>
+        </>
   );
 }

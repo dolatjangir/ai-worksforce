@@ -36,6 +36,7 @@ import {
 } from 'lucide-react';
 
 import Link from 'next/link'
+import FestiveHeader from './FestiveHeader';
 
 interface SubMenuItem {
   icon?: React.ReactNode;
@@ -633,6 +634,8 @@ function Header() {
   const activeItem = navItems.find(item => item.label === activeDropdown);
 
   return (
+    <>
+    <FestiveHeader />
     <div className=''>
             {/* =========================================================
                 TOP UTILITY BAR
@@ -1067,6 +1070,7 @@ function Header() {
         </div>
       </nav>
     </div>
+    </>
   )
 }
 

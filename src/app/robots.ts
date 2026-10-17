@@ -1,7 +1,7 @@
 
 import type { MetadataRoute } from "next";
 
-// AI WorksForce - https://aiworksforce.com/
+// AI WorksForce - https://www.aiworksforce.com/
 // Public website crawling policy
 
 export default function robots(): MetadataRoute.Robots {
@@ -12,6 +12,6 @@ export default function robots(): MetadataRoute.Robots {
     },
 
     // Sitemap directive
-    sitemap: "https://aiworksforce.com/sitemap.xml",
+    sitemap: "https://www.aiworksforce.com/sitemap.xml",
   };
 }

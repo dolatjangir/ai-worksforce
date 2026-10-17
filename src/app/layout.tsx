@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description: "AI-powered worksForce platform",
 
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_APP_URL || "https://aiworksforce.com"
+    process.env.NEXT_PUBLIC_APP_URL || "https://www.aiworksforce.com"
   ),
 
   verification: {

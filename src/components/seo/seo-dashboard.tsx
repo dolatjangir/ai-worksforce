@@ -567,7 +567,7 @@ function PreviewPanel({
               </div>
               <div className="min-w-0">
                 <p className="text-xs text-[var(--color-text-primary)] font-medium">aiworksforce</p>
-                <p className="text-xs text-green-700 truncate">{formData.canonicalUrl || 'https://aiworksforce.com'}{formData.url}</p>
+                <p className="text-xs text-green-700 truncate">{formData.canonicalUrl || 'https://www.aiworksforce.com'}{formData.url}</p>
               </div>
             </div>
             <h5 className="text-[#1a0dab] text-base font-medium mb-1 hover:underline cursor-pointer line-clamp-1">
@@ -1859,7 +1859,7 @@ if (!formData.keywords?.length) {
   {/* === AI GENERATE PANEL — INSERTED HERE === */}
   {/* <AIGeneratePanel
     pageName={formData.pageName || ''}
-    canonicalUrl={formData.canonicalUrl || 'https://aiworksforce.com'}
+    canonicalUrl={formData.canonicalUrl || 'https://www.aiworksforce.com'}
     onGenerated={(data: SEOPromptOutput) => {
       setFormData(prev => ({
         ...prev,

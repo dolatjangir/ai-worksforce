@@ -1,7 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
-import PhoneInput from "react-phone-number-input";
+import PhoneInput, {
+  formatPhoneNumberIntl,
+} from "react-phone-number-input";
 import type { Value } from "react-phone-number-input";
 /* =========================================================
    INLINE ICONS
@@ -283,7 +285,7 @@ const handleSubmit = async (
   const payload = {
     name: String(formData.get("fullName") || "").trim(),
     email: String(formData.get("email") || "").trim(),
-     phone: phone ?? "",
+   phone: phone ? formatPhoneNumberIntl(phone) : "",
     useCase: String(formData.get("useCase") || "").trim(),
     companyName: String(formData.get("company") || "").trim(),
     bio: String(formData.get("goals") || "").trim(),

@@ -245,26 +245,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified,
       priority: 0.64,
     },
-    {
-      url: "https://www.aiworksforce.com/company/careers/apply-now?job=ai-ml-engineer",
-      lastModified,
-      priority: 0.64,
-    },
-    {
-      url: "https://www.aiworksforce.com/company/careers/apply-now?job=ai-operator",
-      lastModified,
-      priority: 0.64,
-    },
-    {
-      url: "https://www.aiworksforce.com/company/careers/apply-now?job=ai-specialist",
-      lastModified,
-      priority: 0.64,
-    },
-    {
-      url: "https://www.aiworksforce.com/company/careers/apply-now?job=digital-marketing-specialist",
-      lastModified,
-      priority: 0.64,
-    },
+   
     {
       url: "https://www.aiworksforce.com/company/our-team",
       lastModified,

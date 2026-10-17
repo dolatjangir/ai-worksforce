@@ -579,7 +579,7 @@ export default function ResourcesPage() {
   title="AI Workforce"
   highlightedTitle="Guides"
   description="Step-by-step resources, expert insights, and real-world frameworks to make AI work for your business."
-  image="/resources-images/ai-workforce-guide-resources-hero.png"
+  image="https://res.cloudinary.com/fvsobjbv/image/upload/v1792218605/ai-workforce-guide-resources-hero.png"
   imageAlt="Professional learning AI workflows"
   primaryAction={{
     label: "Browse All Guides",

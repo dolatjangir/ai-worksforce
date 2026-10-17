@@ -74,22 +74,22 @@ const leadership = [
   {
     name: "Sharan Goyal",
     role: "Founder & CEO",
-    image: "/management-team/founder-&-CEO.jpeg",
+    image: "https://res.cloudinary.com/fvsobjbv/image/upload/v1792220029/founder-_-CEO.jpg",
   },
   {
     name: "Saroj Goyal",
     role: "Director",
-    image: "/management-team/Director.jpeg",
+    image: "https://res.cloudinary.com/fvsobjbv/image/upload/v1792220023/Director.jpg",
   },
   {
     name: "Adarsh Pathak",
     role: "HR & Admin",
-    image: "/management-team/HR-&-admin.jpeg",
+    image: "https://res.cloudinary.com/fvsobjbv/image/upload/v1792220032/HR-_-admin.jpg",
   },
   {
     name: "Rajneesh Pandey",
     role: "Operation Manager",
-    image: "/management-team/operation-oprations.jpeg",
+    image: "https://res.cloudinary.com/fvsobjbv/image/upload/v1792220034/operation-oprations.jpg",
   },
 ];
 
@@ -97,33 +97,33 @@ const teamMembers = [
    {
     name: "Farazuddin",
     role: "MERN stack developer",
-    image: "/management-team/faraz-developer.jpeg",
+    image: "https://res.cloudinary.com/fvsobjbv/image/upload/v1792220026/faraz-developer.jpg",
   },
   {
     name: "Dolat Jangir",
     role: "MERN stack developer",
-    image: "/management-team/dolat-developer.png",
+    image: "https://res.cloudinary.com/fvsobjbv/image/upload/v1792220025/dolat-developer.png",
   },
   {
     name: "Pooja Bangrawa",
     role: "AI Automation",
-    image: "/management-team/ai-ml-seniorr.jpeg",
+    image: "https://res.cloudinary.com/fvsobjbv/image/upload/v1792220017/ai-ml-seniorr.jpg",
   },
   {
     name: "Anushka Jangid",
     role: "AI Researcher",
-    image: "/management-team/ai-ml-junior.jpeg",
+    image: "https://res.cloudinary.com/fvsobjbv/image/upload/v1792220017/ai-ml-junior.jpg",
   },
  
   {
     name: "Ankita Soni",
     role: "Data Analyst",
-    image: "/management-team/data-anylist.jpeg",
+    image: "https://res.cloudinary.com/fvsobjbv/image/upload/v1792220022/data-anylist.jpg",
   },
   {
-    name: "Harshita",
-    role: "Business Analyst",
-    image: "/management-team/data-anylist-junior.jpeg",
+    name: "Syed Masood Alam",
+    role: "DIgital Marketing & SEO Expert",
+    image: "https://res.cloudinary.com/fvsobjbv/image/upload/v1792220035/seo-manager.jpg",
   }
   
   
@@ -258,7 +258,7 @@ export default function OurTeamPage() {
   title="Meet AI"
   highlightedTitle="WorksForce Team"
   description="A passionate team of AI experts, innovators, and problem-solvers working together to help businesses build a smarter, more efficient tomorrow."
-  image="/company-images/careers-company-hero.png"
+  image="https://res.cloudinary.com/fvsobjbv/image/upload/v1789726369/careers-company-hero.png"
   imageAlt="AI WorksForce team"
   primaryAction={{
     label: "Join Our Journey",
@@ -417,7 +417,7 @@ export default function OurTeamPage() {
           <div className="grid gap-5 sm:grid-cols-[1fr_auto] sm:items-center">
             <div className="relative overflow-hidden rounded-xl">
               <img
-                src="/company-images/our-team-company-bottom.png"
+                src="https://res.cloudinary.com/fvsobjbv/image/upload/v1789726876/our-team-company-bottom.png"
                 alt="AI WorksForce team culture"
                 className="aspect-[1.3/1] w-full object-cover"
               />
@@ -491,7 +491,7 @@ export default function OurTeamPage() {
           {/* Person */}
 
           <img
-            src="/management-team/data-analyst-testimonial1.jpeg"
+            src="https://res.cloudinary.com/fvsobjbv/image/upload/v1792220021/data-analyst-testimonial1.jpg"
             alt="Ankita Soni"
             className="size-20 rounded-full border-4 border-white object-cover shadow-md sm:size-24"
           />

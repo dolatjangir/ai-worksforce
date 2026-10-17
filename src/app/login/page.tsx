@@ -608,7 +608,7 @@ const featureSlides = [
 
   <img
 
-    src="/login-left-img.png"
+    src="https://res.cloudinary.com/fvsobjbv/image/upload/v1792221299/login-left-img.png"
 
     alt="login-left-img"
 

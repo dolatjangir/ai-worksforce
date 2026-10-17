@@ -317,7 +317,7 @@ function Hero() {
       highlightedTitle="Marketing"
       subtitle="Create. Optimize. Engage. Grow."
       description="Leverage AI to plan, create, optimize, and distribute high-quality content at scale. From blogs and social media to emails and landing pages — we help you tell your brand story, drive engagement, and generate real business results."
-      imageSrc="/digital-marketing/ai-content-marketing-hero.png"
+      imageSrc="https://res.cloudinary.com/fvsobjbv/image/upload/v1792217262/ai-content-marketing-hero.png"
       imageAlt="Content marketing professional using AI"
       primaryLabel="Book a Free Consultation"
       primaryHref="/get-your-assessment"

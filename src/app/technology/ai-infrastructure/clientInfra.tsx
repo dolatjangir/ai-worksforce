@@ -207,7 +207,7 @@ function LogoStrip() {
 
 export default function AIInfrastructurePage() {
   const [menuOpen, setMenuOpen] = useState(false);
- const heroImageSrc = "/technology/ai-infrastructure-hero.png";
+ const heroImageSrc = "https://res.cloudinary.com/fvsobjbv/image/upload/v1792218036/ai-infrastructure-hero.png";
   return (
     <main className="min-h-screen overflow-x-hidden bg-white font-sans text-brand-dark">
   

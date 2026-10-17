@@ -165,80 +165,7 @@ const navItems: NavItem[] = [
       }
     }
   },
-  // {
-  //   label: "AI Agents",
-  //   href: "#ai-agents",
-  //   hasDropdown: true,
-  //   dropdownContent: {
-  //     sections: [
-  //       {
-  //         items: [
-  //           {
-  //             icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335520/img-1_nz99v7.png" className="max-w-12 max-h-12" />,
-  //             title: "AI Lead Qualification Agent",
-  //             href: "/ai-agents/lead-qualifiction-agent"
-  //           },
-  //           {
-  //             icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335520/img-2_l1xdll.png" className="max-w-12 max-h-12" />,
-  //             title: "AI Property Matching Agent",
-  //             href: "/ai-agents/property-maching-agent",
-  //             badge: "AI"
-  //           },
-  //           {
-  //             icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335520/img-3_scja92.png" className="max-w-12 max-h-12" />,
-  //             title: "Lead Capture Agent",
-  //             href: "/ai-agents/lead-capture-agent"
-  //           },
-  //           {
-  //             icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335521/img-4_damgxf.png" className="max-w-12 max-h-12" />,
-  //             title: "AI Content Creation Agent",
-  //             href: "/ai-agents/content-creation-agent"
-  //           },
-  //           {
-  //             icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335553/img-555_kabvyd.png" className="max-w-12 max-h-12" />,
-  //             title: "AI  Follow-Up Agent",
-  //             href: "/ai-agents/follow-up-agent",
-  //             badge: "AI"
-  //           },
-  //         ]
-  //       },
-  //       {
-  //         items: [
-  //           {
-  //             icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335521/img-6_mky5rb.png" className="max-w-12 max-h-12" />,
-  //             title: "AI Calling Agent",
-  //             href: "/ai-agents/calling-agent"
-  //           },
-  //           {
-  //             icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335523/img-7_xjwzbl.png" className="max-w-12 max-h-12" />,
-  //             title: "AI Campaign Automation Agent",
-  //             href: "/ai-agents/campaign-automation"
-  //           },
-  //           {
-  //             icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335552/img-8_twulvb.png" className="max-w-12 max-h-12" />,
-  //             title: "Data Mining Agent",
-  //             href: "/ai-agents/data-mining-agent"
-  //           },
-  //           {
-  //             icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335553/img-9_i1wlut.png" className="max-w-12 max-h-12" />,
-  //             title: "Social Media Agent",
-  //             href: "/ai-agents/social-media-agent"
-  //           },
-  //           {
-  //             icon: <img src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774335553/img-10_ajsusz.png" className="max-w-12 max-h-12 rounded-xl" />,
-  //             title: "AI SEO Content Agent",
-  //             href: "/ai-agents/seo-content-agent"
-  //           },
-  //         ]
-  //       }
-  //     ],
-  //     footer: {
-  //       text: "See all features",
-  //       link: "Explore",
-  //       href: "/explore-ai-agent"
-  //     }
-  //   }
-  // },
+ 
    {
     label: "Products",
     href: "#products",
@@ -668,7 +595,7 @@ function Header() {
               <div
                 className=" flex items-center justify-center "
               >
-                <Link href="/">  <img width={220} height={150} src="/aiworksforce-logo.png" alt="aiworksforce"/></Link>
+                <Link href="/">  <img width={220} height={150} src="https://res.cloudinary.com/fvsobjbv/image/upload/v1789723551/aiworksforce-logo.png" alt="aiworksforce"/></Link>
               </div>
             </div>
 
@@ -934,7 +861,7 @@ function Header() {
           `}
         >
           <div className='flex justify-between items-center border-b border-gray-100 px-4 py-3'>
-            <Link href="/">  <img width={200} height={200} src="/aiworksforce-logo.png" /></Link>
+            <Link href="/">  <img width={200} height={200} src="https://res.cloudinary.com/fvsobjbv/image/upload/v1789723551/aiworksforce-logo.png" /></Link>
             <div onClick={() => {
               setIsMenuOpen(!isMenuOpen)
               setOpenMobileItem(null)

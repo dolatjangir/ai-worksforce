@@ -250,7 +250,7 @@ function BrandLogo({ name, className }: { name: string; className: string }) {
 
 export default function IntegrationsPage() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const heroImageSrc = "/technology/Integrations-hero.png";
+  const heroImageSrc = "https://res.cloudinary.com/fvsobjbv/image/upload/v1792218036/Integrations-hero.png";
   return (
     <main className="min-h-screen overflow-x-hidden bg-white font-sans text-brand-dark">
    

@@ -174,7 +174,7 @@ function MiniMetric({
 
 export default function TechnologyPage() {
   const [menuOpen, setMenuOpen] = useState(false);
- const heroImageSrc = "/technology/technology-hero.png";
+ const heroImageSrc = "https://res.cloudinary.com/fvsobjbv/image/upload/v1792218037/technology-hero.png";
   return (
     <main className="min-h-screen overflow-x-hidden bg-white font-sans text-brand-dark">
   

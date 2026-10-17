@@ -214,7 +214,7 @@ export default function AISEOPage() {
   highlightedTitle="AI SEO"
   subtitle="Smarter SEO. Real business growth."
   description="Use the power of AI to create strategies that are based on data automate the work of making content and get better rankings with less effort. Let AI do the work while you focus on growing your business."
-  imageSrc="/digital-marketing/ai-seo-hero.png"
+  imageSrc="https://res.cloudinary.com/fvsobjbv/image/upload/v1792217263/ai-seo-hero.png"
   imageAlt="Professional using AI SEO"
   primaryLabel="Book a consultation"
   primaryHref="/get-your-assessment"
@@ -629,7 +629,7 @@ export default function AISEOPage() {
               "
             >
               {/* Grid */}
-        <img src="/digital-marketing/ai-seo-bottom.png" alt="AI SEO Graphic" className="w-full h-full object-cover" />
+        <img src="https://res.cloudinary.com/fvsobjbv/image/upload/v1792217263/ai-seo-bottom.png" alt="AI SEO Graphic" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>

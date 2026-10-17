@@ -360,7 +360,7 @@ function Hero() {
   highlightedTitle="Social Media"
   subtitle="Plan. Create. Post. Engage. Grow."
   description="AI takes care of your social presence. You take care of your business. From content creation and scheduling to engagement and performance tracking — our AI-powered social media solutions help you build a stronger brand and drive real results."
-  imageSrc="/digital-marketing/ai-social-marketing-hero.png"
+  imageSrc="https://res.cloudinary.com/fvsobjbv/image/upload/v1792217263/ai-social-marketing-hero.png"
   imageAlt="Social media professional working with AI"
   primaryLabel="Book a Free Consultation"
   primaryHref="/get-your-assessment"

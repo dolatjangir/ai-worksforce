@@ -335,7 +335,7 @@ export default function ResourcesPage() {
   title="Resources for a"
   highlightedTitle="Smarter Tomorrow"
   description="Explore our collection of guides, case studies, blog posts, and more to see how AI can change your business."
-  image="/resources-images/resources-page-hero.png"
+  image="https://res.cloudinary.com/fvsobjbv/image/upload/v1792218611/resources-page-hero.png"
   imageAlt="AI WorksForce resources"
   primaryAction={{
     label: "Explore All Resources",

@@ -544,7 +544,7 @@ export default function DigitalMarketingGuidesPage() {
   title="AI Digital"
   highlightedTitle="Marketing Guides"
   description="guides, strategies, and frameworks to help you use AI in digital marketing and reach clear business growth. From creating content to paid ads, SEO, and analysis. Look at resources to market smarter, faster, and more effectively with AI."
-  image="/resources-images/digital-marketing-guide-resources.png"
+  image="https://res.cloudinary.com/fvsobjbv/image/upload/v1792218605/ai-workforce-guide-resources-hero.png"
   imageAlt="Digital marketing professional"
   primaryAction={{
     label: "Explore All Guides",

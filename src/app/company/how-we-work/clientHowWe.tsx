@@ -53,7 +53,7 @@ export default function HowWeWorkPage() {
   title="How We"
   highlightedTitle="Work"
   description="A collaborative and results-driven process to help businesses unlock the full potential of AI."
-  image="/company-images/how-we-work-company-hero.png"
+  image="https://res.cloudinary.com/fvsobjbv/image/upload/v1789726316/how-we-work-company-hero.png"
   imageAlt="AI WorksForce team collaborating"
   primaryAction={{
     label: "Book a Free Consultation",
@@ -305,7 +305,7 @@ export default function HowWeWorkPage() {
   {/* Separate image */}
   <div className="relative min-h-100 overflow-hidden bg-[#e5e9ed]">
     <img
-      src="/company-images/how-we-work-company-bottom.png"
+      src="https://res.cloudinary.com/fvsobjbv/image/upload/v1789726356/how-we-work-company-bottom.png"
       alt="Modern office workspace"
       loading="lazy"
       decoding="async"

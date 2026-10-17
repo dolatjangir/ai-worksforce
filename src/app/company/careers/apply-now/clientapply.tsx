@@ -534,7 +534,7 @@ export default function ApplyNow() {
     {/* RIGHT HERO IMAGE */}
    <div className="relative mx-auto w-full max-w-2xl self-end lg:-mr-10 lg:w-[calc(100%+2.5rem)] lg:max-w-none">
               <img
-                src="/company-images/apply-now-hero.png"
+                src="https://res.cloudinary.com/fvsobjbv/image/upload/v1792219706/apply-now-hero.png"
                 alt="AI assessment specialist reviewing business opportunities"
                 width={900}
                 height={700}

@@ -175,7 +175,7 @@ export default function LeadEnginePage() {
     },
   ]}
   heroImageSrc={
-    "/technology/all-in-one.png"
+    "https://res.cloudinary.com/fvsobjbv/image/upload/v1792218036/all-in-one.png"
   }
   heroImageAlt="AI WorksForce lead generation specialist"
   leftCards={[

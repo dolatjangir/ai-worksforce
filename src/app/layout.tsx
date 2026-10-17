@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "react-phone-number-input/style.css";
 import AOSProvider from "@/providers/AOSProvider";
 
 import LayoutWrapper from "@/components/layoutwrapper/layoutwrapper";

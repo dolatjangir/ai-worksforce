@@ -446,7 +446,7 @@ export default function AIUseCasesPage() {
   title="AI"
   highlightedTitle="Use Cases"
   description="See how real businesses are using intelligence to solve real problems and get real results. Discover ways AI is being used across different industries. Learn how AI automation, data intelligence, and AI agents help companies save time, cut costs, and grow faster."
-  image="/resources-images/ai-usecases-resources-hero.png"
+  image="https://res.cloudinary.com/fvsobjbv/image/upload/v1792218602/ai-usecases-resources-hero.png"
   imageAlt="Business professional smiling behind a laptop"
   primaryAction={{
     label: "Book a Free Consultation",

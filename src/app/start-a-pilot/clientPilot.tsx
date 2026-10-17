@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-
+import PhoneInput from "react-phone-number-input";
+import type { Value } from "react-phone-number-input";
 /* =========================================================
    INLINE ICONS
 ========================================================= */
@@ -262,6 +263,7 @@ function ValueCard({
 export default function PilotPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 const [submitMessage, setSubmitMessage] = useState("");
+const [phone, setPhone] = useState<Value>();
 const [submitError, setSubmitError] = useState("");
 const [showSuccessPopup, setShowSuccessPopup] = useState(false);
 
@@ -281,6 +283,7 @@ const handleSubmit = async (
   const payload = {
     name: String(formData.get("fullName") || "").trim(),
     email: String(formData.get("email") || "").trim(),
+     phone: phone ?? "",
     useCase: String(formData.get("useCase") || "").trim(),
     companyName: String(formData.get("company") || "").trim(),
     bio: String(formData.get("goals") || "").trim(),
@@ -315,6 +318,7 @@ setShowSuccessPopup(true);
 form.reset();
 
     form.reset();
+    setPhone(undefined);
   } catch (error) {
     setSubmitError(
       error instanceof Error
@@ -436,30 +440,30 @@ form.reset();
                   "
                 />
               </label>
+     
             </div>
 
-            <label className="block">
-              <span className="mb-1.5 block text-sm font-semibold text-[#10204f]">
-                Company Name <span className="text-blue-600">*</span>
-              </span>
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
 
-              <input
-                name="company"
-                type="text"
-                autoComplete="organization"
-                required
-                placeholder="Your company name"
-                className="
-                  h-12 w-full min-w-0 rounded-xl border border-blue-200
-                  bg-slate-50/70 px-4 text-base text-[#10204f]
-                  outline-none transition placeholder:text-slate-400
-                  focus:border-blue-500 focus:bg-white
-                  focus:ring-4 focus:ring-blue-100
-                "
-              />
-            </label>
+                       <label className="block">
+  <span className="mb-1.5 block text-sm font-semibold text-[#10204f]">
+    Phone Number <span className="text-blue-600">*</span>
+  </span>
 
-            <label className="block">
+  <div className="flex h-12 items-center rounded-xl border border-blue-200 bg-slate-50/70 px-4 transition focus-within:border-blue-500 focus-within:bg-white focus-within:ring-4 focus-within:ring-blue-100">
+    <PhoneInput
+      international
+      defaultCountry="IN"
+      value={phone}
+      onChange={setPhone}
+      required
+      placeholder="+91 98765 43210"
+      className="w-full text-base text-[#10204f]"
+    />
+  </div>
+</label>
+
+                  <label className="block">
               <span className="mb-1.5 block text-sm font-semibold text-[#10204f]">
                 Use Case <span className="text-blue-600">*</span>
               </span>
@@ -503,6 +507,30 @@ form.reset();
                 </svg>
               </div>
             </label>
+            </div>
+
+            <label className="block">
+              <span className="mb-1.5 block text-sm font-semibold text-[#10204f]">
+                Company Name <span className="text-blue-600">*</span>
+              </span>
+
+              <input
+                name="company"
+                type="text"
+                autoComplete="organization"
+                required
+                placeholder="Your company name"
+                className="
+                  h-12 w-full min-w-0 rounded-xl border border-blue-200
+                  bg-slate-50/70 px-4 text-base text-[#10204f]
+                  outline-none transition placeholder:text-slate-400
+                  focus:border-blue-500 focus:bg-white
+                  focus:ring-4 focus:ring-blue-100
+                "
+              />
+            </label>
+
+        
 
             <label className="block">
               <span className="mb-1.5 block text-sm font-semibold text-[#10204f]">
@@ -829,7 +857,7 @@ form.reset();
       />
 
       <img
-        src="/pilot-page-hero-img.png"
+        src="https://res.cloudinary.com/fvsobjbv/image/upload/v1792223618/pilot-page-hero-img.png"
         alt="AI Workforce pilot"
         className="
           absolute inset-0 z-10 block h-full w-full
@@ -957,7 +985,7 @@ form.reset();
     {/* LEFT IMAGE - 50% */}
     <div className="pointer-events-none absolute inset-y-0 left-0 w-1/2">
       <img
-        src="/pilot-page-cta-left-img.png"
+        src="https://res.cloudinary.com/fvsobjbv/image/upload/v1789723572/pilot-page-cta-left-img.png"
         alt=""
         className="h-full w-full object-cover object-left"
       />
@@ -966,7 +994,7 @@ form.reset();
     {/* RIGHT IMAGE - 50% */}
     <div className="pointer-events-none absolute inset-y-0 right-0 w-1/2">
       <img
-        src="/pilot-page-cta-right-img.png"
+        src="https://res.cloudinary.com/fvsobjbv/image/upload/v1789723578/pilot-page-cta-right-img.png"
         alt=""
         className="h-full w-full object-cover object-right"
       />

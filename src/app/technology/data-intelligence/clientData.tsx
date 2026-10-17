@@ -86,7 +86,7 @@ export default function DataIntelligencePage() {
       icon: <PieChart className="size-5" />,
     },
   ]}
-  heroImageSrc="/technology/all-in-one.png"
+  heroImageSrc="https://res.cloudinary.com/fvsobjbv/image/upload/v1792218036/all-in-one.png"
   heroImageAlt="Business analyst"
   leftCards={[
     {

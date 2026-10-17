@@ -1169,7 +1169,7 @@ export default function OurBlogPage() {
 
   description="Expert views, step-by-step guides, industry news, and real examples to help you create a more efficient business with AI."
 
-  image="/resources-images/resources-blog-hero.png"
+  image="https://res.cloudinary.com/fvsobjbv/image/upload/v1792218606/resources-blog-hero.png"
 
   imageAlt="AI WorksForce professional"
 

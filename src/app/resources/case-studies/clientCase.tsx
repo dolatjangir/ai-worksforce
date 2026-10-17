@@ -627,7 +627,7 @@ export default function CaseStudiesPage() {
   title="Case"
   highlightedTitle="Studies"
   description="See how businesses like yours use AI to solve challenges and achieve measurable growth. Look at examples of how AI Worksforce helps companies automate operations, improve efficiency, and create new opportunities with AI."
-  image="/resources-images/case-studies-resources-hero.png"
+  image="https://res.cloudinary.com/fvsobjbv/image/upload/v1792218606/case-studies-resources-hero.png"
   imageAlt="Business team collaborating"
   primaryAction={{
     label: "Book a Free Consultation",

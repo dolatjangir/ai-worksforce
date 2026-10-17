@@ -548,7 +548,7 @@ export default function FAQPage() {
   title="Frequently Asked"
   highlightedTitle="Questions"
   description="Find answers to the common questions about AI WorksForce, our services, the implementation process, pricing and more."
-  image="/resources-images/resources-faq-hero.png"
+  image="https://res.cloudinary.com/fvsobjbv/image/upload/v1792218607/resources-faq-hero.png"
   imageAlt="AI WorksForce AI assistant"
   primaryAction={{
     label: "Ask a Question",
@@ -771,7 +771,7 @@ export default function FAQPage() {
               {/* Support person */}
               <div className="relative sm:mt-46 h-60 overflow-hidden sm:h-72">
                 <img
-                  src="/resources-images/resources-faq-bottom.png"
+                  src="https://res.cloudinary.com/fvsobjbv/image/upload/v1792218607/resources-faq-bottom.png"
                   alt="AI WorksForce support specialist"
                   className="absolute bottom-0 left-1/2 h-full w-full -translate-x-1/2 object-cover object-top mix-blend-multiply"
                 />

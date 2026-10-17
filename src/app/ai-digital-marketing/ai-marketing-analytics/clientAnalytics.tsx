@@ -237,7 +237,7 @@ export default function AIMarketingAnalyticsPage() {
   highlightedTitle="Analytics"
   subtitle="Turn data into growth using AI."
   description="Let AI look at your marketing data, find insights, and predict what works. So you can make decisions, improve your campaigns, and get more return on investment with less work."
-  imageSrc="/digital-marketing/ai-marketing-anylitcs-hero.png"
+  imageSrc="https://res.cloudinary.com/fvsobjbv/image/upload/v1792217263/ai-marketing-anylitcs-hero.png"
   imageAlt="Marketing data analyst using AI-powered marketing analytics"
   primaryLabel="Book a Free Consultation"
   primaryHref="/get-your-assessment"

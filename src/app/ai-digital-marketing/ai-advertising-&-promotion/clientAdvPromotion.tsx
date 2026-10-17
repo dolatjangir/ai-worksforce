@@ -239,7 +239,7 @@ export default function AIAdvertisingPromotion() {
   highlightedTitle=" & Promotion"
   subtitle="Smarter campaigns. Higher ROI. Real growth."
   description="Let AI plan, create, optimize, and manage your advertising campaigns across all platforms. From audience targeting to ad creatives and performance tracking — we help you get more leads, sales, and brand visibility with less effort."
-  imageSrc="/digital-marketing/ads-promotion-hero.png"
+  imageSrc="https://res.cloudinary.com/fvsobjbv/image/upload/v1792217261/ads-promotion-hero.png"
   imageAlt="Advertising strategist with AI-powered advertising campaign insights"
   primaryLabel="Book a Free Consultation"
   primaryHref="/get-your-assessment"

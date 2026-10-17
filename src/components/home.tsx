@@ -152,7 +152,7 @@ export default function Home() {
       title: "Managed AI Delivery",
       badge: "Most Popular",
       image:
-        "/IT-team.jpg",
+        "https://res.cloudinary.com/fvsobjbv/image/upload/v1792228867/IT-team.jpg",
       description:
         "We build, train and manage your AI-enabled operation.",
       bullets: [
@@ -168,7 +168,7 @@ export default function Home() {
       icon: Users,
       title: "AI Workforce",
       image:
-        "/ai-workforce-manager-img.png",
+        "https://res.cloudinary.com/fvsobjbv/image/upload/v1792222398/ai-workforce-manager-img.png",
       description: "Get trained operators for your AI-enabled workflows.",
       bullets: [
         "Data operators",
@@ -183,7 +183,7 @@ export default function Home() {
       icon: Settings,
       title: "Hire AWFI Experts",
       image:
-        "/women-image.png",
+        "https://res.cloudinary.com/fvsobjbv/image/upload/v1792222506/women-image.jpg",
       description:
         "Access specialist AI and technology talent when you need it.",
       bullets: [
@@ -644,19 +644,19 @@ Turn Data Into Business Opportunities         </h2>
         {[
           {
             name: "CreatikAI",
-            logo: "/creatikai-logo.png",
+            logo: "https://res.cloudinary.com/fvsobjbv/image/upload/v1789723501/creatikai-logo.png",
             title: "AI Agents & Automation",
             text: "AI agents, automation and integrations.",
           },
           {
             name: "iBigData",
-            logo: "/ibigdata-logo.png",
+            logo: "https://res.cloudinary.com/fvsobjbv/image/upload/v1789723561/ibigdata-logo.png",
             title: "Data & CRM Intelligence",
             text: "Data platforms, analytics and CRMs.",
           },
           {
             name: "MakeMyLeads",
-            logo: "/makemylead-logo.png",
+            logo: "https://res.cloudinary.com/fvsobjbv/image/upload/v1792228660/makemylead-logo.png",
             title: "Lead Intelligence",
             text: "AI-powered lead generation and enrichment.",
           },

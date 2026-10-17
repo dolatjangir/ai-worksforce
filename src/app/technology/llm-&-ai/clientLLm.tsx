@@ -58,7 +58,7 @@ const modelMarks = [
 
 export default function LLMAIPage({
   consultationHref = "/company/contact",
-  heroImageSrc = "/technology/all-in-one.png",
+  heroImageSrc = "https://res.cloudinary.com/fvsobjbv/image/upload/v1792218036/all-in-one.png",
   caseStudyImageSrc = "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=800&q=88",
   testimonialImageSrc = "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=300&q=88",
 }: LLMAIPageProps) {

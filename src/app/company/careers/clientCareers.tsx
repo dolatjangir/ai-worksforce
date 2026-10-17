@@ -202,7 +202,7 @@ export default function CareersPage() {
   title="Careers at"
   highlightedTitle="AIWorksForce"
   description="Join a team of innovators, builders, and problem‑solvers who are using AI to create a more efficient tomorrow."
-  image="/company-images/careers-company-hero.png"
+  image="https://res.cloudinary.com/fvsobjbv/image/upload/v1789726369/careers-company-hero.png"
   imageAlt="AIWorksForce team working together"
   primaryAction={{
     label: "See Open Positions",
@@ -538,7 +538,7 @@ export default function CareersPage() {
 
           <div className="relative min-h-52 overflow-hidden sm:min-h-64">
             <img
-              src="/company-images/careers-company-bottom-cta.png"
+              src="https://res.cloudinary.com/fvsobjbv/image/upload/v1789726318/careers-company-bottom-cta.png"
               alt="AIWorksForce office"
               className="absolute inset-0 size-full object-cover rounded-l-2xl"
             />

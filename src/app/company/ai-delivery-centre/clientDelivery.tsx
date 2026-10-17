@@ -405,7 +405,7 @@ export default function AIDeliveryCentrePage() {
   title="AI Delivery"
   highlightedTitle="Centre"
   description="The AI Delivery Centre acts as the engine that drives your success. It has a team, advanced infrastructure and proven processes that deliver high‑quality AI solutions at scale."
-  image="/company-images/ai-delivery-center-compan-hero.png"
+  image="https://res.cloudinary.com/fvsobjbv/image/upload/v1789726249/ai-delivery-center-compan-hero.png"
   imageAlt="AI WorksForce delivery centre"
   primaryAction={{
     label: "Take a Virtual Tour",
@@ -533,7 +533,7 @@ export default function AIDeliveryCentrePage() {
 
             <div className="relative overflow-hidden rounded-xl">
               <img
-                src="/company-images/ai-delivery-center-company-middle.png"
+                src="https://res.cloudinary.com/fvsobjbv/image/upload/v1789726258/ai-delivery-center-company-middle.png"
                 alt="AI WorksForce delivery centre team"
                 className="aspect-[4/3] w-full object-cover"
               />
@@ -688,15 +688,15 @@ export default function AIDeliveryCentrePage() {
 
             {[
               {
-                src: "/company-images/ai-delivery-center-company-bottom-1.png",
+                src: "https://res.cloudinary.com/fvsobjbv/image/upload/v1789726252/ai-delivery-center-company-bottom-1.png",
                 alt: "AI WorksForce office entrance",
               },
               {
-                src: "/company-images/ai-delivery-center-company-bottom-2.png",
+                src: "https://res.cloudinary.com/fvsobjbv/image/upload/v1789726254/ai-delivery-center-company-bottom-2.png",
                 alt: "AI WorksForce delivery team",
               },
               {
-                src: "/company-images/ai-delivery-center-company-bottom-3.png",
+                src: "https://res.cloudinary.com/fvsobjbv/image/upload/v1789726252/ai-delivery-center-company-bottom-3.png",
                 alt: "AI WorksForce workspace",
               },
             ].map((image) => (

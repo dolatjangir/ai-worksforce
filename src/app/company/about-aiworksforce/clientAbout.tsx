@@ -494,7 +494,7 @@ export default function AboutPage() {
   title="About"
   highlightedTitle="AIWorksForce"
   description="We help businesses grow by using AI automation, smart agents and up-to-date workflows."
-  image="/company-images/about-aiworkforce-company-hero-img.png"
+  image="https://res.cloudinary.com/fvsobjbv/image/upload/v1789726243/about-aiworkforce-company-hero-img.png"
   imageAlt=""
   primaryAction={{
     label: "Our Mission",
@@ -666,7 +666,7 @@ export default function AboutPage() {
 
             <div className="relative overflow-hidden rounded-xl">
               <img
-                src="/company-images/about-aiworkforce-company-bottom.png"
+                src="https://res.cloudinary.com/fvsobjbv/image/upload/v1789726253/about-aiworkforce-company-bottom.png"
                 alt="AI WorksForce team collaborating"
                 className="aspect-[4/3] h-full w-full object-cover"
               />

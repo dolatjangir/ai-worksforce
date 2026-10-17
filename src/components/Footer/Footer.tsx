@@ -286,7 +286,7 @@ export default function Footer() {
 
             <div className="min-w-0">
               <img
-                src="/aiworksforce-white-logo.png"
+                src="https://res.cloudinary.com/fvsobjbv/image/upload/v1792222286/aiworksforce-white.png"
                 alt="AIWorksForce"
                 className="h-auto w-[250px] max-w-full object-contain object-left sm:w-[280px]"
               />

@@ -367,7 +367,7 @@ export default function ContactPage() {
   title="Get in Touch with"
   highlightedTitle="AIWorksForce"
   description="Have a question, a project in mind, or just want to explore what's possible with AI? We'd love to hear from you."
-  image="/company-images/contact-company-hero.png"
+  image="https://res.cloudinary.com/fvsobjbv/image/upload/v1789726331/contact-company-hero.png"
   imageAlt="AIWorksForce office"
   primaryAction={{
     label: "Book a Free Consultation",

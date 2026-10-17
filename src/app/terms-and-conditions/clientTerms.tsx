@@ -89,7 +89,7 @@ export default function TermsAndConditionsPage() {
           </div>
           <div className="mx-auto w-full max-w-[460px] md:max-w-none">
             <Image
-  src="/terms-hero.png"
+  src="https://res.cloudinary.com/fvsobjbv/image/upload/v1792221286/terms-hero.png"
   alt="Terms and conditions document with a security shield and pen"
   width={1536}
   height={1024}
@@ -137,7 +137,7 @@ export default function TermsAndConditionsPage() {
           </div>
           <div className="relative mx-auto w-full max-w-[580px] self-end md:-mr-8">
   <Image
-    src="/terms-cta.png"
+    src="https://res.cloudinary.com/fvsobjbv/image/upload/v1792228343/terms-cta.png"
     alt="Terms document with a blue security shield"
     width={1456}
     height={1088}

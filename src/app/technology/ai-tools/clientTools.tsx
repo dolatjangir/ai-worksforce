@@ -46,7 +46,7 @@ const navItems = [
 
 export default function AIToolsPage({
   consultationHref = "/get-your-assessment",
-  heroImageSrc = "/technology/all-in-one.png",
+  heroImageSrc = "https://res.cloudinary.com/fvsobjbv/image/upload/v1792218036/all-in-one.png",
   caseStudyImageSrc = "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=700&q=85",
   testimonialImageSrc = "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=240&q=85",
 }: AIToolsPageProps) {

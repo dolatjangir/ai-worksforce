@@ -602,3 +602,16 @@ img {
 .filter-panel-animation {
   animation: filterSlideDown 0.3s ease-out;
 }
+
+/* Keep the phone number input clean */
+.PhoneInputInput {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent;
+}
+
+/* Keep the existing focus styling on the outer phone field */
+.PhoneInputCountrySelect {
+  outline: none !important;
+}

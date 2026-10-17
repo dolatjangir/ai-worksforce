@@ -44,6 +44,10 @@ export default function RootLayout({
           name="apple-mobile-web-app-status-bar-style"
           content="black-translucent"
         />
+ 
+          <meta name="msvalidate.01" content="B21B7B0B45CC9CA250DA05ECC90212D4" />
+          <meta name="yandex-verification" content="a287c4619c869cec" />
+      
       </head>
     
       <AOSProvider />

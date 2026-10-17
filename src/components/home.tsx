@@ -39,7 +39,6 @@ import {
 import WorkforceHero from "./Hero/Hero";
 import BusinessApproach from "./BusinessApproach";
 import Link from "next/link";
-import DiwaliDecoration from "./DiwaliDecoration";
 
 
 export default function Home() {

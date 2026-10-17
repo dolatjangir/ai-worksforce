@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import VideoPopup from "../videoPopUp";
-import DiwaliDecoration from "../DiwaliDecoration";
+
 
 /* ---------------------------------------------
    Props
@@ -159,7 +159,7 @@ export default function WorkforceHero({
 }: WorkforceHeroProps) {
   return (
     <>
-     <DiwaliDecoration />
+   
     <section
       aria-label="Build your AI workforce"
       className="relative isolate w-full min-w-0 overflow-x-clip bg-white font-sans text-[#05072d]"

@@ -36,7 +36,7 @@ import {
 } from 'lucide-react';
 
 import Link from 'next/link'
-import FestiveHeader from './FestiveHeader';
+
 
 interface SubMenuItem {
   icon?: React.ReactNode;
@@ -635,7 +635,7 @@ function Header() {
 
   return (
     <>
-    <FestiveHeader />
+    
     <div className=''>
             {/* =========================================================
                 TOP UTILITY BAR

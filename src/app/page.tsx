@@ -16,7 +16,6 @@ export default async function Page(){
     <>
 
     <Home/>
-    
         <RelatedBlogs blogs={blogs} />
         </>
   )

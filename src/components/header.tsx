@@ -595,7 +595,7 @@ function Header() {
               <div
                 className=" flex items-center justify-center "
               >
-                <Link href="/">  <img width={220} height={150} src="https://res.cloudinary.com/fvsobjbv/image/upload/v1789723551/aiworksforce-logo.png" alt="aiworksforce"/></Link>
+                <Link href="/">  <img width={220} height={150} src="/aiworksforce-logo.png" alt="aiworksforce"/></Link>
               </div>
             </div>
 
@@ -861,7 +861,7 @@ function Header() {
           `}
         >
           <div className='flex justify-between items-center border-b border-gray-100 px-4 py-3'>
-            <Link href="/">  <img width={200} height={200} src="https://res.cloudinary.com/fvsobjbv/image/upload/v1789723551/aiworksforce-logo.png" /></Link>
+            <Link href="/">  <img width={200} height={200} src="/aiworksforce-logo.png" /></Link>
             <div onClick={() => {
               setIsMenuOpen(!isMenuOpen)
               setOpenMobileItem(null)

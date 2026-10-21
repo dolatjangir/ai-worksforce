@@ -122,7 +122,7 @@ const teamMembers = [
   },
   {
     name: "Syed Masood Alam",
-    role: "DIgital Marketing & SEO Expert",
+    role: "Digital Marketing & SEO Expert",
     image: "https://res.cloudinary.com/fvsobjbv/image/upload/v1792220035/seo-manager.jpg",
   }
   

@@ -300,7 +300,7 @@ export default function SubscriberAdminPanel() {
   return (
     <MasterProtectedRoute>
 
-<div className="min-h-screen bg-(--color-violet) text-[var(--color-heading)] p-4 font-[var(--font-family)]">
+<div className="min-h-screen bg-blue-50/50 text-[var(--color-heading)] p-4 font-[var(--font-family)]">
   {/* Background decorative */}
   <div className="fixed inset-0 overflow-hidden pointer-events-none">
     <div className="absolute top-[-10%] right-[-5%] w-[400px] h-[400px] rounded-full bg-[var(--color-blue-100)] opacity-30 blur-[100px]" />

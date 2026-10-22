@@ -30,14 +30,21 @@ Radio,
 Smartphone,
 Globe
 } from 'lucide-react';
+import Link from 'next/link';
 
 export default function LeadCapturePage() {
 const [isMenuOpen, setIsMenuOpen] = useState(false);
 const [activeFeature, setActiveFeature] = useState(0);
 const [formStep, setFormStep] = useState(0);
+const [email, setEmail] = useState('');
+const [isLoading, setIsLoading] = useState(false);
+const [message, setMessage] = useState('');
+const [isSuccess, setIsSuccess] = useState(false);
+
 const [isVisible, setIsVisible] = useState(false);
  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 }); 
 const heroRef = useRef<HTMLDivElement>(null);
+
 
 useEffect(() => {
   setIsVisible(true);
@@ -55,6 +62,7 @@ useEffect(() => {
     });
   };
 
+  
   window.addEventListener('scroll', handleScroll);
   handleScroll();
   return () => window.removeEventListener('scroll', handleScroll);
@@ -71,6 +79,8 @@ useEffect(() => {
         });
       }
     };
+
+    
 
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
@@ -167,6 +177,49 @@ const pricingTiers = [
     features: ["Everything in Pro", "Custom AI training", "White-label options", "API access", "Dedicated success manager", "SLA guarantee"]
   }
 ];
+
+const handleSubscribe = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const normalizedEmail = email.trim().toLowerCase();
+
+    if (!normalizedEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(normalizedEmail)) {
+      setIsSuccess(false);
+      setMessage("Please enter a valid email address.");
+      return;
+    }
+
+    try {
+      setIsLoading(true);
+      setMessage("");
+
+      const response = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email: normalizedEmail }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        setIsSuccess(false);
+        setMessage(result.message || "Subscription failed. Please try again.");
+        return;
+      }
+
+      setIsSuccess(true);
+      setMessage(result.message || "Subscribed successfully 🎉");
+      setEmail("");
+    } catch (error) {
+      console.error("Subscription error:", error);
+      setIsSuccess(false);
+      setMessage("Unable to subscribe right now. Please try again.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
 return (
   <main className="min-h-screen bg-white font-sans overflow-x-hidden">
@@ -313,11 +366,11 @@ return (
                       
                              {/* Email Capture */}
                                           <div className="flex flex-wrap gap-4 mb-10">
-                                                  <button className="relative px-4 py-2 rounded-2xl bg-gradient-to-r from-[#0066cc] to-[#3399ff] text-white font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.04] active:scale-[0.98] flex items-center gap-2 group">
+                                                  <Link href="/start-a-pilot"><button  className="relative px-4 py-2 rounded-2xl bg-gradient-to-r from-[#0066cc] to-[#3399ff] text-white font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.04] active:scale-[0.98] flex items-center gap-2 group">
                                                     {/* <Sparkles className="w-5 h-5" /> */}
                                                     Start 14-Days Free Trial
                                                     <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-                                                  </button>
+                                                  </button></Link>
                                         
                                                   <button className="px-4 py-2 rounded-2xl border border-[#99ccff] text-[#0057ad] font-semibold text-lg backdrop-blur-md hover:bg-white hover:border-[#0066cc] hover:text-[#003871] transition-all duration-300 flex items-center gap-2">
                                                     {/* <Play className="w-5 h-5" /> */}
@@ -643,16 +696,38 @@ return (
           Join 2,000+ real estate professionals using LeadCapture AI to convert more inquiries into closed deals.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+        <form 
+         onSubmit={handleSubscribe}
+          className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
           <input 
-            type="email" 
-            placeholder="Enter your email"
+                    type="email"
+                    name="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Enter your email"
+                    autoComplete="email"
+                    required
+                    disabled={isLoading}
             className="flex-1 px-6 py-4 rounded-full border-2 border-[var(--color-primary-200)] focus:outline-none focus:border-[var(--color-primary-600)] text-slate-700 placeholder:text-slate-400"
           />
-          <button className="px-8 py-4 rounded-full bg-[var(--color-primary-600)] text-white font-semibold hover:bg-[var(--color-primary-700)] transition-all shadow-lg shadow-[var(--color-primary-200)] whitespace-nowrap">
+          <button
+             type="submit"
+             disabled={isLoading}
+          className="px-8 py-4 rounded-full bg-[var(--color-primary-600)] text-white font-semibold hover:bg-[var(--color-primary-700)] transition-all shadow-lg shadow-[var(--color-primary-200)] whitespace-nowrap">
             Start Free Trial
           </button>
-        </div>
+        </form>
+                 {message && (
+        <p
+          role="status"
+          aria-live="polite"
+          className={`text-sm text-center ${
+            isSuccess ? "text-green-600" : "text-red-500"
+          }`}
+        >
+          {message}
+        </p>
+      )}
 
         <p className="mt-6 text-sm text-slate-500">
           Free 14-day trial • No credit card required • Cancel anytime

@@ -25,6 +25,11 @@ export default function LeadBotPage() {
   const scoreCardsRef = useRef<HTMLDivElement>(null);
   const statNumbersRef = useRef<HTMLDivElement>(null);
 const heroRef = useRef<HTMLDivElement>(null);
+ const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
   const [isVisible, setIsVisible] = useState(false);
   const [isAnalyzing, setIsAnalyzing] = useState(true);
   const [leadCount, setLeadCount] = useState(247);
@@ -111,6 +116,49 @@ const heroRef = useRef<HTMLDivElement>(null);
       clearInterval(interval);
     };
   }, []);
+
+ const handleSubscribe = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const normalizedEmail = email.trim().toLowerCase();
+
+    if (!normalizedEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(normalizedEmail)) {
+      setIsSuccess(false);
+      setMessage("Please enter a valid email address.");
+      return;
+    }
+
+    try {
+      setIsLoading(true);
+      setMessage("");
+
+      const response = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email: normalizedEmail }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        setIsSuccess(false);
+        setMessage(result.message || "Subscription failed. Please try again.");
+        return;
+      }
+
+      setIsSuccess(true);
+      setMessage(result.message || "Subscribed successfully 🎉");
+      setEmail("");
+    } catch (error) {
+      console.error("Subscription error:", error);
+      setIsSuccess(false);
+      setMessage("Unable to subscribe right now. Please try again.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
 
   const handleVideoClick = () => {
@@ -313,7 +361,7 @@ const heroRef = useRef<HTMLDivElement>(null);
 
         {/* Premium CTA */}
         <div className="flex flex-wrap gap-4 mb-10">
-        <Link href="https://app.estateai.in/register">  <button className="relative px-4 py-2 rounded-2xl bg-gradient-to-r from-[#0066cc] to-[#3399ff] text-white font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.04] active:scale-[0.98] flex items-center gap-2 group">
+        <Link href="/start-a-pilot">  <button className="relative px-4 py-2 rounded-2xl bg-gradient-to-r from-[#0066cc] to-[#3399ff] text-white font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.04] active:scale-[0.98] flex items-center gap-2 group">
             {/* <Sparkles className="w-5 h-5" /> */}
                leadAgent Free
             <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
@@ -755,16 +803,42 @@ const heroRef = useRef<HTMLDivElement>(null);
           Deploy leadAgent in under 10 minutes. No code required. Start qualifying every single lead on autopilot — starting today.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-3 justify-center max-w-md mx-auto mb-5">
-          <input 
-            type="email" 
-            placeholder="your@company.com" 
-            className="flex-1 bg-white border border-slate-200 text-slate-900 px-5 py-3.5 rounded-xl text-sm outline-none focus:border-blue-500 transition-colors placeholder:text-slate-400"
-          />
-          <a href="#" className="inline-flex items-center justify-center gap-2 bg-blue-600 text-white px-6 py-3.5 rounded-xl font-bold text-sm hover:bg-blue-500 transition-all border border-blue-500 shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 whitespace-nowrap">
-            Deploy Now 🚀
-          </a>
-        </div>
+       <form
+        onSubmit={handleSubscribe}
+        className="flex flex-col sm:flex-row gap-3 justify-center max-w-md mx-auto mb-3"
+      >
+        <input
+          type="email"
+          name="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="your@company.com"
+          autoComplete="email"
+          required
+          disabled={isLoading}
+          className="flex-1 min-w-0 bg-white border border-slate-200 text-slate-900 px-5 py-3.5 rounded-xl text-sm outline-none focus:border-blue-500 transition-colors placeholder:text-slate-400 disabled:opacity-60"
+        />
+
+        <button
+          type="submit"
+          disabled={isLoading}
+          className="inline-flex items-center justify-center gap-2 bg-blue-600 text-white px-6 py-3.5 rounded-xl font-bold text-sm hover:bg-blue-500 transition-all border border-blue-500 shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 whitespace-nowrap disabled:opacity-60 disabled:cursor-not-allowed"
+        >
+          {isLoading ? "Subscribing..." : "Deploy Now 🚀"}
+        </button>
+      </form>
+
+      {message && (
+        <p
+          role="status"
+          aria-live="polite"
+          className={`text-sm text-center ${
+            isSuccess ? "text-green-600" : "text-red-500"
+          }`}
+        >
+          {message}
+        </p>
+      )}
         <p className="text-xs text-slate-400 font-mono">Free 14-day trial · No credit card · Cancel anytime</p>
       </section>
 {isVideoOpen && (

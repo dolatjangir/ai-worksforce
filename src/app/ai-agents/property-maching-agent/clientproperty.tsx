@@ -61,6 +61,9 @@ export default function PropertyMatcherPage() {
   const [activeTabhero, setActiveTabhero] = useState<'buyer' | 'agent'>('buyer');
   const [selectedProperty, setSelectedProperty] = useState<number | null>(1);
   const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isMatching, setIsMatching] = useState(false);
   const [matchProgress, setMatchProgress] = useState(0);
@@ -82,6 +85,50 @@ export default function PropertyMatcherPage() {
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
+
+const handleSubscribe = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const normalizedEmail = email.trim().toLowerCase();
+
+    if (!normalizedEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(normalizedEmail)) {
+      setIsSuccess(false);
+      setMessage("Please enter a valid email address.");
+      return;
+    }
+
+    try {
+      setIsLoading(true);
+      setMessage("");
+
+      const response = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email: normalizedEmail }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        setIsSuccess(false);
+        setMessage(result.message || "Subscription failed. Please try again.");
+        return;
+      }
+
+      setIsSuccess(true);
+      setMessage(result.message || "Subscribed successfully 🎉");
+      setEmail("");
+    } catch (error) {
+      console.error("Subscription error:", error);
+      setIsSuccess(false);
+      setMessage("Unable to subscribe right now. Please try again.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
 
   const startMatching = () => {
     setIsMatching(true);
@@ -467,22 +514,39 @@ export default function PropertyMatcherPage() {
                    </p>
            
                   {/* Email Capture */}
-                               <div className="flex flex-col sm:flex-row gap-4 max-w-lg mb-8">
+                               <form  onSubmit={handleSubscribe}  className="flex flex-col sm:flex-row gap-4 max-w-lg mb-8">
                                  <div className="flex-1 relative">
-                                   <input 
-                                     type="email" 
-                                     value={email}
-                                     onChange={(e) => setEmail(e.target.value)}
-                                     placeholder="Enter your email"
+                                  <input
+                    type="email"
+                    name="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="your@company.com"
+                    autoComplete="email"
+                    required
+                    disabled={isLoading}
                                      className="w-full px-6 py-3 rounded-2xl bg-white border-2 border-[#99ccff] text-[#003871] placeholder:text-[#3399ff] focus:outline-none focus:border-[#0066cc] focus:ring-4 focus:ring-[#cce5ff] transition-all text-lg shadow-sm"
                                    />
                                  </div>
-                                 <button className="px-4 py-2 rounded-2xl bg-[#0066cc] hover:bg-[#0057ad] text-white font-bold text-lg transition-all hover:scale-105 active:scale-95 shadow-xl shadow-[#cce5ff] flex items-center justify-center gap-2 group whitespace-nowrap">
+                                 <button
+                                           type="submit"
+                                           disabled={isLoading}
+                                           className="px-4 py-2 rounded-2xl bg-[#0066cc] hover:bg-[#0057ad] text-white font-bold text-lg transition-all hover:scale-105 active:scale-95 shadow-xl shadow-[#cce5ff] flex items-center justify-center gap-2 group whitespace-nowrap">
                                    Get Started
                                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                  </button>
-                               </div>
-           
+                               </form>
+           {message && (
+        <p
+          role="status"
+          aria-live="polite"
+          className={`text-sm text-center ${
+            isSuccess ? "text-green-600" : "text-red-500"
+          }`}
+        >
+          {message}
+        </p>
+      )}
                    {/* Features */}
                    <div className="flex items-center gap-6 text-sm text-[#0066cc] flex-wrap">
                      <div className="flex items-center gap-2">
@@ -800,16 +864,38 @@ export default function PropertyMatcherPage() {
             Deploy PropertyMatcher in under 10 minutes. No code required. Start matching buyers to their dream homes on autopilot.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto mb-8">
-            <input 
-              type="email" 
-              placeholder="Enter your email"
+         <form
+        onSubmit={handleSubscribe}
+         className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto mb-8">
+             <input
+                      type="email"
+                      name="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="enter your email"
+                      autoComplete="email"
+                      required
+                      disabled={isLoading}
               className="flex-1 px-6 py-4 rounded-full bg-white/10 border border-white/20 text-white placeholder:text-blue-200 focus:outline-none focus:ring-2 focus:ring-white/50 backdrop-blur-sm"
             />
-            <button className="px-8 py-4 rounded-full bg-white text-blue-600 font-bold hover:bg-blue-50 transition-colors shadow-xl">
+             <button
+          type="submit"
+          disabled={isLoading}
+           className="px-8 py-4 rounded-full bg-white text-blue-600 font-bold hover:bg-blue-50 transition-colors shadow-xl">
               Get Started
             </button>
-          </div>
+          </form>
+          {message && (
+        <p
+          role="status"
+          aria-live="polite"
+          className={`text-sm text-center ${
+            isSuccess ? "text-green-600" : "text-red-500"
+          }`}
+        >
+          {message}
+        </p>
+      )}
           
           <p className="text-sm text-blue-200">
             Free 14-day trial · No credit card required · Cancel anytime

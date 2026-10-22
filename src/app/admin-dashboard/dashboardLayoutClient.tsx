@@ -69,11 +69,11 @@ export default function DashboardLayoutClient({
       label: "Contact-Us Requirements",
       icon: UsersRound,
     },
-    // {
-    //   path: "/admin-dashboard/subscriber",
-    //   label: "Subscriber",
-    //   icon: SquareUser,
-    // },
+    {
+      path: "/admin-dashboard/subscriber",
+      label: "Subscriber",
+      icon: SquareUser,
+    },
     {
       path: "/admin-dashboard/assessment-manager",
       label: "Assessment-Manager",

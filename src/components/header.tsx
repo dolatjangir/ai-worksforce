@@ -534,7 +534,7 @@ function Header() {
 
   const toggleMobileItem = (label: string) => {
     setOpenMobileItem(prev => (prev === label ? null : label));
-    setOpenMobileSubItem(null);
+    setOpenMobileSubItem(null); 
   };
 
   const toggleMobileSubItem = (title: string) => {

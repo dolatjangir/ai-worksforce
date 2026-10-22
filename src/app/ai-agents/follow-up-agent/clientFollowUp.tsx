@@ -37,6 +37,10 @@ export default function FollowUpAgentLanding() {
   const [activeSequence, setActiveSequence] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
   const [email, setEmail] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [message, setMessage] = useState('');
+  const [isSuccess, setIsSuccess] = useState(false);
+  
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const heroRef = useRef<HTMLDivElement>(null);
 
@@ -170,6 +174,49 @@ export default function FollowUpAgentLanding() {
       gradient: "from-[var(--color-primary-400)] to-[var(--color-secondary-500)]"
     }
   ];
+
+ const handleSubscribe = async (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+  
+      const normalizedEmail = email.trim().toLowerCase();
+  
+      if (!normalizedEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(normalizedEmail)) {
+        setIsSuccess(false);
+        setMessage("Please enter a valid email address.");
+        return;
+      }
+  
+      try {
+        setIsLoading(true);
+        setMessage("");
+  
+        const response = await fetch("/api/subscribe", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email: normalizedEmail }),
+        });
+  
+        const result = await response.json();
+  
+        if (!response.ok || !result.success) {
+          setIsSuccess(false);
+          setMessage(result.message || "Subscription failed. Please try again.");
+          return;
+        }
+  
+        setIsSuccess(true);
+        setMessage(result.message || "Subscribed successfully 🎉");
+        setEmail("");
+      } catch (error) {
+        console.error("Subscription error:", error);
+        setIsSuccess(false);
+        setMessage("Unable to subscribe right now. Please try again.");
+      } finally {
+        setIsLoading(false);
+      }
+    };
 
   return (
     <main className="min-h-screen bg-[var(--color-primary-50)] text-[var(--color-primary-900)] font-sans overflow-x-hidden selection:bg-[var(--color-primary-200)] selection:text-[var(--color-primary-900)]">
@@ -315,22 +362,42 @@ export default function FollowUpAgentLanding() {
                             </p>
                     
                            {/* Email Capture */}
-                                        <div className="flex flex-col sm:flex-row gap-4 max-w-lg mb-8">
+                          <form
+                          onSubmit={handleSubscribe} 
+                           className="flex flex-col sm:flex-row gap-4 max-w-lg mb-8">
                                           <div className="flex-1 relative">
-                                            <input 
-                                              type="email" 
-                                              value={email}
-                                              onChange={(e) => setEmail(e.target.value)}
-                                              placeholder="Enter your email"
+                                           <input 
+                                          type="email"
+                                          name="email"
+                                          value={email}
+                                          onChange={(e) => setEmail(e.target.value)}
+                                          placeholder="Enter your email"
+                                          autoComplete="email"
+                                          required
+                                          disabled={isLoading}
                                               className="w-full px-6 py-3 rounded-2xl bg-white border-2 border-[#99ccff] text-[#003871] placeholder:text-[#3399ff] focus:outline-none focus:border-[#0066cc] focus:ring-4 focus:ring-[#cce5ff] transition-all text-lg shadow-sm"
                                             />
                                           </div>
-                                          <button className="px-4 py-2 rounded-2xl bg-[#0066cc] hover:bg-[#0057ad] text-white font-bold text-lg transition-all hover:scale-105 active:scale-95 shadow-xl shadow-[#cce5ff] flex items-center justify-center gap-2 group whitespace-nowrap">
+                                          <button
+                                           type="submit"
+                                            disabled={isLoading}
+                                           className="px-4 py-2 rounded-2xl bg-[#0066cc] hover:bg-[#0057ad] text-white font-bold text-lg transition-all hover:scale-105 active:scale-95 shadow-xl shadow-[#cce5ff] flex items-center justify-center gap-2 group whitespace-nowrap">
                                            Deploy Agent
                                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                           </button>
                                           
-                                        </div>
+                                        </form>
+                                         {message && (
+                                    <p
+                                      role="status"
+                                      aria-live="polite"
+                                      className={`text-sm text-start ${
+                                        isSuccess ? "text-green-600" : "text-red-500"
+                                      }`}
+                                    >
+                                      {message}
+                                    </p>
+                                  )}
                     
                             {/* Features */}
                             <div className="flex items-center gap-6 text-sm text-[#0066cc] flex-wrap">
@@ -611,16 +678,42 @@ export default function FollowUpAgentLanding() {
                 Deploy your AI agent in 5 minutes.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto mb-8">
-                <input 
-                  type="email" 
-                  placeholder="your@email.com"
-                  className="flex-1 px-6 py-4 rounded-xl bg-white border-2 border-[var(--color-primary-200)] text-[var(--color-primary-900)] placeholder:text-[var(--color-primary-400)] focus:outline-none focus:border-[var(--color-primary-600)] focus:ring-4 focus:ring-[var(--color-primary-100)] transition-all shadow-sm"
-                />
-                <button className="px-8 py-4 rounded-xl bg-[var(--color-primary-600)] hover:bg-[var(--color-primary-700)] text-white font-bold transition-all hover:scale-105 active:scale-95 shadow-xl shadow-[var(--color-primary-200)] whitespace-nowrap">
-                  Start Free Trial
-                </button>
-              </div>
+              <form
+                          onSubmit={handleSubscribe} 
+                           className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto mb-8">
+                                          <div className="flex-1 relative">
+                                           <input 
+                                          type="email"
+                                          name="email"
+                                          value={email}
+                                          onChange={(e) => setEmail(e.target.value)}
+                                          placeholder="your@email.com"
+                                          autoComplete="email"
+                                          required
+                                          disabled={isLoading}
+                                              className="w-full px-6 py-3 rounded-2xl bg-white border-2 border-[#99ccff] text-[#003871] placeholder:text-[#3399ff] focus:outline-none focus:border-[#0066cc] focus:ring-4 focus:ring-[#cce5ff] transition-all text-lg shadow-sm"
+                                            />
+                                          </div>
+                                          <button
+                                           type="submit"
+                                            disabled={isLoading}
+                                           className="px-4 py-2 rounded-2xl bg-[#0066cc] hover:bg-[#0057ad] text-white font-bold text-lg transition-all hover:scale-105 active:scale-95 shadow-xl shadow-[#cce5ff] flex items-center justify-center gap-2 group whitespace-nowrap">
+                                           Start Free Trial
+                                            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                                          </button>
+                                          
+                                        </form>
+                                         {message && (
+                                    <p
+                                      role="status"
+                                      aria-live="polite"
+                                      className={`text-sm text-start ${
+                                        isSuccess ? "text-green-600" : "text-red-500"
+                                      }`}
+                                    >
+                                      {message}
+                                    </p>
+                                  )}
 
               <p className="text-sm text-[var(--color-primary-600)]">
                 Free 14-day trial • No credit card • Cancel anytime

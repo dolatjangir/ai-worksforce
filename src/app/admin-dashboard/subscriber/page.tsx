@@ -298,17 +298,17 @@ export default function SubscriberAdminPanel() {
   // ─── Render ───────────────────────────────────────────────────────
 
   return (
-    <MasterProtectedRoute>
+  
 
-<div className="min-h-screen bg-blue-50/50 text-[var(--color-heading)] p-4 font-[var(--font-family)]">
+<div className="min-h-screen bg-slate-50 text-slate-900 p-4 sm:p-6 lg:p-8 font-sans">
   {/* Background decorative */}
   <div className="fixed inset-0 overflow-hidden pointer-events-none">
-    <div className="absolute top-[-10%] right-[-5%] w-[400px] h-[400px] rounded-full bg-[var(--color-blue-100)] opacity-30 blur-[100px]" />
-    <div className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] rounded-full bg-[var(--color-indigo-50)] opacity-20 blur-[120px]" />
+    <div className="absolute top-[-10%] right-[-5%] w-[400px] h-[400px] rounded-full bg-blue-100 opacity-30 blur-[100px]" />
+    <div className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] rounded-full bg-indigo-200 opacity-20 blur-[120px]" />
   </div>
 
   {/* Toast Container */}
-  <div className="fixed top-4 right-4 z-50 space-y-2">
+  <div className="fixed right-4 top-4 z-50 space-y-2 sm:right-6 sm:top-6">
     <AnimatePresence>
       {toasts.map((toast) => (
         <motion.div
@@ -316,12 +316,12 @@ export default function SubscriberAdminPanel() {
           initial={{ opacity: 0, x: 50, scale: 0.9 }}
           animate={{ opacity: 1, x: 0, scale: 1 }}
           exit={{ opacity: 0, x: 50, scale: 0.9 }}
-          className={`flex items-center gap-2.5 px-4 py-3 rounded-xl shadow-[var(--shadow-lg)] border text-sm font-medium min-w-[280px] ${
+          className={`flex items-center gap-2.5 px-4 py-3 rounded-xl shadow-xl shadow-slate-900/10 border text-sm font-medium min-w-[280px] ${
             toast.type === "success"
-              ? "bg-[var(--color-green-soft)] border-[var(--color-green-soft)] text-[var(--color-green)]"
+              ? "bg-emerald-50 border-emerald-200 text-emerald-700"
               : toast.type === "error"
-              ? "bg-[var(--color-orange-soft)] border-[var(--color-orange-soft)] text-[var(--color-orange)]"
-              : "bg-[var(--color-white)] border-[var(--color-border)] text-[var(--color-heading)]"
+              ? "bg-rose-50 border-rose-200 text-rose-700"
+              : "bg-white border-slate-200 text-slate-900"
           }`}
         >
           {toast.type === "success" ? (
@@ -337,26 +337,26 @@ export default function SubscriberAdminPanel() {
     </AnimatePresence>
   </div>
 
-  <div className="relative max-w-[var(--container-max)] mx-auto px-[var(--container-padding)] py-8 lg:py-12">
+  <div className="relative mx-auto max-w-7xl px-0 py-6 sm:py-8 lg:py-10">
     {/* ─── Header ─────────────────────────────────────────────── */}
     <motion.div
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="mb-8"
+      className="mb-8 sm:mb-10"
     >
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-around gap-4">
+      <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <div className="flex items-center gap-3 mb-2">
-            <div className="w-10 h-10 rounded-xl bg-[var(--gradient-brand)] flex items-center justify-center shadow-[var(--shadow-md)]">
-              <Users className="w-5 h-5 text-[var(--color-primary)]" />
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center shadow-md shadow-blue-900/10">
+              <Users className="w-5 h-5 text-white" />
             </div>
 
             <div>
-              <h1 className="text-2xl font-bold text-[var(--color-heading)]">
+              <h1 className="text-2xl font-bold tracking-tight text-slate-950 sm:text-3xl">
                 Subscribers
               </h1>
 
-              <p className="text-sm text-[var(--color-text-muted)]">
+              <p className="text-sm text-slate-500">
                 Manage your newsletter subscribers
               </p>
             </div>
@@ -368,7 +368,7 @@ export default function SubscriberAdminPanel() {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             onClick={() => setShowAddModal(true)}
-            className="flex items-center gap-2 px-4 py-2.5 rounded-xl cursor-pointer bg-[var(--color-primary)] text-[var(--color-white)] text-sm font-semibold shadow-[var(--shadow-btn-primary)] hover:shadow-[var(--shadow-btn-primary-hover)] hover:bg-[var(--color-primary-dark)] transition-all duration-300"
+            className="inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-blue-600/20 transition-all duration-200 hover:bg-blue-700 hover:shadow-blue-600/25 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-200"
           >
             <UserPlus className="w-4 h-4" />
             Add Subscriber
@@ -378,7 +378,7 @@ export default function SubscriberAdminPanel() {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             onClick={exportCSV}
-            className="flex items-center gap-2 px-4 py-2.5 rounded-xl cursor-pointer border border-[var(--color-border)] bg-[var(--color-white)] text-[var(--color-text)] text-sm font-semibold hover:border-[var(--color-blue-200)] hover:text-[var(--color-primary)] transition-all duration-300"
+            className="flex items-center gap-2 px-4 py-2.5 rounded-xl cursor-pointer border border-slate-200 bg-white text-slate-700 text-sm font-semibold hover:border-blue-200 hover:text-blue-700 transition-all duration-300"
           >
             <FileSpreadsheet className="w-4 h-4" />
             Export CSV
@@ -392,7 +392,7 @@ export default function SubscriberAdminPanel() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.1 }}
-      className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8"
+      className="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4"
     >
       {[
         {
@@ -400,32 +400,32 @@ export default function SubscriberAdminPanel() {
           value: stats.total,
           icon: Users,
           color: "primary",
-          bg: "var(--color-blue-50)",
-          iconColor: "var(--color-primary)",
+          bg: "#eff6ff",
+          iconColor: "#2563eb",
         },
         {
           label: "Today",
           value: stats.today,
           icon: Clock,
           color: "emerald",
-          bg: "var(--color-green-soft)",
-          iconColor: "var(--color-green)",
+          bg: "#ecfdf5",
+          iconColor: "#047857",
         },
         {
           label: "This Week",
           value: stats.thisWeek,
           icon: TrendingUp,
           color: "amber",
-          bg: "var(--color-orange-soft)",
-          iconColor: "var(--color-orange)",
+          bg: "#fff7ed",
+          iconColor: "#c2410c",
         },
         {
           label: "This Month",
           value: stats.thisMonth,
           icon: BarChart3,
           color: "purple",
-          bg: "var(--color-purple-soft)",
-          iconColor: "var(--color-violet-600)",
+          bg: "#f5f3ff",
+          iconColor: "#7c3aed",
         },
       ].map((stat, i) => (
         <motion.div
@@ -433,7 +433,7 @@ export default function SubscriberAdminPanel() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 + i * 0.05 }}
-          className="bg-[var(--color-white)] rounded-[var(--radius-xl)] border border-[var(--color-border)] p-5 shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-shadow duration-300"
+          className="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm hover:shadow-md shadow-blue-900/10 transition-shadow duration-300"
         >
           <div className="flex items-center justify-between mb-3">
             <div
@@ -447,17 +447,17 @@ export default function SubscriberAdminPanel() {
             </div>
 
             {stat.value > 0 && stat.label !== "Total Subscribers" && (
-              <span className="text-xs font-semibold text-[var(--color-green)] bg-[var(--color-green-soft)] px-2 py-0.5 rounded-full">
+              <span className="text-xs font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">
                 +{stat.value}
               </span>
             )}
           </div>
 
-          <p className="text-2xl font-bold text-[var(--color-heading)]">
+          <p className="text-2xl font-bold tracking-tight text-slate-950 sm:text-3xl">
             {stat.value.toLocaleString()}
           </p>
 
-          <p className="text-xs text-[var(--color-text-muted)] mt-1">
+          <p className="text-xs text-slate-500 mt-1">
             {stat.label}
           </p>
         </motion.div>
@@ -469,25 +469,25 @@ export default function SubscriberAdminPanel() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.2 }}
-      className="bg-[var(--color-white)] rounded-[var(--radius-xl)] border border-[var(--color-border)] shadow-[var(--shadow-sm)] mb-6"
+      className="mb-6 overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-sm"
     >
-      <div className="p-4 flex flex-col sm:flex-row sm:items-center gap-3">
+      <div className="flex flex-col gap-3 p-4 sm:flex-row sm:items-center sm:p-5">
         {/* Search */}
         <div className="relative flex-1">
-          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--color-text-light)]" />
+          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
 
           <input
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search by email..."
-            className="w-full pl-10 pr-4 py-2.5 rounded-lg bg-[var(--color-blue-50)] border border-[var(--color-border)] text-sm text-[var(--color-heading)] placeholder:text-[var(--color-text-light)] focus:outline-none focus:border-[var(--color-blue-200)] focus:ring-2 focus:ring-[var(--color-blue-100)] transition-all"
+            className="w-full pl-10 pr-4 py-2.5 rounded-lg bg-slate-50 border border-slate-200 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-blue-200 focus:ring-2 focus:ring-blue-100 transition-all"
           />
 
           {searchQuery && (
             <button
               onClick={() => setSearchQuery("")}
-              className="absolute right-3 top-1/2 cursor-pointer -translate-y-1/2 text-[var(--color-text-light)] hover:text-[var(--color-text)]"
+              className="absolute right-3 top-1/2 cursor-pointer -translate-y-1/2 text-slate-400 hover:text-slate-700"
             >
               <X className="w-4 h-4" />
             </button>
@@ -500,21 +500,21 @@ export default function SubscriberAdminPanel() {
             onClick={() => setShowFilters(!showFilters)}
             className={`flex items-center gap-2 px-3 py-2.5 rounded-lg cursor-pointer border text-sm font-medium transition-all ${
               showFilters || dateFilter !== "all"
-                ? "border-[var(--color-blue-200)] bg-[var(--color-blue-50)] text-[var(--color-primary-dark)]"
-                : "border-[var(--color-border)] bg-[var(--color-white)] text-[var(--color-text)] hover:border-[var(--color-blue-200)]"
+                ? "border-blue-200 bg-slate-50 text-blue-800"
+                : "border-slate-200 bg-white text-slate-700 hover:border-blue-200"
             }`}
           >
             <Filter className="w-4 h-4" />
             Filters
 
             {dateFilter !== "all" && (
-              <span className="w-2 h-2 rounded-full bg-[var(--color-primary)]" />
+              <span className="w-2 h-2 rounded-full bg-blue-600" />
             )}
           </button>
 
           <button
             onClick={() => fetchSubscribers(true)}
-            className={`p-2.5 rounded-lg border border-[var(--color-border)] cursor-pointer text-[var(--color-text-muted)] hover:text-[var(--color-primary)] hover:border-[var(--color-blue-200)] transition-all ${
+            className={`p-2.5 rounded-lg border border-slate-200 cursor-pointer text-slate-500 hover:text-blue-700 hover:border-blue-200 transition-all ${
               refreshing ? "animate-spin" : ""
             }`}
             title="Refresh"
@@ -531,10 +531,10 @@ export default function SubscriberAdminPanel() {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="overflow-hidden border-t border-[var(--color-border)]"
+            className="overflow-hidden border-t border-slate-200"
           >
             <div className="p-4 flex flex-wrap items-center gap-2">
-              <span className="text-xs font-semibold text-[var(--color-text-light)] uppercase tracking-wider mr-2">
+              <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider mr-2">
                 Date:
               </span>
 
@@ -544,8 +544,8 @@ export default function SubscriberAdminPanel() {
                   onClick={() => setDateFilter(filter)}
                   className={`px-3 py-1.5 rounded-lg text-xs font-medium cursor-pointer transition-all ${
                     dateFilter === filter
-                      ? "bg-[var(--color-primary)] text-[var(--color-white)] shadow-[var(--shadow-sm)]"
-                      : "bg-[var(--color-blue-50)] text-[var(--color-text)] border border-[var(--color-border)] hover:border-[var(--color-blue-200)]"
+                      ? "bg-blue-600 text-white shadow-sm"
+                      : "bg-slate-50 text-slate-700 border border-slate-200 hover:border-blue-200"
                   }`}
                 >
                   {filter === "all"
@@ -568,7 +568,7 @@ export default function SubscriberAdminPanel() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.3 }}
-      className="bg-[var(--color-white)] rounded-[var(--radius-xl)] border border-[var(--color-border)] shadow-[var(--shadow-sm)] overflow-hidden"
+      className="overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-sm"
     >
       {/* Bulk Actions Bar */}
       {selectedRows.size > 0 && (
@@ -576,15 +576,15 @@ export default function SubscriberAdminPanel() {
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: "auto" }}
           exit={{ opacity: 0, height: 0 }}
-          className="px-4 py-3 bg-[var(--color-blue-50)] border-b border-[var(--color-blue-100)] flex items-center justify-between"
+          className="px-4 py-3 bg-slate-50 border-b border-blue-100 flex items-center justify-between"
         >
-          <span className="text-sm font-medium text-[var(--color-primary-dark)]">
+          <span className="text-sm font-medium text-blue-800">
             {selectedRows.size} selected
           </span>
 
           <button
             onClick={handleBulkDelete}
-            className="flex items-center gap-1.5 px-3 py-1.5 cursor-pointer rounded-lg bg-[var(--color-orange-soft)] text-[var(--color-orange)] text-xs font-semibold hover:bg-[var(--color-orange-soft)] transition-colors"
+            className="flex items-center gap-1.5 px-3 py-1.5 cursor-pointer rounded-lg bg-rose-50 text-rose-700 text-xs font-semibold hover:bg-rose-50 transition-colors"
           >
             <Trash2 className="w-3.5 h-3.5" />
             Delete Selected
@@ -595,7 +595,7 @@ export default function SubscriberAdminPanel() {
       <div className="overflow-x-auto">
         <table className="w-full">
           <thead>
-            <tr className="border-b border-[var(--color-border)] bg-[var(--color-blue-50)]">
+            <tr className="border-b border-slate-200 bg-slate-50/90">
               <th className="px-4 py-3.5 w-12">
                 <input
                   type="checkbox"
@@ -604,7 +604,7 @@ export default function SubscriberAdminPanel() {
                     paginatedData.every((s) => selectedRows.has(s.id))
                   }
                   onChange={toggleSelectAll}
-                  className="w-4 h-4 rounded border-[var(--color-border)] text-[var(--color-primary)] focus:ring-[var(--color-blue-200)] cursor-pointer"
+                  className="w-4 h-4 rounded border-slate-200 text-blue-700 focus:ring-blue-200 cursor-pointer"
                 />
               </th>
 
@@ -618,14 +618,14 @@ export default function SubscriberAdminPanel() {
                       setSortOrder("asc");
                     }
                   }}
-                  className="flex items-center gap-1.5 text-xs font-semibold cursor-pointer text-[var(--color-text-muted)] uppercase tracking-wider hover:text-[var(--color-heading)] transition-colors"
+                  className="flex items-center gap-1.5 text-xs font-semibold cursor-pointer text-slate-500 uppercase tracking-wider hover:text-slate-900 transition-colors"
                 >
                   Email
 
                   <ArrowUpDown
                     className={`w-3.5 h-3.5 ${
                       sortField === "email"
-                        ? "text-[var(--color-primary)]"
+                        ? "text-blue-700"
                         : ""
                     }`}
                   />
@@ -642,25 +642,25 @@ export default function SubscriberAdminPanel() {
                       setSortOrder("desc");
                     }
                   }}
-                  className="flex items-center gap-1.5 text-xs cursor-pointer font-semibold text-[var(--color-text-muted)] uppercase tracking-wider hover:text-[var(--color-heading)] transition-colors"
+                  className="flex items-center gap-1.5 text-xs cursor-pointer font-semibold text-slate-500 uppercase tracking-wider hover:text-slate-900 transition-colors"
                 >
                   Subscribed Date
 
                   <ArrowUpDown
                     className={`w-3.5 h-3.5 ${
                       sortField === "createdAt"
-                        ? "text-[var(--color-primary)]"
+                        ? "text-blue-700"
                         : ""
                     }`}
                   />
                 </button>
               </th>
 
-              <th className="px-4 py-3.5 text-left text-xs font-semibold text-[var(--color-text-muted)] uppercase tracking-wider">
+              <th className="px-4 py-3.5 text-left text-xs font-semibold text-slate-500 uppercase tracking-wider">
                 Status
               </th>
 
-              <th className="px-4 py-3.5 text-right text-xs font-semibold text-[var(--color-text-muted)] uppercase tracking-wider">
+              <th className="px-4 py-3.5 text-right text-xs font-semibold text-slate-500 uppercase tracking-wider">
                 Actions
               </th>
             </tr>
@@ -672,26 +672,26 @@ export default function SubscriberAdminPanel() {
               Array.from({ length: 5 }).map((_, i) => (
                 <tr
                   key={i}
-                  className="border-b border-[var(--color-border)]"
+                  className="border-b border-slate-200"
                 >
                   <td className="px-4 py-4">
-                    <div className="w-4 h-4 rounded bg-[var(--color-blue-100)] animate-pulse" />
+                    <div className="w-4 h-4 rounded bg-blue-100 animate-pulse" />
                   </td>
 
                   <td className="px-4 py-4">
-                    <div className="h-4 w-48 rounded bg-[var(--color-blue-100)] animate-pulse" />
+                    <div className="h-4 w-48 rounded bg-blue-100 animate-pulse" />
                   </td>
 
                   <td className="px-4 py-4">
-                    <div className="h-4 w-32 rounded bg-[var(--color-blue-100)] animate-pulse" />
+                    <div className="h-4 w-32 rounded bg-blue-100 animate-pulse" />
                   </td>
 
                   <td className="px-4 py-4">
-                    <div className="h-5 w-16 rounded-full bg-[var(--color-blue-100)] animate-pulse" />
+                    <div className="h-5 w-16 rounded-full bg-blue-100 animate-pulse" />
                   </td>
 
                   <td className="px-4 py-4">
-                    <div className="h-8 w-8 rounded-lg bg-[var(--color-blue-100)] animate-pulse ml-auto" />
+                    <div className="h-8 w-8 rounded-lg bg-blue-100 animate-pulse ml-auto" />
                   </td>
                 </tr>
               ))
@@ -700,17 +700,17 @@ export default function SubscriberAdminPanel() {
               <tr>
                 <td colSpan={5} className="px-4 py-16 text-center">
                   <div className="flex flex-col items-center">
-                    <div className="w-16 h-16 rounded-2xl bg-[var(--color-blue-50)] flex items-center justify-center mb-4">
-                      <Inbox className="w-8 h-8 text-[var(--color-text-light)]" />
+                    <div className="w-16 h-16 rounded-2xl bg-slate-50 flex items-center justify-center mb-4">
+                      <Inbox className="w-8 h-8 text-slate-400" />
                     </div>
 
-                    <h3 className="text-lg font-semibold text-[var(--color-heading)] mb-1">
+                    <h3 className="text-lg font-semibold text-slate-900 mb-1">
                       {searchQuery
                         ? "No matches found"
                         : "No subscribers yet"}
                     </h3>
 
-                    <p className="text-sm text-[var(--color-text-muted)] max-w-xs mx-auto">
+                    <p className="text-sm text-slate-500 max-w-xs mx-auto">
                       {searchQuery
                         ? "Try adjusting your search or filters"
                         : "Start building your audience by adding your first subscriber"}
@@ -719,7 +719,7 @@ export default function SubscriberAdminPanel() {
                     {!searchQuery && (
                       <button
                         onClick={() => setShowAddModal(true)}
-                        className="mt-4 flex items-center gap-2 px-4 py-2 cursor-pointer rounded-lg bg-[var(--color-blue-50)] text-[var(--color-primary-dark)] text-sm font-semibold hover:bg-[var(--color-blue-100)] transition-colors"
+                        className="mt-4 flex items-center gap-2 px-4 py-2 cursor-pointer rounded-lg bg-slate-50 text-blue-800 text-sm font-semibold hover:bg-blue-100 transition-colors"
                       >
                         <Plus className="w-4 h-4" />
                         Add First Subscriber
@@ -735,9 +735,9 @@ export default function SubscriberAdminPanel() {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.03 }}
-                  className={`border-b border-[var(--color-border)] hover:bg-[var(--color-blue-50)] transition-colors ${
+                  className={`border-b border-slate-200 hover:bg-slate-50 transition-colors ${
                     selectedRows.has(subscriber.id)
-                      ? "bg-[var(--color-blue-50)]"
+                      ? "bg-slate-50"
                       : ""
                   }`}
                 >
@@ -746,22 +746,22 @@ export default function SubscriberAdminPanel() {
                       type="checkbox"
                       checked={selectedRows.has(subscriber.id)}
                       onChange={() => toggleSelect(subscriber.id)}
-                      className="w-4 h-4 rounded border-[var(--color-border)] text-[var(--color-primary)] focus:ring-[var(--color-blue-200)] cursor-pointer"
+                      className="w-4 h-4 rounded border-slate-200 text-blue-700 focus:ring-blue-200 cursor-pointer"
                     />
                   </td>
 
                   <td className="px-4 py-4">
                     <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-lg bg-[var(--color-blue-100)] flex items-center justify-center shrink-0">
-                        <Mail className="w-4 h-4 text-[var(--color-primary)]" />
+                      <div className="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center shrink-0">
+                        <Mail className="w-4 h-4 text-blue-700" />
                       </div>
 
                       <div>
-                        <p className="text-sm font-medium text-[var(--color-heading)]">
+                        <p className="text-sm font-medium text-slate-900">
                           {subscriber.email}
                         </p>
 
-                        <p className="text-xs text-[var(--color-text-light)]">
+                        <p className="text-xs text-slate-400">
                           ID: {String(subscriber.id).slice(0, 8)}...
                         </p>
                       </div>
@@ -769,8 +769,8 @@ export default function SubscriberAdminPanel() {
                   </td>
 
                   <td className="px-4 py-4">
-                    <div className="flex items-center gap-1.5 text-sm text-[var(--color-text)]">
-                      <Calendar className="w-3.5 h-3.5 text-[var(--color-text-light)]" />
+                    <div className="flex items-center gap-1.5 text-sm text-slate-700">
+                      <Calendar className="w-3.5 h-3.5 text-slate-400" />
 
                       {new Date(
                         subscriber.createdAt
@@ -781,7 +781,7 @@ export default function SubscriberAdminPanel() {
                       })}
                     </div>
 
-                    <p className="text-xs text-[var(--color-text-light)] mt-0.5">
+                    <p className="text-xs text-slate-400 mt-0.5">
                       {new Date(
                         subscriber.createdAt
                       ).toLocaleTimeString("en-US", {
@@ -792,7 +792,7 @@ export default function SubscriberAdminPanel() {
                   </td>
 
                   <td className="px-4 py-4">
-                    <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium bg-[var(--color-green-soft)] text-[var(--color-green)] border border-[var(--color-green-soft)]">
+                    <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700 border border-emerald-200">
                       <ShieldCheck className="w-3 h-3" />
                       Active
                     </span>
@@ -802,7 +802,7 @@ export default function SubscriberAdminPanel() {
                     <div className="flex items-center justify-end gap-1">
                       <button
                         onClick={() => copyEmail(subscriber.email)}
-                        className="p-2 rounded-lg text-[var(--color-text-light)] cursor-pointer hover:text-[var(--color-primary)] hover:bg-[var(--color-blue-50)] transition-all"
+                        className="p-2 rounded-lg text-slate-400 cursor-pointer hover:text-blue-700 hover:bg-slate-50 transition-all"
                         title="Copy email"
                       >
                         <Copy className="w-4 h-4" />
@@ -810,7 +810,7 @@ export default function SubscriberAdminPanel() {
 
                       <button
                         onClick={() => setDeleteConfirm(subscriber.id)}
-                        className="p-2 rounded-lg text-[var(--color-text-light)] cursor-pointer hover:text-[var(--color-orange)] hover:bg-[var(--color-orange-soft)] transition-all"
+                        className="p-2 rounded-lg text-slate-400 cursor-pointer hover:text-rose-700 hover:bg-rose-50 transition-all"
                         title="Delete"
                       >
                         <Trash2 className="w-4 h-4" />
@@ -826,21 +826,21 @@ export default function SubscriberAdminPanel() {
 
       {/* ─── Pagination ─────────────────────────────────────────── */}
       {!loading && filteredSubscribers.length > 0 && (
-        <div className="px-4 py-4 border-t border-[var(--color-border)] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-          <p className="text-sm text-[var(--color-text-muted)]">
+        <div className="px-4 py-4 border-t border-slate-200 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <p className="text-sm text-slate-500">
             Showing{" "}
-            <span className="font-medium text-[var(--color-heading)]">
+            <span className="font-medium text-slate-900">
               {(currentPage - 1) * ITEMS_PER_PAGE + 1}
             </span>{" "}
             to{" "}
-            <span className="font-medium text-[var(--color-heading)]">
+            <span className="font-medium text-slate-900">
               {Math.min(
                 currentPage * ITEMS_PER_PAGE,
                 filteredSubscribers.length
               )}
             </span>{" "}
             of{" "}
-            <span className="font-medium text-[var(--color-heading)]">
+            <span className="font-medium text-slate-900">
               {filteredSubscribers.length}
             </span>{" "}
             subscribers
@@ -852,7 +852,7 @@ export default function SubscriberAdminPanel() {
                 setCurrentPage((p) => Math.max(1, p - 1))
               }
               disabled={currentPage === 1}
-              className="p-2 rounded-lg cursor-pointer border border-[var(--color-border)] text-[var(--color-text)] hover:border-[var(--color-blue-200)] hover:text-[var(--color-primary)] disabled:opacity-40 disabled:cursor-not-allowed transition-all"
+              className="p-2 rounded-lg cursor-pointer border border-slate-200 text-slate-700 hover:border-blue-200 hover:text-blue-700 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
             >
               <ChevronLeft className="w-4 h-4" />
             </button>
@@ -878,8 +878,8 @@ export default function SubscriberAdminPanel() {
                     onClick={() => setCurrentPage(pageNum)}
                     className={`w-8 h-8 px-2.5 rounded-full cursor-pointer text-sm font-medium transition-all ${
                       currentPage === pageNum
-                        ? "bg-[var(--color-primary)] text-[var(--color-white)] shadow-[var(--shadow-sm)]"
-                        : "border border-[var(--color-border)] text-[var(--color-text)] hover:border-[var(--color-blue-200)] hover:text-[var(--color-primary)]"
+                        ? "bg-blue-600 text-white shadow-sm"
+                        : "border border-slate-200 text-slate-700 hover:border-blue-200 hover:text-blue-700"
                     }`}
                   >
                     {pageNum}
@@ -895,7 +895,7 @@ export default function SubscriberAdminPanel() {
                 )
               }
               disabled={currentPage === totalPages}
-              className="p-2 rounded-lg border border-[var(--color-border)] text-[var(--color-text)] hover:border-[var(--color-blue-200)] hover:text-[var(--color-primary)] disabled:opacity-40 disabled:cursor-not-allowed transition-all"
+              className="p-2 rounded-lg border border-slate-200 text-slate-700 hover:border-blue-200 hover:text-blue-700 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
             >
               <ChevronRight className="w-4 h-4" />
             </button>
@@ -914,7 +914,7 @@ export default function SubscriberAdminPanel() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 z-40 flex items-center justify-center p-4 bg-[var(--color-heading)]/40 backdrop-blur-sm"
+        className="fixed inset-0 z-40 flex items-center justify-center p-4 bg-slate-950/45 backdrop-blur-sm"
         onClick={() => setShowAddModal(false)}
       >
         <motion.div
@@ -922,21 +922,21 @@ export default function SubscriberAdminPanel() {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
           onClick={(e) => e.stopPropagation()}
-          className="bg-[var(--color-white)] rounded-[var(--radius-2xl)] border border-[var(--color-border)] shadow-[var(--shadow-xl)] w-full max-w-md overflow-hidden"
+          className="bg-white rounded-2xl border border-slate-200 shadow-2xl shadow-slate-900/15 w-full max-w-md overflow-hidden"
         >
           {/* Modal Header */}
-          <div className="px-6 py-5 border-b border-[var(--color-border)] flex items-center justify-between">
+          <div className="px-6 py-5 border-b border-slate-200 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-[var(--color-blue-50)] flex items-center justify-center">
-                <UserPlus className="w-5 h-5 text-[var(--color-primary)]" />
+              <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center">
+                <UserPlus className="w-5 h-5 text-blue-700" />
               </div>
 
               <div>
-                <h3 className="text-lg font-bold text-[var(--color-heading)]">
+                <h3 className="text-lg font-bold text-slate-900">
                   Add Subscriber
                 </h3>
 
-                <p className="text-xs text-[var(--color-text-muted)]">
+                <p className="text-xs text-slate-500">
                   Manually add a new email subscriber
                 </p>
               </div>
@@ -944,7 +944,7 @@ export default function SubscriberAdminPanel() {
 
             <button
               onClick={() => setShowAddModal(false)}
-              className="p-2 rounded-lg hover:bg-[var(--color-blue-50)] text-[var(--color-text-light)] hover:text-[var(--color-text)] transition-colors"
+              className="p-2 rounded-lg hover:bg-slate-50 text-slate-400 hover:text-slate-700 transition-colors"
             >
               <X className="w-5 h-5" />
             </button>
@@ -956,15 +956,15 @@ export default function SubscriberAdminPanel() {
             className="p-6 space-y-5"
           >
             <div>
-              <label className="block text-sm font-semibold text-[var(--color-heading)] mb-2">
+              <label className="block text-sm font-semibold text-slate-900 mb-2">
                 Email Address{" "}
-                <span className="text-[var(--color-orange)]">
+                <span className="text-rose-700">
                   *
                 </span>
               </label>
 
               <div className="relative">
-                <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--color-text-light)]" />
+                <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
 
                 <input
                   type="email"
@@ -972,11 +972,11 @@ export default function SubscriberAdminPanel() {
                   onChange={(e) => setNewEmail(e.target.value)}
                   placeholder="subscriber@example.com"
                   autoFocus
-                  className="w-full pl-10 pr-4 py-3 rounded-xl bg-[var(--color-blue-50)] border-2 border-[var(--color-border)] text-sm text-[var(--color-heading)] placeholder:text-[var(--color-text-light)] focus:outline-none focus:border-[var(--color-blue-200)] focus:ring-4 focus:ring-[var(--color-blue-100)] transition-all"
+                  className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-50 border-2 border-slate-200 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-blue-200 focus:ring-4 focus:ring-blue-100 transition-all"
                 />
               </div>
 
-              <p className="text-xs text-[var(--color-text-light)] mt-1.5">
+              <p className="text-xs text-slate-400 mt-1.5">
                 We will verify this email is not already subscribed.
               </p>
             </div>
@@ -985,7 +985,7 @@ export default function SubscriberAdminPanel() {
               <button
                 type="button"
                 onClick={() => setShowAddModal(false)}
-                className="flex-1 py-3 px-4 rounded-xl border-2 border-[var(--color-border)] text-[var(--color-text)] font-semibold text-sm hover:border-[var(--color-blue-200)] hover:text-[var(--color-primary)] transition-all"
+                className="flex-1 py-3 px-4 rounded-xl border-2 border-slate-200 text-slate-700 font-semibold text-sm hover:border-blue-200 hover:text-blue-700 transition-all"
               >
                 Cancel
               </button>
@@ -993,7 +993,7 @@ export default function SubscriberAdminPanel() {
               <button
                 type="submit"
                 disabled={addingSubscriber || !newEmail.trim()}
-                className="flex-1 py-3 px-4 rounded-xl bg-[var(--color-primary)] text-[var(--color-white)] font-semibold text-sm shadow-[var(--shadow-btn-primary)] hover:bg-[var(--color-primary-dark)] hover:shadow-[var(--shadow-btn-primary-hover)] disabled:opacity-50 disabled:cursor-not-allowed transition-all flex items-center justify-center gap-2"
+                className="flex-1 py-3 px-4 rounded-xl bg-blue-600 text-white font-semibold text-sm shadow-lg shadow-blue-600/20 hover:bg-blue-700 hover:shadow-xl shadow-blue-600/25 disabled:opacity-50 disabled:cursor-not-allowed transition-all flex items-center justify-center gap-2"
               >
                 {addingSubscriber ? (
                   <>
@@ -1023,7 +1023,7 @@ export default function SubscriberAdminPanel() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 z-40 flex items-center justify-center p-4 bg-[var(--color-heading)]/40 backdrop-blur-sm"
+        className="fixed inset-0 z-40 flex items-center justify-center p-4 bg-slate-950/45 backdrop-blur-sm"
         onClick={() => setDeleteConfirm(null)}
       >
         <motion.div
@@ -1031,25 +1031,25 @@ export default function SubscriberAdminPanel() {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.95 }}
           onClick={(e) => e.stopPropagation()}
-          className="bg-[var(--color-white)] rounded-[var(--radius-2xl)] border border-[var(--color-border)] shadow-[var(--shadow-xl)] w-full max-w-sm p-6"
+          className="bg-white rounded-2xl border border-slate-200 shadow-2xl shadow-slate-900/15 w-full max-w-sm p-6"
         >
           <div className="flex flex-col items-center text-center">
-            <div className="w-14 h-14 rounded-full bg-[var(--color-orange-soft)] flex items-center justify-center mb-4">
-              <AlertCircle className="w-7 h-7 text-[var(--color-orange)]" />
+            <div className="w-14 h-14 rounded-full bg-rose-50 flex items-center justify-center mb-4">
+              <AlertCircle className="w-7 h-7 text-rose-700" />
             </div>
 
-            <h3 className="text-lg font-bold text-[var(--color-heading)] mb-2">
+            <h3 className="text-lg font-bold text-slate-900 mb-2">
               Remove Subscriber?
             </h3>
 
-            <p className="text-sm text-[var(--color-text)] mb-6">
+            <p className="text-sm text-slate-700 mb-6">
               This action cannot be undone. The subscriber will be permanently removed from your list.
             </p>
 
             <div className="flex gap-3 w-full">
               <button
                 onClick={() => setDeleteConfirm(null)}
-                className="flex-1 py-2.5 px-4 rounded-xl border border-[var(--color-border)] cursor-pointer text-[var(--color-text)] font-semibold text-sm hover:border-[var(--color-blue-200)] transition-all"
+                className="flex-1 py-2.5 px-4 rounded-xl border border-slate-200 cursor-pointer text-slate-700 font-semibold text-sm hover:border-blue-200 transition-all"
               >
                 Cancel
               </button>
@@ -1057,7 +1057,7 @@ export default function SubscriberAdminPanel() {
               <button
                 onClick={() => handleDelete(deleteConfirm)}
                 disabled={deleting}
-                className="flex-1 py-2.5 px-4 rounded-xl bg-[var(--color-orange)] border border-[var(--color-orange)] cursor-pointer text-[var(--color-white)] font-semibold text-sm hover:bg-[var(--color-orange)] disabled:opacity-50 transition-all flex items-center justify-center gap-2"
+                className="flex-1 py-2.5 px-4 rounded-xl bg-rose-600 border border-rose-600 cursor-pointer text-white font-semibold text-sm hover:bg-rose-700 disabled:opacity-50 transition-all flex items-center justify-center gap-2"
               >
                 {deleting ? (
                   <Loader2 className="w-4 h-4 animate-spin" />
@@ -1074,6 +1074,6 @@ export default function SubscriberAdminPanel() {
   </AnimatePresence>
 </div>
 
-    </MasterProtectedRoute>
+
   );
 }

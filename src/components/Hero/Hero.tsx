@@ -300,15 +300,19 @@ export default function WorkforceHero({
 </h1>
 
 {/* Show below lg; hide on lg and larger screens */}
-<div className="relative my-4 aspect-square w-full overflow-hidden rounded-xl sm:rounded-2xl lg:hidden">
+
+<div className="relative my-4 w-full overflow-hidden rounded-xl sm:rounded-2xl lg:hidden">
   <Image
-    src="/hero-resolution/mobile-screen-home-page.png"
+    src="https://res.cloudinary.com/fvsobjbv/image/upload/v1792043181/mobile-screen-home-page.png"
     alt="AWFI Engine with a human expert and AI robot"
-    fill
+    width={1080}
+    height={1920}
     sizes="(max-width: 1023px) 100vw, 1px"
-    className="object-cover"
+    className="block h-auto w-full object-contain"
+    priority
   />
 </div>
+
 
               {/* ---------------------------------------------
                   Description

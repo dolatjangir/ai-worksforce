@@ -707,7 +707,7 @@ export default function FollowUpAgentLanding() {
                                     <p
                                       role="status"
                                       aria-live="polite"
-                                      className={`text-sm text-start ${
+                                      className={`text-sm text-center ${
                                         isSuccess ? "text-green-600" : "text-red-500"
                                       }`}
                                     >

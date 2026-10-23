@@ -103,7 +103,11 @@ export default function AISEOContentAgentLanding() {
   const [isGenerating, setIsGenerating] = useState(false);
   const [contentProgress, setContentProgress] = useState(0);
   const [showScores, setShowScores] = useState(false);
-  const [email, setEmail] = useState('');
+     const [email, setEmail] = useState('');
+      const [isLoading, setIsLoading] = useState(false);
+      const [isSuccess, setIsSuccess] = useState<boolean | null>(null);
+      const [message, setMessage] = useState('');
+
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [copied, setCopied] = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
@@ -294,6 +298,54 @@ export default function AISEOContentAgentLanding() {
     return 'bg-red-500';
   };
 
+   const handleSubscribe = async (e: React.FormEvent<HTMLFormElement>) => {
+            e.preventDefault();
+        
+            const normalizedEmail = email.trim().toLowerCase();
+        
+            if (!normalizedEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(normalizedEmail)) {
+              setIsSuccess(false);
+              setMessage("Please enter a valid email address.");
+              return;
+            }
+        
+            try {
+              setIsLoading(true);
+              setMessage("");
+        
+              const response = await fetch("/api/subscribe", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ email: normalizedEmail }),
+              });
+        
+              const result = await response.json();
+        
+              if (!response.ok || !result.success) {
+                setIsSuccess(false);
+                setMessage(result.message || "Subscription failed. Please try again.");
+                return;
+              }
+        
+              setIsSuccess(true);
+              setMessage(result.message || "Subscribed successfully 🎉");
+              setEmail("");
+            } catch (error) {
+              console.error("Subscription error:", error);
+              setIsSuccess(false);
+              setMessage("Unable to subscribe right now. Please try again.");
+            } finally {
+              setIsLoading(false);
+            }
+          };
+          
+
+
+
+
+
   return (
     <main className="min-h-screen bg-[#e6f2ff] text-[#003871] font-sans overflow-x-hidden selection:bg-[#99ccff] selection:text-[#003871]">
       {/* Global Styles */}
@@ -422,22 +474,42 @@ export default function AISEOContentAgentLanding() {
                                </p>
                        
                               {/* Email Capture */}
-                                           <div className="flex flex-col sm:flex-row gap-4 max-w-lg mb-8">
-                                             <div className="flex-1 relative">
-                                               <input 
-                                                 type="email" 
-                                                 value={email}
-                                                 onChange={(e) => setEmail(e.target.value)}
-                                                 placeholder="Enter your email"
-                                                 className="w-full px-6 py-3 rounded-2xl bg-white border-2 border-[#99ccff] text-[#003871] placeholder:text-[#3399ff] focus:outline-none focus:border-[#0066cc] focus:ring-4 focus:ring-[#cce5ff] transition-all text-lg shadow-sm"
-                                               />
-                                             </div>
-                                             <button className="px-4 py-2 rounded-2xl bg-[#0066cc] hover:bg-[#0057ad] text-white font-bold text-lg transition-all hover:scale-105 active:scale-95 shadow-xl shadow-[#cce5ff] flex items-center justify-center gap-2 group whitespace-nowrap">
-                                              Start Writing
-                                               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                                             </button>
-                                             
-                                           </div>
+ <form
+                               onSubmit={handleSubscribe} 
+                                                                          className="flex flex-col sm:flex-row gap-4 max-w-lg mb-8">
+                                          <div className="flex-1 relative">
+                                            <input 
+                                              type="email"
+                                               name="email"
+                                               value={email}
+                                               onChange={(e) => setEmail(e.target.value)}
+                                               placeholder="Enter your email"
+                                               autoComplete="email"
+                                               required
+                                               disabled={isLoading}
+                                             className="w-full px-6 py-3 rounded-2xl bg-white border-2 border-[#99ccff] text-[#003871] placeholder:text-[#3399ff] focus:outline-none focus:border-[#0066cc] focus:ring-4 focus:ring-[#cce5ff] transition-all text-lg shadow-sm"
+                                           />
+                                          </div>
+                                         <button
+                                          type="submit"
+                                          disabled={isLoading}
+                                           className="px-4 py-2 rounded-2xl bg-[#0066cc] hover:bg-[#0057ad] text-white font-bold text-lg transition-all hover:scale-105 active:scale-95 shadow-xl shadow-[#cce5ff] flex items-center justify-center gap-2 group whitespace-nowrap">
+                                      Start creating
+                                           <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                                          </button>
+                                                                                   
+                                          </form>
+                                           {message && (
+                                                    <p
+                                                   role="status"
+                                                      aria-live="polite"
+                                                     className={`text-sm text-start ${
+                                                       isSuccess ? "text-green-600" : "text-red-500"
+                                                     }`}
+                                                  >
+                                                     {message}
+                                                   </p>
+                                                )}
                        
                                {/* Features */}
                                <div className="flex items-center gap-6 text-sm text-[#0066cc] flex-wrap">
@@ -847,16 +919,43 @@ export default function AISEOContentAgentLanding() {
                 Start with 10 free articles.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto mb-8">
-                <input 
-                  type="email" 
-                  placeholder="your@email.com"
-                  className="flex-1 px-6 py-4 rounded-xl bg-white border-2 border-[#99ccff] text-[#003871] placeholder:text-[#3399ff] focus:outline-none focus:border-[#0066cc] focus:ring-4 focus:ring-[#cce5ff] transition-all shadow-sm"
-                />
-                <button className="px-8 py-4 rounded-xl bg-[#0066cc] hover:bg-[#0057ad] text-white font-bold transition-all hover:scale-105 active:scale-95 shadow-xl shadow-[#cce5ff] whitespace-nowrap">
-                  Start Free Trial
-                </button>
-              </div>
+           <form
+                                                               onSubmit={handleSubscribe} 
+                                                                className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto mb-8">
+                                                                         <div className="flex-1 relative">
+                                                                           <input 
+                                                                             type="email"
+                                                                               name="email"
+                                                                               value={email}
+                                                                               onChange={(e) => setEmail(e.target.value)}
+                                                                               placeholder="Enter your email"
+                                                                               autoComplete="email"
+                                                                               required
+                                                                               disabled={isLoading}
+                                                                             className="w-full px-6 py-3 rounded-2xl bg-white border-2 border-[#99ccff] text-[#003871] placeholder:text-[#3399ff] focus:outline-none focus:border-[#0066cc] focus:ring-4 focus:ring-[#cce5ff] transition-all text-lg shadow-sm"
+                                                                           />
+                                                                         </div>
+                                                                         <button
+                                                                          type="submit"
+                                                                          disabled={isLoading}
+                                                                           className="px-4 py-2 rounded-2xl bg-[#0066cc] hover:bg-[#0057ad] text-white font-bold text-lg transition-all hover:scale-105 active:scale-95 shadow-xl shadow-[#cce5ff] flex items-center justify-center gap-2 group whitespace-nowrap">
+                                                                          Book a Free Demo
+                                                                           <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                                                                         </button>
+                                                                         
+                                             </form>
+                                          {message && (
+                                                                         <p
+                                                                           role="status"
+                                                                           aria-live="polite"
+                                                                           className={`text-sm text-center ${
+                                                                             isSuccess ? "text-green-600" : "text-red-500"
+                                                                           }`}
+                                                                         >
+                                                                           {message}
+                                                                         </p>
+                                              )}
+
 
               <p className="text-sm text-[#3399ff]">
                 10 free articles • No credit card • Cancel anytime
@@ -866,27 +965,7 @@ export default function AISEOContentAgentLanding() {
         </div>
       </section>
 
-      {/* FOOTER */}
-      <footer className="relative py-12 px-4 border-t border-[#99ccff] bg-white/50">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0066cc] to-[#0057ad] flex items-center justify-center shadow-md">
-              <Search className="w-5 h-5 text-white" />
-            </div>
-            <span className="font-bold text-xl text-[#003871]">SEOContent AI</span>
-          </div>
-
-          <div className="flex gap-8 text-sm text-[#3399ff]">
-            <a href="#" className="hover:text-[#003871] transition-colors">Privacy</a>
-            <a href="#" className="hover:text-[#003871] transition-colors">Terms</a>
-            <a href="#" className="hover:text-[#003871] transition-colors">Contact</a>
-          </div>
-
-          <div className="text-sm text-[#3399ff]">
-            © 2026 SEOContent AI
-          </div>
-        </div>
-      </footer>
+  
     </main>
   );
 }
